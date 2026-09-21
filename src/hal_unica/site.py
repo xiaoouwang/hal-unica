@@ -212,12 +212,10 @@ h1 {
 }
 .chip[aria-pressed="true"] { background: var(--sea); border-color: var(--sea); color: #fff; }
 .list { display: grid; gap: 0.65rem; }
-details.result {
-  background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+.result {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1rem 1.1rem; display: grid; gap: 0.65rem;
 }
-details.result[open] { border-color: rgba(10,110,122,0.35); box-shadow: 0 10px 28px var(--shadow); }
-summary { list-style: none; cursor: pointer; padding: 1rem 1.1rem; display: grid; gap: 0.5rem; }
-summary::-webkit-details-marker { display: none; }
 .title-row { display: flex; gap: 0.75rem; justify-content: space-between; align-items: start; }
 .title { margin: 0; font-family: var(--font-display); font-size: 1.05rem; font-weight: 650; line-height: 1.3; }
 .badges { display: flex; flex-wrap: wrap; gap: 0.35rem; justify-content: flex-end; max-width: 42%; }
@@ -231,7 +229,7 @@ summary::-webkit-details-marker { display: none; }
   background: var(--paper); padding: 0.1rem 0.35rem; border-radius: 4px;
 }
 .evidence {
-  border-top: 1px solid var(--line); padding: 0.85rem 1.1rem 1.1rem; display: grid; gap: 0.5rem;
+  border-top: 1px solid var(--line); padding-top: 0.75rem; display: grid; gap: 0.5rem;
 }
 .ev {
   display: grid; grid-template-columns: 6.5rem 1fr; gap: 0.75rem; font-size: 0.9rem;
@@ -386,7 +384,7 @@ def render_related(payload_json: str) -> str:
     <section class="panel">
       <input id="q" class="search" type="search" placeholder="Search title, HAL id, dataset DOI…" autocomplete="off" />
       <div class="filters" id="filters"></div>
-      <div class="meta-row"><div id="count"></div><div>Expand a row for dataset DOIs</div></div>
+      <div class="meta-row"><div id="count"></div><div>Datasets shown inline for each publication</div></div>
       <div class="list" id="list"></div>
     </section>
     <footer>Source: HAL <code>relatedData_s</code> + DataCite landing resolution.</footer>
@@ -422,14 +420,15 @@ def render_related(payload_json: str) -> str:
             <div class="muted" style="margin-top:0.25rem">${{esc(d.repository || "")}}${{d.landing_host ? " · " + esc(d.landing_host) : ""}}</div>
           </dd></div>`;
         }}).join("");
-        return `<details class="result"><summary>
+        return `<article class="result">
           <div class="title-row"><h2 class="title">${{esc(p.title_s || "(untitled)")}}</h2><div class="badges">${{badges}}</div></div>
           <div class="sub">
             <a href="${{esc(p.uri_s || "#")}}" target="_blank" rel="noopener"><code>${{esc(p.halId_s)}}</code></a>
             <span>${{esc(p.docType_s || "")}}</span>
             ${{p.doiId_s ? `<span>pub DOI <a href="https://doi.org/${{esc(p.doiId_s)}}" target="_blank" rel="noopener"><code>${{esc(p.doiId_s)}}</code></a></span>` : ""}}
           </div>
-        </summary><div class="evidence">${{datasets}}</div></details>`;
+          <div class="evidence">${{datasets}}</div>
+        </article>`;
       }}).join("");
     }}
 
@@ -489,7 +488,7 @@ def render_census(census_json: str) -> str:
     <section class="panel">
       <input id="q" class="search" type="search" placeholder="Filter dataset DOI, repository, publication…" autocomplete="off" />
       <div class="filters" id="filters"></div>
-      <div class="meta-row"><div id="count"></div><div>Expand a dataset for related publications</div></div>
+      <div class="meta-row"><div id="count"></div><div>Related publications shown inline</div></div>
       <div class="list" id="list"></div>
     </section>
     <footer>CSV: <a href="./data/census/dataset_to_publications.csv"><code>dataset_to_publications.csv</code></a></footer>
@@ -555,9 +554,9 @@ def render_census(census_json: str) -> str:
             </div>
           </dd></div>`;
         }}).join("");
-        return `<details class="result"><summary>
+        return `<article class="result">
           <div class="title-row">
-            <h2 class="title"><a href="${{esc(href)}}" target="_blank" rel="noopener" onclick="event.stopPropagation()"><code>${{esc(d.dataset_doi)}}</code></a></h2>
+            <h2 class="title"><a href="${{esc(href)}}" target="_blank" rel="noopener"><code>${{esc(d.dataset_doi)}}</code></a></h2>
             <div class="badges"><span class="badge">${{esc(d.repository || "Unknown")}}</span></div>
           </div>
           <div class="sub">
@@ -565,7 +564,8 @@ def render_census(census_json: str) -> str:
             <span class="muted">${{esc(d.landing_host || "")}}</span>
             <span>${{(d.publications||[]).length}} publication(s)</span>
           </div>
-        </summary><div class="evidence">${{pubs || '<div class="empty">No linked publication in census.</div>'}}</div></details>`;
+          <div class="evidence">${{pubs || '<div class="muted">No linked publication in census.</div>'}}</div>
+        </article>`;
       }}).join("") || `<div class="empty">No matches.</div>`;
     }}
     paintFilters();
@@ -602,7 +602,7 @@ def render_software(software_json: str) -> str:
     <div class="stats" id="stats"></div>
     <section class="panel">
       <input id="q" class="search" type="search" placeholder="Search software title, HAL id, language, Git URL…" autocomplete="off" />
-      <div class="meta-row"><div id="count"></div><div>Expand for code repos, SWH, related pubs</div></div>
+      <div class="meta-row"><div id="count"></div><div>Code repos, SWHIDs and related pubs shown inline</div></div>
       <div class="list" id="list"></div>
     </section>
     <footer>
@@ -660,7 +660,7 @@ def render_software(software_json: str) -> str:
         const files = (r.files_s||[]).slice(0,3).map(u =>
           `<div class="ev"><dt>HAL file</dt><dd><a href="${{esc(u)}}" target="_blank" rel="noopener">${{esc(u.split("/").pop())}}</a></dd></div>`
         ).join("");
-        return `<details class="result"><summary>
+        return `<article class="result">
           <div class="title-row">
             <h2 class="title">${{esc(r.title_s || "(untitled)")}}</h2>
             <div class="badges">${{langs || '<span class="badge">SOFTWARE</span>'}}</div>
@@ -671,7 +671,8 @@ def render_software(software_json: str) -> str:
             <span>${{(r.softCodeRepository_s||[]).length}} repo(s)</span>
             <span>${{(r.swhidId_s||[]).length}} SWHID(s)</span>
           </div>
-        </summary><div class="evidence">${{repos}}${{swh}}${{pubs}}${{files || (r.fileMain_s ? `<div class="ev"><dt>HAL file</dt><dd><a href="${{esc(r.fileMain_s)}}" target="_blank" rel="noopener">document</a></dd></div>` : "")}}</div></details>`;
+          <div class="evidence">${{repos}}${{swh}}${{pubs}}${{files || (r.fileMain_s ? `<div class="ev"><dt>HAL file</dt><dd><a href="${{esc(r.fileMain_s)}}" target="_blank" rel="noopener">document</a></dd></div>` : "")}}</div>
+        </article>`;
       }}).join("") || `<div class="empty">No matches.</div>`;
     }}
     document.getElementById("q").addEventListener("input", render);
