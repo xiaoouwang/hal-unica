@@ -37,12 +37,16 @@ def harvest_stats(harvest_path: Path) -> dict[str, Any]:
                 except (TypeError, ValueError):
                     pass
     top_types = [{"type": k, "count": v} for k, v in types.most_common(12)]
+    # Always surface SOFTWARE even when it falls outside the top 12
+    if "SOFTWARE" in types and not any(t["type"] == "SOFTWARE" for t in top_types):
+        top_types.append({"type": "SOFTWARE", "count": types["SOFTWARE"]})
     year_series = [{"year": y, "count": years[y]} for y in sorted(years) if 1950 <= y <= 2026]
     return {
         "documents": n,
         "with_doi": with_doi,
         "doi_share": round(with_doi / n, 4) if n else 0,
         "doc_types": top_types,
+        "software_deposits": types.get("SOFTWARE", 0),
         "years": year_series,
         "year_min": min(years) if years else None,
         "year_max": max(y for y in years if y <= 2026) if years else None,
@@ -256,6 +260,7 @@ def _nav(active: str) -> str:
       {link("./index.html", "Statistics", "stats")}
       {link("./related-datasets.html", "Nakala / RDG", "related")}
       {link("./all-repositories.html", "All repositories", "census")}
+      {link("./software.html", "Software", "software")}
       {link("./documentation.html", "Documentation", "docs")}
     </nav>
     """
@@ -302,7 +307,9 @@ def render_index(payload_json: str) -> str:
       <p style="margin:0.85rem 0 0">
         <a href="./related-datasets.html">Nakala / Recherche Data Gouv →</a>
         &nbsp;·&nbsp;
-        <a href="./all-repositories.html">All repositories census →</a>
+        <a href="./all-repositories.html">All repositories (+ publications) →</a>
+        &nbsp;·&nbsp;
+        <a href="./software.html">Software &amp; source code →</a>
         &nbsp;·&nbsp;
         <a href="./documentation.html">DOI maps &amp; logs →</a>
       </p>
@@ -318,12 +325,12 @@ def render_index(payload_json: str) -> str:
     const dl = data.data_links;
     document.getElementById("collectionLink").href = data.collection_url;
     document.getElementById("collectionLink").textContent = data.collection;
-    document.getElementById("stats").innerHTML = [
-      {{ v: h.documents.toLocaleString("en"), l: "HAL documents (latest version)" }},
-      {{ v: h.with_doi.toLocaleString("en"), l: `With DOI (${{Math.round(h.doi_share*100)}}%)` }},
-      {{ v: dl.total_hits, l: "Notices linking Nakala / RDG" }},
-      {{ v: rd.publication_count, l: "Publications with related dataset" }},
-    ].map(x => `<div class="stat"><strong>${{x.v}}</strong><span>${{x.l}}</span></div>`).join("");
+      document.getElementById("stats").innerHTML = [
+        {{ v: h.documents.toLocaleString("en"), l: "HAL documents (latest version)" }},
+        {{ v: h.with_doi.toLocaleString("en"), l: `With DOI (${{Math.round(h.doi_share*100)}}%)` }},
+        {{ v: h.software_deposits || 0, l: "SOFTWARE deposits" }},
+        {{ v: rd.publication_count, l: "Pubs with related dataset (Nakala/RDG)" }},
+      ].map(x => `<div class="stat"><strong>${{x.v}}</strong><span>${{x.l}}</span></div>`).join("");
 
     const maxType = Math.max(...h.doc_types.map(d => d.count));
     document.getElementById("docTypes").innerHTML = h.doc_types.map(d => `
@@ -463,17 +470,7 @@ def render_census(census_json: str) -> str:
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <style>{SHARED_CSS}
-  .table-wrap {{ overflow-x: auto; }}
-  table.doi-map {{
-    width: 100%; border-collapse: collapse; font-size: 0.86rem;
-  }}
-  table.doi-map th, table.doi-map td {{
-    text-align: left; padding: 0.45rem 0.5rem; border-bottom: 1px solid var(--line);
-    vertical-align: top;
-  }}
-  table.doi-map th {{ color: var(--ink-soft); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; }}
-  </style>
+  <style>{SHARED_CSS}</style>
 </head>
 <body>
   <main class="wrap">
@@ -481,9 +478,8 @@ def render_census(census_json: str) -> str:
     <div class="eyebrow">Full relatedData census</div>
     <h1>All linked repositories</h1>
     <p class="lede">
-      Every HAL <code>relatedData</code> identifier for UniCA, resolved with DataCite —
-      not limited to NAKALA / Recherche Data Gouv. Supporting CSV/JSONL files are in
-      <a href="./documentation.html">Documentation</a>.
+      Each related dataset DOI with its repository landing page, plus the HAL
+      publication(s) that declare the link (title + HAL notice URL).
     </p>
     <div class="stats" id="stats"></div>
     <section class="panel">
@@ -491,68 +487,195 @@ def render_census(census_json: str) -> str:
       <div class="bars" id="repos"></div>
     </section>
     <section class="panel">
-      <h2>DOI → repository map</h2>
-      <p class="muted" style="margin-top:0">Unique related DOIs. Full HAL↔DOI table:
-        <a href="./data/census/doi_hal_repository_map.csv"><code>doi_hal_repository_map.csv</code></a>
-      </p>
-      <input id="q" class="search" type="search" placeholder="Filter DOI, repository, host…" autocomplete="off" />
-      <div class="table-wrap">
-        <table class="doi-map">
-          <thead>
-            <tr><th>DOI</th><th>Repository</th><th>Landing host</th><th>Publisher</th><th>Kind</th></tr>
-          </thead>
-          <tbody id="tbody"></tbody>
-        </table>
-      </div>
+      <input id="q" class="search" type="search" placeholder="Filter dataset DOI, repository, publication…" autocomplete="off" />
+      <div class="filters" id="filters"></div>
+      <div class="meta-row"><div id="count"></div><div>Expand a dataset for related publications</div></div>
+      <div class="list" id="list"></div>
     </section>
-    <footer id="footer"></footer>
+    <footer>CSV: <a href="./data/census/dataset_to_publications.csv"><code>dataset_to_publications.csv</code></a></footer>
   </main>
   <script id="data" type="application/json">{census_json}</script>
   <script>
     const data = JSON.parse(document.getElementById("data").textContent);
     const s = data.summary;
-    const dois = data.dois || [];
+    const datasets = data.datasets || [];
+    let active = "all";
+
+    function esc(s) {{
+      return String(s ?? "").replace(/[&<>"']/g, c => ({{"&":"&amp;","<":"&lt;",">":"&gt;","\\"":"&quot;","'":"&#39;"}}[c]));
+    }}
+
     document.getElementById("stats").innerHTML = [
       {{ v: s.hal_publications_with_relatedData, l: "HAL notices with relatedData" }},
       {{ v: s.unique_dois_resolved, l: "Unique related DOIs" }},
       {{ v: Object.keys(s.by_repository || {{}}).length, l: "Distinct repositories" }},
-      {{ v: s.publications_with_dataset_repo_landing, l: "Pubs with dataset landing" }},
+      {{ v: (data.dataset_index && data.dataset_index.dataset_publication_links) || datasets.length, l: "Dataset↔publication links" }},
     ].map(x => `<div class="stat"><strong>${{x.v}}</strong><span>${{x.l}}</span></div>`).join("");
 
-    const repos = Object.entries(s.by_repository || {{}});
-    const maxRepo = Math.max(1, ...repos.map(([,c]) => c));
-    document.getElementById("repos").innerHTML = repos.map(([name, count]) => `
+    const reposEntries = Object.entries(s.by_repository || {{}});
+    const maxRepo = Math.max(1, ...reposEntries.map(([,c]) => c));
+    document.getElementById("repos").innerHTML = reposEntries.map(([name, count]) => `
       <div class="bar-row">
         <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis" title="${{name.replace(/"/g,'&quot;')}}">${{name}}</span>
         <div class="bar-track"><div class="bar-fill" style="width:${{100*count/maxRepo}}%"></div></div>
         <span>${{count}}</span>
       </div>`).join("");
 
+    const repoFilters = ["all", ...Object.keys(s.by_repository || {{}})];
+    function paintFilters() {{
+      document.getElementById("filters").innerHTML = repoFilters.map(r => `
+        <button type="button" class="chip" data-v="${{esc(r)}}" aria-pressed="${{active===r}}">${{esc(r==="all"?"All repositories":r)}}</button>
+      `).join("");
+      document.querySelectorAll("#filters button").forEach(btn => btn.addEventListener("click", () => {{
+        active = btn.dataset.v; paintFilters(); render();
+      }}));
+    }}
+
+    function render() {{
+      const q = document.getElementById("q").value.trim().toLowerCase();
+      const rows = datasets.filter(d => {{
+        if (active !== "all" && d.repository !== active) return false;
+        if (!q) return true;
+        const blob = [d.dataset_doi, d.repository, d.landing_host, d.dataset_title,
+          ...(d.publications||[]).map(p => `${{p.halId_s}} ${{p.title_s}} ${{p.doiId_s}}`)].join(" ").toLowerCase();
+        return blob.includes(q);
+      }});
+      document.getElementById("count").textContent = `${{rows.length}} of ${{datasets.length}} datasets`;
+      document.getElementById("list").innerHTML = rows.map(d => {{
+        const href = d.landing_url || `https://doi.org/${{d.dataset_doi}}`;
+        const pubs = (d.publications || []).map(p => {{
+          const pubDoi = p.doiId_s
+            ? ` · <a href="https://doi.org/${{esc(p.doiId_s)}}" target="_blank" rel="noopener">DOI <code>${{esc(p.doiId_s)}}</code></a>`
+            : "";
+          return `<div class="ev"><dt>Publication</dt><dd>
+            <a href="${{esc(p.uri_s || "#")}}" target="_blank" rel="noopener">${{esc(p.title_s || "(untitled)")}}</a>
+            <div class="muted" style="margin-top:0.25rem">
+              <a href="${{esc(p.uri_s || "#")}}" target="_blank" rel="noopener"><code>${{esc(p.halId_s)}}</code></a>
+              ${{p.docType_s ? " · " + esc(p.docType_s) : ""}}${{pubDoi}}
+            </div>
+          </dd></div>`;
+        }}).join("");
+        return `<details class="result"><summary>
+          <div class="title-row">
+            <h2 class="title"><a href="${{esc(href)}}" target="_blank" rel="noopener" onclick="event.stopPropagation()"><code>${{esc(d.dataset_doi)}}</code></a></h2>
+            <div class="badges"><span class="badge">${{esc(d.repository || "Unknown")}}</span></div>
+          </div>
+          <div class="sub">
+            <span>${{esc(d.dataset_title || "")}}</span>
+            <span class="muted">${{esc(d.landing_host || "")}}</span>
+            <span>${{(d.publications||[]).length}} publication(s)</span>
+          </div>
+        </summary><div class="evidence">${{pubs || '<div class="empty">No linked publication in census.</div>'}}</div></details>`;
+      }}).join("") || `<div class="empty">No matches.</div>`;
+    }}
+    paintFilters();
+    document.getElementById("q").addEventListener("input", render);
+    render();
+  </script>
+</body>
+</html>
+"""
+
+
+def render_software(software_json: str) -> str:
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>hal-unica · Software</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>{SHARED_CSS}</style>
+</head>
+<body>
+  <main class="wrap">
+    {_nav("software")}
+    <div class="eyebrow">HAL SOFTWARE deposits</div>
+    <h1>Software &amp; source code</h1>
+    <p class="lede">
+      UniCA HAL notices with <code>docType_s=SOFTWARE</code>, including code repository
+      URLs, Software Heritage (SWHID) archives, HAL files, and related publications
+      when declared.
+    </p>
+    <div class="stats" id="stats"></div>
+    <section class="panel">
+      <input id="q" class="search" type="search" placeholder="Search software title, HAL id, language, Git URL…" autocomplete="off" />
+      <div class="meta-row"><div id="count"></div><div>Expand for code repos, SWH, related pubs</div></div>
+      <div class="list" id="list"></div>
+    </section>
+    <footer>
+      Downloads:
+      <a href="./data/census/software_deposits.csv"><code>software_deposits.csv</code></a> ·
+      <a href="./data/census/software_deposits.jsonl"><code>software_deposits.jsonl</code></a>
+    </footer>
+  </main>
+  <script id="data" type="application/json">{software_json}</script>
+  <script>
+    const data = JSON.parse(document.getElementById("data").textContent);
+    const rows = data.deposits || [];
+    const s = data.summary || {{}};
+
     function esc(s) {{
       return String(s ?? "").replace(/[&<>"']/g, c => ({{"&":"&amp;","<":"&lt;",">":"&gt;","\\"":"&quot;","'":"&#39;"}}[c]));
     }}
+    function pubLink(id) {{
+      if (!id) return "";
+      if (/^10\\./.test(id)) return `https://doi.org/${{id}}`;
+      if (/^https?:/.test(id)) return id;
+      return `https://hal.science/${{id}}`;
+    }}
+
+    document.getElementById("stats").innerHTML = [
+      {{ v: s.software_deposits || rows.length, l: "SOFTWARE deposits" }},
+      {{ v: s.with_swhid || 0, l: "With Software Heritage SWHID" }},
+      {{ v: s.with_code_repository || 0, l: "With code repository URL" }},
+      {{ v: s.with_related_publication || 0, l: "With related publication" }},
+    ].map(x => `<div class="stat"><strong>${{x.v}}</strong><span>${{x.l}}</span></div>`).join("");
+
     function render() {{
       const q = document.getElementById("q").value.trim().toLowerCase();
-      const rows = dois.filter(d => {{
+      const filtered = rows.filter(r => {{
         if (!q) return true;
-        return [d.doi, d.repository, d.landing_host, d.publisher, d.object_kind]
-          .join(" ").toLowerCase().includes(q);
+        const blob = [r.title_s, r.halId_s, r.doiId_s,
+          ...(r.softCodeRepository_s||[]), ...(r.swhidId_s||[]),
+          ...(r.softProgrammingLanguage_s||[]), ...(r.relatedPublication_s||[])].join(" ").toLowerCase();
+        return blob.includes(q);
       }});
-      document.getElementById("tbody").innerHTML = rows.map(d => {{
-        const href = d.landing_url || `https://doi.org/${{d.doi}}`;
-        return `<tr>
-          <td><a href="${{esc(href)}}" target="_blank" rel="noopener"><code>${{esc(d.doi)}}</code></a></td>
-          <td>${{esc(d.repository)}}</td>
-          <td><code>${{esc(d.landing_host || "")}}</code></td>
-          <td>${{esc(d.publisher || "")}}</td>
-          <td>${{esc(d.object_kind || "")}}</td>
-        </tr>`;
-      }}).join("");
+      document.getElementById("count").textContent = `${{filtered.length}} of ${{rows.length}}`;
+      document.getElementById("list").innerHTML = filtered.map(r => {{
+        const langs = (r.softProgrammingLanguage_s||[]).map(l => `<span class="badge">${{esc(l)}}</span>`).join("");
+        const repos = (r.softCodeRepository_s||[]).map(u =>
+          `<div class="ev"><dt>Code repo</dt><dd><a href="${{esc(u)}}" target="_blank" rel="noopener">${{esc(u)}}</a></dd></div>`
+        ).join("");
+        const swh = (r.swhidId_s||[]).map((id, i) => {{
+          const browse = (r.swh_browse_urls&&r.swh_browse_urls[i]) || ("https://archive.softwareheritage.org/browse/" + id.split(";")[0]);
+          return `<div class="ev"><dt>SWHID</dt><dd><a href="${{esc(browse)}}" target="_blank" rel="noopener"><code>${{esc(id.split(";")[0])}}</code></a></dd></div>`;
+        }}).join("");
+        const pubs = (r.relatedPublication_s||[]).map(id => {{
+          const href = pubLink(id);
+          return `<div class="ev"><dt>Related pub</dt><dd><a href="${{esc(href)}}" target="_blank" rel="noopener"><code>${{esc(id)}}</code></a></dd></div>`;
+        }}).join("");
+        const files = (r.files_s||[]).slice(0,3).map(u =>
+          `<div class="ev"><dt>HAL file</dt><dd><a href="${{esc(u)}}" target="_blank" rel="noopener">${{esc(u.split("/").pop())}}</a></dd></div>`
+        ).join("");
+        return `<details class="result"><summary>
+          <div class="title-row">
+            <h2 class="title">${{esc(r.title_s || "(untitled)")}}</h2>
+            <div class="badges">${{langs || '<span class="badge">SOFTWARE</span>'}}</div>
+          </div>
+          <div class="sub">
+            <a href="${{esc(r.uri_s || "#")}}" target="_blank" rel="noopener"><code>${{esc(r.halId_s)}}</code></a>
+            ${{r.doiId_s ? `<a href="https://doi.org/${{esc(r.doiId_s)}}" target="_blank" rel="noopener"><code>${{esc(r.doiId_s)}}</code></a>` : ""}}
+            <span>${{(r.softCodeRepository_s||[]).length}} repo(s)</span>
+            <span>${{(r.swhidId_s||[]).length}} SWHID(s)</span>
+          </div>
+        </summary><div class="evidence">${{repos}}${{swh}}${{pubs}}${{files || (r.fileMain_s ? `<div class="ev"><dt>HAL file</dt><dd><a href="${{esc(r.fileMain_s)}}" target="_blank" rel="noopener">document</a></dd></div>` : "")}}</div></details>`;
+      }}).join("") || `<div class="empty">No matches.</div>`;
     }}
     document.getElementById("q").addEventListener("input", render);
     render();
-    document.getElementById("footer").textContent =
-      `Census ${{s.started_at}} → ${{s.finished_at}} · see documentation for CSV/JSONL artifacts`;
   </script>
 </body>
 </html>
@@ -615,10 +738,15 @@ def render_documentation(manifest: dict[str, Any], summary: dict[str, Any]) -> s
         <tbody>{art_rows}</tbody>
       </table>
       <p class="muted" style="margin:0.85rem 0 0">
-        Start with <a href="./data/census/doi_to_repository.csv"><code>doi_to_repository.csv</code></a>
-        (DOI → repository) and
-        <a href="./data/census/doi_hal_repository_map.csv"><code>doi_hal_repository_map.csv</code></a>
-        (HAL notice ↔ dataset DOI ↔ repository). Methodology notes:
+        Start with
+        <a href="./data/census/dataset_to_publications.csv"><code>dataset_to_publications.csv</code></a>
+        (dataset → publications),
+        <a href="./data/census/doi_to_repository.csv"><code>doi_to_repository.csv</code></a>
+        (DOI → repository),
+        <a href="./data/census/software_deposits.csv"><code>software_deposits.csv</code></a>
+        (SOFTWARE + SWHID + code repos), and
+        <a href="./data/census/doi_hal_repository_map.csv"><code>doi_hal_repository_map.csv</code></a>.
+        Methodology:
         <a href="./data/census/METHODOLOGY.md"><code>METHODOLOGY.md</code></a>.
       </p>
     </section>
@@ -676,27 +804,65 @@ def write_site(
         if dest.exists():
             shutil.rmtree(dest)
         shutil.copytree(census_dir, dest)
-        # Prefer copied artifact names without nested paths in docs
+
         summary = json.loads((dest / "summary.json").read_text(encoding="utf-8"))
-        dois = []
-        doi_file = dest / "doi_resolutions.jsonl"
-        if doi_file.exists():
-            for line in doi_file.read_text(encoding="utf-8").splitlines():
+        datasets: list[dict[str, Any]] = []
+        ds_file = dest / "dataset_to_publications.jsonl"
+        if ds_file.exists():
+            for line in ds_file.read_text(encoding="utf-8").splitlines():
                 if line.strip():
-                    dois.append(json.loads(line))
-        census_payload = {"summary": summary, "dois": dois}
+                    datasets.append(json.loads(line))
+        ds_summary = {}
+        ds_sum_path = dest / "dataset_to_publications_summary.json"
+        if ds_sum_path.exists():
+            ds_summary = json.loads(ds_sum_path.read_text(encoding="utf-8"))
+        census_payload = {
+            "summary": summary,
+            "datasets": datasets,
+            "dataset_index": ds_summary,
+        }
         census_json = json.dumps(census_payload, ensure_ascii=False).replace("<", "\\u003c")
         (output_dir / "all-repositories.html").write_text(
             render_census(census_json), encoding="utf-8"
         )
+
+        soft_rows: list[dict[str, Any]] = []
+        soft_file = dest / "software_deposits.jsonl"
+        if soft_file.exists():
+            for line in soft_file.read_text(encoding="utf-8").splitlines():
+                if line.strip():
+                    soft_rows.append(json.loads(line))
+        soft_summary = {}
+        soft_sum = dest / "software_summary.json"
+        if soft_sum.exists():
+            soft_summary = json.loads(soft_sum.read_text(encoding="utf-8"))
+        if soft_rows or soft_summary:
+            soft_json = json.dumps(
+                {"deposits": soft_rows, "summary": soft_summary},
+                ensure_ascii=False,
+            ).replace("<", "\\u003c")
+            (output_dir / "software.html").write_text(
+                render_software(soft_json), encoding="utf-8"
+            )
+
         manifest = {}
         man_path = dest / "run_manifest.json"
         if man_path.exists():
             manifest = json.loads(man_path.read_text(encoding="utf-8"))
-            # Rewrite artifact links to docs-relative basenames
             manifest["artifacts"] = {
-                k: f"data/census/{Path(v).name}" for k, v in (manifest.get("artifacts") or {}).items()
+                k: f"data/census/{Path(v).name}"
+                for k, v in (manifest.get("artifacts") or {}).items()
             }
+        # Ensure new artifacts appear even if not in old manifest
+        for name in (
+            "dataset_to_publications.csv",
+            "dataset_to_publications.jsonl",
+            "software_deposits.csv",
+            "software_deposits.jsonl",
+            "software_summary.json",
+        ):
+            if (dest / name).exists():
+                manifest.setdefault("artifacts", {})[name] = f"data/census/{name}"
         (output_dir / "documentation.html").write_text(
             render_documentation(manifest, summary), encoding="utf-8"
         )

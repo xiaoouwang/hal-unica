@@ -139,6 +139,7 @@ footer { margin-top: 2rem; font-size: 0.82rem; color: var(--ink-soft); line-heig
       <a class="navlink" href="./index.html">Statistics</a>
       <a class="navlink" href="./related-datasets.html">Nakala / RDG</a>
       <a class="navlink" href="./all-repositories.html">All repositories</a>
+      <a class="navlink" href="./software.html">Software</a>
       <a class="navlink" href="./documentation.html" aria-current="page">Documentation</a>
     </nav>
     
@@ -164,13 +165,18 @@ footer { margin-top: 2rem; font-size: 0.82rem; color: var(--ink-soft); line-heig
       <h2>Artifacts (download)</h2>
       <table class="doc">
         <thead><tr><th>Role</th><th>File</th></tr></thead>
-        <tbody><tr><td><code>publications_jsonl</code></td><td><a href="./data/census/publications_related_data.jsonl"><code>publications_related_data.jsonl</code></a></td></tr><tr><td><code>doi_resolutions_jsonl</code></td><td><a href="./data/census/doi_resolutions.jsonl"><code>doi_resolutions.jsonl</code></a></td></tr><tr><td><code>doi_hal_map_csv</code></td><td><a href="./data/census/doi_hal_repository_map.csv"><code>doi_hal_repository_map.csv</code></a></td></tr><tr><td><code>doi_to_repository_csv</code></td><td><a href="./data/census/doi_to_repository.csv"><code>doi_to_repository.csv</code></a></td></tr><tr><td><code>summary_json</code></td><td><a href="./data/census/summary.json"><code>summary.json</code></a></td></tr></tbody>
+        <tbody><tr><td><code>publications_jsonl</code></td><td><a href="./data/census/publications_related_data.jsonl"><code>publications_related_data.jsonl</code></a></td></tr><tr><td><code>doi_resolutions_jsonl</code></td><td><a href="./data/census/doi_resolutions.jsonl"><code>doi_resolutions.jsonl</code></a></td></tr><tr><td><code>doi_hal_map_csv</code></td><td><a href="./data/census/doi_hal_repository_map.csv"><code>doi_hal_repository_map.csv</code></a></td></tr><tr><td><code>doi_to_repository_csv</code></td><td><a href="./data/census/doi_to_repository.csv"><code>doi_to_repository.csv</code></a></td></tr><tr><td><code>summary_json</code></td><td><a href="./data/census/summary.json"><code>summary.json</code></a></td></tr><tr><td><code>dataset_to_publications.csv</code></td><td><a href="./data/census/dataset_to_publications.csv"><code>dataset_to_publications.csv</code></a></td></tr><tr><td><code>dataset_to_publications.jsonl</code></td><td><a href="./data/census/dataset_to_publications.jsonl"><code>dataset_to_publications.jsonl</code></a></td></tr><tr><td><code>software_deposits.csv</code></td><td><a href="./data/census/software_deposits.csv"><code>software_deposits.csv</code></a></td></tr><tr><td><code>software_deposits.jsonl</code></td><td><a href="./data/census/software_deposits.jsonl"><code>software_deposits.jsonl</code></a></td></tr><tr><td><code>software_summary.json</code></td><td><a href="./data/census/software_summary.json"><code>software_summary.json</code></a></td></tr></tbody>
       </table>
       <p class="muted" style="margin:0.85rem 0 0">
-        Start with <a href="./data/census/doi_to_repository.csv"><code>doi_to_repository.csv</code></a>
-        (DOI → repository) and
-        <a href="./data/census/doi_hal_repository_map.csv"><code>doi_hal_repository_map.csv</code></a>
-        (HAL notice ↔ dataset DOI ↔ repository). Methodology notes:
+        Start with
+        <a href="./data/census/dataset_to_publications.csv"><code>dataset_to_publications.csv</code></a>
+        (dataset → publications),
+        <a href="./data/census/doi_to_repository.csv"><code>doi_to_repository.csv</code></a>
+        (DOI → repository),
+        <a href="./data/census/software_deposits.csv"><code>software_deposits.csv</code></a>
+        (SOFTWARE + SWHID + code repos), and
+        <a href="./data/census/doi_hal_repository_map.csv"><code>doi_hal_repository_map.csv</code></a>.
+        Methodology:
         <a href="./data/census/METHODOLOGY.md"><code>METHODOLOGY.md</code></a>.
       </p>
     </section>

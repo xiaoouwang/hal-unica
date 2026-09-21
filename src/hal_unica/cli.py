@@ -21,6 +21,11 @@ from .data_repos import (
 )
 from .harvest import harvest_metadata
 from .report import write_report
+from .software import (
+    build_dataset_to_publications,
+    harvest_software,
+    write_software_artifacts,
+)
 from .site import write_site
 
 app = typer.Typer(
@@ -297,6 +302,29 @@ def census_cmd(
         typer.echo(f"  {repo}: {count}")
 
 
+@app.command("software")
+def software_cmd(
+    out_dir: Path = typer.Option(
+        Path("data/census"),
+        "--out-dir",
+        "-o",
+        help="Directory for software artifacts (default: data/census)",
+    ),
+    collection: str = typer.Option(DEFAULT_COLLECTION, help="HAL collection code"),
+    rate: float = typer.Option(0.2, help="Min seconds between HAL requests"),
+) -> None:
+    """Harvest HAL SOFTWARE deposits (code repos, SWHIDs, related publications)."""
+    with HalClient(collection=collection, min_interval=rate) as client:
+        rows = harvest_software(client)
+    paths = write_software_artifacts(rows, out_dir)
+    summary = json.loads(paths["software_summary"].read_text(encoding="utf-8"))
+    typer.echo(f"SOFTWARE deposits: {summary['software_deposits']}")
+    typer.echo(f"  with SWHID: {summary['with_swhid']}")
+    typer.echo(f"  with code repository URL: {summary['with_code_repository']}")
+    typer.echo(f"  with related publication: {summary['with_related_publication']}")
+    typer.echo(f"Wrote → {out_dir}/")
+
+
 @app.command("build-site")
 def build_site_cmd(
     harvest: Path = typer.Option(
@@ -327,6 +355,13 @@ def build_site_cmd(
         raise typer.BadParameter(f"Harvest not found: {harvest}")
     if not links.exists():
         raise typer.BadParameter(f"Links file not found: {links}")
+
+    if census_dir.exists():
+        pubs = census_dir / "publications_related_data.jsonl"
+        if pubs.exists():
+            build_dataset_to_publications(pubs, census_dir)
+            typer.echo("Updated dataset→publications index")
+
     path = write_site(
         harvest_path=harvest,
         links_path=links,
@@ -335,11 +370,15 @@ def build_site_cmd(
         census_dir=census_dir if census_dir.exists() else None,
     )
     typer.echo(f"Wrote site → {path}/")
-    typer.echo(f"  {path}/index.html")
-    typer.echo(f"  {path}/related-datasets.html")
-    if (path / "all-repositories.html").exists():
-        typer.echo(f"  {path}/all-repositories.html")
-        typer.echo(f"  {path}/documentation.html")
+    for name in (
+        "index.html",
+        "related-datasets.html",
+        "all-repositories.html",
+        "software.html",
+        "documentation.html",
+    ):
+        if (path / name).exists():
+            typer.echo(f"  {path / name}")
 
 
 @app.callback()

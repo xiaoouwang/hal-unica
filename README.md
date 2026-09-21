@@ -6,7 +6,8 @@ Open-science snapshot for **[Université Côte d’Azur](https://univ-cotedazur.
 
 - Statistics: https://xiaoouwang.github.io/hal-unica/
 - Nakala / Recherche Data Gouv focus: https://xiaoouwang.github.io/hal-unica/related-datasets.html
-- **All repositories census**: https://xiaoouwang.github.io/hal-unica/all-repositories.html
+- **All repositories** (dataset → publications): https://xiaoouwang.github.io/hal-unica/all-repositories.html
+- **Software & source code**: https://xiaoouwang.github.io/hal-unica/software.html
 - **Documentation + downloads**: https://xiaoouwang.github.io/hal-unica/documentation.html
 
 ## What is documented
@@ -15,8 +16,10 @@ Beyond the charts, the repo stores the full correspondence tables:
 
 | Artifact | Meaning |
 |---|---|
+| [`data/census/dataset_to_publications.csv`](data/census/dataset_to_publications.csv) | **Dataset DOI → related HAL publication(s)** |
 | [`data/census/doi_to_repository.csv`](data/census/doi_to_repository.csv) | Each related **DOI → repository** |
 | [`data/census/doi_hal_repository_map.csv`](data/census/doi_hal_repository_map.csv) | **HAL notice ↔ dataset DOI ↔ repository** |
+| [`data/census/software_deposits.csv`](data/census/software_deposits.csv) | SOFTWARE deposits + code repos + SWHIDs |
 | [`data/census/doi_resolutions.jsonl`](data/census/doi_resolutions.jsonl) | Full DataCite resolution per DOI |
 | [`data/census/publications_related_data.jsonl`](data/census/publications_related_data.jsonl) | Per-publication relatedData + resolutions |
 | [`data/census/summary.json`](data/census/summary.json) | Aggregates |
@@ -44,6 +47,15 @@ Same files are published under [`docs/data/census/`](docs/data/census/) for GitH
 | Unique DOIs resolved | **181** |
 
 Top repositories (by related DOI): **Recherche Data Gouv** 75 · **Zenodo** 52 · **SEANOE** 15 · **Theia** 8 · **NAKALA** 7 · …
+
+### Software
+
+| Metric | Value |
+|---:|---:|
+| HAL `SOFTWARE` deposits | **78** |
+| With Software Heritage SWHID | **63** |
+| With code repository URL | **57** |
+| With related publication | **31** |
 
 ### Nakala / RDG focus page
 
