@@ -5,7 +5,10 @@ __pycache__/
 dist/
 build/
 .DS_Store
-logs/
+
+# Keep census logs in repo for documentation; ignore noisy temp logs
+logs/*
+!logs/census.log
 
 # Bulk harvest stays local (too large for git)
 data/unica_hal_metadata.jsonl
@@ -14,6 +17,8 @@ data/unica_hal_delta.jsonl
 data/sample.jsonl
 data/sample.jsonl.meta.json
 
-# Keep resolved link exports + docs site data
+# Keep resolved link exports + census artifacts
 !data/unica_data_repo_links.jsonl
 !data/unica_data_repo_links.jsonl.summary.json
+!data/census/
+!data/census/**

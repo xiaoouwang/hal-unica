@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-09-21T15:47:09Z",
+  "collection": "UNIV-COTEDAZUR",
+  "hal_api": "https://api.archives-ouvertes.fr/search/UNIV-COTEDAZUR/",
+  "hal_query": "relatedData_s:*",
+  "datacite_api": "https://api.datacite.org/dois/{doi}",
+  "started_at": "2026-09-21T15:46:39Z",
+  "finished_at": "2026-09-21T15:47:09Z",
+  "artifacts": {
+    "publications_jsonl": "data/census/publications_related_data.jsonl",
+    "doi_resolutions_jsonl": "data/census/doi_resolutions.jsonl",
+    "doi_hal_map_csv": "data/census/doi_hal_repository_map.csv",
+    "doi_to_repository_csv": "data/census/doi_to_repository.csv",
+    "summary_json": "data/census/summary.json"
+  },
+  "log_path": "logs/census.log",
+  "counts": {
+    "hal_publications_with_relatedData": 129,
+    "related_tokens": 202,
+    "unique_dois": 181
+  },
+  "method": [
+    "List UniCA HAL notices with relatedData_s via Search API cursor pagination.",
+    "Parse each relatedData token as DOI, URL, HAL id, or other.",
+    "Resolve every unique DOI with DataCite REST API.",
+    "Label repository from landing host / publisher / known DOI prefix.",
+    "Write publication-level JSONL, DOI resolution JSONL, and CSV correspondence tables."
+  ]
+}

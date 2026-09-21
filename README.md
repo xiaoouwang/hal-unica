@@ -1,76 +1,68 @@
 # hal-unica
 
-Open-science snapshot for **[Université Côte d’Azur](https://univ-cotedazur.fr/)** on [HAL](https://hal.science/UNIV-COTEDAZUR): harvest statistics and publications that point to datasets in **NAKALA** or **Recherche Data Gouv** (including federated nodes such as Data INRAE).
+Open-science snapshot for **[Université Côte d’Azur](https://univ-cotedazur.fr/)** on [HAL](https://hal.science/UNIV-COTEDAZUR).
 
-## Live pages (GitHub Pages)
+## Live site
 
 - Statistics: https://xiaoouwang.github.io/hal-unica/
-- Related datasets: https://xiaoouwang.github.io/hal-unica/related-datasets.html
+- Nakala / Recherche Data Gouv focus: https://xiaoouwang.github.io/hal-unica/related-datasets.html
+- **All repositories census**: https://xiaoouwang.github.io/hal-unica/all-repositories.html
+- **Documentation + downloads**: https://xiaoouwang.github.io/hal-unica/documentation.html
 
-| Page | Contents |
+## What is documented
+
+Beyond the charts, the repo stores the full correspondence tables:
+
+| Artifact | Meaning |
 |---|---|
-| [`docs/index.html`](docs/index.html) | General statistics |
-| [`docs/related-datasets.html`](docs/related-datasets.html) | Publications with a related dataset |
+| [`data/census/doi_to_repository.csv`](data/census/doi_to_repository.csv) | Each related **DOI → repository** |
+| [`data/census/doi_hal_repository_map.csv`](data/census/doi_hal_repository_map.csv) | **HAL notice ↔ dataset DOI ↔ repository** |
+| [`data/census/doi_resolutions.jsonl`](data/census/doi_resolutions.jsonl) | Full DataCite resolution per DOI |
+| [`data/census/publications_related_data.jsonl`](data/census/publications_related_data.jsonl) | Per-publication relatedData + resolutions |
+| [`data/census/summary.json`](data/census/summary.json) | Aggregates |
+| [`data/census/run_manifest.json`](data/census/run_manifest.json) | Run metadata |
+| [`data/census/METHODOLOGY.md`](data/census/METHODOLOGY.md) | Method write-up |
+| [`logs/census.log`](logs/census.log) / [`data/census/run.log`](data/census/run.log) | Chronological run log |
 
-```bash
-hal-unica build-site
-open docs/index.html
-```
+Same files are published under [`docs/data/census/`](docs/data/census/) for GitHub Pages downloads.
 
 ## Snapshot (2026-09-21)
 
-### HAL collection `UNIV-COTEDAZUR`
+### HAL collection
 
 | Metric | Value |
 |---:|---:|
-| Documents (latest version only) | **99 136** |
-| With a DOI | **41 374** (~42%) |
-| Top types | ART 44 342 · COMM 25 165 · COUV 7 723 · REPORT 4 557 · THESE 3 765 |
+| Documents (latest version) | **99 136** |
+| With DOI | **41 374** (~42%) |
 
-### Data-repository links
+### Full relatedData census (all repositories)
 
-Notices that reference Nakala / Recherche Data Gouv (DOI, URL, or HAL `relatedData`), refined with DataCite. **Data INRAE is counted as Recherche Data Gouv** (federated node).
+| Metric | Value |
+|---:|---:|
+| HAL notices with `relatedData` | **129** |
+| Related tokens | **202** |
+| Unique DOIs resolved | **181** |
 
-| Repository | Notices |
-|---|---:|
-| Recherche Data Gouv | 51 |
-| NAKALA | 11 |
-| INRA/INRAE DOI → HAL notice (not a data vault) | ~21 |
+Top repositories (by related DOI): **Recherche Data Gouv** 75 · **Zenodo** 52 · **SEANOE** 15 · **Theia** 8 · **NAKALA** 7 · …
 
-### Publications with a related dataset
+### Nakala / RDG focus page
 
-**51** publications declare HAL `relatedData` landing on a real data repository:
-
-| Repository | Publications |
-|---|---:|
-| Recherche Data Gouv | 44 |
-| NAKALA | 7 |
-
-JSON: [`docs/data/related-publications.json`](docs/data/related-publications.json)
+Publications with `relatedData` landing on Recherche Data Gouv (incl. Data INRAE) or NAKALA: see the dedicated page (44 + 7).
 
 ## Method (short)
 
-1. Harvest metadata from `https://api.archives-ouvertes.fr/search/UNIV-COTEDAZUR/` (cursor pagination, latest version per `halId`).
-2. Detect links via DOI prefixes (`10.34847` Nakala, `10.57745` / `10.15454` Recherche Data Gouv ecosystem), URLs, and HAL `relatedData_s`.
-3. Resolve DOIs with DataCite → publisher, landing host, repository label.
-4. **Related datasets page** keeps only `related_data` evidence with `object_kind = dataset_repo`.
-
-## CLI
+1. Harvest UniCA HAL metadata (`UNIV-COTEDAZUR`).
+2. **Census**: list all `relatedData_s:*`, parse tokens, resolve every DOI with DataCite, label repository from landing host / publisher / prefix.
+3. Optional focus filter for Nakala / RDG only (`find-data-repos`).
 
 ```bash
-python3 -m venv .venv && source .venv/bin/activate
 pip install -e .
-
-hal-unica count
 hal-unica harvest -o data/unica_hal_metadata.jsonl
-hal-unica find-data-repos
-hal-unica build-site
+hal-unica census                 # all repositories + CSV/JSONL/logs
+hal-unica find-data-repos        # Nakala/RDG focus
+hal-unica build-site             # writes docs/ including census pages
 ```
 
-## Enable GitHub Pages
+## GitHub Pages
 
-Settings → Pages → Source: **Deploy from a branch** → Branch `main` → Folder **`/docs`**.
-
-## Licence / data
-
-HAL metadata is open; dataset landings follow each repository’s terms. This project stores derived link metadata only (no PDF harvest).
+Deployed from `docs/` via GitHub Actions (`.github/workflows/pages.yml`).

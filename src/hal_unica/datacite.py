@@ -73,6 +73,28 @@ def classify_repository(
     # Data INRAE is a federated node of Recherche Data Gouv
     if host in {"data.inrae.fr", "entrepot.inrae.fr"} or host.endswith("data.inrae.fr"):
         return "Recherche Data Gouv", "dataset_repo"
+
+    known_hosts: list[tuple[tuple[str, ...], str]] = [
+        (("zenodo.org",), "Zenodo"),
+        (("figshare.com",), "Figshare"),
+        (("datadryad.org", "dryad"), "Dryad"),
+        (("osf.io",), "OSF"),
+        (("pangaea.de",), "PANGAEA"),
+        (("seanoe.org",), "SEANOE"),
+        (("data.mendeley.com",), "Mendeley Data"),
+        (("harvard.dataverse.org", "dataverse.harvard.edu"), "Harvard Dataverse"),
+        (("iedadata.org", "www.iedadata.org"), "IEDA"),
+        (("doi.pangaea.de",), "PANGAEA"),
+        (("softwareheritage.org", "archive.softwareheritage.org"), "Software Heritage"),
+        (("github.com",), "GitHub"),
+        (("gitlab.com",), "GitLab"),
+        (("huggingface.co",), "Hugging Face"),
+        (("openalex.org",), "OpenAlex"),
+    ]
+    for suffixes, label in known_hosts:
+        if any(host == s or host.endswith("." + s) or s in host for s in suffixes):
+            return label, "dataset_repo"
+
     if "hal." in host or host.endswith("archives-ouvertes.fr"):
         label = pub or "INRAE/INRA DOI"
         return f"{label} → HAL notice", "publication_landing"
@@ -88,9 +110,20 @@ def classify_repository(
         if pub:
             return f"{pub} (prefix 10.15454)", "other"
         return "Recherche Data Gouv", "other"
+    if pref == "10.5281":
+        return "Zenodo", "dataset_repo"
+    if pref == "10.17882":
+        return "SEANOE", "dataset_repo"
 
+    # Prefer publisher name when we have a non-HAL landing host
+    if host and pub:
+        return pub, "dataset_repo" if not any(
+            x in host for x in ("doi.org", "dx.doi.org", "crossref.org")
+        ) else "other"
     if pub:
         return pub, "other"
+    if host:
+        return host, "other"
     if pref:
         return f"DOI prefix {pref}", "unresolved"
     return "Unknown", "unresolved"

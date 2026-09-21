@@ -254,7 +254,9 @@ def _nav(active: str) -> str:
     <nav>
       <a class="brand" href="./index.html">hal-unica</a>
       {link("./index.html", "Statistics", "stats")}
-      {link("./related-datasets.html", "Related datasets", "related")}
+      {link("./related-datasets.html", "Nakala / RDG", "related")}
+      {link("./all-repositories.html", "All repositories", "census")}
+      {link("./documentation.html", "Documentation", "docs")}
     </nav>
     """
 
@@ -297,7 +299,13 @@ def render_index(payload_json: str) -> str:
     <section class="panel">
       <h2>Publications with a related dataset</h2>
       <p class="muted" id="relatedBlurb" style="margin:0"></p>
-      <p style="margin:0.85rem 0 0"><a href="./related-datasets.html">Browse related-dataset publications →</a></p>
+      <p style="margin:0.85rem 0 0">
+        <a href="./related-datasets.html">Nakala / Recherche Data Gouv →</a>
+        &nbsp;·&nbsp;
+        <a href="./all-repositories.html">All repositories census →</a>
+        &nbsp;·&nbsp;
+        <a href="./documentation.html">DOI maps &amp; logs →</a>
+      </p>
     </section>
 
     <footer id="footer"></footer>
@@ -445,12 +453,200 @@ def render_related(payload_json: str) -> str:
 """
 
 
+def render_census(census_json: str) -> str:
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>hal-unica · All repositories</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>{SHARED_CSS}
+  .table-wrap {{ overflow-x: auto; }}
+  table.doi-map {{
+    width: 100%; border-collapse: collapse; font-size: 0.86rem;
+  }}
+  table.doi-map th, table.doi-map td {{
+    text-align: left; padding: 0.45rem 0.5rem; border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }}
+  table.doi-map th {{ color: var(--ink-soft); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; }}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    {_nav("census")}
+    <div class="eyebrow">Full relatedData census</div>
+    <h1>All linked repositories</h1>
+    <p class="lede">
+      Every HAL <code>relatedData</code> identifier for UniCA, resolved with DataCite —
+      not limited to NAKALA / Recherche Data Gouv. Supporting CSV/JSONL files are in
+      <a href="./documentation.html">Documentation</a>.
+    </p>
+    <div class="stats" id="stats"></div>
+    <section class="panel">
+      <h2>Repositories (by related DOI)</h2>
+      <div class="bars" id="repos"></div>
+    </section>
+    <section class="panel">
+      <h2>DOI → repository map</h2>
+      <p class="muted" style="margin-top:0">Unique related DOIs. Full HAL↔DOI table:
+        <a href="./data/census/doi_hal_repository_map.csv"><code>doi_hal_repository_map.csv</code></a>
+      </p>
+      <input id="q" class="search" type="search" placeholder="Filter DOI, repository, host…" autocomplete="off" />
+      <div class="table-wrap">
+        <table class="doi-map">
+          <thead>
+            <tr><th>DOI</th><th>Repository</th><th>Landing host</th><th>Publisher</th><th>Kind</th></tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </section>
+    <footer id="footer"></footer>
+  </main>
+  <script id="data" type="application/json">{census_json}</script>
+  <script>
+    const data = JSON.parse(document.getElementById("data").textContent);
+    const s = data.summary;
+    const dois = data.dois || [];
+    document.getElementById("stats").innerHTML = [
+      {{ v: s.hal_publications_with_relatedData, l: "HAL notices with relatedData" }},
+      {{ v: s.unique_dois_resolved, l: "Unique related DOIs" }},
+      {{ v: Object.keys(s.by_repository || {{}}).length, l: "Distinct repositories" }},
+      {{ v: s.publications_with_dataset_repo_landing, l: "Pubs with dataset landing" }},
+    ].map(x => `<div class="stat"><strong>${{x.v}}</strong><span>${{x.l}}</span></div>`).join("");
+
+    const repos = Object.entries(s.by_repository || {{}});
+    const maxRepo = Math.max(1, ...repos.map(([,c]) => c));
+    document.getElementById("repos").innerHTML = repos.map(([name, count]) => `
+      <div class="bar-row">
+        <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis" title="${{name.replace(/"/g,'&quot;')}}">${{name}}</span>
+        <div class="bar-track"><div class="bar-fill" style="width:${{100*count/maxRepo}}%"></div></div>
+        <span>${{count}}</span>
+      </div>`).join("");
+
+    function esc(s) {{
+      return String(s ?? "").replace(/[&<>"']/g, c => ({{"&":"&amp;","<":"&lt;",">":"&gt;","\\"":"&quot;","'":"&#39;"}}[c]));
+    }}
+    function render() {{
+      const q = document.getElementById("q").value.trim().toLowerCase();
+      const rows = dois.filter(d => {{
+        if (!q) return true;
+        return [d.doi, d.repository, d.landing_host, d.publisher, d.object_kind]
+          .join(" ").toLowerCase().includes(q);
+      }});
+      document.getElementById("tbody").innerHTML = rows.map(d => {{
+        const href = d.landing_url || `https://doi.org/${{d.doi}}`;
+        return `<tr>
+          <td><a href="${{esc(href)}}" target="_blank" rel="noopener"><code>${{esc(d.doi)}}</code></a></td>
+          <td>${{esc(d.repository)}}</td>
+          <td><code>${{esc(d.landing_host || "")}}</code></td>
+          <td>${{esc(d.publisher || "")}}</td>
+          <td>${{esc(d.object_kind || "")}}</td>
+        </tr>`;
+      }}).join("");
+    }}
+    document.getElementById("q").addEventListener("input", render);
+    render();
+    document.getElementById("footer").textContent =
+      `Census ${{s.started_at}} → ${{s.finished_at}} · see documentation for CSV/JSONL artifacts`;
+  </script>
+</body>
+</html>
+"""
+
+
+def render_documentation(manifest: dict[str, Any], summary: dict[str, Any]) -> str:
+    artifacts = manifest.get("artifacts") or {}
+    method = manifest.get("method") or []
+    method_li = "".join(f"<li>{m}</li>" for m in method)
+    art_rows = "".join(
+        f"<tr><td><code>{k}</code></td><td><a href=\"./data/census/{Path(v).name}\"><code>{Path(v).name}</code></a></td></tr>"
+        for k, v in artifacts.items()
+        if Path(v).name
+    )
+    repo_rows = "".join(
+        f"<tr><td>{repo}</td><td style=\"text-align:right\">{count}</td></tr>"
+        for repo, count in (summary.get("by_repository") or {}).items()
+    )
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>hal-unica · Documentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>{SHARED_CSS}
+  table.doc {{ width: 100%; border-collapse: collapse; font-size: 0.92rem; }}
+  table.doc th, table.doc td {{ padding: 0.5rem 0.4rem; border-bottom: 1px solid var(--line); text-align: left; }}
+  ol.method {{ margin: 0; padding-left: 1.2rem; color: var(--ink-soft); line-height: 1.55; }}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    {_nav("docs")}
+    <div class="eyebrow">Supporting files</div>
+    <h1>Documentation</h1>
+    <p class="lede">
+      How the census is built, and downloadable files that map each related DOI
+      to its repository (not only the summary charts).
+    </p>
+
+    <section class="panel">
+      <h2>Method</h2>
+      <ol class="method">{method_li}</ol>
+      <p class="muted" style="margin:0.85rem 0 0">
+        HAL query: <code>{manifest.get("hal_query")}</code> on
+        <code>{manifest.get("hal_api")}</code>.
+        DOI API: <code>{manifest.get("datacite_api")}</code>.
+        Run: <code>{manifest.get("started_at")}</code> → <code>{manifest.get("finished_at")}</code>.
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>Artifacts (download)</h2>
+      <table class="doc">
+        <thead><tr><th>Role</th><th>File</th></tr></thead>
+        <tbody>{art_rows}</tbody>
+      </table>
+      <p class="muted" style="margin:0.85rem 0 0">
+        Start with <a href="./data/census/doi_to_repository.csv"><code>doi_to_repository.csv</code></a>
+        (DOI → repository) and
+        <a href="./data/census/doi_hal_repository_map.csv"><code>doi_hal_repository_map.csv</code></a>
+        (HAL notice ↔ dataset DOI ↔ repository). Methodology notes:
+        <a href="./data/census/METHODOLOGY.md"><code>METHODOLOGY.md</code></a>.
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>Repository totals (this census)</h2>
+      <table class="doc">
+        <thead><tr><th>Repository</th><th>Related DOI count</th></tr></thead>
+        <tbody>{repo_rows}</tbody>
+      </table>
+    </section>
+
+    <footer>
+      Source repository: <a href="https://github.com/xiaoouwang/hal-unica">github.com/xiaoouwang/hal-unica</a>
+    </footer>
+  </main>
+</body>
+</html>
+"""
+
+
 def write_site(
     *,
     harvest_path: Path,
     links_path: Path,
     output_dir: Path,
     collection: str = "UNIV-COTEDAZUR",
+    census_dir: Path | None = None,
 ) -> Path:
     payload = build_site_payload(
         harvest_path=harvest_path,
@@ -472,4 +668,37 @@ def write_site(
     (output_dir / "related-datasets.html").write_text(
         render_related(payload_json), encoding="utf-8"
     )
+
+    if census_dir and census_dir.exists():
+        import shutil
+
+        dest = data_dir / "census"
+        if dest.exists():
+            shutil.rmtree(dest)
+        shutil.copytree(census_dir, dest)
+        # Prefer copied artifact names without nested paths in docs
+        summary = json.loads((dest / "summary.json").read_text(encoding="utf-8"))
+        dois = []
+        doi_file = dest / "doi_resolutions.jsonl"
+        if doi_file.exists():
+            for line in doi_file.read_text(encoding="utf-8").splitlines():
+                if line.strip():
+                    dois.append(json.loads(line))
+        census_payload = {"summary": summary, "dois": dois}
+        census_json = json.dumps(census_payload, ensure_ascii=False).replace("<", "\\u003c")
+        (output_dir / "all-repositories.html").write_text(
+            render_census(census_json), encoding="utf-8"
+        )
+        manifest = {}
+        man_path = dest / "run_manifest.json"
+        if man_path.exists():
+            manifest = json.loads(man_path.read_text(encoding="utf-8"))
+            # Rewrite artifact links to docs-relative basenames
+            manifest["artifacts"] = {
+                k: f"data/census/{Path(v).name}" for k, v in (manifest.get("artifacts") or {}).items()
+            }
+        (output_dir / "documentation.html").write_text(
+            render_documentation(manifest, summary), encoding="utf-8"
+        )
+
     return output_dir

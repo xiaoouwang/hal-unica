@@ -7,7 +7,9 @@ from typing import Optional
 import typer
 
 from . import __version__
+from .census import run_census, write_census_artifacts
 from .client import DEFAULT_COLLECTION, HalClient
+from .datacite import DataCiteClient
 from .data_repos import (
     enrich_from_hal,
     hit_to_dict,
@@ -253,6 +255,48 @@ def report_cmd(
     typer.echo(f"Wrote {path}")
 
 
+@app.command("census")
+def census_cmd(
+    out_dir: Path = typer.Option(
+        Path("data/census"),
+        "--out-dir",
+        "-o",
+        help="Directory for census JSONL/CSV/JSON/MD artifacts",
+    ),
+    collection: str = typer.Option(DEFAULT_COLLECTION, help="HAL collection code"),
+    rate: float = typer.Option(0.15, help="Min seconds between HAL/DataCite requests"),
+    log_file: Path = typer.Option(
+        Path("logs/census.log"),
+        "--log",
+        help="Run log path",
+    ),
+) -> None:
+    """
+    Census ALL relatedData repositories (not only Nakala/RDG).
+
+    Writes DOI↔repository maps, publication JSONL, summary, methodology, and a log.
+    """
+    log_file.parent.mkdir(parents=True, exist_ok=True)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    with log_file.open("w", encoding="utf-8") as log, HalClient(
+        collection=collection, min_interval=rate
+    ) as client, DataCiteClient(min_interval=rate) as datacite:
+        census = run_census(client=client, datacite=datacite, log=log)
+        paths = write_census_artifacts(census, out_dir, log_file)
+    # append artifact list to log
+    with log_file.open("a", encoding="utf-8") as log:
+        log.write("artifacts:\n")
+        for key, path in paths.items():
+            log.write(f"  {key}: {path}\n")
+    summary = json.loads(paths["summary_json"].read_text(encoding="utf-8"))
+    typer.echo(f"Census complete → {out_dir}/")
+    typer.echo(f"  publications: {summary['hal_publications_with_relatedData']}")
+    typer.echo(f"  unique DOIs: {summary['unique_dois_resolved']}")
+    typer.echo(f"  log: {log_file}")
+    for repo, count in list(summary.get("by_repository", {}).items())[:15]:
+        typer.echo(f"  {repo}: {count}")
+
+
 @app.command("build-site")
 def build_site_cmd(
     harvest: Path = typer.Option(
@@ -263,7 +307,12 @@ def build_site_cmd(
     links: Path = typer.Option(
         Path("data/unica_data_repo_links.jsonl"),
         "--links",
-        help="Resolved data-repo links JSONL",
+        help="Resolved Nakala/RDG links JSONL",
+    ),
+    census_dir: Path = typer.Option(
+        Path("data/census"),
+        "--census-dir",
+        help="Full relatedData census directory (optional if missing)",
     ),
     output: Path = typer.Option(
         Path("docs"),
@@ -273,7 +322,7 @@ def build_site_cmd(
     ),
     collection: str = typer.Option(DEFAULT_COLLECTION, help="HAL collection code"),
 ) -> None:
-    """Build the public stats + related-datasets site into docs/ (GitHub Pages)."""
+    """Build the public stats + related-datasets + census site into docs/."""
     if not harvest.exists():
         raise typer.BadParameter(f"Harvest not found: {harvest}")
     if not links.exists():
@@ -283,10 +332,14 @@ def build_site_cmd(
         links_path=links,
         output_dir=output,
         collection=collection,
+        census_dir=census_dir if census_dir.exists() else None,
     )
     typer.echo(f"Wrote site → {path}/")
     typer.echo(f"  {path}/index.html")
     typer.echo(f"  {path}/related-datasets.html")
+    if (path / "all-repositories.html").exists():
+        typer.echo(f"  {path}/all-repositories.html")
+        typer.echo(f"  {path}/documentation.html")
 
 
 @app.callback()
