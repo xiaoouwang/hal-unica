@@ -22,3 +22,4 @@ data/sample.jsonl.meta.json
 !data/unica_data_repo_links.jsonl.summary.json
 !data/census/
 !data/census/**
+.vscode/
