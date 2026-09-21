@@ -130,99 +130,112 @@ def build_site_payload(
 
 SHARED_CSS = """
 :root {
-  --ink: #0c2438;
-  --ink-soft: #3d5568;
-  --paper: #f3f7f4;
-  --sea: #0a6e7a;
-  --sea-deep: #084b54;
-  --foam: #d8efe8;
-  --coral: #c45c3e;
-  --line: rgba(12, 36, 56, 0.12);
-  --shadow: rgba(8, 75, 84, 0.08);
-  --radius: 14px;
-  --font-display: "Fraunces", Georgia, serif;
-  --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
+  --ink: #161513;
+  --ink-soft: #6a6560;
+  --paper: #f1f0ed;
+  --surface: #fbfaf8;
+  --accent: #2a2622;
+  --accent-hover: #8a6a45;
+  --wash: #e8e4dc;
+  --line: rgba(22, 21, 19, 0.1);
+  --radius: 12px;
+  --font-display: "Syne", "Avenir Next", sans-serif;
+  --font-body: "Figtree", "Segoe UI", sans-serif;
 }
 * { box-sizing: border-box; }
 body {
   margin: 0; color: var(--ink); font-family: var(--font-body);
   background:
-    radial-gradient(1200px 600px at 10% -10%, #b8e0d8 0%, transparent 55%),
-    radial-gradient(900px 500px at 100% 0%, #cfe3f0 0%, transparent 50%),
-    linear-gradient(180deg, #eef5f2 0%, var(--paper) 32%, #e9f0ec 100%);
+    radial-gradient(1100px 520px at 8% -8%, #e7e2d8 0%, transparent 58%),
+    radial-gradient(900px 480px at 100% 0%, #ddd8cf 0%, transparent 52%),
+    linear-gradient(180deg, #f5f3ef 0%, var(--paper) 40%, #ebe8e2 100%);
   min-height: 100vh;
 }
-a { color: var(--sea-deep); } a:hover { color: var(--coral); }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+a:hover { color: var(--accent-hover); }
 .wrap { width: min(1100px, calc(100% - 2rem)); margin: 0 auto; padding: 1.5rem 0 4rem; }
 nav {
-  display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;
-  margin-bottom: 1.75rem; padding-bottom: 0.85rem; border-bottom: 1px solid var(--line);
+  display: flex; gap: 0.45rem; flex-wrap: wrap; align-items: center;
+  margin-bottom: 1.75rem; padding-bottom: 0.9rem; border-bottom: 1px solid var(--line);
 }
 nav .brand {
-  font-family: var(--font-display); font-weight: 650; font-size: 1.15rem;
-  margin-right: auto; text-decoration: none; color: var(--ink);
+  font-family: var(--font-display); font-weight: 700; font-size: 1.2rem;
+  letter-spacing: -0.03em; margin-right: auto; text-decoration: none; color: var(--ink);
 }
 nav a.navlink {
-  text-decoration: none; color: var(--ink-soft); font-weight: 500; font-size: 0.92rem;
-  padding: 0.4rem 0.75rem; border-radius: 999px; border: 1px solid transparent;
+  text-decoration: none; color: var(--ink-soft); font-weight: 500; font-size: 0.9rem;
+  padding: 0.38rem 0.7rem; border-radius: 8px; border: 1px solid transparent;
 }
 nav a.navlink:hover, nav a.navlink[aria-current="page"] {
-  color: var(--sea-deep); background: rgba(255,255,255,0.7); border-color: var(--line);
+  color: var(--ink); background: rgba(255,255,255,0.75); border-color: var(--line);
 }
-.eyebrow { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sea); }
+.eyebrow {
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent-hover);
+}
 h1 {
-  margin: 0.35rem 0 0; font-family: var(--font-display); font-weight: 650;
-  font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.08; letter-spacing: -0.02em;
+  margin: 0.4rem 0 0; font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.05; letter-spacing: -0.035em;
 }
-.lede { margin: 0.85rem 0 0; max-width: 44rem; color: var(--ink-soft); line-height: 1.55; font-size: 1.05rem; }
+.lede { margin: 0.9rem 0 0; max-width: 42rem; color: var(--ink-soft); line-height: 1.55; font-size: 1.05rem; }
 .stats {
   display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; margin: 1.5rem 0;
 }
 @media (max-width: 720px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .stat {
-  background: rgba(255,255,255,0.55); border: 1px solid var(--line);
-  border-radius: var(--radius); padding: 1rem 1.1rem; backdrop-filter: blur(6px);
+  background: rgba(251,250,248,0.8); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 1rem 1.1rem; backdrop-filter: blur(8px);
 }
-.stat strong { display: block; font-family: var(--font-display); font-size: 1.85rem; font-weight: 650; line-height: 1; }
-.stat span { display: block; margin-top: 0.35rem; font-size: 0.8rem; color: var(--ink-soft); }
+.stat strong {
+  display: block; font-family: var(--font-display); font-size: 1.85rem; font-weight: 700;
+  line-height: 1; letter-spacing: -0.03em;
+}
+.stat span { display: block; margin-top: 0.4rem; font-size: 0.8rem; color: var(--ink-soft); }
 .panel {
-  background: rgba(255,255,255,0.72); border: 1px solid var(--line);
-  border-radius: calc(var(--radius) + 4px); padding: 1.1rem 1.15rem; margin: 1rem 0;
-  backdrop-filter: blur(8px);
+  background: rgba(251,250,248,0.85); border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 2px); padding: 1.1rem 1.15rem; margin: 1rem 0;
+  backdrop-filter: blur(10px);
 }
 .panel h2 {
-  margin: 0 0 0.75rem; font-family: var(--font-display); font-size: 1.25rem; font-weight: 650;
+  margin: 0 0 0.75rem; font-family: var(--font-display); font-size: 1.2rem; font-weight: 700;
+  letter-spacing: -0.02em;
 }
 .bars { display: grid; gap: 0.45rem; }
 .bar-row { display: grid; grid-template-columns: 7.5rem 1fr 3.2rem; gap: 0.6rem; align-items: center; font-size: 0.9rem; }
-.bar-track { height: 0.55rem; background: #e2ebe7; border-radius: 999px; overflow: hidden; }
-.bar-fill { height: 100%; background: var(--sea); border-radius: 999px; }
+.bar-track { height: 0.5rem; background: var(--wash); border-radius: 999px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--accent); border-radius: 999px; }
 .bar-row span:last-child { text-align: right; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
 .muted { color: var(--ink-soft); font-size: 0.88rem; }
 .search {
-  width: 100%; border: 1px solid var(--line); border-radius: 999px;
-  padding: 0.85rem 1.15rem; font: inherit; background: #fff; outline: none; margin-bottom: 0.75rem;
+  width: 100%; border: 1px solid var(--line); border-radius: 10px;
+  padding: 0.85rem 1.1rem; font: inherit; background: var(--surface); outline: none; margin-bottom: 0.75rem;
 }
-.search:focus { border-color: var(--sea); box-shadow: 0 0 0 3px rgba(10,110,122,0.15); }
-.filters { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1rem; }
+.search:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(42,38,34,0.1); }
+.filters { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
 .chip {
-  appearance: none; border: 1px solid var(--line); background: #fff; color: var(--ink-soft);
-  border-radius: 999px; padding: 0.42rem 0.8rem; font: inherit; font-size: 0.84rem;
+  appearance: none; border: 1px solid var(--line); background: var(--surface); color: var(--ink-soft);
+  border-radius: 8px; padding: 0.4rem 0.75rem; font: inherit; font-size: 0.84rem;
   font-weight: 500; cursor: pointer;
 }
-.chip[aria-pressed="true"] { background: var(--sea); border-color: var(--sea); color: #fff; }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #faf9f7; }
 .list { display: grid; gap: 0.65rem; }
 .result {
-  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
   padding: 1rem 1.1rem; display: grid; gap: 0.65rem;
 }
 .title-row { display: flex; gap: 0.75rem; justify-content: space-between; align-items: start; }
-.title { margin: 0; font-family: var(--font-display); font-size: 1.05rem; font-weight: 650; line-height: 1.3; }
-.doi-annot { display: block; margin: 0 0 0.35rem; font-size: 0.82rem; font-weight: 500; color: var(--ink-soft); letter-spacing: 0.01em; }
+.title {
+  margin: 0; font-family: var(--font-display); font-size: 1.05rem; font-weight: 700;
+  line-height: 1.3; letter-spacing: -0.02em;
+}
+.doi-annot {
+  display: block; margin: 0 0 0.35rem; font-size: 0.8rem; font-weight: 550;
+  color: var(--ink-soft); letter-spacing: 0.02em;
+}
 .badges { display: flex; flex-wrap: wrap; gap: 0.35rem; justify-content: flex-end; max-width: 42%; }
 .badge {
-  font-size: 0.7rem; font-weight: 600; padding: 0.28rem 0.55rem; border-radius: 999px;
-  background: var(--foam); color: var(--sea-deep);
+  font-size: 0.7rem; font-weight: 600; padding: 0.28rem 0.55rem; border-radius: 6px;
+  background: var(--wash); color: var(--accent); border: 1px solid var(--line);
 }
 .sub { display: flex; flex-wrap: wrap; gap: 0.55rem 1rem; font-size: 0.86rem; color: var(--ink-soft); }
 .sub code {
@@ -234,13 +247,16 @@ h1 {
 }
 .ev {
   display: grid; grid-template-columns: 6.5rem 1fr; gap: 0.75rem; font-size: 0.9rem;
-  padding: 0.55rem 0.65rem; border-radius: 10px; background: rgba(243,247,244,0.9);
+  padding: 0.55rem 0.65rem; border-radius: 8px; background: #f3f1ec;
 }
 @media (max-width: 640px) {
   .ev { grid-template-columns: 1fr; }
   .badges { max-width: 100%; justify-content: flex-start; }
 }
-.ev dt { margin: 0; font-weight: 600; color: var(--sea-deep); font-size: 0.75rem; text-transform: uppercase; }
+.ev dt {
+  margin: 0; font-weight: 650; color: var(--ink-soft); font-size: 0.72rem;
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
 .ev dd { margin: 0; word-break: break-word; }
 .meta-row { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin: 0.5rem 0 0.85rem; color: var(--ink-soft); font-size: 0.92rem; }
 footer { margin-top: 2rem; font-size: 0.82rem; color: var(--ink-soft); line-height: 1.5; }
@@ -274,7 +290,7 @@ def render_index(payload_json: str) -> str:
   <title>hal-unica · Statistics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
   <style>{SHARED_CSS}</style>
 </head>
 <body>
@@ -368,7 +384,7 @@ def render_related(payload_json: str) -> str:
   <title>hal-unica · Related datasets</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
   <style>{SHARED_CSS}</style>
 </head>
 <body>
@@ -471,7 +487,7 @@ def render_census(census_json: str) -> str:
   <title>hal-unica · All repositories</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
   <style>{SHARED_CSS}</style>
 </head>
 <body>
@@ -593,7 +609,7 @@ def render_software(software_json: str) -> str:
   <title>hal-unica · Software</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
   <style>{SHARED_CSS}</style>
 </head>
 <body>
@@ -711,7 +727,7 @@ def render_documentation(manifest: dict[str, Any], summary: dict[str, Any]) -> s
   <title>hal-unica · Documentation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
   <style>{SHARED_CSS}
   table.doc {{ width: 100%; border-collapse: collapse; font-size: 0.92rem; }}
   table.doc th, table.doc td {{ padding: 0.5rem 0.4rem; border-bottom: 1px solid var(--line); text-align: left; }}
