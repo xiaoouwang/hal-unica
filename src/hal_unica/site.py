@@ -1,0 +1,475 @@
+"""Build the public GitHub Pages site (stats + related-dataset publications)."""
+
+from __future__ import annotations
+
+import json
+from collections import Counter
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any
+
+from .data_repos import hits_from_jsonl, summarize
+
+
+def _utc_now() -> str:
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def harvest_stats(harvest_path: Path) -> dict[str, Any]:
+    types: Counter[str] = Counter()
+    years: Counter[int] = Counter()
+    n = 0
+    with_doi = 0
+    with open(harvest_path, encoding="utf-8") as fh:
+        for line in fh:
+            line = line.strip()
+            if not line:
+                continue
+            doc = json.loads(line)
+            n += 1
+            types[doc.get("docType_s") or "UNKNOWN"] += 1
+            if doc.get("doiId_s"):
+                with_doi += 1
+            y = doc.get("producedDateY_i")
+            if y is not None:
+                try:
+                    years[int(y)] += 1
+                except (TypeError, ValueError):
+                    pass
+    top_types = [{"type": k, "count": v} for k, v in types.most_common(12)]
+    year_series = [{"year": y, "count": years[y]} for y in sorted(years) if 1950 <= y <= 2026]
+    return {
+        "documents": n,
+        "with_doi": with_doi,
+        "doi_share": round(with_doi / n, 4) if n else 0,
+        "doc_types": top_types,
+        "years": year_series,
+        "year_min": min(years) if years else None,
+        "year_max": max(y for y in years if y <= 2026) if years else None,
+    }
+
+
+def related_dataset_publications(links_path: Path) -> list[dict[str, Any]]:
+    """HAL notices that declare relatedData_s landing on a real data repository."""
+    out: list[dict[str, Any]] = []
+    for hit in hits_from_jsonl(links_path).values():
+        related = [
+            e
+            for e in hit.evidence
+            if e.kind == "related_data" and e.object_kind == "dataset_repo"
+        ]
+        if not related:
+            continue
+        repos = []
+        for e in related:
+            if e.repository and e.repository not in repos:
+                repos.append(e.repository)
+        out.append(
+            {
+                "halId_s": hit.hal_id,
+                "uri_s": hit.uri,
+                "title_s": hit.title,
+                "docType_s": hit.doc_type,
+                "doiId_s": hit.doi,
+                "repositories": repos,
+                "datasets": [
+                    {
+                        "doi": e.value,
+                        "repository": e.repository,
+                        "publisher": e.publisher,
+                        "landing_url": e.landing_url,
+                        "landing_host": e.landing_host,
+                    }
+                    for e in related
+                ],
+            }
+        )
+    out.sort(key=lambda r: (r.get("title_s") or "").lower())
+    return out
+
+
+def build_site_payload(
+    *,
+    harvest_path: Path,
+    links_path: Path,
+    collection: str = "UNIV-COTEDAZUR",
+) -> dict[str, Any]:
+    harvest = harvest_stats(harvest_path)
+    hits = hits_from_jsonl(links_path)
+    link_summary = summarize(hits)
+    related = related_dataset_publications(links_path)
+    related_repos: Counter[str] = Counter()
+    for row in related:
+        for repo in row.get("repositories") or []:
+            related_repos[repo] += 1
+
+    return {
+        "generated_at": _utc_now(),
+        "collection": collection,
+        "collection_url": f"https://hal.science/{collection}",
+        "harvest": harvest,
+        "data_links": {
+            "total_hits": link_summary["total_hits"],
+            "by_platform": link_summary.get("by_platform") or {},
+            "by_repository": link_summary.get("by_repository") or {},
+            "by_object_kind": link_summary.get("by_object_kind") or {},
+        },
+        "related_datasets": {
+            "publication_count": len(related),
+            "by_repository": dict(
+                sorted(related_repos.items(), key=lambda kv: (-kv[1], kv[0]))
+            ),
+            "publications": related,
+        },
+    }
+
+
+SHARED_CSS = """
+:root {
+  --ink: #0c2438;
+  --ink-soft: #3d5568;
+  --paper: #f3f7f4;
+  --sea: #0a6e7a;
+  --sea-deep: #084b54;
+  --foam: #d8efe8;
+  --coral: #c45c3e;
+  --line: rgba(12, 36, 56, 0.12);
+  --shadow: rgba(8, 75, 84, 0.08);
+  --radius: 14px;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); font-family: var(--font-body);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #b8e0d8 0%, transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, #cfe3f0 0%, transparent 50%),
+    linear-gradient(180deg, #eef5f2 0%, var(--paper) 32%, #e9f0ec 100%);
+  min-height: 100vh;
+}
+a { color: var(--sea-deep); } a:hover { color: var(--coral); }
+.wrap { width: min(1100px, calc(100% - 2rem)); margin: 0 auto; padding: 1.5rem 0 4rem; }
+nav {
+  display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;
+  margin-bottom: 1.75rem; padding-bottom: 0.85rem; border-bottom: 1px solid var(--line);
+}
+nav .brand {
+  font-family: var(--font-display); font-weight: 650; font-size: 1.15rem;
+  margin-right: auto; text-decoration: none; color: var(--ink);
+}
+nav a.navlink {
+  text-decoration: none; color: var(--ink-soft); font-weight: 500; font-size: 0.92rem;
+  padding: 0.4rem 0.75rem; border-radius: 999px; border: 1px solid transparent;
+}
+nav a.navlink:hover, nav a.navlink[aria-current="page"] {
+  color: var(--sea-deep); background: rgba(255,255,255,0.7); border-color: var(--line);
+}
+.eyebrow { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sea); }
+h1 {
+  margin: 0.35rem 0 0; font-family: var(--font-display); font-weight: 650;
+  font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.08; letter-spacing: -0.02em;
+}
+.lede { margin: 0.85rem 0 0; max-width: 44rem; color: var(--ink-soft); line-height: 1.55; font-size: 1.05rem; }
+.stats {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; margin: 1.5rem 0;
+}
+@media (max-width: 720px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.stat {
+  background: rgba(255,255,255,0.55); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 1rem 1.1rem; backdrop-filter: blur(6px);
+}
+.stat strong { display: block; font-family: var(--font-display); font-size: 1.85rem; font-weight: 650; line-height: 1; }
+.stat span { display: block; margin-top: 0.35rem; font-size: 0.8rem; color: var(--ink-soft); }
+.panel {
+  background: rgba(255,255,255,0.72); border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 4px); padding: 1.1rem 1.15rem; margin: 1rem 0;
+  backdrop-filter: blur(8px);
+}
+.panel h2 {
+  margin: 0 0 0.75rem; font-family: var(--font-display); font-size: 1.25rem; font-weight: 650;
+}
+.bars { display: grid; gap: 0.45rem; }
+.bar-row { display: grid; grid-template-columns: 7.5rem 1fr 3.2rem; gap: 0.6rem; align-items: center; font-size: 0.9rem; }
+.bar-track { height: 0.55rem; background: #e2ebe7; border-radius: 999px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--sea); border-radius: 999px; }
+.bar-row span:last-child { text-align: right; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.muted { color: var(--ink-soft); font-size: 0.88rem; }
+.search {
+  width: 100%; border: 1px solid var(--line); border-radius: 999px;
+  padding: 0.85rem 1.15rem; font: inherit; background: #fff; outline: none; margin-bottom: 0.75rem;
+}
+.search:focus { border-color: var(--sea); box-shadow: 0 0 0 3px rgba(10,110,122,0.15); }
+.filters { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1rem; }
+.chip {
+  appearance: none; border: 1px solid var(--line); background: #fff; color: var(--ink-soft);
+  border-radius: 999px; padding: 0.42rem 0.8rem; font: inherit; font-size: 0.84rem;
+  font-weight: 500; cursor: pointer;
+}
+.chip[aria-pressed="true"] { background: var(--sea); border-color: var(--sea); color: #fff; }
+.list { display: grid; gap: 0.65rem; }
+details.result {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+}
+details.result[open] { border-color: rgba(10,110,122,0.35); box-shadow: 0 10px 28px var(--shadow); }
+summary { list-style: none; cursor: pointer; padding: 1rem 1.1rem; display: grid; gap: 0.5rem; }
+summary::-webkit-details-marker { display: none; }
+.title-row { display: flex; gap: 0.75rem; justify-content: space-between; align-items: start; }
+.title { margin: 0; font-family: var(--font-display); font-size: 1.05rem; font-weight: 650; line-height: 1.3; }
+.badges { display: flex; flex-wrap: wrap; gap: 0.35rem; justify-content: flex-end; max-width: 42%; }
+.badge {
+  font-size: 0.7rem; font-weight: 600; padding: 0.28rem 0.55rem; border-radius: 999px;
+  background: var(--foam); color: var(--sea-deep);
+}
+.sub { display: flex; flex-wrap: wrap; gap: 0.55rem 1rem; font-size: 0.86rem; color: var(--ink-soft); }
+.sub code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.82rem;
+  background: var(--paper); padding: 0.1rem 0.35rem; border-radius: 4px;
+}
+.evidence {
+  border-top: 1px solid var(--line); padding: 0.85rem 1.1rem 1.1rem; display: grid; gap: 0.5rem;
+}
+.ev {
+  display: grid; grid-template-columns: 6.5rem 1fr; gap: 0.75rem; font-size: 0.9rem;
+  padding: 0.55rem 0.65rem; border-radius: 10px; background: rgba(243,247,244,0.9);
+}
+@media (max-width: 640px) {
+  .ev { grid-template-columns: 1fr; }
+  .badges { max-width: 100%; justify-content: flex-start; }
+}
+.ev dt { margin: 0; font-weight: 600; color: var(--sea-deep); font-size: 0.75rem; text-transform: uppercase; }
+.ev dd { margin: 0; word-break: break-word; }
+.meta-row { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin: 0.5rem 0 0.85rem; color: var(--ink-soft); font-size: 0.92rem; }
+footer { margin-top: 2rem; font-size: 0.82rem; color: var(--ink-soft); line-height: 1.5; }
+.empty { padding: 2rem; text-align: center; color: var(--ink-soft); }
+"""
+
+
+def _nav(active: str) -> str:
+    def link(href: str, label: str, key: str) -> str:
+        cur = ' aria-current="page"' if key == active else ""
+        return f'<a class="navlink" href="{href}"{cur}>{label}</a>'
+
+    return f"""
+    <nav>
+      <a class="brand" href="./index.html">hal-unica</a>
+      {link("./index.html", "Statistics", "stats")}
+      {link("./related-datasets.html", "Related datasets", "related")}
+    </nav>
+    """
+
+
+def render_index(payload_json: str) -> str:
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>hal-unica · Statistics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>{SHARED_CSS}</style>
+</head>
+<body>
+  <main class="wrap">
+    {_nav("stats")}
+    <div class="eyebrow">Université Côte d’Azur · HAL</div>
+    <h1>Open science snapshot</h1>
+    <p class="lede">
+      Metadata harvest of the institutional HAL collection
+      <a id="collectionLink" href="https://hal.science/UNIV-COTEDAZUR">UNIV-COTEDAZUR</a>,
+      plus links from those notices to NAKALA and Research Data Gouv.
+    </p>
+    <div class="stats" id="stats"></div>
+
+    <section class="panel">
+      <h2>Document types in HAL</h2>
+      <div class="bars" id="docTypes"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Where linked data live</h2>
+      <p class="muted" style="margin-top:0">Fine-grained repositories after DataCite resolution (all link signals).</p>
+      <div class="bars" id="repos" style="margin-top:0.85rem"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Publications with a related dataset</h2>
+      <p class="muted" id="relatedBlurb" style="margin:0"></p>
+      <p style="margin:0.85rem 0 0"><a href="./related-datasets.html">Browse related-dataset publications →</a></p>
+    </section>
+
+    <footer id="footer"></footer>
+  </main>
+  <script id="data" type="application/json">{payload_json}</script>
+  <script>
+    const data = JSON.parse(document.getElementById("data").textContent);
+    const h = data.harvest;
+    const rd = data.related_datasets;
+    const dl = data.data_links;
+    document.getElementById("collectionLink").href = data.collection_url;
+    document.getElementById("collectionLink").textContent = data.collection;
+    document.getElementById("stats").innerHTML = [
+      {{ v: h.documents.toLocaleString("en"), l: "HAL documents (latest version)" }},
+      {{ v: h.with_doi.toLocaleString("en"), l: `With DOI (${{Math.round(h.doi_share*100)}}%)` }},
+      {{ v: dl.total_hits, l: "Notices linking Nakala / RDG" }},
+      {{ v: rd.publication_count, l: "Publications with related dataset" }},
+    ].map(x => `<div class="stat"><strong>${{x.v}}</strong><span>${{x.l}}</span></div>`).join("");
+
+    const maxType = Math.max(...h.doc_types.map(d => d.count));
+    document.getElementById("docTypes").innerHTML = h.doc_types.map(d => `
+      <div class="bar-row">
+        <span>${{d.type}}</span>
+        <div class="bar-track"><div class="bar-fill" style="width:${{100*d.count/maxType}}%"></div></div>
+        <span>${{d.count.toLocaleString("en")}}</span>
+      </div>`).join("");
+
+    const repos = Object.entries(dl.by_repository || {{}});
+    const maxRepo = Math.max(1, ...repos.map(([,c]) => c));
+    document.getElementById("repos").innerHTML = repos.map(([name, count]) => `
+      <div class="bar-row">
+        <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis" title="${{name.replace(/"/g, '&quot;')}}">${{name}}</span>
+        <div class="bar-track"><div class="bar-fill" style="width:${{100*count/maxRepo}}%"></div></div>
+        <span>${{count}}</span>
+      </div>`).join("");
+
+    const rb = Object.entries(rd.by_repository || {{}}).map(([k,v]) => `${{v}} on ${{k}}`).join(" · ");
+    document.getElementById("relatedBlurb").textContent =
+      `${{rd.publication_count}} UniCA HAL publications declare relatedData landing on a data repository. ${{rb}}.`;
+    document.getElementById("footer").textContent =
+      `Generated ${{data.generated_at}} · collection ${{data.collection}} · years ${{h.year_min}}–${{h.year_max}}`;
+  </script>
+</body>
+</html>
+"""
+
+
+def render_related(payload_json: str) -> str:
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>hal-unica · Related datasets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>{SHARED_CSS}</style>
+</head>
+<body>
+  <main class="wrap">
+    {_nav("related")}
+    <div class="eyebrow">Publications ↔ datasets</div>
+    <h1>Related datasets</h1>
+    <p class="lede">
+      HAL publications in the UniCA collection that declare a
+      <code>relatedData</code> link resolving to a real data repository
+      (NAKALA or Recherche Data Gouv — including federated nodes such as Data INRAE).
+    </p>
+    <div class="stats" id="stats"></div>
+    <section class="panel">
+      <input id="q" class="search" type="search" placeholder="Search title, HAL id, dataset DOI…" autocomplete="off" />
+      <div class="filters" id="filters"></div>
+      <div class="meta-row"><div id="count"></div><div>Expand a row for dataset DOIs</div></div>
+      <div class="list" id="list"></div>
+    </section>
+    <footer>Source: HAL <code>relatedData_s</code> + DataCite landing resolution.</footer>
+  </main>
+  <script id="data" type="application/json">{payload_json}</script>
+  <script>
+    const data = JSON.parse(document.getElementById("data").textContent);
+    let pubs = data.related_datasets.publications || [];
+    let active = "all";
+
+    function esc(s) {{
+      return String(s ?? "").replace(/[&<>"']/g, c => ({{"&":"&amp;","<":"&lt;",">":"&gt;","\\"":"&quot;","'":"&#39;"}}[c]));
+    }}
+
+    function render() {{
+      const q = document.getElementById("q").value.trim().toLowerCase();
+      const rows = pubs.filter(p => {{
+        if (active !== "all" && !(p.repositories || []).includes(active)) return false;
+        if (!q) return true;
+        const blob = [p.title_s, p.halId_s, p.doiId_s, ...(p.repositories||[]),
+          ...(p.datasets||[]).map(d => `${{d.doi}} ${{d.repository}}`)].join(" ").toLowerCase();
+        return blob.includes(q);
+      }});
+      document.getElementById("count").textContent = `${{rows.length}} of ${{pubs.length}} publications`;
+      const list = document.getElementById("list");
+      if (!rows.length) {{ list.innerHTML = `<div class="empty">No matches.</div>`; return; }}
+      list.innerHTML = rows.map(p => {{
+        const badges = (p.repositories||[]).map(r => `<span class="badge">${{esc(r)}}</span>`).join("");
+        const datasets = (p.datasets||[]).map(d => {{
+          const href = d.landing_url || (d.doi ? `https://doi.org/${{d.doi}}` : "#");
+          return `<div class="ev"><dt>Dataset</dt><dd>
+            <a href="${{esc(href)}}" target="_blank" rel="noopener"><code>${{esc(d.doi)}}</code></a>
+            <div class="muted" style="margin-top:0.25rem">${{esc(d.repository || "")}}${{d.landing_host ? " · " + esc(d.landing_host) : ""}}</div>
+          </dd></div>`;
+        }}).join("");
+        return `<details class="result"><summary>
+          <div class="title-row"><h2 class="title">${{esc(p.title_s || "(untitled)")}}</h2><div class="badges">${{badges}}</div></div>
+          <div class="sub">
+            <a href="${{esc(p.uri_s || "#")}}" target="_blank" rel="noopener"><code>${{esc(p.halId_s)}}</code></a>
+            <span>${{esc(p.docType_s || "")}}</span>
+            ${{p.doiId_s ? `<span>pub DOI <a href="https://doi.org/${{esc(p.doiId_s)}}" target="_blank" rel="noopener"><code>${{esc(p.doiId_s)}}</code></a></span>` : ""}}
+          </div>
+        </summary><div class="evidence">${{datasets}}</div></details>`;
+      }}).join("");
+    }}
+
+    const by = data.related_datasets.by_repository || {{}};
+    document.getElementById("stats").innerHTML = [
+      {{ v: data.related_datasets.publication_count, l: "Publications with related dataset" }},
+      {{ v: by["Recherche Data Gouv"] || 0, l: "→ Recherche Data Gouv" }},
+      {{ v: by["NAKALA"] || 0, l: "→ NAKALA" }},
+      {{ v: Object.values(by).reduce((a,b)=>a+b,0), l: "Repository links (sum)" }},
+    ].map(x => `<div class="stat"><strong>${{x.v}}</strong><span>${{x.l}}</span></div>`).join("");
+
+    const repos = ["all", ...Object.keys(by)];
+    const filters = document.getElementById("filters");
+    function paint() {{
+      filters.innerHTML = repos.map(r => `
+        <button type="button" class="chip" data-v="${{esc(r)}}" aria-pressed="${{active===r}}">${{esc(r==="all"?"All repositories":r)}}</button>
+      `).join("");
+      filters.querySelectorAll("button").forEach(btn => btn.addEventListener("click", () => {{
+        active = btn.dataset.v; paint(); render();
+      }}));
+    }}
+    paint();
+    document.getElementById("q").addEventListener("input", render);
+    render();
+  </script>
+</body>
+</html>
+"""
+
+
+def write_site(
+    *,
+    harvest_path: Path,
+    links_path: Path,
+    output_dir: Path,
+    collection: str = "UNIV-COTEDAZUR",
+) -> Path:
+    payload = build_site_payload(
+        harvest_path=harvest_path,
+        links_path=links_path,
+        collection=collection,
+    )
+    payload_json = json.dumps(payload, ensure_ascii=False).replace("<", "\\u003c")
+    data_dir = output_dir / "data"
+    data_dir.mkdir(parents=True, exist_ok=True)
+    (data_dir / "stats.json").write_text(
+        json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+    (data_dir / "related-publications.json").write_text(
+        json.dumps(payload["related_datasets"], indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+    (output_dir / "index.html").write_text(render_index(payload_json), encoding="utf-8")
+    (output_dir / "related-datasets.html").write_text(
+        render_related(payload_json), encoding="utf-8"
+    )
+    return output_dir

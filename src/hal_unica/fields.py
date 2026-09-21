@@ -1,0 +1,57 @@
+"""Default metadata fields requested from the HAL Search API."""
+
+# Metadata only — no binary download. Portal index already exposes the
+# current (latest) version of each work; version_i is that version's number.
+DEFAULT_FL = [
+    "docid",
+    "halId_s",
+    "uri_s",
+    "version_i",
+    "status_i",
+    "docType_s",
+    "submitType_s",
+    "title_s",
+    "subTitle_s",
+    "abstract_s",
+    "keyword_s",
+    "language_s",
+    "domain_s",
+    "authFullName_s",
+    "authIdHal_i",
+    "authIdHal_s",
+    "authORCID_s",
+    "structId_i",
+    "structName_s",
+    "structAcronym_s",
+    "producedDate_s",
+    "producedDateY_i",
+    "submittedDate_s",
+    "modifiedDate_tdate",
+    "releasedDate_s",
+    "doiId_s",
+    "arxivId_s",
+    "nntId_s",
+    "isbn_s",
+    "issn_s",
+    "journalTitle_s",
+    "journalPublisher_s",
+    "conferenceTitle_s",
+    "page_s",
+    "volume_s",
+    "issue_s",
+    "serie_s",
+    "funding_s",
+    "anrProjectReference_s",
+    "europeanProjectReference_s",
+    "license_s",
+    "collCode_s",
+    "instance_s",
+    "label_s",
+]
+
+# Soft references to files (URLs only) — useful for later Nakala steps without downloading.
+OPTIONAL_FILE_META_FL = [
+    "fileMain_s",
+    "files_s",
+    "fileType_s",
+]

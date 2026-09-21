@@ -1,0 +1,19 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.DS_Store
+logs/
+
+# Bulk harvest stays local (too large for git)
+data/unica_hal_metadata.jsonl
+data/unica_hal_metadata.jsonl.meta.json
+data/unica_hal_delta.jsonl
+data/sample.jsonl
+data/sample.jsonl.meta.json
+
+# Keep resolved link exports + docs site data
+!data/unica_data_repo_links.jsonl
+!data/unica_data_repo_links.jsonl.summary.json
