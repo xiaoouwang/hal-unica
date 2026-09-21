@@ -218,6 +218,7 @@ h1 {
 }
 .title-row { display: flex; gap: 0.75rem; justify-content: space-between; align-items: start; }
 .title { margin: 0; font-family: var(--font-display); font-size: 1.05rem; font-weight: 650; line-height: 1.3; }
+.doi-annot { display: block; margin: 0 0 0.35rem; font-size: 0.82rem; font-weight: 500; color: var(--ink-soft); letter-spacing: 0.01em; }
 .badges { display: flex; flex-wrap: wrap; gap: 0.35rem; justify-content: flex-end; max-width: 42%; }
 .badge {
   font-size: 0.7rem; font-weight: 600; padding: 0.28rem 0.55rem; border-radius: 999px;
@@ -415,9 +416,11 @@ def render_related(payload_json: str) -> str:
         const badges = (p.repositories||[]).map(r => `<span class="badge">${{esc(r)}}</span>`).join("");
         const datasets = (p.datasets||[]).map(d => {{
           const href = d.landing_url || (d.doi ? `https://doi.org/${{d.doi}}` : "#");
+          const repo = d.repository || "Unknown";
           return `<div class="ev"><dt>Dataset</dt><dd>
+            <div class="doi-annot">Link to the dataset on ${{esc(repo)}}</div>
             <a href="${{esc(href)}}" target="_blank" rel="noopener"><code>${{esc(d.doi)}}</code></a>
-            <div class="muted" style="margin-top:0.25rem">${{esc(d.repository || "")}}${{d.landing_host ? " · " + esc(d.landing_host) : ""}}</div>
+            ${{d.landing_host ? `<div class="muted" style="margin-top:0.25rem">${{esc(d.landing_host)}}</div>` : ""}}
           </dd></div>`;
         }}).join("");
         return `<article class="result">
@@ -554,10 +557,14 @@ def render_census(census_json: str) -> str:
             </div>
           </dd></div>`;
         }}).join("");
+        const repo = d.repository || "Unknown";
         return `<article class="result">
           <div class="title-row">
-            <h2 class="title"><a href="${{esc(href)}}" target="_blank" rel="noopener"><code>${{esc(d.dataset_doi)}}</code></a></h2>
-            <div class="badges"><span class="badge">${{esc(d.repository || "Unknown")}}</span></div>
+            <div>
+              <span class="doi-annot">Link to the dataset on ${{esc(repo)}}</span>
+              <h2 class="title"><a href="${{esc(href)}}" target="_blank" rel="noopener"><code>${{esc(d.dataset_doi)}}</code></a></h2>
+            </div>
+            <div class="badges"><span class="badge">${{esc(repo)}}</span></div>
           </div>
           <div class="sub">
             <span>${{esc(d.dataset_title || "")}}</span>
