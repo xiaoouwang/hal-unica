@@ -4,7 +4,8 @@ Open-science snapshot for **[Université Côte d’Azur](https://univ-cotedazur.
 
 ## Live pages (GitHub Pages)
 
-Enable Pages on the `docs/` folder, then:
+- Statistics: https://xiaoouwang.github.io/hal-unica/
+- Related datasets: https://xiaoouwang.github.io/hal-unica/related-datasets.html
 
 | Page | Contents |
 |---|---|
