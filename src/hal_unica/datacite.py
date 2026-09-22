@@ -44,6 +44,20 @@ class DoiResolution:
             error=data.get("error"),
         )
 
+    def reclassify(self) -> DoiResolution:
+        """Re-apply repository / object_kind rules without calling DataCite."""
+        repo, kind = classify_repository(
+            doi=self.doi,
+            publisher=self.publisher,
+            landing_url=self.landing_url,
+            prefix=self.prefix,
+            client_id=self.client_id,
+        )
+        self.repository = repo
+        self.object_kind = kind
+        return self
+
+
 
 def _host(url: str | None) -> str | None:
     if not url:
@@ -101,14 +115,27 @@ def classify_repository(
         (("iedadata.org", "www.iedadata.org"), "IEDA"),
         (("doi.pangaea.de",), "PANGAEA"),
         (("softwareheritage.org", "archive.softwareheritage.org"), "Software Heritage"),
-        (("github.com",), "GitHub"),
-        (("gitlab.com",), "GitLab"),
         (("huggingface.co",), "Hugging Face"),
-        (("openalex.org",), "OpenAlex"),
     ]
     for suffixes, label in known_hosts:
         if any(host == s or host.endswith("." + s) or s in host for s in suffixes):
             return label, "dataset_repo"
+
+    # Preprints / scholarly networks / publishers — not data repositories
+    publication_hosts: list[tuple[tuple[str, ...], str]] = [
+        (("arxiv.org",), "arXiv"),
+        (("researchgate.net",), "ResearchGate"),
+        (("academia.edu",), "Academia.edu"),
+        (("ssrn.com",), "SSRN"),
+        (("biorxiv.org",), "bioRxiv"),
+        (("medrxiv.org",), "medRxiv"),
+        (("openalex.org",), "OpenAlex"),
+        (("github.com",), "GitHub"),
+        (("gitlab.com",), "GitLab"),
+    ]
+    for suffixes, label in publication_hosts:
+        if any(host == s or host.endswith("." + s) or s in host for s in suffixes):
+            return label, "publication_landing"
 
     if "hal." in host or host.endswith("archives-ouvertes.fr"):
         label = pub or "INRAE/INRA DOI"
@@ -129,12 +156,14 @@ def classify_repository(
         return "Zenodo", "dataset_repo"
     if pref == "10.17882":
         return "SEANOE", "dataset_repo"
+    if pref == "10.48550" or "arxiv" in pub.lower():
+        return "arXiv", "publication_landing"
+    if pref == "10.13140" or "researchgate" in pub.lower() or pub.lower() == "unpublished":
+        return "ResearchGate", "publication_landing"
 
-    # Prefer publisher name when we have a non-HAL landing host
+    # Unknown host/publisher: never assume a data repository
     if host and pub:
-        return pub, "dataset_repo" if not any(
-            x in host for x in ("doi.org", "dx.doi.org", "crossref.org")
-        ) else "other"
+        return pub, "other"
     if pub:
         return pub, "other"
     if host:

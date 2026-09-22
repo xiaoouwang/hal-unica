@@ -160,7 +160,7 @@ def load_doi_resolutions_jsonl(path: Path) -> dict[str, DoiResolution]:
                 continue
             doi = row.get("doi")
             if doi:
-                out[str(doi)] = DoiResolution.from_dict(row)
+                out[str(doi)] = DoiResolution.from_dict(row).reclassify()
     return out
 
 

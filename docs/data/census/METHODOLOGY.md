@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-09-22T09:44:15Z`  
+Generated: `2026-09-22T09:57:41Z`  
 Collection: `UNIV-COTEDAZUR`  
-Run window: `2026-09-22T09:43:08Z` → `2026-09-22T09:44:15Z`
+Run window: `2026-09-22T09:57:41Z` → `2026-09-22T09:57:41Z`
 
 ## Goal
 
@@ -46,29 +46,49 @@ misfiled dataset links can be corrected.
 - HAL notices with linked identifiers: **313**
 - Related tokens: **508**
 - Unique DOIs resolved: **401**
-- Publications with at least one dataset-repo landing: **172**
-- Misfiled dataset links (wrong HAL field): **82**
-- Publications with ≥1 misfiled dataset link: **61**
+- Publications with at least one dataset-repo landing: **141**
+- Misfiled dataset links (wrong HAL field): **54**
+- Publications with ≥1 misfiled dataset link: **43**
 
 ### Dataset DOIs by HAL source field
 
-- **`relatedData_s`**: 193
-- **`relatedPublication_s`**: 80
+- **`relatedData_s`**: 157
+- **`relatedPublication_s`**: 52
 - **`seeAlso_s`**: 2
 
 ### By repository (DOI evidence)
 
-- **Unknown (DOI not in DataCite)**: 148
-- **Zenodo**: 95
-- **Recherche Data Gouv**: 77
+- **Zenodo**: 96
+- **Recherche Data Gouv**: 78
+- **DOI prefix 10.1007**: 31
+- **DOI prefix 10.1109**: 20
 - **SEANOE**: 15
 - **Sismer**: 11
+- **DOI prefix 10.1016**: 10
 - **NAKALA**: 10
+- **DOI prefix 10.4000**: 9
 - **Theia**: 8
+- **DOI prefix 10.1002**: 6
+- **DOI prefix 10.3917**: 6
 - **Figshare**: 5
+- **arXiv**: 5
+- **DOI prefix 10.1093**: 4
 - **International Federation of Digital Seismograph Networks**: 4
-- **arXiv**: 4
-- **Unpublished**: 3
+- **DOI prefix 10.1038**: 3
+- **DOI prefix 10.1137**: 3
+- **DOI prefix 10.1145**: 3
+- **DOI prefix 10.22489**: 3
+- **ResearchGate**: 3
+- **DOI prefix 10.1017**: 2
+- **DOI prefix 10.1101**: 2
+- **DOI prefix 10.1287**: 2
+- **DOI prefix 10.1371**: 2
+- **DOI prefix 10.22541**: 2
+- **DOI prefix 10.23919**: 2
+- **DOI prefix 10.31223**: 2
+- **DOI prefix 10.32614**: 2
+- **DOI prefix 10.3390**: 2
+- **DOI prefix 10.5194**: 2
 - **DataSuds**: 2
 - **Epos-France Seismological Data Center**: 2
 - **Harvard Dataverse**: 2
@@ -85,6 +105,33 @@ misfiled dataset links can be corrected.
 - **CDS, Centre de Données astronomiques de Strasbourg**: 1
 - **Centre de Donnees Strasbourg (CDS)**: 1
 - **Commonwealth of Australia (Geoscience Australia)**: 1
+- **DOI prefix 10.1044**: 1
+- **DOI prefix 10.1051**: 1
+- **DOI prefix 10.1075**: 1
+- **DOI prefix 10.1111**: 1
+- **DOI prefix 10.1117**: 1
+- **DOI prefix 10.11606**: 1
+- **DOI prefix 10.1163**: 1
+- **DOI prefix 10.1177**: 1
+- **DOI prefix 10.1504**: 1
+- **DOI prefix 10.1561**: 1
+- **DOI prefix 10.16995**: 1
+- **DOI prefix 10.17632**: 1
+- **DOI prefix 10.19272**: 1
+- **DOI prefix 10.2139**: 1
+- **DOI prefix 10.21494**: 1
+- **DOI prefix 10.22152**: 1
+- **DOI prefix 10.24072**: 1
+- **DOI prefix 10.2478**: 1
+- **DOI prefix 10.26508**: 1
+- **DOI prefix 10.32908**: 1
+- **DOI prefix 10.33166**: 1
+- **DOI prefix 10.36863**: 1
+- **DOI prefix 10.4135**: 1
+- **DOI prefix 10.4171**: 1
+- **DOI prefix 10.5465**: 1
+- **DOI prefix 10.59641**: 1
+- **DOI prefix 10.7819**: 1
 - **ETH Zurich**: 1
 - **INRAE (prefix 10.15454)**: 1
 - **Institut de physique du globe de Paris, Université Paris Cité**: 1

@@ -336,6 +336,7 @@ def _nav(active: str) -> str:
       {link("./index.html", "Statistics", "stats")}
       {link("./related-datasets.html", "Nakala / RDG", "related")}
       {link("./all-repositories.html", "All repositories", "census")}
+      {link("./to-be-corrected.html", "To Be Corrected", "corrections")}
       {link("./software.html", "Software", "software")}
       {link("./documentation.html", "Documentation", "docs")}
     </nav>
@@ -787,6 +788,120 @@ def render_software(software_json: str, *, generated_at: str | None = None) -> s
 """
 
 
+def render_corrections(corrections_json: str, *, generated_at: str | None = None) -> str:
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>hal-unica · To Be Corrected</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
+  <style>{SHARED_CSS}</style>
+</head>
+<body>
+  <main class="wrap">
+    {_nav("corrections")}
+    <div class="eyebrow">Field provenance · correction queue</div>
+    <h1>To Be Corrected</h1>
+    <p class="lede">
+      Dataset DOIs that resolve to a data repository but were filed on HAL in a field
+      other than <code>relatedData_s</code> (often <code>relatedPublication_s</code> or
+      <code>seeAlso_s</code>). Use this list to ask depositors to move the link to the
+      correct metadata field.
+    </p>
+    <div class="stats" id="stats"></div>
+    <section class="panel">
+      <input id="q" class="search" type="search" placeholder="Filter HAL id, title, DOI, repository, source field…" autocomplete="off" />
+      <div class="filters" id="filters"></div>
+      <div class="meta-row"><div id="count"></div><div>Expected field: <code>relatedData_s</code></div></div>
+      <div class="list" id="list"></div>
+    </section>
+    {_footer(
+      generated_at,
+      'CSV: <a href="./data/census/misfiled_dataset_links.csv"><code>misfiled_dataset_links.csv</code></a>',
+    )}
+  </main>
+  <script id="data" type="application/json">{corrections_json}</script>
+  <script>
+    const data = JSON.parse(document.getElementById("data").textContent);
+    const rows = data.rows || [];
+    const s = data.summary || {{}};
+    let active = "all";
+
+    function esc(s) {{
+      return String(s ?? "").replace(/[&<>"']/g, c => ({{"&":"&amp;","<":"&lt;",">":"&gt;","\\"":"&quot;","'":"&#39;"}}[c]));
+    }}
+
+    document.getElementById("stats").innerHTML = [
+      {{ v: s.misfiled_links || rows.length, l: "Misfiled dataset links" }},
+      {{ v: s.publications || 0, l: "Distinct HAL notices" }},
+      {{ v: Object.keys(s.by_source_field || {{}}).length, l: "Incorrect source fields" }},
+      {{ v: Object.keys(s.by_repository || {{}}).length, l: "Repositories involved" }},
+    ].map(x => `<div class="stat"><strong>${{x.v}}</strong><span>${{x.l}}</span></div>`).join("");
+
+    const fieldFilters = ["all", ...Object.keys(s.by_source_field || {{}})];
+    function paintFilters() {{
+      document.getElementById("filters").innerHTML = fieldFilters.map(f => `
+        <button type="button" class="chip" data-v="${{esc(f)}}" aria-pressed="${{active===f}}">${{esc(f==="all"?"All source fields":f)}}</button>
+      `).join("");
+      document.querySelectorAll("#filters button").forEach(btn => btn.addEventListener("click", () => {{
+        active = btn.dataset.v; paintFilters(); render();
+      }}));
+    }}
+
+    function render() {{
+      const q = document.getElementById("q").value.trim().toLowerCase();
+      const filtered = rows.filter(r => {{
+        if (active !== "all" && r.source_field !== active) return false;
+        if (!q) return true;
+        const blob = [r.halId_s, r.hal_title, r.dataset_doi, r.repository, r.source_field,
+          r.dataset_title, r.correction_note].join(" ").toLowerCase();
+        return blob.includes(q);
+      }});
+      document.getElementById("count").textContent = `${{filtered.length}} of ${{rows.length}} links`;
+      document.getElementById("list").innerHTML = filtered.map(r => {{
+        const href = r.landing_url || (r.dataset_doi ? `https://doi.org/${{r.dataset_doi}}` : "#");
+        const repo = r.repository || "Unknown";
+        return `<article class="result">
+          <div class="title-row">
+            <div>
+              <span class="doi-annot">Link to the dataset on ${{esc(repo)}}</span>
+              <span class="doi-annot" style="color:var(--accent-hover)">HAL field <code>${{esc(r.source_field || "")}}</code> → expected <code>${{esc(r.expected_field || "relatedData_s")}}</code></span>
+              <h2 class="title"><a href="${{esc(href)}}" target="_blank" rel="noopener"><code>${{esc(r.dataset_doi)}}</code></a></h2>
+            </div>
+            <div class="badges">
+              <span class="badge">${{esc(repo)}}</span>
+              <span class="badge">${{esc(r.source_field || "")}}</span>
+            </div>
+          </div>
+          <div class="sub">
+            <span>${{esc(r.dataset_title || "")}}</span>
+          </div>
+          <div class="evidence">
+            <div class="ev"><dt>Publication</dt><dd>
+              <a href="${{esc(r.hal_uri || "#")}}" target="_blank" rel="noopener">${{esc(r.hal_title || "(untitled)")}}</a>
+              <div class="muted" style="margin-top:0.25rem">
+                <a href="${{esc(r.hal_uri || "#")}}" target="_blank" rel="noopener"><code>${{esc(r.halId_s)}}</code></a>
+                ${{r.hal_docType ? " · " + esc(r.hal_docType) : ""}}
+                ${{r.publication_doi ? ` · DOI <a href="https://doi.org/${{esc(r.publication_doi)}}" target="_blank" rel="noopener"><code>${{esc(r.publication_doi)}}</code></a>` : ""}}
+              </div>
+            </dd></div>
+            <div class="ev"><dt>Action</dt><dd>${{esc(r.correction_note || "Move this dataset DOI to relatedData_s on HAL.")}}</dd></div>
+          </div>
+        </article>`;
+      }}).join("") || `<div class="empty">No matches.</div>`;
+    }}
+    paintFilters();
+    document.getElementById("q").addEventListener("input", render);
+    render();
+  </script>
+</body>
+</html>
+"""
+
+
 def render_documentation(
     manifest: dict[str, Any],
     summary: dict[str, Any],
@@ -944,6 +1059,42 @@ def write_site(
         census_json = json.dumps(census_payload, ensure_ascii=False).replace("<", "\\u003c")
         (output_dir / "all-repositories.html").write_text(
             render_census(census_json, generated_at=generated_at), encoding="utf-8"
+        )
+
+        # Correction queue page (misfiled dataset links)
+        import csv as _csv
+
+        misfiled_rows: list[dict[str, Any]] = []
+        misfiled_path = dest / "misfiled_dataset_links.csv"
+        if misfiled_path.exists():
+            with misfiled_path.open(encoding="utf-8", newline="") as fh:
+                misfiled_rows = list(_csv.DictReader(fh))
+        by_src: Counter[str] = Counter()
+        by_repo_m: Counter[str] = Counter()
+        pubs_m: set[str] = set()
+        for row in misfiled_rows:
+            if row.get("source_field"):
+                by_src[row["source_field"]] += 1
+            if row.get("repository"):
+                by_repo_m[row["repository"]] += 1
+            if row.get("halId_s"):
+                pubs_m.add(row["halId_s"])
+        corrections_payload = {
+            "generated_at": generated_at,
+            "rows": misfiled_rows,
+            "summary": {
+                "misfiled_links": len(misfiled_rows),
+                "publications": len(pubs_m),
+                "by_source_field": dict(sorted(by_src.items(), key=lambda kv: (-kv[1], kv[0]))),
+                "by_repository": dict(sorted(by_repo_m.items(), key=lambda kv: (-kv[1], kv[0]))),
+            },
+        }
+        corrections_json = json.dumps(corrections_payload, ensure_ascii=False).replace(
+            "<", "\\u003c"
+        )
+        (output_dir / "to-be-corrected.html").write_text(
+            render_corrections(corrections_json, generated_at=generated_at),
+            encoding="utf-8",
         )
 
         soft_rows: list[dict[str, Any]] = []

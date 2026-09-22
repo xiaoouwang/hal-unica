@@ -545,6 +545,7 @@ def build_site_cmd(
         "index.html",
         "related-datasets.html",
         "all-repositories.html",
+        "to-be-corrected.html",
         "software.html",
         "documentation.html",
     ):

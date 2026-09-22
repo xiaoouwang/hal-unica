@@ -1,7 +1,7 @@
 {
-  "publication_count": 55,
+  "publication_count": 56,
   "by_repository": {
-    "Recherche Data Gouv": 46,
+    "Recherche Data Gouv": 47,
     "NAKALA": 9
   },
   "publications": [
@@ -230,6 +230,27 @@
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "field": "relatedData_s",
           "misfiled": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-02928114",
+      "uri_s": "https://hal.inrae.fr/hal-02928114v1",
+      "title_s": "Aphid infestation differently affects the defences of nitrate-fed and nitrogen-fixing Medicago truncatula and alters symbiotic nitrogen fixation",
+      "docType_s": "ART",
+      "doiId_s": "10.1098/rspb.2020.1493",
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/WGBWYO",
+          "repository": "Recherche Data Gouv",
+          "publisher": null,
+          "landing_url": null,
+          "landing_host": null,
+          "field": "relatedPublication_s",
+          "misfiled": true
         }
       ]
     },
