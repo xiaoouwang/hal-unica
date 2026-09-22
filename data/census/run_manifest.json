@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T10:05:13Z",
+  "generated_at": "2026-09-22T10:25:50Z",
   "collection": "UNIV-COTEDAZUR",
   "hal_api": "https://api.archives-ouvertes.fr/search/UNIV-COTEDAZUR/",
   "hal_query": "(relatedData_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)",
@@ -12,8 +12,8 @@
   "since": null,
   "watermark_modified": null,
   "datacite_api": "https://api.datacite.org/dois/{doi}",
-  "started_at": "2026-09-22T10:05:13Z",
-  "finished_at": "2026-09-22T10:05:13Z",
+  "started_at": "2026-09-22T10:25:50Z",
+  "finished_at": "2026-09-22T10:25:50Z",
   "artifacts": {
     "publications_jsonl": "data/census/publications_related_data.jsonl",
     "doi_resolutions_jsonl": "data/census/doi_resolutions.jsonl",
@@ -41,8 +41,9 @@
     "Optional modifiedDate_tdate window for incremental refresh; merge by halId_s.",
     "Parse each token as DOI, URL, HAL id, or other.",
     "Resolve new DOIs with DataCite REST API; reuse doi_resolutions.jsonl cache.",
-    "Label repository from landing host / publisher / known DOI prefix.",
+    "Label repository and object_kind from landing host / publisher / known DOI prefix; never default unknown hosts to dataset_repo.",
     "Flag dataset_repo landings filed outside relatedData_s in misfiled_dataset_links.csv.",
+    "Build dataset_to_publications (dataset_repo only) with sticky retrieved_at for the All repositories page.",
     "Write publication-level JSONL, DOI resolution JSONL, and CSV correspondence tables."
   ]
 }

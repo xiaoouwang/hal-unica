@@ -182,12 +182,12 @@ footer .updated time { font-variant-numeric: tabular-nums; }
 
     <section class="panel">
       <h2>Method</h2>
-      <ol class="method"><li>List UniCA HAL notices with relatedData_s, relatedPublication_s DOIs, or seeAlso_s.</li><li>Record the HAL source field on every token (provenance for corrections).</li><li>Optional modifiedDate_tdate window for incremental refresh; merge by halId_s.</li><li>Parse each token as DOI, URL, HAL id, or other.</li><li>Resolve new DOIs with DataCite REST API; reuse doi_resolutions.jsonl cache.</li><li>Label repository from landing host / publisher / known DOI prefix.</li><li>Flag dataset_repo landings filed outside relatedData_s in misfiled_dataset_links.csv.</li><li>Write publication-level JSONL, DOI resolution JSONL, and CSV correspondence tables.</li></ol>
+      <ol class="method"><li>List UniCA HAL notices with relatedData_s, relatedPublication_s DOIs, or seeAlso_s.</li><li>Record the HAL source field on every token (provenance for corrections).</li><li>Optional modifiedDate_tdate window for incremental refresh; merge by halId_s.</li><li>Parse each token as DOI, URL, HAL id, or other.</li><li>Resolve new DOIs with DataCite REST API; reuse doi_resolutions.jsonl cache.</li><li>Label repository and object_kind from landing host / publisher / known DOI prefix; never default unknown hosts to dataset_repo.</li><li>Flag dataset_repo landings filed outside relatedData_s in misfiled_dataset_links.csv.</li><li>Build dataset_to_publications (dataset_repo only) with sticky retrieved_at for the All repositories page.</li><li>Write publication-level JSONL, DOI resolution JSONL, and CSV correspondence tables.</li></ol>
       <p class="muted" style="margin:0.85rem 0 0">
         HAL query: <code>(relatedData_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)</code> on
         <code>https://api.archives-ouvertes.fr/search/UNIV-COTEDAZUR/</code>.
         DOI API: <code>https://api.datacite.org/dois/{doi}</code>.
-        Run: <code>2026-09-22T10:05:13Z</code> → <code>2026-09-22T10:05:13Z</code>.
+        Run: <code>2026-09-22T10:25:50Z</code> → <code>2026-09-22T10:25:50Z</code>.
       </p>
     </section>
 
@@ -223,7 +223,7 @@ footer .updated time { font-variant-numeric: tabular-nums; }
     </section>
 
     <footer>
-      <div class="updated">Last updated: <time datetime="2026-09-22T10:18:17Z">22 Sep 2026, 10:18 UTC</time></div>
+      <div class="updated">Last updated: <time datetime="2026-09-22T10:25:52Z">22 Sep 2026, 10:25 UTC</time></div>
       Source repository: <a href="https://github.com/xiaoouwang/hal-unica">github.com/xiaoouwang/hal-unica</a>
     </footer>
   </main>

@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-09-22T10:05:13Z`  
+Generated: `2026-09-22T10:25:50Z`  
 Collection: `UNIV-COTEDAZUR`  
-Run window: `2026-09-22T10:05:13Z` → `2026-09-22T10:05:13Z`
+Run window: `2026-09-22T10:25:50Z` → `2026-09-22T10:25:50Z`
 
 ## Goal
 
@@ -14,19 +14,22 @@ misfiled dataset links can be corrected.
 ## Pipeline
 
 1. **HAL Search API** — `q=(relatedData_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)` on `/search/UNIV-COTEDAZUR/`
-   with Solr cursor pagination (`sort=docid asc`).
+   with Solr cursor pagination (`sort=docid asc`). Optional
+   `modifiedDate_tdate` window for incremental refresh; merge by `halId_s`.
 2. **Token parse** — values from `relatedData_s`, `relatedPublication_s`, and
    `seeAlso_s` are classified as `doi`, `url`, `hal_id`, or `other`. Each token
    keeps `source_field` / `expected_field` / `field_ok` provenance.
 3. **DataCite resolve** — each unique DOI is fetched from
-   `https://api.datacite.org/dois/{doi}`.
-4. **Repository label** — derived from landing URL host when possible
-   (e.g. `zenodo.org` → Zenodo, `nakala.fr` → NAKALA,
-   `*.recherche.data.gouv.fr` / `data.inrae.fr` → Recherche Data Gouv),
-   else DataCite publisher / DOI prefix.
+   `https://api.datacite.org/dois/{doi}` (cache: `doi_resolutions.jsonl`).
+4. **Repository label + object_kind** — from landing host / publisher / known
+   DOI prefix (`dataset_repo` vs `publication_landing` vs unresolved). Unknown
+   hosts are **not** assumed to be data repositories. See project `README.md`.
 5. **Misfiled flag** — if a DOI resolves to a `dataset_repo` but
    `source_field != relatedData_s`, it is listed in
    `misfiled_dataset_links.csv` for depositor outreach.
+6. **Dataset index** (built after census) — `dataset_to_publications.*` keeps
+   only `object_kind=dataset_repo`, with sticky `retrieved_at` for the
+   All repositories page.
 
 ## Artifacts
 
@@ -34,12 +37,17 @@ misfiled dataset links can be corrected.
 |---|---|
 | `publications_related_data.jsonl` | One HAL notice per line + all related tokens and resolutions |
 | `doi_resolutions.jsonl` | One unique DOI per line (DataCite fields + repository label) |
-| `doi_to_repository.csv` | Flat DOI → repository dictionary |
+| `doi_to_repository.csv` | Flat DOI → repository dictionary (all object kinds) |
 | `doi_hal_repository_map.csv` | Full correspondence: HAL notice ↔ DOI ↔ repository ↔ **source field** |
+| `dataset_to_publications.csv` / `.jsonl` | **Dataset-only** DOI → HAL publications (+ `retrieved_at`) |
 | `misfiled_dataset_links.csv` | Dataset landings filed outside `relatedData_s` (correction queue) |
-| `summary.json` | Aggregated counts including `by_dataset_source_field` |
+| `summary.json` | Aggregated counts including `by_dataset_source_field` / `by_object_kind` |
 | `run_manifest.json` | Run metadata and method checklist |
 | `census.log` | Chronological run log |
+
+Project-level documentation (design, refresh schedule, classification rules):
+repository root `README.md`.
+
 
 ## Counts (this run)
 
