@@ -90,9 +90,21 @@ h1 {
   display: flex; flex-wrap: wrap; gap: 0.45rem 0.9rem; margin: 0 0 1rem;
   font-size: 0.82rem; color: var(--ink-soft);
 }
-.stack-legend span { display: inline-flex; align-items: center; gap: 0.35rem; }
+.stack-legend .stack-legend-item {
+  appearance: none; border: 0; background: transparent; font: inherit;
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  cursor: pointer; border-radius: 6px; padding: 0.15rem 0.35rem;
+  color: inherit;
+  transition: opacity 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+.stack-legend .stack-legend-item:hover,
+.stack-wrap.is-filtering .stack-legend-item.is-active {
+  color: var(--ink); background: rgba(42,38,34,0.06);
+}
+.stack-wrap.is-filtering .stack-legend-item:not(.is-active) { opacity: 0.35; }
 .stack-swatch {
-  width: 0.65rem; height: 0.65rem; border-radius: 2px; flex: 0 0 auto;
+  width: 0.7rem; height: 0.7rem; border-radius: 3px; flex: 0 0 auto;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
 }
 .stack-chart {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(2.4rem, 1fr));
@@ -115,9 +127,17 @@ h1 {
 }
 .stack-seg {
   width: 100%; display: flex; align-items: center; justify-content: center;
-  color: #faf9f7; font-size: 0.68rem; font-weight: 600; font-variant-numeric: tabular-nums;
-  min-height: 0;
+  color: #fff; font-size: 0.68rem; font-weight: 700; font-variant-numeric: tabular-nums;
+  min-height: 0; cursor: pointer;
+  transition: opacity 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.25);
 }
+.stack-seg:hover,
+.stack-wrap.is-filtering .stack-seg.is-active {
+  filter: brightness(1.08); box-shadow: inset 0 0 0 2px rgba(255,255,255,0.85);
+  z-index: 1;
+}
+.stack-wrap.is-filtering .stack-seg:not(.is-active) { opacity: 0.18; filter: grayscale(0.35); }
 .stack-year {
   font-size: 0.78rem; color: var(--ink-soft); font-variant-numeric: tabular-nums;
 }
@@ -262,7 +282,7 @@ footer .updated time { font-variant-numeric: tabular-nums; }
     </section>
 
     <footer>
-      <div class="updated">Last updated: <time datetime="2026-09-22T13:22:14Z">22 Sep 2026, 13:22 UTC</time></div>
+      <div class="updated">Last updated: <time datetime="2026-09-22T13:31:08Z">22 Sep 2026, 13:31 UTC</time></div>
       Source repository: <a href="https://github.com/xiaoouwang/hal-unica">github.com/xiaoouwang/hal-unica</a>
     </footer>
   </main>

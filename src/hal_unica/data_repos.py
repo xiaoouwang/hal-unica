@@ -89,6 +89,7 @@ class Hit:
     evidence: list[Evidence] = field(default_factory=list)
     laboratories: list[str] = field(default_factory=list)
     modifiedDate_tdate: str | None = None
+    producedDateY_i: int | None = None
 
     def add(self, ev: Evidence) -> None:
         self.evidence.append(ev)
@@ -420,6 +421,7 @@ def hit_to_dict(hit: Hit) -> dict[str, Any]:
         "repositories": hit.repositories,
         "laboratories": list(hit.laboratories or []),
         "modifiedDate_tdate": hit.modifiedDate_tdate,
+        "producedDateY_i": hit.producedDateY_i,
         "evidence": [asdict(e) for e in hit.evidence],
     }
 
@@ -438,6 +440,7 @@ def hits_from_jsonl(path: Path) -> dict[str, Hit]:
             repositories=list(doc.get("repositories") or []),
             laboratories=list(doc.get("laboratories") or []),
             modifiedDate_tdate=doc.get("modifiedDate_tdate"),
+            producedDateY_i=doc.get("producedDateY_i"),
         )
         for raw in doc.get("evidence") or []:
             hit.evidence.append(

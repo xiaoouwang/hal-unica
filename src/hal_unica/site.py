@@ -90,6 +90,7 @@ def related_dataset_publications(links_path: Path) -> list[dict[str, Any]]:
                 "doiId_s": hit.doi,
                 "laboratories": list(hit.laboratories or []),
                 "modifiedDate_tdate": hit.modifiedDate_tdate,
+                "producedDateY_i": hit.producedDateY_i,
                 "repositories": repos,
                 "datasets": [
                     {
@@ -552,6 +553,12 @@ def _list_toolbar_html(*, sort_options_html: str) -> str:
             Sort by
             <select id="sort">{sort_options_html}</select>
           </label>
+          <label class="toolbar-label" for="yearSelect">
+            Year
+            <select id="yearSelect" class="lab-select">
+              <option value="">All years</option>
+            </select>
+          </label>
           <label class="toolbar-label" for="labSelect">
             Laboratory
             <select id="labSelect" class="lab-select">
@@ -595,6 +602,40 @@ def _shared_list_helpers_js() -> str:
       }
       return [...set].sort((a, b) => cmpStr(a, b));
     }
+    function uniqueYears(items, getYears) {
+      const set = new Set();
+      for (const item of items) {
+        for (const y of (getYears(item) || [])) {
+          const n = Number(y);
+          if (Number.isFinite(n) && n > 0) set.add(n);
+        }
+      }
+      return [...set].sort((a, b) => b - a);
+    }
+    function paintYearControls(allYears) {
+      const sel = document.getElementById("yearSelect");
+      if (!sel) return;
+      const current = sel.value;
+      sel.innerHTML = `<option value="">All years</option>` +
+        allYears.map(y => `<option value="${y}">${y}</option>`).join("");
+      if (current && [...sel.options].some(o => o.value === current)) sel.value = current;
+    }
+    function activeYearFilter() {
+      const sel = document.getElementById("yearSelect");
+      return sel ? (sel.value || "").trim() : "";
+    }
+    function yearsMatch(years, filter) {
+      if (!filter) return true;
+      const want = Number(filter);
+      return (years || []).some(y => Number(y) === want);
+    }
+    function yearLine(years) {
+      const list = [...new Set((years || []).map(y => Number(y)).filter(y => Number.isFinite(y) && y > 0))]
+        .sort((a, b) => b - a);
+      if (!list.length) return "";
+      const label = list.length === 1 ? "Publication year" : "Publication years";
+      return `<div class="muted" style="margin-top:0.2rem;font-size:0.8rem">${label}: ${esc(list.join(" · "))}</div>`;
+    }
     function paintLabControls(allLabs) {
       const sel = document.getElementById("labSelect");
       const dl = document.getElementById("labList");
@@ -637,6 +678,7 @@ def _shared_list_helpers_js() -> str:
     function wireLabControls(onChange) {
       const sel = document.getElementById("labSelect");
       const search = document.getElementById("labSearch");
+      const yearSel = document.getElementById("yearSelect");
       sel.addEventListener("change", () => {
         if (sel.value) search.value = sel.value;
         onChange();
@@ -650,6 +692,7 @@ def _shared_list_helpers_js() -> str:
         }
         onChange();
       });
+      if (yearSel) yearSel.addEventListener("change", onChange);
     }
     """
 
@@ -861,6 +904,7 @@ def render_related(payload_json: str, *, generated_at: str | None = None) -> str
     sort_opts = """
             <option value="hal_desc" selected>Newest HAL update</option>
             <option value="hal_asc">Oldest HAL update</option>
+            <option value="year_desc">Publication year (newest)</option>
             <option value="title_asc">Title A–Z</option>
             <option value="repo_asc">Repository A–Z</option>
     """
@@ -901,12 +945,14 @@ def render_related(payload_json: str, *, generated_at: str | None = None) -> str
     let pubs = data.related_datasets.publications || [];
     let active = "all";
     const allLabs = uniqueLabs(pubs, p => p.laboratories);
+    const allYears = uniqueYears(pubs, p => [p.producedDateY_i]);
 
     function sortRows(rows) {{
       const mode = document.getElementById("sort").value;
       return rows.slice().sort((a, b) => {{
         if (mode === "hal_desc") return cmpIsoDesc(a.modifiedDate_tdate, b.modifiedDate_tdate) || cmpStr(a.title_s, b.title_s);
         if (mode === "hal_asc") return cmpIsoAsc(a.modifiedDate_tdate, b.modifiedDate_tdate) || cmpStr(a.title_s, b.title_s);
+        if (mode === "year_desc") return (Number(b.producedDateY_i)||0) - (Number(a.producedDateY_i)||0) || cmpStr(a.title_s, b.title_s);
         if (mode === "repo_asc") return cmpStr((a.repositories||[])[0], (b.repositories||[])[0]) || cmpStr(a.title_s, b.title_s);
         return cmpStr(a.title_s, b.title_s);
       }});
@@ -914,13 +960,16 @@ def render_related(payload_json: str, *, generated_at: str | None = None) -> str
 
     function render() {{
       paintLabControls(allLabs);
+      paintYearControls(allYears);
       const q = document.getElementById("q").value.trim().toLowerCase();
       const labFilter = activeLabFilter();
+      const yearFilter = activeYearFilter();
       const filtered = pubs.filter(p => {{
         if (active !== "all" && !(p.repositories || []).includes(active)) return false;
         if (!labsMatch(p.laboratories, labFilter)) return false;
+        if (!yearsMatch([p.producedDateY_i], yearFilter)) return false;
         if (!q) return true;
-        const blob = [p.title_s, p.halId_s, p.doiId_s, ...(p.repositories||[]), ...(p.laboratories||[]),
+        const blob = [p.title_s, p.halId_s, p.doiId_s, p.producedDateY_i, ...(p.repositories||[]), ...(p.laboratories||[]),
           ...(p.datasets||[]).map(d => `${{d.doi}} ${{d.repository}} ${{d.dataset_title || ""}}`)].join(" ").toLowerCase();
         return blob.includes(q);
       }});
@@ -953,13 +1002,14 @@ def render_related(payload_json: str, *, generated_at: str | None = None) -> str
         const halMod = p.modifiedDate_tdate
           ? `<span class="muted"><time datetime="${{esc(p.modifiedDate_tdate)}}">HAL updated ${{formatStamp(p.modifiedDate_tdate)}}</time></span>`
           : "";
+        const yearBadge = p.producedDateY_i ? `<span class="badge">${{esc(p.producedDateY_i)}}</span>` : "";
         return `<article class="result">
           <div class="title-row">
             <div>
               <span class="doi-annot">HAL publication with related dataset(s)</span>
               <h2 class="title"><a href="${{esc(p.uri_s || "#")}}" target="_blank" rel="noopener">${{esc(p.title_s || "(untitled)")}}</a></h2>
             </div>
-            <div class="badges">${{badges}}${{misfiledBadge}}</div>
+            <div class="badges">${{yearBadge}}${{badges}}${{misfiledBadge}}</div>
           </div>
           <div class="sub">
             <a href="${{esc(p.uri_s || "#")}}" target="_blank" rel="noopener"><code>${{esc(p.halId_s)}}</code></a>
@@ -968,6 +1018,7 @@ def render_related(payload_json: str, *, generated_at: str | None = None) -> str
             <span>${{(p.datasets||[]).length}} dataset(s)</span>
             ${{halMod}}
           </div>
+          ${{yearLine([p.producedDateY_i])}}
           ${{labsLine(p.laboratories)}}
           <div class="evidence">${{datasets}}</div>
         </article>`;
@@ -994,6 +1045,7 @@ def render_related(payload_json: str, *, generated_at: str | None = None) -> str
     }}
     paint();
     paintLabControls(allLabs);
+    paintYearControls(allYears);
     wireLabControls(render);
     document.getElementById("q").addEventListener("input", render);
     document.getElementById("sort").addEventListener("change", render);
@@ -1009,6 +1061,7 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
             <option value="retrieved_desc" selected>Newest retrieved</option>
             <option value="retrieved_asc">Oldest retrieved</option>
             <option value="hal_desc">Newest HAL update</option>
+            <option value="year_desc">Publication year (newest)</option>
             <option value="repo_asc">Repository A–Z</option>
             <option value="doi_asc">Dataset DOI A–Z</option>
     """
@@ -1054,6 +1107,7 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
     const datasets = data.datasets || [];
     let active = "all";
     const allLabs = uniqueLabs(datasets, d => (d.publications || []).flatMap(p => p.laboratories || []));
+    const allYears = uniqueYears(datasets, d => (d.publications || []).map(p => p.producedDateY_i));
 
     const byRepo = idx.by_repository || datasets.reduce((acc, d) => {{
       const r = d.repository || "Unknown";
@@ -1094,6 +1148,9 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
     function itemLabs(d) {{
       return [...new Set((d.publications || []).flatMap(p => p.laboratories || []).filter(Boolean))];
     }}
+    function itemYears(d) {{
+      return (d.publications || []).map(p => p.producedDateY_i).filter(y => y != null && y !== "");
+    }}
 
     function sortRows(rows) {{
       const mode = document.getElementById("sort").value;
@@ -1101,6 +1158,11 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
         if (mode === "retrieved_desc") return cmpIsoDesc(a.retrieved_at, b.retrieved_at) || cmpStr(a.dataset_doi, b.dataset_doi);
         if (mode === "retrieved_asc") return cmpIsoAsc(a.retrieved_at, b.retrieved_at) || cmpStr(a.dataset_doi, b.dataset_doi);
         if (mode === "hal_desc") return cmpIsoDesc(a.hal_modified_at, b.hal_modified_at) || cmpStr(a.dataset_doi, b.dataset_doi);
+        if (mode === "year_desc") {{
+          const ya = Math.max(0, ...itemYears(a).map(Number).filter(Number.isFinite));
+          const yb = Math.max(0, ...itemYears(b).map(Number).filter(Number.isFinite));
+          return yb - ya || cmpStr(a.dataset_doi, b.dataset_doi);
+        }}
         if (mode === "doi_asc") return cmpStr(a.dataset_doi, b.dataset_doi);
         return cmpStr(a.repository, b.repository) || cmpStr(a.dataset_doi, b.dataset_doi);
       }});
@@ -1108,14 +1170,17 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
 
     function render() {{
       paintLabControls(allLabs);
+      paintYearControls(allYears);
       const q = document.getElementById("q").value.trim().toLowerCase();
       const labFilter = activeLabFilter();
+      const yearFilter = activeYearFilter();
       const filtered = datasets.filter(d => {{
         if (active !== "all" && d.repository !== active) return false;
         if (!labsMatch(itemLabs(d), labFilter)) return false;
+        if (!yearsMatch(itemYears(d), yearFilter)) return false;
         if (!q) return true;
         const blob = [d.dataset_doi, d.repository, d.landing_host, d.dataset_title, d.retrieved_at,
-          ...itemLabs(d),
+          ...itemLabs(d), ...itemYears(d),
           ...(d.publications||[]).map(p => `${{p.halId_s}} ${{p.title_s}} ${{p.doiId_s}}`)].join(" ").toLowerCase();
         return blob.includes(q);
       }});
@@ -1133,9 +1198,13 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
             : (field && field !== "relatedData_s"
               ? `<div class="doi-annot">Also listed in HAL <code>${{esc(field)}}</code>${{p.also_in_relatedData_s ? " (already in relatedData_s)" : ""}}</div>`
               : (field ? `<div class="doi-annot">HAL field <code>${{esc(field)}}</code></div>` : ""));
+          const pubYear = p.producedDateY_i
+            ? `<div class="muted" style="margin-top:0.15rem;font-size:0.8rem">Publication year: ${{esc(p.producedDateY_i)}}</div>`
+            : "";
           return `<div class="ev"><dt>Publication</dt><dd>
             <a href="${{esc(p.uri_s || "#")}}" target="_blank" rel="noopener">${{esc(p.title_s || "(untitled)")}}</a>
             ${{fieldNote}}
+            ${{pubYear}}
             ${{labsLine(p.laboratories)}}
             <div class="muted" style="margin-top:0.25rem">
               <a href="${{esc(p.uri_s || "#")}}" target="_blank" rel="noopener"><code>${{esc(p.halId_s)}}</code></a>
@@ -1155,6 +1224,10 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
           ? `<span class="muted" title="Latest HAL modifiedDate among linked notices"><time datetime="${{esc(d.hal_modified_at)}}">HAL updated ${{formatStamp(d.hal_modified_at)}}</time></span>`
           : "";
         const cardLabs = itemLabs(d);
+        const years = itemYears(d);
+        const yearBadge = years.length
+          ? `<span class="badge" title="Publication year(s) of linked HAL notices">${{esc([...new Set(years.map(Number))].sort((a,b)=>b-a).join(" · "))}}</span>`
+          : "";
         return `<article class="result">
           <div class="title-row">
             <div>
@@ -1162,7 +1235,7 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
               ${{sourceFields ? `<span class="doi-annot">HAL source field(s): <code>${{esc(sourceFields)}}</code></span>` : ""}}
               <h2 class="title"><a href="${{esc(href)}}" target="_blank" rel="noopener"><code>${{esc(d.dataset_doi)}}</code></a></h2>
             </div>
-            <div class="badges"><span class="badge">${{esc(repo)}}</span>${{misfiledBadge}}</div>
+            <div class="badges">${{yearBadge}}<span class="badge">${{esc(repo)}}</span>${{misfiledBadge}}</div>
           </div>
           <div class="sub">
             <span>${{esc(d.dataset_title || "")}}</span>
@@ -1171,6 +1244,7 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
             ${{retrieved}}
             ${{halMod}}
           </div>
+          ${{yearLine(years)}}
           ${{labsLine(cardLabs)}}
           <div class="evidence">${{pubs || '<div class="muted">No linked publication in census.</div>'}}</div>
         </article>`;
@@ -1178,6 +1252,7 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
     }}
     paintFilters();
     paintLabControls(allLabs);
+    paintYearControls(allYears);
     wireLabControls(render);
     document.getElementById("q").addEventListener("input", render);
     document.getElementById("sort").addEventListener("change", render);
@@ -1186,6 +1261,7 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
 </body>
 </html>
 """
+
 
 
 
@@ -1238,6 +1314,7 @@ def render_software(software_json: str, *, generated_at: str | None = None) -> s
     const rows = data.deposits || [];
     const s = data.summary || {{}};
     const allLabs = uniqueLabs(rows, r => r.laboratories);
+    const allYears = uniqueYears(rows, r => [r.producedDateY_i]);
 
     function pubLink(id) {{
       if (!id) return "";
@@ -1266,12 +1343,15 @@ def render_software(software_json: str, *, generated_at: str | None = None) -> s
 
     function render() {{
       paintLabControls(allLabs);
+      paintYearControls(allYears);
       const q = document.getElementById("q").value.trim().toLowerCase();
       const labFilter = activeLabFilter();
+      const yearFilter = activeYearFilter();
       const filtered = rows.filter(r => {{
         if (!labsMatch(r.laboratories, labFilter)) return false;
+        if (!yearsMatch([r.producedDateY_i], yearFilter)) return false;
         if (!q) return true;
-        const blob = [r.title_s, r.halId_s, r.doiId_s, ...(r.laboratories||[]), ...(r.authFullName_s||[]),
+        const blob = [r.title_s, r.halId_s, r.doiId_s, r.producedDateY_i, ...(r.laboratories||[]), ...(r.authFullName_s||[]),
           ...(r.softCodeRepository_s||[]), ...(r.swhidId_s||[]),
           ...(r.softProgrammingLanguage_s||[]), ...(r.relatedPublication_s||[]), ...(r.relatedData_s||[])].join(" ").toLowerCase();
         return blob.includes(q);
@@ -1308,24 +1388,24 @@ def render_software(software_json: str, *, generated_at: str | None = None) -> s
         const halMod = r.modifiedDate_tdate
           ? `<span class="muted"><time datetime="${{esc(r.modifiedDate_tdate)}}">HAL updated ${{formatStamp(r.modifiedDate_tdate)}}</time></span>`
           : "";
-        const year = r.producedDateY_i ? `<span>${{esc(r.producedDateY_i)}}</span>` : "";
+        const yearBadge = r.producedDateY_i ? `<span class="badge">${{esc(r.producedDateY_i)}}</span>` : "";
         return `<article class="result">
           <div class="title-row">
             <div>
               <span class="doi-annot">HAL SOFTWARE deposit</span>
               <h2 class="title"><a href="${{esc(r.uri_s || "#")}}" target="_blank" rel="noopener">${{esc(r.title_s || "(untitled)")}}</a></h2>
             </div>
-            <div class="badges">${{langs || '<span class="badge">SOFTWARE</span>'}}</div>
+            <div class="badges">${{yearBadge}}${{langs || '<span class="badge">SOFTWARE</span>'}}</div>
           </div>
           <div class="sub">
             <a href="${{esc(r.uri_s || "#")}}" target="_blank" rel="noopener"><code>${{esc(r.halId_s)}}</code></a>
             ${{r.doiId_s ? `<a href="https://doi.org/${{esc(r.doiId_s)}}" target="_blank" rel="noopener"><code>${{esc(r.doiId_s)}}</code></a>` : ""}}
-            ${{year}}
             <span>${{(r.softCodeRepository_s||[]).length}} repo(s)</span>
             <span>${{(r.swhidId_s||[]).length}} SWHID(s)</span>
             ${{retrieved}}
             ${{halMod}}
           </div>
+          ${{yearLine([r.producedDateY_i])}}
           ${{authorLine}}
           ${{labsLine(r.laboratories)}}
           <div class="evidence">${{repos}}${{swh}}${{pubs}}${{dataLinks}}${{files || (r.fileMain_s ? `<div class="ev"><dt>HAL file</dt><dd><a href="${{esc(r.fileMain_s)}}" target="_blank" rel="noopener">document</a></dd></div>` : "")}}</div>
@@ -1333,6 +1413,7 @@ def render_software(software_json: str, *, generated_at: str | None = None) -> s
       }}).join("") || `<div class="empty">No matches.</div>`;
     }}
     paintLabControls(allLabs);
+    paintYearControls(allYears);
     wireLabControls(render);
     document.getElementById("q").addEventListener("input", render);
     document.getElementById("sort").addEventListener("change", render);

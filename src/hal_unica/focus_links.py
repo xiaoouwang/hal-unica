@@ -81,6 +81,7 @@ def hits_from_census_publications(
                 doi=pub.get("doiId_s"),
                 laboratories=list(pub.get("laboratories") or []),
                 modifiedDate_tdate=pub.get("modifiedDate_tdate"),
+                producedDateY_i=pub.get("producedDateY_i"),
             )
             for ev in evidence:
                 hit.add(ev)

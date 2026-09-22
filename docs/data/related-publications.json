@@ -24,6 +24,7 @@
         "UPPA"
       ],
       "modifiedDate_tdate": "2026-09-22T03:40:11Z",
+      "producedDateY_i": 2025,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -60,6 +61,7 @@
         "UJM EPE"
       ],
       "modifiedDate_tdate": "2026-09-22T03:25:40Z",
+      "producedDateY_i": 2025,
       "repositories": [
         "NAKALA"
       ],
@@ -96,6 +98,7 @@
         "IRAP"
       ],
       "modifiedDate_tdate": "2026-09-17T03:55:36Z",
+      "producedDateY_i": 2019,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -132,6 +135,7 @@
         "UT"
       ],
       "modifiedDate_tdate": "2026-09-16T16:48:10Z",
+      "producedDateY_i": 2026,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -168,6 +172,7 @@
         "IMT Atlantique"
       ],
       "modifiedDate_tdate": "2026-09-16T10:20:56Z",
+      "producedDateY_i": 2017,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -215,6 +220,7 @@
         "UR"
       ],
       "modifiedDate_tdate": "2026-09-16T10:20:56Z",
+      "producedDateY_i": 2020,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -260,6 +266,7 @@
         "Institut Agro"
       ],
       "modifiedDate_tdate": "2026-09-15T16:11:40Z",
+      "producedDateY_i": 2020,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -296,6 +303,7 @@
         "UB"
       ],
       "modifiedDate_tdate": "2026-09-15T16:10:56Z",
+      "producedDateY_i": 2022,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -332,6 +340,7 @@
         "IRCAN"
       ],
       "modifiedDate_tdate": "2026-09-15T16:10:48Z",
+      "producedDateY_i": 2021,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -368,6 +377,7 @@
         "U3E"
       ],
       "modifiedDate_tdate": "2026-09-15T16:09:43Z",
+      "producedDateY_i": 2025,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -404,6 +414,7 @@
         "UB"
       ],
       "modifiedDate_tdate": "2026-09-15T16:09:41Z",
+      "producedDateY_i": 2018,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -473,6 +484,7 @@
         "UBFC"
       ],
       "modifiedDate_tdate": "2026-09-15T16:08:54Z",
+      "producedDateY_i": 2020,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -504,6 +516,7 @@
         "UniCA"
       ],
       "modifiedDate_tdate": "2026-09-14T14:18:06Z",
+      "producedDateY_i": 2022,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -540,6 +553,7 @@
         "ENVT"
       ],
       "modifiedDate_tdate": "2026-09-14T14:18:06Z",
+      "producedDateY_i": 2025,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -620,6 +634,7 @@
         "ENVT"
       ],
       "modifiedDate_tdate": "2026-09-14T14:18:06Z",
+      "producedDateY_i": 2023,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -720,6 +735,7 @@
         "PSL"
       ],
       "modifiedDate_tdate": "2026-09-10T16:50:38Z",
+      "producedDateY_i": 2026,
       "repositories": [
         "NAKALA"
       ],
@@ -756,6 +772,7 @@
         "Institut Agro"
       ],
       "modifiedDate_tdate": "2026-08-25T03:22:29Z",
+      "producedDateY_i": 2026,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -792,6 +809,7 @@
         "SU"
       ],
       "modifiedDate_tdate": "2026-08-21T03:18:54Z",
+      "producedDateY_i": 2021,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -828,6 +846,7 @@
         "INSU - CNRS"
       ],
       "modifiedDate_tdate": "2026-08-20T10:04:02Z",
+      "producedDateY_i": 2021,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -857,6 +876,7 @@
         "UniCA"
       ],
       "modifiedDate_tdate": "2026-08-07T14:00:00Z",
+      "producedDateY_i": 2019,
       "repositories": [
         "NAKALA"
       ],
@@ -893,6 +913,7 @@
         "INRAE"
       ],
       "modifiedDate_tdate": "2026-08-07T11:16:13Z",
+      "producedDateY_i": 2024,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -929,6 +950,7 @@
         "Montpellier SupAgro"
       ],
       "modifiedDate_tdate": "2026-08-06T03:22:21Z",
+      "producedDateY_i": 2018,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -1053,6 +1075,7 @@
         "EHESS"
       ],
       "modifiedDate_tdate": "2026-08-01T03:22:46Z",
+      "producedDateY_i": 2026,
       "repositories": [
         "NAKALA"
       ],
@@ -1089,6 +1112,7 @@
         "UNS"
       ],
       "modifiedDate_tdate": "2026-07-24T12:18:42Z",
+      "producedDateY_i": 2021,
       "repositories": [
         "NAKALA"
       ],
@@ -1125,6 +1149,7 @@
         "AMU"
       ],
       "modifiedDate_tdate": "2026-07-24T12:18:42Z",
+      "producedDateY_i": 2019,
       "repositories": [
         "NAKALA"
       ],
@@ -1155,6 +1180,7 @@
         "UniCA"
       ],
       "modifiedDate_tdate": "2026-06-25T03:22:58Z",
+      "producedDateY_i": 2026,
       "repositories": [
         "NAKALA"
       ],
@@ -1188,6 +1214,7 @@
         "UniCA"
       ],
       "modifiedDate_tdate": "2026-06-19T16:16:41Z",
+      "producedDateY_i": 2025,
       "repositories": [
         "NAKALA"
       ],
@@ -1224,6 +1251,7 @@
         "UEVE"
       ],
       "modifiedDate_tdate": "2026-06-17T03:23:44Z",
+      "producedDateY_i": 2024,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -1260,6 +1288,7 @@
         "Inria"
       ],
       "modifiedDate_tdate": "2026-06-02T14:22:23Z",
+      "producedDateY_i": 2019,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -1296,6 +1325,7 @@
         "UC"
       ],
       "modifiedDate_tdate": "2026-05-26T16:01:23Z",
+      "producedDateY_i": 2026,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -1332,6 +1362,7 @@
         "IRD"
       ],
       "modifiedDate_tdate": "2026-05-12T17:02:04Z",
+      "producedDateY_i": 2023,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -1367,6 +1398,7 @@
         "SCHAPI"
       ],
       "modifiedDate_tdate": "2026-05-12T17:02:04Z",
+      "producedDateY_i": 2022,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -1425,6 +1457,7 @@
         "GR"
       ],
       "modifiedDate_tdate": "2026-05-12T17:02:04Z",
+      "producedDateY_i": 2024,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -1483,6 +1516,7 @@
         "GR"
       ],
       "modifiedDate_tdate": "2026-05-12T17:02:04Z",
+      "producedDateY_i": 2025,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -1541,6 +1575,7 @@
         "IRD"
       ],
       "modifiedDate_tdate": "2026-05-12T17:02:04Z",
+      "producedDateY_i": 2025,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -1577,6 +1612,7 @@
         "CNRS"
       ],
       "modifiedDate_tdate": "2026-05-12T17:02:03Z",
+      "producedDateY_i": 2018,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -1613,6 +1649,7 @@
         "UniCA"
       ],
       "modifiedDate_tdate": "2026-05-11T11:54:05Z",
+      "producedDateY_i": 2025,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -1649,6 +1686,7 @@
         "IRSTEA"
       ],
       "modifiedDate_tdate": "2026-05-07T09:44:27Z",
+      "producedDateY_i": 2017,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -1685,6 +1723,7 @@
         "UTLN"
       ],
       "modifiedDate_tdate": "2026-05-05T15:53:24Z",
+      "producedDateY_i": 2025,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -1721,6 +1760,7 @@
         "UniCA"
       ],
       "modifiedDate_tdate": "2026-05-05T15:53:16Z",
+      "producedDateY_i": 2024,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -1757,6 +1797,7 @@
         "AU"
       ],
       "modifiedDate_tdate": "2026-05-05T15:53:14Z",
+      "producedDateY_i": 2022,
       "repositories": [
         "NAKALA"
       ],
@@ -1799,6 +1840,7 @@
         "AU"
       ],
       "modifiedDate_tdate": "2026-05-05T15:53:12Z",
+      "producedDateY_i": 2023,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -1835,6 +1877,7 @@
         "IRD"
       ],
       "modifiedDate_tdate": "2026-05-05T15:52:43Z",
+      "producedDateY_i": 2023,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -1869,6 +1912,7 @@
         "CRONOS"
       ],
       "modifiedDate_tdate": "2026-05-05T15:52:36Z",
+      "producedDateY_i": 2023,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -1904,6 +1948,7 @@
         "UniCA"
       ],
       "modifiedDate_tdate": "2026-05-05T15:52:32Z",
+      "producedDateY_i": 2022,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -1940,6 +1985,7 @@
         "INP Clermont Auvergne"
       ],
       "modifiedDate_tdate": "2026-05-05T15:52:27Z",
+      "producedDateY_i": 2022,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -1976,6 +2022,7 @@
         "LIRMM"
       ],
       "modifiedDate_tdate": "2026-05-05T15:52:24Z",
+      "producedDateY_i": 2017,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -2023,6 +2070,7 @@
         "Montpellier SupAgro"
       ],
       "modifiedDate_tdate": "2026-05-05T15:52:21Z",
+      "producedDateY_i": 2013,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -2059,6 +2107,7 @@
         "MIA Paris-Saclay"
       ],
       "modifiedDate_tdate": "2026-05-05T15:52:12Z",
+      "producedDateY_i": 2020,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -2095,6 +2144,7 @@
         "UEVE"
       ],
       "modifiedDate_tdate": "2026-05-05T15:52:07Z",
+      "producedDateY_i": 2017,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -2131,6 +2181,7 @@
         "Institut Agro"
       ],
       "modifiedDate_tdate": "2026-05-05T15:52:06Z",
+      "producedDateY_i": 2020,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -2167,6 +2218,7 @@
         "CNRS"
       ],
       "modifiedDate_tdate": "2026-05-05T15:52:03Z",
+      "producedDateY_i": 2016,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -2203,6 +2255,7 @@
         "Montpellier SupAgro"
       ],
       "modifiedDate_tdate": "2026-05-05T15:52:02Z",
+      "producedDateY_i": 2018,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -2250,6 +2303,7 @@
         "Inria"
       ],
       "modifiedDate_tdate": "2026-05-05T15:52:02Z",
+      "producedDateY_i": 2018,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -2286,6 +2340,7 @@
         "Laboratoire I3S - SPARKS"
       ],
       "modifiedDate_tdate": "2026-04-10T14:14:59Z",
+      "producedDateY_i": 2023,
       "repositories": [
         "Recherche Data Gouv"
       ],
@@ -2322,6 +2377,7 @@
         "UMPV"
       ],
       "modifiedDate_tdate": "2025-12-02T03:18:23Z",
+      "producedDateY_i": 2021,
       "repositories": [
         "Recherche Data Gouv"
       ],
