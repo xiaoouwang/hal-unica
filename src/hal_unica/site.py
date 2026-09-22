@@ -813,6 +813,9 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
     const noteEl = document.getElementById("chartNote");
     const legendEl = document.getElementById("stackLegend");
     const chartEl = document.getElementById("stackChart");
+    function esc(s) {{
+      return String(s ?? "").replace(/[&<>"']/g, c => ({{"&":"&amp;","<":"&lt;",">":"&gt;","\\"":"&quot;","'":"&#39;"}}[c]));
+    }}
     if (chart && chart.stacked && chart.stacked.years && chart.stacked.years.length) {{
       noteEl.textContent = chart.note || "";
       const series = chart.stacked.series || [];
@@ -820,7 +823,6 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
       const totals = chart.stacked.totals || [];
       const maxTotal = Math.max(1, ...totals);
       const wrap = legendEl.closest(".stack-wrap");
-      const repoKey = (name) => String(name || "");
       legendEl.innerHTML = series.map(s =>
         `<button type="button" class="stack-legend-item" data-repo="${{esc(s.repository)}}">
           <i class="stack-swatch" style="background:${{s.color}}"></i>${{esc(s.repository)}}
