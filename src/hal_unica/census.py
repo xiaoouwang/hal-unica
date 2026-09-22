@@ -26,6 +26,8 @@ CENSUS_FL = [
     "seeAlso_s",
     "producedDateY_i",
     "modifiedDate_tdate",
+    "structAcronym_s",
+    "structName_s",
 ]
 
 # Fields that may carry dataset identifiers on HAL notices.
@@ -164,8 +166,38 @@ def load_doi_resolutions_jsonl(path: Path) -> dict[str, DoiResolution]:
     return out
 
 
+def _as_str_list(value: Any) -> list[str]:
+    out: list[str] = []
+    seen: set[str] = set()
+    for item in _as_list(value):
+        text = str(item).strip()
+        if not text:
+            continue
+        key = text.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(text)
+    return out
+
+
+def laboratory_labels(
+    acronyms: list[str] | None,
+    names: list[str] | None,
+    *,
+    limit: int = 10,
+) -> list[str]:
+    """Prefer unique structure acronyms; fall back to names. Cap for display."""
+    labels = _as_str_list(acronyms)
+    if not labels:
+        labels = _as_str_list(names)
+    return labels[:limit]
+
+
 def _publication_from_doc(doc: dict[str, Any]) -> dict[str, Any]:
     tokens, raw_by_field = _tokens_from_doc(doc)
+    acronyms = _as_str_list(doc.get("structAcronym_s"))
+    names = _as_str_list(doc.get("structName_s"))
     return {
         "halId_s": _first(doc.get("halId_s")),
         "uri_s": _first(doc.get("uri_s")),
@@ -174,6 +206,9 @@ def _publication_from_doc(doc: dict[str, Any]) -> dict[str, Any]:
         "doiId_s": _first(doc.get("doiId_s")),
         "producedDateY_i": doc.get("producedDateY_i"),
         "modifiedDate_tdate": _first(doc.get("modifiedDate_tdate")),
+        "structAcronym_s": acronyms,
+        "structName_s": names,
+        "laboratories": laboratory_labels(acronyms, names),
         "relatedData_raw": raw_by_field.get("relatedData_s", []),
         "relatedPublication_raw": raw_by_field.get("relatedPublication_s", []),
         "seeAlso_raw": raw_by_field.get("seeAlso_s", []),
@@ -182,30 +217,96 @@ def _publication_from_doc(doc: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def backfill_laboratories_from_harvest(
+    publications: list[dict[str, Any]],
+    harvest_path: Path,
+) -> int:
+    """Fill laboratory fields from a local harvest JSONL when missing."""
+    if not harvest_path.exists():
+        return 0
+    by_id = {
+        str(p.get("halId_s")): p
+        for p in publications
+        if p.get("halId_s") and not p.get("laboratories") and not p.get("structAcronym_s")
+    }
+    if not by_id:
+        return 0
+    filled = 0
+    with harvest_path.open(encoding="utf-8") as fh:
+        for line in fh:
+            if not line.strip() or not by_id:
+                continue
+            try:
+                doc = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            hid = _first(doc.get("halId_s"))
+            if not hid or hid not in by_id:
+                continue
+            acronyms = _as_str_list(doc.get("structAcronym_s"))
+            names = _as_str_list(doc.get("structName_s"))
+            pub = by_id.pop(hid)
+            pub["structAcronym_s"] = acronyms
+            pub["structName_s"] = names
+            pub["laboratories"] = laboratory_labels(acronyms, names)
+            filled += 1
+    return filled
+
+
 def _attach_resolutions(
     publications: list[dict[str, Any]],
     resolutions: dict[str, DoiResolution],
 ) -> None:
     for pub in publications:
+        # Ensure display labs exist even on older JSONL rows.
+        if not pub.get("laboratories"):
+            pub["laboratories"] = laboratory_labels(
+                pub.get("structAcronym_s") or [],
+                pub.get("structName_s") or [],
+            )
+
+        tokens = pub.get("related_tokens") or []
+        related_data_dois = {
+            str(t.get("value") or "").lower()
+            for t in tokens
+            if t.get("kind") == "doi"
+            and t.get("source_field") == EXPECTED_DATASET_FIELD
+            and t.get("value")
+        }
+
         datasets = []
         repos: list[str] = []
         anomaly_fields: list[str] = []
-        for t in pub.get("related_tokens") or []:
+        for t in tokens:
             entry: dict[str, Any] = dict(t)
             if t.get("kind") == "doi" and t.get("value") in resolutions:
                 r = resolutions[t["value"]]
                 entry["resolution"] = r.to_dict()
                 if r.repository:
                     repos.append(r.repository)
-                if r.object_kind == "dataset_repo" and not t.get("field_ok", True):
+                # Wrong HAL field is only a correction if the same DOI is absent
+                # from relatedData_s on this notice (otherwise it is supplementary).
+                doi_l = str(t.get("value") or "").lower()
+                if (
+                    r.object_kind == "dataset_repo"
+                    and not t.get("field_ok", True)
+                    and doi_l not in related_data_dois
+                ):
                     entry["misfiled_dataset_link"] = True
                     entry["correction_note"] = (
-                        f"Dataset DOI found in {t.get('source_field')}; "
+                        f"Dataset DOI found only in {t.get('source_field')}; "
                         f"expected HAL field is {EXPECTED_DATASET_FIELD}."
                     )
                     src = t.get("source_field")
                     if src and src not in anomaly_fields:
                         anomaly_fields.append(src)
+                elif (
+                    r.object_kind == "dataset_repo"
+                    and not t.get("field_ok", True)
+                    and doi_l in related_data_dois
+                ):
+                    entry["misfiled_dataset_link"] = False
+                    entry["also_in_relatedData_s"] = True
             datasets.append(entry)
         seen: set[str] = set()
         uniq_repos: list[str] = []
@@ -485,6 +586,7 @@ def write_census_artifacts(census: CensusLinks, out_dir: Path, log_path: Path) -
                 "hal_title",
                 "hal_docType",
                 "publication_doi",
+                "laboratories",
                 "source_field",
                 "expected_field",
                 "dataset_doi",
@@ -507,6 +609,7 @@ def write_census_artifacts(census: CensusLinks, out_dir: Path, log_path: Path) -
                         "hal_title": pub.get("title_s"),
                         "hal_docType": pub.get("docType_s"),
                         "publication_doi": pub.get("doiId_s"),
+                        "laboratories": " | ".join(pub.get("laboratories") or []),
                         "source_field": t.get("source_field"),
                         "expected_field": t.get("expected_field") or EXPECTED_DATASET_FIELD,
                         "dataset_doi": t.get("value"),
@@ -593,7 +696,7 @@ def write_census_artifacts(census: CensusLinks, out_dir: Path, log_path: Path) -
             "Parse each token as DOI, URL, HAL id, or other.",
             "Resolve new DOIs with DataCite REST API; reuse doi_resolutions.jsonl cache.",
             "Label repository and object_kind from landing host / publisher / known DOI prefix; never default unknown hosts to dataset_repo.",
-            "Flag dataset_repo landings filed outside relatedData_s in misfiled_dataset_links.csv.",
+            "Flag dataset_repo DOIs filed only outside relatedData_s (still listed there = supplementary, not a correction).",
             "Build dataset_to_publications (dataset_repo only) with sticky retrieved_at for the All repositories page.",
             "Write publication-level JSONL, DOI resolution JSONL, and CSV correspondence tables.",
         ],
@@ -631,9 +734,11 @@ misfiled dataset links can be corrected.
 4. **Repository label + object_kind** — from landing host / publisher / known
    DOI prefix (`dataset_repo` vs `publication_landing` vs unresolved). Unknown
    hosts are **not** assumed to be data repositories. See project `README.md`.
-5. **Misfiled flag** — if a DOI resolves to a `dataset_repo` but
-   `source_field != relatedData_s`, it is listed in
-   `misfiled_dataset_links.csv` for depositor outreach.
+5. **Misfiled flag** — if a DOI resolves to a `dataset_repo`, was filed outside
+   `relatedData_s`, **and** the same DOI is not also present in `relatedData_s`
+   on that notice, it is listed in `misfiled_dataset_links.csv`. When the DOI
+   already appears in `relatedData_s`, an extra mention elsewhere is treated as
+   supplementary (not a correction).
 6. **Dataset index** (built after census) — `dataset_to_publications.*` keeps
    only `object_kind=dataset_repo`, with sticky `retrieved_at` for the
    All repositories page.

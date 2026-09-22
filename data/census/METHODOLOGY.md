@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-09-22T10:25:50Z`  
+Generated: `2026-09-22T11:09:03Z`  
 Collection: `UNIV-COTEDAZUR`  
-Run window: `2026-09-22T10:25:50Z` → `2026-09-22T10:25:50Z`
+Run window: `2026-09-22T11:09:03Z` → `2026-09-22T11:09:03Z`
 
 ## Goal
 
@@ -24,9 +24,11 @@ misfiled dataset links can be corrected.
 4. **Repository label + object_kind** — from landing host / publisher / known
    DOI prefix (`dataset_repo` vs `publication_landing` vs unresolved). Unknown
    hosts are **not** assumed to be data repositories. See project `README.md`.
-5. **Misfiled flag** — if a DOI resolves to a `dataset_repo` but
-   `source_field != relatedData_s`, it is listed in
-   `misfiled_dataset_links.csv` for depositor outreach.
+5. **Misfiled flag** — if a DOI resolves to a `dataset_repo`, was filed outside
+   `relatedData_s`, **and** the same DOI is not also present in `relatedData_s`
+   on that notice, it is listed in `misfiled_dataset_links.csv`. When the DOI
+   already appears in `relatedData_s`, an extra mention elsewhere is treated as
+   supplementary (not a correction).
 6. **Dataset index** (built after census) — `dataset_to_publications.*` keeps
    only `object_kind=dataset_repo`, with sticky `retrieved_at` for the
    All repositories page.
@@ -55,8 +57,8 @@ repository root `README.md`.
 - Related tokens: **508**
 - Unique DOIs resolved: **401**
 - Publications with at least one dataset-repo landing: **164**
-- Misfiled dataset links (wrong HAL field): **73**
-- Publications with ≥1 misfiled dataset link: **54**
+- Misfiled dataset links (wrong HAL field): **72**
+- Publications with ≥1 misfiled dataset link: **53**
 
 ### Dataset DOIs by HAL source field
 

@@ -186,7 +186,7 @@ Deployed from `docs/` via [`.github/workflows/pages.yml`](.github/workflows/page
 ## Design decisions worth remembering
 
 1. **Do not treat every related DOI as a dataset.** Journals, arXiv, ResearchGate, publisher platforms are `publication_landing`. Unknown hosts must not default to `dataset_repo`.
-2. **Track wrong fields instead of dropping them.** Misfiled Nakala/Zenodo DOIs in `relatedPublication_s` are exactly the correction queue.
+2. **Track wrong fields instead of dropping them.** Misfiled Nakala/Zenodo DOIs in `relatedPublication_s` are exactly the correction queue — **unless** the same DOI is already in `relatedData_s` on that notice (then the extra field is supplementary, not a correction).
 3. **Upsert + watermark**, never wipe the JSONL on `--since` / lookback harvests.
 4. **Sunday full rebuild** is the safety net for missed incrementals.
 5. **`retrieved_at` is sticky** so “newly discovered datasets” remain sortable after later full rebuilds.

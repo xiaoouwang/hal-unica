@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any, TextIO
 
 from .census import (
+    backfill_laboratories_from_harvest,
     load_doi_resolutions_jsonl,
     load_publications_jsonl,
     run_census,
@@ -101,6 +102,9 @@ def run_refresh(
         )
         if not census.watermark_modified:
             census.watermark_modified = read_watermark(census_dir / "census.meta.json")
+        filled = backfill_laboratories_from_harvest(census.publications, harvest_path)
+        if filled:
+            say(f"backfilled laboratories on {filled} publications from harvest")
         write_census_artifacts(census, census_dir, log_path)
 
         say("harvesting SOFTWARE deposits (full)")

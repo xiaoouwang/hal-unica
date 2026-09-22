@@ -241,9 +241,11 @@ def build_dataset_to_publications(census_pubs_jsonl: Path, out_dir: Path) -> dic
                     "docType_s": pub.get("docType_s"),
                     "doiId_s": pub.get("doiId_s"),
                     "modifiedDate_tdate": mod,
+                    "laboratories": list(pub.get("laboratories") or []),
                     "source_field": t.get("source_field"),
                     "field_ok": t.get("field_ok"),
                     "misfiled_dataset_link": bool(t.get("misfiled_dataset_link")),
+                    "also_in_relatedData_s": bool(t.get("also_in_relatedData_s")),
                 }
                 if pub_ref not in entry["publications"]:
                     entry["publications"].append(pub_ref)
@@ -287,6 +289,7 @@ def build_dataset_to_publications(census_pubs_jsonl: Path, out_dir: Path) -> dic
                 "hal_title",
                 "hal_docType",
                 "publication_doi",
+                "laboratories",
                 "source_field",
                 "field_ok",
                 "misfiled_dataset_link",
@@ -311,6 +314,7 @@ def build_dataset_to_publications(census_pubs_jsonl: Path, out_dir: Path) -> dic
                         "hal_title": pub.get("title_s"),
                         "hal_docType": pub.get("docType_s"),
                         "publication_doi": pub.get("doiId_s"),
+                        "laboratories": " | ".join(pub.get("laboratories") or []),
                         "source_field": pub.get("source_field"),
                         "field_ok": pub.get("field_ok"),
                         "misfiled_dataset_link": bool(pub.get("misfiled_dataset_link")),

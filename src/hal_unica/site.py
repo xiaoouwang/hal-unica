@@ -684,7 +684,7 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
         if (active !== "all" && d.repository !== active) return false;
         if (!q) return true;
         const blob = [d.dataset_doi, d.repository, d.landing_host, d.dataset_title, d.retrieved_at,
-          ...(d.publications||[]).map(p => `${{p.halId_s}} ${{p.title_s}} ${{p.doiId_s}}`)].join(" ").toLowerCase();
+          ...(d.publications||[]).map(p => `${{p.halId_s}} ${{p.title_s}} ${{p.doiId_s}} ${{(p.laboratories||[]).join(" ")}}`)].join(" ").toLowerCase();
         return blob.includes(q);
       }});
       const rows = sortRows(filtered);
@@ -696,14 +696,19 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
             ? ` · <a href="https://doi.org/${{esc(p.doiId_s)}}" target="_blank" rel="noopener">DOI <code>${{esc(p.doiId_s)}}</code></a>`
             : "";
           const field = p.source_field || "";
-          const fieldNote = field
-            ? (p.misfiled_dataset_link || field !== "relatedData_s"
-              ? `<div class="doi-annot" style="color:var(--accent-hover)">HAL field <code>${{esc(field)}}</code> (expected <code>relatedData_s</code>)</div>`
-              : `<div class="doi-annot">HAL field <code>${{esc(field)}}</code></div>`)
+          const fieldNote = p.misfiled_dataset_link
+            ? `<div class="doi-annot" style="color:var(--accent-hover)">HAL field <code>${{esc(field)}}</code> only (expected <code>relatedData_s</code>)</div>`
+            : (field && field !== "relatedData_s"
+              ? `<div class="doi-annot">Also listed in HAL <code>${{esc(field)}}</code>${{p.also_in_relatedData_s ? " (already in relatedData_s)" : ""}}</div>`
+              : (field ? `<div class="doi-annot">HAL field <code>${{esc(field)}}</code></div>` : ""));
+          const labs = (p.laboratories || []).filter(Boolean);
+          const labsLine = labs.length
+            ? `<div class="muted" style="margin-top:0.2rem;font-size:0.8rem">Labs: ${{esc(labs.join(" · "))}}</div>`
             : "";
           return `<div class="ev"><dt>Publication</dt><dd>
             <a href="${{esc(p.uri_s || "#")}}" target="_blank" rel="noopener">${{esc(p.title_s || "(untitled)")}}</a>
             ${{fieldNote}}
+            ${{labsLine}}
             <div class="muted" style="margin-top:0.25rem">
               <a href="${{esc(p.uri_s || "#")}}" target="_blank" rel="noopener"><code>${{esc(p.halId_s)}}</code></a>
               ${{p.docType_s ? " · " + esc(p.docType_s) : ""}}${{pubDoi}}
@@ -713,13 +718,18 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
         const repo = d.repository || "Unknown";
         const sourceFields = (d.source_fields || []).join(", ");
         const misfiledBadge = d.has_misfiled_source
-          ? `<span class="badge" title="Dataset DOI was not filed in relatedData_s">misfiled field</span>`
+          ? `<span class="badge" title="Dataset DOI appears only outside relatedData_s">misfiled field</span>`
           : "";
         const retrieved = d.retrieved_at
           ? `<span title="First seen in this census index"><time datetime="${{esc(d.retrieved_at)}}">Retrieved ${{formatStamp(d.retrieved_at)}}</time></span>`
           : "";
         const halMod = d.hal_modified_at
           ? `<span class="muted" title="Latest HAL modifiedDate among linked notices"><time datetime="${{esc(d.hal_modified_at)}}">HAL updated ${{formatStamp(d.hal_modified_at)}}</time></span>`
+          : "";
+        // Aggregate labs across linked publications (small muted line on the card).
+        const cardLabs = [...new Set((d.publications || []).flatMap(p => p.laboratories || []).filter(Boolean))];
+        const cardLabsLine = cardLabs.length
+          ? `<span class="muted" style="font-size:0.8rem" title="Laboratories on linked HAL notices">Labs: ${{esc(cardLabs.slice(0, 12).join(" · "))}}${{cardLabs.length > 12 ? "…" : ""}}</span>`
           : "";
         return `<article class="result">
           <div class="title-row">
@@ -736,6 +746,7 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
             <span>${{(d.publications||[]).length}} publication(s)</span>
             ${{retrieved}}
             ${{halMod}}
+            ${{cardLabsLine}}
           </div>
           <div class="evidence">${{pubs || '<div class="muted">No linked publication in census.</div>'}}</div>
         </article>`;
@@ -875,10 +886,10 @@ def render_corrections(corrections_json: str, *, generated_at: str | None = None
     <div class="eyebrow">Field provenance · correction queue</div>
     <h1>To Be Corrected</h1>
     <p class="lede">
-      Dataset DOIs that resolve to a data repository but were filed on HAL in a field
-      other than <code>relatedData_s</code> (often <code>relatedPublication_s</code> or
-      <code>seeAlso_s</code>). Use this list to ask depositors to move the link to the
-      correct metadata field.
+      Dataset DOIs that resolve to a data repository but appear <strong>only</strong> in a HAL
+      field other than <code>relatedData_s</code> (often <code>relatedPublication_s</code> or
+      <code>seeAlso_s</code>). If the same DOI is already present in <code>relatedData_s</code>,
+      an extra mention elsewhere is treated as supplementary and is <em>not</em> listed here.
     </p>
     <div class="stats" id="stats"></div>
     <section class="panel">
@@ -926,18 +937,22 @@ def render_corrections(corrections_json: str, *, generated_at: str | None = None
         if (active !== "all" && r.source_field !== active) return false;
         if (!q) return true;
         const blob = [r.halId_s, r.hal_title, r.dataset_doi, r.repository, r.source_field,
-          r.dataset_title, r.correction_note].join(" ").toLowerCase();
+          r.dataset_title, r.correction_note, r.laboratories].join(" ").toLowerCase();
         return blob.includes(q);
       }});
       document.getElementById("count").textContent = `${{filtered.length}} of ${{rows.length}} links`;
       document.getElementById("list").innerHTML = filtered.map(r => {{
         const href = r.landing_url || (r.dataset_doi ? `https://doi.org/${{r.dataset_doi}}` : "#");
         const repo = r.repository || "Unknown";
+        const labs = String(r.laboratories || "").split("|").map(s => s.trim()).filter(Boolean);
+        const labsLine = labs.length
+          ? `<div class="muted" style="margin-top:0.2rem;font-size:0.8rem">Labs: ${{esc(labs.join(" · "))}}</div>`
+          : "";
         return `<article class="result">
           <div class="title-row">
             <div>
               <span class="doi-annot">Link to the dataset on ${{esc(repo)}}</span>
-              <span class="doi-annot" style="color:var(--accent-hover)">HAL field <code>${{esc(r.source_field || "")}}</code> → expected <code>${{esc(r.expected_field || "relatedData_s")}}</code></span>
+              <span class="doi-annot" style="color:var(--accent-hover)">HAL field <code>${{esc(r.source_field || "")}}</code> only → expected <code>${{esc(r.expected_field || "relatedData_s")}}</code></span>
               <h2 class="title"><a href="${{esc(href)}}" target="_blank" rel="noopener"><code>${{esc(r.dataset_doi)}}</code></a></h2>
             </div>
             <div class="badges">
@@ -951,6 +966,7 @@ def render_corrections(corrections_json: str, *, generated_at: str | None = None
           <div class="evidence">
             <div class="ev"><dt>Publication</dt><dd>
               <a href="${{esc(r.hal_uri || "#")}}" target="_blank" rel="noopener">${{esc(r.hal_title || "(untitled)")}}</a>
+              ${{labsLine}}
               <div class="muted" style="margin-top:0.25rem">
                 <a href="${{esc(r.hal_uri || "#")}}" target="_blank" rel="noopener"><code>${{esc(r.halId_s)}}</code></a>
                 ${{r.hal_docType ? " · " + esc(r.hal_docType) : ""}}

@@ -1,14 +1,14 @@
 {
   "collection": "UNIV-COTEDAZUR",
-  "started_at": "2026-09-22T10:25:50Z",
-  "finished_at": "2026-09-22T10:25:50Z",
+  "started_at": "2026-09-22T11:09:03Z",
+  "finished_at": "2026-09-22T11:09:03Z",
   "since": null,
   "hal_publications_with_relatedData": 313,
   "related_tokens": 508,
   "unique_dois_resolved": 401,
   "publications_with_dataset_repo_landing": 164,
-  "misfiled_dataset_links": 73,
-  "publications_with_misfiled_dataset_link": 54,
+  "misfiled_dataset_links": 72,
+  "publications_with_misfiled_dataset_link": 53,
   "expected_dataset_field": "relatedData_s",
   "incremental": {
     "pubs_fetched": 0,
