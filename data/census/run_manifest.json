@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-22T09:05:05Z",
+  "generated_at": "2026-09-22T09:26:40Z",
   "collection": "UNIV-COTEDAZUR",
   "hal_api": "https://api.archives-ouvertes.fr/search/UNIV-COTEDAZUR/",
   "hal_query": "relatedData_s:*",
-  "since": "2026-09-20T09:05:05Z",
+  "since": null,
   "watermark_modified": "2026-09-22T03:40:11Z",
   "datacite_api": "https://api.datacite.org/dois/{doi}",
-  "started_at": "2026-09-22T09:05:05Z",
-  "finished_at": "2026-09-22T09:05:05Z",
+  "started_at": "2026-09-22T09:26:09Z",
+  "finished_at": "2026-09-22T09:26:40Z",
   "artifacts": {
     "publications_jsonl": "data/census/publications_related_data.jsonl",
     "doi_resolutions_jsonl": "data/census/doi_resolutions.jsonl",
@@ -20,11 +20,11 @@
     "hal_publications_with_relatedData": 129,
     "related_tokens": 202,
     "unique_dois": 181,
-    "pubs_fetched": 2,
-    "pubs_updated": 2,
-    "pubs_inserted": 0,
-    "dois_resolved_live": 0,
-    "dois_from_cache": 181
+    "pubs_fetched": 129,
+    "pubs_updated": 0,
+    "pubs_inserted": 129,
+    "dois_resolved_live": 181,
+    "dois_from_cache": 0
   },
   "method": [
     "List UniCA HAL notices with relatedData_s via Search API cursor pagination.",

@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-09-22T09:14:29Z",
+  "generated_at": "2026-09-22T09:26:42Z",
   "collection": "UNIV-COTEDAZUR",
   "collection_url": "https://hal.science/UNIV-COTEDAZUR",
   "harvest": {
-    "documents": 99136,
-    "with_doi": 41374,
-    "doi_share": 0.4173,
+    "documents": 99165,
+    "with_doi": 41388,
+    "doi_share": 0.4174,
     "doc_types": [
       {
         "type": "ART",
-        "count": 44342
+        "count": 44352
       },
       {
         "type": "COMM",
-        "count": 25165
+        "count": 25169
       },
       {
         "type": "COUV",
-        "count": 7723
+        "count": 7724
       },
       {
         "type": "REPORT",
@@ -29,23 +29,23 @@
       },
       {
         "type": "MEM",
-        "count": 2982
+        "count": 2989
       },
       {
         "type": "UNDEFINED",
-        "count": 2842
+        "count": 2846
       },
       {
         "type": "OUV",
-        "count": 2250
+        "count": 2253
       },
       {
         "type": "POSTER",
-        "count": 1755
+        "count": 1756
       },
       {
         "type": "OTHER",
-        "count": 1384
+        "count": 1383
       },
       {
         "type": "PROCEEDINGS",
@@ -164,7 +164,7 @@
       },
       {
         "year": 1995,
-        "count": 451
+        "count": 452
       },
       {
         "year": 1996,
@@ -232,7 +232,7 @@
       },
       {
         "year": 2012,
-        "count": 4278
+        "count": 4279
       },
       {
         "year": 2013,
@@ -260,7 +260,7 @@
       },
       {
         "year": 2019,
-        "count": 5027
+        "count": 5026
       },
       {
         "year": 2020,
@@ -276,19 +276,19 @@
       },
       {
         "year": 2023,
-        "count": 4972
+        "count": 4971
       },
       {
         "year": 2024,
-        "count": 5223
+        "count": 5224
       },
       {
         "year": 2025,
-        "count": 4697
+        "count": 4700
       },
       {
         "year": 2026,
-        "count": 2178
+        "count": 2203
       }
     ],
     "year_min": 1918,

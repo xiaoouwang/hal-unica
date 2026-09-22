@@ -1,8 +1,16 @@
-incremental census since=2026-09-20T09:05:05Z (existing pubs=129, doi cache=181)
-[2026-09-22T09:05:05Z] census start collection=UNIV-COTEDAZUR since=2026-09-20T09:05:05Z
+full census (no date filter; rebuild from HAL)
+[2026-09-22T09:26:09Z] census start collection=UNIV-COTEDAZUR since=*
 HAL publications with relatedData_s (merged): 129
-  fetched this run: 2 (updated=2, inserted=0)
+  fetched this run: 129 (updated=0, inserted=129)
 relatedData tokens: 202
 unique DOI candidates: 181
-DataCite cache hits: 181; to resolve: 0
-[2026-09-22T09:05:05Z] census done
+DataCite cache hits: 0; to resolve: 181
+DataCite resolved 25/181
+DataCite resolved 50/181
+DataCite resolved 75/181
+DataCite resolved 100/181
+DataCite resolved 125/181
+DataCite resolved 150/181
+DataCite resolved 175/181
+DataCite resolved 181/181
+[2026-09-22T09:26:40Z] census done
