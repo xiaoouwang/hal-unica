@@ -465,7 +465,7 @@ def _nav(active: str) -> str:
 
     return f"""
     <nav>
-      <a class="brand" href="./index.html">hal-unica</a>
+      <a class="brand" href="./index.html">HAL-UniCA</a>
       {link("./index.html", "Statistics", "stats")}
       {link("./related-datasets.html", "Nakala / RDG", "related")}
       {link("./all-repositories.html", "All repositories", "census")}
@@ -482,7 +482,7 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>hal-unica · Statistics</title>
+  <title>HAL-UniCA · Statistics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
