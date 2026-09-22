@@ -114,22 +114,22 @@ def related_dataset_publications(links_path: Path) -> list[dict[str, Any]]:
     return out
 
 
-# Distinct colours for stacked bars (charcoal / stone / earth — avoid purple defaults)
+# Bright stacked-bar palette (BSO-like contrast; last reserved for Autre)
 _STACK_COLORS = [
-    "#2a2622",
-    "#c45c26",
-    "#2f5d50",
-    "#3d5a80",
-    "#b08968",
-    "#6b4f3a",
-    "#4a7c59",
-    "#8c5a3c",
-    "#5c6b73",
-    "#a67c52",
-    "#3f6f6a",
-    "#9a5b3c",
-    "#7a6a4f",
-    "#8a8a8a",  # Autre
+    "#e85d75",  # rose
+    "#f4a261",  # apricot
+    "#e76f51",  # coral
+    "#2a9d8f",  # teal
+    "#4cc9f0",  # sky
+    "#90be6d",  # lime
+    "#f9c74f",  # gold
+    "#577590",  # steel blue
+    "#f28482",  # salmon
+    "#43aa8b",  # green
+    "#9b5de5",  # violet accent (sparingly)
+    "#00bbf9",  # bright blue
+    "#fee440",  # yellow
+    "#adb5bd",  # Autre grey
 ]
 
 
@@ -215,7 +215,7 @@ def census_homepage_stats(
             else:
                 counts.append(int(by_year_repo[y].get(name, 0)))
         color = (
-            "#8a8a8a"
+            "#adb5bd"
             if name == other_label
             else _STACK_COLORS[i % (len(_STACK_COLORS) - 1)]
         )
@@ -403,9 +403,21 @@ h1 {
   display: flex; flex-wrap: wrap; gap: 0.45rem 0.9rem; margin: 0 0 1rem;
   font-size: 0.82rem; color: var(--ink-soft);
 }
-.stack-legend span { display: inline-flex; align-items: center; gap: 0.35rem; }
+.stack-legend .stack-legend-item {
+  appearance: none; border: 0; background: transparent; font: inherit;
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  cursor: pointer; border-radius: 6px; padding: 0.15rem 0.35rem;
+  color: inherit;
+  transition: opacity 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+.stack-legend .stack-legend-item:hover,
+.stack-wrap.is-filtering .stack-legend-item.is-active {
+  color: var(--ink); background: rgba(42,38,34,0.06);
+}
+.stack-wrap.is-filtering .stack-legend-item:not(.is-active) { opacity: 0.35; }
 .stack-swatch {
-  width: 0.65rem; height: 0.65rem; border-radius: 2px; flex: 0 0 auto;
+  width: 0.7rem; height: 0.7rem; border-radius: 3px; flex: 0 0 auto;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
 }
 .stack-chart {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(2.4rem, 1fr));
@@ -428,9 +440,17 @@ h1 {
 }
 .stack-seg {
   width: 100%; display: flex; align-items: center; justify-content: center;
-  color: #faf9f7; font-size: 0.68rem; font-weight: 600; font-variant-numeric: tabular-nums;
-  min-height: 0;
+  color: #fff; font-size: 0.68rem; font-weight: 700; font-variant-numeric: tabular-nums;
+  min-height: 0; cursor: pointer;
+  transition: opacity 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.25);
 }
+.stack-seg:hover,
+.stack-wrap.is-filtering .stack-seg.is-active {
+  filter: brightness(1.08); box-shadow: inset 0 0 0 2px rgba(255,255,255,0.85);
+  z-index: 1;
+}
+.stack-wrap.is-filtering .stack-seg:not(.is-active) { opacity: 0.18; filter: grayscale(0.35); }
 .stack-year {
   font-size: 0.78rem; color: var(--ink-soft); font-variant-numeric: tabular-nums;
 }
@@ -756,8 +776,12 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
       const years = chart.stacked.years;
       const totals = chart.stacked.totals || [];
       const maxTotal = Math.max(1, ...totals);
+      const wrap = legendEl.closest(".stack-wrap");
+      const repoKey = (name) => String(name || "");
       legendEl.innerHTML = series.map(s =>
-        `<span><i class="stack-swatch" style="background:${{s.color}}"></i>${{s.repository}}</span>`
+        `<button type="button" class="stack-legend-item" data-repo="${{esc(s.repository)}}">
+          <i class="stack-swatch" style="background:${{s.color}}"></i>${{esc(s.repository)}}
+        </button>`
       ).join("");
       chartEl.innerHTML = years.map((year, i) => {{
         const total = totals[i] || 0;
@@ -766,7 +790,9 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
           if (!n) return "";
           const pct = (100 * n / maxTotal).toFixed(2);
           const label = n >= 3 ? String(n) : "";
-          return `<div class="stack-seg" style="flex:0 0 ${{pct}}%; background:${{s.color}}" title="${{String(s.repository).replace(/"/g,'&quot;')}}: ${{n}}">${{label}}</div>`;
+          return `<div class="stack-seg" data-repo="${{esc(s.repository)}}" data-year="${{year}}" data-count="${{n}}"
+            style="flex:0 0 ${{pct}}%; background:${{s.color}}"
+            title="${{esc(s.repository)}} · ${{year}}: ${{n}}">${{label}}</div>`;
         }}).join("");
         return `<div class="stack-col">
           <div class="stack-total">${{total}}</div>
@@ -774,6 +800,29 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
           <div class="stack-year">${{year}}</div>
         </div>`;
       }}).join("");
+
+      function setHighlight(repo) {{
+        const active = Boolean(repo);
+        wrap.classList.toggle("is-filtering", active);
+        wrap.querySelectorAll("[data-repo]").forEach(el => {{
+          el.classList.toggle("is-active", active && el.getAttribute("data-repo") === repo);
+        }});
+      }}
+      function clearHighlight() {{ setHighlight(""); }}
+
+      wrap.addEventListener("pointerover", (ev) => {{
+        const el = ev.target.closest("[data-repo]");
+        if (!el || !wrap.contains(el)) return;
+        setHighlight(el.getAttribute("data-repo"));
+      }});
+      wrap.addEventListener("pointerleave", clearHighlight);
+      wrap.addEventListener("focusin", (ev) => {{
+        const el = ev.target.closest("[data-repo]");
+        if (el) setHighlight(el.getAttribute("data-repo"));
+      }});
+      wrap.addEventListener("focusout", (ev) => {{
+        if (!wrap.contains(ev.relatedTarget)) clearHighlight();
+      }});
     }} else {{
       noteEl.textContent = "Census chart unavailable — run a census refresh to populate dataset×year series.";
       legendEl.innerHTML = "";
