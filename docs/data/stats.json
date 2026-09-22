@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T09:26:42Z",
+  "generated_at": "2026-09-22T09:44:16Z",
   "collection": "UNIV-COTEDAZUR",
   "collection_url": "https://hal.science/UNIV-COTEDAZUR",
   "harvest": {
@@ -295,24 +295,24 @@
     "year_max": 2026
   },
   "data_links": {
-    "total_hits": 51,
+    "total_hits": 55,
     "by_platform": {
-      "nakala": 7,
-      "rdg": 44
+      "nakala": 9,
+      "rdg": 46
     },
     "by_repository": {
-      "Recherche Data Gouv": 44,
-      "NAKALA": 7
+      "Recherche Data Gouv": 46,
+      "NAKALA": 9
     },
     "by_object_kind": {
-      "dataset_repo": 51
+      "dataset_repo": 55
     }
   },
   "related_datasets": {
-    "publication_count": 51,
+    "publication_count": 55,
     "by_repository": {
-      "Recherche Data Gouv": 44,
-      "NAKALA": 7
+      "Recherche Data Gouv": 46,
+      "NAKALA": 9
     },
     "publications": [
       {
@@ -330,7 +330,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/X2MOWO",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -349,7 +351,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/IZJIT7",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -368,14 +372,18 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Portail Data INRAE",
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/RJKJBN",
-            "landing_host": "data.inrae.fr"
+            "landing_host": "data.inrae.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.15454/DPBMBW",
             "repository": "Recherche Data Gouv",
             "publisher": "Portail Data INRAE",
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/DPBMBW",
-            "landing_host": "data.inrae.fr"
+            "landing_host": "data.inrae.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -394,7 +402,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/J2A44Q",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -413,7 +423,30 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/SXZNQF",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-03474067",
+        "uri_s": "https://hal.science/hal-03474067v1",
+        "title_s": "A process reverse engineering approach using Process and Observation Ontology and Probabilistic Relational Models: application to processing of bio-composites for food packaging",
+        "docType_s": "COMM",
+        "doiId_s": "10.1007/978-3-030-98876-0_1",
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.15454/AIF6TX",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/AIF6TX",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedPublication_s",
+            "misfiled": true
           }
         ]
       },
@@ -432,7 +465,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/TAQQFZ",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -451,14 +486,18 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/D4TG2M",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.57745/XDVEQW",
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -477,7 +516,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/3SPJ4B",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -496,7 +537,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/TRYOES",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -515,7 +558,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Portail Data INRAE",
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/XVL4BA",
-            "landing_host": "data.inrae.fr"
+            "landing_host": "data.inrae.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -534,7 +579,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/D6XAKL",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -553,28 +600,36 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Portail Data INRAE",
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/D3ODJM",
-            "landing_host": "data.inrae.fr"
+            "landing_host": "data.inrae.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.15454/AY4LMT",
             "repository": "Recherche Data Gouv",
             "publisher": "Portail Data INRAE",
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/AY4LMT",
-            "landing_host": "data.inrae.fr"
+            "landing_host": "data.inrae.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.15454/UQEMVW",
             "repository": "Recherche Data Gouv",
             "publisher": "Portail Data Inra",
             "landing_url": "https://carrtel-collection.hub.inrae.fr/",
-            "landing_host": "carrtel-collection.hub.inrae.fr"
+            "landing_host": "carrtel-collection.hub.inrae.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.15454/TRBJTB",
             "repository": "Recherche Data Gouv",
             "publisher": "Portail Data INRAE",
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/TRBJTB",
-            "landing_host": "data.inrae.fr"
+            "landing_host": "data.inrae.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -593,7 +648,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Portail Data INRAE",
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/TRBJTB",
-            "landing_host": "data.inrae.fr"
+            "landing_host": "data.inrae.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -612,21 +669,27 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/WH7FJR",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.57745/HBQWP5",
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/HBQWP5",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.57745/KK2SVJ",
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/KK2SVJ",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -645,21 +708,27 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/WH7FJR",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.57745/HBQWP5",
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/HBQWP5",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.57745/KK2SVJ",
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/KK2SVJ",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -678,21 +747,27 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/WH7FJR",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.57745/HBQWP5",
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/HBQWP5",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.57745/KK2SVJ",
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/KK2SVJ",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -711,14 +786,39 @@
             "repository": "Recherche Data Gouv",
             "publisher": "INRA",
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/F4C8I0",
-            "landing_host": "data.inrae.fr"
+            "landing_host": "data.inrae.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.15454/GNBUFH",
             "repository": "Recherche Data Gouv",
             "publisher": "INRA",
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/GNBUFH",
-            "landing_host": "data.inrae.fr"
+            "landing_host": "data.inrae.fr",
+            "field": "relatedData_s",
+            "misfiled": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-04289970",
+        "uri_s": "https://hal.science/hal-04289970v1",
+        "title_s": "Combining different points of view on plant descriptions: mapping agricultural plant roles and biological taxa",
+        "docType_s": "ART",
+        "doiId_s": "10.3389/frai.2023.1188036",
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/LVRFWJ",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/LVRFWJ",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedPublication_s",
+            "misfiled": true
           }
         ]
       },
@@ -737,63 +837,81 @@
             "repository": "Recherche Data Gouv",
             "publisher": "INRA",
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/GNBUFH",
-            "landing_host": "data.inrae.fr"
+            "landing_host": "data.inrae.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.15454/UBPOQG",
             "repository": "Recherche Data Gouv",
             "publisher": "INRA",
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/UBPOQG",
-            "landing_host": "data.inrae.fr"
+            "landing_host": "data.inrae.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.15454/HKIQFJ",
             "repository": "Recherche Data Gouv",
             "publisher": "INRA",
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/HKIQFJ",
-            "landing_host": "data.inrae.fr"
+            "landing_host": "data.inrae.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.15454/IHVM9P",
             "repository": "Recherche Data Gouv",
             "publisher": "INRA",
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/IHVM9P",
-            "landing_host": "data.inrae.fr"
+            "landing_host": "data.inrae.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.15454/F4C8I0",
             "repository": "Recherche Data Gouv",
             "publisher": "INRA",
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/F4C8I0",
-            "landing_host": "data.inrae.fr"
+            "landing_host": "data.inrae.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.15454/GMWB8Q",
             "repository": "Recherche Data Gouv",
             "publisher": "INRA",
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/GMWB8Q",
-            "landing_host": "data.inrae.fr"
+            "landing_host": "data.inrae.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.15454/DC9PYL",
             "repository": "Recherche Data Gouv",
             "publisher": "INRA",
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/DC9PYL",
-            "landing_host": "data.inrae.fr"
+            "landing_host": "data.inrae.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.15454/NM3WET",
             "repository": "Recherche Data Gouv",
             "publisher": "INRA",
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/NM3WET",
-            "landing_host": "data.inrae.fr"
+            "landing_host": "data.inrae.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.15454/VDNRH6",
             "repository": "Recherche Data Gouv",
             "publisher": "INRA",
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/VDNRH6",
-            "landing_host": "data.inrae.fr"
+            "landing_host": "data.inrae.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -812,7 +930,18 @@
             "repository": "NAKALA",
             "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
             "landing_url": "https://nakala.fr/10.34847/nkl.e462qm6n",
-            "landing_host": "nakala.fr"
+            "landing_host": "nakala.fr",
+            "field": "relatedData_s",
+            "misfiled": false
+          },
+          {
+            "doi": "10.34847/nkl.e462qm6n",
+            "repository": "NAKALA",
+            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+            "landing_url": "https://nakala.fr/10.34847/nkl.e462qm6n",
+            "landing_host": "nakala.fr",
+            "field": "seeAlso_s",
+            "misfiled": true
           }
         ]
       },
@@ -831,7 +960,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/AGKMF0",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -850,7 +981,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/JYWUIY",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -869,7 +1002,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/BIC6MB",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -888,7 +1023,9 @@
             "repository": "NAKALA",
             "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
             "landing_url": "https://nakala.fr/10.34847/nkl.aaea911g",
-            "landing_host": "nakala.fr"
+            "landing_host": "nakala.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -907,7 +1044,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/9Z4PS3",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -926,7 +1065,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Portail Data INRAE",
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/0AFUU9",
-            "landing_host": "data.inrae.fr"
+            "landing_host": "data.inrae.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -945,7 +1086,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/XSVVBW",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -964,7 +1107,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/NK24ID",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -983,49 +1128,63 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/GU67TE",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.57745/FB9OVN",
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/FB9OVN",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.57745/BAPYY5",
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/BAPYY5",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.57745/TV4EB7",
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/TV4EB7",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.57745/71DS6F",
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/71DS6F",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.57745/5ODV0C",
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/5ODV0C",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.57745/FHNYJU",
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/FHNYJU",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -1044,35 +1203,45 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/EGUUHK",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.57745/5MXZSJ",
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/5MXZSJ",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.57745/KGA7CI",
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/KGA7CI",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.57745/Y0O2LP",
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/Y0O2LP",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.57745/VEKHQS",
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/VEKHQS",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -1091,7 +1260,9 @@
             "repository": "NAKALA",
             "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
             "landing_url": "https://nakala.fr/10.34847/nkl.6cae1i7s",
-            "landing_host": "nakala.fr"
+            "landing_host": "nakala.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -1110,7 +1281,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Portail Data INRAE",
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/DLDJVF",
-            "landing_host": "data.inrae.fr"
+            "landing_host": "data.inrae.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -1129,7 +1302,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Portail Data INRAE",
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/E2VTRB",
-            "landing_host": "data.inrae.fr"
+            "landing_host": "data.inrae.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -1148,7 +1323,30 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/G2Z4VV",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-05708417",
+        "uri_s": "https://hal.science/hal-05708417v1",
+        "title_s": "Le début du Néolithique moyen en Provence occidentale : vers un phasage chronologique des productions matérielles céramiques et lithiques du 5e millénaire avant notre ère",
+        "docType_s": "ART",
+        "doiId_s": "10.4000/16m8a",
+        "repositories": [
+          "NAKALA"
+        ],
+        "datasets": [
+          {
+            "doi": "10.34847/nkl.f3e98xlq",
+            "repository": "NAKALA",
+            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+            "landing_url": "https://nakala.fr/10.34847/nkl.f3e98xlq",
+            "landing_host": "nakala.fr",
+            "field": "relatedPublication_s",
+            "misfiled": true
           }
         ]
       },
@@ -1167,7 +1365,30 @@
             "repository": "NAKALA",
             "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
             "landing_url": "https://nakala.fr/10.34847/nkl.e63a22n9",
-            "landing_host": "nakala.fr"
+            "landing_host": "nakala.fr",
+            "field": "relatedData_s",
+            "misfiled": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-04962117",
+        "uri_s": "https://hal.science/hal-04962117v1",
+        "title_s": "Les sens du mouvement",
+        "docType_s": "OUV",
+        "doiId_s": null,
+        "repositories": [
+          "NAKALA"
+        ],
+        "datasets": [
+          {
+            "doi": "10.34847/nkl.ed24g6g6",
+            "repository": "NAKALA",
+            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+            "landing_url": "https://nakala.fr/10.34847/nkl.ed24g6g6",
+            "landing_host": "nakala.fr",
+            "field": "relatedPublication_s",
+            "misfiled": true
           }
         ]
       },
@@ -1186,7 +1407,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/OP1JFC",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -1205,7 +1428,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/3VMB3Y",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -1224,7 +1449,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/IAU0UK",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -1243,7 +1470,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/SO2WOV",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -1262,7 +1491,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Portail Data INRAE",
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/AY4LMT",
-            "landing_host": "data.inrae.fr"
+            "landing_host": "data.inrae.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -1281,7 +1512,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/VCC5KV",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -1300,7 +1533,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/PR8VUV",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -1319,7 +1554,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/QHUQOP",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -1338,7 +1575,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Portail Data INRAE",
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/FEQ1Z6",
-            "landing_host": "data.inrae.fr"
+            "landing_host": "data.inrae.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -1357,7 +1596,9 @@
             "repository": "NAKALA",
             "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
             "landing_url": "https://nakala.fr/10.34847/nkl.0dee15ow",
-            "landing_host": "nakala.fr"
+            "landing_host": "nakala.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -1376,7 +1617,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Portail Data INRAE",
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/TRBJTB",
-            "landing_host": "data.inrae.fr"
+            "landing_host": "data.inrae.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -1395,7 +1638,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/ENBAIS",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -1414,14 +1659,18 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/D4TG2M",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           },
           {
             "doi": "10.57745/XDVEQW",
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -1440,7 +1689,9 @@
             "repository": "NAKALA",
             "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
             "landing_url": "https://nakala.fr/10.34847/nkl.aaea911g",
-            "landing_host": "nakala.fr"
+            "landing_host": "nakala.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -1459,7 +1710,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/ESQFDB",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -1478,7 +1731,9 @@
             "repository": "Recherche Data Gouv",
             "publisher": "Recherche Data Gouv",
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/QM0BOR",
-            "landing_host": "entrepot.recherche.data.gouv.fr"
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       },
@@ -1497,7 +1752,9 @@
             "repository": "NAKALA",
             "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
             "landing_url": "https://nakala.fr/10.34847/nkl.2cec5407",
-            "landing_host": "nakala.fr"
+            "landing_host": "nakala.fr",
+            "field": "relatedData_s",
+            "misfiled": false
           }
         ]
       }

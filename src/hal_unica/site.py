@@ -66,13 +66,14 @@ def load_harvest_stats_fallback(path: Path | None) -> dict[str, Any] | None:
 
 
 def related_dataset_publications(links_path: Path) -> list[dict[str, Any]]:
-    """HAL notices that declare relatedData_s landing on a real data repository."""
+    """HAL notices that link to a real data repository (any tracked HAL field)."""
     out: list[dict[str, Any]] = []
     for hit in hits_from_jsonl(links_path).values():
         related = [
             e
             for e in hit.evidence
-            if e.kind == "related_data" and e.object_kind == "dataset_repo"
+            if e.object_kind == "dataset_repo"
+            and e.kind in {"related_data", "related_publication", "see_also", "doi_in_field"}
         ]
         if not related:
             continue
@@ -95,6 +96,8 @@ def related_dataset_publications(links_path: Path) -> list[dict[str, Any]]:
                         "publisher": e.publisher,
                         "landing_url": e.landing_url,
                         "landing_host": e.landing_host,
+                        "field": e.field,
+                        "misfiled": e.field != "relatedData_s",
                     }
                     for e in related
                 ],
@@ -493,8 +496,14 @@ def render_related(payload_json: str, *, generated_at: str | None = None) -> str
         const datasets = (p.datasets||[]).map(d => {{
           const href = d.landing_url || (d.doi ? `https://doi.org/${{d.doi}}` : "#");
           const repo = d.repository || "Unknown";
+          const field = d.field || d.source_field || "relatedData_s";
+          const misfiled = field !== "relatedData_s";
+          const fieldNote = misfiled
+            ? `<div class="doi-annot" style="color:var(--accent-hover)">HAL field <code>${{esc(field)}}</code> (expected <code>relatedData_s</code> — ask depositor to correct)</div>`
+            : `<div class="doi-annot">HAL field <code>${{esc(field)}}</code></div>`;
           return `<div class="ev"><dt>Dataset</dt><dd>
             <div class="doi-annot">Link to the dataset on ${{esc(repo)}}</div>
+            ${{fieldNote}}
             <a href="${{esc(href)}}" target="_blank" rel="noopener"><code>${{esc(d.doi)}}</code></a>
             ${{d.landing_host ? `<div class="muted" style="margin-top:0.25rem">${{esc(d.landing_host)}}</div>` : ""}}
           </dd></div>`;
@@ -625,8 +634,15 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
           const pubDoi = p.doiId_s
             ? ` · <a href="https://doi.org/${{esc(p.doiId_s)}}" target="_blank" rel="noopener">DOI <code>${{esc(p.doiId_s)}}</code></a>`
             : "";
+          const field = p.source_field || "";
+          const fieldNote = field
+            ? (p.misfiled_dataset_link || field !== "relatedData_s"
+              ? `<div class="doi-annot" style="color:var(--accent-hover)">HAL field <code>${{esc(field)}}</code> (expected <code>relatedData_s</code>)</div>`
+              : `<div class="doi-annot">HAL field <code>${{esc(field)}}</code></div>`)
+            : "";
           return `<div class="ev"><dt>Publication</dt><dd>
             <a href="${{esc(p.uri_s || "#")}}" target="_blank" rel="noopener">${{esc(p.title_s || "(untitled)")}}</a>
+            ${{fieldNote}}
             <div class="muted" style="margin-top:0.25rem">
               <a href="${{esc(p.uri_s || "#")}}" target="_blank" rel="noopener"><code>${{esc(p.halId_s)}}</code></a>
               ${{p.docType_s ? " · " + esc(p.docType_s) : ""}}${{pubDoi}}
@@ -634,13 +650,18 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
           </dd></div>`;
         }}).join("");
         const repo = d.repository || "Unknown";
+        const sourceFields = (d.source_fields || []).join(", ");
+        const misfiledBadge = d.has_misfiled_source
+          ? `<span class="badge" title="Dataset DOI was not filed in relatedData_s">misfiled field</span>`
+          : "";
         return `<article class="result">
           <div class="title-row">
             <div>
               <span class="doi-annot">Link to the dataset on ${{esc(repo)}}</span>
+              ${{sourceFields ? `<span class="doi-annot">HAL source field(s): <code>${{esc(sourceFields)}}</code></span>` : ""}}
               <h2 class="title"><a href="${{esc(href)}}" target="_blank" rel="noopener"><code>${{esc(d.dataset_doi)}}</code></a></h2>
             </div>
-            <div class="badges"><span class="badge">${{esc(repo)}}</span></div>
+            <div class="badges"><span class="badge">${{esc(repo)}}</span>${{misfiledBadge}}</div>
           </div>
           <div class="sub">
             <span>${{esc(d.dataset_title || "")}}</span>
@@ -834,7 +855,10 @@ def render_documentation(
         (DOI → repository),
         <a href="./data/census/software_deposits.csv"><code>software_deposits.csv</code></a>
         (SOFTWARE + SWHID + code repos), and
-        <a href="./data/census/doi_hal_repository_map.csv"><code>doi_hal_repository_map.csv</code></a>.
+        <a href="./data/census/doi_hal_repository_map.csv"><code>doi_hal_repository_map.csv</code></a>,
+        and the correction queue
+        <a href="./data/census/misfiled_dataset_links.csv"><code>misfiled_dataset_links.csv</code></a>
+        (dataset DOIs filed outside <code>relatedData_s</code>).
         Methodology:
         <a href="./data/census/METHODOLOGY.md"><code>METHODOLOGY.md</code></a>.
       </p>
@@ -960,6 +984,7 @@ def write_site(
             "software_deposits.csv",
             "software_deposits.jsonl",
             "software_summary.json",
+            "misfiled_dataset_links.csv",
         ):
             if (dest / name).exists():
                 manifest.setdefault("artifacts", {})[name] = f"data/census/{name}"

@@ -263,6 +263,14 @@ def scan_record(
                         field=name,
                         confidence="high",
                     )
+                elif name == "relatedPublication_s" and ev.kind in {"doi_in_field", "primary_doi"}:
+                    ev = Evidence(
+                        platform=ev.platform,
+                        kind="related_publication",
+                        value=ev.value,
+                        field=name,
+                        confidence="medium",
+                    )
                 elif name == "seeAlso_s" and ev.kind == "url":
                     ev = Evidence(
                         platform=ev.platform,
@@ -270,6 +278,14 @@ def scan_record(
                         value=ev.value,
                         field=name,
                         confidence="high",
+                    )
+                elif name == "seeAlso_s" and ev.kind in {"doi_in_field", "primary_doi"}:
+                    ev = Evidence(
+                        platform=ev.platform,
+                        kind="see_also",
+                        value=ev.value,
+                        field=name,
+                        confidence="medium",
                     )
                 elif name == "doiId_s" and ev.kind in {"doi_in_field", "primary_doi"}:
                     ev = Evidence(

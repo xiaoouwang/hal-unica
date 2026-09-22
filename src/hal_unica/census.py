@@ -22,10 +22,25 @@ CENSUS_FL = [
     "docType_s",
     "doiId_s",
     "relatedData_s",
+    "relatedPublication_s",
     "seeAlso_s",
     "producedDateY_i",
     "modifiedDate_tdate",
 ]
+
+# Fields that may carry dataset identifiers on HAL notices.
+# Datasets belong in relatedData_s; other fields are tracked as provenance anomalies.
+LINK_SOURCE_FIELDS = (
+    "relatedData_s",
+    "relatedPublication_s",
+    "seeAlso_s",
+)
+EXPECTED_DATASET_FIELD = "relatedData_s"
+
+# Broad enough to catch relatedData plus DOIs / Nakala URLs filed elsewhere.
+CENSUS_Q = (
+    "(relatedData_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)"
+)
 
 DOI_RE = re.compile(
     r"(?:https?://(?:dx\.)?doi\.org/)?(10\.\d{4,9}/[^\s\"'<>\]\),;]+)",
@@ -53,19 +68,45 @@ def _as_list(value: Any) -> list[Any]:
     return [value]
 
 
-def normalize_related_token(raw: str) -> dict[str, str]:
-    """Classify a relatedData_s token as doi / url / hal_id / other."""
+def normalize_related_token(raw: str, *, source_field: str) -> dict[str, Any]:
+    """Classify a related-link token and attach HAL field provenance."""
     text = raw.strip()
     m = DOI_RE.search(text)
     if m:
         doi = m.group(1).rstrip(").,;\"'")
         doi = re.sub(r"&#x[0-9a-fA-F]+;?", "", doi)
-        return {"raw": raw, "kind": "doi", "value": doi}
-    if text.startswith("http://") or text.startswith("https://"):
-        return {"raw": raw, "kind": "url", "value": text}
-    if re.match(r"^(hal|tel|hrt|ineris|insu|halshs|hal-)", text, re.I):
-        return {"raw": raw, "kind": "hal_id", "value": text}
-    return {"raw": raw, "kind": "other", "value": text}
+        kind = "doi"
+        value = doi
+    elif text.startswith("http://") or text.startswith("https://"):
+        kind = "url"
+        value = text
+    elif re.match(r"^(hal|tel|hrt|ineris|insu|halshs|hal-)", text, re.I):
+        kind = "hal_id"
+        value = text
+    else:
+        kind = "other"
+        value = text
+    return {
+        "raw": raw,
+        "kind": kind,
+        "value": value,
+        "source_field": source_field,
+        "expected_field": EXPECTED_DATASET_FIELD,
+        "field_ok": source_field == EXPECTED_DATASET_FIELD,
+    }
+
+
+def _tokens_from_doc(doc: dict[str, Any]) -> tuple[list[dict[str, Any]], dict[str, list[str]]]:
+    tokens: list[dict[str, Any]] = []
+    raw_by_field: dict[str, list[str]] = {}
+    for field_name in LINK_SOURCE_FIELDS:
+        values = [str(x) for x in _as_list(doc.get(field_name))]
+        if not values:
+            continue
+        raw_by_field[field_name] = values
+        for raw in values:
+            tokens.append(normalize_related_token(raw, source_field=field_name))
+    return tokens, raw_by_field
 
 
 @dataclass
@@ -124,8 +165,7 @@ def load_doi_resolutions_jsonl(path: Path) -> dict[str, DoiResolution]:
 
 
 def _publication_from_doc(doc: dict[str, Any]) -> dict[str, Any]:
-    related_raw = [str(x) for x in _as_list(doc.get("relatedData_s"))]
-    tokens = [normalize_related_token(x) for x in related_raw]
+    tokens, raw_by_field = _tokens_from_doc(doc)
     return {
         "halId_s": _first(doc.get("halId_s")),
         "uri_s": _first(doc.get("uri_s")),
@@ -134,7 +174,10 @@ def _publication_from_doc(doc: dict[str, Any]) -> dict[str, Any]:
         "doiId_s": _first(doc.get("doiId_s")),
         "producedDateY_i": doc.get("producedDateY_i"),
         "modifiedDate_tdate": _first(doc.get("modifiedDate_tdate")),
-        "relatedData_raw": related_raw,
+        "relatedData_raw": raw_by_field.get("relatedData_s", []),
+        "relatedPublication_raw": raw_by_field.get("relatedPublication_s", []),
+        "seeAlso_raw": raw_by_field.get("seeAlso_s", []),
+        "link_raw_by_field": raw_by_field,
         "related_tokens": tokens,
     }
 
@@ -146,6 +189,7 @@ def _attach_resolutions(
     for pub in publications:
         datasets = []
         repos: list[str] = []
+        anomaly_fields: list[str] = []
         for t in pub.get("related_tokens") or []:
             entry: dict[str, Any] = dict(t)
             if t.get("kind") == "doi" and t.get("value") in resolutions:
@@ -153,15 +197,26 @@ def _attach_resolutions(
                 entry["resolution"] = r.to_dict()
                 if r.repository:
                     repos.append(r.repository)
+                if r.object_kind == "dataset_repo" and not t.get("field_ok", True):
+                    entry["misfiled_dataset_link"] = True
+                    entry["correction_note"] = (
+                        f"Dataset DOI found in {t.get('source_field')}; "
+                        f"expected HAL field is {EXPECTED_DATASET_FIELD}."
+                    )
+                    src = t.get("source_field")
+                    if src and src not in anomaly_fields:
+                        anomaly_fields.append(src)
             datasets.append(entry)
         seen: set[str] = set()
-        uniq_repos = []
+        uniq_repos: list[str] = []
         for r in repos:
             if r not in seen:
                 seen.add(r)
                 uniq_repos.append(r)
         pub["datasets"] = datasets
         pub["repositories"] = uniq_repos
+        pub["misfiled_dataset_source_fields"] = anomaly_fields
+        pub["has_misfiled_dataset_link"] = bool(anomaly_fields)
 
 
 def run_census(
@@ -196,10 +251,13 @@ def run_census(
     token_count = 0
     dois_needed: set[str] = set()
 
-    for doc in client.iter_docs(q="relatedData_s:*", fq=fq or None, fl=CENSUS_FL, rows=200):
+    for doc in client.iter_docs(q=CENSUS_Q, fq=fq or None, fl=CENSUS_FL, rows=200):
         pub = _publication_from_doc(doc)
         hid = pub.get("halId_s")
         if not hid:
+            continue
+        # Keep notices that actually yielded tokens from tracked fields
+        if not pub.get("related_tokens"):
             continue
         fetched += 1
         mod = pub.get("modifiedDate_tdate")
@@ -220,9 +278,10 @@ def run_census(
             if t.get("kind") == "doi" and t.get("value"):
                 dois_needed.add(t["value"])
 
-    say(f"HAL publications with relatedData_s (merged): {len(publications)}")
+    say(f"HAL publications with linked identifiers (merged): {len(publications)}")
+    say(f"  query: {CENSUS_Q}")
     say(f"  fetched this run: {fetched} (updated={updated}, inserted={inserted})")
-    say(f"relatedData tokens: {token_count}")
+    say(f"link tokens: {token_count}")
     say(f"unique DOI candidates: {len(dois_needed)}")
 
     to_resolve = sorted(d for d in dois_needed if d not in resolutions)
@@ -267,12 +326,19 @@ def summarize_census(census: CensusLinks) -> dict[str, Any]:
     by_prefix: Counter[str] = Counter()
     by_host: Counter[str] = Counter()
     by_token_kind: Counter[str] = Counter()
+    by_source_field: Counter[str] = Counter()
+    by_dataset_source_field: Counter[str] = Counter()
     pubs_with_dataset_repo = 0
+    misfiled_links = 0
+    pubs_with_misfiled = 0
 
     for pub in census.publications:
         has_dataset = False
+        has_misfiled = False
         for t in pub.get("datasets") or []:
             by_token_kind[t.get("kind") or "other"] += 1
+            src = t.get("source_field") or "unknown"
+            by_source_field[src] += 1
             res = t.get("resolution") or {}
             repo = res.get("repository")
             if repo:
@@ -282,12 +348,18 @@ def summarize_census(census: CensusLinks) -> dict[str, Any]:
                 by_kind[ok] += 1
             if ok == "dataset_repo":
                 has_dataset = True
+                by_dataset_source_field[src] += 1
+                if t.get("misfiled_dataset_link"):
+                    misfiled_links += 1
+                    has_misfiled = True
             if res.get("prefix"):
                 by_prefix[res["prefix"]] += 1
             if res.get("landing_host"):
                 by_host[res["landing_host"]] += 1
         if has_dataset:
             pubs_with_dataset_repo += 1
+        if has_misfiled:
+            pubs_with_misfiled += 1
 
     return {
         "collection": census.collection,
@@ -298,6 +370,9 @@ def summarize_census(census: CensusLinks) -> dict[str, Any]:
         "related_tokens": census.num_related_tokens,
         "unique_dois_resolved": census.num_unique_dois,
         "publications_with_dataset_repo_landing": pubs_with_dataset_repo,
+        "misfiled_dataset_links": misfiled_links,
+        "publications_with_misfiled_dataset_link": pubs_with_misfiled,
+        "expected_dataset_field": EXPECTED_DATASET_FIELD,
         "incremental": {
             "pubs_fetched": census.pubs_fetched,
             "pubs_updated": census.pubs_updated,
@@ -311,6 +386,10 @@ def summarize_census(census: CensusLinks) -> dict[str, Any]:
         "by_doi_prefix": dict(sorted(by_prefix.items(), key=lambda kv: (-kv[1], kv[0]))),
         "by_landing_host": dict(sorted(by_host.items(), key=lambda kv: (-kv[1], kv[0]))),
         "by_token_kind": dict(sorted(by_token_kind.items())),
+        "by_source_field": dict(sorted(by_source_field.items(), key=lambda kv: (-kv[1], kv[0]))),
+        "by_dataset_source_field": dict(
+            sorted(by_dataset_source_field.items(), key=lambda kv: (-kv[1], kv[0]))
+        ),
     }
 
 
@@ -333,7 +412,7 @@ def write_census_artifacts(census: CensusLinks, out_dir: Path, log_path: Path) -
             fh.write(json.dumps(census.resolutions[doi].to_dict(), ensure_ascii=False) + "\n")
     paths["doi_resolutions_jsonl"] = doi_path
 
-    # Flat correspondence table: every related DOI with HAL context
+    # Flat correspondence table: every related DOI with HAL context + field provenance
     map_csv = out_dir / "doi_hal_repository_map.csv"
     with map_csv.open("w", encoding="utf-8", newline="") as fh:
         writer = csv.DictWriter(
@@ -344,6 +423,10 @@ def write_census_artifacts(census: CensusLinks, out_dir: Path, log_path: Path) -
                 "hal_title",
                 "hal_docType",
                 "publication_doi",
+                "source_field",
+                "expected_field",
+                "field_ok",
+                "misfiled_dataset_link",
                 "related_raw",
                 "related_kind",
                 "dataset_doi",
@@ -356,6 +439,7 @@ def write_census_artifacts(census: CensusLinks, out_dir: Path, log_path: Path) -
                 "datacite_client",
                 "dataset_title",
                 "resolve_error",
+                "correction_note",
             ],
         )
         writer.writeheader()
@@ -369,6 +453,10 @@ def write_census_artifacts(census: CensusLinks, out_dir: Path, log_path: Path) -
                         "hal_title": pub.get("title_s"),
                         "hal_docType": pub.get("docType_s"),
                         "publication_doi": pub.get("doiId_s"),
+                        "source_field": t.get("source_field"),
+                        "expected_field": t.get("expected_field") or EXPECTED_DATASET_FIELD,
+                        "field_ok": t.get("field_ok"),
+                        "misfiled_dataset_link": bool(t.get("misfiled_dataset_link")),
                         "related_raw": t.get("raw"),
                         "related_kind": t.get("kind"),
                         "dataset_doi": t.get("value") if t.get("kind") == "doi" else "",
@@ -381,10 +469,54 @@ def write_census_artifacts(census: CensusLinks, out_dir: Path, log_path: Path) -
                         "datacite_client": res.get("client_id"),
                         "dataset_title": res.get("title"),
                         "resolve_error": res.get("error"),
+                        "correction_note": t.get("correction_note") or "",
                     }
                 )
     paths["doi_hal_map_csv"] = map_csv
 
+    # Correction queue: dataset landings filed outside relatedData_s
+    misfiled_csv = out_dir / "misfiled_dataset_links.csv"
+    with misfiled_csv.open("w", encoding="utf-8", newline="") as fh:
+        writer = csv.DictWriter(
+            fh,
+            fieldnames=[
+                "halId_s",
+                "hal_uri",
+                "hal_title",
+                "hal_docType",
+                "publication_doi",
+                "source_field",
+                "expected_field",
+                "dataset_doi",
+                "repository",
+                "landing_url",
+                "dataset_title",
+                "correction_note",
+            ],
+        )
+        writer.writeheader()
+        for pub in census.publications:
+            for t in pub.get("datasets") or []:
+                if not t.get("misfiled_dataset_link"):
+                    continue
+                res = t.get("resolution") or {}
+                writer.writerow(
+                    {
+                        "halId_s": pub.get("halId_s"),
+                        "hal_uri": pub.get("uri_s"),
+                        "hal_title": pub.get("title_s"),
+                        "hal_docType": pub.get("docType_s"),
+                        "publication_doi": pub.get("doiId_s"),
+                        "source_field": t.get("source_field"),
+                        "expected_field": t.get("expected_field") or EXPECTED_DATASET_FIELD,
+                        "dataset_doi": t.get("value"),
+                        "repository": res.get("repository"),
+                        "landing_url": res.get("landing_url"),
+                        "dataset_title": res.get("title"),
+                        "correction_note": t.get("correction_note") or "",
+                    }
+                )
+    paths["misfiled_dataset_links_csv"] = misfiled_csv
     # Unique DOI → repository dictionary
     doi_dict_csv = out_dir / "doi_to_repository.csv"
     with doi_dict_csv.open("w", encoding="utf-8", newline="") as fh:
@@ -430,7 +562,9 @@ def write_census_artifacts(census: CensusLinks, out_dir: Path, log_path: Path) -
         "generated_at": _utc_now(),
         "collection": census.collection,
         "hal_api": f"https://api.archives-ouvertes.fr/search/{census.collection}/",
-        "hal_query": "relatedData_s:*",
+        "hal_query": CENSUS_Q,
+        "link_source_fields": list(LINK_SOURCE_FIELDS),
+        "expected_dataset_field": EXPECTED_DATASET_FIELD,
         "since": census.since,
         "watermark_modified": census.watermark_modified,
         "datacite_api": "https://api.datacite.org/dois/{doi}",
@@ -447,13 +581,19 @@ def write_census_artifacts(census: CensusLinks, out_dir: Path, log_path: Path) -
             "pubs_inserted": census.pubs_inserted,
             "dois_resolved_live": census.dois_resolved_live,
             "dois_from_cache": census.dois_from_cache,
+            "misfiled_dataset_links": summary.get("misfiled_dataset_links"),
+            "publications_with_misfiled_dataset_link": summary.get(
+                "publications_with_misfiled_dataset_link"
+            ),
         },
         "method": [
-            "List UniCA HAL notices with relatedData_s via Search API cursor pagination.",
+            "List UniCA HAL notices with relatedData_s, relatedPublication_s DOIs, or seeAlso_s.",
+            "Record the HAL source field on every token (provenance for corrections).",
             "Optional modifiedDate_tdate window for incremental refresh; merge by halId_s.",
-            "Parse each relatedData token as DOI, URL, HAL id, or other.",
+            "Parse each token as DOI, URL, HAL id, or other.",
             "Resolve new DOIs with DataCite REST API; reuse doi_resolutions.jsonl cache.",
             "Label repository from landing host / publisher / known DOI prefix.",
+            "Flag dataset_repo landings filed outside relatedData_s in misfiled_dataset_links.csv.",
             "Write publication-level JSONL, DOI resolution JSONL, and CSV correspondence tables.",
         ],
     }
@@ -472,21 +612,27 @@ Run window: `{census.started_at}` → `{census.finished_at}`
 
 ## Goal
 
-For every UniCA HAL notice that declares `relatedData`, record **which identifier
-was linked**, **which repository it resolves to**, and keep the raw evidence.
+For every UniCA HAL notice that links a related identifier (ideally as
+`relatedData`), record **which identifier was linked**, **which HAL field it
+came from**, **which repository it resolves to**, and keep the raw evidence so
+misfiled dataset links can be corrected.
 
 ## Pipeline
 
-1. **HAL Search API** — `q=relatedData_s:*` on `/search/{census.collection}/`
+1. **HAL Search API** — `q={CENSUS_Q}` on `/search/{census.collection}/`
    with Solr cursor pagination (`sort=docid asc`).
-2. **Token parse** — each `relatedData_s` value is classified as `doi`, `url`,
-   `hal_id`, or `other`.
+2. **Token parse** — values from `relatedData_s`, `relatedPublication_s`, and
+   `seeAlso_s` are classified as `doi`, `url`, `hal_id`, or `other`. Each token
+   keeps `source_field` / `expected_field` / `field_ok` provenance.
 3. **DataCite resolve** — each unique DOI is fetched from
    `https://api.datacite.org/dois/{{doi}}`.
 4. **Repository label** — derived from landing URL host when possible
    (e.g. `zenodo.org` → Zenodo, `nakala.fr` → NAKALA,
    `*.recherche.data.gouv.fr` / `data.inrae.fr` → Recherche Data Gouv),
    else DataCite publisher / DOI prefix.
+5. **Misfiled flag** — if a DOI resolves to a `dataset_repo` but
+   `source_field != relatedData_s`, it is listed in
+   `misfiled_dataset_links.csv` for depositor outreach.
 
 ## Artifacts
 
@@ -495,24 +641,30 @@ was linked**, **which repository it resolves to**, and keep the raw evidence.
 | `publications_related_data.jsonl` | One HAL notice per line + all related tokens and resolutions |
 | `doi_resolutions.jsonl` | One unique DOI per line (DataCite fields + repository label) |
 | `doi_to_repository.csv` | Flat DOI → repository dictionary |
-| `doi_hal_repository_map.csv` | Full correspondence: HAL notice ↔ related DOI ↔ repository |
-| `summary.json` | Aggregated counts |
+| `doi_hal_repository_map.csv` | Full correspondence: HAL notice ↔ DOI ↔ repository ↔ **source field** |
+| `misfiled_dataset_links.csv` | Dataset landings filed outside `relatedData_s` (correction queue) |
+| `summary.json` | Aggregated counts including `by_dataset_source_field` |
 | `run_manifest.json` | Run metadata and method checklist |
 | `{log_path.name}` | Chronological run log |
 
 ## Counts (this run)
 
-- HAL notices with `relatedData`: **{census.num_hal_with_related}**
+- HAL notices with linked identifiers: **{census.num_hal_with_related}**
 - Related tokens: **{census.num_related_tokens}**
 - Unique DOIs resolved: **{census.num_unique_dois}**
 - Publications with at least one dataset-repo landing: **{summary['publications_with_dataset_repo_landing']}**
+- Misfiled dataset links (wrong HAL field): **{summary.get('misfiled_dataset_links', 0)}**
+- Publications with ≥1 misfiled dataset link: **{summary.get('publications_with_misfiled_dataset_link', 0)}**
 
-### By repository (DOI evidence)
+### Dataset DOIs by HAL source field
 
 """,
         encoding="utf-8",
     )
     with method_md.open("a", encoding="utf-8") as fh:
+        for field_name, count in (summary.get("by_dataset_source_field") or {}).items():
+            fh.write(f"- **`{field_name}`**: {count}\n")
+        fh.write("\n### By repository (DOI evidence)\n\n")
         for repo, count in summary["by_repository"].items():
             fh.write(f"- **{repo}**: {count}\n")
         fh.write("\n### By landing host\n\n")

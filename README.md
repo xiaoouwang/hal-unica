@@ -16,7 +16,8 @@ Beyond the charts, the repo stores the full correspondence tables:
 
 | Artifact | Meaning |
 |---|---|
-| [`data/census/dataset_to_publications.csv`](data/census/dataset_to_publications.csv) | **Dataset DOI → related HAL publication(s)** |
+| [`data/census/dataset_to_publications.csv`](data/census/dataset_to_publications.csv) | **Dataset DOI → related HAL publication(s)** (+ HAL source field) |
+| [`data/census/misfiled_dataset_links.csv`](data/census/misfiled_dataset_links.csv) | Dataset DOIs filed outside `relatedData_s` (correction queue) |
 | [`data/census/doi_to_repository.csv`](data/census/doi_to_repository.csv) | Each related **DOI → repository** |
 | [`data/census/doi_hal_repository_map.csv`](data/census/doi_hal_repository_map.csv) | **HAL notice ↔ dataset DOI ↔ repository** |
 | [`data/census/software_deposits.csv`](data/census/software_deposits.csv) | SOFTWARE deposits + code repos + SWHIDs |

@@ -194,9 +194,15 @@ def build_dataset_to_publications(census_pubs_jsonl: Path, out_dir: Path) -> dic
                         "landing_host": res.get("landing_host"),
                         "object_kind": res.get("object_kind"),
                         "dataset_title": res.get("title"),
+                        "source_fields": [],
                         "publications": [],
                     },
                 )
+                src = t.get("source_field")
+                if src and src not in entry["source_fields"]:
+                    entry["source_fields"].append(src)
+                if t.get("misfiled_dataset_link"):
+                    entry["has_misfiled_source"] = True
                 # refresh resolution if richer
                 for k in ("repository", "publisher", "landing_url", "landing_host", "object_kind", "dataset_title"):
                     if not entry.get(k) and res.get(k if k != "dataset_title" else "title"):
@@ -207,6 +213,9 @@ def build_dataset_to_publications(census_pubs_jsonl: Path, out_dir: Path) -> dic
                     "title_s": pub.get("title_s"),
                     "docType_s": pub.get("docType_s"),
                     "doiId_s": pub.get("doiId_s"),
+                    "source_field": t.get("source_field"),
+                    "field_ok": t.get("field_ok"),
+                    "misfiled_dataset_link": bool(t.get("misfiled_dataset_link")),
                 }
                 if pub_ref not in entry["publications"]:
                     entry["publications"].append(pub_ref)
@@ -228,11 +237,16 @@ def build_dataset_to_publications(census_pubs_jsonl: Path, out_dir: Path) -> dic
                 "landing_url",
                 "landing_host",
                 "dataset_title",
+                "source_fields",
+                "has_misfiled_source",
                 "halId_s",
                 "hal_uri",
                 "hal_title",
                 "hal_docType",
                 "publication_doi",
+                "source_field",
+                "field_ok",
+                "misfiled_dataset_link",
             ],
         )
         writer.writeheader()
@@ -245,11 +259,16 @@ def build_dataset_to_publications(census_pubs_jsonl: Path, out_dir: Path) -> dic
                         "landing_url": row.get("landing_url"),
                         "landing_host": row.get("landing_host"),
                         "dataset_title": row.get("dataset_title"),
+                        "source_fields": " | ".join(row.get("source_fields") or []),
+                        "has_misfiled_source": bool(row.get("has_misfiled_source")),
                         "halId_s": pub.get("halId_s"),
                         "hal_uri": pub.get("uri_s"),
                         "hal_title": pub.get("title_s"),
                         "hal_docType": pub.get("docType_s"),
                         "publication_doi": pub.get("doiId_s"),
+                        "source_field": pub.get("source_field"),
+                        "field_ok": pub.get("field_ok"),
+                        "misfiled_dataset_link": bool(pub.get("misfiled_dataset_link")),
                     }
                 )
 

@@ -50,10 +50,16 @@ def hits_from_census_publications(
                 evidence.append(
                     Evidence(
                         platform=mapping[repo],
-                        kind="related_data",
+                        kind=(
+                            "related_data"
+                            if (t.get("source_field") or "relatedData_s") == "relatedData_s"
+                            else "related_publication"
+                            if t.get("source_field") == "relatedPublication_s"
+                            else "see_also"
+                        ),
                         value=t.get("value") or "",
-                        field="relatedData_s",
-                        confidence="high",
+                        field=t.get("source_field") or "relatedData_s",
+                        confidence="high" if t.get("field_ok", True) else "medium",
                         repository=repo,
                         publisher=res.get("publisher"),
                         landing_url=res.get("landing_url"),
