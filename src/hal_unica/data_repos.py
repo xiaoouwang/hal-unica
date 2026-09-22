@@ -72,6 +72,9 @@ class Evidence:
     landing_host: str | None = None
     datacite_client: str | None = None
     object_kind: str | None = None  # dataset_repo | publication_landing | other | unresolved
+    dataset_title: str | None = None
+    misfiled_dataset_link: bool = False
+    also_in_relatedData_s: bool = False
 
 
 @dataclass
@@ -84,6 +87,8 @@ class Hit:
     platforms: list[str] = field(default_factory=list)
     repositories: list[str] = field(default_factory=list)
     evidence: list[Evidence] = field(default_factory=list)
+    laboratories: list[str] = field(default_factory=list)
+    modifiedDate_tdate: str | None = None
 
     def add(self, ev: Evidence) -> None:
         self.evidence.append(ev)
@@ -413,6 +418,8 @@ def hit_to_dict(hit: Hit) -> dict[str, Any]:
         "doiId_s": hit.doi,
         "platforms": hit.platforms,
         "repositories": hit.repositories,
+        "laboratories": list(hit.laboratories or []),
+        "modifiedDate_tdate": hit.modifiedDate_tdate,
         "evidence": [asdict(e) for e in hit.evidence],
     }
 
@@ -429,6 +436,8 @@ def hits_from_jsonl(path: Path) -> dict[str, Hit]:
             doi=doc.get("doiId_s"),
             platforms=list(doc.get("platforms") or []),
             repositories=list(doc.get("repositories") or []),
+            laboratories=list(doc.get("laboratories") or []),
+            modifiedDate_tdate=doc.get("modifiedDate_tdate"),
         )
         for raw in doc.get("evidence") or []:
             hit.evidence.append(
@@ -444,6 +453,9 @@ def hits_from_jsonl(path: Path) -> dict[str, Hit]:
                     landing_host=raw.get("landing_host"),
                     datacite_client=raw.get("datacite_client"),
                     object_kind=raw.get("object_kind"),
+                    dataset_title=raw.get("dataset_title") or raw.get("title"),
+                    misfiled_dataset_link=bool(raw.get("misfiled_dataset_link")),
+                    also_in_relatedData_s=bool(raw.get("also_in_relatedData_s")),
                 )
             )
             if raw.get("repository") and raw["repository"] not in hit.repositories:

@@ -95,14 +95,17 @@ h1 {
   display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; align-items: center;
   justify-content: space-between; margin: 0.15rem 0 0.85rem;
 }
+.toolbar-controls { display: flex; flex-wrap: wrap; gap: 0.65rem 1rem; align-items: center; }
 .toolbar-label {
   display: inline-flex; align-items: center; gap: 0.45rem;
   color: var(--ink-soft); font-size: 0.9rem;
 }
-.toolbar select {
+.toolbar select, .toolbar input[type="search"].lab-filter {
   border: 1px solid var(--line); border-radius: 8px; background: var(--surface);
   color: var(--ink); font: inherit; font-size: 0.9rem; padding: 0.4rem 0.65rem;
 }
+.toolbar input[type="search"].lab-filter { min-width: 11rem; margin: 0; }
+.toolbar select.lab-select { max-width: 14rem; }
 .chip {
   appearance: none; border: 1px solid var(--line); background: var(--surface); color: var(--ink-soft);
   border-radius: 8px; padding: 0.4rem 0.75rem; font: inherit; font-size: 0.84rem;
@@ -223,7 +226,7 @@ footer .updated time { font-variant-numeric: tabular-nums; }
     </section>
 
     <footer>
-      <div class="updated">Last updated: <time datetime="2026-09-22T11:09:04Z">22 Sep 2026, 11:09 UTC</time></div>
+      <div class="updated">Last updated: <time datetime="2026-09-22T11:18:38Z">22 Sep 2026, 11:18 UTC</time></div>
       Source repository: <a href="https://github.com/xiaoouwang/hal-unica">github.com/xiaoouwang/hal-unica</a>
     </footer>
   </main>

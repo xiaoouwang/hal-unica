@@ -88,6 +88,8 @@ def related_dataset_publications(links_path: Path) -> list[dict[str, Any]]:
                 "title_s": hit.title,
                 "docType_s": hit.doc_type,
                 "doiId_s": hit.doi,
+                "laboratories": list(hit.laboratories or []),
+                "modifiedDate_tdate": hit.modifiedDate_tdate,
                 "repositories": repos,
                 "datasets": [
                     {
@@ -96,14 +98,19 @@ def related_dataset_publications(links_path: Path) -> list[dict[str, Any]]:
                         "publisher": e.publisher,
                         "landing_url": e.landing_url,
                         "landing_host": e.landing_host,
+                        "dataset_title": e.dataset_title,
                         "field": e.field,
-                        "misfiled": e.field != "relatedData_s",
+                        "misfiled": bool(e.misfiled_dataset_link),
+                        "also_in_relatedData_s": bool(e.also_in_relatedData_s),
                     }
                     for e in related
                 ],
             }
         )
-    out.sort(key=lambda r: (r.get("title_s") or "").lower())
+    out.sort(
+        key=lambda r: (r.get("modifiedDate_tdate") or "", (r.get("title_s") or "").lower()),
+        reverse=True,
+    )
     return out
 
 
@@ -248,14 +255,17 @@ h1 {
   display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; align-items: center;
   justify-content: space-between; margin: 0.15rem 0 0.85rem;
 }
+.toolbar-controls { display: flex; flex-wrap: wrap; gap: 0.65rem 1rem; align-items: center; }
 .toolbar-label {
   display: inline-flex; align-items: center; gap: 0.45rem;
   color: var(--ink-soft); font-size: 0.9rem;
 }
-.toolbar select {
+.toolbar select, .toolbar input[type="search"].lab-filter {
   border: 1px solid var(--line); border-radius: 8px; background: var(--surface);
   color: var(--ink); font: inherit; font-size: 0.9rem; padding: 0.4rem 0.65rem;
 }
+.toolbar input[type="search"].lab-filter { min-width: 11rem; margin: 0; }
+.toolbar select.lab-select { max-width: 14rem; }
 .chip {
   appearance: none; border: 1px solid var(--line); background: var(--surface); color: var(--ink-soft);
   border-radius: 8px; padding: 0.4rem 0.75rem; font: inherit; font-size: 0.84rem;
@@ -322,6 +332,117 @@ def _format_last_updated(iso: str | None) -> str:
         return f"Last updated: {dt.strftime('%d %b %Y, %H:%M')} UTC"
     except ValueError:
         return f"Last updated: {iso}"
+
+
+def _list_toolbar_html(*, sort_options_html: str) -> str:
+    return f"""
+      <div class="toolbar">
+        <div id="count"></div>
+        <div class="toolbar-controls">
+          <label class="toolbar-label" for="sort">
+            Sort by
+            <select id="sort">{sort_options_html}</select>
+          </label>
+          <label class="toolbar-label" for="labSelect">
+            Laboratory
+            <select id="labSelect" class="lab-select">
+              <option value="">All laboratories</option>
+            </select>
+          </label>
+          <label class="toolbar-label" for="labSearch">
+            <input id="labSearch" class="lab-filter" type="search" list="labList"
+              placeholder="Type lab prefix…" autocomplete="off" />
+            <datalist id="labList"></datalist>
+          </label>
+        </div>
+      </div>"""
+
+
+def _shared_list_helpers_js() -> str:
+    """Plain JS helpers shared by list pages (safe to inject into an f-string)."""
+    return r"""
+    function esc(s) {
+      return String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+    }
+    function formatStamp(iso) {
+      if (!iso) return "";
+      const d = new Date(iso);
+      if (Number.isNaN(d.getTime())) return esc(iso);
+      return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" })
+        + ", " + d.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "UTC" })
+        + " UTC";
+    }
+    function cmpStr(a, b) {
+      return String(a || "").localeCompare(String(b || ""), undefined, { sensitivity: "base" });
+    }
+    function cmpIsoDesc(a, b) { return String(b || "").localeCompare(String(a || "")); }
+    function cmpIsoAsc(a, b) { return String(a || "").localeCompare(String(b || "")); }
+    function uniqueLabs(items, getLabs) {
+      const set = new Set();
+      for (const item of items) {
+        for (const lab of (getLabs(item) || [])) {
+          if (lab) set.add(String(lab));
+        }
+      }
+      return [...set].sort((a, b) => cmpStr(a, b));
+    }
+    function paintLabControls(allLabs) {
+      const sel = document.getElementById("labSelect");
+      const dl = document.getElementById("labList");
+      const typed = (document.getElementById("labSearch").value || "").trim().toLowerCase();
+      const forSelect = !typed
+        ? allLabs
+        : allLabs.filter(l => l.toLowerCase().startsWith(typed) || l.toLowerCase().includes(typed));
+      const forSuggest = !typed
+        ? allLabs
+        : allLabs.filter(l => l.toLowerCase().startsWith(typed));
+      const current = sel.value;
+      sel.innerHTML = `<option value="">All laboratories</option>` +
+        forSelect.map(l => `<option value="${esc(l)}">${esc(l)}</option>`).join("");
+      if (current && [...sel.options].some(o => o.value === current)) sel.value = current;
+      else if (typed && forSelect.some(l => l.toLowerCase() === typed)) {
+        const exact = forSelect.find(l => l.toLowerCase() === typed);
+        if (exact) sel.value = exact;
+      }
+      dl.innerHTML = forSuggest.slice(0, 80).map(l => `<option value="${esc(l)}"></option>`).join("");
+    }
+    function activeLabFilter() {
+      const sel = (document.getElementById("labSelect").value || "").trim();
+      const typed = (document.getElementById("labSearch").value || "").trim();
+      return sel || typed;
+    }
+    function labsMatch(labs, filter) {
+      if (!filter) return true;
+      const q = filter.toLowerCase();
+      const list = labs || [];
+      if (list.some(l => String(l).toLowerCase() === q)) return true;
+      return list.some(l => String(l).toLowerCase().startsWith(q));
+    }
+    function labsLine(labs, limit) {
+      const list = (labs || []).filter(Boolean);
+      if (!list.length) return "";
+      const shown = list.slice(0, limit || 12);
+      const more = list.length > shown.length ? "…" : "";
+      return `<div class="muted" style="margin-top:0.2rem;font-size:0.8rem">Labs: ${esc(shown.join(" · "))}${more}</div>`;
+    }
+    function wireLabControls(onChange) {
+      const sel = document.getElementById("labSelect");
+      const search = document.getElementById("labSearch");
+      sel.addEventListener("change", () => {
+        if (sel.value) search.value = sel.value;
+        onChange();
+      });
+      search.addEventListener("input", () => {
+        const t = search.value.trim().toLowerCase();
+        if (!t) sel.value = "";
+        else {
+          const match = [...sel.options].find(o => o.value && o.value.toLowerCase() === t);
+          sel.value = match ? match.value : "";
+        }
+        onChange();
+      });
+    }
+    """
 
 
 def _footer(generated_at: str | None, extra_html: str = "") -> str:
@@ -452,6 +573,12 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
 
 
 def render_related(payload_json: str, *, generated_at: str | None = None) -> str:
+    sort_opts = """
+            <option value="hal_desc" selected>Newest HAL update</option>
+            <option value="hal_asc">Oldest HAL update</option>
+            <option value="title_asc">Title A–Z</option>
+            <option value="repo_asc">Repository A–Z</option>
+    """
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -475,59 +602,88 @@ def render_related(payload_json: str, *, generated_at: str | None = None) -> str
     </p>
     <div class="stats" id="stats"></div>
     <section class="panel">
-      <input id="q" class="search" type="search" placeholder="Search title, HAL id, dataset DOI…" autocomplete="off" />
+      <input id="q" class="search" type="search" placeholder="Search title, HAL id, dataset DOI, lab…" autocomplete="off" />
       <div class="filters" id="filters"></div>
-      <div class="meta-row"><div id="count"></div><div>Datasets shown inline for each publication</div></div>
+      {_list_toolbar_html(sort_options_html=sort_opts)}
       <div class="list" id="list"></div>
     </section>
     {_footer(generated_at, "Source: HAL <code>relatedData_s</code> + DataCite landing resolution.")}
   </main>
   <script id="data" type="application/json">{payload_json}</script>
   <script>
+    {_shared_list_helpers_js()}
     const data = JSON.parse(document.getElementById("data").textContent);
     let pubs = data.related_datasets.publications || [];
     let active = "all";
+    const allLabs = uniqueLabs(pubs, p => p.laboratories);
 
-    function esc(s) {{
-      return String(s ?? "").replace(/[&<>"']/g, c => ({{"&":"&amp;","<":"&lt;",">":"&gt;","\\"":"&quot;","'":"&#39;"}}[c]));
+    function sortRows(rows) {{
+      const mode = document.getElementById("sort").value;
+      return rows.slice().sort((a, b) => {{
+        if (mode === "hal_desc") return cmpIsoDesc(a.modifiedDate_tdate, b.modifiedDate_tdate) || cmpStr(a.title_s, b.title_s);
+        if (mode === "hal_asc") return cmpIsoAsc(a.modifiedDate_tdate, b.modifiedDate_tdate) || cmpStr(a.title_s, b.title_s);
+        if (mode === "repo_asc") return cmpStr((a.repositories||[])[0], (b.repositories||[])[0]) || cmpStr(a.title_s, b.title_s);
+        return cmpStr(a.title_s, b.title_s);
+      }});
     }}
 
     function render() {{
+      paintLabControls(allLabs);
       const q = document.getElementById("q").value.trim().toLowerCase();
-      const rows = pubs.filter(p => {{
+      const labFilter = activeLabFilter();
+      const filtered = pubs.filter(p => {{
         if (active !== "all" && !(p.repositories || []).includes(active)) return false;
+        if (!labsMatch(p.laboratories, labFilter)) return false;
         if (!q) return true;
-        const blob = [p.title_s, p.halId_s, p.doiId_s, ...(p.repositories||[]),
-          ...(p.datasets||[]).map(d => `${{d.doi}} ${{d.repository}}`)].join(" ").toLowerCase();
+        const blob = [p.title_s, p.halId_s, p.doiId_s, ...(p.repositories||[]), ...(p.laboratories||[]),
+          ...(p.datasets||[]).map(d => `${{d.doi}} ${{d.repository}} ${{d.dataset_title || ""}}`)].join(" ").toLowerCase();
         return blob.includes(q);
       }});
+      const rows = sortRows(filtered);
       document.getElementById("count").textContent = `${{rows.length}} of ${{pubs.length}} publications`;
       const list = document.getElementById("list");
       if (!rows.length) {{ list.innerHTML = `<div class="empty">No matches.</div>`; return; }}
       list.innerHTML = rows.map(p => {{
         const badges = (p.repositories||[]).map(r => `<span class="badge">${{esc(r)}}</span>`).join("");
+        const misfiledBadge = (p.datasets||[]).some(d => d.misfiled)
+          ? `<span class="badge" title="Dataset DOI appears only outside relatedData_s">misfiled field</span>`
+          : "";
         const datasets = (p.datasets||[]).map(d => {{
           const href = d.landing_url || (d.doi ? `https://doi.org/${{d.doi}}` : "#");
           const repo = d.repository || "Unknown";
           const field = d.field || d.source_field || "relatedData_s";
-          const misfiled = field !== "relatedData_s";
-          const fieldNote = misfiled
-            ? `<div class="doi-annot" style="color:var(--accent-hover)">HAL field <code>${{esc(field)}}</code> (expected <code>relatedData_s</code> — ask depositor to correct)</div>`
-            : `<div class="doi-annot">HAL field <code>${{esc(field)}}</code></div>`;
+          const fieldNote = d.misfiled
+            ? `<div class="doi-annot" style="color:var(--accent-hover)">HAL field <code>${{esc(field)}}</code> only (expected <code>relatedData_s</code>)</div>`
+            : (field && field !== "relatedData_s"
+              ? `<div class="doi-annot">Also listed in HAL <code>${{esc(field)}}</code>${{d.also_in_relatedData_s ? " (already in relatedData_s)" : ""}}</div>`
+              : `<div class="doi-annot">HAL field <code>${{esc(field)}}</code></div>`);
           return `<div class="ev"><dt>Dataset</dt><dd>
             <div class="doi-annot">Link to the dataset on ${{esc(repo)}}</div>
             ${{fieldNote}}
             <a href="${{esc(href)}}" target="_blank" rel="noopener"><code>${{esc(d.doi)}}</code></a>
-            ${{d.landing_host ? `<div class="muted" style="margin-top:0.25rem">${{esc(d.landing_host)}}</div>` : ""}}
+            ${{d.dataset_title ? `<div class="muted" style="margin-top:0.25rem">${{esc(d.dataset_title)}}</div>` : ""}}
+            ${{d.landing_host ? `<div class="muted" style="margin-top:0.15rem">${{esc(d.landing_host)}}</div>` : ""}}
           </dd></div>`;
         }}).join("");
+        const halMod = p.modifiedDate_tdate
+          ? `<span class="muted"><time datetime="${{esc(p.modifiedDate_tdate)}}">HAL updated ${{formatStamp(p.modifiedDate_tdate)}}</time></span>`
+          : "";
         return `<article class="result">
-          <div class="title-row"><h2 class="title">${{esc(p.title_s || "(untitled)")}}</h2><div class="badges">${{badges}}</div></div>
+          <div class="title-row">
+            <div>
+              <span class="doi-annot">HAL publication with related dataset(s)</span>
+              <h2 class="title"><a href="${{esc(p.uri_s || "#")}}" target="_blank" rel="noopener">${{esc(p.title_s || "(untitled)")}}</a></h2>
+            </div>
+            <div class="badges">${{badges}}${{misfiledBadge}}</div>
+          </div>
           <div class="sub">
             <a href="${{esc(p.uri_s || "#")}}" target="_blank" rel="noopener"><code>${{esc(p.halId_s)}}</code></a>
             <span>${{esc(p.docType_s || "")}}</span>
             ${{p.doiId_s ? `<span>pub DOI <a href="https://doi.org/${{esc(p.doiId_s)}}" target="_blank" rel="noopener"><code>${{esc(p.doiId_s)}}</code></a></span>` : ""}}
+            <span>${{(p.datasets||[]).length}} dataset(s)</span>
+            ${{halMod}}
           </div>
+          ${{labsLine(p.laboratories)}}
           <div class="evidence">${{datasets}}</div>
         </article>`;
       }}).join("");
@@ -552,7 +708,10 @@ def render_related(payload_json: str, *, generated_at: str | None = None) -> str
       }}));
     }}
     paint();
+    paintLabControls(allLabs);
+    wireLabControls(render);
     document.getElementById("q").addEventListener("input", render);
+    document.getElementById("sort").addEventListener("change", render);
     render();
   </script>
 </body>
@@ -561,6 +720,13 @@ def render_related(payload_json: str, *, generated_at: str | None = None) -> str
 
 
 def render_census(census_json: str, *, generated_at: str | None = None) -> str:
+    sort_opts = """
+            <option value="retrieved_desc" selected>Newest retrieved</option>
+            <option value="retrieved_asc">Oldest retrieved</option>
+            <option value="hal_desc">Newest HAL update</option>
+            <option value="repo_asc">Repository A–Z</option>
+            <option value="doi_asc">Dataset DOI A–Z</option>
+    """
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -587,47 +753,23 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
       <div class="bars" id="repos"></div>
     </section>
     <section class="panel">
-      <input id="q" class="search" type="search" placeholder="Filter dataset DOI, repository, publication…" autocomplete="off" />
+      <input id="q" class="search" type="search" placeholder="Filter dataset DOI, repository, publication, lab…" autocomplete="off" />
       <div class="filters" id="filters"></div>
-      <div class="toolbar">
-        <div id="count"></div>
-        <label class="toolbar-label" for="sort">
-          Sort by
-          <select id="sort">
-            <option value="retrieved_desc" selected>Newest retrieved</option>
-            <option value="retrieved_asc">Oldest retrieved</option>
-            <option value="hal_desc">Newest HAL update</option>
-            <option value="repo_asc">Repository A–Z</option>
-            <option value="doi_asc">Dataset DOI A–Z</option>
-          </select>
-        </label>
-      </div>
+      {_list_toolbar_html(sort_options_html=sort_opts)}
       <div class="list" id="list"></div>
     </section>
     {_footer(generated_at, 'CSV: <a href="./data/census/dataset_to_publications.csv"><code>dataset_to_publications.csv</code></a>')}
   </main>
   <script id="data" type="application/json">{census_json}</script>
   <script>
+    {_shared_list_helpers_js()}
     const data = JSON.parse(document.getElementById("data").textContent);
     const s = data.summary;
     const idx = data.dataset_index || {{}};
     const datasets = data.datasets || [];
     let active = "all";
+    const allLabs = uniqueLabs(datasets, d => (d.publications || []).flatMap(p => p.laboratories || []));
 
-    function esc(s) {{
-      return String(s ?? "").replace(/[&<>"']/g, c => ({{"&":"&amp;","<":"&lt;",">":"&gt;","\\"":"&quot;","'":"&#39;"}}[c]));
-    }}
-
-    function formatStamp(iso) {{
-      if (!iso) return "";
-      const d = new Date(iso);
-      if (Number.isNaN(d.getTime())) return esc(iso);
-      return d.toLocaleDateString("en-GB", {{ day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }})
-        + ", " + d.toLocaleTimeString("en-GB", {{ hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "UTC" }})
-        + " UTC";
-    }}
-
-    // Stats/filters from dataset-only index (not full census by_repository, which includes journals).
     const byRepo = idx.by_repository || datasets.reduce((acc, d) => {{
       const r = d.repository || "Unknown";
       acc[r] = (acc[r] || 0) + 1;
@@ -664,11 +806,12 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
       }}));
     }}
 
+    function itemLabs(d) {{
+      return [...new Set((d.publications || []).flatMap(p => p.laboratories || []).filter(Boolean))];
+    }}
+
     function sortRows(rows) {{
       const mode = document.getElementById("sort").value;
-      const cmpStr = (a, b) => String(a || "").localeCompare(String(b || ""), undefined, {{ sensitivity: "base" }});
-      const cmpIsoDesc = (a, b) => String(b || "").localeCompare(String(a || ""));
-      const cmpIsoAsc = (a, b) => String(a || "").localeCompare(String(b || ""));
       return rows.slice().sort((a, b) => {{
         if (mode === "retrieved_desc") return cmpIsoDesc(a.retrieved_at, b.retrieved_at) || cmpStr(a.dataset_doi, b.dataset_doi);
         if (mode === "retrieved_asc") return cmpIsoAsc(a.retrieved_at, b.retrieved_at) || cmpStr(a.dataset_doi, b.dataset_doi);
@@ -679,12 +822,16 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
     }}
 
     function render() {{
+      paintLabControls(allLabs);
       const q = document.getElementById("q").value.trim().toLowerCase();
+      const labFilter = activeLabFilter();
       const filtered = datasets.filter(d => {{
         if (active !== "all" && d.repository !== active) return false;
+        if (!labsMatch(itemLabs(d), labFilter)) return false;
         if (!q) return true;
         const blob = [d.dataset_doi, d.repository, d.landing_host, d.dataset_title, d.retrieved_at,
-          ...(d.publications||[]).map(p => `${{p.halId_s}} ${{p.title_s}} ${{p.doiId_s}} ${{(p.laboratories||[]).join(" ")}}`)].join(" ").toLowerCase();
+          ...itemLabs(d),
+          ...(d.publications||[]).map(p => `${{p.halId_s}} ${{p.title_s}} ${{p.doiId_s}}`)].join(" ").toLowerCase();
         return blob.includes(q);
       }});
       const rows = sortRows(filtered);
@@ -701,14 +848,10 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
             : (field && field !== "relatedData_s"
               ? `<div class="doi-annot">Also listed in HAL <code>${{esc(field)}}</code>${{p.also_in_relatedData_s ? " (already in relatedData_s)" : ""}}</div>`
               : (field ? `<div class="doi-annot">HAL field <code>${{esc(field)}}</code></div>` : ""));
-          const labs = (p.laboratories || []).filter(Boolean);
-          const labsLine = labs.length
-            ? `<div class="muted" style="margin-top:0.2rem;font-size:0.8rem">Labs: ${{esc(labs.join(" · "))}}</div>`
-            : "";
           return `<div class="ev"><dt>Publication</dt><dd>
             <a href="${{esc(p.uri_s || "#")}}" target="_blank" rel="noopener">${{esc(p.title_s || "(untitled)")}}</a>
             ${{fieldNote}}
-            ${{labsLine}}
+            ${{labsLine(p.laboratories)}}
             <div class="muted" style="margin-top:0.25rem">
               <a href="${{esc(p.uri_s || "#")}}" target="_blank" rel="noopener"><code>${{esc(p.halId_s)}}</code></a>
               ${{p.docType_s ? " · " + esc(p.docType_s) : ""}}${{pubDoi}}
@@ -726,11 +869,7 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
         const halMod = d.hal_modified_at
           ? `<span class="muted" title="Latest HAL modifiedDate among linked notices"><time datetime="${{esc(d.hal_modified_at)}}">HAL updated ${{formatStamp(d.hal_modified_at)}}</time></span>`
           : "";
-        // Aggregate labs across linked publications (small muted line on the card).
-        const cardLabs = [...new Set((d.publications || []).flatMap(p => p.laboratories || []).filter(Boolean))];
-        const cardLabsLine = cardLabs.length
-          ? `<span class="muted" style="font-size:0.8rem" title="Laboratories on linked HAL notices">Labs: ${{esc(cardLabs.slice(0, 12).join(" · "))}}${{cardLabs.length > 12 ? "…" : ""}}</span>`
-          : "";
+        const cardLabs = itemLabs(d);
         return `<article class="result">
           <div class="title-row">
             <div>
@@ -746,13 +885,15 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
             <span>${{(d.publications||[]).length}} publication(s)</span>
             ${{retrieved}}
             ${{halMod}}
-            ${{cardLabsLine}}
           </div>
+          ${{labsLine(cardLabs)}}
           <div class="evidence">${{pubs || '<div class="muted">No linked publication in census.</div>'}}</div>
         </article>`;
       }}).join("") || `<div class="empty">No matches.</div>`;
     }}
     paintFilters();
+    paintLabControls(allLabs);
+    wireLabControls(render);
     document.getElementById("q").addEventListener("input", render);
     document.getElementById("sort").addEventListener("change", render);
     render();
@@ -762,7 +903,16 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
 """
 
 
+
+
 def render_software(software_json: str, *, generated_at: str | None = None) -> str:
+    sort_opts = """
+            <option value="retrieved_desc" selected>Newest retrieved</option>
+            <option value="retrieved_asc">Oldest retrieved</option>
+            <option value="hal_desc">Newest HAL update</option>
+            <option value="title_asc">Title A–Z</option>
+            <option value="year_desc">Year (newest)</option>
+    """
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -786,8 +936,8 @@ def render_software(software_json: str, *, generated_at: str | None = None) -> s
     </p>
     <div class="stats" id="stats"></div>
     <section class="panel">
-      <input id="q" class="search" type="search" placeholder="Search software title, HAL id, language, Git URL…" autocomplete="off" />
-      <div class="meta-row"><div id="count"></div><div>Code repos, SWHIDs and related pubs shown inline</div></div>
+      <input id="q" class="search" type="search" placeholder="Search software title, HAL id, language, Git URL, lab…" autocomplete="off" />
+      {_list_toolbar_html(sort_options_html=sort_opts)}
       <div class="list" id="list"></div>
     </section>
     {_footer(
@@ -798,13 +948,12 @@ def render_software(software_json: str, *, generated_at: str | None = None) -> s
   </main>
   <script id="data" type="application/json">{software_json}</script>
   <script>
+    {_shared_list_helpers_js()}
     const data = JSON.parse(document.getElementById("data").textContent);
     const rows = data.deposits || [];
     const s = data.summary || {{}};
+    const allLabs = uniqueLabs(rows, r => r.laboratories);
 
-    function esc(s) {{
-      return String(s ?? "").replace(/[&<>"']/g, c => ({{"&":"&amp;","<":"&lt;",">":"&gt;","\\"":"&quot;","'":"&#39;"}}[c]));
-    }}
     function pubLink(id) {{
       if (!id) return "";
       if (/^10\\./.test(id)) return `https://doi.org/${{id}}`;
@@ -819,17 +968,32 @@ def render_software(software_json: str, *, generated_at: str | None = None) -> s
       {{ v: s.with_related_publication || 0, l: "With related publication" }},
     ].map(x => `<div class="stat"><strong>${{x.v}}</strong><span>${{x.l}}</span></div>`).join("");
 
+    function sortRows(list) {{
+      const mode = document.getElementById("sort").value;
+      return list.slice().sort((a, b) => {{
+        if (mode === "retrieved_desc") return cmpIsoDesc(a.retrieved_at, b.retrieved_at) || cmpStr(a.title_s, b.title_s);
+        if (mode === "retrieved_asc") return cmpIsoAsc(a.retrieved_at, b.retrieved_at) || cmpStr(a.title_s, b.title_s);
+        if (mode === "hal_desc") return cmpIsoDesc(a.modifiedDate_tdate, b.modifiedDate_tdate) || cmpStr(a.title_s, b.title_s);
+        if (mode === "year_desc") return (Number(b.producedDateY_i)||0) - (Number(a.producedDateY_i)||0) || cmpStr(a.title_s, b.title_s);
+        return cmpStr(a.title_s, b.title_s);
+      }});
+    }}
+
     function render() {{
+      paintLabControls(allLabs);
       const q = document.getElementById("q").value.trim().toLowerCase();
+      const labFilter = activeLabFilter();
       const filtered = rows.filter(r => {{
+        if (!labsMatch(r.laboratories, labFilter)) return false;
         if (!q) return true;
-        const blob = [r.title_s, r.halId_s, r.doiId_s,
+        const blob = [r.title_s, r.halId_s, r.doiId_s, ...(r.laboratories||[]), ...(r.authFullName_s||[]),
           ...(r.softCodeRepository_s||[]), ...(r.swhidId_s||[]),
-          ...(r.softProgrammingLanguage_s||[]), ...(r.relatedPublication_s||[])].join(" ").toLowerCase();
+          ...(r.softProgrammingLanguage_s||[]), ...(r.relatedPublication_s||[]), ...(r.relatedData_s||[])].join(" ").toLowerCase();
         return blob.includes(q);
       }});
-      document.getElementById("count").textContent = `${{filtered.length}} of ${{rows.length}}`;
-      document.getElementById("list").innerHTML = filtered.map(r => {{
+      const list = sortRows(filtered);
+      document.getElementById("count").textContent = `${{list.length}} of ${{rows.length}} deposits`;
+      document.getElementById("list").innerHTML = list.map(r => {{
         const langs = (r.softProgrammingLanguage_s||[]).map(l => `<span class="badge">${{esc(l)}}</span>`).join("");
         const repos = (r.softCodeRepository_s||[]).map(u =>
           `<div class="ev"><dt>Code repo</dt><dd><a href="${{esc(u)}}" target="_blank" rel="noopener">${{esc(u)}}</a></dd></div>`
@@ -842,30 +1006,58 @@ def render_software(software_json: str, *, generated_at: str | None = None) -> s
           const href = pubLink(id);
           return `<div class="ev"><dt>Related pub</dt><dd><a href="${{esc(href)}}" target="_blank" rel="noopener"><code>${{esc(id)}}</code></a></dd></div>`;
         }}).join("");
+        const dataLinks = (r.relatedData_s||[]).map(id => {{
+          const href = pubLink(id);
+          return `<div class="ev"><dt>Related data</dt><dd><a href="${{esc(href)}}" target="_blank" rel="noopener"><code>${{esc(id)}}</code></a></dd></div>`;
+        }}).join("");
         const files = (r.files_s||[]).slice(0,3).map(u =>
           `<div class="ev"><dt>HAL file</dt><dd><a href="${{esc(u)}}" target="_blank" rel="noopener">${{esc(u.split("/").pop())}}</a></dd></div>`
         ).join("");
+        const authors = (r.authFullName_s||[]).slice(0, 8);
+        const authorLine = authors.length
+          ? `<span class="muted" style="font-size:0.8rem">${{esc(authors.join(", "))}}${{(r.authFullName_s||[]).length > 8 ? "…" : ""}}</span>`
+          : "";
+        const retrieved = r.retrieved_at
+          ? `<span><time datetime="${{esc(r.retrieved_at)}}">Retrieved ${{formatStamp(r.retrieved_at)}}</time></span>`
+          : "";
+        const halMod = r.modifiedDate_tdate
+          ? `<span class="muted"><time datetime="${{esc(r.modifiedDate_tdate)}}">HAL updated ${{formatStamp(r.modifiedDate_tdate)}}</time></span>`
+          : "";
+        const year = r.producedDateY_i ? `<span>${{esc(r.producedDateY_i)}}</span>` : "";
         return `<article class="result">
           <div class="title-row">
-            <h2 class="title">${{esc(r.title_s || "(untitled)")}}</h2>
+            <div>
+              <span class="doi-annot">HAL SOFTWARE deposit</span>
+              <h2 class="title"><a href="${{esc(r.uri_s || "#")}}" target="_blank" rel="noopener">${{esc(r.title_s || "(untitled)")}}</a></h2>
+            </div>
             <div class="badges">${{langs || '<span class="badge">SOFTWARE</span>'}}</div>
           </div>
           <div class="sub">
             <a href="${{esc(r.uri_s || "#")}}" target="_blank" rel="noopener"><code>${{esc(r.halId_s)}}</code></a>
             ${{r.doiId_s ? `<a href="https://doi.org/${{esc(r.doiId_s)}}" target="_blank" rel="noopener"><code>${{esc(r.doiId_s)}}</code></a>` : ""}}
+            ${{year}}
             <span>${{(r.softCodeRepository_s||[]).length}} repo(s)</span>
             <span>${{(r.swhidId_s||[]).length}} SWHID(s)</span>
+            ${{retrieved}}
+            ${{halMod}}
           </div>
-          <div class="evidence">${{repos}}${{swh}}${{pubs}}${{files || (r.fileMain_s ? `<div class="ev"><dt>HAL file</dt><dd><a href="${{esc(r.fileMain_s)}}" target="_blank" rel="noopener">document</a></dd></div>` : "")}}</div>
+          ${{authorLine}}
+          ${{labsLine(r.laboratories)}}
+          <div class="evidence">${{repos}}${{swh}}${{pubs}}${{dataLinks}}${{files || (r.fileMain_s ? `<div class="ev"><dt>HAL file</dt><dd><a href="${{esc(r.fileMain_s)}}" target="_blank" rel="noopener">document</a></dd></div>` : "")}}</div>
         </article>`;
       }}).join("") || `<div class="empty">No matches.</div>`;
     }}
+    paintLabControls(allLabs);
+    wireLabControls(render);
     document.getElementById("q").addEventListener("input", render);
+    document.getElementById("sort").addEventListener("change", render);
     render();
   </script>
 </body>
 </html>
 """
+
+
 
 
 def render_corrections(corrections_json: str, *, generated_at: str | None = None) -> str:

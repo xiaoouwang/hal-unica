@@ -34,6 +34,9 @@ SOFTWARE_FL = [
     "authFullName_s",
     "producedDate_s",
     "producedDateY_i",
+    "modifiedDate_tdate",
+    "structAcronym_s",
+    "structName_s",
 ]
 
 
@@ -63,12 +66,52 @@ def swh_browse_url(swhid: str) -> str:
     return f"https://archive.softwareheritage.org/browse/{core}"
 
 
+def _uniq_strs(values: list[str]) -> list[str]:
+    out: list[str] = []
+    seen: set[str] = set()
+    for v in values:
+        text = str(v).strip()
+        if not text:
+            continue
+        key = text.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(text)
+    return out
+
+
+def _lab_labels(acronyms: list[str], names: list[str], *, limit: int = 10) -> list[str]:
+    labels = _uniq_strs(acronyms)
+    if not labels:
+        labels = _uniq_strs(names)
+    return labels[:limit]
+
+
+def _load_previous_software_retrieved(jsonl_path: Path) -> dict[str, str]:
+    previous: dict[str, str] = {}
+    if not jsonl_path.exists():
+        return previous
+    with jsonl_path.open(encoding="utf-8") as fh:
+        for line in fh:
+            if not line.strip():
+                continue
+            row = json.loads(line)
+            hid = row.get("halId_s")
+            retrieved = row.get("retrieved_at")
+            if hid and retrieved:
+                previous[str(hid)] = retrieved
+    return previous
+
+
 def harvest_software(client: HalClient) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     for doc in client.iter_docs(q="docType_s:SOFTWARE", fl=SOFTWARE_FL, rows=200):
         swhids = _as_list(doc.get("swhidId_s"))
         code_repos = _as_list(doc.get("softCodeRepository_s"))
         related_pubs = _as_list(doc.get("relatedPublication_s"))
+        acronyms = _uniq_strs(_as_list(doc.get("structAcronym_s")))
+        names = _uniq_strs(_as_list(doc.get("structName_s")))
         rows.append(
             {
                 "halId_s": _first(doc.get("halId_s")),
@@ -76,6 +119,11 @@ def harvest_software(client: HalClient) -> list[dict[str, Any]]:
                 "title_s": _first(doc.get("title_s")),
                 "doiId_s": _first(doc.get("doiId_s")),
                 "producedDateY_i": doc.get("producedDateY_i"),
+                "producedDate_s": _first(doc.get("producedDate_s")),
+                "modifiedDate_tdate": _first(doc.get("modifiedDate_tdate")),
+                "structAcronym_s": acronyms,
+                "structName_s": names,
+                "laboratories": _lab_labels(acronyms, names),
                 "softCodeRepository_s": code_repos,
                 "softProgrammingLanguage_s": _as_list(doc.get("softProgrammingLanguage_s")),
                 "softVersion_s": _as_list(doc.get("softVersion_s")),
@@ -91,8 +139,60 @@ def harvest_software(client: HalClient) -> list[dict[str, Any]]:
                 "authFullName_s": _as_list(doc.get("authFullName_s")),
             }
         )
-    rows.sort(key=lambda r: (r.get("title_s") or "").lower())
+    rows.sort(key=lambda r: (r.get("modifiedDate_tdate") or "", r.get("title_s") or ""), reverse=True)
     return rows
+
+
+def enrich_software_from_harvest(rows: list[dict[str, Any]], harvest_path: Path) -> int:
+    """Backfill labs / modifiedDate on software rows from the local harvest archive."""
+    if not harvest_path.exists():
+        return 0
+    need = {
+        str(r.get("halId_s")): r
+        for r in rows
+        if r.get("halId_s")
+        and (not r.get("laboratories") or not r.get("modifiedDate_tdate"))
+    }
+    if not need:
+        return 0
+    filled = 0
+    with harvest_path.open(encoding="utf-8") as fh:
+        for line in fh:
+            if not line.strip() or not need:
+                continue
+            try:
+                doc = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            hid = _first(doc.get("halId_s"))
+            if not hid or hid not in need:
+                continue
+            row = need.pop(hid)
+            if not row.get("laboratories"):
+                acronyms = _uniq_strs(_as_list(doc.get("structAcronym_s")))
+                names = _uniq_strs(_as_list(doc.get("structName_s")))
+                row["structAcronym_s"] = acronyms
+                row["structName_s"] = names
+                row["laboratories"] = _lab_labels(acronyms, names)
+            if not row.get("modifiedDate_tdate"):
+                row["modifiedDate_tdate"] = _first(doc.get("modifiedDate_tdate"))
+            if not row.get("producedDate_s"):
+                row["producedDate_s"] = _first(doc.get("producedDate_s"))
+            filled += 1
+    return filled
+
+
+def apply_software_retrieved_at(rows: list[dict[str, Any]], jsonl_path: Path) -> None:
+    previous = _load_previous_software_retrieved(jsonl_path)
+    now = _utc_now()
+    for row in rows:
+        hid = row.get("halId_s")
+        row["retrieved_at"] = (
+            (previous.get(str(hid)) if hid else None)
+            or row.get("modifiedDate_tdate")
+            or row.get("producedDate_s")
+            or now
+        )
 
 
 def summarize_software(rows: list[dict[str, Any]]) -> dict[str, Any]:
@@ -117,10 +217,15 @@ def summarize_software(rows: list[dict[str, Any]]) -> dict[str, Any]:
 
 def write_software_artifacts(rows: list[dict[str, Any]], out_dir: Path) -> dict[str, Path]:
     out_dir.mkdir(parents=True, exist_ok=True)
+    jsonl = out_dir / "software_deposits.jsonl"
+    apply_software_retrieved_at(rows, jsonl)
+    rows.sort(
+        key=lambda r: (r.get("retrieved_at") or r.get("modifiedDate_tdate") or "", r.get("title_s") or ""),
+        reverse=True,
+    )
     summary = summarize_software(rows)
     paths: dict[str, Path] = {}
 
-    jsonl = out_dir / "software_deposits.jsonl"
     with jsonl.open("w", encoding="utf-8") as fh:
         for row in rows:
             fh.write(json.dumps(row, ensure_ascii=False) + "\n")
@@ -135,6 +240,9 @@ def write_software_artifacts(rows: list[dict[str, Any]], out_dir: Path) -> dict[
                 "uri_s",
                 "title_s",
                 "doiId_s",
+                "retrieved_at",
+                "modifiedDate_tdate",
+                "laboratories",
                 "code_repositories",
                 "swhids",
                 "swh_browse_urls",
@@ -151,6 +259,9 @@ def write_software_artifacts(rows: list[dict[str, Any]], out_dir: Path) -> dict[
                     "uri_s": row.get("uri_s"),
                     "title_s": row.get("title_s"),
                     "doiId_s": row.get("doiId_s"),
+                    "retrieved_at": row.get("retrieved_at"),
+                    "modifiedDate_tdate": row.get("modifiedDate_tdate"),
+                    "laboratories": " | ".join(row.get("laboratories") or []),
                     "code_repositories": " | ".join(row.get("softCodeRepository_s") or []),
                     "swhids": " | ".join(row.get("swhidId_s") or []),
                     "swh_browse_urls": " | ".join(row.get("swh_browse_urls") or []),

@@ -77,7 +77,14 @@ Key modules:
 
 ---
 
-## Incremental updates (how “old notice edited today” is caught)
+## List pages (All repositories · Related datasets · Software)
+
+These three pages share the same list controls:
+
+- **Sort** — newest/oldest retrieved and/or HAL update (plus title / repository where useful)
+- **Laboratory** — dropdown of all labs on the page **and** a type-ahead field that matches lab name **prefixes** (and suggestions via datalist)
+- Rich cards — HAL ids, dates, muted lab lines, field provenance / misfiled notes where relevant
+
 
 HAL exposes `modifiedDate_tdate`. When a depositor edits an **old** notice to add a dataset DOI, HAL bumps that timestamp. The daily job asks for notices with `modifiedDate_tdate` in a recent window, then **merges by `halId_s`**.
 

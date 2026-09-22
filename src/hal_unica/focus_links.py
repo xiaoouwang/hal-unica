@@ -59,13 +59,16 @@ def hits_from_census_publications(
                         ),
                         value=t.get("value") or "",
                         field=t.get("source_field") or "relatedData_s",
-                        confidence="high" if t.get("field_ok", True) else "medium",
+                        confidence="high" if not t.get("misfiled_dataset_link") else "medium",
                         repository=repo,
                         publisher=res.get("publisher"),
                         landing_url=res.get("landing_url"),
                         landing_host=res.get("landing_host"),
                         datacite_client=res.get("client_id"),
                         object_kind=res.get("object_kind") or "dataset_repo",
+                        dataset_title=res.get("title"),
+                        misfiled_dataset_link=bool(t.get("misfiled_dataset_link")),
+                        also_in_relatedData_s=bool(t.get("also_in_relatedData_s")),
                     )
                 )
             if not evidence:
@@ -76,6 +79,8 @@ def hits_from_census_publications(
                 title=pub.get("title_s"),
                 doc_type=pub.get("docType_s"),
                 doi=pub.get("doiId_s"),
+                laboratories=list(pub.get("laboratories") or []),
+                modifiedDate_tdate=pub.get("modifiedDate_tdate"),
             )
             for ev in evidence:
                 hit.add(ev)

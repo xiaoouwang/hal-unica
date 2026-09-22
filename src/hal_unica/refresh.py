@@ -19,6 +19,7 @@ from .datacite import DataCiteClient
 from .focus_links import hits_from_census_publications, write_focus_links
 from .software import (
     build_dataset_to_publications,
+    enrich_software_from_harvest,
     harvest_software,
     write_software_artifacts,
 )
@@ -109,6 +110,7 @@ def run_refresh(
 
         say("harvesting SOFTWARE deposits (full)")
         soft_rows = harvest_software(client)
+        enrich_software_from_harvest(soft_rows, harvest_path)
         write_software_artifacts(soft_rows, census_dir)
 
     pubs_path = census_dir / "publications_related_data.jsonl"
