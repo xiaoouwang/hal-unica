@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T13:12:29Z",
+  "generated_at": "2026-09-22T13:22:14Z",
   "collection": "UNIV-COTEDAZUR",
   "collection_url": "https://hal.science/UNIV-COTEDAZUR",
   "harvest": {
@@ -295,18 +295,48 @@
     "year_max": 2026
   },
   "data_links": {
-    "total_hits": 56,
+    "total_hits": 246,
     "by_platform": {
       "nakala": 9,
       "rdg": 47
     },
     "by_repository": {
-      "Recherche Data Gouv": 47,
-      "NAKALA": 9
+      "Zenodo": 95,
+      "Recherche Data Gouv": 65,
+      "SEANOE": 15,
+      "Sismer": 10,
+      "SEDOO / Theia": 9,
+      "NAKALA": 8,
+      "FDSN / seismic network": 5,
+      "Figshare": 5,
+      "BIRA-IASB data": 2,
+      "CDS": 2,
+      "Epos-France Seismological Data Center": 2,
+      "Harvard Dataverse": 2,
+      "JAMSTEC": 2,
+      "Mendeley Data": 2,
+      "Mercator Ocean / Copernicus Marine": 2,
+      "OSF": 2,
+      "OSU Réunion": 2,
+      "RADAR KIT": 2,
+      "data.InDoRES": 2,
+      "DataSuds": 1,
+      "ETH Zurich seismic networks": 1,
+      "GEOSCOPE": 1,
+      "Geoscience Australia": 1,
+      "IEDA": 1,
+      "NOAA NCEI": 1,
+      "OSU OREME": 1,
+      "OpenNeuro": 1,
+      "PANGAEA": 1,
+      "Progedo-Adisp": 1,
+      "STScI/MAST": 1,
+      "University of Bristol data.bris": 1
     },
     "by_object_kind": {
       "dataset_repo": 56
-    }
+    },
+    "scope": "all_repositories"
   },
   "related_datasets": {
     "publication_count": 56,
@@ -2649,6 +2679,311 @@
           }
         ]
       }
-    ]
+    ],
+    "scope": "nakala_rdg_focus"
+  },
+  "census_chart": {
+    "unique_datasets": 246,
+    "publications_with_dataset": 164,
+    "by_repository": {
+      "Zenodo": 95,
+      "Recherche Data Gouv": 65,
+      "SEANOE": 15,
+      "Sismer": 10,
+      "SEDOO / Theia": 9,
+      "NAKALA": 8,
+      "FDSN / seismic network": 5,
+      "Figshare": 5,
+      "BIRA-IASB data": 2,
+      "CDS": 2,
+      "Epos-France Seismological Data Center": 2,
+      "Harvard Dataverse": 2,
+      "JAMSTEC": 2,
+      "Mendeley Data": 2,
+      "Mercator Ocean / Copernicus Marine": 2,
+      "OSF": 2,
+      "OSU Réunion": 2,
+      "RADAR KIT": 2,
+      "data.InDoRES": 2,
+      "DataSuds": 1,
+      "ETH Zurich seismic networks": 1,
+      "GEOSCOPE": 1,
+      "Geoscience Australia": 1,
+      "IEDA": 1,
+      "NOAA NCEI": 1,
+      "OSU OREME": 1,
+      "OpenNeuro": 1,
+      "PANGAEA": 1,
+      "Progedo-Adisp": 1,
+      "STScI/MAST": 1,
+      "University of Bristol data.bris": 1
+    },
+    "repositories_in_chart": 12,
+    "repositories_total": 31,
+    "year_axis": [
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "stacked": {
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "totals": [
+        1,
+        5,
+        16,
+        6,
+        30,
+        13,
+        11,
+        35,
+        35,
+        71,
+        20
+      ],
+      "series": [
+        {
+          "repository": "Zenodo",
+          "color": "#2a2622",
+          "counts": [
+            0,
+            1,
+            1,
+            2,
+            23,
+            7,
+            5,
+            11,
+            10,
+            24,
+            10
+          ]
+        },
+        {
+          "repository": "Recherche Data Gouv",
+          "color": "#c45c26",
+          "counts": [
+            1,
+            4,
+            13,
+            2,
+            6,
+            3,
+            4,
+            12,
+            3,
+            13,
+            3
+          ]
+        },
+        {
+          "repository": "SEANOE",
+          "color": "#2f5d50",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            9,
+            5,
+            0
+          ]
+        },
+        {
+          "repository": "Sismer",
+          "color": "#3d5a80",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            8,
+            0
+          ]
+        },
+        {
+          "repository": "SEDOO / Theia",
+          "color": "#b08968",
+          "counts": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            8,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "repository": "NAKALA",
+          "color": "#6b4f3a",
+          "counts": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            2,
+            3
+          ]
+        },
+        {
+          "repository": "Figshare",
+          "color": "#4a7c59",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "repository": "FDSN / seismic network",
+          "color": "#8c5a3c",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            1
+          ]
+        },
+        {
+          "repository": "Mercator Ocean / Copernicus Marine",
+          "color": "#5c6b73",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ]
+        },
+        {
+          "repository": "data.InDoRES",
+          "color": "#a67c52",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "repository": "CDS",
+          "color": "#3f6f6a",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "repository": "Epos-France Seismological Data Center",
+          "color": "#9a5b3c",
+          "counts": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "repository": "Autre",
+          "color": "#8a8a8a",
+          "counts": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            3,
+            8,
+            12,
+            0
+          ]
+        }
+      ]
+    },
+    "note": "Unique dataset DOIs linked from UniCA HAL notices, by year of the newest linking publication (producedDateY_i). All data repositories; chart shows top 12 plus Autre."
   }
 }

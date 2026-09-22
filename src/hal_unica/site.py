@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import json
-from collections import Counter
+from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -114,12 +114,153 @@ def related_dataset_publications(links_path: Path) -> list[dict[str, Any]]:
     return out
 
 
+# Distinct colours for stacked bars (charcoal / stone / earth — avoid purple defaults)
+_STACK_COLORS = [
+    "#2a2622",
+    "#c45c26",
+    "#2f5d50",
+    "#3d5a80",
+    "#b08968",
+    "#6b4f3a",
+    "#4a7c59",
+    "#8c5a3c",
+    "#5c6b73",
+    "#a67c52",
+    "#3f6f6a",
+    "#9a5b3c",
+    "#7a6a4f",
+    "#8a8a8a",  # Autre
+]
+
+
+def census_homepage_stats(
+    census_dir: Path,
+    *,
+    year_min: int = 2016,
+    top_repos: int = 12,
+) -> dict[str, Any] | None:
+    """
+    All-repository dataset stats for the homepage (not Nakala/RDG-only).
+
+    Years use the newest ``producedDateY_i`` among UniCA HAL notices that link
+    each dataset DOI (one count per dataset DOI).
+    """
+    ds_path = census_dir / "dataset_to_publications.jsonl"
+    pubs_path = census_dir / "publications_related_data.jsonl"
+    if not ds_path.exists():
+        return None
+
+    pubs_by_id: dict[str, dict[str, Any]] = {}
+    if pubs_path.exists():
+        with pubs_path.open(encoding="utf-8") as fh:
+            for line in fh:
+                if not line.strip():
+                    continue
+                pub = json.loads(line)
+                hid = pub.get("halId_s")
+                if hid:
+                    pubs_by_id[str(hid)] = pub
+
+    by_year_repo: dict[int, Counter[str]] = defaultdict(Counter)
+    by_repo: Counter[str] = Counter()
+    pubs_with_dataset: set[str] = set()
+    datasets = 0
+
+    with ds_path.open(encoding="utf-8") as fh:
+        for line in fh:
+            if not line.strip():
+                continue
+            row = json.loads(line)
+            datasets += 1
+            repo = row.get("repository") or "Unknown"
+            by_repo[repo] += 1
+            years: list[int] = []
+            for p in row.get("publications") or []:
+                hid = p.get("halId_s")
+                if hid:
+                    pubs_with_dataset.add(str(hid))
+                pub = pubs_by_id.get(str(hid)) if hid else None
+                y = (pub or {}).get("producedDateY_i")
+                if y is None:
+                    y = p.get("producedDateY_i")
+                try:
+                    yi = int(y)
+                except (TypeError, ValueError):
+                    continue
+                if 1950 <= yi <= 2100:
+                    years.append(yi)
+            if not years:
+                continue
+            by_year_repo[max(years)][repo] += 1
+
+    if not by_year_repo:
+        years_list = list(range(year_min, datetime.now(timezone.utc).year + 1))
+    else:
+        # Include every year that has at least one dataset; pad from year_min only when denser.
+        y0 = min(by_year_repo)
+        y1 = max(by_year_repo)
+        if y1 - y0 > 20:
+            y0 = max(y0, year_min)
+        years_list = list(range(y0, y1 + 1))
+
+    # Top repositories overall; remainder → Autre (still counted)
+    ranked = [r for r, _ in by_repo.most_common()]
+    keep = ranked[:top_repos]
+    other_label = "Autre"
+    series_names = keep + ([other_label] if len(ranked) > len(keep) else [])
+
+    series: list[dict[str, Any]] = []
+    for i, name in enumerate(series_names):
+        counts: list[int] = []
+        for y in years_list:
+            if name == other_label:
+                counts.append(
+                    sum(c for r, c in by_year_repo[y].items() if r not in keep)
+                )
+            else:
+                counts.append(int(by_year_repo[y].get(name, 0)))
+        color = (
+            "#8a8a8a"
+            if name == other_label
+            else _STACK_COLORS[i % (len(_STACK_COLORS) - 1)]
+        )
+        series.append(
+            {
+                "repository": name,
+                "color": color,
+                "counts": counts,
+            }
+        )
+
+    totals = [sum(s["counts"][i] for s in series) for i in range(len(years_list))]
+
+    return {
+        "unique_datasets": datasets,
+        "publications_with_dataset": len(pubs_with_dataset),
+        "by_repository": dict(sorted(by_repo.items(), key=lambda kv: (-kv[1], kv[0]))),
+        "repositories_in_chart": len(keep),
+        "repositories_total": len(by_repo),
+        "year_axis": years_list,
+        "stacked": {
+            "years": years_list,
+            "totals": totals,
+            "series": series,
+        },
+        "note": (
+            "Unique dataset DOIs linked from UniCA HAL notices, by year of the "
+            "newest linking publication (producedDateY_i). All data repositories; "
+            f"chart shows top {len(keep)} plus Autre."
+        ),
+    }
+
+
 def build_site_payload(
     *,
     harvest_path: Path | None,
     links_path: Path,
     collection: str = "UNIV-COTEDAZUR",
     stats_fallback: Path | None = None,
+    census_dir: Path | None = None,
 ) -> dict[str, Any]:
     if harvest_path and harvest_path.exists():
         harvest = harvest_stats(harvest_path)
@@ -146,24 +287,41 @@ def build_site_payload(
         for repo in row.get("repositories") or []:
             related_repos[repo] += 1
 
+    census_stats = census_homepage_stats(census_dir) if census_dir else None
+
+    focus_by_repo = dict(
+        sorted(related_repos.items(), key=lambda kv: (-kv[1], kv[0]))
+    )
+    data_by_repo = (
+        census_stats["by_repository"]
+        if census_stats
+        else (link_summary.get("by_repository") or focus_by_repo)
+    )
+
     return {
         "generated_at": _utc_now(),
         "collection": collection,
         "collection_url": f"https://hal.science/{collection}",
         "harvest": harvest,
         "data_links": {
-            "total_hits": link_summary["total_hits"],
+            "total_hits": (
+                census_stats["unique_datasets"]
+                if census_stats
+                else link_summary["total_hits"]
+            ),
             "by_platform": link_summary.get("by_platform") or {},
-            "by_repository": link_summary.get("by_repository") or {},
+            "by_repository": data_by_repo,
             "by_object_kind": link_summary.get("by_object_kind") or {},
+            "scope": "all_repositories" if census_stats else "focus_fallback",
         },
+        # Nakala / RDG focus page payload (unchanged scope)
         "related_datasets": {
             "publication_count": len(related),
-            "by_repository": dict(
-                sorted(related_repos.items(), key=lambda kv: (-kv[1], kv[0]))
-            ),
+            "by_repository": focus_by_repo,
             "publications": related,
+            "scope": "nakala_rdg_focus",
         },
+        "census_chart": census_stats,
     }
 
 
@@ -245,6 +403,42 @@ h1 {
 .bar-fill { height: 100%; background: var(--accent); border-radius: 999px; }
 .bar-row span:last-child { text-align: right; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
 .muted { color: var(--ink-soft); font-size: 0.88rem; }
+.stack-wrap { margin-top: 0.75rem; }
+.stack-legend {
+  display: flex; flex-wrap: wrap; gap: 0.45rem 0.9rem; margin: 0 0 1rem;
+  font-size: 0.82rem; color: var(--ink-soft);
+}
+.stack-legend span { display: inline-flex; align-items: center; gap: 0.35rem; }
+.stack-swatch {
+  width: 0.65rem; height: 0.65rem; border-radius: 2px; flex: 0 0 auto;
+}
+.stack-chart {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(2.4rem, 1fr));
+  gap: 0.45rem; align-items: end; min-height: 16rem;
+  padding: 0.25rem 0 0;
+  border-bottom: 1px solid var(--line);
+}
+.stack-col {
+  display: flex; flex-direction: column; align-items: center; gap: 0.35rem;
+  min-width: 0;
+}
+.stack-total {
+  font-family: var(--font-display); font-weight: 700; font-size: 0.85rem;
+  letter-spacing: -0.02em; color: var(--ink);
+}
+.stack-bars {
+  width: 100%; max-width: 2.75rem; height: 14rem;
+  display: flex; flex-direction: column-reverse; justify-content: flex-start;
+  border-radius: 4px 4px 0 0; overflow: hidden; background: var(--wash);
+}
+.stack-seg {
+  width: 100%; display: flex; align-items: center; justify-content: center;
+  color: #faf9f7; font-size: 0.68rem; font-weight: 600; font-variant-numeric: tabular-nums;
+  min-height: 0;
+}
+.stack-year {
+  font-size: 0.78rem; color: var(--ink-soft); font-variant-numeric: tabular-nums;
+}
 .search {
   width: 100%; border: 1px solid var(--line); border-radius: 10px;
   padding: 0.85rem 1.1rem; font: inherit; background: var(--surface); outline: none; margin-bottom: 0.75rem;
@@ -496,9 +690,18 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
     <p class="lede">
       Metadata harvest of the institutional HAL collection
       <a id="collectionLink" href="https://hal.science/UNIV-COTEDAZUR">UNIV-COTEDAZUR</a>,
-      plus links from those notices to NAKALA and Research Data Gouv.
+      plus every linked data-repository DOI declared on those notices.
     </p>
     <div class="stats" id="stats"></div>
+
+    <section class="panel">
+      <h2>Linked datasets by year and repository</h2>
+      <p class="muted" style="margin:0" id="chartNote"></p>
+      <div class="stack-wrap">
+        <div class="stack-legend" id="stackLegend"></div>
+        <div class="stack-chart" id="stackChart"></div>
+      </div>
+    </section>
 
     <section class="panel">
       <h2>Document types in HAL</h2>
@@ -507,7 +710,7 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
 
     <section class="panel">
       <h2>Where linked data live</h2>
-      <p class="muted" style="margin-top:0">Fine-grained repositories after DataCite resolution (all link signals).</p>
+      <p class="muted" style="margin-top:0">All data repositories after DataCite resolution (dataset DOIs only).</p>
       <div class="bars" id="repos" style="margin-top:0.85rem"></div>
     </section>
 
@@ -515,9 +718,9 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
       <h2>Publications with a related dataset</h2>
       <p class="muted" id="relatedBlurb" style="margin:0"></p>
       <p style="margin:0.85rem 0 0">
-        <a href="./related-datasets.html">Nakala / Recherche Data Gouv →</a>
-        &nbsp;·&nbsp;
         <a href="./all-repositories.html">All repositories (+ publications) →</a>
+        &nbsp;·&nbsp;
+        <a href="./related-datasets.html">Nakala / Recherche Data Gouv focus →</a>
         &nbsp;·&nbsp;
         <a href="./software.html">Software &amp; source code →</a>
         &nbsp;·&nbsp;
@@ -533,18 +736,54 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
     const h = data.harvest;
     const rd = data.related_datasets;
     const dl = data.data_links;
+    const chart = data.census_chart || null;
     document.getElementById("collectionLink").href = data.collection_url;
     document.getElementById("collectionLink").textContent = data.collection;
     const extra = document.getElementById("footerExtra");
     if (extra) {{
       extra.textContent = `${{data.collection}} · years ${{h.year_min}}–${{h.year_max}}`;
     }}
-      document.getElementById("stats").innerHTML = [
-        {{ v: h.documents.toLocaleString("en"), l: "HAL documents (latest version)" }},
-        {{ v: h.with_doi.toLocaleString("en"), l: `With DOI (${{Math.round(h.doi_share*100)}}%)` }},
-        {{ v: h.software_deposits || 0, l: "SOFTWARE deposits" }},
-        {{ v: rd.publication_count, l: "Pubs with related dataset (Nakala/RDG)" }},
-      ].map(x => `<div class="stat"><strong>${{x.v}}</strong><span>${{x.l}}</span></div>`).join("");
+    const pubsWithData = (chart && chart.publications_with_dataset) || rd.publication_count || 0;
+    const uniqueDatasets = (chart && chart.unique_datasets) || 0;
+    document.getElementById("stats").innerHTML = [
+      {{ v: h.documents.toLocaleString("en"), l: "HAL documents (latest version)" }},
+      {{ v: h.with_doi.toLocaleString("en"), l: `With DOI (${{Math.round(h.doi_share*100)}}%)` }},
+      {{ v: uniqueDatasets.toLocaleString("en"), l: "Unique linked dataset DOIs (all repos)" }},
+      {{ v: pubsWithData.toLocaleString("en"), l: "Pubs with a related dataset (all repos)" }},
+    ].map(x => `<div class="stat"><strong>${{x.v}}</strong><span>${{x.l}}</span></div>`).join("");
+
+    const noteEl = document.getElementById("chartNote");
+    const legendEl = document.getElementById("stackLegend");
+    const chartEl = document.getElementById("stackChart");
+    if (chart && chart.stacked && chart.stacked.years && chart.stacked.years.length) {{
+      noteEl.textContent = chart.note || "";
+      const series = chart.stacked.series || [];
+      const years = chart.stacked.years;
+      const totals = chart.stacked.totals || [];
+      const maxTotal = Math.max(1, ...totals);
+      legendEl.innerHTML = series.map(s =>
+        `<span><i class="stack-swatch" style="background:${{s.color}}"></i>${{s.repository}}</span>`
+      ).join("");
+      chartEl.innerHTML = years.map((year, i) => {{
+        const total = totals[i] || 0;
+        const segs = series.map(s => {{
+          const n = (s.counts && s.counts[i]) || 0;
+          if (!n) return "";
+          const pct = (100 * n / maxTotal).toFixed(2);
+          const label = n >= 3 ? String(n) : "";
+          return `<div class="stack-seg" style="flex:0 0 ${{pct}}%; background:${{s.color}}" title="${{String(s.repository).replace(/"/g,'&quot;')}}: ${{n}}">${{label}}</div>`;
+        }}).join("");
+        return `<div class="stack-col">
+          <div class="stack-total">${{total}}</div>
+          <div class="stack-bars">${{segs}}</div>
+          <div class="stack-year">${{year}}</div>
+        </div>`;
+      }}).join("");
+    }} else {{
+      noteEl.textContent = "Census chart unavailable — run a census refresh to populate dataset×year series.";
+      legendEl.innerHTML = "";
+      chartEl.innerHTML = "";
+    }}
 
     const maxType = Math.max(...h.doc_types.map(d => d.count));
     document.getElementById("docTypes").innerHTML = h.doc_types.map(d => `
@@ -563,9 +802,11 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
         <span>${{count}}</span>
       </div>`).join("");
 
-    const rb = Object.entries(rd.by_repository || {{}}).map(([k,v]) => `${{v}} on ${{k}}`).join(" · ");
+    const topRepos = Object.entries((chart && chart.by_repository) || dl.by_repository || {{}}).slice(0, 8).map(([k,v]) => `${{v}} on ${{k}}`).join(" · ");
+    const repoCount = Object.keys((chart && chart.by_repository) || dl.by_repository || {{}}).length;
+    const more = repoCount > 8 ? ` · +${{repoCount - 8}} more repositories` : "";
     document.getElementById("relatedBlurb").textContent =
-      `${{rd.publication_count}} UniCA HAL publications declare relatedData landing on a data repository. ${{rb}}.`;
+      `${{pubsWithData}} UniCA HAL publications declare at least one related dataset DOI on a data repository (all repositories). ${{topRepos}}${{more}}.`;
   </script>
 </body>
 </html>
@@ -1288,6 +1529,7 @@ def write_site(
         links_path=links_path,
         collection=collection,
         stats_fallback=stats_fallback,
+        census_dir=census_dir,
     )
     payload_json = json.dumps(payload, ensure_ascii=False).replace("<", "\\u003c")
     data_dir = output_dir / "data"
