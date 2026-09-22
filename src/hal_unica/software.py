@@ -167,10 +167,30 @@ def write_software_artifacts(rows: list[dict[str, Any]], out_dir: Path) -> dict[
     return paths
 
 
+def _load_previous_retrieved_at(jsonl_path: Path) -> dict[str, str]:
+    """Preserve first-seen retrieval timestamps across index rebuilds."""
+    previous: dict[str, str] = {}
+    if not jsonl_path.exists():
+        return previous
+    with jsonl_path.open(encoding="utf-8") as fh:
+        for line in fh:
+            if not line.strip():
+                continue
+            row = json.loads(line)
+            doi = row.get("dataset_doi")
+            retrieved = row.get("retrieved_at")
+            if doi and retrieved:
+                previous[doi] = retrieved
+    return previous
+
+
 def build_dataset_to_publications(census_pubs_jsonl: Path, out_dir: Path) -> dict[str, Path]:
     """Invert relatedData census: dataset DOI → list of HAL publications."""
     out_dir.mkdir(parents=True, exist_ok=True)
     by_doi: dict[str, dict[str, Any]] = {}
+    jsonl = out_dir / "dataset_to_publications.jsonl"
+    previous_retrieved = _load_previous_retrieved_at(jsonl)
+    now = _utc_now()
 
     with census_pubs_jsonl.open(encoding="utf-8") as fh:
         for line in fh:
@@ -199,6 +219,7 @@ def build_dataset_to_publications(census_pubs_jsonl: Path, out_dir: Path) -> dic
                         "dataset_title": res.get("title"),
                         "source_fields": [],
                         "publications": [],
+                        "hal_modified_dates": [],
                     },
                 )
                 src = t.get("source_field")
@@ -210,12 +231,16 @@ def build_dataset_to_publications(census_pubs_jsonl: Path, out_dir: Path) -> dic
                 for k in ("repository", "publisher", "landing_url", "landing_host", "object_kind", "dataset_title"):
                     if not entry.get(k) and res.get(k if k != "dataset_title" else "title"):
                         entry[k] = res.get("title") if k == "dataset_title" else res.get(k)
+                mod = pub.get("modifiedDate_tdate")
+                if isinstance(mod, str) and mod:
+                    entry["hal_modified_dates"].append(mod)
                 pub_ref = {
                     "halId_s": pub.get("halId_s"),
                     "uri_s": pub.get("uri_s"),
                     "title_s": pub.get("title_s"),
                     "docType_s": pub.get("docType_s"),
                     "doiId_s": pub.get("doiId_s"),
+                    "modifiedDate_tdate": mod,
                     "source_field": t.get("source_field"),
                     "field_ok": t.get("field_ok"),
                     "misfiled_dataset_link": bool(t.get("misfiled_dataset_link")),
@@ -223,9 +248,22 @@ def build_dataset_to_publications(census_pubs_jsonl: Path, out_dir: Path) -> dic
                 if pub_ref not in entry["publications"]:
                     entry["publications"].append(pub_ref)
 
-    rows = sorted(by_doi.values(), key=lambda r: (r.get("repository") or "", r["dataset_doi"]))
+    for entry in by_doi.values():
+        mods = [m for m in entry.pop("hal_modified_dates", []) if m]
+        entry["hal_modified_at"] = max(mods) if mods else None
+        # Keep first census sighting; seed legacy rows from HAL modified date so sort works.
+        entry["retrieved_at"] = (
+            previous_retrieved.get(entry["dataset_doi"])
+            or entry.get("hal_modified_at")
+            or now
+        )
 
-    jsonl = out_dir / "dataset_to_publications.jsonl"
+    rows = sorted(
+        by_doi.values(),
+        key=lambda r: (r.get("retrieved_at") or "", r.get("repository") or "", r["dataset_doi"]),
+        reverse=True,
+    )
+
     with jsonl.open("w", encoding="utf-8") as fh:
         for row in rows:
             fh.write(json.dumps(row, ensure_ascii=False) + "\n")
@@ -240,6 +278,8 @@ def build_dataset_to_publications(census_pubs_jsonl: Path, out_dir: Path) -> dic
                 "landing_url",
                 "landing_host",
                 "dataset_title",
+                "retrieved_at",
+                "hal_modified_at",
                 "source_fields",
                 "has_misfiled_source",
                 "halId_s",
@@ -262,6 +302,8 @@ def build_dataset_to_publications(census_pubs_jsonl: Path, out_dir: Path) -> dic
                         "landing_url": row.get("landing_url"),
                         "landing_host": row.get("landing_host"),
                         "dataset_title": row.get("dataset_title"),
+                        "retrieved_at": row.get("retrieved_at"),
+                        "hal_modified_at": row.get("hal_modified_at"),
                         "source_fields": " | ".join(row.get("source_fields") or []),
                         "has_misfiled_source": bool(row.get("has_misfiled_source")),
                         "halId_s": pub.get("halId_s"),

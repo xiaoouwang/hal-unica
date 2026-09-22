@@ -244,6 +244,18 @@ h1 {
 }
 .search:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(42,38,34,0.1); }
 .filters { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+.toolbar {
+  display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; align-items: center;
+  justify-content: space-between; margin: 0.15rem 0 0.85rem;
+}
+.toolbar-label {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  color: var(--ink-soft); font-size: 0.9rem;
+}
+.toolbar select {
+  border: 1px solid var(--line); border-radius: 8px; background: var(--surface);
+  color: var(--ink); font: inherit; font-size: 0.9rem; padding: 0.4rem 0.65rem;
+}
 .chip {
   appearance: none; border: 1px solid var(--line); background: var(--surface); color: var(--ink-soft);
   border-radius: 8px; padding: 0.4rem 0.75rem; font: inherit; font-size: 0.84rem;
@@ -577,7 +589,19 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
     <section class="panel">
       <input id="q" class="search" type="search" placeholder="Filter dataset DOI, repository, publication…" autocomplete="off" />
       <div class="filters" id="filters"></div>
-      <div class="meta-row"><div id="count"></div><div>Related publications shown inline</div></div>
+      <div class="toolbar">
+        <div id="count"></div>
+        <label class="toolbar-label" for="sort">
+          Sort by
+          <select id="sort">
+            <option value="retrieved_desc" selected>Newest retrieved</option>
+            <option value="retrieved_asc">Oldest retrieved</option>
+            <option value="hal_desc">Newest HAL update</option>
+            <option value="repo_asc">Repository A–Z</option>
+            <option value="doi_asc">Dataset DOI A–Z</option>
+          </select>
+        </label>
+      </div>
       <div class="list" id="list"></div>
     </section>
     {_footer(generated_at, 'CSV: <a href="./data/census/dataset_to_publications.csv"><code>dataset_to_publications.csv</code></a>')}
@@ -592,6 +616,15 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
 
     function esc(s) {{
       return String(s ?? "").replace(/[&<>"']/g, c => ({{"&":"&amp;","<":"&lt;",">":"&gt;","\\"":"&quot;","'":"&#39;"}}[c]));
+    }}
+
+    function formatStamp(iso) {{
+      if (!iso) return "";
+      const d = new Date(iso);
+      if (Number.isNaN(d.getTime())) return esc(iso);
+      return d.toLocaleDateString("en-GB", {{ day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }})
+        + ", " + d.toLocaleTimeString("en-GB", {{ hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "UTC" }})
+        + " UTC";
     }}
 
     // Stats/filters from dataset-only index (not full census by_repository, which includes journals).
@@ -631,15 +664,30 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
       }}));
     }}
 
+    function sortRows(rows) {{
+      const mode = document.getElementById("sort").value;
+      const cmpStr = (a, b) => String(a || "").localeCompare(String(b || ""), undefined, {{ sensitivity: "base" }});
+      const cmpIsoDesc = (a, b) => String(b || "").localeCompare(String(a || ""));
+      const cmpIsoAsc = (a, b) => String(a || "").localeCompare(String(b || ""));
+      return rows.slice().sort((a, b) => {{
+        if (mode === "retrieved_desc") return cmpIsoDesc(a.retrieved_at, b.retrieved_at) || cmpStr(a.dataset_doi, b.dataset_doi);
+        if (mode === "retrieved_asc") return cmpIsoAsc(a.retrieved_at, b.retrieved_at) || cmpStr(a.dataset_doi, b.dataset_doi);
+        if (mode === "hal_desc") return cmpIsoDesc(a.hal_modified_at, b.hal_modified_at) || cmpStr(a.dataset_doi, b.dataset_doi);
+        if (mode === "doi_asc") return cmpStr(a.dataset_doi, b.dataset_doi);
+        return cmpStr(a.repository, b.repository) || cmpStr(a.dataset_doi, b.dataset_doi);
+      }});
+    }}
+
     function render() {{
       const q = document.getElementById("q").value.trim().toLowerCase();
-      const rows = datasets.filter(d => {{
+      const filtered = datasets.filter(d => {{
         if (active !== "all" && d.repository !== active) return false;
         if (!q) return true;
-        const blob = [d.dataset_doi, d.repository, d.landing_host, d.dataset_title,
+        const blob = [d.dataset_doi, d.repository, d.landing_host, d.dataset_title, d.retrieved_at,
           ...(d.publications||[]).map(p => `${{p.halId_s}} ${{p.title_s}} ${{p.doiId_s}}`)].join(" ").toLowerCase();
         return blob.includes(q);
       }});
+      const rows = sortRows(filtered);
       document.getElementById("count").textContent = `${{rows.length}} of ${{datasets.length}} datasets`;
       document.getElementById("list").innerHTML = rows.map(d => {{
         const href = d.landing_url || `https://doi.org/${{d.dataset_doi}}`;
@@ -667,6 +715,12 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
         const misfiledBadge = d.has_misfiled_source
           ? `<span class="badge" title="Dataset DOI was not filed in relatedData_s">misfiled field</span>`
           : "";
+        const retrieved = d.retrieved_at
+          ? `<span title="First seen in this census index"><time datetime="${{esc(d.retrieved_at)}}">Retrieved ${{formatStamp(d.retrieved_at)}}</time></span>`
+          : "";
+        const halMod = d.hal_modified_at
+          ? `<span class="muted" title="Latest HAL modifiedDate among linked notices"><time datetime="${{esc(d.hal_modified_at)}}">HAL updated ${{formatStamp(d.hal_modified_at)}}</time></span>`
+          : "";
         return `<article class="result">
           <div class="title-row">
             <div>
@@ -680,6 +734,8 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
             <span>${{esc(d.dataset_title || "")}}</span>
             <span class="muted">${{esc(d.landing_host || "")}}</span>
             <span>${{(d.publications||[]).length}} publication(s)</span>
+            ${{retrieved}}
+            ${{halMod}}
           </div>
           <div class="evidence">${{pubs || '<div class="muted">No linked publication in census.</div>'}}</div>
         </article>`;
@@ -687,6 +743,7 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
     }}
     paintFilters();
     document.getElementById("q").addEventListener("input", render);
+    document.getElementById("sort").addEventListener("change", render);
     render();
   </script>
 </body>
