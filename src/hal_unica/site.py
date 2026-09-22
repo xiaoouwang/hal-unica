@@ -196,12 +196,7 @@ def census_homepage_stats(
     if not by_year_repo:
         years_list = list(range(year_min, datetime.now(timezone.utc).year + 1))
     else:
-        # Include every year that has at least one dataset; pad from year_min only when denser.
-        y0 = min(by_year_repo)
-        y1 = max(by_year_repo)
-        if y1 - y0 > 20:
-            y0 = max(y0, year_min)
-        years_list = list(range(y0, y1 + 1))
+        years_list = list(range(min(by_year_repo), max(by_year_repo) + 1))
 
     # Top repositories overall; remainder → Autre (still counted)
     ranked = [r for r, _ in by_repo.most_common()]
