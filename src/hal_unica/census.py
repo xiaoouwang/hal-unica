@@ -6,13 +6,13 @@ import csv
 import json
 import re
 from collections import Counter
-from dataclasses import asdict, dataclass, field
-from datetime import datetime, timezone
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, TextIO
 
 from .client import HalClient
 from .datacite import DataCiteClient, DoiResolution, looks_like_doi
+from .timeutil import format_hal_date, utc_now
 
 CENSUS_FL = [
     "docid",
@@ -24,6 +24,7 @@ CENSUS_FL = [
     "relatedData_s",
     "seeAlso_s",
     "producedDateY_i",
+    "modifiedDate_tdate",
 ]
 
 DOI_RE = re.compile(
@@ -33,7 +34,7 @@ DOI_RE = re.compile(
 
 
 def _utc_now() -> str:
-    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    return format_hal_date(utc_now())
 
 
 def _first(value: Any) -> str | None:
@@ -77,70 +78,82 @@ class CensusLinks:
     num_hal_with_related: int = 0
     num_related_tokens: int = 0
     num_unique_dois: int = 0
+    since: str | None = None
+    pubs_fetched: int = 0
+    pubs_updated: int = 0
+    pubs_inserted: int = 0
+    dois_resolved_live: int = 0
+    dois_from_cache: int = 0
+    watermark_modified: str | None = None
 
 
-def run_census(
-    *,
-    client: HalClient,
-    datacite: DataCiteClient,
-    log: TextIO | None = None,
-) -> CensusLinks:
-    def say(msg: str) -> None:
-        if log:
-            log.write(msg + "\n")
-            log.flush()
+def load_publications_jsonl(path: Path) -> dict[str, dict[str, Any]]:
+    by_id: dict[str, dict[str, Any]] = {}
+    if not path.exists():
+        return by_id
+    with path.open(encoding="utf-8") as fh:
+        for line in fh:
+            if not line.strip():
+                continue
+            try:
+                pub = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            hid = pub.get("halId_s")
+            if hid:
+                by_id[str(hid)] = pub
+    return by_id
 
-    started = _utc_now()
-    say(f"[{started}] census start collection={client.collection}")
 
-    publications: list[dict[str, Any]] = []
-    token_count = 0
-    dois_needed: set[str] = set()
+def load_doi_resolutions_jsonl(path: Path) -> dict[str, DoiResolution]:
+    out: dict[str, DoiResolution] = {}
+    if not path.exists():
+        return out
+    with path.open(encoding="utf-8") as fh:
+        for line in fh:
+            if not line.strip():
+                continue
+            try:
+                row = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            doi = row.get("doi")
+            if doi:
+                out[str(doi)] = DoiResolution.from_dict(row)
+    return out
 
-    for doc in client.iter_docs(q="relatedData_s:*", fl=CENSUS_FL, rows=200):
-        related_raw = [str(x) for x in _as_list(doc.get("relatedData_s"))]
-        tokens = [normalize_related_token(x) for x in related_raw]
-        token_count += len(tokens)
-        for t in tokens:
-            if t["kind"] == "doi":
-                dois_needed.add(t["value"])
-        publications.append(
-            {
-                "halId_s": _first(doc.get("halId_s")),
-                "uri_s": _first(doc.get("uri_s")),
-                "title_s": _first(doc.get("title_s")),
-                "docType_s": _first(doc.get("docType_s")),
-                "doiId_s": _first(doc.get("doiId_s")),
-                "producedDateY_i": doc.get("producedDateY_i"),
-                "relatedData_raw": related_raw,
-                "related_tokens": tokens,
-            }
-        )
 
-    say(f"HAL publications with relatedData_s: {len(publications)}")
-    say(f"relatedData tokens: {token_count}")
-    say(f"unique DOI candidates: {len(dois_needed)}")
+def _publication_from_doc(doc: dict[str, Any]) -> dict[str, Any]:
+    related_raw = [str(x) for x in _as_list(doc.get("relatedData_s"))]
+    tokens = [normalize_related_token(x) for x in related_raw]
+    return {
+        "halId_s": _first(doc.get("halId_s")),
+        "uri_s": _first(doc.get("uri_s")),
+        "title_s": _first(doc.get("title_s")),
+        "docType_s": _first(doc.get("docType_s")),
+        "doiId_s": _first(doc.get("doiId_s")),
+        "producedDateY_i": doc.get("producedDateY_i"),
+        "modifiedDate_tdate": _first(doc.get("modifiedDate_tdate")),
+        "relatedData_raw": related_raw,
+        "related_tokens": tokens,
+    }
 
-    resolutions: dict[str, DoiResolution] = {}
-    for i, doi in enumerate(sorted(dois_needed), 1):
-        res = datacite.resolve(doi)
-        resolutions[doi] = res
-        if i % 25 == 0 or i == len(dois_needed):
-            say(f"DataCite resolved {i}/{len(dois_needed)}")
 
-    # Attach resolutions onto each publication
+def _attach_resolutions(
+    publications: list[dict[str, Any]],
+    resolutions: dict[str, DoiResolution],
+) -> None:
     for pub in publications:
         datasets = []
         repos: list[str] = []
-        for t in pub["related_tokens"]:
+        for t in pub.get("related_tokens") or []:
             entry: dict[str, Any] = dict(t)
-            if t["kind"] == "doi" and t["value"] in resolutions:
+            if t.get("kind") == "doi" and t.get("value") in resolutions:
                 r = resolutions[t["value"]]
                 entry["resolution"] = r.to_dict()
                 if r.repository:
                     repos.append(r.repository)
             datasets.append(entry)
-        # stable unique repos
         seen: set[str] = set()
         uniq_repos = []
         for r in repos:
@@ -150,18 +163,101 @@ def run_census(
         pub["datasets"] = datasets
         pub["repositories"] = uniq_repos
 
+
+def run_census(
+    *,
+    client: HalClient,
+    datacite: DataCiteClient,
+    log: TextIO | None = None,
+    since: str | None = None,
+    existing_publications: dict[str, dict[str, Any]] | None = None,
+    existing_resolutions: dict[str, DoiResolution] | None = None,
+) -> CensusLinks:
+    def say(msg: str) -> None:
+        if log:
+            log.write(msg + "\n")
+            log.flush()
+
+    started = _utc_now()
+    say(f"[{started}] census start collection={client.collection} since={since or '*'}")
+
+    by_id: dict[str, dict[str, Any]] = dict(existing_publications or {})
+    prior_ids = set(by_id)
+    resolutions: dict[str, DoiResolution] = dict(existing_resolutions or {})
+
+    fq: list[str] = []
+    if since:
+        fq.append(f"modifiedDate_tdate:[{since} TO *]")
+
+    fetched = 0
+    updated = 0
+    inserted = 0
+    max_modified: str | None = None
+    token_count = 0
+    dois_needed: set[str] = set()
+
+    for doc in client.iter_docs(q="relatedData_s:*", fq=fq or None, fl=CENSUS_FL, rows=200):
+        pub = _publication_from_doc(doc)
+        hid = pub.get("halId_s")
+        if not hid:
+            continue
+        fetched += 1
+        mod = pub.get("modifiedDate_tdate")
+        if isinstance(mod, str) and (max_modified is None or mod > max_modified):
+            max_modified = mod
+        if hid in prior_ids:
+            updated += 1
+        else:
+            inserted += 1
+            prior_ids.add(hid)
+        by_id[hid] = pub
+
+    publications = list(by_id.values())
+    for pub in publications:
+        tokens = pub.get("related_tokens") or []
+        token_count += len(tokens)
+        for t in tokens:
+            if t.get("kind") == "doi" and t.get("value"):
+                dois_needed.add(t["value"])
+
+    say(f"HAL publications with relatedData_s (merged): {len(publications)}")
+    say(f"  fetched this run: {fetched} (updated={updated}, inserted={inserted})")
+    say(f"relatedData tokens: {token_count}")
+    say(f"unique DOI candidates: {len(dois_needed)}")
+
+    to_resolve = sorted(d for d in dois_needed if d not in resolutions)
+    cached = len(dois_needed) - len(to_resolve)
+    say(f"DataCite cache hits: {cached}; to resolve: {len(to_resolve)}")
+
+    for i, doi in enumerate(to_resolve, 1):
+        res = datacite.resolve(doi)
+        resolutions[doi] = res
+        if i % 25 == 0 or i == len(to_resolve):
+            say(f"DataCite resolved {i}/{len(to_resolve)}")
+
+    _attach_resolutions(publications, resolutions)
+
     finished = _utc_now()
     say(f"[{finished}] census done")
 
+    final_resolutions = {d: resolutions[d] for d in sorted(dois_needed) if d in resolutions}
+
     return CensusLinks(
         publications=publications,
-        resolutions=resolutions,
+        resolutions=final_resolutions,
         started_at=started,
         finished_at=finished,
         collection=client.collection,
         num_hal_with_related=len(publications),
         num_related_tokens=token_count,
         num_unique_dois=len(dois_needed),
+        since=since,
+        pubs_fetched=fetched,
+        pubs_updated=updated,
+        pubs_inserted=inserted,
+        dois_resolved_live=len(to_resolve),
+        dois_from_cache=cached,
+        watermark_modified=max_modified,
     )
 
 
@@ -197,10 +293,19 @@ def summarize_census(census: CensusLinks) -> dict[str, Any]:
         "collection": census.collection,
         "started_at": census.started_at,
         "finished_at": census.finished_at,
+        "since": census.since,
         "hal_publications_with_relatedData": census.num_hal_with_related,
         "related_tokens": census.num_related_tokens,
         "unique_dois_resolved": census.num_unique_dois,
         "publications_with_dataset_repo_landing": pubs_with_dataset_repo,
+        "incremental": {
+            "pubs_fetched": census.pubs_fetched,
+            "pubs_updated": census.pubs_updated,
+            "pubs_inserted": census.pubs_inserted,
+            "dois_resolved_live": census.dois_resolved_live,
+            "dois_from_cache": census.dois_from_cache,
+            "watermark_modified": census.watermark_modified,
+        },
         "by_repository": dict(sorted(by_repo.items(), key=lambda kv: (-kv[1], kv[0]))),
         "by_object_kind": dict(sorted(by_kind.items())),
         "by_doi_prefix": dict(sorted(by_prefix.items(), key=lambda kv: (-kv[1], kv[0]))),
@@ -326,6 +431,8 @@ def write_census_artifacts(census: CensusLinks, out_dir: Path, log_path: Path) -
         "collection": census.collection,
         "hal_api": f"https://api.archives-ouvertes.fr/search/{census.collection}/",
         "hal_query": "relatedData_s:*",
+        "since": census.since,
+        "watermark_modified": census.watermark_modified,
         "datacite_api": "https://api.datacite.org/dois/{doi}",
         "started_at": census.started_at,
         "finished_at": census.finished_at,
@@ -335,11 +442,17 @@ def write_census_artifacts(census: CensusLinks, out_dir: Path, log_path: Path) -
             "hal_publications_with_relatedData": census.num_hal_with_related,
             "related_tokens": census.num_related_tokens,
             "unique_dois": census.num_unique_dois,
+            "pubs_fetched": census.pubs_fetched,
+            "pubs_updated": census.pubs_updated,
+            "pubs_inserted": census.pubs_inserted,
+            "dois_resolved_live": census.dois_resolved_live,
+            "dois_from_cache": census.dois_from_cache,
         },
         "method": [
             "List UniCA HAL notices with relatedData_s via Search API cursor pagination.",
+            "Optional modifiedDate_tdate window for incremental refresh; merge by halId_s.",
             "Parse each relatedData token as DOI, URL, HAL id, or other.",
-            "Resolve every unique DOI with DataCite REST API.",
+            "Resolve new DOIs with DataCite REST API; reuse doi_resolutions.jsonl cache.",
             "Label repository from landing host / publisher / known DOI prefix.",
             "Write publication-level JSONL, DOI resolution JSONL, and CSV correspondence tables.",
         ],
@@ -412,5 +525,21 @@ was linked**, **which repository it resolves to**, and keep the raw evidence.
         bundled = out_dir / "run.log"
         bundled.write_text(log_path.read_text(encoding="utf-8"), encoding="utf-8")
         paths["run_log"] = bundled
+
+    meta = {
+        "watermark_modified": census.watermark_modified,
+        "since": census.since,
+        "started_at": census.started_at,
+        "finished_at": census.finished_at,
+        "collection": census.collection,
+        "num_hal_with_related": census.num_hal_with_related,
+        "num_unique_dois": census.num_unique_dois,
+        "pubs_fetched": census.pubs_fetched,
+        "dois_resolved_live": census.dois_resolved_live,
+        "dois_from_cache": census.dois_from_cache,
+    }
+    meta_path = out_dir / "census.meta.json"
+    meta_path.write_text(json.dumps(meta, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    paths["census_meta"] = meta_path
 
     return paths

@@ -7,7 +7,12 @@ from typing import Optional
 import typer
 
 from . import __version__
-from .census import run_census, write_census_artifacts
+from .census import (
+    load_doi_resolutions_jsonl,
+    load_publications_jsonl,
+    run_census,
+    write_census_artifacts,
+)
 from .client import DEFAULT_COLLECTION, HalClient
 from .datacite import DataCiteClient
 from .data_repos import (
@@ -20,6 +25,7 @@ from .data_repos import (
     summarize,
 )
 from .harvest import harvest_metadata
+from .refresh import run_refresh
 from .report import write_report
 from .software import (
     build_dataset_to_publications,
@@ -27,6 +33,7 @@ from .software import (
     write_software_artifacts,
 )
 from .site import write_site
+from .timeutil import effective_since, read_watermark
 
 app = typer.Typer(
     add_completion=False,
@@ -42,12 +49,21 @@ def count_cmd(
         None,
         help="Only count docs with modifiedDate_tdate >= this ISO timestamp (UTC)",
     ),
+    lookback_days: Optional[float] = typer.Option(
+        None,
+        "--lookback-days",
+        help="Count docs modified in the last N days (UTC)",
+    ),
 ) -> None:
     """Print how many documents the API reports for the collection."""
-    fq = [f"modifiedDate_tdate:[{since} TO *]"] if since else None
+    resolved = effective_since(since=since, lookback_days=lookback_days)
+    fq = [f"modifiedDate_tdate:[{resolved} TO *]"] if resolved else None
     with HalClient(collection=collection) as client:
         n = client.count(fq=fq)
-    typer.echo(n)
+    if resolved:
+        typer.echo(f"{n} (since {resolved})")
+    else:
+        typer.echo(n)
 
 
 @app.command("harvest")
@@ -69,6 +85,21 @@ def harvest_cmd(
         None,
         help="Incremental: modifiedDate_tdate >= ISO timestamp, e.g. 2025-01-01T00:00:00Z",
     ),
+    lookback_days: Optional[float] = typer.Option(
+        None,
+        "--lookback-days",
+        help="Incremental window: last N days (UTC). Implies upsert by default.",
+    ),
+    from_watermark: bool = typer.Option(
+        False,
+        "--from-watermark/--no-from-watermark",
+        help="Also use watermark from output *.meta.json (minus 1h safety)",
+    ),
+    upsert: Optional[bool] = typer.Option(
+        None,
+        "--upsert/--no-upsert",
+        help="Merge by halId_s into existing JSONL (default: on when using a time window)",
+    ),
     include_file_urls: bool = typer.Option(
         True,
         "--include-file-urls/--no-file-urls",
@@ -85,7 +116,8 @@ def harvest_cmd(
     Harvest metadata for the latest version of each UniCA deposit.
 
     The HAL collection index already stores one record per halId (current version).
-    Binaries are never downloaded.
+    Binaries are never downloaded. Time-windowed pulls upsert into the existing
+    corpus by default so --since / --lookback-days never wipe the archive.
     """
     with HalClient(collection=collection, min_interval=rate) as client:
         result = harvest_metadata(
@@ -94,14 +126,21 @@ def harvest_cmd(
             rows=rows,
             max_docs=max_docs,
             since=since,
+            lookback_days=lookback_days,
+            from_watermark=from_watermark,
             include_file_urls=include_file_urls,
             resume=resume,
+            upsert=upsert,
         )
     typer.echo(
         f"Wrote {result.written} docs "
-        f"(api numFound={result.num_found_api}, "
-        f"dup_skipped={result.skipped_duplicate_hal_id}) → {result.output_path}"
+        f"(inserted={result.inserted}, updated={result.updated}, "
+        f"api numFound={result.num_found_api}, "
+        f"dup_skipped={result.skipped_duplicate_hal_id}, upsert={result.upsert}) "
+        f"→ {result.output_path}"
     )
+    if result.since:
+        typer.echo(f"Window since={result.since}")
     if result.watermark_modified:
         typer.echo(f"Watermark modifiedDate_tdate max={result.watermark_modified}")
 
@@ -275,20 +314,70 @@ def census_cmd(
         "--log",
         help="Run log path",
     ),
+    since: Optional[str] = typer.Option(
+        None,
+        help="Incremental: only HAL notices with modifiedDate_tdate >= ISO timestamp",
+    ),
+    lookback_days: Optional[float] = typer.Option(
+        None,
+        "--lookback-days",
+        help="Incremental window in days (UTC); merges into existing census artifacts",
+    ),
+    from_watermark: bool = typer.Option(
+        False,
+        "--from-watermark/--no-from-watermark",
+        help="Combine with watermark from census.meta.json",
+    ),
+    full: bool = typer.Option(
+        False,
+        "--full/--incremental",
+        help="Ignore date filters and rebuild the census from HAL (still reuses DOI cache unless --no-doi-cache)",
+    ),
+    reuse_doi_cache: bool = typer.Option(
+        True,
+        "--doi-cache/--no-doi-cache",
+        help="Reuse doi_resolutions.jsonl and only resolve new DOIs",
+    ),
 ) -> None:
     """
     Census ALL relatedData repositories (not only Nakala/RDG).
 
     Writes DOI↔repository maps, publication JSONL, summary, methodology, and a log.
+    With --lookback-days / --since, merges into existing publications by halId_s.
     """
     log_file.parent.mkdir(parents=True, exist_ok=True)
     out_dir.mkdir(parents=True, exist_ok=True)
+
+    resolved_since: Optional[str] = None
+    existing_pubs = None
+    existing_res = None
+
+    if not full:
+        wm = read_watermark(out_dir / "census.meta.json") if from_watermark else None
+        resolved_since = effective_since(
+            since=since,
+            lookback_days=lookback_days,
+            watermark=wm,
+        )
+        if resolved_since is not None or lookback_days is not None or since:
+            existing_pubs = load_publications_jsonl(out_dir / "publications_related_data.jsonl")
+        if reuse_doi_cache:
+            existing_res = load_doi_resolutions_jsonl(out_dir / "doi_resolutions.jsonl")
+    elif reuse_doi_cache:
+        existing_res = load_doi_resolutions_jsonl(out_dir / "doi_resolutions.jsonl")
+
     with log_file.open("w", encoding="utf-8") as log, HalClient(
         collection=collection, min_interval=rate
     ) as client, DataCiteClient(min_interval=rate) as datacite:
-        census = run_census(client=client, datacite=datacite, log=log)
+        census = run_census(
+            client=client,
+            datacite=datacite,
+            log=log,
+            since=None if full else resolved_since,
+            existing_publications=None if full else existing_pubs,
+            existing_resolutions=existing_res,
+        )
         paths = write_census_artifacts(census, out_dir, log_file)
-    # append artifact list to log
     with log_file.open("a", encoding="utf-8") as log:
         log.write("artifacts:\n")
         for key, path in paths.items():
@@ -297,6 +386,14 @@ def census_cmd(
     typer.echo(f"Census complete → {out_dir}/")
     typer.echo(f"  publications: {summary['hal_publications_with_relatedData']}")
     typer.echo(f"  unique DOIs: {summary['unique_dois_resolved']}")
+    if not full and resolved_since:
+        typer.echo(f"  since: {resolved_since}")
+        inc = summary.get("incremental") or {}
+        typer.echo(
+            f"  fetched={inc.get('pubs_fetched')} "
+            f"updated={inc.get('pubs_updated')} inserted={inc.get('pubs_inserted')} "
+            f"datacite_live={inc.get('dois_resolved_live')} cache={inc.get('dois_from_cache')}"
+        )
     typer.echo(f"  log: {log_file}")
     for repo, count in list(summary.get("by_repository", {}).items())[:15]:
         typer.echo(f"  {repo}: {count}")
@@ -325,12 +422,78 @@ def software_cmd(
     typer.echo(f"Wrote → {out_dir}/")
 
 
+@app.command("refresh")
+def refresh_cmd(
+    lookback_days: float = typer.Option(
+        2.0,
+        "--lookback-days",
+        help="Pull HAL notices modified in the last N days (default: 2)",
+    ),
+    since: Optional[str] = typer.Option(
+        None,
+        help="Override lookback with an explicit modifiedDate lower bound",
+    ),
+    full: bool = typer.Option(
+        False,
+        "--full/--incremental",
+        help="Full relatedData rebuild (weekly safety net); still reuses DOI cache",
+    ),
+    census_dir: Path = typer.Option(Path("data/census"), "--census-dir"),
+    links: Path = typer.Option(
+        Path("data/unica_data_repo_links.jsonl"),
+        "--links",
+        help="Nakala/RDG focus links (synced from census)",
+    ),
+    harvest: Path = typer.Option(
+        Path("data/unica_hal_metadata.jsonl"),
+        "--harvest",
+        help="Optional full harvest JSONL for home-page stats",
+    ),
+    stats_fallback: Path = typer.Option(
+        Path("docs/data/stats.json"),
+        "--stats-fallback",
+        help="Reuse harvest stats when full harvest JSONL is missing (CI)",
+    ),
+    output: Path = typer.Option(Path("docs"), "--output", "-o", help="Site output dir"),
+    collection: str = typer.Option(DEFAULT_COLLECTION, help="HAL collection code"),
+    rate: float = typer.Option(0.15, help="Min seconds between HAL/DataCite requests"),
+    log_file: Path = typer.Option(Path("logs/census.log"), "--log"),
+) -> None:
+    """
+    Daily incremental refresh: census (lookback) → software → focus links → site.
+
+    Does not re-scrape the full UniCA metadata corpus. Designed for scheduled CI.
+    """
+    log_file.parent.mkdir(parents=True, exist_ok=True)
+    with log_file.open("w", encoding="utf-8") as log:
+        result = run_refresh(
+            collection=collection,
+            census_dir=census_dir,
+            links_path=links,
+            harvest_path=harvest,
+            stats_fallback=stats_fallback if stats_fallback.exists() else None,
+            site_dir=output,
+            lookback_days=lookback_days,
+            since=since,
+            full=full,
+            rate=rate,
+            log_path=log_file,
+            log=log,
+        )
+    typer.echo(
+        f"Refresh done (full={result.full}, since={result.since or '*'}) "
+        f"pubs={result.census_publications} fetched={result.pubs_fetched} "
+        f"datacite_live={result.dois_resolved_live} cache={result.dois_from_cache} "
+        f"software={result.software_deposits} focus={result.focus_hits} → {result.site_dir}"
+    )
+
+
 @app.command("build-site")
 def build_site_cmd(
     harvest: Path = typer.Option(
         Path("data/unica_hal_metadata.jsonl"),
         "--harvest",
-        help="Full HAL metadata JSONL (for general statistics)",
+        help="Full HAL metadata JSONL (for general statistics); optional if stats fallback exists",
     ),
     links: Path = typer.Option(
         Path("data/unica_data_repo_links.jsonl"),
@@ -348,13 +511,20 @@ def build_site_cmd(
         "-o",
         help="GitHub Pages output directory",
     ),
+    stats_fallback: Path = typer.Option(
+        Path("docs/data/stats.json"),
+        "--stats-fallback",
+        help="Fallback harvest stats when --harvest is missing",
+    ),
     collection: str = typer.Option(DEFAULT_COLLECTION, help="HAL collection code"),
 ) -> None:
     """Build the public stats + related-datasets + census site into docs/."""
-    if not harvest.exists():
-        raise typer.BadParameter(f"Harvest not found: {harvest}")
     if not links.exists():
         raise typer.BadParameter(f"Links file not found: {links}")
+    if not harvest.exists() and not stats_fallback.exists():
+        raise typer.BadParameter(
+            f"Harvest not found: {harvest} (and no stats fallback at {stats_fallback})"
+        )
 
     if census_dir.exists():
         pubs = census_dir / "publications_related_data.jsonl"
@@ -363,11 +533,12 @@ def build_site_cmd(
             typer.echo("Updated dataset→publications index")
 
     path = write_site(
-        harvest_path=harvest,
+        harvest_path=harvest if harvest.exists() else None,
         links_path=links,
         output_dir=output,
         collection=collection,
         census_dir=census_dir if census_dir.exists() else None,
+        stats_fallback=stats_fallback if stats_fallback.exists() else None,
     )
     typer.echo(f"Wrote site → {path}/")
     for name in (

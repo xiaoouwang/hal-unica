@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T16:39:57Z",
+  "generated_at": "2026-09-22T09:14:29Z",
   "collection": "UNIV-COTEDAZUR",
   "collection_url": "https://hal.science/UNIV-COTEDAZUR",
   "harvest": {
@@ -295,28 +295,17 @@
     "year_max": 2026
   },
   "data_links": {
-    "total_hits": 86,
+    "total_hits": 51,
     "by_platform": {
-      "nakala": 11,
-      "rdg": 30,
-      "rdg_network": 45
+      "nakala": 7,
+      "rdg": 44
     },
     "by_repository": {
-      "Recherche Data Gouv": 51,
-      "INRA → HAL notice": 14,
-      "NAKALA": 11,
-      "INRAE (prefix 10.15454)": 3,
-      "INRA-CNRS → HAL notice": 2,
-      "INRA-ENDURE → HAL notice": 2,
-      "INRAE → HAL notice": 2,
-      "INRA-IFREMER-IRSTEA-CNRS → HAL notice": 1,
-      "Unknown (DOI not in DataCite)": 1
+      "Recherche Data Gouv": 44,
+      "NAKALA": 7
     },
     "by_object_kind": {
-      "dataset_repo": 62,
-      "other": 3,
-      "publication_landing": 21,
-      "unresolved": 1
+      "dataset_repo": 51
     }
   },
   "related_datasets": {

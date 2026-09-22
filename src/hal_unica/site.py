@@ -53,6 +53,18 @@ def harvest_stats(harvest_path: Path) -> dict[str, Any]:
     }
 
 
+def load_harvest_stats_fallback(path: Path | None) -> dict[str, Any] | None:
+    """Reuse harvest block from a previous stats.json when the full JSONL is absent."""
+    if path is None or not path.exists():
+        return None
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    harvest = data.get("harvest") if isinstance(data, dict) else None
+    return harvest if isinstance(harvest, dict) else None
+
+
 def related_dataset_publications(links_path: Path) -> list[dict[str, Any]]:
     """HAL notices that declare relatedData_s landing on a real data repository."""
     out: list[dict[str, Any]] = []
@@ -94,11 +106,28 @@ def related_dataset_publications(links_path: Path) -> list[dict[str, Any]]:
 
 def build_site_payload(
     *,
-    harvest_path: Path,
+    harvest_path: Path | None,
     links_path: Path,
     collection: str = "UNIV-COTEDAZUR",
+    stats_fallback: Path | None = None,
 ) -> dict[str, Any]:
-    harvest = harvest_stats(harvest_path)
+    if harvest_path and harvest_path.exists():
+        harvest = harvest_stats(harvest_path)
+    else:
+        harvest = load_harvest_stats_fallback(stats_fallback) or {
+            "documents": 0,
+            "with_doi": 0,
+            "doi_share": 0,
+            "doc_types": [],
+            "software_deposits": 0,
+            "years": [],
+            "year_min": None,
+            "year_max": None,
+            "stale": True,
+        }
+        if harvest and "stale" not in harvest:
+            harvest = {**harvest, "stale": True}
+
     hits = hits_from_jsonl(links_path)
     link_summary = summarize(hits)
     related = related_dataset_publications(links_path)
@@ -229,7 +258,7 @@ h1 {
   line-height: 1.3; letter-spacing: -0.02em;
 }
 .doi-annot {
-  display: block; margin: 0 0 0.35rem; font-size: 0.8rem; font-weight: 550;
+  display: block; margin: 0 0 0.35rem; font-size: 0.8rem; font-weight: 500;
   color: var(--ink-soft); letter-spacing: 0.02em;
 }
 .badges { display: flex; flex-wrap: wrap; gap: 0.35rem; justify-content: flex-end; max-width: 42%; }
@@ -260,8 +289,37 @@ h1 {
 .ev dd { margin: 0; word-break: break-word; }
 .meta-row { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin: 0.5rem 0 0.85rem; color: var(--ink-soft); font-size: 0.92rem; }
 footer { margin-top: 2rem; font-size: 0.82rem; color: var(--ink-soft); line-height: 1.5; }
+footer .updated { font-weight: 600; color: var(--ink); margin-bottom: 0.35rem; }
+footer .updated time { font-variant-numeric: tabular-nums; }
 .empty { padding: 2rem; text-align: center; color: var(--ink-soft); }
 """
+
+
+def _format_last_updated(iso: str | None) -> str:
+    """Human-readable UTC stamp for footers."""
+    if not iso:
+        return "Last updated: unknown"
+    text = iso.strip()
+    try:
+        if text.endswith("Z"):
+            text = text[:-1] + "+00:00"
+        dt = datetime.fromisoformat(text).astimezone(timezone.utc)
+        return f"Last updated: {dt.strftime('%d %b %Y, %H:%M')} UTC"
+    except ValueError:
+        return f"Last updated: {iso}"
+
+
+def _footer(generated_at: str | None, extra_html: str = "") -> str:
+    stamp = _format_last_updated(generated_at)
+    iso = (generated_at or "").strip()
+    time_attr = f' datetime="{iso}"' if iso else ""
+    label = stamp.replace("Last updated: ", "", 1) if stamp.startswith("Last updated: ") else stamp
+    block = (
+        f'<div class="updated">Last updated: <time{time_attr}>{label}</time></div>'
+    )
+    if extra_html:
+        return f"<footer>\n      {block}\n      {extra_html}\n    </footer>"
+    return f"<footer>\n      {block}\n    </footer>"
 
 
 def _nav(active: str) -> str:
@@ -281,7 +339,7 @@ def _nav(active: str) -> str:
     """
 
 
-def render_index(payload_json: str) -> str:
+def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -330,7 +388,7 @@ def render_index(payload_json: str) -> str:
       </p>
     </section>
 
-    <footer id="footer"></footer>
+    {_footer(generated_at, 'Collection <span id="footerExtra"></span>')}
   </main>
   <script id="data" type="application/json">{payload_json}</script>
   <script>
@@ -340,6 +398,10 @@ def render_index(payload_json: str) -> str:
     const dl = data.data_links;
     document.getElementById("collectionLink").href = data.collection_url;
     document.getElementById("collectionLink").textContent = data.collection;
+    const extra = document.getElementById("footerExtra");
+    if (extra) {{
+      extra.textContent = `${{data.collection}} · years ${{h.year_min}}–${{h.year_max}}`;
+    }}
       document.getElementById("stats").innerHTML = [
         {{ v: h.documents.toLocaleString("en"), l: "HAL documents (latest version)" }},
         {{ v: h.with_doi.toLocaleString("en"), l: `With DOI (${{Math.round(h.doi_share*100)}}%)` }},
@@ -367,15 +429,13 @@ def render_index(payload_json: str) -> str:
     const rb = Object.entries(rd.by_repository || {{}}).map(([k,v]) => `${{v}} on ${{k}}`).join(" · ");
     document.getElementById("relatedBlurb").textContent =
       `${{rd.publication_count}} UniCA HAL publications declare relatedData landing on a data repository. ${{rb}}.`;
-    document.getElementById("footer").textContent =
-      `Generated ${{data.generated_at}} · collection ${{data.collection}} · years ${{h.year_min}}–${{h.year_max}}`;
   </script>
 </body>
 </html>
 """
 
 
-def render_related(payload_json: str) -> str:
+def render_related(payload_json: str, *, generated_at: str | None = None) -> str:
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -404,7 +464,7 @@ def render_related(payload_json: str) -> str:
       <div class="meta-row"><div id="count"></div><div>Datasets shown inline for each publication</div></div>
       <div class="list" id="list"></div>
     </section>
-    <footer>Source: HAL <code>relatedData_s</code> + DataCite landing resolution.</footer>
+    {_footer(generated_at, "Source: HAL <code>relatedData_s</code> + DataCite landing resolution.")}
   </main>
   <script id="data" type="application/json">{payload_json}</script>
   <script>
@@ -478,7 +538,7 @@ def render_related(payload_json: str) -> str:
 """
 
 
-def render_census(census_json: str) -> str:
+def render_census(census_json: str, *, generated_at: str | None = None) -> str:
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -510,7 +570,7 @@ def render_census(census_json: str) -> str:
       <div class="meta-row"><div id="count"></div><div>Related publications shown inline</div></div>
       <div class="list" id="list"></div>
     </section>
-    <footer>CSV: <a href="./data/census/dataset_to_publications.csv"><code>dataset_to_publications.csv</code></a></footer>
+    {_footer(generated_at, 'CSV: <a href="./data/census/dataset_to_publications.csv"><code>dataset_to_publications.csv</code></a>')}
   </main>
   <script id="data" type="application/json">{census_json}</script>
   <script>
@@ -600,7 +660,7 @@ def render_census(census_json: str) -> str:
 """
 
 
-def render_software(software_json: str) -> str:
+def render_software(software_json: str, *, generated_at: str | None = None) -> str:
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -628,11 +688,11 @@ def render_software(software_json: str) -> str:
       <div class="meta-row"><div id="count"></div><div>Code repos, SWHIDs and related pubs shown inline</div></div>
       <div class="list" id="list"></div>
     </section>
-    <footer>
-      Downloads:
-      <a href="./data/census/software_deposits.csv"><code>software_deposits.csv</code></a> ·
-      <a href="./data/census/software_deposits.jsonl"><code>software_deposits.jsonl</code></a>
-    </footer>
+    {_footer(
+      generated_at,
+      'Downloads: <a href="./data/census/software_deposits.csv"><code>software_deposits.csv</code></a> · '
+      '<a href="./data/census/software_deposits.jsonl"><code>software_deposits.jsonl</code></a>',
+    )}
   </main>
   <script id="data" type="application/json">{software_json}</script>
   <script>
@@ -706,7 +766,12 @@ def render_software(software_json: str) -> str:
 """
 
 
-def render_documentation(manifest: dict[str, Any], summary: dict[str, Any]) -> str:
+def render_documentation(
+    manifest: dict[str, Any],
+    summary: dict[str, Any],
+    *,
+    generated_at: str | None = None,
+) -> str:
     artifacts = manifest.get("artifacts") or {}
     method = manifest.get("method") or []
     method_li = "".join(f"<li>{m}</li>" for m in method)
@@ -783,9 +848,10 @@ def render_documentation(manifest: dict[str, Any], summary: dict[str, Any]) -> s
       </table>
     </section>
 
-    <footer>
-      Source repository: <a href="https://github.com/xiaoouwang/hal-unica">github.com/xiaoouwang/hal-unica</a>
-    </footer>
+    {_footer(
+      generated_at or manifest.get("generated_at") or manifest.get("finished_at"),
+      'Source repository: <a href="https://github.com/xiaoouwang/hal-unica">github.com/xiaoouwang/hal-unica</a>',
+    )}
   </main>
 </body>
 </html>
@@ -794,16 +860,18 @@ def render_documentation(manifest: dict[str, Any], summary: dict[str, Any]) -> s
 
 def write_site(
     *,
-    harvest_path: Path,
+    harvest_path: Path | None,
     links_path: Path,
     output_dir: Path,
     collection: str = "UNIV-COTEDAZUR",
     census_dir: Path | None = None,
+    stats_fallback: Path | None = None,
 ) -> Path:
     payload = build_site_payload(
         harvest_path=harvest_path,
         links_path=links_path,
         collection=collection,
+        stats_fallback=stats_fallback,
     )
     payload_json = json.dumps(payload, ensure_ascii=False).replace("<", "\\u003c")
     data_dir = output_dir / "data"
@@ -816,9 +884,12 @@ def write_site(
         json.dumps(payload["related_datasets"], indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
-    (output_dir / "index.html").write_text(render_index(payload_json), encoding="utf-8")
+    generated_at = payload.get("generated_at")
+    (output_dir / "index.html").write_text(
+        render_index(payload_json, generated_at=generated_at), encoding="utf-8"
+    )
     (output_dir / "related-datasets.html").write_text(
-        render_related(payload_json), encoding="utf-8"
+        render_related(payload_json, generated_at=generated_at), encoding="utf-8"
     )
 
     if census_dir and census_dir.exists():
@@ -841,13 +912,14 @@ def write_site(
         if ds_sum_path.exists():
             ds_summary = json.loads(ds_sum_path.read_text(encoding="utf-8"))
         census_payload = {
+            "generated_at": generated_at,
             "summary": summary,
             "datasets": datasets,
             "dataset_index": ds_summary,
         }
         census_json = json.dumps(census_payload, ensure_ascii=False).replace("<", "\\u003c")
         (output_dir / "all-repositories.html").write_text(
-            render_census(census_json), encoding="utf-8"
+            render_census(census_json, generated_at=generated_at), encoding="utf-8"
         )
 
         soft_rows: list[dict[str, Any]] = []
@@ -862,11 +934,15 @@ def write_site(
             soft_summary = json.loads(soft_sum.read_text(encoding="utf-8"))
         if soft_rows or soft_summary:
             soft_json = json.dumps(
-                {"deposits": soft_rows, "summary": soft_summary},
+                {
+                    "generated_at": generated_at,
+                    "deposits": soft_rows,
+                    "summary": soft_summary,
+                },
                 ensure_ascii=False,
             ).replace("<", "\\u003c")
             (output_dir / "software.html").write_text(
-                render_software(soft_json), encoding="utf-8"
+                render_software(soft_json, generated_at=generated_at), encoding="utf-8"
             )
 
         manifest = {}
@@ -888,7 +964,10 @@ def write_site(
             if (dest / name).exists():
                 manifest.setdefault("artifacts", {})[name] = f"data/census/{name}"
         (output_dir / "documentation.html").write_text(
-            render_documentation(manifest, summary), encoding="utf-8"
+            render_documentation(
+                manifest, summary, generated_at=generated_at
+            ),
+            encoding="utf-8",
         )
 
     return output_dir

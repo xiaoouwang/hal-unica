@@ -1,0 +1,85 @@
+name: Daily incremental refresh
+
+on:
+  schedule:
+    # Daily 04:00 UTC — Mon–Sat incremental (2-day lookback)
+    - cron: "0 4 * * 1-6"
+    # Sunday 04:00 UTC — full relatedData rebuild (DOI cache still reused)
+    - cron: "0 4 * * 0"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Refresh mode"
+        type: choice
+        options:
+          - incremental
+          - full
+        default: incremental
+      lookback_days:
+        description: "Lookback days for incremental mode"
+        type: string
+        default: "2"
+
+concurrency:
+  group: daily-refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install package
+        run: pip install -e .
+
+      - name: Choose refresh mode
+        id: mode
+        run: |
+          MODE="${{ github.event.inputs.mode }}"
+          if [ -z "$MODE" ]; then
+            # cron: Sunday schedule string ends with "0"
+            if [ "${{ github.event.schedule }}" = "0 4 * * 0" ]; then
+              MODE=full
+            else
+              MODE=incremental
+            fi
+          fi
+          echo "mode=$MODE" >> "$GITHUB_OUTPUT"
+          echo "lookback=${{ github.event.inputs.lookback_days || '2' }}" >> "$GITHUB_OUTPUT"
+
+      - name: Run incremental refresh
+        if: steps.mode.outputs.mode == 'incremental'
+        run: |
+          hal-unica refresh --lookback-days "${{ steps.mode.outputs.lookback }}"
+
+      - name: Run full refresh
+        if: steps.mode.outputs.mode == 'full'
+        run: |
+          hal-unica refresh --full
+
+      - name: Commit and push site + census
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            data/census \
+            data/unica_data_repo_links.jsonl \
+            data/unica_data_repo_links.jsonl.summary.json \
+            docs \
+            logs/census.log || true
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Daily HAL incremental refresh ($(date -u +%Y-%m-%d))"
+            git push
+          fi

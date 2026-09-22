@@ -29,6 +29,21 @@ class DoiResolution:
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
 
+    @classmethod
+    def from_dict(cls, data: dict[str, Any]) -> DoiResolution:
+        return cls(
+            doi=str(data.get("doi") or ""),
+            publisher=data.get("publisher"),
+            title=data.get("title"),
+            landing_url=data.get("landing_url"),
+            landing_host=data.get("landing_host"),
+            prefix=data.get("prefix"),
+            client_id=data.get("client_id"),
+            repository=data.get("repository"),
+            object_kind=data.get("object_kind"),
+            error=data.get("error"),
+        )
+
 
 def _host(url: str | None) -> str | None:
     if not url:

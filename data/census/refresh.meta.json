@@ -1,0 +1,14 @@
+{
+  "collection": "UNIV-COTEDAZUR",
+  "started_at": "2026-09-22T09:05:05Z",
+  "finished_at": "2026-09-22T09:05:07Z",
+  "since": "2026-09-20T09:05:05Z",
+  "full": false,
+  "census_publications": 129,
+  "pubs_fetched": 2,
+  "dois_resolved_live": 0,
+  "dois_from_cache": 181,
+  "software_deposits": 78,
+  "focus_hits": 51,
+  "site_dir": "docs"
+}

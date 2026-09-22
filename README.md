@@ -75,6 +75,31 @@ hal-unica find-data-repos        # Nakala/RDG focus
 hal-unica build-site             # writes docs/ including census pages
 ```
 
+### Daily incremental updates (no full re-scrape)
+
+HAL supports filtering on `modifiedDate_tdate`. Prefer a **2-day lookback** so late indexing cannot open gaps; merges are keyed by `halId_s` and DataCite resolutions are cached.
+
+```bash
+# Local metadata archive: only pull recent changes and upsert into the JSONL
+hal-unica harvest --lookback-days 2 --from-watermark -o data/unica_hal_metadata.jsonl
+
+# What powers the website (census + software + docs/)
+hal-unica refresh --lookback-days 2
+
+# Weekly safety net
+hal-unica refresh --full
+```
+
+`hal-unica refresh` does **not** re-download the ~99k-document metadata corpus. It:
+
+1. Pulls `relatedData_s:*` notices modified in the lookback window and merges them into `data/census/`.
+2. Reuses `doi_resolutions.jsonl` (only new DOIs hit DataCite).
+3. Re-harvests SOFTWARE deposits (small).
+4. Syncs the Nakala/RDG focus links from the census.
+5. Rebuilds `docs/` (home-page harvest stats fall back to `docs/data/stats.json` in CI).
+
+Scheduled GitHub Action: [`.github/workflows/daily-refresh.yml`](.github/workflows/daily-refresh.yml) (daily 04:00 UTC incremental; Sunday full rebuild). A successful run commits updated `data/census/` + `docs/` and the existing Pages workflow deploys them.
+
 ## GitHub Pages
 
 Deployed from `docs/` via GitHub Actions (`.github/workflows/pages.yml`).
