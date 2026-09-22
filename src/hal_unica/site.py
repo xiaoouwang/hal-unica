@@ -166,6 +166,8 @@ def census_homepage_stats(
     by_repo: Counter[str] = Counter()
     pubs_with_dataset: set[str] = set()
     datasets = 0
+    # year → repo → list of dataset detail dicts (for click panel)
+    details: dict[str, list[dict[str, Any]]] = defaultdict(list)
 
     with ds_path.open(encoding="utf-8") as fh:
         for line in fh:
@@ -176,6 +178,7 @@ def census_homepage_stats(
             repo = row.get("repository") or "Unknown"
             by_repo[repo] += 1
             years: list[int] = []
+            pub_briefs: list[dict[str, Any]] = []
             for p in row.get("publications") or []:
                 hid = p.get("halId_s")
                 if hid:
@@ -187,12 +190,32 @@ def census_homepage_stats(
                 try:
                     yi = int(y)
                 except (TypeError, ValueError):
-                    continue
-                if 1950 <= yi <= 2100:
+                    yi = None
+                if yi is not None and 1950 <= yi <= 2100:
                     years.append(yi)
+                pub_briefs.append(
+                    {
+                        "halId_s": hid,
+                        "title_s": p.get("title_s") or (pub or {}).get("title_s"),
+                        "uri_s": p.get("uri_s") or (pub or {}).get("uri_s"),
+                        "producedDateY_i": yi,
+                    }
+                )
             if not years:
                 continue
-            by_year_repo[max(years)][repo] += 1
+            year = max(years)
+            by_year_repo[year][repo] += 1
+            details[f"{year}|{repo}"].append(
+                {
+                    "dataset_doi": row.get("dataset_doi"),
+                    "dataset_title": row.get("dataset_title"),
+                    "repository": repo,
+                    "landing_url": row.get("landing_url"),
+                    "landing_host": row.get("landing_host"),
+                    "year": year,
+                    "publications": pub_briefs,
+                }
+            )
 
     if not by_year_repo:
         years_list = list(range(year_min, datetime.now(timezone.utc).year + 1))
@@ -204,6 +227,16 @@ def census_homepage_stats(
     keep = ranked[:top_repos]
     other_label = "Autre"
     series_names = keep + ([other_label] if len(ranked) > len(keep) else [])
+    keep_set = set(keep)
+
+    # Remap Autre cells for the click panel
+    cell_details: dict[str, list[dict[str, Any]]] = {}
+    for key, items in details.items():
+        year_s, repo = key.split("|", 1)
+        chart_repo = repo if repo in keep_set else other_label
+        cell_details.setdefault(f"{year_s}|{chart_repo}", []).extend(items)
+    for items in cell_details.values():
+        items.sort(key=lambda d: (d.get("dataset_title") or d.get("dataset_doi") or "").lower())
 
     series: list[dict[str, Any]] = []
     for i, name in enumerate(series_names):
@@ -211,7 +244,7 @@ def census_homepage_stats(
         for y in years_list:
             if name == other_label:
                 counts.append(
-                    sum(c for r, c in by_year_repo[y].items() if r not in keep)
+                    sum(c for r, c in by_year_repo[y].items() if r not in keep_set)
                 )
             else:
                 counts.append(int(by_year_repo[y].get(name, 0)))
@@ -242,10 +275,11 @@ def census_homepage_stats(
             "totals": totals,
             "series": series,
         },
+        "cell_details": cell_details,
         "note": (
             "Unique dataset DOIs linked from UniCA HAL notices, by year of the "
             "newest linking publication (producedDateY_i). All data repositories; "
-            f"chart shows top {len(keep)} plus Autre."
+            f"chart shows top {len(keep)} plus Autre. Click a segment to list datasets."
         ),
     }
 
@@ -455,6 +489,59 @@ h1 {
 .stack-year {
   font-size: 0.78rem; color: var(--ink-soft); font-variant-numeric: tabular-nums;
 }
+.chart-embed-hint {
+  margin: 0.65rem 0 0; font-size: 0.85rem; color: var(--ink-soft);
+}
+.chart-embed-hint code {
+  font-size: 0.8em; background: var(--wash); padding: 0.1rem 0.35rem; border-radius: 4px;
+}
+.chart-modal {
+  position: fixed; inset: 0; z-index: 80;
+  display: flex; align-items: flex-end; justify-content: center;
+  padding: 1rem; background: rgba(28, 24, 20, 0.45);
+}
+.chart-modal[hidden] { display: none; }
+@media (min-width: 720px) {
+  .chart-modal { align-items: center; padding: 1.5rem; }
+}
+.chart-modal-dialog {
+  width: min(40rem, 100%); max-height: min(85vh, 40rem);
+  display: flex; flex-direction: column;
+  background: var(--surface); color: var(--ink);
+  border-radius: 14px; border: 1px solid var(--line);
+  box-shadow: 0 18px 48px rgba(28, 24, 20, 0.28);
+  overflow: hidden;
+}
+.chart-modal-head {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 1rem; padding: 1rem 1.1rem 0.75rem;
+  border-bottom: 1px solid var(--line);
+}
+.chart-modal-head h3 {
+  margin: 0; font-family: var(--font-display); font-size: 1.15rem; letter-spacing: -0.02em;
+}
+.chart-modal-close {
+  appearance: none; border: 0; background: var(--wash); color: var(--ink);
+  width: 2rem; height: 2rem; border-radius: 8px; font-size: 1.2rem; line-height: 1;
+  cursor: pointer; flex: 0 0 auto;
+}
+.chart-modal-close:hover { background: var(--line); }
+.chart-modal-body {
+  overflow: auto; padding: 0.85rem 1.1rem 1.15rem;
+  display: grid; gap: 0.75rem;
+}
+.chart-modal-item {
+  padding: 0.7rem 0; border-bottom: 1px solid var(--line);
+}
+.chart-modal-item:last-child { border-bottom: 0; }
+.chart-modal-item .title { margin: 0.15rem 0 0.35rem; font-size: 0.98rem; }
+.chart-modal-item .title a { color: inherit; text-decoration: none; }
+.chart-modal-item .title a:hover { color: var(--accent-hover); text-decoration: underline; }
+.chart-modal-pubs { margin: 0.35rem 0 0; padding-left: 1.1rem; font-size: 0.85rem; color: var(--ink-soft); }
+.chart-modal-pubs li { margin: 0.2rem 0; }
+.chart-modal-empty { color: var(--ink-soft); font-size: 0.92rem; padding: 0.5rem 0; }
+body.embed-page { background: var(--bg); }
+body.embed-page .wrap { max-width: 56rem; padding: 1rem 1.1rem 1.5rem; }
 .search {
   width: 100%; border: 1px solid var(--line); border-radius: 10px;
   padding: 0.85rem 1.1rem; font: inherit; background: var(--surface); outline: none; margin-bottom: 0.75rem;
@@ -710,6 +797,163 @@ def _footer(generated_at: str | None, extra_html: str = "") -> str:
     return f"<footer>\n      {block}\n    </footer>"
 
 
+def _chart_modal_html() -> str:
+    return """
+    <div id="chartModal" class="chart-modal" hidden role="dialog" aria-modal="true" aria-labelledby="chartModalTitle">
+      <div class="chart-modal-dialog">
+        <div class="chart-modal-head">
+          <div>
+            <h3 id="chartModalTitle">Datasets</h3>
+            <p class="muted" id="chartModalSub" style="margin:0.25rem 0 0"></p>
+          </div>
+          <button type="button" class="chart-modal-close" id="chartModalClose" aria-label="Close">×</button>
+        </div>
+        <div class="chart-modal-body" id="chartModalBody"></div>
+      </div>
+    </div>
+"""
+
+
+# Shared stacked-chart + click-to-list logic (plain JS; not an f-string).
+STACK_CHART_JS = r"""
+    function esc(s) {
+      return String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+    }
+    function mountStackChart(chart, { noteEl, legendEl, chartEl, modalEl }) {
+      if (!chart || !chart.stacked || !chart.stacked.years || !chart.stacked.years.length) {
+        if (noteEl) noteEl.textContent = "Census chart unavailable — run a census refresh to populate dataset×year series.";
+        if (legendEl) legendEl.innerHTML = "";
+        if (chartEl) chartEl.innerHTML = "";
+        return;
+      }
+      if (noteEl) noteEl.textContent = chart.note || "";
+      const series = chart.stacked.series || [];
+      const years = chart.stacked.years;
+      const totals = chart.stacked.totals || [];
+      const details = chart.cell_details || {};
+      const maxTotal = Math.max(1, ...totals);
+      const wrap = legendEl.closest(".stack-wrap");
+
+      legendEl.innerHTML = series.map(s =>
+        `<button type="button" class="stack-legend-item" data-repo="${esc(s.repository)}">
+          <i class="stack-swatch" style="background:${s.color}"></i>${esc(s.repository)}
+        </button>`
+      ).join("");
+      chartEl.innerHTML = years.map((year, i) => {
+        const total = totals[i] || 0;
+        const segs = series.map(s => {
+          const n = (s.counts && s.counts[i]) || 0;
+          if (!n) return "";
+          const pct = (100 * n / maxTotal).toFixed(2);
+          const label = n >= 3 ? String(n) : "";
+          return `<div class="stack-seg" role="button" tabindex="0"
+            data-repo="${esc(s.repository)}" data-year="${year}" data-count="${n}"
+            style="flex:0 0 ${pct}%; background:${s.color}"
+            title="${esc(s.repository)} · ${year}: ${n} — click for list">${label}</div>`;
+        }).join("");
+        return `<div class="stack-col">
+          <div class="stack-total">${total}</div>
+          <div class="stack-bars">${segs}</div>
+          <div class="stack-year">${year}</div>
+        </div>`;
+      }).join("");
+
+      function setHighlight(repo) {
+        const active = Boolean(repo);
+        wrap.classList.toggle("is-filtering", active);
+        wrap.querySelectorAll("[data-repo]").forEach(el => {
+          el.classList.toggle("is-active", active && el.getAttribute("data-repo") === repo);
+        });
+      }
+      function clearHighlight() { setHighlight(""); }
+
+      wrap.addEventListener("pointerover", (ev) => {
+        const el = ev.target.closest("[data-repo]");
+        if (!el || !wrap.contains(el)) return;
+        setHighlight(el.getAttribute("data-repo"));
+      });
+      wrap.addEventListener("pointerleave", clearHighlight);
+      wrap.addEventListener("focusin", (ev) => {
+        const el = ev.target.closest("[data-repo]");
+        if (el) setHighlight(el.getAttribute("data-repo"));
+      });
+      wrap.addEventListener("focusout", (ev) => {
+        if (!wrap.contains(ev.relatedTarget)) clearHighlight();
+      });
+
+      const titleEl = modalEl.querySelector("#chartModalTitle");
+      const subEl = modalEl.querySelector("#chartModalSub");
+      const bodyEl = modalEl.querySelector("#chartModalBody");
+      const closeBtn = modalEl.querySelector("#chartModalClose");
+
+      function closeModal() {
+        modalEl.hidden = true;
+        document.body.style.overflow = "";
+      }
+      function openModal(repo, year) {
+        const key = `${year}|${repo}`;
+        const items = details[key] || [];
+        titleEl.textContent = `${repo} · ${year}`;
+        subEl.textContent = items.length
+          ? `${items.length} dataset${items.length === 1 ? "" : "s"} (newest linking publication year)`
+          : "No datasets listed for this segment.";
+        bodyEl.innerHTML = items.length
+          ? items.map(d => {
+              const href = d.landing_url || (d.dataset_doi ? `https://doi.org/${d.dataset_doi}` : "#");
+              const title = d.dataset_title || d.dataset_doi || "(untitled dataset)";
+              const repoLabel = d.repository && d.repository !== repo
+                ? `<span class="badge">${esc(d.repository)}</span>`
+                : "";
+              const pubs = (d.publications || []).filter(p => p && (p.title_s || p.halId_s));
+              const pubsHtml = pubs.length
+                ? `<ul class="chart-modal-pubs">${pubs.map(p => {
+                    const ph = p.uri_s || (p.halId_s ? `https://hal.science/${p.halId_s}` : "#");
+                    const pt = p.title_s || p.halId_s || "HAL notice";
+                    const py = p.producedDateY_i != null ? ` (${p.producedDateY_i})` : "";
+                    return `<li><a href="${esc(ph)}" target="_blank" rel="noopener">${esc(pt)}</a>${py}</li>`;
+                  }).join("")}</ul>`
+                : "";
+              return `<article class="chart-modal-item">
+                <div class="badges">${repoLabel}<span class="badge">DOI</span></div>
+                <h4 class="title"><a href="${esc(href)}" target="_blank" rel="noopener">${esc(title)}</a></h4>
+                <div class="muted"><a href="${esc(href)}" target="_blank" rel="noopener"><code>${esc(d.dataset_doi || "")}</code></a></div>
+                ${pubsHtml}
+              </article>`;
+            }).join("")
+          : `<div class="chart-modal-empty">No datasets for this year and repository.</div>`;
+        modalEl.hidden = false;
+        document.body.style.overflow = "hidden";
+        closeBtn.focus();
+      }
+
+      function onSegActivate(el) {
+        if (!el || !el.classList.contains("stack-seg")) return;
+        const repo = el.getAttribute("data-repo");
+        const year = el.getAttribute("data-year");
+        if (repo && year) openModal(repo, year);
+      }
+      wrap.addEventListener("click", (ev) => {
+        const el = ev.target.closest(".stack-seg");
+        if (el && wrap.contains(el)) onSegActivate(el);
+      });
+      wrap.addEventListener("keydown", (ev) => {
+        if (ev.key !== "Enter" && ev.key !== " ") return;
+        const el = ev.target.closest(".stack-seg");
+        if (!el || !wrap.contains(el)) return;
+        ev.preventDefault();
+        onSegActivate(el);
+      });
+      closeBtn.addEventListener("click", closeModal);
+      modalEl.addEventListener("click", (ev) => {
+        if (ev.target === modalEl) closeModal();
+      });
+      document.addEventListener("keydown", (ev) => {
+        if (ev.key === "Escape" && !modalEl.hidden) closeModal();
+      });
+    }
+"""
+
+
 def _nav(active: str) -> str:
     def link(href: str, label: str, key: str) -> str:
         cur = ' aria-current="page"' if key == active else ""
@@ -729,7 +973,7 @@ def _nav(active: str) -> str:
 
 
 def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
-    return f"""<!DOCTYPE html>
+    head = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -759,6 +1003,11 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
         <div class="stack-legend" id="stackLegend"></div>
         <div class="stack-chart" id="stackChart"></div>
       </div>
+      <p class="chart-embed-hint">
+        Click a coloured segment to list its datasets.
+        Embed: <a href="./embed-chart.html">standalone chart</a>
+        · <code>&lt;iframe src="…/embed-chart.html" width="100%" height="520" style="border:0"&gt;&lt;/iframe&gt;</code>
+      </p>
     </section>
 
     <section class="panel">
@@ -788,6 +1037,7 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
 
     {_footer(generated_at, 'Collection <span id="footerExtra"></span>')}
   </main>
+  {_chart_modal_html()}
   <script id="data" type="application/json">{payload_json}</script>
   <script>
     const data = JSON.parse(document.getElementById("data").textContent);
@@ -809,71 +1059,16 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
       {{ v: uniqueDatasets.toLocaleString("en"), l: "Unique linked dataset DOIs (all repos)" }},
       {{ v: pubsWithData.toLocaleString("en"), l: "Pubs with a related dataset (all repos)" }},
     ].map(x => `<div class="stat"><strong>${{x.v}}</strong><span>${{x.l}}</span></div>`).join("");
-
-    const noteEl = document.getElementById("chartNote");
-    const legendEl = document.getElementById("stackLegend");
-    const chartEl = document.getElementById("stackChart");
-    function esc(s) {{
-      return String(s ?? "").replace(/[&<>"']/g, c => ({{"&":"&amp;","<":"&lt;",">":"&gt;","\\"":"&quot;","'":"&#39;"}}[c]));
-    }}
-    if (chart && chart.stacked && chart.stacked.years && chart.stacked.years.length) {{
-      noteEl.textContent = chart.note || "";
-      const series = chart.stacked.series || [];
-      const years = chart.stacked.years;
-      const totals = chart.stacked.totals || [];
-      const maxTotal = Math.max(1, ...totals);
-      const wrap = legendEl.closest(".stack-wrap");
-      legendEl.innerHTML = series.map(s =>
-        `<button type="button" class="stack-legend-item" data-repo="${{esc(s.repository)}}">
-          <i class="stack-swatch" style="background:${{s.color}}"></i>${{esc(s.repository)}}
-        </button>`
-      ).join("");
-      chartEl.innerHTML = years.map((year, i) => {{
-        const total = totals[i] || 0;
-        const segs = series.map(s => {{
-          const n = (s.counts && s.counts[i]) || 0;
-          if (!n) return "";
-          const pct = (100 * n / maxTotal).toFixed(2);
-          const label = n >= 3 ? String(n) : "";
-          return `<div class="stack-seg" data-repo="${{esc(s.repository)}}" data-year="${{year}}" data-count="${{n}}"
-            style="flex:0 0 ${{pct}}%; background:${{s.color}}"
-            title="${{esc(s.repository)}} · ${{year}}: ${{n}}">${{label}}</div>`;
-        }}).join("");
-        return `<div class="stack-col">
-          <div class="stack-total">${{total}}</div>
-          <div class="stack-bars">${{segs}}</div>
-          <div class="stack-year">${{year}}</div>
-        </div>`;
-      }}).join("");
-
-      function setHighlight(repo) {{
-        const active = Boolean(repo);
-        wrap.classList.toggle("is-filtering", active);
-        wrap.querySelectorAll("[data-repo]").forEach(el => {{
-          el.classList.toggle("is-active", active && el.getAttribute("data-repo") === repo);
-        }});
-      }}
-      function clearHighlight() {{ setHighlight(""); }}
-
-      wrap.addEventListener("pointerover", (ev) => {{
-        const el = ev.target.closest("[data-repo]");
-        if (!el || !wrap.contains(el)) return;
-        setHighlight(el.getAttribute("data-repo"));
-      }});
-      wrap.addEventListener("pointerleave", clearHighlight);
-      wrap.addEventListener("focusin", (ev) => {{
-        const el = ev.target.closest("[data-repo]");
-        if (el) setHighlight(el.getAttribute("data-repo"));
-      }});
-      wrap.addEventListener("focusout", (ev) => {{
-        if (!wrap.contains(ev.relatedTarget)) clearHighlight();
-      }});
-    }} else {{
-      noteEl.textContent = "Census chart unavailable — run a census refresh to populate dataset×year series.";
-      legendEl.innerHTML = "";
-      chartEl.innerHTML = "";
-    }}
-
+"""
+    mid = STACK_CHART_JS + """
+    mountStackChart(chart, {
+      noteEl: document.getElementById("chartNote"),
+      legendEl: document.getElementById("stackLegend"),
+      chartEl: document.getElementById("stackChart"),
+      modalEl: document.getElementById("chartModal"),
+    });
+"""
+    tail = f"""
     const maxType = Math.max(...h.doc_types.map(d => d.count));
     document.getElementById("docTypes").innerHTML = h.doc_types.map(d => `
       <div class="bar-row">
@@ -900,6 +1095,54 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
 </body>
 </html>
 """
+    return head + mid + tail
+
+
+def render_embed_chart(chart_json: str, *, generated_at: str | None = None) -> str:
+    """Minimal page for iframe embedding of the stacked chart."""
+    head = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HAL-UniCA · Datasets by year (embed)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
+  <style>{SHARED_CSS}</style>
+</head>
+<body class="embed-page">
+  <main class="wrap">
+    <div class="eyebrow">HAL-UniCA · embed</div>
+    <h1 style="font-size:1.45rem;margin:0.2rem 0 0.35rem">Linked datasets by year and repository</h1>
+    <p class="muted" style="margin:0" id="chartNote"></p>
+    <div class="stack-wrap">
+      <div class="stack-legend" id="stackLegend"></div>
+      <div class="stack-chart" id="stackChart"></div>
+    </div>
+    <p class="chart-embed-hint">Click a segment to list datasets. Source: <a href="./index.html" target="_blank" rel="noopener">HAL-UniCA</a></p>
+    {_footer(generated_at)}
+  </main>
+  {_chart_modal_html()}
+  <script id="data" type="application/json">{chart_json}</script>
+  <script>
+    const chart = JSON.parse(document.getElementById("data").textContent);
+"""
+    return (
+        head
+        + STACK_CHART_JS
+        + """
+    mountStackChart(chart, {
+      noteEl: document.getElementById("chartNote"),
+      legendEl: document.getElementById("stackLegend"),
+      chartEl: document.getElementById("stackChart"),
+      modalEl: document.getElementById("chartModal"),
+    });
+  </script>
+</body>
+</html>
+"""
+    )
 
 
 def render_related(payload_json: str, *, generated_at: str | None = None) -> str:
@@ -1676,6 +1919,17 @@ def write_site(
     (output_dir / "related-datasets.html").write_text(
         render_related(payload_json, generated_at=generated_at), encoding="utf-8"
     )
+    chart = payload.get("census_chart")
+    if chart:
+        chart_json = json.dumps(chart, ensure_ascii=False).replace("<", "\\u003c")
+        (output_dir / "embed-chart.html").write_text(
+            render_embed_chart(chart_json, generated_at=generated_at),
+            encoding="utf-8",
+        )
+        (data_dir / "census-chart.json").write_text(
+            json.dumps(chart, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
 
     if census_dir and census_dir.exists():
         import shutil

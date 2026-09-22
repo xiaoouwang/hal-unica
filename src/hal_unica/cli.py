@@ -543,6 +543,7 @@ def build_site_cmd(
     typer.echo(f"Wrote site → {path}/")
     for name in (
         "index.html",
+        "embed-chart.html",
         "related-datasets.html",
         "all-repositories.html",
         "to-be-corrected.html",
