@@ -431,6 +431,26 @@ h1 {
 .bar-row { display: grid; grid-template-columns: 7.5rem 1fr 3.2rem; gap: 0.6rem; align-items: center; font-size: 0.9rem; }
 .bar-track { height: 0.5rem; background: var(--wash); border-radius: 999px; overflow: hidden; }
 .bar-fill { height: 100%; background: var(--accent); border-radius: 999px; }
+.panel.reveal .bar-fill {
+  width: 0;
+  transition: width 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.panel.reveal.is-visible .bar-fill { width: var(--bar-w, 0%); }
+.panel.reveal {
+  opacity: 0;
+  transform: translateY(0.85rem);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.panel.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .panel.reveal {
+    opacity: 1; transform: none; transition: none;
+  }
+  .panel.reveal .bar-fill { transition: none; width: var(--bar-w, 0%); }
+}
 .bar-row span:last-child { text-align: right; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
 .muted { color: var(--ink-soft); font-size: 0.88rem; }
 .stack-wrap { margin-top: 0.75rem; }
@@ -1052,12 +1072,12 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
       </p>
     </section>
 
-    <section class="panel">
+    <section class="panel reveal" id="panelDocTypes">
       <h2>Document types in HAL</h2>
       <div class="bars" id="docTypes"></div>
     </section>
 
-    <section class="panel">
+    <section class="panel reveal" id="panelRepos">
       <h2>Where linked data live</h2>
       <p class="muted" style="margin-top:0">All data repositories after DataCite resolution (dataset DOIs only).</p>
       <div class="bars" id="repos" style="margin-top:0.85rem"></div>
@@ -1117,7 +1137,7 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
     document.getElementById("docTypes").innerHTML = h.doc_types.map(d => `
       <div class="bar-row">
         <span>${{d.type}}</span>
-        <div class="bar-track"><div class="bar-fill" style="width:${{100*d.count/maxType}}%"></div></div>
+        <div class="bar-track"><div class="bar-fill" style="--bar-w:${{100*d.count/maxType}}%"></div></div>
         <span>${{d.count.toLocaleString("en")}}</span>
       </div>`).join("");
 
@@ -1126,9 +1146,32 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
     document.getElementById("repos").innerHTML = repos.map(([name, count]) => `
       <div class="bar-row">
         <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis" title="${{name.replace(/"/g, '&quot;')}}">${{name}}</span>
-        <div class="bar-track"><div class="bar-fill" style="width:${{100*count/maxRepo}}%"></div></div>
+        <div class="bar-track"><div class="bar-fill" style="--bar-w:${{100*count/maxRepo}}%"></div></div>
         <span>${{count}}</span>
       </div>`).join("");
+
+    function revealPanels(ids) {{
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      ids.forEach((id, i) => {{
+        const el = document.getElementById(id);
+        if (!el) return;
+        if (reduce) {{ el.classList.add("is-visible"); return; }}
+        const show = () => el.classList.add("is-visible");
+        if ("IntersectionObserver" in window) {{
+          const io = new IntersectionObserver((entries) => {{
+            entries.forEach(entry => {{
+              if (!entry.isIntersecting) return;
+              setTimeout(show, i * 160);
+              io.unobserve(entry.target);
+            }});
+          }}, {{ threshold: 0.18, rootMargin: "0px 0px -40px 0px" }});
+          io.observe(el);
+        }} else {{
+          setTimeout(show, 200 + i * 160);
+        }}
+      }});
+    }}
+    revealPanels(["panelDocTypes", "panelRepos"]);
 
     const topRepos = Object.entries((chart && chart.by_repository) || dl.by_repository || {{}}).slice(0, 8).map(([k,v]) => `${{v}} on ${{k}}`).join(" · ");
     const repoCount = Object.keys((chart && chart.by_repository) || dl.by_repository || {{}}).length;
