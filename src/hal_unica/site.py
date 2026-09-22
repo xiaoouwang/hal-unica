@@ -534,10 +534,19 @@ h1 {
   padding: 0.7rem 0; border-bottom: 1px solid var(--line);
 }
 .chart-modal-item:last-child { border-bottom: 0; }
-.chart-modal-item .title { margin: 0.15rem 0 0.35rem; font-size: 0.98rem; }
-.chart-modal-item .title a { color: inherit; text-decoration: none; }
-.chart-modal-item .title a:hover { color: var(--accent-hover); text-decoration: underline; }
-.chart-modal-pubs { margin: 0.35rem 0 0; padding-left: 1.1rem; font-size: 0.85rem; color: var(--ink-soft); }
+.chart-modal-item .title {
+  margin: 0 0 0.25rem; font-size: 0.98rem;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 0.55rem;
+}
+.chart-modal-item .title > a:first-child { color: inherit; text-decoration: none; }
+.chart-modal-item .title > a:first-child:hover { color: var(--accent-hover); text-decoration: underline; }
+.chart-modal-doi {
+  font-weight: 500; font-size: 0.82rem; color: var(--ink-soft); text-decoration: none;
+  white-space: nowrap;
+}
+.chart-modal-doi:hover { color: var(--accent-hover); text-decoration: underline; }
+.chart-modal-doi code { font-size: 0.92em; }
+.chart-modal-pubs { margin: 0.25rem 0 0; padding-left: 1.1rem; font-size: 0.85rem; color: var(--ink-soft); }
 .chart-modal-pubs li { margin: 0.2rem 0; }
 .chart-modal-empty { color: var(--ink-soft); font-size: 0.92rem; padding: 0.5rem 0; }
 body.embed-page { background: var(--bg); }
@@ -902,7 +911,10 @@ STACK_CHART_JS = r"""
               const href = d.landing_url || (d.dataset_doi ? `https://doi.org/${d.dataset_doi}` : "#");
               const title = d.dataset_title || d.dataset_doi || "(untitled dataset)";
               const repoLabel = d.repository && d.repository !== repo
-                ? `<span class="badge">${esc(d.repository)}</span>`
+                ? `<span class="badge">${esc(d.repository)}</span> `
+                : "";
+              const doiHtml = d.dataset_doi
+                ? `<a class="chart-modal-doi" href="${esc(href)}" target="_blank" rel="noopener"><code>${esc(d.dataset_doi)}</code></a>`
                 : "";
               const pubs = (d.publications || []).filter(p => p && (p.title_s || p.halId_s));
               const pubsHtml = pubs.length
@@ -914,9 +926,7 @@ STACK_CHART_JS = r"""
                   }).join("")}</ul>`
                 : "";
               return `<article class="chart-modal-item">
-                <div class="badges">${repoLabel}<span class="badge">DOI</span></div>
-                <h4 class="title"><a href="${esc(href)}" target="_blank" rel="noopener">${esc(title)}</a></h4>
-                <div class="muted"><a href="${esc(href)}" target="_blank" rel="noopener"><code>${esc(d.dataset_doi || "")}</code></a></div>
+                <h4 class="title">${repoLabel}<a href="${esc(href)}" target="_blank" rel="noopener">${esc(title)}</a>${doiHtml}</h4>
                 ${pubsHtml}
               </article>`;
             }).join("")
