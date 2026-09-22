@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T09:57:41Z",
+  "generated_at": "2026-09-22T10:05:13Z",
   "collection": "UNIV-COTEDAZUR",
   "hal_api": "https://api.archives-ouvertes.fr/search/UNIV-COTEDAZUR/",
   "hal_query": "(relatedData_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)",
@@ -12,8 +12,8 @@
   "since": null,
   "watermark_modified": null,
   "datacite_api": "https://api.datacite.org/dois/{doi}",
-  "started_at": "2026-09-22T09:57:41Z",
-  "finished_at": "2026-09-22T09:57:41Z",
+  "started_at": "2026-09-22T10:05:13Z",
+  "finished_at": "2026-09-22T10:05:13Z",
   "artifacts": {
     "publications_jsonl": "data/census/publications_related_data.jsonl",
     "doi_resolutions_jsonl": "data/census/doi_resolutions.jsonl",
@@ -32,8 +32,8 @@
     "pubs_inserted": 0,
     "dois_resolved_live": 0,
     "dois_from_cache": 0,
-    "misfiled_dataset_links": 54,
-    "publications_with_misfiled_dataset_link": 43
+    "misfiled_dataset_links": 73,
+    "publications_with_misfiled_dataset_link": 54
   },
   "method": [
     "List UniCA HAL notices with relatedData_s, relatedPublication_s DOIs, or seeAlso_s.",

@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-09-22T09:57:41Z`  
+Generated: `2026-09-22T10:05:13Z`  
 Collection: `UNIV-COTEDAZUR`  
-Run window: `2026-09-22T09:57:41Z` → `2026-09-22T09:57:41Z`
+Run window: `2026-09-22T10:05:13Z` → `2026-09-22T10:05:13Z`
 
 ## Goal
 
@@ -46,43 +46,44 @@ misfiled dataset links can be corrected.
 - HAL notices with linked identifiers: **313**
 - Related tokens: **508**
 - Unique DOIs resolved: **401**
-- Publications with at least one dataset-repo landing: **141**
-- Misfiled dataset links (wrong HAL field): **54**
-- Publications with ≥1 misfiled dataset link: **43**
+- Publications with at least one dataset-repo landing: **164**
+- Misfiled dataset links (wrong HAL field): **73**
+- Publications with ≥1 misfiled dataset link: **54**
 
 ### Dataset DOIs by HAL source field
 
-- **`relatedData_s`**: 157
-- **`relatedPublication_s`**: 52
+- **`relatedData_s`**: 191
+- **`relatedPublication_s`**: 71
 - **`seeAlso_s`**: 2
 
 ### By repository (DOI evidence)
 
 - **Zenodo**: 96
 - **Recherche Data Gouv**: 78
-- **DOI prefix 10.1007**: 31
-- **DOI prefix 10.1109**: 20
+- **Journal DOI (10.1007)**: 31
+- **Journal DOI (10.1109)**: 20
 - **SEANOE**: 15
 - **Sismer**: 11
-- **DOI prefix 10.1016**: 10
+- **Journal DOI (10.1016)**: 10
 - **NAKALA**: 10
-- **DOI prefix 10.4000**: 9
-- **Theia**: 8
-- **DOI prefix 10.1002**: 6
-- **DOI prefix 10.3917**: 6
+- **Journal DOI (10.4000)**: 9
+- **SEDOO / Theia**: 9
+- **Journal DOI (10.1002)**: 6
+- **Journal DOI (10.3917)**: 6
+- **FDSN / seismic network**: 5
 - **Figshare**: 5
 - **arXiv**: 5
-- **DOI prefix 10.1093**: 4
-- **International Federation of Digital Seismograph Networks**: 4
-- **DOI prefix 10.1038**: 3
-- **DOI prefix 10.1137**: 3
-- **DOI prefix 10.1145**: 3
+- **Journal DOI (10.1093)**: 4
 - **DOI prefix 10.22489**: 3
+- **Journal DOI (10.1038)**: 3
+- **Journal DOI (10.1137)**: 3
+- **Journal DOI (10.1145)**: 3
 - **ResearchGate**: 3
-- **DOI prefix 10.1017**: 2
+- **Archimer (Ifremer publications)**: 2
+- **BIRA-IASB data**: 2
+- **CDS**: 2
 - **DOI prefix 10.1101**: 2
 - **DOI prefix 10.1287**: 2
-- **DOI prefix 10.1371**: 2
 - **DOI prefix 10.22541**: 2
 - **DOI prefix 10.23919**: 2
 - **DOI prefix 10.31223**: 2
@@ -92,19 +93,16 @@ misfiled dataset links can be corrected.
 - **DataSuds**: 2
 - **Epos-France Seismological Data Center**: 2
 - **Harvard Dataverse**: 2
-- **Ifremer**: 2
 - **JAMSTEC**: 2
-- **Karlsruhe Institute of Technology**: 2
+- **Journal DOI (10.1017)**: 2
+- **Journal DOI (10.1371)**: 2
 - **Mendeley Data**: 2
-- **Mercator Ocean International**: 2
+- **Mercator Ocean / Copernicus Marine**: 2
 - **OSF**: 2
-- **Observatoire des Sciences de l'Univers de la Réunion**: 2
-- **Royal Belgian Institute for Space Aeronomy**: 2
+- **OSU Réunion**: 2
+- **RADAR KIT**: 2
 - **data.InDoRES**: 2
-- **AusPass**: 1
-- **CDS, Centre de Données astronomiques de Strasbourg**: 1
-- **Centre de Donnees Strasbourg (CDS)**: 1
-- **Commonwealth of Australia (Geoscience Australia)**: 1
+- **Canal-U**: 1
 - **DOI prefix 10.1044**: 1
 - **DOI prefix 10.1051**: 1
 - **DOI prefix 10.1075**: 1
@@ -132,22 +130,21 @@ misfiled dataset links can be corrected.
 - **DOI prefix 10.5465**: 1
 - **DOI prefix 10.59641**: 1
 - **DOI prefix 10.7819**: 1
-- **ETH Zurich**: 1
+- **Dagstuhl**: 1
+- **ETH Zurich seismic networks**: 1
+- **GEOSCOPE**: 1
+- **Geoscience Australia**: 1
+- **IEDA**: 1
 - **INRAE (prefix 10.15454)**: 1
-- **Institut de physique du globe de Paris, Université Paris Cité**: 1
-- **Interdisciplinary Earth Data Alliance (IEDA)**: 1
-- **Karlsruher Institut für Technologie (KIT)**: 1
-- **Mistrals**: 1
+- **KIT publications**: 1
 - **NASA Planetary Data System**: 1
-- **NOAA National Centers for Environmental Information**: 1
+- **NOAA NCEI**: 1
 - **OSU OREME**: 1
 - **OpenNeuro**: 1
 - **PANGAEA**: 1
 - **Progedo-Adisp**: 1
 - **STScI/MAST**: 1
-- **Schloss Dagstuhl – Leibniz-Zentrum für Informatik**: 1
-- **University of Bristol**: 1
-- **Université Côte d’Azur**: 1
+- **University of Bristol data.bris**: 1
 
 ### By landing host
 

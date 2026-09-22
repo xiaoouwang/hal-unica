@@ -180,10 +180,13 @@ def build_dataset_to_publications(census_pubs_jsonl: Path, out_dir: Path) -> dic
             for t in pub.get("datasets") or []:
                 if t.get("kind") != "doi":
                     continue
+                res = t.get("resolution") or {}
+                # All-repositories page is dataset-only; skip pubs/preprints/unresolved.
+                if res.get("object_kind") != "dataset_repo":
+                    continue
                 doi = t.get("value")
                 if not doi:
                     continue
-                res = t.get("resolution") or {}
                 entry = by_doi.setdefault(
                     doi,
                     {

@@ -112,14 +112,41 @@ def classify_repository(
         (("seanoe.org",), "SEANOE"),
         (("data.mendeley.com",), "Mendeley Data"),
         (("harvard.dataverse.org", "dataverse.harvard.edu"), "Harvard Dataverse"),
-        (("iedadata.org", "www.iedadata.org"), "IEDA"),
+        (("iedadata.org", "www.iedadata.org", "ecl.earthchem.org"), "IEDA"),
         (("doi.pangaea.de",), "PANGAEA"),
         (("softwareheritage.org", "archive.softwareheritage.org"), "Software Heritage"),
         (("huggingface.co",), "Hugging Face"),
+        (("fdsn.org",), "FDSN / seismic network"),
+        (("seismology.epos-france.fr",), "Epos-France Seismological Data Center"),
+        (("networks.seismo.ethz.ch",), "ETH Zurich seismic networks"),
+        (("geoscope.ipgp.fr",), "GEOSCOPE"),
+        (("vizier.cds.unistra.fr", "cdsarc.cds.unistra.fr", "cds.unistra.fr"), "CDS"),
+        (("openneuro.org",), "OpenNeuro"),
+        (("dataverse.ird.fr",), "DataSuds"),
+        (("data.indores.fr",), "data.InDoRES"),
+        (("campagnes.flotteoceanographique.fr",), "Sismer"),
+        (("camcatt.sedoo.fr", "mistrals.sedoo.fr", "sedoo.fr"), "SEDOO / Theia"),
+        (("resources.marine.copernicus.eu", "marine.copernicus.eu"), "Mercator Ocean / Copernicus Marine"),
+        (("data.aeronomie.be",), "BIRA-IASB data"),
+        (("data.oreme.org",), "OSU OREME"),
+        (("data.progedo.fr",), "Progedo-Adisp"),
+        (("data.bris.ac.uk",), "University of Bristol data.bris"),
+        (("ncei.noaa.gov",), "NOAA NCEI"),
+        (("archive.stsci.edu",), "STScI/MAST"),
+        (("pid.geoscience.gov.au",), "Geoscience Australia"),
+        (("geosur.osureunion.fr",), "OSU Réunion"),
+        (("radar.kit.edu",), "RADAR KIT"),
+        (("jamstec.go.jp",), "JAMSTEC"),
     ]
     for suffixes, label in known_hosts:
         if any(host == s or host.endswith("." + s) or s in host for s in suffixes):
             return label, "dataset_repo"
+
+    # Generic data-repo URL patterns (Dataverse nodes, institutional data portals)
+    if "dataverse." in host or host.startswith("data.") or ".data." in host:
+        return pub or host, "dataset_repo"
+    if any(tok in host for tok in ("opendata.", "open-data.", "dataportal.", "repository.")):
+        return pub or host, "dataset_repo"
 
     # Preprints / scholarly networks / publishers — not data repositories
     publication_hosts: list[tuple[tuple[str, ...], str]] = [
@@ -132,6 +159,18 @@ def classify_repository(
         (("openalex.org",), "OpenAlex"),
         (("github.com",), "GitHub"),
         (("gitlab.com",), "GitLab"),
+        (("archimer.ifremer.fr",), "Archimer (Ifremer publications)"),
+        (("publikationen.bibliothek.kit.edu",), "KIT publications"),
+        (("drops.dagstuhl.de",), "Dagstuhl"),
+        (("canal-u.tv",), "Canal-U"),
+        (("ieee.org", "ieeexplore.ieee.org"), "IEEE"),
+        (("springer.com", "link.springer.com", "springernature.com"), "Springer"),
+        (("sciencedirect.com", "elsevier.com"), "Elsevier"),
+        (("nature.com",), "Nature"),
+        (("wiley.com", "onlinelibrary.wiley.com"), "Wiley"),
+        (("oup.com", "academic.oup.com"), "Oxford University Press"),
+        (("acm.org", "dl.acm.org"), "ACM"),
+        (("sioe.org",), "SIOE"),
     ]
     for suffixes, label in publication_hosts:
         if any(host == s or host.endswith("." + s) or s in host for s in suffixes):
@@ -156,10 +195,28 @@ def classify_repository(
         return "Zenodo", "dataset_repo"
     if pref == "10.17882":
         return "SEANOE", "dataset_repo"
+    if pref == "10.6084":
+        return "Figshare", "dataset_repo"
     if pref == "10.48550" or "arxiv" in pub.lower():
         return "arXiv", "publication_landing"
     if pref == "10.13140" or "researchgate" in pub.lower() or pub.lower() == "unpublished":
         return "ResearchGate", "publication_landing"
+    # Common Crossref journal prefixes with no DataCite landing → not datasets
+    if pref in {
+        "10.1007",
+        "10.1109",
+        "10.1016",
+        "10.1002",
+        "10.1038",
+        "10.1093",
+        "10.1137",
+        "10.1145",
+        "10.1017",
+        "10.4000",
+        "10.3917",
+        "10.1371",
+    }:
+        return f"Journal DOI ({pref})", "publication_landing"
 
     # Unknown host/publisher: never assume a data repository
     if host and pub:
