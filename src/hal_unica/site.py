@@ -670,9 +670,39 @@ def _list_toolbar_html(*, sort_options_html: str) -> str:
       </div>"""
 
 
+STAT_COUNT_UP_JS = r"""
+    function animateStatCounts(root, { duration = 850 } = {}) {
+      const scope = root || document;
+      const els = scope.querySelectorAll("strong[data-count]");
+      if (!els.length) return;
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const fmt = (n) => Math.round(n).toLocaleString("en");
+      els.forEach((el) => {
+        const target = Number(el.getAttribute("data-count"));
+        if (!Number.isFinite(target)) return;
+        if (reduce || duration <= 0) {
+          el.textContent = fmt(target);
+          return;
+        }
+        const start = performance.now();
+        function frame(now) {
+          const t = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - t, 3);
+          el.textContent = fmt(target * eased);
+          if (t < 1) requestAnimationFrame(frame);
+          else el.textContent = fmt(target);
+        }
+        requestAnimationFrame(frame);
+      });
+    }
+"""
+
+
 def _shared_list_helpers_js() -> str:
     """Plain JS helpers shared by list pages (safe to inject into an f-string)."""
-    return r"""
+    return (
+        STAT_COUNT_UP_JS
+        + r"""
     function esc(s) {
       return String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
     }
@@ -791,6 +821,8 @@ def _shared_list_helpers_js() -> str:
       if (yearSel) yearSel.addEventListener("change", onChange);
     }
     """
+    )
+
 
 
 def _footer(generated_at: str | None, extra_html: str = "") -> str:
@@ -1064,13 +1096,15 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
     const pubsWithData = (chart && chart.publications_with_dataset) || rd.publication_count || 0;
     const uniqueDatasets = (chart && chart.unique_datasets) || 0;
     document.getElementById("stats").innerHTML = [
-      {{ v: h.documents.toLocaleString("en"), l: "HAL documents (latest version)" }},
-      {{ v: h.with_doi.toLocaleString("en"), l: `With DOI (${{Math.round(h.doi_share*100)}}%)` }},
-      {{ v: uniqueDatasets.toLocaleString("en"), l: "Unique linked dataset DOIs (all repos)" }},
-      {{ v: pubsWithData.toLocaleString("en"), l: "Pubs with a related dataset (all repos)" }},
-    ].map(x => `<div class="stat"><strong>${{x.v}}</strong><span>${{x.l}}</span></div>`).join("");
+      {{ v: h.documents, l: "HAL documents (latest version)" }},
+      {{ v: h.with_doi, l: `With DOI (${{Math.round(h.doi_share*100)}}%)` }},
+      {{ v: uniqueDatasets, l: "Unique linked dataset DOIs (all repos)" }},
+      {{ v: pubsWithData, l: "Pubs with a related dataset (all repos)" }},
+    ].map(x => `<div class="stat"><strong data-count="${{x.v}}">0</strong><span>${{x.l}}</span></div>`).join("");
 """
-    mid = STACK_CHART_JS + """
+    mid = STAT_COUNT_UP_JS + """
+    animateStatCounts(document.getElementById("stats"));
+""" + STACK_CHART_JS + """
     mountStackChart(chart, {
       noteEl: document.getElementById("chartNote"),
       legendEl: document.getElementById("stackLegend"),
@@ -1286,7 +1320,8 @@ def render_related(payload_json: str, *, generated_at: str | None = None) -> str
       {{ v: by["Recherche Data Gouv"] || 0, l: "→ Recherche Data Gouv" }},
       {{ v: by["NAKALA"] || 0, l: "→ NAKALA" }},
       {{ v: Object.values(by).reduce((a,b)=>a+b,0), l: "Repository links (sum)" }},
-    ].map(x => `<div class="stat"><strong>${{x.v}}</strong><span>${{x.l}}</span></div>`).join("");
+    ].map(x => `<div class="stat"><strong data-count="${{x.v}}">0</strong><span>${{x.l}}</span></div>`).join("");
+    animateStatCounts(document.getElementById("stats"));
 
     const repos = ["all", ...Object.keys(by)];
     const filters = document.getElementById("filters");
@@ -1379,7 +1414,8 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
       {{ v: uniqueDatasets, l: "Unique dataset DOIs" }},
       {{ v: Object.keys(byRepo).length, l: "Distinct data repositories" }},
       {{ v: linkCount, l: "Dataset↔publication links" }},
-    ].map(x => `<div class="stat"><strong>${{x.v}}</strong><span>${{x.l}}</span></div>`).join("");
+    ].map(x => `<div class="stat"><strong data-count="${{x.v}}">0</strong><span>${{x.l}}</span></div>`).join("");
+    animateStatCounts(document.getElementById("stats"));
 
     const reposEntries = Object.entries(byRepo).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
     const maxRepo = Math.max(1, ...reposEntries.map(([,c]) => c));
@@ -1583,7 +1619,8 @@ def render_software(software_json: str, *, generated_at: str | None = None) -> s
       {{ v: s.with_swhid || 0, l: "With Software Heritage SWHID" }},
       {{ v: s.with_code_repository || 0, l: "With code repository URL" }},
       {{ v: s.with_related_publication || 0, l: "With related publication" }},
-    ].map(x => `<div class="stat"><strong>${{x.v}}</strong><span>${{x.l}}</span></div>`).join("");
+    ].map(x => `<div class="stat"><strong data-count="${{x.v}}">0</strong><span>${{x.l}}</span></div>`).join("");
+    animateStatCounts(document.getElementById("stats"));
 
     function sortRows(list) {{
       const mode = document.getElementById("sort").value;
@@ -1722,7 +1759,7 @@ def render_corrections(corrections_json: str, *, generated_at: str | None = None
     const rows = data.rows || [];
     const s = data.summary || {{}};
     let active = "all";
-
+{STAT_COUNT_UP_JS}
     function esc(s) {{
       return String(s ?? "").replace(/[&<>"']/g, c => ({{"&":"&amp;","<":"&lt;",">":"&gt;","\\"":"&quot;","'":"&#39;"}}[c]));
     }}
@@ -1732,7 +1769,8 @@ def render_corrections(corrections_json: str, *, generated_at: str | None = None
       {{ v: s.publications || 0, l: "Distinct HAL notices" }},
       {{ v: Object.keys(s.by_source_field || {{}}).length, l: "Incorrect source fields" }},
       {{ v: Object.keys(s.by_repository || {{}}).length, l: "Repositories involved" }},
-    ].map(x => `<div class="stat"><strong>${{x.v}}</strong><span>${{x.l}}</span></div>`).join("");
+    ].map(x => `<div class="stat"><strong data-count="${{x.v}}">0</strong><span>${{x.l}}</span></div>`).join("");
+    animateStatCounts(document.getElementById("stats"));
 
     const fieldFilters = ["all", ...Object.keys(s.by_source_field || {{}})];
     function paintFilters() {{
