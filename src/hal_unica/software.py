@@ -275,6 +275,9 @@ def build_dataset_to_publications(census_pubs_jsonl: Path, out_dir: Path) -> dic
                     }
                 )
 
+    by_repository: Counter[str] = Counter()
+    for row in rows:
+        by_repository[row.get("repository") or "Unknown"] += 1
     summary = {
         "generated_at": _utc_now(),
         "unique_datasets": len(rows),
@@ -282,6 +285,7 @@ def build_dataset_to_publications(census_pubs_jsonl: Path, out_dir: Path) -> dic
         "datasets_with_multiple_publications": sum(
             1 for r in rows if len(r["publications"]) > 1
         ),
+        "by_repository": dict(sorted(by_repository.items(), key=lambda kv: (-kv[1], kv[0]))),
     }
     summary_path = out_dir / "dataset_to_publications_summary.json"
     summary_path.write_text(json.dumps(summary, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

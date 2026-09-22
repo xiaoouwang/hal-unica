@@ -586,6 +586,7 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
   <script>
     const data = JSON.parse(document.getElementById("data").textContent);
     const s = data.summary;
+    const idx = data.dataset_index || {{}};
     const datasets = data.datasets || [];
     let active = "all";
 
@@ -593,14 +594,25 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
       return String(s ?? "").replace(/[&<>"']/g, c => ({{"&":"&amp;","<":"&lt;",">":"&gt;","\\"":"&quot;","'":"&#39;"}}[c]));
     }}
 
+    // Stats/filters from dataset-only index (not full census by_repository, which includes journals).
+    const byRepo = idx.by_repository || datasets.reduce((acc, d) => {{
+      const r = d.repository || "Unknown";
+      acc[r] = (acc[r] || 0) + 1;
+      return acc;
+    }}, {{}});
+    const uniqueDatasets = idx.unique_datasets || datasets.length;
+    const linkCount = idx.dataset_publication_links || datasets.reduce((n, d) => n + (d.publications || []).length, 0);
+    const pubsWithDatasets = s.publications_with_dataset_repo_landing
+      || new Set(datasets.flatMap(d => (d.publications || []).map(p => p.halId_s).filter(Boolean))).size;
+
     document.getElementById("stats").innerHTML = [
-      {{ v: s.hal_publications_with_relatedData, l: "HAL notices with relatedData" }},
-      {{ v: s.unique_dois_resolved, l: "Unique related DOIs" }},
-      {{ v: Object.keys(s.by_repository || {{}}).length, l: "Distinct repositories" }},
-      {{ v: (data.dataset_index && data.dataset_index.dataset_publication_links) || datasets.length, l: "Dataset↔publication links" }},
+      {{ v: pubsWithDatasets, l: "HAL notices linking a dataset" }},
+      {{ v: uniqueDatasets, l: "Unique dataset DOIs" }},
+      {{ v: Object.keys(byRepo).length, l: "Distinct data repositories" }},
+      {{ v: linkCount, l: "Dataset↔publication links" }},
     ].map(x => `<div class="stat"><strong>${{x.v}}</strong><span>${{x.l}}</span></div>`).join("");
 
-    const reposEntries = Object.entries(s.by_repository || {{}});
+    const reposEntries = Object.entries(byRepo).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
     const maxRepo = Math.max(1, ...reposEntries.map(([,c]) => c));
     document.getElementById("repos").innerHTML = reposEntries.map(([name, count]) => `
       <div class="bar-row">
@@ -609,7 +621,7 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
         <span>${{count}}</span>
       </div>`).join("");
 
-    const repoFilters = ["all", ...Object.keys(s.by_repository || {{}})];
+    const repoFilters = ["all", ...reposEntries.map(([name]) => name)];
     function paintFilters() {{
       document.getElementById("filters").innerHTML = repoFilters.map(r => `
         <button type="button" class="chip" data-v="${{esc(r)}}" aria-pressed="${{active===r}}">${{esc(r==="all"?"All repositories":r)}}</button>
