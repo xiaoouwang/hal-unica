@@ -26,10 +26,14 @@ concurrency:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    outputs:
+      has_changes: ${{ steps.commit.outputs.has_changes }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -68,6 +72,7 @@ jobs:
           hal-unica refresh --full
 
       - name: Commit and push site + census
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -79,7 +84,26 @@ jobs:
             logs/census.log || true
           if git diff --staged --quiet; then
             echo "No changes to commit."
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "Daily HAL incremental refresh ($(date -u +%Y-%m-%d))"
             git push
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
           fi
+
+  # GITHUB_TOKEN pushes do not trigger pages.yml — deploy here when docs changed.
+  deploy-pages:
+    needs: refresh
+    if: needs.refresh.outputs.has_changes == 'true'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - id: deployment
+        uses: actions/deploy-pages@v4
