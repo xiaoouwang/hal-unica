@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /embed-chart.html
+Disallow: /data/
+Sitemap: https://xiaoouwang.github.io/hal-unica/sitemap.xml

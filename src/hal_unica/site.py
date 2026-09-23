@@ -11,9 +11,152 @@ from typing import Any
 
 from .data_repos import hits_from_jsonl, summarize
 
+SITE_BASE_URL = "https://xiaoouwang.github.io/hal-unica"
+SITE_NAME = "HAL-UniCA"
+SITE_TAGLINE = (
+    "Open-science monitoring for Université Côte d’Azur on HAL: "
+    "linked datasets, repositories, software, and correction queues."
+)
+
 
 def _utc_now() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def _abs_url(path: str) -> str:
+    path = (path or "").strip()
+    if not path or path in (".", "./", "/", "./index.html", "index.html"):
+        return f"{SITE_BASE_URL}/"
+    if path.startswith("http://") or path.startswith("https://"):
+        return path
+    return f"{SITE_BASE_URL}/{path.lstrip('./')}"
+
+
+def _seo_head(
+    *,
+    title: str,
+    description: str,
+    path: str,
+    page_type: str = "website",
+    robots: str = "index,follow",
+    json_ld_extra: dict[str, Any] | None = None,
+    extra_head: str = "",
+) -> str:
+    """Shared <head> SEO block (title, description, canonical, OG, Twitter, JSON-LD)."""
+    full_title = title if title.startswith(SITE_NAME) else f"{SITE_NAME} · {title}"
+    canonical = _abs_url(path)
+    desc = " ".join((description or SITE_TAGLINE).split())
+    if len(desc) > 160:
+        desc = desc[:157].rstrip() + "…"
+    website_id = f"{SITE_BASE_URL}/#website"
+    graph: list[dict[str, Any]] = [
+        {
+            "@type": "WebSite",
+            "@id": website_id,
+            "name": SITE_NAME,
+            "url": f"{SITE_BASE_URL}/",
+            "description": SITE_TAGLINE,
+            "inLanguage": "en",
+            "publisher": {
+                "@type": "Organization",
+                "name": "Université Côte d’Azur",
+                "url": "https://univ-cotedazur.fr/",
+                "sameAs": ["https://hal.science/UNIV-COTEDAZUR"],
+            },
+        },
+        {
+            "@type": "WebPage",
+            "@id": f"{canonical}#webpage",
+            "url": canonical,
+            "name": full_title,
+            "description": desc,
+            "isPartOf": {"@id": website_id},
+            "inLanguage": "en",
+        },
+    ]
+    if json_ld_extra:
+        graph.append(json_ld_extra)
+    ld = json.dumps(
+        {"@context": "https://schema.org", "@graph": graph},
+        ensure_ascii=False,
+        separators=(",", ":"),
+    ).replace("<", "\\u003c")
+    return f"""  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{full_title}</title>
+  <meta name="description" content="{_html_attr(desc)}" />
+  <meta name="robots" content="{_html_attr(robots)}" />
+  <meta name="author" content="HAL-UniCA · Université Côte d’Azur" />
+  <meta name="theme-color" content="#f4f0ea" />
+  <link rel="canonical" href="{canonical}" />
+  <meta property="og:type" content="{_html_attr(page_type)}" />
+  <meta property="og:site_name" content="{SITE_NAME}" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:title" content="{_html_attr(full_title)}" />
+  <meta property="og:description" content="{_html_attr(desc)}" />
+  <meta property="og:url" content="{canonical}" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="{_html_attr(full_title)}" />
+  <meta name="twitter:description" content="{_html_attr(desc)}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">{ld}</script>
+{extra_head}"""
+
+
+def _html_attr(value: str) -> str:
+    return (
+        str(value)
+        .replace("&", "&amp;")
+        .replace('"', "&quot;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+    )
+
+
+def _write_seo_files(output_dir: Path, *, generated_at: str | None = None) -> None:
+    """robots.txt + sitemap.xml for GitHub Pages."""
+    pages = [
+        ("", "1.0"),
+        ("related-datasets.html", "0.9"),
+        ("all-repositories.html", "0.9"),
+        ("to-be-corrected.html", "0.8"),
+        ("software.html", "0.8"),
+        ("documentation.html", "0.7"),
+    ]
+    lastmod = ""
+    if generated_at:
+        text = generated_at.strip()
+        try:
+            if text.endswith("Z"):
+                text = text[:-1] + "+00:00"
+            lastmod = datetime.fromisoformat(text).date().isoformat()
+        except ValueError:
+            lastmod = ""
+    urls = []
+    for path, priority in pages:
+        loc = _abs_url(path)
+        block = f"  <url>\n    <loc>{loc}</loc>\n"
+        if lastmod:
+            block += f"    <lastmod>{lastmod}</lastmod>\n"
+        block += f"    <changefreq>daily</changefreq>\n    <priority>{priority}</priority>\n  </url>"
+        urls.append(block)
+    (output_dir / "sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "\n".join(urls)
+        + "\n</urlset>\n",
+        encoding="utf-8",
+    )
+    (output_dir / "robots.txt").write_text(
+        f"User-agent: *\n"
+        f"Allow: /\n"
+        f"Disallow: /embed-chart.html\n"
+        f"Disallow: /data/\n"
+        f"Sitemap: {SITE_BASE_URL}/sitemap.xml\n",
+        encoding="utf-8",
+    )
 
 
 def harvest_stats(harvest_path: Path) -> dict[str, Any]:
@@ -644,6 +787,11 @@ footer { margin-top: 2rem; font-size: 0.82rem; color: var(--ink-soft); line-heig
 footer .updated { font-weight: 600; color: var(--ink); margin-bottom: 0.35rem; }
 footer .updated time { font-variant-numeric: tabular-nums; }
 .empty { padding: 2rem; text-align: center; color: var(--ink-soft); }
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 100;
+  padding: 0.6rem 1rem; background: var(--ink); color: #fff; border-radius: 0 0 8px 0;
+}
+.skip-link:focus { left: 0; }
 """
 
 
@@ -1027,8 +1175,9 @@ def _nav(active: str) -> str:
         return f'<a class="navlink" href="{href}"{cur}>{label}</a>'
 
     return f"""
-    <nav>
-      <a class="brand" href="./index.html">HAL-UniCA</a>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav aria-label="Primary">
+      <a class="brand" href="./index.html" rel="home">HAL-UniCA</a>
       {link("./index.html", "Statistics", "stats")}
       {link("./related-datasets.html", "Nakala / RDG", "related")}
       {link("./all-repositories.html", "All repositories", "census")}
@@ -1043,25 +1192,27 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
     head = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HAL-UniCA · Statistics</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
-  <style>{SHARED_CSS}</style>
+{_seo_head(
+    title="Open science statistics",
+    description=(
+        "Université Côte d’Azur HAL open-science snapshot: documents, DOIs, "
+        "linked datasets by year and repository, and where UniCA research data live."
+    ),
+    path="index.html",
+    extra_head=f"  <style>{SHARED_CSS}</style>",
+)}
 </head>
 <body>
-  <main class="wrap">
+  <main class="wrap" id="main">
     {_nav("stats")}
-    <div class="eyebrow">Université Côte d’Azur · HAL</div>
+    <p class="eyebrow">Université Côte d’Azur · HAL</p>
     <h1>Open science snapshot</h1>
     <p class="lede">
       Metadata harvest of the institutional HAL collection
       <a id="collectionLink" href="https://hal.science/UNIV-COTEDAZUR">UNIV-COTEDAZUR</a>,
       plus every linked data-repository DOI declared on those notices.
     </p>
-    <div class="stats" id="stats"></div>
+    <div class="stats" id="stats" role="group" aria-label="Key statistics"></div>
 
     <section class="panel">
       <h2>Linked datasets by year and repository</h2>
@@ -1195,17 +1346,17 @@ def render_embed_chart(chart_json: str, *, generated_at: str | None = None) -> s
     head = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HAL-UniCA · Datasets by year (embed)</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
-  <style>{SHARED_CSS}</style>
+{_seo_head(
+    title="Datasets by year (embed)",
+    description="Embeddable UniCA HAL chart of linked datasets by year and repository.",
+    path="embed-chart.html",
+    robots="noindex,nofollow",
+    extra_head=f"  <style>{SHARED_CSS}</style>",
+)}
 </head>
 <body class="embed-page">
-  <main class="wrap">
-    <div class="eyebrow">HAL-UniCA · embed</div>
+  <main class="wrap" id="main">
+    <p class="eyebrow">HAL-UniCA · embed</p>
     <h1 style="font-size:1.45rem;margin:0.2rem 0 0.35rem">Linked datasets by year and repository</h1>
     <p class="muted" style="margin:0" id="chartNote"></p>
     <div class="stack-wrap">
@@ -1248,25 +1399,27 @@ def render_related(payload_json: str, *, generated_at: str | None = None) -> str
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>hal-unica · Related datasets</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
-  <style>{SHARED_CSS}</style>
+{_seo_head(
+    title="Nakala & Recherche Data Gouv",
+    description=(
+        "UniCA HAL publications linked to NAKALA or Recherche Data Gouv datasets, "
+        "with search, lab filters, and publication years."
+    ),
+    path="related-datasets.html",
+    extra_head=f"  <style>{SHARED_CSS}</style>",
+)}
 </head>
 <body>
-  <main class="wrap">
+  <main class="wrap" id="main">
     {_nav("related")}
-    <div class="eyebrow">Publications ↔ datasets</div>
+    <p class="eyebrow">Publications ↔ datasets</p>
     <h1>Related datasets</h1>
     <p class="lede">
       HAL publications in the UniCA collection that declare a
       <code>relatedData</code> link resolving to a real data repository
       (NAKALA or Recherche Data Gouv — including federated nodes such as Data INRAE).
     </p>
-    <div class="stats" id="stats"></div>
+    <div class="stats" id="stats" role="group" aria-label="Key statistics"></div>
     <section class="panel">
       <input id="q" class="search" type="search" placeholder="Search title, HAL id, dataset DOI, lab…" autocomplete="off" />
       <div class="filters" id="filters"></div>
@@ -1406,24 +1559,26 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>hal-unica · All repositories</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
-  <style>{SHARED_CSS}</style>
+{_seo_head(
+    title="All data repositories",
+    description=(
+        "All UniCA HAL-linked dataset DOIs with repository landings, linking publications, "
+        "labs, and retrieval dates across Zenodo, Recherche Data Gouv, NAKALA, and more."
+    ),
+    path="all-repositories.html",
+    extra_head=f"  <style>{SHARED_CSS}</style>",
+)}
 </head>
 <body>
-  <main class="wrap">
+  <main class="wrap" id="main">
     {_nav("census")}
-    <div class="eyebrow">Full relatedData census</div>
+    <p class="eyebrow">Full relatedData census</p>
     <h1>All linked repositories</h1>
     <p class="lede">
       Each related dataset DOI with its repository landing page, plus the HAL
       publication(s) that declare the link (title + HAL notice URL).
     </p>
-    <div class="stats" id="stats"></div>
+    <div class="stats" id="stats" role="group" aria-label="Key statistics"></div>
     <section class="panel">
       <h2>Repositories (by related DOI)</h2>
       <div class="bars" id="repos"></div>
@@ -1616,25 +1771,27 @@ def render_software(software_json: str, *, generated_at: str | None = None) -> s
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>hal-unica · Software</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
-  <style>{SHARED_CSS}</style>
+{_seo_head(
+    title="Software & source code",
+    description=(
+        "Université Côte d’Azur HAL SOFTWARE deposits with code repositories, "
+        "Software Heritage SWHIDs, and related publications."
+    ),
+    path="software.html",
+    extra_head=f"  <style>{SHARED_CSS}</style>",
+)}
 </head>
 <body>
-  <main class="wrap">
+  <main class="wrap" id="main">
     {_nav("software")}
-    <div class="eyebrow">HAL SOFTWARE deposits</div>
+    <p class="eyebrow">HAL SOFTWARE deposits</p>
     <h1>Software &amp; source code</h1>
     <p class="lede">
       UniCA HAL notices with <code>docType_s=SOFTWARE</code>, including code repository
       URLs, Software Heritage (SWHID) archives, HAL files, and related publications
       when declared.
     </p>
-    <div class="stats" id="stats"></div>
+    <div class="stats" id="stats" role="group" aria-label="Key statistics"></div>
     <section class="panel">
       <input id="q" class="search" type="search" placeholder="Search software title, HAL id, language, Git URL, lab…" autocomplete="off" />
       {_list_toolbar_html(sort_options_html=sort_opts)}
@@ -1770,18 +1927,20 @@ def render_corrections(corrections_json: str, *, generated_at: str | None = None
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>hal-unica · To Be Corrected</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
-  <style>{SHARED_CSS}</style>
+{_seo_head(
+    title="To Be Corrected",
+    description=(
+        "Misfiled UniCA HAL dataset links: DOIs that resolve to a data repository but "
+        "were declared only outside relatedData_s and need correction."
+    ),
+    path="to-be-corrected.html",
+    extra_head=f"  <style>{SHARED_CSS}</style>",
+)}
 </head>
 <body>
-  <main class="wrap">
+  <main class="wrap" id="main">
     {_nav("corrections")}
-    <div class="eyebrow">Field provenance · correction queue</div>
+    <p class="eyebrow">Field provenance · correction queue</p>
     <h1>To Be Corrected</h1>
     <p class="lede">
       Dataset DOIs that resolve to a data repository but appear <strong>only</strong> in a HAL
@@ -1789,7 +1948,7 @@ def render_corrections(corrections_json: str, *, generated_at: str | None = None
       <code>seeAlso_s</code>). If the same DOI is already present in <code>relatedData_s</code>,
       an extra mention elsewhere is treated as supplementary and is <em>not</em> listed here.
     </p>
-    <div class="stats" id="stats"></div>
+    <div class="stats" id="stats" role="group" aria-label="Key statistics"></div>
     <section class="panel">
       <input id="q" class="search" type="search" placeholder="Filter HAL id, title, DOI, repository, source field…" autocomplete="off" />
       <div class="filters" id="filters"></div>
@@ -1904,25 +2063,30 @@ def render_documentation(
         f"<tr><td>{repo}</td><td style=\"text-align:right\">{count}</td></tr>"
         for repo, count in (summary.get("by_repository") or {}).items()
     )
+    doc_extra = (
+        f"  <style>{SHARED_CSS}\n"
+        "  table.doc { width: 100%; border-collapse: collapse; font-size: 0.92rem; }\n"
+        "  table.doc th, table.doc td { padding: 0.5rem 0.4rem; border-bottom: 1px solid var(--line); text-align: left; }\n"
+        "  ol.method { margin: 0; padding-left: 1.2rem; color: var(--ink-soft); line-height: 1.55; }\n"
+        "  </style>"
+    )
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>hal-unica · Documentation</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
-  <style>{SHARED_CSS}
-  table.doc {{ width: 100%; border-collapse: collapse; font-size: 0.92rem; }}
-  table.doc th, table.doc td {{ padding: 0.5rem 0.4rem; border-bottom: 1px solid var(--line); text-align: left; }}
-  ol.method {{ margin: 0; padding-left: 1.2rem; color: var(--ink-soft); line-height: 1.55; }}
-  </style>
+{_seo_head(
+    title="Documentation",
+    description=(
+        "HAL-UniCA census methodology and downloadable DOI maps, repository summaries, "
+        "and misfiled-link CSVs for Université Côte d’Azur open science."
+    ),
+    path="documentation.html",
+    extra_head=doc_extra,
+)}
 </head>
 <body>
-  <main class="wrap">
+  <main class="wrap" id="main">
     {_nav("docs")}
-    <div class="eyebrow">Supporting files</div>
+    <p class="eyebrow">Supporting files</p>
     <h1>Documentation</h1>
     <p class="lede">
       How the census is built, and downloadable files that map each related DOI
@@ -2015,6 +2179,7 @@ def write_site(
     (output_dir / "related-datasets.html").write_text(
         render_related(payload_json, generated_at=generated_at), encoding="utf-8"
     )
+    _write_seo_files(output_dir, generated_at=generated_at)
     chart = payload.get("census_chart")
     if chart:
         chart_json = json.dumps(chart, ensure_ascii=False).replace("<", "\\u003c")

@@ -549,6 +549,8 @@ def build_site_cmd(
         "to-be-corrected.html",
         "software.html",
         "documentation.html",
+        "sitemap.xml",
+        "robots.txt",
     ):
         if (path / name).exists():
             typer.echo(f"  {path / name}")

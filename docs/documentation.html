@@ -3,10 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>hal-unica · Documentation</title>
+  <title>HAL-UniCA · Documentation</title>
+  <meta name="description" content="HAL-UniCA census methodology and downloadable DOI maps, repository summaries, and misfiled-link CSVs for Université Côte d’Azur open science." />
+  <meta name="robots" content="index,follow" />
+  <meta name="author" content="HAL-UniCA · Université Côte d’Azur" />
+  <meta name="theme-color" content="#f4f0ea" />
+  <link rel="canonical" href="https://xiaoouwang.github.io/hal-unica/documentation.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="HAL-UniCA" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:title" content="HAL-UniCA · Documentation" />
+  <meta property="og:description" content="HAL-UniCA census methodology and downloadable DOI maps, repository summaries, and misfiled-link CSVs for Université Côte d’Azur open science." />
+  <meta property="og:url" content="https://xiaoouwang.github.io/hal-unica/documentation.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="HAL-UniCA · Documentation" />
+  <meta name="twitter:description" content="HAL-UniCA census methodology and downloadable DOI maps, repository summaries, and misfiled-link CSVs for Université Côte d’Azur open science." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://xiaoouwang.github.io/hal-unica/#website","name":"HAL-UniCA","url":"https://xiaoouwang.github.io/hal-unica/","description":"Open-science monitoring for Université Côte d’Azur on HAL: linked datasets, repositories, software, and correction queues.","inLanguage":"en","publisher":{"@type":"Organization","name":"Université Côte d’Azur","url":"https://univ-cotedazur.fr/","sameAs":["https://hal.science/UNIV-COTEDAZUR"]}},{"@type":"WebPage","@id":"https://xiaoouwang.github.io/hal-unica/documentation.html#webpage","url":"https://xiaoouwang.github.io/hal-unica/documentation.html","name":"HAL-UniCA · Documentation","description":"HAL-UniCA census methodology and downloadable DOI maps, repository summaries, and misfiled-link CSVs for Université Côte d’Azur open science.","isPartOf":{"@id":"https://xiaoouwang.github.io/hal-unica/#website"},"inLanguage":"en"}]}</script>
   <style>
 :root {
   --ink: #161513;
@@ -295,6 +310,11 @@ footer { margin-top: 2rem; font-size: 0.82rem; color: var(--ink-soft); line-heig
 footer .updated { font-weight: 600; color: var(--ink); margin-bottom: 0.35rem; }
 footer .updated time { font-variant-numeric: tabular-nums; }
 .empty { padding: 2rem; text-align: center; color: var(--ink-soft); }
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 100;
+  padding: 0.6rem 1rem; background: var(--ink); color: #fff; border-radius: 0 0 8px 0;
+}
+.skip-link:focus { left: 0; }
 
   table.doc { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
   table.doc th, table.doc td { padding: 0.5rem 0.4rem; border-bottom: 1px solid var(--line); text-align: left; }
@@ -302,10 +322,11 @@ footer .updated time { font-variant-numeric: tabular-nums; }
   </style>
 </head>
 <body>
-  <main class="wrap">
+  <main class="wrap" id="main">
     
-    <nav>
-      <a class="brand" href="./index.html">HAL-UniCA</a>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav aria-label="Primary">
+      <a class="brand" href="./index.html" rel="home">HAL-UniCA</a>
       <a class="navlink" href="./index.html">Statistics</a>
       <a class="navlink" href="./related-datasets.html">Nakala / RDG</a>
       <a class="navlink" href="./all-repositories.html">All repositories</a>
@@ -314,7 +335,7 @@ footer .updated time { font-variant-numeric: tabular-nums; }
       <a class="navlink" href="./documentation.html" aria-current="page">Documentation</a>
     </nav>
     
-    <div class="eyebrow">Supporting files</div>
+    <p class="eyebrow">Supporting files</p>
     <h1>Documentation</h1>
     <p class="lede">
       How the census is built, and downloadable files that map each related DOI
@@ -364,7 +385,7 @@ footer .updated time { font-variant-numeric: tabular-nums; }
     </section>
 
     <footer>
-      <div class="updated">Last updated: <time datetime="2026-09-23T11:08:15Z">23 Sep 2026, 13:08 CEST</time></div>
+      <div class="updated">Last updated: <time datetime="2026-09-23T11:10:26Z">23 Sep 2026, 13:10 CEST</time></div>
       Source repository: <a href="https://github.com/xiaoouwang/hal-unica">github.com/xiaoouwang/hal-unica</a>
     </footer>
   </main>
