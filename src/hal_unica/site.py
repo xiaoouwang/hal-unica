@@ -1960,7 +1960,8 @@ def render_data_papers(papers_json: str, *, generated_at: str | None = None) -> 
     <div class="stats" id="stats" role="group" aria-label="Key statistics"></div>
     <section class="panel">
       <input id="q" class="search" type="search" placeholder="Search title, HAL id, DOI, journal, keyword, lab, dataset…" autocomplete="off" />
-      <div class="filters" id="filters"></div>
+      <div class="filters" id="linkFilters" aria-label="Linked dataset filter"></div>
+      <div class="filters" id="filters" aria-label="Journal filter"></div>
       {_list_toolbar_html(sort_options_html=sort_opts)}
       <div class="list" id="list"></div>
     </section>
@@ -1977,9 +1978,12 @@ def render_data_papers(papers_json: str, *, generated_at: str | None = None) -> 
     const rows = data.papers || [];
     const s = data.summary || {{}};
     let activeJournal = "all";
+    let activeLink = "all";
     const allLabs = uniqueLabs(rows, r => r.laboratories);
     const allYears = uniqueYears(rows, r => [r.producedDateY_i]);
     const journals = ["all", ...Object.keys(s.by_journal || {{}})];
+    const withoutLinked = rows.filter(r => !(r.linked_datasets || []).length).length;
+    const withLinked = rows.length - withoutLinked;
 
     document.getElementById("stats").innerHTML = [
       {{ v: s.data_papers || rows.length, l: "Data papers" }},
@@ -1988,6 +1992,20 @@ def render_data_papers(papers_json: str, *, generated_at: str | None = None) -> 
       {{ v: s.with_journal || 0, l: "With journal title" }},
     ].map(x => `<div class="stat"><strong data-count="${{x.v}}">0</strong><span>${{x.l}}</span></div>`).join("");
     animateStatCounts(document.getElementById("stats"));
+
+    function paintLinkFilters() {{
+      const opts = [
+        {{ v: "all", l: `All (${{rows.length}})` }},
+        {{ v: "with", l: `With linked dataset (${{withLinked}})` }},
+        {{ v: "without", l: `Without linked dataset (${{withoutLinked}})` }},
+      ];
+      document.getElementById("linkFilters").innerHTML = opts.map(o => `
+        <button type="button" class="chip" data-v="${{o.v}}" aria-pressed="${{activeLink===o.v}}">${{esc(o.l)}}</button>
+      `).join("");
+      document.querySelectorAll("#linkFilters button").forEach(btn => btn.addEventListener("click", () => {{
+        activeLink = btn.dataset.v; paintLinkFilters(); render();
+      }}));
+    }}
 
     function paintJournalFilters() {{
       document.getElementById("filters").innerHTML = journals.map(j => `
@@ -2017,6 +2035,9 @@ def render_data_papers(papers_json: str, *, generated_at: str | None = None) -> 
       const labFilter = activeLabFilter();
       const yearFilter = activeYearFilter();
       const filtered = rows.filter(r => {{
+        const hasLinked = (r.linked_datasets || []).length > 0;
+        if (activeLink === "with" && !hasLinked) return false;
+        if (activeLink === "without" && hasLinked) return false;
         if (activeJournal !== "all" && (r.journalTitle_s || "") !== activeJournal) return false;
         if (!labsMatch(r.laboratories, labFilter)) return false;
         if (!yearsMatch([r.producedDateY_i], yearFilter)) return false;
@@ -2082,6 +2103,7 @@ def render_data_papers(papers_json: str, *, generated_at: str | None = None) -> 
         </article>`;
       }}).join("") || `<div class="empty">No matches.</div>`;
     }}
+    paintLinkFilters();
     paintJournalFilters();
     paintLabControls(allLabs);
     paintYearControls(allYears);
