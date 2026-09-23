@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T11:09:03Z",
+  "generated_at": "2026-09-23T09:12:44Z",
   "collection": "UNIV-COTEDAZUR",
   "hal_api": "https://api.archives-ouvertes.fr/search/UNIV-COTEDAZUR/",
   "hal_query": "(relatedData_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)",
@@ -9,11 +9,11 @@
     "seeAlso_s"
   ],
   "expected_dataset_field": "relatedData_s",
-  "since": null,
-  "watermark_modified": null,
+  "since": "2026-09-21T09:12:42Z",
+  "watermark_modified": "2026-09-23T10:52:06Z",
   "datacite_api": "https://api.datacite.org/dois/{doi}",
-  "started_at": "2026-09-22T11:09:03Z",
-  "finished_at": "2026-09-22T11:09:03Z",
+  "started_at": "2026-09-23T09:12:43Z",
+  "finished_at": "2026-09-23T09:12:44Z",
   "artifacts": {
     "publications_jsonl": "data/census/publications_related_data.jsonl",
     "doi_resolutions_jsonl": "data/census/doi_resolutions.jsonl",
@@ -27,11 +27,11 @@
     "hal_publications_with_relatedData": 313,
     "related_tokens": 508,
     "unique_dois": 401,
-    "pubs_fetched": 0,
-    "pubs_updated": 0,
+    "pubs_fetched": 14,
+    "pubs_updated": 14,
     "pubs_inserted": 0,
     "dois_resolved_live": 0,
-    "dois_from_cache": 0,
+    "dois_from_cache": 401,
     "misfiled_dataset_links": 72,
     "publications_with_misfiled_dataset_link": 53
   },

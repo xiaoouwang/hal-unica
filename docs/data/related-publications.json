@@ -6,6 +6,174 @@
   },
   "publications": [
     {
+      "halId_s": "hal-03288922",
+      "uri_s": "https://hal.inrae.fr/hal-03288922v1",
+      "title_s": "The discernible and hidden effects of clonality on the genotypic and genetic states of populations: Improving our estimation of clonal rates",
+      "docType_s": "ART",
+      "doiId_s": "10.1111/1755-0998.13316",
+      "laboratories": [
+        "IGEPP",
+        "UR",
+        "INRAE",
+        "Institut Agro",
+        "UMR MARBEC",
+        "IRD",
+        "IFREMER",
+        "UM",
+        "CNRS",
+        "IRCAN"
+      ],
+      "modifiedDate_tdate": "2026-09-23T08:45:59Z",
+      "producedDateY_i": 2021,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.15454/FEQ1Z6",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Portail Data INRAE",
+          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/FEQ1Z6",
+          "landing_host": "data.inrae.fr",
+          "dataset_title": "The discernible and hidden effects of clonality on the genotypic and genetic states of populations: improving our estimation of clonal rates",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-03065279",
+      "uri_s": "https://inria.hal.science/hal-03065279v1",
+      "title_s": "Adaptation by copy number variation increases insecticide resistance in the fall armyworm",
+      "docType_s": "ART",
+      "doiId_s": "10.1038/s42003-020-01382-6",
+      "laboratories": [
+        "DGIMI",
+        "UM",
+        "INRAE",
+        "ISA",
+        "UNS",
+        "CNRS",
+        "UniCA",
+        "USDA",
+        "IGEPP",
+        "UR"
+      ],
+      "modifiedDate_tdate": "2026-09-23T08:45:44Z",
+      "producedDateY_i": 2020,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/D4TG2M",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/D4TG2M",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda corn strain",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.57745/XDVEQW",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda rice strain",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-02928114",
+      "uri_s": "https://hal.inrae.fr/hal-02928114v1",
+      "title_s": "Aphid infestation differently affects the defences of nitrate-fed and nitrogen-fixing Medicago truncatula and alters symbiotic nitrogen fixation",
+      "docType_s": "ART",
+      "doiId_s": "10.1098/rspb.2020.1493",
+      "laboratories": [
+        "ISA",
+        "UNS",
+        "CNRS",
+        "INRAE",
+        "UniCA",
+        "IGEPP",
+        "UR",
+        "Institut Agro"
+      ],
+      "modifiedDate_tdate": "2026-09-23T08:44:36Z",
+      "producedDateY_i": 2020,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/WGBWYO",
+          "repository": "Recherche Data Gouv",
+          "publisher": null,
+          "landing_url": null,
+          "landing_host": null,
+          "dataset_title": null,
+          "field": "relatedPublication_s",
+          "misfiled": true,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-01633879",
+      "uri_s": "https://inria.hal.science/hal-01633879v1",
+      "title_s": "Two genomes of highly polyphagous lepidopteran pests (Spodoptera frugiperda, Noctuidae) with different host-plant ranges",
+      "docType_s": "ART",
+      "doiId_s": "10.1038/s41598-017-10461-4",
+      "laboratories": [
+        "GenScale",
+        "Inria",
+        "IRISA-D7",
+        "IRISA",
+        "UR",
+        "INSA Rennes",
+        "UBS",
+        "ENS Rennes",
+        "CNRS",
+        "IMT Atlantique"
+      ],
+      "modifiedDate_tdate": "2026-09-23T08:38:20Z",
+      "producedDateY_i": 2017,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/D4TG2M",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/D4TG2M",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda corn strain",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.57745/XDVEQW",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda rice strain",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
       "halId_s": "hal-05221870",
       "uri_s": "https://hal.science/hal-05221870v2",
       "title_s": "Enquête sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
@@ -154,137 +322,6 @@
       ]
     },
     {
-      "halId_s": "hal-01633879",
-      "uri_s": "https://inria.hal.science/hal-01633879v1",
-      "title_s": "Two genomes of highly polyphagous lepidopteran pests (Spodoptera frugiperda, Noctuidae) with different host-plant ranges",
-      "docType_s": "ART",
-      "doiId_s": "10.1038/s41598-017-10461-4",
-      "laboratories": [
-        "GenScale",
-        "Inria",
-        "IRISA-D7",
-        "IRISA",
-        "UR",
-        "INSA Rennes",
-        "UBS",
-        "ENS Rennes",
-        "CNRS",
-        "IMT Atlantique"
-      ],
-      "modifiedDate_tdate": "2026-09-16T10:20:56Z",
-      "producedDateY_i": 2017,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/D4TG2M",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/D4TG2M",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda corn strain",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.57745/XDVEQW",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda rice strain",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-03065279",
-      "uri_s": "https://inria.hal.science/hal-03065279v1",
-      "title_s": "Adaptation by copy number variation increases insecticide resistance in the fall armyworm",
-      "docType_s": "ART",
-      "doiId_s": "10.1038/s42003-020-01382-6",
-      "laboratories": [
-        "DGIMI",
-        "UM",
-        "INRAE",
-        "ISA",
-        "UNS",
-        "CNRS",
-        "UniCA",
-        "USDA",
-        "IGEPP",
-        "UR"
-      ],
-      "modifiedDate_tdate": "2026-09-16T10:20:56Z",
-      "producedDateY_i": 2020,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/D4TG2M",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/D4TG2M",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda corn strain",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.57745/XDVEQW",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda rice strain",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-02928114",
-      "uri_s": "https://hal.inrae.fr/hal-02928114v1",
-      "title_s": "Aphid infestation differently affects the defences of nitrate-fed and nitrogen-fixing Medicago truncatula and alters symbiotic nitrogen fixation",
-      "docType_s": "ART",
-      "doiId_s": "10.1098/rspb.2020.1493",
-      "laboratories": [
-        "ISA",
-        "UNS",
-        "CNRS",
-        "INRAE",
-        "UniCA",
-        "IGEPP",
-        "UR",
-        "Institut Agro"
-      ],
-      "modifiedDate_tdate": "2026-09-15T16:11:40Z",
-      "producedDateY_i": 2020,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/WGBWYO",
-          "repository": "Recherche Data Gouv",
-          "publisher": null,
-          "landing_url": null,
-          "landing_host": null,
-          "dataset_title": null,
-          "field": "relatedPublication_s",
-          "misfiled": true,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
       "halId_s": "hal-04169728",
       "uri_s": "https://hal.inrae.fr/hal-04169728v1",
       "title_s": "A nationwide pest risk analysis in the context of the ongoing Japanese beetle invasion in Continental Europe: The case of metropolitan France",
@@ -315,43 +352,6 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/SXZNQF",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "Host plants of Popillia japonica: a review",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-03288922",
-      "uri_s": "https://hal.inrae.fr/hal-03288922v1",
-      "title_s": "The discernible and hidden effects of clonality on the genotypic and genetic states of populations: Improving our estimation of clonal rates",
-      "docType_s": "ART",
-      "doiId_s": "10.1111/1755-0998.13316",
-      "laboratories": [
-        "IGEPP",
-        "UR",
-        "INRAE",
-        "Institut Agro",
-        "UMR MARBEC",
-        "IRD",
-        "IFREMER",
-        "UM",
-        "CNRS",
-        "IRCAN"
-      ],
-      "modifiedDate_tdate": "2026-09-15T16:10:48Z",
-      "producedDateY_i": 2021,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.15454/FEQ1Z6",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Portail Data INRAE",
-          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/FEQ1Z6",
-          "landing_host": "data.inrae.fr",
-          "dataset_title": "The discernible and hidden effects of clonality on the genotypic and genetic states of populations: improving our estimation of clonal rates",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false

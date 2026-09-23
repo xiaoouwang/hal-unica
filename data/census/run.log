@@ -1,1 +1,9 @@
-[2026-09-22T10:05:13Z] reclassify + dataset-only index rebuild
+incremental census since=2026-09-21T09:12:42Z (existing pubs=313, doi cache=401)
+[2026-09-23T09:12:43Z] census start collection=UNIV-COTEDAZUR since=2026-09-21T09:12:42Z
+HAL publications with linked identifiers (merged): 313
+  query: (relatedData_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)
+  fetched this run: 14 (updated=14, inserted=0)
+link tokens: 508
+unique DOI candidates: 401
+DataCite cache hits: 401; to resolve: 0
+[2026-09-23T09:12:44Z] census done
