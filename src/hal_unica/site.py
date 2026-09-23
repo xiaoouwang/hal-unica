@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 from pathlib import Path
 from typing import Any
 
@@ -646,16 +647,20 @@ footer .updated time { font-variant-numeric: tabular-nums; }
 """
 
 
+_PARIS = ZoneInfo("Europe/Paris")
+
+
 def _format_last_updated(iso: str | None) -> str:
-    """Human-readable UTC stamp for footers."""
+    """Human-readable Paris-local stamp for footers (CET/CEST)."""
     if not iso:
         return "Last updated: unknown"
     text = iso.strip()
     try:
         if text.endswith("Z"):
             text = text[:-1] + "+00:00"
-        dt = datetime.fromisoformat(text).astimezone(timezone.utc)
-        return f"Last updated: {dt.strftime('%d %b %Y, %H:%M')} UTC"
+        dt = datetime.fromisoformat(text).astimezone(_PARIS)
+        tz_label = dt.tzname() or "Europe/Paris"
+        return f"Last updated: {dt.strftime('%d %b %Y, %H:%M')} {tz_label}"
     except ValueError:
         return f"Last updated: {iso}"
 
@@ -730,9 +735,9 @@ def _shared_list_helpers_js() -> str:
       if (!iso) return "";
       const d = new Date(iso);
       if (Number.isNaN(d.getTime())) return esc(iso);
-      return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" })
-        + ", " + d.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "UTC" })
-        + " UTC";
+      return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "Europe/Paris" })
+        + ", " + d.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "Europe/Paris" })
+        + " " + (d.toLocaleTimeString("en-GB", { timeZone: "Europe/Paris", timeZoneName: "short" }).split(" ").pop() || "Paris");
     }
     function cmpStr(a, b) {
       return String(a || "").localeCompare(String(b || ""), undefined, { sensitivity: "base" });
