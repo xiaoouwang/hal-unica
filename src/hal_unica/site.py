@@ -121,6 +121,7 @@ def _write_seo_files(output_dir: Path, *, generated_at: str | None = None) -> No
         ("", "1.0"),
         ("related-datasets.html", "0.9"),
         ("all-repositories.html", "0.9"),
+        ("data-papers.html", "0.9"),
         ("to-be-corrected.html", "0.8"),
         ("software.html", "0.8"),
         ("documentation.html", "0.7"),
@@ -1181,6 +1182,7 @@ def _nav(active: str) -> str:
       {link("./index.html", "Statistics", "stats")}
       {link("./related-datasets.html", "Nakala / RDG", "related")}
       {link("./all-repositories.html", "All repositories", "census")}
+      {link("./data-papers.html", "Data papers", "datapapers")}
       {link("./to-be-corrected.html", "To Be Corrected", "corrections")}
       {link("./software.html", "Software", "software")}
       {link("./documentation.html", "Documentation", "docs")}
@@ -1244,6 +1246,8 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
       <p class="muted" id="relatedBlurb" style="margin:0"></p>
       <p style="margin:0.85rem 0 0">
         <a href="./all-repositories.html">All repositories (+ publications) →</a>
+        &nbsp;·&nbsp;
+        <a href="./data-papers.html">Data papers →</a>
         &nbsp;·&nbsp;
         <a href="./related-datasets.html">Nakala / Recherche Data Gouv focus →</a>
         &nbsp;·&nbsp;
@@ -1921,6 +1925,174 @@ def render_software(software_json: str, *, generated_at: str | None = None) -> s
 """
 
 
+def render_data_papers(papers_json: str, *, generated_at: str | None = None) -> str:
+    sort_opts = """
+            <option value="retrieved_desc" selected>Newest retrieved</option>
+            <option value="retrieved_asc">Oldest retrieved</option>
+            <option value="hal_desc">Newest HAL update</option>
+            <option value="year_desc">Publication year (newest)</option>
+            <option value="title_asc">Title A–Z</option>
+            <option value="journal_asc">Journal A–Z</option>
+    """
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+{_seo_head(
+    title="Data papers",
+    description=(
+        "Université Côte d’Azur HAL data papers (docSubType_s=DATAPAPER): journal articles "
+        "describing research datasets, with linked repositories, labs, and years."
+    ),
+    path="data-papers.html",
+    extra_head=f"  <style>{SHARED_CSS}</style>",
+)}
+</head>
+<body>
+  <main class="wrap" id="main">
+    {_nav("datapapers")}
+    <p class="eyebrow">HAL · docSubType_s=DATAPAPER</p>
+    <h1>Data papers</h1>
+    <p class="lede">
+      Peer-reviewed UniCA HAL articles tagged as <strong>data papers</strong>
+      (<code>docType_s=ART</code> + <code>docSubType_s=DATAPAPER</code>): scholarly descriptions of
+      research datasets, with journal metadata and any declared dataset links.
+    </p>
+    <div class="stats" id="stats" role="group" aria-label="Key statistics"></div>
+    <section class="panel">
+      <input id="q" class="search" type="search" placeholder="Search title, HAL id, DOI, journal, keyword, lab, dataset…" autocomplete="off" />
+      <div class="filters" id="filters"></div>
+      {_list_toolbar_html(sort_options_html=sort_opts)}
+      <div class="list" id="list"></div>
+    </section>
+    {_footer(
+      generated_at,
+      'Downloads: <a href="./data/census/data_papers.csv"><code>data_papers.csv</code></a> · '
+      '<a href="./data/census/data_papers.jsonl"><code>data_papers.jsonl</code></a>',
+    )}
+  </main>
+  <script id="data" type="application/json">{papers_json}</script>
+  <script>
+    {_shared_list_helpers_js()}
+    const data = JSON.parse(document.getElementById("data").textContent);
+    const rows = data.papers || [];
+    const s = data.summary || {{}};
+    let activeJournal = "all";
+    const allLabs = uniqueLabs(rows, r => r.laboratories);
+    const allYears = uniqueYears(rows, r => [r.producedDateY_i]);
+    const journals = ["all", ...Object.keys(s.by_journal || {{}})];
+
+    document.getElementById("stats").innerHTML = [
+      {{ v: s.data_papers || rows.length, l: "Data papers" }},
+      {{ v: s.with_doi || 0, l: "With publication DOI" }},
+      {{ v: s.with_linked_dataset || 0, l: "With linked dataset / URL" }},
+      {{ v: s.with_journal || 0, l: "With journal title" }},
+    ].map(x => `<div class="stat"><strong data-count="${{x.v}}">0</strong><span>${{x.l}}</span></div>`).join("");
+    animateStatCounts(document.getElementById("stats"));
+
+    function paintJournalFilters() {{
+      document.getElementById("filters").innerHTML = journals.map(j => `
+        <button type="button" class="chip" data-v="${{esc(j)}}" aria-pressed="${{activeJournal===j}}">${{esc(j==="all"?"All journals":j)}}</button>
+      `).join("");
+      document.querySelectorAll("#filters button").forEach(btn => btn.addEventListener("click", () => {{
+        activeJournal = btn.dataset.v; paintJournalFilters(); render();
+      }}));
+    }}
+
+    function sortRows(list) {{
+      const mode = document.getElementById("sort").value;
+      return list.slice().sort((a, b) => {{
+        if (mode === "retrieved_desc") return cmpIsoDesc(a.retrieved_at, b.retrieved_at) || cmpStr(a.title_s, b.title_s);
+        if (mode === "retrieved_asc") return cmpIsoAsc(a.retrieved_at, b.retrieved_at) || cmpStr(a.title_s, b.title_s);
+        if (mode === "hal_desc") return cmpIsoDesc(a.modifiedDate_tdate, b.modifiedDate_tdate) || cmpStr(a.title_s, b.title_s);
+        if (mode === "year_desc") return (Number(b.producedDateY_i)||0) - (Number(a.producedDateY_i)||0) || cmpStr(a.title_s, b.title_s);
+        if (mode === "journal_asc") return cmpStr(a.journalTitle_s, b.journalTitle_s) || cmpStr(a.title_s, b.title_s);
+        return cmpStr(a.title_s, b.title_s);
+      }});
+    }}
+
+    function render() {{
+      paintLabControls(allLabs);
+      paintYearControls(allYears);
+      const q = document.getElementById("q").value.trim().toLowerCase();
+      const labFilter = activeLabFilter();
+      const yearFilter = activeYearFilter();
+      const filtered = rows.filter(r => {{
+        if (activeJournal !== "all" && (r.journalTitle_s || "") !== activeJournal) return false;
+        if (!labsMatch(r.laboratories, labFilter)) return false;
+        if (!yearsMatch([r.producedDateY_i], yearFilter)) return false;
+        if (!q) return true;
+        const ds = (r.linked_datasets || []).flatMap(d => [d.dataset_doi, d.repository, d.dataset_title, d.raw]);
+        const blob = [r.title_s, r.halId_s, r.doiId_s, r.journalTitle_s, r.abstract_s, r.producedDateY_i,
+          ...(r.laboratories||[]), ...(r.authFullName_s||[]), ...(r.keyword_s||[]), ...ds,
+          ...(r.relatedData_s||[]), ...(r.seeAlso_s||[])].join(" ").toLowerCase();
+        return blob.includes(q);
+      }});
+      const list = sortRows(filtered);
+      document.getElementById("count").textContent = `${{list.length}} of ${{rows.length}} data papers`;
+      document.getElementById("list").innerHTML = list.map(r => {{
+        const yearBadge = r.producedDateY_i ? `<span class="badge">${{esc(r.producedDateY_i)}}</span>` : "";
+        const journalBadge = r.journalTitle_s ? `<span class="badge">${{esc(r.journalTitle_s)}}</span>` : `<span class="badge">DATAPAPER</span>`;
+        const retrieved = r.retrieved_at
+          ? `<span><time datetime="${{esc(r.retrieved_at)}}">Retrieved ${{formatStamp(r.retrieved_at)}}</time></span>`
+          : "";
+        const halMod = r.modifiedDate_tdate
+          ? `<span class="muted"><time datetime="${{esc(r.modifiedDate_tdate)}}">HAL updated ${{formatStamp(r.modifiedDate_tdate)}}</time></span>`
+          : "";
+        const authors = (r.authFullName_s||[]).slice(0, 8);
+        const authorLine = authors.length
+          ? `<div class="muted" style="margin-top:0.2rem;font-size:0.8rem">${{esc(authors.join(", "))}}${{(r.authFullName_s||[]).length > 8 ? "…" : ""}}</div>`
+          : "";
+        const keywords = (r.keyword_s||[]).slice(0, 10);
+        const kwLine = keywords.length
+          ? `<div class="muted" style="margin-top:0.2rem;font-size:0.8rem">Keywords: ${{esc(keywords.join(" · "))}}${{(r.keyword_s||[]).length > 10 ? "…" : ""}}</div>`
+          : "";
+        const abstract = r.abstract_s
+          ? `<p class="muted" style="margin:0.45rem 0 0;font-size:0.88rem;line-height:1.45">${{esc(r.abstract_s.length > 360 ? r.abstract_s.slice(0, 360) + "…" : r.abstract_s)}}</p>`
+          : "";
+        const datasets = (r.linked_datasets || []).map(d => {{
+          const href = d.landing_url || (d.dataset_doi ? `https://doi.org/${{d.dataset_doi}}` : (d.raw && /^https?:/.test(d.raw) ? d.raw : "#"));
+          const label = d.dataset_title || d.dataset_doi || d.raw || "dataset";
+          const repo = d.repository ? `<span class="badge">${{esc(d.repository)}}</span>` : "";
+          return `<div class="ev"><dt>Linked data</dt><dd>${{repo}} <a href="${{esc(href)}}" target="_blank" rel="noopener">${{esc(label)}}</a>
+            ${{d.dataset_doi ? `<div class="muted"><code>${{esc(d.dataset_doi)}}</code> · field <code>${{esc(d.source_field || "")}}</code></div>` : (d.source_field ? `<div class="muted">field <code>${{esc(d.source_field)}}</code></div>` : "")}}
+          </dd></div>`;
+        }}).join("");
+        return `<article class="result">
+          <div class="title-row">
+            <div>
+              <span class="doi-annot">HAL data paper</span>
+              <h2 class="title"><a href="${{esc(r.uri_s || "#")}}" target="_blank" rel="noopener">${{esc(r.title_s || "(untitled)")}}</a></h2>
+            </div>
+            <div class="badges">${{yearBadge}}${{journalBadge}}</div>
+          </div>
+          <div class="sub">
+            <a href="${{esc(r.uri_s || "#")}}" target="_blank" rel="noopener"><code>${{esc(r.halId_s)}}</code></a>
+            ${{r.doiId_s ? `<a href="https://doi.org/${{esc(r.doiId_s)}}" target="_blank" rel="noopener"><code>${{esc(r.doiId_s)}}</code></a>` : ""}}
+            ${{r.journalTitle_s ? `<span>${{esc(r.journalTitle_s)}}</span>` : ""}}
+            <span>${{(r.linked_datasets||[]).length}} linked dataset(s)</span>
+            ${{retrieved}}
+            ${{halMod}}
+          </div>
+          ${{yearLine([r.producedDateY_i])}}
+          ${{authorLine}}
+          ${{labsLine(r.laboratories)}}
+          ${{kwLine}}
+          ${{abstract}}
+          <div class="evidence">${{datasets || `<div class="ev"><dt>Linked data</dt><dd class="muted">No relatedData / seeAlso dataset link on this notice.</dd></div>`}}</div>
+        </article>`;
+      }}).join("") || `<div class="empty">No matches.</div>`;
+    }}
+    paintJournalFilters();
+    paintLabControls(allLabs);
+    paintYearControls(allYears);
+    wireLabControls(render);
+    document.getElementById("q").addEventListener("input", render);
+    document.getElementById("sort").addEventListener("change", render);
+    render();
+  </script>
+</body>
+</html>
+"""
 
 
 def render_corrections(corrections_json: str, *, generated_at: str | None = None) -> str:
@@ -2281,6 +2453,30 @@ def write_site(
                 render_software(soft_json, generated_at=generated_at), encoding="utf-8"
             )
 
+        paper_rows: list[dict[str, Any]] = []
+        paper_file = dest / "data_papers.jsonl"
+        if paper_file.exists():
+            for line in paper_file.read_text(encoding="utf-8").splitlines():
+                if line.strip():
+                    paper_rows.append(json.loads(line))
+        paper_summary = {}
+        paper_sum = dest / "data_papers_summary.json"
+        if paper_sum.exists():
+            paper_summary = json.loads(paper_sum.read_text(encoding="utf-8"))
+        if paper_rows or paper_summary:
+            papers_json = json.dumps(
+                {
+                    "generated_at": generated_at,
+                    "papers": paper_rows,
+                    "summary": paper_summary,
+                },
+                ensure_ascii=False,
+            ).replace("<", "\\u003c")
+            (output_dir / "data-papers.html").write_text(
+                render_data_papers(papers_json, generated_at=generated_at),
+                encoding="utf-8",
+            )
+
         manifest = {}
         man_path = dest / "run_manifest.json"
         if man_path.exists():
@@ -2296,6 +2492,9 @@ def write_site(
             "software_deposits.csv",
             "software_deposits.jsonl",
             "software_summary.json",
+            "data_papers.csv",
+            "data_papers.jsonl",
+            "data_papers_summary.json",
             "misfiled_dataset_links.csv",
         ):
             if (dest / name).exists():

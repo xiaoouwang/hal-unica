@@ -23,6 +23,11 @@ from .software import (
     harvest_software,
     write_software_artifacts,
 )
+from .data_papers import (
+    enrich_data_papers_from_resolutions,
+    harvest_data_papers,
+    write_data_paper_artifacts,
+)
 from .site import write_site
 from .timeutil import effective_since, format_hal_date, read_watermark, utc_now
 
@@ -39,6 +44,7 @@ class RefreshResult:
     dois_resolved_live: int
     dois_from_cache: int
     software_deposits: int
+    data_papers: int
     focus_hits: int
     site_dir: str
 
@@ -113,6 +119,11 @@ def run_refresh(
         enrich_software_from_harvest(soft_rows, harvest_path)
         write_software_artifacts(soft_rows, census_dir)
 
+        say("harvesting data papers (docSubType_s:DATAPAPER)")
+        paper_rows = harvest_data_papers(client)
+        enrich_data_papers_from_resolutions(paper_rows, census_dir)
+        write_data_paper_artifacts(paper_rows, census_dir)
+
     pubs_path = census_dir / "publications_related_data.jsonl"
     build_dataset_to_publications(pubs_path, census_dir)
     say("updated dataset→publications index")
@@ -143,6 +154,7 @@ def run_refresh(
         dois_resolved_live=census.dois_resolved_live,
         dois_from_cache=census.dois_from_cache,
         software_deposits=len(soft_rows),
+        data_papers=len(paper_rows),
         focus_hits=focus_summary["total_hits"],
         site_dir=str(site_dir),
     )

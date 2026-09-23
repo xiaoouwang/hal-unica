@@ -32,6 +32,11 @@ from .software import (
     harvest_software,
     write_software_artifacts,
 )
+from .data_papers import (
+    enrich_data_papers_from_resolutions,
+    harvest_data_papers,
+    write_data_paper_artifacts,
+)
 from .site import write_site
 from .timeutil import effective_since, read_watermark
 
@@ -422,6 +427,30 @@ def software_cmd(
     typer.echo(f"Wrote → {out_dir}/")
 
 
+@app.command("data-papers")
+def data_papers_cmd(
+    out_dir: Path = typer.Option(
+        Path("data/census"),
+        "--out-dir",
+        "-o",
+        help="Directory for data-paper artifacts (default: data/census)",
+    ),
+    collection: str = typer.Option(DEFAULT_COLLECTION, help="HAL collection code"),
+    rate: float = typer.Option(0.2, help="Min seconds between HAL requests"),
+) -> None:
+    """Harvest HAL data papers (ART + docSubType_s=DATAPAPER)."""
+    with HalClient(collection=collection, min_interval=rate) as client:
+        rows = harvest_data_papers(client)
+    enrich_data_papers_from_resolutions(rows, out_dir)
+    paths = write_data_paper_artifacts(rows, out_dir)
+    summary = json.loads(paths["data_papers_summary"].read_text(encoding="utf-8"))
+    typer.echo(f"Data papers: {summary['data_papers']}")
+    typer.echo(f"  with DOI: {summary['with_doi']}")
+    typer.echo(f"  with linked dataset: {summary['with_linked_dataset']}")
+    typer.echo(f"  with journal: {summary['with_journal']}")
+    typer.echo(f"Wrote → {out_dir}/")
+
+
 @app.command("refresh")
 def refresh_cmd(
     lookback_days: float = typer.Option(
@@ -484,7 +513,8 @@ def refresh_cmd(
         f"Refresh done (full={result.full}, since={result.since or '*'}) "
         f"pubs={result.census_publications} fetched={result.pubs_fetched} "
         f"datacite_live={result.dois_resolved_live} cache={result.dois_from_cache} "
-        f"software={result.software_deposits} focus={result.focus_hits} → {result.site_dir}"
+        f"software={result.software_deposits} data_papers={result.data_papers} "
+        f"focus={result.focus_hits} → {result.site_dir}"
     )
 
 
@@ -548,6 +578,7 @@ def build_site_cmd(
         "all-repositories.html",
         "to-be-corrected.html",
         "software.html",
+        "data-papers.html",
         "documentation.html",
         "sitemap.xml",
         "robots.txt",
