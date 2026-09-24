@@ -74,13 +74,21 @@ def count_cmd(
 
 @app.command("harvest")
 def harvest_cmd(
-    output: Path = typer.Option(
-        Path("data/unica_hal_metadata.jsonl"),
+    university: Optional[str] = typer.Option(
+        None,
+        "--university",
+        "-u",
+        help="Tenant id: unica (default) or ube — sets collection and output path",
+    ),
+    output: Optional[Path] = typer.Option(
+        None,
         "--output",
         "-o",
-        help="JSONL output path",
+        help="JSONL output path (default: tenant harvest path)",
     ),
-    collection: str = typer.Option(DEFAULT_COLLECTION, help="HAL collection / portal code"),
+    collection: Optional[str] = typer.Option(
+        None, help="HAL collection / portal code (overrides --university collection)"
+    ),
     rows: int = typer.Option(1000, min=1, max=10000, help="Page size (prefer 500–1000)"),
     max_docs: Optional[int] = typer.Option(
         None,
@@ -119,16 +127,23 @@ def harvest_cmd(
     rate: float = typer.Option(0.25, help="Minimum seconds between API requests"),
 ) -> None:
     """
-    Harvest metadata for the latest version of each UniCA deposit.
+    Harvest metadata for the latest version of each deposit in a HAL collection.
 
     The HAL collection index already stores one record per halId (current version).
     Binaries are never downloaded. Time-windowed pulls upsert into the existing
     corpus by default so --since / --lookback-days never wipe the archive.
+
+    Needed for accurate homepage document / DOI / doc-type stats. Large file.
     """
-    with HalClient(collection=collection, min_interval=rate) as client:
+    uni = resolve_university(university)
+    output_path = output or uni.harvest_path
+    coll = collection or uni.collection
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    with HalClient(collection=coll, min_interval=rate) as client:
         result = harvest_metadata(
             client=client,
-            output_path=output,
+            output_path=output_path,
             rows=rows,
             max_docs=max_docs,
             since=since,
@@ -139,7 +154,7 @@ def harvest_cmd(
             upsert=upsert,
         )
     typer.echo(
-        f"Wrote {result.written} docs "
+        f"Wrote {result.written} docs ({uni.id}/{result.collection}) "
         f"(inserted={result.inserted}, updated={result.updated}, "
         f"api numFound={result.num_found_api}, "
         f"dup_skipped={result.skipped_duplicate_hal_id}, upsert={result.upsert}) "

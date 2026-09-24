@@ -1,21 +1,24 @@
 # hal-unica
 
-Open-science monitoring for **[Université Côte d’Azur](https://univ-cotedazur.fr/)** on HAL (`UNIV-COTEDAZUR`).
+Open-science monitoring for **[Université Côte d’Azur](https://univ-cotedazur.fr/)** on HAL (`UNIV-COTEDAZUR`), with sibling snapshots for other universities (currently **[Université Bourgogne Europe](https://www.ube.fr/)** / `UNIV-BOURGOGNE`).
 
-This repository harvests UniCA HAL notices, resolves linked identifiers (especially dataset DOIs), classifies which landings are real **data repositories** vs publications/preprints, and publishes a static site on GitHub Pages.
+This repository harvests institutional HAL notices, resolves linked identifiers (especially dataset DOIs), classifies which landings are real **data repositories** vs publications/preprints, and publishes a static site on GitHub Pages.
 
-Live site: https://xiaoouwang.github.io/hal-unica/
+Live site: https://xiaoouwang.github.io/hal-unica/  
+UBE snapshot: https://xiaoouwang.github.io/hal-unica/ube/
 
-| Page | URL |
-|---|---|
-| Statistics | https://xiaoouwang.github.io/hal-unica/ |
-| Chart embed (iframe) | https://xiaoouwang.github.io/hal-unica/embed-chart.html |
-| Nakala / Recherche Data Gouv | https://xiaoouwang.github.io/hal-unica/related-datasets.html |
-| **All repositories** (dataset → publications) | https://xiaoouwang.github.io/hal-unica/all-repositories.html |
-| **Data papers** (`docSubType_s=DATAPAPER`) | https://xiaoouwang.github.io/hal-unica/data-papers.html |
-| **To Be Corrected** (misfiled dataset links) | https://xiaoouwang.github.io/hal-unica/to-be-corrected.html |
-| Software & source code | https://xiaoouwang.github.io/hal-unica/software.html |
-| Documentation + downloads | https://xiaoouwang.github.io/hal-unica/documentation.html |
+| Page | UniCA | UBE |
+|---|---|---|
+| Statistics | [/](https://xiaoouwang.github.io/hal-unica/) | [/ube/](https://xiaoouwang.github.io/hal-unica/ube/) |
+| Chart embed (iframe) | [/embed-chart.html](https://xiaoouwang.github.io/hal-unica/embed-chart.html) | [/ube/embed-chart.html](https://xiaoouwang.github.io/hal-unica/ube/embed-chart.html) |
+| Nakala / Recherche Data Gouv | [/related-datasets.html](https://xiaoouwang.github.io/hal-unica/related-datasets.html) | [/ube/related-datasets.html](https://xiaoouwang.github.io/hal-unica/ube/related-datasets.html) |
+| **All repositories** | [/all-repositories.html](https://xiaoouwang.github.io/hal-unica/all-repositories.html) | [/ube/all-repositories.html](https://xiaoouwang.github.io/hal-unica/ube/all-repositories.html) |
+| **Data papers** | [/data-papers.html](https://xiaoouwang.github.io/hal-unica/data-papers.html) | [/ube/data-papers.html](https://xiaoouwang.github.io/hal-unica/ube/data-papers.html) |
+| **To Be Corrected** | [/to-be-corrected.html](https://xiaoouwang.github.io/hal-unica/to-be-corrected.html) | [/ube/to-be-corrected.html](https://xiaoouwang.github.io/hal-unica/ube/to-be-corrected.html) |
+| Software & source code | [/software.html](https://xiaoouwang.github.io/hal-unica/software.html) | [/ube/software.html](https://xiaoouwang.github.io/hal-unica/ube/software.html) |
+| Documentation + downloads | [/documentation.html](https://xiaoouwang.github.io/hal-unica/documentation.html) | [/ube/documentation.html](https://xiaoouwang.github.io/hal-unica/ube/documentation.html) |
+
+Each site shows a logo row labeled **Open Science Snapshots of Other Universities**; clicking a logo opens that university’s snapshot in a new tab.
 
 ---
 
@@ -50,11 +53,12 @@ The **All repositories** page and `dataset_to_publications.*` are **dataset-only
 ## Architecture
 
 ```
-HAL Search API (UNIV-COTEDAZUR)
+HAL Search API (per collection, e.g. UNIV-COTEDAZUR or UNIV-BOURGOGNE)
         │
-        ├─ harvest      → data/unica_hal_metadata.jsonl   (~full collection; optional for homepage stats)
+        ├─ harvest      → data/<tenant>/harvest.jsonl   (or data/unica_hal_metadata.jsonl)
+        │                 ~full collection; homepage document / DOI / doc-type stats
         │
-        └─ refresh / census → data/census/
+        └─ refresh / census → data/<tenant>/census/   (UniCA: data/census/)
               │         publications_related_data.jsonl
               │         doi_resolutions.jsonl              (DataCite cache)
               │         summary.json, CSVs, METHODOLOGY.md
@@ -62,11 +66,11 @@ HAL Search API (UNIV-COTEDAZUR)
               ├─ software     → software_deposits.*
               ├─ data-papers  → data_papers.*
               ├─ invert index → dataset_to_publications.*  (dataset_repo only)
-              ├─ focus filter → data/unica_data_repo_links.jsonl  (Nakala/RDG)
-              └─ build-site   → docs/  (+ sitemap.xml, robots.txt)
+              ├─ focus filter → data/<tenant>/links.jsonl  (Nakala/RDG)
+              └─ build-site   → docs/ or docs/<site_path>/  (+ sitemap.xml, robots.txt)
 ```
 
-CLI entrypoint: `hal-unica` (package under `src/hal_unica/`).
+Tenants are declared in `src/hal_unica/universities.py`. CLI entrypoint: `hal-unica` (package under `src/hal_unica/`).
 
 ---
 
@@ -78,14 +82,15 @@ CLI entrypoint: `hal-unica` (package under `src/hal_unica/`).
 | `client.py` | HAL Search API client (pagination, retries, throttling) |
 | `fields.py` | Default Solr field lists for harvests |
 | `timeutil.py` | UTC helpers, watermarks, lookback / `--since` windows |
-| `harvest.py` | Full or incremental archive of UniCA HAL metadata (upsert by `halId_s`) |
+| `harvest.py` | Full or incremental archive of HAL metadata (upsert by `halId_s`) |
 | `census.py` | Related-identifier census, DOI resolution orchestration, misfiled queue, census artifacts |
 | `datacite.py` | DataCite DOI resolve + repository / `object_kind` classification |
 | `data_repos.py` | Nakala / RDG focus scan + DOI enrichment helpers |
-| `focus_links.py` | Build `unica_data_repo_links.jsonl` from census publications |
+| `focus_links.py` | Build Nakala/RDG focus links JSONL from census publications |
 | `software.py` | SOFTWARE deposits harvest + **dataset→publications** index builder |
 | `data_papers.py` | Data-paper harvest (`DATAPAPER`) + linked-dataset enrichment from census cache |
 | `refresh.py` | Daily orchestration: census → software → data papers → index → focus → site |
+| `universities.py` | Multi-university tenant registry (collection, paths, branding, logo) |
 | `site.py` | Static HTML/CSS/JS under `docs/` (stats, lists, chart, SEO, embed) |
 | `report.py` | Standalone HTML report for focus-link results (legacy / optional) |
 
@@ -104,19 +109,23 @@ hal-unica --help
 
 | Command | When to use | What it does |
 |---|---|---|
-| `hal-unica refresh` | **Default daily path** | Incremental census (lookback) → software → data papers → dataset index → Nakala/RDG focus links → rebuild `docs/` |
-| `hal-unica refresh --full` | Sunday / repair gaps | Same pipeline, but re-fetches the full related-data census query (still reuses DOI cache) |
-| `hal-unica build-site` | After local data edits | Rebuild Pages HTML from existing `data/` + `data/census/` (no HAL calls) |
+| `hal-unica refresh` | **Default daily path** (UniCA) | Incremental census → software → data papers → dataset index → Nakala/RDG focus → rebuild `docs/` |
+| `hal-unica refresh --university ube` | Same for UBE | Writes under `data/ube/` and `docs/ube/` |
+| `hal-unica refresh --full` | Sunday / repair gaps | Full related-data census query (still reuses DOI cache) |
+| `hal-unica build-site` / `--university ube` | After local data edits | Rebuild Pages HTML from existing data (no HAL calls unless live count fallback) |
 
 ```bash
-# Weekday-style incremental (2-day lookback)
+# Weekday-style incremental (2-day lookback) — both tenants in CI
 hal-unica refresh --lookback-days 2
+hal-unica refresh --university ube --lookback-days 2
 
 # Full relatedData rebuild (DOI cache kept)
 hal-unica refresh --full
+hal-unica refresh --university ube --full
 
 # Rebuild site only
 hal-unica build-site
+hal-unica build-site --university ube
 ```
 
 What `refresh` does **not** do: re-download the ~99k-document metadata corpus.
@@ -144,11 +153,15 @@ What it **does**:
 | `hal-unica report` | HTML report from focus-link JSONL | Optional offline report |
 
 ```bash
-# Full metadata archive (optional; large)
-hal-unica harvest -o data/unica_hal_metadata.jsonl
-hal-unica harvest --lookback-days 2 --from-watermark -o data/unica_hal_metadata.jsonl
+# Full metadata archive (optional but needed for DOI % / doc-type bars; large; gitignored)
+hal-unica harvest
+hal-unica harvest --university ube
 
-# Census only
+# Incremental harvest upsert
+hal-unica harvest --lookback-days 2 --from-watermark
+hal-unica harvest --university ube --lookback-days 2 --from-watermark
+
+# Census only (defaults to UniCA paths; pass --collection / dirs for others)
 hal-unica census
 hal-unica census --lookback-days 2
 
@@ -162,28 +175,84 @@ hal-unica resolve-repos --links data/unica_data_repo_links.jsonl
 hal-unica report --links data/unica_data_repo_links.jsonl -o docs/report.html
 ```
 
-Preview locally: `python -m http.server 8765 -d docs`.
+Preview locally: `python -m http.server 8765 -d docs` (UBE under `/ube/`).
+
+---
+
+## Adding another university
+
+Each university is a **tenant**: same pages and pipeline, separate HAL collection, data directory, and Pages subdirectory. Registration lives in [`src/hal_unica/universities.py`](src/hal_unica/universities.py).
+
+### 1. Confirm the HAL collection code
+
+Probe the Search API (must return a non-zero `numFound`):
+
+```bash
+hal-unica count --collection UNIV-BOURGOGNE
+# or: curl 'https://api.archives-ouvertes.fr/search/UNIV-BOURGOGNE/?q=*:*&rows=0&wt=json'
+```
+
+Institutional portals often use `UNIV-…` codes (UniCA = `UNIV-COTEDAZUR`, UBE = `UNIV-BOURGOGNE`). Aurehal instance nicknames (e.g. `univ-bourgogne`) are not always valid collection paths.
+
+### 2. Add a `University` entry
+
+In `universities.py`, copy the `UBE` example and set:
+
+| Field | Meaning |
+|---|---|
+| `id` | Short slug (`ube`, `xyz`) — used as `--university xyz` |
+| `collection` | HAL Search collection code |
+| `short_name` / `display_name` / `site_name` | Branding in nav, eyebrows, SEO |
+| `tagline` / `org_url` | Meta description + JSON-LD publisher |
+| `site_path` | Pages subfolder (`""` = site root, `"ube"` → `docs/ube/`) |
+| `logo` | Filename under `static/universities/` (or `None` for a text chip) |
+| `census_dir` / `links_path` / `harvest_path` | Local data paths (keep tenants separate) |
+| `site_dir` / `stats_fallback` / `log_path` | Output site + CI log |
+
+Register it in `UNIVERSITIES` (e.g. `UNIVERSITIES[MY_UNI.id] = MY_UNI`).
+
+### 3. Drop the logo asset
+
+Put a PNG/SVG/WebP in `static/universities/<logo>` (e.g. `ube.png`). `build-site` / `refresh` copies it into each site’s `assets/universities/`. Omit `logo` to show the `short_name` as a text chip in the switcher.
+
+### 4. Cold-start the tenant
+
+```bash
+# Full related-data census + software + data papers + site
+hal-unica refresh --university <id> --full
+
+# Homepage DOI % / document types (large; gitignored like UniCA harvest)
+hal-unica harvest --university <id>
+hal-unica build-site --university <id>
+```
+
+Without the harvest step, the snapshot still works (charts, related datasets, …) but homepage **document / DOI / doc-type** stats fall back to a live HAL count only (`live_count_only`).
+
+### 5. Wire daily CI
+
+In [`.github/workflows/daily-refresh.yml`](.github/workflows/daily-refresh.yml), add a second `hal-unica refresh --university <id> …` next to the existing UniCA and UBE calls, and `git add` the new `data/<tenant>/` paths.
+
+No code change is needed for the logo row: every tenant automatically lists **other** universities under **Open Science Snapshots of Other Universities**, linking to each snapshot’s absolute URL in a new tab.
 
 ---
 
 ## Typical routines (how to combine the scripts)
 
-### A. First-time / cold start (empty `data/census/`)
+### A. First-time / cold start (empty census)
 
 ```bash
 pip install -e .
 
-# 1) Optional but useful for homepage HAL document counts + lab backfill
-hal-unica harvest -o data/unica_hal_metadata.jsonl
-
-# 2) One orchestration pass builds census, software, data papers, focus links, site
+# UniCA
+hal-unica harvest                    # optional but fixes DOI % / doc types
 hal-unica refresh --full
 
-# 3) Preview
+# UBE (or any --university <id>)
+hal-unica harvest --university ube
+hal-unica refresh --university ube --full
+
 python -m http.server 8765 -d docs
 ```
-
-After this you have `data/census/*`, `docs/*`, and can push to GitHub Pages.
 
 ### B. Normal local day (same as CI)
 
@@ -274,7 +343,7 @@ GitHub often delays crons that fire at `:00`. We therefore:
 | Primary Sunday | `17 4 * * 0` | **06:17** / **05:17** | Full census |
 | Catch-up (daily) | `17 8 * * *` | **10:17** / **09:17** | Incremental |
 
-After a successful refresh **with file changes**, the same workflow deploys GitHub Pages (bot pushes with `GITHUB_TOKEN` do not trigger `pages.yml` alone).
+After a successful refresh **with file changes**, the same workflow deploys GitHub Pages (bot pushes with `GITHUB_TOKEN` do not trigger `pages.yml` alone). Each scheduled run refreshes **UniCA then UBE**.
 
 Delays can still happen under GitHub load; the catch-up slot is there so you usually do not need a manual refresh. Manual run: Actions → **Daily incremental refresh** → `incremental` or `full`.
 
@@ -319,8 +388,10 @@ Top **data** repositories (All repositories index): Zenodo · Recherche Data Gou
 | [`data/census/census.meta.json`](data/census/census.meta.json) | Watermark for incremental refresh |
 | [`data/census/METHODOLOGY.md`](data/census/METHODOLOGY.md) | Auto-generated method + counts for last census run |
 | [`data/unica_data_repo_links.jsonl`](data/unica_data_repo_links.jsonl) | Nakala/RDG focus hits |
-| [`docs/`](docs/) | Published site (`docs/data/census/` mirrors census artifacts) |
+| [`docs/`](docs/) | Published site (`docs/data/census/` mirrors UniCA census; `docs/ube/` is the UBE snapshot) |
 | [`docs/sitemap.xml`](docs/sitemap.xml) / [`docs/robots.txt`](docs/robots.txt) | SEO crawl hints |
+| [`src/hal_unica/universities.py`](src/hal_unica/universities.py) | Tenant registry — add universities here |
+| [`static/universities/`](static/universities/) | Logo source files copied into each site’s `assets/universities/` |
 
 ---
 
