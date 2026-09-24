@@ -1,0 +1,16 @@
+{
+  "collection": "UNIV-BOURGOGNE",
+  "university": "ube",
+  "started_at": "2026-09-24T15:12:20Z",
+  "finished_at": "2026-09-24T15:13:26Z",
+  "since": null,
+  "full": true,
+  "census_publications": 261,
+  "pubs_fetched": 261,
+  "dois_resolved_live": 301,
+  "dois_from_cache": 0,
+  "software_deposits": 18,
+  "data_papers": 54,
+  "focus_hits": 94,
+  "site_dir": "docs/ube"
+}

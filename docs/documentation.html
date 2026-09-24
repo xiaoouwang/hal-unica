@@ -67,17 +67,26 @@ nav a.navlink:hover, nav a.navlink[aria-current="page"] {
   font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--accent-hover);
 }
+.uni-switcher {
+  margin: 0 0 0.85rem;
+}
+.uni-switcher-label {
+  margin: 0 0 0.45rem;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink-soft);
+}
 .uni-logos {
   display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.1rem;
-  margin: 0 0 0.85rem; padding: 0;
+  margin: 0; padding: 0;
   list-style: none;
 }
 .uni-logos a {
   display: inline-flex; align-items: center; justify-content: center;
-  height: 2.75rem; padding: 0.2rem 0.35rem;
+  height: 2.75rem; padding: 0.2rem 0.45rem;
   border-radius: 8px; border: 1px solid var(--line);
   background: rgba(251,250,248,0.9);
   transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+  text-decoration: none;
 }
 .uni-logos a:hover, .uni-logos a:focus-visible {
   border-color: var(--accent); box-shadow: 0 0 0 3px rgba(42,38,34,0.08);
@@ -86,6 +95,10 @@ nav a.navlink:hover, nav a.navlink[aria-current="page"] {
 .uni-logos img {
   display: block; height: 2.2rem; width: auto; max-width: 9.5rem;
   object-fit: contain;
+}
+.uni-logos .uni-logo-text {
+  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.03em;
+  color: var(--ink); white-space: nowrap;
 }
 @media (max-width: 520px) {
   .uni-logos a { height: 2.4rem; }
@@ -359,9 +372,12 @@ footer .updated time { font-variant-numeric: tabular-nums; }
       <a class="navlink" href="./software.html">Software</a>
       <a class="navlink" href="./documentation.html" aria-current="page">Documentation</a>
     </nav>
-    <ul class="uni-logos" aria-label="University HAL portals">
-<li><a href="https://ube.hal.science/" target="_blank" rel="noopener noreferrer" title="Université Bourgogne Europe — open HAL portal"><img src="./assets/universities/ube.png" alt="Université Bourgogne Europe" width="160" height="82" loading="lazy" decoding="async" /></a></li>
-    </ul>
+    <div class="uni-switcher">
+      <p class="uni-switcher-label">Open Science Snapshots of Other Universities</p>
+      <ul class="uni-logos" aria-label="Open science snapshots of other universities">
+        <li><a href="https://xiaoouwang.github.io/hal-unica/ube/" target="_blank" rel="noopener noreferrer" title="Université Bourgogne Europe — open science snapshot"><img src="./assets/universities/ube.png" alt="Université Bourgogne Europe" width="160" height="82" loading="lazy" decoding="async" /></a></li>
+      </ul>
+    </div>
     
     <p class="eyebrow">Supporting files</p>
     <h1>Documentation</h1>
@@ -413,7 +429,7 @@ footer .updated time { font-variant-numeric: tabular-nums; }
     </section>
 
     <footer>
-      <div class="updated">Last updated: <time datetime="2026-09-24T14:56:00Z">24 Sep 2026, 16:56 CEST</time></div>
+      <div class="updated">Last updated: <time datetime="2026-09-24T15:12:17Z">24 Sep 2026, 17:12 CEST</time></div>
       Source repository: <a href="https://github.com/xiaoouwang/hal-unica">github.com/xiaoouwang/hal-unica</a>
     </footer>
   </main>

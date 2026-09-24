@@ -39,6 +39,7 @@ from .data_papers import (
 )
 from .site import write_site
 from .timeutil import effective_since, read_watermark
+from .universities import resolve_university
 
 app = typer.Typer(
     add_completion=False,
@@ -453,6 +454,12 @@ def data_papers_cmd(
 
 @app.command("refresh")
 def refresh_cmd(
+    university: Optional[str] = typer.Option(
+        None,
+        "--university",
+        "-u",
+        help="Tenant id: unica (default) or ube — sets collection and data/site paths",
+    ),
     lookback_days: float = typer.Option(
         2.0,
         "--lookback-days",
@@ -467,50 +474,57 @@ def refresh_cmd(
         "--full/--incremental",
         help="Full relatedData rebuild (weekly safety net); still reuses DOI cache",
     ),
-    census_dir: Path = typer.Option(Path("data/census"), "--census-dir"),
-    links: Path = typer.Option(
-        Path("data/unica_data_repo_links.jsonl"),
+    census_dir: Optional[Path] = typer.Option(None, "--census-dir"),
+    links: Optional[Path] = typer.Option(
+        None,
         "--links",
         help="Nakala/RDG focus links (synced from census)",
     ),
-    harvest: Path = typer.Option(
-        Path("data/unica_hal_metadata.jsonl"),
+    harvest: Optional[Path] = typer.Option(
+        None,
         "--harvest",
         help="Optional full harvest JSONL for home-page stats",
     ),
-    stats_fallback: Path = typer.Option(
-        Path("docs/data/stats.json"),
+    stats_fallback: Optional[Path] = typer.Option(
+        None,
         "--stats-fallback",
         help="Reuse harvest stats when full harvest JSONL is missing (CI)",
     ),
-    output: Path = typer.Option(Path("docs"), "--output", "-o", help="Site output dir"),
-    collection: str = typer.Option(DEFAULT_COLLECTION, help="HAL collection code"),
+    output: Optional[Path] = typer.Option(
+        None, "--output", "-o", help="Site output dir"
+    ),
+    collection: Optional[str] = typer.Option(
+        None, help="HAL collection code (overrides --university collection)"
+    ),
     rate: float = typer.Option(0.15, help="Min seconds between HAL/DataCite requests"),
-    log_file: Path = typer.Option(Path("logs/census.log"), "--log"),
+    log_file: Optional[Path] = typer.Option(None, "--log"),
 ) -> None:
     """
     Daily incremental refresh: census (lookback) → software → focus links → site.
 
-    Does not re-scrape the full UniCA metadata corpus. Designed for scheduled CI.
+    Use ``--university ube`` for the Université Bourgogne Europe snapshot under docs/ube/.
     """
-    log_file.parent.mkdir(parents=True, exist_ok=True)
-    with log_file.open("w", encoding="utf-8") as log:
+    uni = resolve_university(university)
+    log_path = log_file or uni.log_path
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+    with log_path.open("w", encoding="utf-8") as log:
         result = run_refresh(
+            university=uni,
             collection=collection,
             census_dir=census_dir,
             links_path=links,
             harvest_path=harvest,
-            stats_fallback=stats_fallback if stats_fallback.exists() else None,
+            stats_fallback=stats_fallback,
             site_dir=output,
             lookback_days=lookback_days,
             since=since,
             full=full,
             rate=rate,
-            log_path=log_file,
+            log_path=log_path,
             log=log,
         )
     typer.echo(
-        f"Refresh done (full={result.full}, since={result.since or '*'}) "
+        f"Refresh done ({result.university}, full={result.full}, since={result.since or '*'}) "
         f"pubs={result.census_publications} fetched={result.pubs_fetched} "
         f"datacite_live={result.dois_resolved_live} cache={result.dois_from_cache} "
         f"software={result.software_deposits} data_papers={result.data_papers} "
@@ -520,57 +534,76 @@ def refresh_cmd(
 
 @app.command("build-site")
 def build_site_cmd(
-    harvest: Path = typer.Option(
-        Path("data/unica_hal_metadata.jsonl"),
+    university: Optional[str] = typer.Option(
+        None,
+        "--university",
+        "-u",
+        help="Tenant id: unica (default) or ube — sets collection and data/site paths",
+    ),
+    harvest: Optional[Path] = typer.Option(
+        None,
         "--harvest",
         help="Full HAL metadata JSONL (for general statistics); optional if stats fallback exists",
     ),
-    links: Path = typer.Option(
-        Path("data/unica_data_repo_links.jsonl"),
+    links: Optional[Path] = typer.Option(
+        None,
         "--links",
         help="Resolved Nakala/RDG links JSONL",
     ),
-    census_dir: Path = typer.Option(
-        Path("data/census"),
+    census_dir: Optional[Path] = typer.Option(
+        None,
         "--census-dir",
         help="Full relatedData census directory (optional if missing)",
     ),
-    output: Path = typer.Option(
-        Path("docs"),
+    output: Optional[Path] = typer.Option(
+        None,
         "--output",
         "-o",
         help="GitHub Pages output directory",
     ),
-    stats_fallback: Path = typer.Option(
-        Path("docs/data/stats.json"),
+    stats_fallback: Optional[Path] = typer.Option(
+        None,
         "--stats-fallback",
         help="Fallback harvest stats when --harvest is missing",
     ),
-    collection: str = typer.Option(DEFAULT_COLLECTION, help="HAL collection code"),
+    collection: Optional[str] = typer.Option(
+        None, help="HAL collection code (overrides --university collection)"
+    ),
 ) -> None:
-    """Build the public stats + related-datasets + census site into docs/."""
-    if not links.exists():
-        raise typer.BadParameter(f"Links file not found: {links}")
-    if not harvest.exists() and not stats_fallback.exists():
-        raise typer.BadParameter(
-            f"Harvest not found: {harvest} (and no stats fallback at {stats_fallback})"
+    """Build the public stats + related-datasets + census site into docs/ (or docs/ube/)."""
+    uni = resolve_university(university)
+    harvest_path = harvest or uni.harvest_path
+    links_path = links or uni.links_path
+    census_path = census_dir or uni.census_dir
+    output_dir = output or uni.site_dir
+    fallback = stats_fallback or uni.stats_fallback
+    coll = collection or uni.collection
+
+    if not links_path.exists():
+        raise typer.BadParameter(f"Links file not found: {links_path}")
+    if not harvest_path.exists() and not fallback.exists():
+        # Live HAL document count still works without a harvest / stats fallback.
+        typer.echo(
+            f"Note: no harvest at {harvest_path} and no stats fallback at {fallback}; "
+            "homepage document count will use a live HAL API total."
         )
 
-    if census_dir.exists():
-        pubs = census_dir / "publications_related_data.jsonl"
+    if census_path.exists():
+        pubs = census_path / "publications_related_data.jsonl"
         if pubs.exists():
-            build_dataset_to_publications(pubs, census_dir)
+            build_dataset_to_publications(pubs, census_path)
             typer.echo("Updated dataset→publications index")
 
     path = write_site(
-        harvest_path=harvest if harvest.exists() else None,
-        links_path=links,
-        output_dir=output,
-        collection=collection,
-        census_dir=census_dir if census_dir.exists() else None,
-        stats_fallback=stats_fallback if stats_fallback.exists() else None,
+        harvest_path=harvest_path if harvest_path.exists() else None,
+        links_path=links_path,
+        output_dir=output_dir,
+        collection=coll,
+        census_dir=census_path if census_path.exists() else None,
+        stats_fallback=fallback if fallback.exists() else None,
+        university=uni,
     )
-    typer.echo(f"Wrote site → {path}/")
+    typer.echo(f"Wrote site → {path}/ ({uni.site_name})")
     for name in (
         "index.html",
         "embed-chart.html",

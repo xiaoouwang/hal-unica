@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HAL-UBE · Documentation</title>
+  <meta name="description" content="HAL-UBE census methodology and downloadable DOI maps, repository summaries, and misfiled-link CSVs for Université Bourgogne Europe open science." />
+  <meta name="robots" content="index,follow" />
+  <meta name="author" content="HAL-UBE · Université Bourgogne Europe" />
+  <meta name="theme-color" content="#f4f0ea" />
+  <link rel="canonical" href="https://xiaoouwang.github.io/hal-unica/ube/documentation.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="HAL-UBE" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:title" content="HAL-UBE · Documentation" />
+  <meta property="og:description" content="HAL-UBE census methodology and downloadable DOI maps, repository summaries, and misfiled-link CSVs for Université Bourgogne Europe open science." />
+  <meta property="og:url" content="https://xiaoouwang.github.io/hal-unica/ube/documentation.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="HAL-UBE · Documentation" />
+  <meta name="twitter:description" content="HAL-UBE census methodology and downloadable DOI maps, repository summaries, and misfiled-link CSVs for Université Bourgogne Europe open science." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://xiaoouwang.github.io/hal-unica/ube/#website","name":"HAL-UBE","url":"https://xiaoouwang.github.io/hal-unica/ube/","description":"Open-science monitoring for Université Bourgogne Europe on HAL: linked datasets, repositories, software, and correction queues.","inLanguage":"en","publisher":{"@type":"Organization","name":"Université Bourgogne Europe","url":"https://www.ube.fr/","sameAs":["https://hal.science/UNIV-BOURGOGNE"]}},{"@type":"WebPage","@id":"https://xiaoouwang.github.io/hal-unica/ube/documentation.html#webpage","url":"https://xiaoouwang.github.io/hal-unica/ube/documentation.html","name":"HAL-UBE · Documentation","description":"HAL-UBE census methodology and downloadable DOI maps, repository summaries, and misfiled-link CSVs for Université Bourgogne Europe open science.","isPartOf":{"@id":"https://xiaoouwang.github.io/hal-unica/ube/#website"},"inLanguage":"en"}]}</script>
+  <style>
+:root {
+  --ink: #161513;
+  --ink-soft: #6a6560;
+  --paper: #f1f0ed;
+  --surface: #fbfaf8;
+  --accent: #2a2622;
+  --accent-hover: #8a6a45;
+  --wash: #e8e4dc;
+  --line: rgba(22, 21, 19, 0.1);
+  --radius: 12px;
+  --font-display: "Syne", "Avenir Next", sans-serif;
+  --font-body: "Figtree", "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); font-family: var(--font-body);
+  background:
+    radial-gradient(1100px 520px at 8% -8%, #e7e2d8 0%, transparent 58%),
+    radial-gradient(900px 480px at 100% 0%, #ddd8cf 0%, transparent 52%),
+    linear-gradient(180deg, #f5f3ef 0%, var(--paper) 40%, #ebe8e2 100%);
+  min-height: 100vh;
+}
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+a:hover { color: var(--accent-hover); }
+.wrap { width: min(1100px, calc(100% - 2rem)); margin: 0 auto; padding: 1.5rem 0 4rem; }
+nav {
+  display: flex; gap: 0.45rem; flex-wrap: wrap; align-items: center;
+  margin-bottom: 1.75rem; padding-bottom: 0.9rem; border-bottom: 1px solid var(--line);
+}
+nav .brand {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.2rem;
+  letter-spacing: -0.03em; margin-right: auto; text-decoration: none; color: var(--ink);
+}
+nav a.navlink {
+  text-decoration: none; color: var(--ink-soft); font-weight: 500; font-size: 0.9rem;
+  padding: 0.38rem 0.7rem; border-radius: 8px; border: 1px solid transparent;
+}
+nav a.navlink:hover, nav a.navlink[aria-current="page"] {
+  color: var(--ink); background: rgba(255,255,255,0.75); border-color: var(--line);
+}
+.eyebrow {
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent-hover);
+}
+.uni-switcher {
+  margin: 0 0 0.85rem;
+}
+.uni-switcher-label {
+  margin: 0 0 0.45rem;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink-soft);
+}
+.uni-logos {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.1rem;
+  margin: 0; padding: 0;
+  list-style: none;
+}
+.uni-logos a {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 2.75rem; padding: 0.2rem 0.45rem;
+  border-radius: 8px; border: 1px solid var(--line);
+  background: rgba(251,250,248,0.9);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+  text-decoration: none;
+}
+.uni-logos a:hover, .uni-logos a:focus-visible {
+  border-color: var(--accent); box-shadow: 0 0 0 3px rgba(42,38,34,0.08);
+  transform: translateY(-1px); outline: none;
+}
+.uni-logos img {
+  display: block; height: 2.2rem; width: auto; max-width: 9.5rem;
+  object-fit: contain;
+}
+.uni-logos .uni-logo-text {
+  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.03em;
+  color: var(--ink); white-space: nowrap;
+}
+@media (max-width: 520px) {
+  .uni-logos a { height: 2.4rem; }
+  .uni-logos img { height: 1.9rem; max-width: 8rem; }
+}
+h1 {
+  margin: 0.4rem 0 0; font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.05; letter-spacing: -0.035em;
+}
+.lede { margin: 0.9rem 0 0; max-width: 42rem; color: var(--ink-soft); line-height: 1.55; font-size: 1.05rem; }
+.stats {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; margin: 1.5rem 0;
+}
+@media (max-width: 720px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.stat {
+  background: rgba(251,250,248,0.8); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 1rem 1.1rem; backdrop-filter: blur(8px);
+}
+.stat strong {
+  display: block; font-family: var(--font-display); font-size: 1.85rem; font-weight: 700;
+  line-height: 1; letter-spacing: -0.03em;
+}
+.stat span { display: block; margin-top: 0.4rem; font-size: 0.8rem; color: var(--ink-soft); }
+.panel {
+  background: rgba(251,250,248,0.85); border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 2px); padding: 1.1rem 1.15rem; margin: 1rem 0;
+  backdrop-filter: blur(10px);
+}
+.panel h2 {
+  margin: 0 0 0.75rem; font-family: var(--font-display); font-size: 1.2rem; font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.bars { display: grid; gap: 0.45rem; }
+.bar-row { display: grid; grid-template-columns: 7.5rem 1fr 3.2rem; gap: 0.6rem; align-items: center; font-size: 0.9rem; }
+.bar-track { height: 0.5rem; background: var(--wash); border-radius: 999px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--accent); border-radius: 999px; }
+.panel.reveal .bar-fill {
+  width: 0;
+  transition: width 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.panel.reveal.is-visible .bar-fill { width: var(--bar-w, 0%); }
+.panel.reveal {
+  opacity: 0;
+  transform: translateY(0.85rem);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.panel.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .panel.reveal {
+    opacity: 1; transform: none; transition: none;
+  }
+  .panel.reveal .bar-fill { transition: none; width: var(--bar-w, 0%); }
+}
+.bar-row span:last-child { text-align: right; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.muted { color: var(--ink-soft); font-size: 0.88rem; }
+.stack-wrap { margin-top: 0.75rem; }
+.stack-legend {
+  display: flex; flex-wrap: wrap; gap: 0.45rem 0.9rem; margin: 0 0 1rem;
+  font-size: 0.82rem; color: var(--ink-soft);
+}
+.stack-legend .stack-legend-item {
+  appearance: none; border: 0; background: transparent; font: inherit;
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  cursor: pointer; border-radius: 6px; padding: 0.15rem 0.35rem;
+  color: inherit;
+  transition: opacity 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+.stack-legend .stack-legend-item:hover,
+.stack-wrap.is-filtering .stack-legend-item.is-active {
+  color: var(--ink); background: rgba(42,38,34,0.06);
+}
+.stack-wrap.is-filtering .stack-legend-item:not(.is-active) { opacity: 0.35; }
+.stack-swatch {
+  width: 0.7rem; height: 0.7rem; border-radius: 3px; flex: 0 0 auto;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
+}
+.stack-chart {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(2.4rem, 1fr));
+  gap: 0.45rem; align-items: end; min-height: 16rem;
+  padding: 0.25rem 0 0;
+  border-bottom: 1px solid var(--line);
+}
+.stack-col {
+  display: flex; flex-direction: column; align-items: center; gap: 0.35rem;
+  min-width: 0;
+}
+.stack-total {
+  font-family: var(--font-display); font-weight: 700; font-size: 0.85rem;
+  letter-spacing: -0.02em; color: var(--ink);
+}
+.stack-bars {
+  width: 100%; max-width: 2.75rem; height: 14rem;
+  display: flex; flex-direction: column-reverse; justify-content: flex-start;
+  border-radius: 4px 4px 0 0; overflow: hidden; background: var(--wash);
+}
+.stack-seg {
+  width: 100%; display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 0.68rem; font-weight: 700; font-variant-numeric: tabular-nums;
+  min-height: 0; cursor: pointer;
+  transition: opacity 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.25);
+}
+.stack-seg:hover,
+.stack-wrap.is-filtering .stack-seg.is-active {
+  filter: brightness(1.08); box-shadow: inset 0 0 0 2px rgba(255,255,255,0.85);
+  z-index: 1;
+}
+.stack-wrap.is-filtering .stack-seg:not(.is-active) { opacity: 0.18; filter: grayscale(0.35); }
+.stack-year {
+  font-size: 0.78rem; color: var(--ink-soft); font-variant-numeric: tabular-nums;
+}
+.chart-embed-hint {
+  margin: 0.65rem 0 0; font-size: 0.85rem; color: var(--ink-soft);
+}
+.chart-embed-hint code {
+  font-size: 0.8em; background: var(--wash); padding: 0.1rem 0.35rem; border-radius: 4px;
+}
+.chart-modal {
+  position: fixed; inset: 0; z-index: 80;
+  display: flex; align-items: flex-end; justify-content: center;
+  padding: 1rem; background: rgba(28, 24, 20, 0.45);
+}
+.chart-modal[hidden] { display: none; }
+@media (min-width: 720px) {
+  .chart-modal { align-items: center; padding: 1.5rem; }
+}
+.chart-modal-dialog {
+  width: min(40rem, 100%); max-height: min(85vh, 40rem);
+  display: flex; flex-direction: column;
+  background: var(--surface); color: var(--ink);
+  border-radius: 14px; border: 1px solid var(--line);
+  box-shadow: 0 18px 48px rgba(28, 24, 20, 0.28);
+  overflow: hidden;
+}
+.chart-modal-head {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 1rem; padding: 1rem 1.1rem 0.75rem;
+  border-bottom: 1px solid var(--line);
+}
+.chart-modal-head h3 {
+  margin: 0; font-family: var(--font-display); font-size: 1.15rem; letter-spacing: -0.02em;
+}
+.chart-modal-close {
+  appearance: none; border: 0; background: var(--wash); color: var(--ink);
+  width: 2rem; height: 2rem; border-radius: 8px; font-size: 1.2rem; line-height: 1;
+  cursor: pointer; flex: 0 0 auto;
+}
+.chart-modal-close:hover { background: var(--line); }
+.chart-modal-body {
+  overflow: auto; padding: 0.85rem 1.1rem 1.15rem;
+  display: grid; gap: 0.75rem;
+}
+.chart-modal-item {
+  padding: 0.7rem 0; border-bottom: 1px solid var(--line);
+}
+.chart-modal-item:last-child { border-bottom: 0; }
+.chart-modal-item .title {
+  margin: 0 0 0.25rem; font-size: 0.98rem;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 0.55rem;
+}
+.chart-modal-item .title > a:first-child { color: inherit; text-decoration: none; }
+.chart-modal-item .title > a:first-child:hover { color: var(--accent-hover); text-decoration: underline; }
+.chart-modal-doi {
+  font-weight: 500; font-size: 0.82rem; color: var(--ink-soft); text-decoration: none;
+  white-space: nowrap;
+}
+.chart-modal-doi:hover { color: var(--accent-hover); text-decoration: underline; }
+.chart-modal-doi code { font-size: 0.92em; }
+.chart-modal-pubs { margin: 0.25rem 0 0; padding-left: 1.1rem; font-size: 0.85rem; color: var(--ink-soft); }
+.chart-modal-pubs li { margin: 0.2rem 0; }
+.chart-modal-empty { color: var(--ink-soft); font-size: 0.92rem; padding: 0.5rem 0; }
+body.embed-page { background: var(--bg); }
+body.embed-page .wrap { max-width: 56rem; padding: 1rem 1.1rem 1.5rem; }
+.search {
+  width: 100%; border: 1px solid var(--line); border-radius: 10px;
+  padding: 0.85rem 1.1rem; font: inherit; background: var(--surface); outline: none; margin-bottom: 0.75rem;
+}
+.search:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(42,38,34,0.1); }
+.filters { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+.toolbar {
+  display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; align-items: center;
+  justify-content: space-between; margin: 0.15rem 0 0.85rem;
+}
+.toolbar-controls { display: flex; flex-wrap: wrap; gap: 0.65rem 1rem; align-items: center; }
+.toolbar-label {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  color: var(--ink-soft); font-size: 0.9rem;
+}
+.toolbar select, .toolbar input[type="search"].lab-filter {
+  border: 1px solid var(--line); border-radius: 8px; background: var(--surface);
+  color: var(--ink); font: inherit; font-size: 0.9rem; padding: 0.4rem 0.65rem;
+}
+.toolbar input[type="search"].lab-filter { min-width: 11rem; margin: 0; }
+.toolbar select.lab-select { max-width: 14rem; }
+.chip {
+  appearance: none; border: 1px solid var(--line); background: var(--surface); color: var(--ink-soft);
+  border-radius: 8px; padding: 0.4rem 0.75rem; font: inherit; font-size: 0.84rem;
+  font-weight: 500; cursor: pointer;
+}
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #faf9f7; }
+.list { display: grid; gap: 0.65rem; }
+.result {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1rem 1.1rem; display: grid; gap: 0.65rem;
+}
+.title-row { display: flex; gap: 0.75rem; justify-content: space-between; align-items: start; }
+.title {
+  margin: 0; font-family: var(--font-display); font-size: 1.05rem; font-weight: 700;
+  line-height: 1.3; letter-spacing: -0.02em;
+}
+.doi-annot {
+  display: block; margin: 0 0 0.35rem; font-size: 0.8rem; font-weight: 500;
+  color: var(--ink-soft); letter-spacing: 0.02em;
+}
+.badges { display: flex; flex-wrap: wrap; gap: 0.35rem; justify-content: flex-end; max-width: 42%; }
+.badge {
+  font-size: 0.7rem; font-weight: 600; padding: 0.28rem 0.55rem; border-radius: 6px;
+  background: var(--wash); color: var(--accent); border: 1px solid var(--line);
+}
+.sub { display: flex; flex-wrap: wrap; gap: 0.55rem 1rem; font-size: 0.86rem; color: var(--ink-soft); }
+.sub code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.82rem;
+  background: var(--paper); padding: 0.1rem 0.35rem; border-radius: 4px;
+}
+.evidence {
+  border-top: 1px solid var(--line); padding-top: 0.75rem; display: grid; gap: 0.5rem;
+}
+.ev {
+  display: grid; grid-template-columns: 6.5rem 1fr; gap: 0.75rem; font-size: 0.9rem;
+  padding: 0.55rem 0.65rem; border-radius: 8px; background: #f3f1ec;
+}
+@media (max-width: 640px) {
+  .ev { grid-template-columns: 1fr; }
+  .badges { max-width: 100%; justify-content: flex-start; }
+}
+.ev dt {
+  margin: 0; font-weight: 650; color: var(--ink-soft); font-size: 0.72rem;
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+.ev dd { margin: 0; word-break: break-word; }
+.meta-row { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin: 0.5rem 0 0.85rem; color: var(--ink-soft); font-size: 0.92rem; }
+footer { margin-top: 2rem; font-size: 0.82rem; color: var(--ink-soft); line-height: 1.5; }
+footer .updated { font-weight: 600; color: var(--ink); margin-bottom: 0.35rem; }
+footer .updated time { font-variant-numeric: tabular-nums; }
+.empty { padding: 2rem; text-align: center; color: var(--ink-soft); }
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 100;
+  padding: 0.6rem 1rem; background: var(--ink); color: #fff; border-radius: 0 0 8px 0;
+}
+.skip-link:focus { left: 0; }
+
+  table.doc { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  table.doc th, table.doc td { padding: 0.5rem 0.4rem; border-bottom: 1px solid var(--line); text-align: left; }
+  ol.method { margin: 0; padding-left: 1.2rem; color: var(--ink-soft); line-height: 1.55; }
+  </style>
+</head>
+<body>
+  <main class="wrap" id="main">
+    
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav aria-label="Primary">
+      <a class="brand" href="./index.html" rel="home">HAL-UBE</a>
+      <a class="navlink" href="./index.html">Statistics</a>
+      <a class="navlink" href="./related-datasets.html">Nakala / RDG</a>
+      <a class="navlink" href="./all-repositories.html">All repositories</a>
+      <a class="navlink" href="./data-papers.html">Data papers</a>
+      <a class="navlink" href="./to-be-corrected.html">To Be Corrected</a>
+      <a class="navlink" href="./software.html">Software</a>
+      <a class="navlink" href="./documentation.html" aria-current="page">Documentation</a>
+    </nav>
+    <div class="uni-switcher">
+      <p class="uni-switcher-label">Open Science Snapshots of Other Universities</p>
+      <ul class="uni-logos" aria-label="Open science snapshots of other universities">
+        <li><a href="https://xiaoouwang.github.io/hal-unica/" target="_blank" rel="noopener noreferrer" title="Université Côte d’Azur — open science snapshot"><span class="uni-logo-text">UniCA</span></a></li>
+      </ul>
+    </div>
+    
+    <p class="eyebrow">Supporting files</p>
+    <h1>Documentation</h1>
+    <p class="lede">
+      How the census is built, and downloadable files that map each related DOI
+      to its repository (not only the summary charts).
+    </p>
+
+    <section class="panel">
+      <h2>Method</h2>
+      <ol class="method"><li>List UniCA HAL notices with relatedData_s, relatedPublication_s DOIs, or seeAlso_s.</li><li>Record the HAL source field on every token (provenance for corrections).</li><li>Optional modifiedDate_tdate window for incremental refresh; merge by halId_s.</li><li>Parse each token as DOI, URL, HAL id, or other.</li><li>Resolve new DOIs with DataCite REST API; reuse doi_resolutions.jsonl cache.</li><li>Label repository and object_kind from landing host / publisher / known DOI prefix; never default unknown hosts to dataset_repo.</li><li>Flag dataset_repo DOIs filed only outside relatedData_s (still listed there = supplementary, not a correction).</li><li>Build dataset_to_publications (dataset_repo only) with sticky retrieved_at for the All repositories page.</li><li>Write publication-level JSONL, DOI resolution JSONL, and CSV correspondence tables.</li></ol>
+      <p class="muted" style="margin:0.85rem 0 0">
+        HAL query: <code>(relatedData_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)</code> on
+        <code>https://api.archives-ouvertes.fr/search/UNIV-BOURGOGNE/</code>.
+        DOI API: <code>https://api.datacite.org/dois/{doi}</code>.
+        Run: <code>2026-09-24T15:12:20Z</code> → <code>2026-09-24T15:13:23Z</code>.
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>Artifacts (download)</h2>
+      <table class="doc">
+        <thead><tr><th>Role</th><th>File</th></tr></thead>
+        <tbody><tr><td><code>publications_jsonl</code></td><td><a href="./data/census/publications_related_data.jsonl"><code>publications_related_data.jsonl</code></a></td></tr><tr><td><code>doi_resolutions_jsonl</code></td><td><a href="./data/census/doi_resolutions.jsonl"><code>doi_resolutions.jsonl</code></a></td></tr><tr><td><code>doi_hal_map_csv</code></td><td><a href="./data/census/doi_hal_repository_map.csv"><code>doi_hal_repository_map.csv</code></a></td></tr><tr><td><code>misfiled_dataset_links_csv</code></td><td><a href="./data/census/misfiled_dataset_links.csv"><code>misfiled_dataset_links.csv</code></a></td></tr><tr><td><code>doi_to_repository_csv</code></td><td><a href="./data/census/doi_to_repository.csv"><code>doi_to_repository.csv</code></a></td></tr><tr><td><code>summary_json</code></td><td><a href="./data/census/summary.json"><code>summary.json</code></a></td></tr><tr><td><code>dataset_to_publications.csv</code></td><td><a href="./data/census/dataset_to_publications.csv"><code>dataset_to_publications.csv</code></a></td></tr><tr><td><code>dataset_to_publications.jsonl</code></td><td><a href="./data/census/dataset_to_publications.jsonl"><code>dataset_to_publications.jsonl</code></a></td></tr><tr><td><code>software_deposits.csv</code></td><td><a href="./data/census/software_deposits.csv"><code>software_deposits.csv</code></a></td></tr><tr><td><code>software_deposits.jsonl</code></td><td><a href="./data/census/software_deposits.jsonl"><code>software_deposits.jsonl</code></a></td></tr><tr><td><code>software_summary.json</code></td><td><a href="./data/census/software_summary.json"><code>software_summary.json</code></a></td></tr><tr><td><code>data_papers.csv</code></td><td><a href="./data/census/data_papers.csv"><code>data_papers.csv</code></a></td></tr><tr><td><code>data_papers.jsonl</code></td><td><a href="./data/census/data_papers.jsonl"><code>data_papers.jsonl</code></a></td></tr><tr><td><code>data_papers_summary.json</code></td><td><a href="./data/census/data_papers_summary.json"><code>data_papers_summary.json</code></a></td></tr><tr><td><code>misfiled_dataset_links.csv</code></td><td><a href="./data/census/misfiled_dataset_links.csv"><code>misfiled_dataset_links.csv</code></a></td></tr></tbody>
+      </table>
+      <p class="muted" style="margin:0.85rem 0 0">
+        Start with
+        <a href="./data/census/dataset_to_publications.csv"><code>dataset_to_publications.csv</code></a>
+        (dataset → publications),
+        <a href="./data/census/doi_to_repository.csv"><code>doi_to_repository.csv</code></a>
+        (DOI → repository),
+        <a href="./data/census/software_deposits.csv"><code>software_deposits.csv</code></a>
+        (SOFTWARE + SWHID + code repos), and
+        <a href="./data/census/doi_hal_repository_map.csv"><code>doi_hal_repository_map.csv</code></a>,
+        and the correction queue
+        <a href="./data/census/misfiled_dataset_links.csv"><code>misfiled_dataset_links.csv</code></a>
+        (dataset DOIs filed outside <code>relatedData_s</code>).
+        Methodology:
+        <a href="./data/census/METHODOLOGY.md"><code>METHODOLOGY.md</code></a>.
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>Repository totals (this census)</h2>
+      <table class="doc">
+        <thead><tr><th>Repository</th><th>Related DOI count</th></tr></thead>
+        <tbody><tr><td>Recherche Data Gouv</td><td style="text-align:right">99</td></tr><tr><td>Unknown (DOI not in DataCite)</td><td style="text-align:right">98</td></tr><tr><td>NAKALA</td><td style="text-align:right">26</td></tr><tr><td>Zenodo</td><td style="text-align:right">23</td></tr><tr><td>dataUBFC - Atelier de la donnée de Bourgogne-Franche-Comté</td><td style="text-align:right">15</td></tr><tr><td>Portail Data Inra</td><td style="text-align:right">13</td></tr><tr><td>Dryad</td><td style="text-align:right">10</td></tr><tr><td>Progedo-Adisp</td><td style="text-align:right">9</td></tr><tr><td>Figshare</td><td style="text-align:right">5</td></tr><tr><td>Mendeley Data</td><td style="text-align:right">4</td></tr><tr><td>Australian Antarctic Data Centre</td><td style="text-align:right">3</td></tr><tr><td>CIRAD Dataverse</td><td style="text-align:right">3</td></tr><tr><td>Imagerie et Vision Artificielle</td><td style="text-align:right">3</td></tr><tr><td>Agroscope</td><td style="text-align:right">2</td></tr><tr><td>Autorité de sûreté nucléaire et de radioprotection</td><td style="text-align:right">2</td></tr><tr><td>Centre interlangues : texte, image, langage</td><td style="text-align:right">2</td></tr><tr><td>Classiques Garnier</td><td style="text-align:right">2</td></tr><tr><td>Editions et presses universitaires de Reims</td><td style="text-align:right">2</td></tr><tr><td>GitHub</td><td style="text-align:right">2</td></tr><tr><td>INRAE (prefix 10.15454)</td><td style="text-align:right">2</td></tr><tr><td>Laboratoire Chrono-environnement (UMR 6249)</td><td style="text-align:right">2</td></tr><tr><td>arXiv</td><td style="text-align:right">2</td></tr><tr><td>AU/AADC > Australian Antarctic Data Centre, Australia</td><td style="text-align:right">1</td></tr><tr><td>Copernicus Climate Change Service (C3S) Climate Data Store (CDS)</td><td style="text-align:right">1</td></tr><tr><td>KIT publications</td><td style="text-align:right">1</td></tr><tr><td>Laboratoire Chrono-environnement</td><td style="text-align:right">1</td></tr><tr><td>OSF</td><td style="text-align:right">1</td></tr><tr><td>Portail Data INRAE</td><td style="text-align:right">1</td></tr><tr><td>Recherche Data Gouv → HAL notice</td><td style="text-align:right">1</td></tr><tr><td>Science Data Bank</td><td style="text-align:right">1</td></tr><tr><td>data.InDoRES</td><td style="text-align:right">1</td></tr></tbody>
+      </table>
+    </section>
+
+    <footer>
+      <div class="updated">Last updated: <time datetime="2026-09-24T15:13:26Z">24 Sep 2026, 17:13 CEST</time></div>
+      Source repository: <a href="https://github.com/xiaoouwang/hal-unica">github.com/xiaoouwang/hal-unica</a>
+    </footer>
+  </main>
+</body>
+</html>

@@ -9,11 +9,14 @@ build/
 # Keep census logs in repo for documentation; ignore noisy temp logs
 logs/*
 !logs/census.log
+!logs/ube-census.log
 
 # Bulk harvest stays local (too large for git)
 data/unica_hal_metadata.jsonl
 data/unica_hal_metadata.jsonl.meta.json
 data/unica_hal_delta.jsonl
+data/ube/harvest.jsonl
+data/ube/harvest.jsonl.meta.json
 data/sample.jsonl
 data/sample.jsonl.meta.json
 
@@ -22,4 +25,6 @@ data/sample.jsonl.meta.json
 !data/unica_data_repo_links.jsonl.summary.json
 !data/census/
 !data/census/**
+!data/ube/
+!data/ube/**
 .vscode/

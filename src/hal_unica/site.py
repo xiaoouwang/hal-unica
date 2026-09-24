@@ -11,37 +11,45 @@ from pathlib import Path
 from typing import Any
 
 from .data_repos import hits_from_jsonl, summarize
-
-SITE_BASE_URL = "https://xiaoouwang.github.io/hal-unica"
-SITE_NAME = "HAL-UniCA"
-SITE_TAGLINE = (
-    "Open-science monitoring for Université Côte d’Azur on HAL: "
-    "linked datasets, repositories, software, and correction queues."
+from .universities import (
+    DEFAULT_UNIVERSITY,
+    University,
+    get_university,
+    other_universities,
+    reset_university,
+    set_university,
 )
 
-# Partner / sibling HAL portals shown above the page eyebrow (extend as needed).
-# Each entry: id, label, href (opens in a new tab), logo filename under static/universities/.
-UNIVERSITY_PORTALS: list[dict[str, str]] = [
-    {
-        "id": "ube",
-        "label": "Université Bourgogne Europe",
-        "href": "https://ube.hal.science/",
-        "logo": "ube.png",
-    },
-]
+# Back-compat aliases (resolved from the active university tenant).
+SITE_BASE_URL = DEFAULT_UNIVERSITY.site_base_url
+SITE_NAME = DEFAULT_UNIVERSITY.site_name
+SITE_TAGLINE = DEFAULT_UNIVERSITY.tagline
 
 
 def _utc_now() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+def _site_base_url() -> str:
+    return get_university().site_base_url
+
+
+def _site_name() -> str:
+    return get_university().site_name
+
+
+def _site_tagline() -> str:
+    return get_university().tagline
+
+
 def _abs_url(path: str) -> str:
+    base = _site_base_url()
     path = (path or "").strip()
     if not path or path in (".", "./", "/", "./index.html", "index.html"):
-        return f"{SITE_BASE_URL}/"
+        return f"{base}/"
     if path.startswith("http://") or path.startswith("https://"):
         return path
-    return f"{SITE_BASE_URL}/{path.lstrip('./')}"
+    return f"{base}/{path.lstrip('./')}"
 
 
 def _seo_head(
@@ -55,25 +63,29 @@ def _seo_head(
     extra_head: str = "",
 ) -> str:
     """Shared <head> SEO block (title, description, canonical, OG, Twitter, JSON-LD)."""
-    full_title = title if title.startswith(SITE_NAME) else f"{SITE_NAME} · {title}"
+    uni = get_university()
+    name = uni.site_name
+    tagline = uni.tagline
+    base = uni.site_base_url
+    full_title = title if title.startswith(name) else f"{name} · {title}"
     canonical = _abs_url(path)
-    desc = " ".join((description or SITE_TAGLINE).split())
+    desc = " ".join((description or tagline).split())
     if len(desc) > 160:
         desc = desc[:157].rstrip() + "…"
-    website_id = f"{SITE_BASE_URL}/#website"
+    website_id = f"{base}/#website"
     graph: list[dict[str, Any]] = [
         {
             "@type": "WebSite",
             "@id": website_id,
-            "name": SITE_NAME,
-            "url": f"{SITE_BASE_URL}/",
-            "description": SITE_TAGLINE,
+            "name": name,
+            "url": f"{base}/",
+            "description": tagline,
             "inLanguage": "en",
             "publisher": {
                 "@type": "Organization",
-                "name": "Université Côte d’Azur",
-                "url": "https://univ-cotedazur.fr/",
-                "sameAs": ["https://hal.science/UNIV-COTEDAZUR"],
+                "name": uni.display_name,
+                "url": uni.org_url,
+                "sameAs": [uni.collection_url],
             },
         },
         {
@@ -98,11 +110,11 @@ def _seo_head(
   <title>{full_title}</title>
   <meta name="description" content="{_html_attr(desc)}" />
   <meta name="robots" content="{_html_attr(robots)}" />
-  <meta name="author" content="HAL-UniCA · Université Côte d’Azur" />
+  <meta name="author" content="{_html_attr(f'{name} · {uni.display_name}')}" />
   <meta name="theme-color" content="#f4f0ea" />
   <link rel="canonical" href="{canonical}" />
   <meta property="og:type" content="{_html_attr(page_type)}" />
-  <meta property="og:site_name" content="{SITE_NAME}" />
+  <meta property="og:site_name" content="{name}" />
   <meta property="og:locale" content="en_GB" />
   <meta property="og:title" content="{_html_attr(full_title)}" />
   <meta property="og:description" content="{_html_attr(desc)}" />
@@ -115,7 +127,6 @@ def _seo_head(
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
   <script type="application/ld+json">{ld}</script>
 {extra_head}"""
-
 
 def _html_attr(value: str) -> str:
     return (
@@ -167,7 +178,7 @@ def _write_seo_files(output_dir: Path, *, generated_at: str | None = None) -> No
         f"Allow: /\n"
         f"Disallow: /embed-chart.html\n"
         f"Disallow: /data/\n"
-        f"Sitemap: {SITE_BASE_URL}/sitemap.xml\n",
+        f"Sitemap: {_site_base_url()}/sitemap.xml\n",
         encoding="utf-8",
     )
 
@@ -620,6 +631,22 @@ def build_site_payload(
         if harvest and "stale" not in harvest:
             harvest = {**harvest, "stale": True}
 
+    # When no full harvest JSONL exists yet, at least show the live HAL document count.
+    if not (harvest_path and harvest_path.exists()) and int(harvest.get("documents") or 0) == 0:
+        try:
+            from .client import HalClient
+
+            with HalClient(collection=collection) as client:
+                n_docs = client.count(q="*:*")
+            harvest = {
+                **harvest,
+                "documents": n_docs,
+                "stale": True,
+                "live_count_only": True,
+            }
+        except Exception:
+            pass
+
     hits = hits_from_jsonl(links_path)
     link_summary = summarize(hits)
     related = related_dataset_publications(links_path)
@@ -715,17 +742,26 @@ nav a.navlink:hover, nav a.navlink[aria-current="page"] {
   font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--accent-hover);
 }
+.uni-switcher {
+  margin: 0 0 0.85rem;
+}
+.uni-switcher-label {
+  margin: 0 0 0.45rem;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink-soft);
+}
 .uni-logos {
   display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.1rem;
-  margin: 0 0 0.85rem; padding: 0;
+  margin: 0; padding: 0;
   list-style: none;
 }
 .uni-logos a {
   display: inline-flex; align-items: center; justify-content: center;
-  height: 2.75rem; padding: 0.2rem 0.35rem;
+  height: 2.75rem; padding: 0.2rem 0.45rem;
   border-radius: 8px; border: 1px solid var(--line);
   background: rgba(251,250,248,0.9);
   transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+  text-decoration: none;
 }
 .uni-logos a:hover, .uni-logos a:focus-visible {
   border-color: var(--accent); box-shadow: 0 0 0 3px rgba(42,38,34,0.08);
@@ -734,6 +770,10 @@ nav a.navlink:hover, nav a.navlink[aria-current="page"] {
 .uni-logos img {
   display: block; height: 2.2rem; width: auto; max-width: 9.5rem;
   object-fit: contain;
+}
+.uni-logos .uni-logo-text {
+  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.03em;
+  color: var(--ink); white-space: nowrap;
 }
 @media (max-width: 520px) {
   .uni-logos a { height: 2.4rem; }
@@ -1375,29 +1415,35 @@ STACK_CHART_JS = r"""
 
 
 def _university_logos_html() -> str:
-    """Row of university logos linking to their HAL portals (new tab)."""
-    if not UNIVERSITY_PORTALS:
+    """Row of sibling university snapshots (new tab), excluding the current tenant."""
+    viewer = get_university()
+    others = other_universities(viewer)
+    if not others:
         return ""
     items = []
-    for portal in UNIVERSITY_PORTALS:
-        logo = portal.get("logo") or ""
-        href = portal.get("href") or "#"
-        label = portal.get("label") or portal.get("id") or "University"
-        src = f"./assets/universities/{logo}" if logo else ""
-        if not src:
-            continue
+    for uni in others:
+        href = uni.absolute_home_url
+        label = uni.display_name
+        title = f"{label} — open science snapshot"
+        if uni.logo:
+            src = f"./assets/universities/{uni.logo}"
+            inner = (
+                f'<img src="{_html_attr(src)}" alt="{_html_attr(label)}" '
+                f'width="160" height="82" loading="lazy" decoding="async" />'
+            )
+        else:
+            inner = f'<span class="uni-logo-text">{_html_attr(uni.short_name)}</span>'
         items.append(
             f'<li><a href="{_html_attr(href)}" target="_blank" rel="noopener noreferrer" '
-            f'title="{_html_attr(label)} — open HAL portal">'
-            f'<img src="{_html_attr(src)}" alt="{_html_attr(label)}" width="160" height="82" '
-            f'loading="lazy" decoding="async" /></a></li>'
+            f'title="{_html_attr(title)}">{inner}</a></li>'
         )
-    if not items:
-        return ""
     return (
-        '<ul class="uni-logos" aria-label="University HAL portals">\n'
-        + "\n".join(items)
-        + "\n    </ul>"
+        '<div class="uni-switcher">\n'
+        '      <p class="uni-switcher-label">Open Science Snapshots of Other Universities</p>\n'
+        '      <ul class="uni-logos" aria-label="Open science snapshots of other universities">\n'
+        + "\n".join(f"        {item}" for item in items)
+        + "\n      </ul>\n"
+        "    </div>"
     )
 
 
@@ -1406,10 +1452,11 @@ def _nav(active: str) -> str:
         cur = ' aria-current="page"' if key == active else ""
         return f'<a class="navlink" href="{href}"{cur}>{label}</a>'
 
+    brand = _site_name()
     return f"""
     <a class="skip-link" href="#main">Skip to content</a>
     <nav aria-label="Primary">
-      <a class="brand" href="./index.html" rel="home">HAL-UniCA</a>
+      <a class="brand" href="./index.html" rel="home">{brand}</a>
       {link("./index.html", "Statistics", "stats")}
       {link("./related-datasets.html", "Nakala / RDG", "related")}
       {link("./all-repositories.html", "All repositories", "census")}
@@ -1423,14 +1470,15 @@ def _nav(active: str) -> str:
 
 
 def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
+    uni = get_university()
     head = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 {_seo_head(
     title="Open science statistics",
     description=(
-        "Université Côte d’Azur HAL open-science snapshot: documents, DOIs, "
-        "linked datasets by year and repository, and where UniCA research data live."
+        f"{uni.display_name} HAL open-science snapshot: documents, DOIs, "
+        f"linked datasets by year and repository, and where {uni.short_name} research data live."
     ),
     path="index.html",
     extra_head=f"  <style>{SHARED_CSS}</style>",
@@ -1439,11 +1487,11 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
 <body>
   <main class="wrap" id="main">
     {_nav("stats")}
-    <p class="eyebrow">Université Côte d’Azur · HAL</p>
+    <p class="eyebrow">{uni.display_name} · HAL</p>
     <h1>Open science snapshot</h1>
     <p class="lede">
       Metadata harvest of the institutional HAL collection
-      <a id="collectionLink" href="https://hal.science/UNIV-COTEDAZUR">UNIV-COTEDAZUR</a>,
+      <a id="collectionLink" href="{uni.collection_url}">{uni.collection}</a>,
       plus every linked data-repository DOI declared on those notices.
     </p>
     <div class="stats" id="stats" role="group" aria-label="Key statistics"></div>
@@ -1509,6 +1557,7 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
     const rd = data.related_datasets;
     const dl = data.data_links;
     const chart = data.census_chart || null;
+    const shortName = {json.dumps(uni.short_name)};
     document.getElementById("collectionLink").href = data.collection_url;
     document.getElementById("collectionLink").textContent = data.collection;
     const extra = document.getElementById("footerExtra");
@@ -1598,7 +1647,7 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
     const repoCount = Object.keys((chart && chart.by_repository) || dl.by_repository || {{}}).length;
     const more = repoCount > 8 ? ` · +${{repoCount - 8}} more repositories` : "";
     document.getElementById("relatedBlurb").textContent =
-      `${{pubsWithData}} UniCA HAL publications declare at least one related dataset DOI on a data repository (all repositories). ${{topRepos}}${{more}}.`;
+      `${{pubsWithData}} ${{shortName}} HAL publications declare at least one related dataset DOI on a data repository (all repositories). ${{topRepos}}${{more}}.`;
   </script>
 </body>
 </html>
@@ -1608,12 +1657,13 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
 
 def render_embed_chart(chart_json: str, *, generated_at: str | None = None) -> str:
     """Minimal page for iframe embedding of the stacked chart."""
+    uni = get_university()
     head = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 {_seo_head(
     title="Datasets by year (embed)",
-    description="Embeddable UniCA HAL chart of linked datasets by year and repository.",
+    description=f"Embeddable {uni.short_name} HAL chart of linked datasets by year and repository.",
     path="embed-chart.html",
     robots="noindex,nofollow",
     extra_head=f"  <style>{SHARED_CSS}</style>",
@@ -1621,14 +1671,14 @@ def render_embed_chart(chart_json: str, *, generated_at: str | None = None) -> s
 </head>
 <body class="embed-page">
   <main class="wrap" id="main">
-    <p class="eyebrow">HAL-UniCA · embed</p>
+    <p class="eyebrow">{uni.site_name} · embed</p>
     <h1 style="font-size:1.45rem;margin:0.2rem 0 0.35rem">Linked datasets by year and repository</h1>
     <p class="muted" style="margin:0" id="chartNote"></p>
     <div class="stack-wrap">
       <div class="stack-legend" id="stackLegend"></div>
       <div class="stack-chart" id="stackChart"></div>
     </div>
-    <p class="chart-embed-hint">Click a segment to list datasets. Source: <a href="./index.html" target="_blank" rel="noopener">HAL-UniCA</a></p>
+    <p class="chart-embed-hint">Click a segment to list datasets. Source: <a href="./index.html" target="_blank" rel="noopener">{uni.site_name}</a></p>
     {_footer(generated_at)}
   </main>
   {_chart_modal_html()}
@@ -1654,6 +1704,7 @@ def render_embed_chart(chart_json: str, *, generated_at: str | None = None) -> s
 
 
 def render_related(payload_json: str, *, generated_at: str | None = None) -> str:
+    uni = get_university()
     sort_opts = """
             <option value="hal_desc" selected>Newest HAL update</option>
             <option value="hal_asc">Oldest HAL update</option>
@@ -1667,7 +1718,7 @@ def render_related(payload_json: str, *, generated_at: str | None = None) -> str
 {_seo_head(
     title="Nakala & Recherche Data Gouv",
     description=(
-        "UniCA HAL publications linked to NAKALA or Recherche Data Gouv datasets, "
+        f"{uni.short_name} HAL publications linked to NAKALA or Recherche Data Gouv datasets, "
         "with search, lab filters, and publication years."
     ),
     path="related-datasets.html",
@@ -1680,7 +1731,7 @@ def render_related(payload_json: str, *, generated_at: str | None = None) -> str
     <p class="eyebrow">Publications ↔ datasets</p>
     <h1>Related datasets</h1>
     <p class="lede">
-      HAL publications in the UniCA collection that declare a
+      HAL publications in the {uni.short_name} collection that declare a
       <code>relatedData</code> link resolving to a real data repository
       (NAKALA or Recherche Data Gouv — including federated nodes such as Data INRAE).
     </p>
@@ -1813,6 +1864,7 @@ def render_related(payload_json: str, *, generated_at: str | None = None) -> str
 
 
 def render_census(census_json: str, *, generated_at: str | None = None) -> str:
+    uni = get_university()
     sort_opts = """
             <option value="retrieved_desc" selected>Newest retrieved</option>
             <option value="retrieved_asc">Oldest retrieved</option>
@@ -1827,7 +1879,7 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
 {_seo_head(
     title="All data repositories",
     description=(
-        "All UniCA HAL-linked dataset DOIs with repository landings, linking publications, "
+        f"All {uni.short_name} HAL-linked dataset DOIs with repository landings, linking publications, "
         "labs, and retrieval dates across Zenodo, Recherche Data Gouv, NAKALA, and more."
     ),
     path="all-repositories.html",
@@ -2026,6 +2078,7 @@ def render_census(census_json: str, *, generated_at: str | None = None) -> str:
 
 
 def render_software(software_json: str, *, generated_at: str | None = None) -> str:
+    uni = get_university()
     sort_opts = """
             <option value="retrieved_desc" selected>Newest retrieved</option>
             <option value="retrieved_asc">Oldest retrieved</option>
@@ -2039,7 +2092,7 @@ def render_software(software_json: str, *, generated_at: str | None = None) -> s
 {_seo_head(
     title="Software & source code",
     description=(
-        "Université Côte d’Azur HAL SOFTWARE deposits with code repositories, "
+        f"{uni.display_name} HAL SOFTWARE deposits with code repositories, "
         "Software Heritage SWHIDs, and related publications."
     ),
     path="software.html",
@@ -2052,7 +2105,7 @@ def render_software(software_json: str, *, generated_at: str | None = None) -> s
     <p class="eyebrow">HAL SOFTWARE deposits</p>
     <h1>Software &amp; source code</h1>
     <p class="lede">
-      UniCA HAL notices with <code>docType_s=SOFTWARE</code>, including code repository
+      {uni.short_name} HAL notices with <code>docType_s=SOFTWARE</code>, including code repository
       URLs, Software Heritage (SWHID) archives, HAL files, and related publications
       when declared.
     </p>
@@ -2187,6 +2240,7 @@ def render_software(software_json: str, *, generated_at: str | None = None) -> s
 
 
 def render_data_papers(papers_json: str, *, generated_at: str | None = None) -> str:
+    uni = get_university()
     sort_opts = """
             <option value="retrieved_desc" selected>Newest retrieved</option>
             <option value="retrieved_asc">Oldest retrieved</option>
@@ -2201,7 +2255,7 @@ def render_data_papers(papers_json: str, *, generated_at: str | None = None) -> 
 {_seo_head(
     title="Data papers",
     description=(
-        "Université Côte d’Azur HAL data papers (docSubType_s=DATAPAPER): journal articles "
+        f"{uni.display_name} HAL data papers (docSubType_s=DATAPAPER): journal articles "
         "describing research datasets, with linked repositories, labs, and years."
     ),
     path="data-papers.html",
@@ -2214,7 +2268,7 @@ def render_data_papers(papers_json: str, *, generated_at: str | None = None) -> 
     <p class="eyebrow">HAL · docSubType_s=DATAPAPER</p>
     <h1>Data papers</h1>
     <p class="lede">
-      Peer-reviewed UniCA HAL articles tagged as <strong>data papers</strong>
+      Peer-reviewed {uni.short_name} HAL articles tagged as <strong>data papers</strong>
       (<code>docType_s=ART</code> + <code>docSubType_s=DATAPAPER</code>): scholarly descriptions of
       research datasets, with journal metadata and any declared dataset links.
     </p>
@@ -2379,13 +2433,14 @@ def render_data_papers(papers_json: str, *, generated_at: str | None = None) -> 
 
 
 def render_corrections(corrections_json: str, *, generated_at: str | None = None) -> str:
+    uni = get_university()
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 {_seo_head(
     title="To Be Corrected",
     description=(
-        "Misfiled UniCA HAL dataset links: DOIs that resolve to a data repository but "
+        f"Misfiled {uni.short_name} HAL dataset links: DOIs that resolve to a data repository but "
         "were declared only outside relatedData_s and need correction."
     ),
     path="to-be-corrected.html",
@@ -2506,6 +2561,7 @@ def render_documentation(
     *,
     generated_at: str | None = None,
 ) -> str:
+    uni = get_university()
     artifacts = manifest.get("artifacts") or {}
     method = manifest.get("method") or []
     method_li = "".join(f"<li>{m}</li>" for m in method)
@@ -2531,8 +2587,8 @@ def render_documentation(
 {_seo_head(
     title="Documentation",
     description=(
-        "HAL-UniCA census methodology and downloadable DOI maps, repository summaries, "
-        "and misfiled-link CSVs for Université Côte d’Azur open science."
+        f"{uni.site_name} census methodology and downloadable DOI maps, repository summaries, "
+        f"and misfiled-link CSVs for {uni.display_name} open science."
     ),
     path="documentation.html",
     extra_head=doc_extra,
@@ -2606,6 +2662,39 @@ def write_site(
     links_path: Path,
     output_dir: Path,
     collection: str = "UNIV-COTEDAZUR",
+    census_dir: Path | None = None,
+    stats_fallback: Path | None = None,
+    university: University | None = None,
+) -> Path:
+    uni = university or DEFAULT_UNIVERSITY
+    if university is None:
+        # Prefer registered tenant matching the collection code.
+        from .universities import UNIVERSITIES
+
+        for candidate in UNIVERSITIES.values():
+            if candidate.collection == collection:
+                uni = candidate
+                break
+    token = set_university(uni)
+    try:
+        return _write_site_inner(
+            harvest_path=harvest_path,
+            links_path=links_path,
+            output_dir=output_dir,
+            collection=collection or uni.collection,
+            census_dir=census_dir,
+            stats_fallback=stats_fallback,
+        )
+    finally:
+        reset_university(token)
+
+
+def _write_site_inner(
+    *,
+    harvest_path: Path | None,
+    links_path: Path,
+    output_dir: Path,
+    collection: str,
     census_dir: Path | None = None,
     stats_fallback: Path | None = None,
 ) -> Path:

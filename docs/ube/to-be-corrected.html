@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HAL-UBE · To Be Corrected</title>
+  <meta name="description" content="Misfiled UBE HAL dataset links: DOIs that resolve to a data repository but were declared only outside relatedData_s and need correction." />
+  <meta name="robots" content="index,follow" />
+  <meta name="author" content="HAL-UBE · Université Bourgogne Europe" />
+  <meta name="theme-color" content="#f4f0ea" />
+  <link rel="canonical" href="https://xiaoouwang.github.io/hal-unica/ube/to-be-corrected.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="HAL-UBE" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:title" content="HAL-UBE · To Be Corrected" />
+  <meta property="og:description" content="Misfiled UBE HAL dataset links: DOIs that resolve to a data repository but were declared only outside relatedData_s and need correction." />
+  <meta property="og:url" content="https://xiaoouwang.github.io/hal-unica/ube/to-be-corrected.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="HAL-UBE · To Be Corrected" />
+  <meta name="twitter:description" content="Misfiled UBE HAL dataset links: DOIs that resolve to a data repository but were declared only outside relatedData_s and need correction." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://xiaoouwang.github.io/hal-unica/ube/#website","name":"HAL-UBE","url":"https://xiaoouwang.github.io/hal-unica/ube/","description":"Open-science monitoring for Université Bourgogne Europe on HAL: linked datasets, repositories, software, and correction queues.","inLanguage":"en","publisher":{"@type":"Organization","name":"Université Bourgogne Europe","url":"https://www.ube.fr/","sameAs":["https://hal.science/UNIV-BOURGOGNE"]}},{"@type":"WebPage","@id":"https://xiaoouwang.github.io/hal-unica/ube/to-be-corrected.html#webpage","url":"https://xiaoouwang.github.io/hal-unica/ube/to-be-corrected.html","name":"HAL-UBE · To Be Corrected","description":"Misfiled UBE HAL dataset links: DOIs that resolve to a data repository but were declared only outside relatedData_s and need correction.","isPartOf":{"@id":"https://xiaoouwang.github.io/hal-unica/ube/#website"},"inLanguage":"en"}]}</script>
+  <style>
+:root {
+  --ink: #161513;
+  --ink-soft: #6a6560;
+  --paper: #f1f0ed;
+  --surface: #fbfaf8;
+  --accent: #2a2622;
+  --accent-hover: #8a6a45;
+  --wash: #e8e4dc;
+  --line: rgba(22, 21, 19, 0.1);
+  --radius: 12px;
+  --font-display: "Syne", "Avenir Next", sans-serif;
+  --font-body: "Figtree", "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); font-family: var(--font-body);
+  background:
+    radial-gradient(1100px 520px at 8% -8%, #e7e2d8 0%, transparent 58%),
+    radial-gradient(900px 480px at 100% 0%, #ddd8cf 0%, transparent 52%),
+    linear-gradient(180deg, #f5f3ef 0%, var(--paper) 40%, #ebe8e2 100%);
+  min-height: 100vh;
+}
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+a:hover { color: var(--accent-hover); }
+.wrap { width: min(1100px, calc(100% - 2rem)); margin: 0 auto; padding: 1.5rem 0 4rem; }
+nav {
+  display: flex; gap: 0.45rem; flex-wrap: wrap; align-items: center;
+  margin-bottom: 1.75rem; padding-bottom: 0.9rem; border-bottom: 1px solid var(--line);
+}
+nav .brand {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.2rem;
+  letter-spacing: -0.03em; margin-right: auto; text-decoration: none; color: var(--ink);
+}
+nav a.navlink {
+  text-decoration: none; color: var(--ink-soft); font-weight: 500; font-size: 0.9rem;
+  padding: 0.38rem 0.7rem; border-radius: 8px; border: 1px solid transparent;
+}
+nav a.navlink:hover, nav a.navlink[aria-current="page"] {
+  color: var(--ink); background: rgba(255,255,255,0.75); border-color: var(--line);
+}
+.eyebrow {
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent-hover);
+}
+.uni-switcher {
+  margin: 0 0 0.85rem;
+}
+.uni-switcher-label {
+  margin: 0 0 0.45rem;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink-soft);
+}
+.uni-logos {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.1rem;
+  margin: 0; padding: 0;
+  list-style: none;
+}
+.uni-logos a {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 2.75rem; padding: 0.2rem 0.45rem;
+  border-radius: 8px; border: 1px solid var(--line);
+  background: rgba(251,250,248,0.9);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+  text-decoration: none;
+}
+.uni-logos a:hover, .uni-logos a:focus-visible {
+  border-color: var(--accent); box-shadow: 0 0 0 3px rgba(42,38,34,0.08);
+  transform: translateY(-1px); outline: none;
+}
+.uni-logos img {
+  display: block; height: 2.2rem; width: auto; max-width: 9.5rem;
+  object-fit: contain;
+}
+.uni-logos .uni-logo-text {
+  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.03em;
+  color: var(--ink); white-space: nowrap;
+}
+@media (max-width: 520px) {
+  .uni-logos a { height: 2.4rem; }
+  .uni-logos img { height: 1.9rem; max-width: 8rem; }
+}
+h1 {
+  margin: 0.4rem 0 0; font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.05; letter-spacing: -0.035em;
+}
+.lede { margin: 0.9rem 0 0; max-width: 42rem; color: var(--ink-soft); line-height: 1.55; font-size: 1.05rem; }
+.stats {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; margin: 1.5rem 0;
+}
+@media (max-width: 720px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.stat {
+  background: rgba(251,250,248,0.8); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 1rem 1.1rem; backdrop-filter: blur(8px);
+}
+.stat strong {
+  display: block; font-family: var(--font-display); font-size: 1.85rem; font-weight: 700;
+  line-height: 1; letter-spacing: -0.03em;
+}
+.stat span { display: block; margin-top: 0.4rem; font-size: 0.8rem; color: var(--ink-soft); }
+.panel {
+  background: rgba(251,250,248,0.85); border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 2px); padding: 1.1rem 1.15rem; margin: 1rem 0;
+  backdrop-filter: blur(10px);
+}
+.panel h2 {
+  margin: 0 0 0.75rem; font-family: var(--font-display); font-size: 1.2rem; font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.bars { display: grid; gap: 0.45rem; }
+.bar-row { display: grid; grid-template-columns: 7.5rem 1fr 3.2rem; gap: 0.6rem; align-items: center; font-size: 0.9rem; }
+.bar-track { height: 0.5rem; background: var(--wash); border-radius: 999px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--accent); border-radius: 999px; }
+.panel.reveal .bar-fill {
+  width: 0;
+  transition: width 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.panel.reveal.is-visible .bar-fill { width: var(--bar-w, 0%); }
+.panel.reveal {
+  opacity: 0;
+  transform: translateY(0.85rem);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.panel.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .panel.reveal {
+    opacity: 1; transform: none; transition: none;
+  }
+  .panel.reveal .bar-fill { transition: none; width: var(--bar-w, 0%); }
+}
+.bar-row span:last-child { text-align: right; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.muted { color: var(--ink-soft); font-size: 0.88rem; }
+.stack-wrap { margin-top: 0.75rem; }
+.stack-legend {
+  display: flex; flex-wrap: wrap; gap: 0.45rem 0.9rem; margin: 0 0 1rem;
+  font-size: 0.82rem; color: var(--ink-soft);
+}
+.stack-legend .stack-legend-item {
+  appearance: none; border: 0; background: transparent; font: inherit;
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  cursor: pointer; border-radius: 6px; padding: 0.15rem 0.35rem;
+  color: inherit;
+  transition: opacity 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+.stack-legend .stack-legend-item:hover,
+.stack-wrap.is-filtering .stack-legend-item.is-active {
+  color: var(--ink); background: rgba(42,38,34,0.06);
+}
+.stack-wrap.is-filtering .stack-legend-item:not(.is-active) { opacity: 0.35; }
+.stack-swatch {
+  width: 0.7rem; height: 0.7rem; border-radius: 3px; flex: 0 0 auto;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
+}
+.stack-chart {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(2.4rem, 1fr));
+  gap: 0.45rem; align-items: end; min-height: 16rem;
+  padding: 0.25rem 0 0;
+  border-bottom: 1px solid var(--line);
+}
+.stack-col {
+  display: flex; flex-direction: column; align-items: center; gap: 0.35rem;
+  min-width: 0;
+}
+.stack-total {
+  font-family: var(--font-display); font-weight: 700; font-size: 0.85rem;
+  letter-spacing: -0.02em; color: var(--ink);
+}
+.stack-bars {
+  width: 100%; max-width: 2.75rem; height: 14rem;
+  display: flex; flex-direction: column-reverse; justify-content: flex-start;
+  border-radius: 4px 4px 0 0; overflow: hidden; background: var(--wash);
+}
+.stack-seg {
+  width: 100%; display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 0.68rem; font-weight: 700; font-variant-numeric: tabular-nums;
+  min-height: 0; cursor: pointer;
+  transition: opacity 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.25);
+}
+.stack-seg:hover,
+.stack-wrap.is-filtering .stack-seg.is-active {
+  filter: brightness(1.08); box-shadow: inset 0 0 0 2px rgba(255,255,255,0.85);
+  z-index: 1;
+}
+.stack-wrap.is-filtering .stack-seg:not(.is-active) { opacity: 0.18; filter: grayscale(0.35); }
+.stack-year {
+  font-size: 0.78rem; color: var(--ink-soft); font-variant-numeric: tabular-nums;
+}
+.chart-embed-hint {
+  margin: 0.65rem 0 0; font-size: 0.85rem; color: var(--ink-soft);
+}
+.chart-embed-hint code {
+  font-size: 0.8em; background: var(--wash); padding: 0.1rem 0.35rem; border-radius: 4px;
+}
+.chart-modal {
+  position: fixed; inset: 0; z-index: 80;
+  display: flex; align-items: flex-end; justify-content: center;
+  padding: 1rem; background: rgba(28, 24, 20, 0.45);
+}
+.chart-modal[hidden] { display: none; }
+@media (min-width: 720px) {
+  .chart-modal { align-items: center; padding: 1.5rem; }
+}
+.chart-modal-dialog {
+  width: min(40rem, 100%); max-height: min(85vh, 40rem);
+  display: flex; flex-direction: column;
+  background: var(--surface); color: var(--ink);
+  border-radius: 14px; border: 1px solid var(--line);
+  box-shadow: 0 18px 48px rgba(28, 24, 20, 0.28);
+  overflow: hidden;
+}
+.chart-modal-head {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 1rem; padding: 1rem 1.1rem 0.75rem;
+  border-bottom: 1px solid var(--line);
+}
+.chart-modal-head h3 {
+  margin: 0; font-family: var(--font-display); font-size: 1.15rem; letter-spacing: -0.02em;
+}
+.chart-modal-close {
+  appearance: none; border: 0; background: var(--wash); color: var(--ink);
+  width: 2rem; height: 2rem; border-radius: 8px; font-size: 1.2rem; line-height: 1;
+  cursor: pointer; flex: 0 0 auto;
+}
+.chart-modal-close:hover { background: var(--line); }
+.chart-modal-body {
+  overflow: auto; padding: 0.85rem 1.1rem 1.15rem;
+  display: grid; gap: 0.75rem;
+}
+.chart-modal-item {
+  padding: 0.7rem 0; border-bottom: 1px solid var(--line);
+}
+.chart-modal-item:last-child { border-bottom: 0; }
+.chart-modal-item .title {
+  margin: 0 0 0.25rem; font-size: 0.98rem;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 0.55rem;
+}
+.chart-modal-item .title > a:first-child { color: inherit; text-decoration: none; }
+.chart-modal-item .title > a:first-child:hover { color: var(--accent-hover); text-decoration: underline; }
+.chart-modal-doi {
+  font-weight: 500; font-size: 0.82rem; color: var(--ink-soft); text-decoration: none;
+  white-space: nowrap;
+}
+.chart-modal-doi:hover { color: var(--accent-hover); text-decoration: underline; }
+.chart-modal-doi code { font-size: 0.92em; }
+.chart-modal-pubs { margin: 0.25rem 0 0; padding-left: 1.1rem; font-size: 0.85rem; color: var(--ink-soft); }
+.chart-modal-pubs li { margin: 0.2rem 0; }
+.chart-modal-empty { color: var(--ink-soft); font-size: 0.92rem; padding: 0.5rem 0; }
+body.embed-page { background: var(--bg); }
+body.embed-page .wrap { max-width: 56rem; padding: 1rem 1.1rem 1.5rem; }
+.search {
+  width: 100%; border: 1px solid var(--line); border-radius: 10px;
+  padding: 0.85rem 1.1rem; font: inherit; background: var(--surface); outline: none; margin-bottom: 0.75rem;
+}
+.search:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(42,38,34,0.1); }
+.filters { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+.toolbar {
+  display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; align-items: center;
+  justify-content: space-between; margin: 0.15rem 0 0.85rem;
+}
+.toolbar-controls { display: flex; flex-wrap: wrap; gap: 0.65rem 1rem; align-items: center; }
+.toolbar-label {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  color: var(--ink-soft); font-size: 0.9rem;
+}
+.toolbar select, .toolbar input[type="search"].lab-filter {
+  border: 1px solid var(--line); border-radius: 8px; background: var(--surface);
+  color: var(--ink); font: inherit; font-size: 0.9rem; padding: 0.4rem 0.65rem;
+}
+.toolbar input[type="search"].lab-filter { min-width: 11rem; margin: 0; }
+.toolbar select.lab-select { max-width: 14rem; }
+.chip {
+  appearance: none; border: 1px solid var(--line); background: var(--surface); color: var(--ink-soft);
+  border-radius: 8px; padding: 0.4rem 0.75rem; font: inherit; font-size: 0.84rem;
+  font-weight: 500; cursor: pointer;
+}
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #faf9f7; }
+.list { display: grid; gap: 0.65rem; }
+.result {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1rem 1.1rem; display: grid; gap: 0.65rem;
+}
+.title-row { display: flex; gap: 0.75rem; justify-content: space-between; align-items: start; }
+.title {
+  margin: 0; font-family: var(--font-display); font-size: 1.05rem; font-weight: 700;
+  line-height: 1.3; letter-spacing: -0.02em;
+}
+.doi-annot {
+  display: block; margin: 0 0 0.35rem; font-size: 0.8rem; font-weight: 500;
+  color: var(--ink-soft); letter-spacing: 0.02em;
+}
+.badges { display: flex; flex-wrap: wrap; gap: 0.35rem; justify-content: flex-end; max-width: 42%; }
+.badge {
+  font-size: 0.7rem; font-weight: 600; padding: 0.28rem 0.55rem; border-radius: 6px;
+  background: var(--wash); color: var(--accent); border: 1px solid var(--line);
+}
+.sub { display: flex; flex-wrap: wrap; gap: 0.55rem 1rem; font-size: 0.86rem; color: var(--ink-soft); }
+.sub code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.82rem;
+  background: var(--paper); padding: 0.1rem 0.35rem; border-radius: 4px;
+}
+.evidence {
+  border-top: 1px solid var(--line); padding-top: 0.75rem; display: grid; gap: 0.5rem;
+}
+.ev {
+  display: grid; grid-template-columns: 6.5rem 1fr; gap: 0.75rem; font-size: 0.9rem;
+  padding: 0.55rem 0.65rem; border-radius: 8px; background: #f3f1ec;
+}
+@media (max-width: 640px) {
+  .ev { grid-template-columns: 1fr; }
+  .badges { max-width: 100%; justify-content: flex-start; }
+}
+.ev dt {
+  margin: 0; font-weight: 650; color: var(--ink-soft); font-size: 0.72rem;
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+.ev dd { margin: 0; word-break: break-word; }
+.meta-row { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin: 0.5rem 0 0.85rem; color: var(--ink-soft); font-size: 0.92rem; }
+footer { margin-top: 2rem; font-size: 0.82rem; color: var(--ink-soft); line-height: 1.5; }
+footer .updated { font-weight: 600; color: var(--ink); margin-bottom: 0.35rem; }
+footer .updated time { font-variant-numeric: tabular-nums; }
+.empty { padding: 2rem; text-align: center; color: var(--ink-soft); }
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 100;
+  padding: 0.6rem 1rem; background: var(--ink); color: #fff; border-radius: 0 0 8px 0;
+}
+.skip-link:focus { left: 0; }
+</style>
+</head>
+<body>
+  <main class="wrap" id="main">
+    
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav aria-label="Primary">
+      <a class="brand" href="./index.html" rel="home">HAL-UBE</a>
+      <a class="navlink" href="./index.html">Statistics</a>
+      <a class="navlink" href="./related-datasets.html">Nakala / RDG</a>
+      <a class="navlink" href="./all-repositories.html">All repositories</a>
+      <a class="navlink" href="./data-papers.html">Data papers</a>
+      <a class="navlink" href="./to-be-corrected.html" aria-current="page">To Be Corrected</a>
+      <a class="navlink" href="./software.html">Software</a>
+      <a class="navlink" href="./documentation.html">Documentation</a>
+    </nav>
+    <div class="uni-switcher">
+      <p class="uni-switcher-label">Open Science Snapshots of Other Universities</p>
+      <ul class="uni-logos" aria-label="Open science snapshots of other universities">
+        <li><a href="https://xiaoouwang.github.io/hal-unica/" target="_blank" rel="noopener noreferrer" title="Université Côte d’Azur — open science snapshot"><span class="uni-logo-text">UniCA</span></a></li>
+      </ul>
+    </div>
+    
+    <p class="eyebrow">Field provenance · correction queue</p>
+    <h1>To Be Corrected</h1>
+    <p class="lede">
+      Dataset DOIs that resolve to a data repository but appear <strong>only</strong> in a HAL
+      field other than <code>relatedData_s</code> (often <code>relatedPublication_s</code> or
+      <code>seeAlso_s</code>). If the same DOI is already present in <code>relatedData_s</code>,
+      an extra mention elsewhere is treated as supplementary and is <em>not</em> listed here.
+    </p>
+    <div class="stats" id="stats" role="group" aria-label="Key statistics"></div>
+    <section class="panel">
+      <input id="q" class="search" type="search" placeholder="Filter HAL id, title, DOI, repository, source field…" autocomplete="off" />
+      <div class="filters" id="filters"></div>
+      <div class="meta-row"><div id="count"></div><div>Expected field: <code>relatedData_s</code></div></div>
+      <div class="list" id="list"></div>
+    </section>
+    <footer>
+      <div class="updated">Last updated: <time datetime="2026-09-24T15:13:26Z">24 Sep 2026, 17:13 CEST</time></div>
+      CSV: <a href="./data/census/misfiled_dataset_links.csv"><code>misfiled_dataset_links.csv</code></a>
+    </footer>
+  </main>
+  <script id="data" type="application/json">{"generated_at": "2026-09-24T15:13:26Z", "rows": [{"halId_s": "hal-03157260", "hal_uri": "https://hal.inrae.fr/hal-03157260v1", "hal_title": "Populations of arable weed species show intra-specific variability in germination base temperature but not in early growth rate", "hal_docType": "ART", "publication_doi": "10.1371/journal.pone.0240538", "laboratories": "UB | UBFC | INRAE", "source_field": "relatedPublication_s", "expected_field": "relatedData_s", "dataset_doi": "10.57745/AJNXEN", "repository": "Recherche Data Gouv", "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/AJNXEN", "dataset_title": "CLIMATIK : système d'information pour les données du réseau agroclimatique INRAE", "correction_note": "Dataset DOI found only in relatedPublication_s; expected HAL field is relatedData_s."}, {"halId_s": "hal-03744281", "hal_uri": "https://hal.inrae.fr/hal-03744281v1", "hal_title": "Multi-attribute temporal descriptive methods in sensory analysis applied in food science: Protocol for a scoping review", "hal_docType": "ART", "publication_doi": "10.1371/journal.pone.0270969", "laboratories": "CSGA | UB | CNRS | INRAE | Institut Agro | UBFC | UCA", "source_field": "relatedPublication_s", "expected_field": "relatedData_s", "dataset_doi": "10.57745/JUJRTJ", "repository": "Recherche Data Gouv", "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/JUJRTJ", "dataset_title": "Checklist for reporting research involving descriptive sensory evaluation methods", "correction_note": "Dataset DOI found only in relatedPublication_s; expected HAL field is relatedData_s."}, {"halId_s": "hal-03856017", "hal_uri": "https://ehesp.hal.science/hal-03856017v1", "hal_title": "High-spatial resolution epidemic surveillance of bacterial meningitis in the African meningitis belt in Burkina Faso", "hal_docType": "ART", "publication_doi": "10.1038/s41598-022-23279-6", "laboratories": "ENS-PSL | PSL | EHESP | SU | CNRS | PCC | INC-CNRS | ARENES | UR | UR2", "source_field": "relatedPublication_s", "expected_field": "relatedData_s", "dataset_doi": "10.5281/zenodo.4925795", "repository": "Zenodo", "landing_url": "https://zenodo.org/record/4925795", "dataset_title": "MaximeMaW/MeningitisDynamics: Fixed typos", "correction_note": "Dataset DOI found only in relatedPublication_s; expected HAL field is relatedData_s."}, {"halId_s": "hal-03986408", "hal_uri": "https://hal.inrae.fr/hal-03986408v1", "hal_title": "Socioeconomic position and the effect of energy labelling on consumer behaviour: a systematic review and meta-analysis", "hal_docType": "ART", "publication_doi": "10.1186/s12966-023-01418-0", "laboratories": "CSGA | UB | CNRS | INRAE | Institut Agro | UBFC", "source_field": "relatedPublication_s", "expected_field": "relatedData_s", "dataset_doi": "10.17605/OSF.IO/W7RDB", "repository": "OSF", "landing_url": "https://osf.io/w7rdb/", "dataset_title": "Does the impact of calorie (energy) labelling of food and drink products on consumer behaviour differ by socioeconomic status?", "correction_note": "Dataset DOI found only in relatedPublication_s; expected HAL field is relatedData_s."}, {"halId_s": "hal-04248976", "hal_uri": "https://hal.science/hal-04248976v1", "hal_title": "Comment on Manna et al. SARS-CoV-2 Inactivation in Aerosol by Means of Radiated Microwaves. Viruses 2023, 15, 1443", "hal_docType": "ART", "publication_doi": "10.3390/v15102110", "laboratories": "IGDORE | iLM - LUMINESCENCE | ILM | UCBL | CNRS | ICB | UTBM | UB | UBFC", "source_field": "relatedPublication_s", "expected_field": "relatedData_s", "dataset_doi": "10.5281/zenodo.8387335", "repository": "Zenodo", "landing_url": "https://zenodo.org/record/8387335", "dataset_title": "Comment on Manna et al. SARS-CoV-2 Inactivation in Aerosol by Means of Radiated Microwaves. Viruses 2023, 15, 1443", "correction_note": "Dataset DOI found only in relatedPublication_s; expected HAL field is relatedData_s."}, {"halId_s": "hal-03599614", "hal_uri": "https://hal.science/hal-03599614v1", "hal_title": "Campagne de fouille 2021 sur le système de fortification de Blis à Eymet (Dordogne)", "hal_docType": "REPORT", "publication_doi": "10.34847/nkl.d59a61c2", "laboratories": "IRAMAT-CRP2A | IRAMAT | UTBM | UO | UBM | CNRS | UB | ARTeHiS | MCC", "source_field": "seeAlso_s", "expected_field": "relatedData_s", "dataset_doi": "10.34847/nkl.d59a61c2", "repository": "NAKALA", "landing_url": "https://nakala.fr/10.34847/nkl.d59a61c2", "dataset_title": "Fouille du plateau de Blis 2021, rapport final d'opération", "correction_note": "Dataset DOI found only in seeAlso_s; expected HAL field is relatedData_s."}, {"halId_s": "hal-04676601", "hal_uri": "https://hal.inrae.fr/hal-04676601v1", "hal_title": "Development and validation of a web application to collect food supply data associated with their nutritional composition and environmental impacts", "hal_docType": "ART", "publication_doi": "10.1016/j.mex.2024.102891", "laboratories": "CSGA | UB | CNRS | INRAE | Institut Agro | CESAER", "source_field": "relatedPublication_s", "expected_field": "relatedData_s", "dataset_doi": "10.57745/GPDV7F", "repository": "Recherche Data Gouv", "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/GPDV7F", "dataset_title": "A dataset of food supplies and preferences of French university students", "correction_note": "Dataset DOI found only in relatedPublication_s; expected HAL field is relatedData_s."}, {"halId_s": "hal-01616322", "hal_uri": "https://hal.science/hal-01616322v4", "hal_title": "Quantifying discretization errors for soft tissue simulation in computer assisted surgery: a preliminary study", "hal_docType": "ART", "publication_doi": "10.1016/j.apm.2019.07.055", "laboratories": "MIMESIS | Inria | ICube | ENGEES | UNISTRA | HUS | INSA Strasbourg | INSA | CNRS | MNGE", "source_field": "relatedPublication_s", "expected_field": "relatedData_s", "dataset_doi": "10.6084/m9.figshare.8128178.v1", "repository": "Figshare", "landing_url": "https://figshare.com/articles/Quantifying_discretization_errors_for_soft-tissue_simulation_in_computer_assisted_surgery_a_preliminary_study/8128178/1", "dataset_title": "Quantifying discretization errors for soft-tissue simulation in computer assisted surgery: a preliminary study", "correction_note": "Dataset DOI found only in relatedPublication_s; expected HAL field is relatedData_s."}, {"halId_s": "hal-04266661", "hal_uri": "https://hal.science/hal-04266661v1", "hal_title": "The short-term response of soil microbial communities to digestate application depends on the characteristics of the digestate and soil type", "hal_docType": "ART", "publication_doi": "10.1016/j.apsoil.2023.105105", "laboratories": "UB | UBFC | INRAE | Institut Agro | UR OPAALE | LEVA | ESA | IPSL | ENS-PSL | PSL", "source_field": "relatedPublication_s", "expected_field": "relatedData_s", "dataset_doi": "10.57745/DFGUGB", "repository": "Recherche Data Gouv", "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/DFGUGB", "dataset_title": "Impact des digestats de méthanisation sur la qualité biologique des sols : Evaluation d’impact à court terme en conditions contrôlées (Microcosmes)", "correction_note": "Dataset DOI found only in relatedPublication_s; expected HAL field is relatedData_s."}, {"halId_s": "hal-04948867", "hal_uri": "https://ube.hal.science/hal-04948867v1", "hal_title": "EuPPollNet : a European database of Plant‐Pollinator Networks", "hal_docType": "ART", "publication_doi": "10.1111/geb.70000", "laboratories": "MLU | iDiv | UFZ | BC3 | UPV / EHU | CEBC | ULR | CNRS | INRAE | LTSER-ZAPVS", "source_field": "relatedPublication_s", "expected_field": "relatedData_s", "dataset_doi": "10.5281/zenodo.14747448", "repository": "Zenodo", "landing_url": "https://zenodo.org/doi/10.5281/zenodo.14747448", "dataset_title": "JoseBSL/EuPPollNet: EuPPollNet: A European database of plant-pollinator networks", "correction_note": "Dataset DOI found only in relatedPublication_s; expected HAL field is relatedData_s."}, {"halId_s": "hal-05170289", "hal_uri": "https://hal.science/hal-05170289v1", "hal_title": "Être archiviste et militante ? La construction d'une mémoire lesbienne à partir d'archives du web", "hal_docType": "COMM", "publication_doi": "", "laboratories": "UB | dat@UBFC | UTBM | SUPMICROTECH - ENSMM | BSB | UBFC | Institut Agro | UMLP", "source_field": "relatedPublication_s", "expected_field": "relatedData_s", "dataset_doi": "10.34847/nkl.9effky97", "repository": "NAKALA", "landing_url": "https://nakala.fr/10.34847/nkl.9effky97", "dataset_title": "Sites web militants lesbiens francophones et analyse de la qualité de leur archivage", "correction_note": "Dataset DOI found only in relatedPublication_s; expected HAL field is relatedData_s."}, {"halId_s": "hal-05212119", "hal_uri": "https://hal.science/hal-05212119v1", "hal_title": "A composite gradient index lens for wideband elastic waves focusing: Design approach and experimental validation at constant thickness", "hal_docType": "ART", "publication_doi": "10.1016/j.compstruct.2025.119500", "laboratories": "SYMME | USMB [Université de Savoie] [Université de Chambéry] | FEMTO-ST | UTBM | SUPMICROTECH - ENSMM | CNRS | UMLP | ICB | UBE", "source_field": "relatedPublication_s", "expected_field": "relatedData_s", "dataset_doi": "10.5281/zenodo.16895987", "repository": "Zenodo", "landing_url": "https://zenodo.org/doi/10.5281/zenodo.16895987", "dataset_title": "A composite gradient index lens for wideband elastic waves focusing: Design approach and experimental validation at constant thickness", "correction_note": "Dataset DOI found only in relatedPublication_s; expected HAL field is relatedData_s."}, {"halId_s": "hal-05168055", "hal_uri": "https://univ-rennes.hal.science/hal-05168055v1", "hal_title": "Human contributions to global soundscapes are less predictable than the acoustic rhythms of wildlife", "hal_docType": "ART", "publication_doi": "10.1038/s41559-025-02786-5", "laboratories": "SLU | HTW Dresden | UF | WUSTL | cE3c | ULISBOA | SCU | GU | IMBIV | CONICET", "source_field": "relatedPublication_s", "expected_field": "relatedData_s", "dataset_doi": "10.5281/zenodo.15372067", "repository": "Zenodo", "landing_url": "https://zenodo.org/doi/10.5281/zenodo.15372067", "dataset_title": "Soundscape analysis scripts", "correction_note": "Dataset DOI found only in relatedPublication_s; expected HAL field is relatedData_s."}, {"halId_s": "hal-05409059", "hal_uri": "https://hal.science/hal-05409059v1", "hal_title": "Bilan scientifique annuel : L’habitat de l’âge du Bronze à La Tène ancienne en Hauts-de-France", "hal_docType": "REPORT", "publication_doi": "10.34847/nkl.8f0a0nm9", "laboratories": "HALMA | CNRS | MC | DAP-DA | Inrap | ARTeHiS | MCC | UB | TRACES | EHESS", "source_field": "relatedPublication_s", "expected_field": "relatedData_s", "dataset_doi": "10.34847/nkl.8f0a0nm9", "repository": "NAKALA", "landing_url": "https://nakala.fr/10.34847/nkl.8f0a0nm9", "dataset_title": "Bilan scientifique 2024 : L’habitat de l’âge du Bronze à La Tène ancienne en Hauts-de-France", "correction_note": "Dataset DOI found only in relatedPublication_s; expected HAL field is relatedData_s."}, {"halId_s": "hal-03829832", "hal_uri": "https://hal.science/hal-03829832v4", "hal_title": "On the space of subgroups of Baumslag-Solitar groups I: perfect kernel and phenotype", "hal_docType": "ART", "publication_doi": "10.4171/RMI/1549", "laboratories": "KIT | UMPA-ENSL | ENS de Lyon | CNRS | IMB | UBE | LMBP | UCA", "source_field": "relatedPublication_s", "expected_field": "relatedData_s", "dataset_doi": "10.5281/zenodo.7225585", "repository": "Zenodo", "landing_url": "https://zenodo.org/record/7225585", "dataset_title": "How to build (m,n)-graphs", "correction_note": "Dataset DOI found only in relatedPublication_s; expected HAL field is relatedData_s."}, {"halId_s": "hal-05446068", "hal_uri": "https://hal.science/hal-05446068v1", "hal_title": "Intensive management negatively impacts field margin ecosystem service indicators at both field and landscape levels", "hal_docType": "ART", "publication_doi": "10.1002/eap.70161", "laboratories": "LSV Montpellier | LSV | ANSES | UMR CBGP | Cirad | IRD [Occitanie] | IRD | INRAE | Institut Agro | UM", "source_field": "relatedPublication_s", "expected_field": "relatedData_s", "dataset_doi": "10.5281/zenodo.13737015", "repository": "Zenodo", "landing_url": "https://zenodo.org/doi/10.5281/zenodo.13737015", "dataset_title": "leagenty/dataset_Genty_et_al_2025_margin_services: final_version_first_submission_license_added", "correction_note": "Dataset DOI found only in relatedPublication_s; expected HAL field is relatedData_s."}, {"halId_s": "hal-05498176", "hal_uri": "https://cnrs.hal.science/hal-05498176v1", "hal_title": "Evaluating and Understanding the Geocoding of City Directories of Paris (1787-1914): Data-Driven Geography of Urban Sprawl and Densification", "hal_docType": "ART", "publication_doi": "10.63744/eh2pbu98sxve", "laboratories": "ThéMA | CNRS | UMLP | UBE | CRH (UMR 8558 CNRS / EHESS) | EHESS | LRE | EPITA | LaSTIG | EIVP", "source_field": "relatedPublication_s", "expected_field": "relatedData_s", "dataset_doi": "10.5281/zenodo.16994482", "repository": "Zenodo", "landing_url": "https://zenodo.org/doi/10.5281/zenodo.16994482", "dataset_title": "Datasets and code of Evaluating and Understanding the Geocoding of City Directories of Paris (1787-1914)", "correction_note": "Dataset DOI found only in relatedPublication_s; expected HAL field is relatedData_s."}, {"halId_s": "hal-05594176", "hal_uri": "https://hal.science/hal-05594176v1", "hal_title": "Inventaire des capteurs et protocoles pour le projet BIODICAPT", "hal_docType": "REPORT", "publication_doi": "10.5281/zenodo.19609812", "laboratories": "CESCO | MNHN | SU | CNRS | DPT SPE | INRAE | IGEPP | UR | Institut Agro | LIVE", "source_field": "relatedPublication_s", "expected_field": "relatedData_s", "dataset_doi": "10.5281/zenodo.20523512", "repository": "Zenodo", "landing_url": "https://zenodo.org/doi/10.5281/zenodo.20523512", "dataset_title": "Inventaire des capteurs et protocoles pour le projet BIODICAPT", "correction_note": "Dataset DOI found only in relatedPublication_s; expected HAL field is relatedData_s."}], "summary": {"misfiled_links": 18, "publications": 18, "by_source_field": {"relatedPublication_s": 17, "seeAlso_s": 1}, "by_repository": {"Zenodo": 9, "Recherche Data Gouv": 4, "NAKALA": 3, "Figshare": 1, "OSF": 1}}}</script>
+  <script>
+    const data = JSON.parse(document.getElementById("data").textContent);
+    const rows = data.rows || [];
+    const s = data.summary || {};
+    let active = "all";
+
+    function animateStatCounts(root, { duration = 850 } = {}) {
+      const scope = root || document;
+      const els = scope.querySelectorAll("strong[data-count]");
+      if (!els.length) return;
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const fmt = (n) => Math.round(n).toLocaleString("en");
+      els.forEach((el) => {
+        const target = Number(el.getAttribute("data-count"));
+        if (!Number.isFinite(target)) return;
+        if (reduce || duration <= 0) {
+          el.textContent = fmt(target);
+          return;
+        }
+        const start = performance.now();
+        function frame(now) {
+          const t = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - t, 3);
+          el.textContent = fmt(target * eased);
+          if (t < 1) requestAnimationFrame(frame);
+          else el.textContent = fmt(target);
+        }
+        requestAnimationFrame(frame);
+      });
+    }
+
+    function esc(s) {
+      return String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+    }
+
+    document.getElementById("stats").innerHTML = [
+      { v: s.misfiled_links || rows.length, l: "Misfiled dataset links" },
+      { v: s.publications || 0, l: "Distinct HAL notices" },
+      { v: Object.keys(s.by_source_field || {}).length, l: "Incorrect source fields" },
+      { v: Object.keys(s.by_repository || {}).length, l: "Repositories involved" },
+    ].map(x => `<div class="stat"><strong data-count="${x.v}">0</strong><span>${x.l}</span></div>`).join("");
+    animateStatCounts(document.getElementById("stats"));
+
+    const fieldFilters = ["all", ...Object.keys(s.by_source_field || {})];
+    function paintFilters() {
+      document.getElementById("filters").innerHTML = fieldFilters.map(f => `
+        <button type="button" class="chip" data-v="${esc(f)}" aria-pressed="${active===f}">${esc(f==="all"?"All source fields":f)}</button>
+      `).join("");
+      document.querySelectorAll("#filters button").forEach(btn => btn.addEventListener("click", () => {
+        active = btn.dataset.v; paintFilters(); render();
+      }));
+    }
+
+    function render() {
+      const q = document.getElementById("q").value.trim().toLowerCase();
+      const filtered = rows.filter(r => {
+        if (active !== "all" && r.source_field !== active) return false;
+        if (!q) return true;
+        const blob = [r.halId_s, r.hal_title, r.dataset_doi, r.repository, r.source_field,
+          r.dataset_title, r.correction_note, r.laboratories].join(" ").toLowerCase();
+        return blob.includes(q);
+      });
+      document.getElementById("count").textContent = `${filtered.length} of ${rows.length} links`;
+      document.getElementById("list").innerHTML = filtered.map(r => {
+        const href = r.landing_url || (r.dataset_doi ? `https://doi.org/${r.dataset_doi}` : "#");
+        const repo = r.repository || "Unknown";
+        const labs = String(r.laboratories || "").split("|").map(s => s.trim()).filter(Boolean);
+        const labsLine = labs.length
+          ? `<div class="muted" style="margin-top:0.2rem;font-size:0.8rem">Labs: ${esc(labs.join(" · "))}</div>`
+          : "";
+        return `<article class="result">
+          <div class="title-row">
+            <div>
+              <span class="doi-annot">Link to the dataset on ${esc(repo)}</span>
+              <span class="doi-annot" style="color:var(--accent-hover)">HAL field <code>${esc(r.source_field || "")}</code> only → expected <code>${esc(r.expected_field || "relatedData_s")}</code></span>
+              <h2 class="title"><a href="${esc(href)}" target="_blank" rel="noopener"><code>${esc(r.dataset_doi)}</code></a></h2>
+            </div>
+            <div class="badges">
+              <span class="badge">${esc(repo)}</span>
+              <span class="badge">${esc(r.source_field || "")}</span>
+            </div>
+          </div>
+          <div class="sub">
+            <span>${esc(r.dataset_title || "")}</span>
+          </div>
+          <div class="evidence">
+            <div class="ev"><dt>Publication</dt><dd>
+              <a href="${esc(r.hal_uri || "#")}" target="_blank" rel="noopener">${esc(r.hal_title || "(untitled)")}</a>
+              ${labsLine}
+              <div class="muted" style="margin-top:0.25rem">
+                <a href="${esc(r.hal_uri || "#")}" target="_blank" rel="noopener"><code>${esc(r.halId_s)}</code></a>
+                ${r.hal_docType ? " · " + esc(r.hal_docType) : ""}
+                ${r.publication_doi ? ` · DOI <a href="https://doi.org/${esc(r.publication_doi)}" target="_blank" rel="noopener"><code>${esc(r.publication_doi)}</code></a>` : ""}
+              </div>
+            </dd></div>
+            <div class="ev"><dt>Action</dt><dd>${esc(r.correction_note || "Move this dataset DOI to relatedData_s on HAL.")}</dd></div>
+          </div>
+        </article>`;
+      }).join("") || `<div class="empty">No matches.</div>`;
+    }
+    paintFilters();
+    document.getElementById("q").addEventListener("input", render);
+    render();
+  </script>
+</body>
+</html>

@@ -68,11 +68,13 @@ jobs:
         if: steps.mode.outputs.mode == 'incremental'
         run: |
           hal-unica refresh --lookback-days "${{ steps.mode.outputs.lookback }}"
+          hal-unica refresh --university ube --lookback-days "${{ steps.mode.outputs.lookback }}"
 
       - name: Run full refresh
         if: steps.mode.outputs.mode == 'full'
         run: |
           hal-unica refresh --full
+          hal-unica refresh --university ube --full
 
       - name: Commit and push site + census
         id: commit
@@ -83,8 +85,10 @@ jobs:
             data/census \
             data/unica_data_repo_links.jsonl \
             data/unica_data_repo_links.jsonl.summary.json \
+            data/ube \
             docs \
-            logs/census.log || true
+            logs/census.log \
+            logs/ube-census.log || true
           if git diff --staged --quiet; then
             echo "No changes to commit."
             echo "has_changes=false" >> "$GITHUB_OUTPUT"

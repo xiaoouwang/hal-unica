@@ -1,0 +1,49 @@
+{
+  "generated_at": "2026-09-24T15:13:23Z",
+  "collection": "UNIV-BOURGOGNE",
+  "hal_api": "https://api.archives-ouvertes.fr/search/UNIV-BOURGOGNE/",
+  "hal_query": "(relatedData_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)",
+  "link_source_fields": [
+    "relatedData_s",
+    "relatedPublication_s",
+    "seeAlso_s"
+  ],
+  "expected_dataset_field": "relatedData_s",
+  "since": null,
+  "watermark_modified": "2026-09-24T09:56:14Z",
+  "datacite_api": "https://api.datacite.org/dois/{doi}",
+  "started_at": "2026-09-24T15:12:20Z",
+  "finished_at": "2026-09-24T15:13:23Z",
+  "artifacts": {
+    "publications_jsonl": "data/ube/census/publications_related_data.jsonl",
+    "doi_resolutions_jsonl": "data/ube/census/doi_resolutions.jsonl",
+    "doi_hal_map_csv": "data/ube/census/doi_hal_repository_map.csv",
+    "misfiled_dataset_links_csv": "data/ube/census/misfiled_dataset_links.csv",
+    "doi_to_repository_csv": "data/ube/census/doi_to_repository.csv",
+    "summary_json": "data/ube/census/summary.json"
+  },
+  "log_path": "logs/ube-census.log",
+  "counts": {
+    "hal_publications_with_relatedData": 261,
+    "related_tokens": 385,
+    "unique_dois": 301,
+    "pubs_fetched": 261,
+    "pubs_updated": 0,
+    "pubs_inserted": 261,
+    "dois_resolved_live": 301,
+    "dois_from_cache": 0,
+    "misfiled_dataset_links": 18,
+    "publications_with_misfiled_dataset_link": 18
+  },
+  "method": [
+    "List UniCA HAL notices with relatedData_s, relatedPublication_s DOIs, or seeAlso_s.",
+    "Record the HAL source field on every token (provenance for corrections).",
+    "Optional modifiedDate_tdate window for incremental refresh; merge by halId_s.",
+    "Parse each token as DOI, URL, HAL id, or other.",
+    "Resolve new DOIs with DataCite REST API; reuse doi_resolutions.jsonl cache.",
+    "Label repository and object_kind from landing host / publisher / known DOI prefix; never default unknown hosts to dataset_repo.",
+    "Flag dataset_repo DOIs filed only outside relatedData_s (still listed there = supplementary, not a correction).",
+    "Build dataset_to_publications (dataset_repo only) with sticky retrieved_at for the All repositories page.",
+    "Write publication-level JSONL, DOI resolution JSONL, and CSV correspondence tables."
+  ]
+}

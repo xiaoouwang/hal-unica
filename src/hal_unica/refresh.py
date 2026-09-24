@@ -14,7 +14,7 @@ from .census import (
     run_census,
     write_census_artifacts,
 )
-from .client import DEFAULT_COLLECTION, HalClient
+from .client import HalClient
 from .datacite import DataCiteClient
 from .focus_links import hits_from_census_publications, write_focus_links
 from .software import (
@@ -30,11 +30,13 @@ from .data_papers import (
 )
 from .site import write_site
 from .timeutil import effective_since, format_hal_date, read_watermark, utc_now
+from .universities import DEFAULT_UNIVERSITY, University, resolve_university
 
 
 @dataclass
 class RefreshResult:
     collection: str
+    university: str
     started_at: str
     finished_at: str
     since: str | None
@@ -51,19 +53,41 @@ class RefreshResult:
 
 def run_refresh(
     *,
-    collection: str = DEFAULT_COLLECTION,
-    census_dir: Path = Path("data/census"),
-    links_path: Path = Path("data/unica_data_repo_links.jsonl"),
-    harvest_path: Path = Path("data/unica_hal_metadata.jsonl"),
-    stats_fallback: Path | None = Path("docs/data/stats.json"),
-    site_dir: Path = Path("docs"),
+    university: University | str | None = None,
+    collection: str | None = None,
+    census_dir: Path | None = None,
+    links_path: Path | None = None,
+    harvest_path: Path | None = None,
+    stats_fallback: Path | None = None,
+    site_dir: Path | None = None,
     lookback_days: float = 2.0,
     since: str | None = None,
     full: bool = False,
     rate: float = 0.15,
-    log_path: Path = Path("logs/census.log"),
+    log_path: Path | None = None,
     log: TextIO | None = None,
 ) -> RefreshResult:
+    if isinstance(university, University):
+        uni = university
+    elif university:
+        uni = resolve_university(university)
+    elif collection:
+        try:
+            uni = resolve_university(collection)
+        except KeyError:
+            uni = DEFAULT_UNIVERSITY
+    else:
+        uni = DEFAULT_UNIVERSITY
+
+    collection = collection or uni.collection
+    census_dir = census_dir or uni.census_dir
+    links_path = links_path or uni.links_path
+    harvest_path = harvest_path or uni.harvest_path
+    site_dir = site_dir or uni.site_dir
+    log_path = log_path or uni.log_path
+    if stats_fallback is None:
+        stats_fallback = uni.stats_fallback if uni.stats_fallback.exists() else None
+
     def say(msg: str) -> None:
         if log:
             log.write(msg + "\n")
@@ -72,6 +96,7 @@ def run_refresh(
     started = format_hal_date(utc_now())
     census_dir.mkdir(parents=True, exist_ok=True)
     log_path.parent.mkdir(parents=True, exist_ok=True)
+    say(f"university={uni.id} collection={collection} site={site_dir}")
 
     resolved_since: str | None = None
     existing_pubs: dict[str, Any] = {}
@@ -138,13 +163,15 @@ def run_refresh(
         output_dir=site_dir,
         collection=collection,
         census_dir=census_dir,
-        stats_fallback=stats_fallback,
+        stats_fallback=stats_fallback if stats_fallback and stats_fallback.exists() else None,
+        university=uni,
     )
     say(f"wrote site → {site_dir}/")
 
     finished = format_hal_date(utc_now())
     result = RefreshResult(
         collection=collection,
+        university=uni.id,
         started_at=started,
         finished_at=finished,
         since=resolved_since,

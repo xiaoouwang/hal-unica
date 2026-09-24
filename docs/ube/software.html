@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HAL-UBE · Software & source code</title>
+  <meta name="description" content="Université Bourgogne Europe HAL SOFTWARE deposits with code repositories, Software Heritage SWHIDs, and related publications." />
+  <meta name="robots" content="index,follow" />
+  <meta name="author" content="HAL-UBE · Université Bourgogne Europe" />
+  <meta name="theme-color" content="#f4f0ea" />
+  <link rel="canonical" href="https://xiaoouwang.github.io/hal-unica/ube/software.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="HAL-UBE" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:title" content="HAL-UBE · Software &amp; source code" />
+  <meta property="og:description" content="Université Bourgogne Europe HAL SOFTWARE deposits with code repositories, Software Heritage SWHIDs, and related publications." />
+  <meta property="og:url" content="https://xiaoouwang.github.io/hal-unica/ube/software.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="HAL-UBE · Software &amp; source code" />
+  <meta name="twitter:description" content="Université Bourgogne Europe HAL SOFTWARE deposits with code repositories, Software Heritage SWHIDs, and related publications." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://xiaoouwang.github.io/hal-unica/ube/#website","name":"HAL-UBE","url":"https://xiaoouwang.github.io/hal-unica/ube/","description":"Open-science monitoring for Université Bourgogne Europe on HAL: linked datasets, repositories, software, and correction queues.","inLanguage":"en","publisher":{"@type":"Organization","name":"Université Bourgogne Europe","url":"https://www.ube.fr/","sameAs":["https://hal.science/UNIV-BOURGOGNE"]}},{"@type":"WebPage","@id":"https://xiaoouwang.github.io/hal-unica/ube/software.html#webpage","url":"https://xiaoouwang.github.io/hal-unica/ube/software.html","name":"HAL-UBE · Software & source code","description":"Université Bourgogne Europe HAL SOFTWARE deposits with code repositories, Software Heritage SWHIDs, and related publications.","isPartOf":{"@id":"https://xiaoouwang.github.io/hal-unica/ube/#website"},"inLanguage":"en"}]}</script>
+  <style>
+:root {
+  --ink: #161513;
+  --ink-soft: #6a6560;
+  --paper: #f1f0ed;
+  --surface: #fbfaf8;
+  --accent: #2a2622;
+  --accent-hover: #8a6a45;
+  --wash: #e8e4dc;
+  --line: rgba(22, 21, 19, 0.1);
+  --radius: 12px;
+  --font-display: "Syne", "Avenir Next", sans-serif;
+  --font-body: "Figtree", "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); font-family: var(--font-body);
+  background:
+    radial-gradient(1100px 520px at 8% -8%, #e7e2d8 0%, transparent 58%),
+    radial-gradient(900px 480px at 100% 0%, #ddd8cf 0%, transparent 52%),
+    linear-gradient(180deg, #f5f3ef 0%, var(--paper) 40%, #ebe8e2 100%);
+  min-height: 100vh;
+}
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+a:hover { color: var(--accent-hover); }
+.wrap { width: min(1100px, calc(100% - 2rem)); margin: 0 auto; padding: 1.5rem 0 4rem; }
+nav {
+  display: flex; gap: 0.45rem; flex-wrap: wrap; align-items: center;
+  margin-bottom: 1.75rem; padding-bottom: 0.9rem; border-bottom: 1px solid var(--line);
+}
+nav .brand {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.2rem;
+  letter-spacing: -0.03em; margin-right: auto; text-decoration: none; color: var(--ink);
+}
+nav a.navlink {
+  text-decoration: none; color: var(--ink-soft); font-weight: 500; font-size: 0.9rem;
+  padding: 0.38rem 0.7rem; border-radius: 8px; border: 1px solid transparent;
+}
+nav a.navlink:hover, nav a.navlink[aria-current="page"] {
+  color: var(--ink); background: rgba(255,255,255,0.75); border-color: var(--line);
+}
+.eyebrow {
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent-hover);
+}
+.uni-switcher {
+  margin: 0 0 0.85rem;
+}
+.uni-switcher-label {
+  margin: 0 0 0.45rem;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink-soft);
+}
+.uni-logos {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.1rem;
+  margin: 0; padding: 0;
+  list-style: none;
+}
+.uni-logos a {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 2.75rem; padding: 0.2rem 0.45rem;
+  border-radius: 8px; border: 1px solid var(--line);
+  background: rgba(251,250,248,0.9);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+  text-decoration: none;
+}
+.uni-logos a:hover, .uni-logos a:focus-visible {
+  border-color: var(--accent); box-shadow: 0 0 0 3px rgba(42,38,34,0.08);
+  transform: translateY(-1px); outline: none;
+}
+.uni-logos img {
+  display: block; height: 2.2rem; width: auto; max-width: 9.5rem;
+  object-fit: contain;
+}
+.uni-logos .uni-logo-text {
+  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.03em;
+  color: var(--ink); white-space: nowrap;
+}
+@media (max-width: 520px) {
+  .uni-logos a { height: 2.4rem; }
+  .uni-logos img { height: 1.9rem; max-width: 8rem; }
+}
+h1 {
+  margin: 0.4rem 0 0; font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.05; letter-spacing: -0.035em;
+}
+.lede { margin: 0.9rem 0 0; max-width: 42rem; color: var(--ink-soft); line-height: 1.55; font-size: 1.05rem; }
+.stats {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; margin: 1.5rem 0;
+}
+@media (max-width: 720px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.stat {
+  background: rgba(251,250,248,0.8); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 1rem 1.1rem; backdrop-filter: blur(8px);
+}
+.stat strong {
+  display: block; font-family: var(--font-display); font-size: 1.85rem; font-weight: 700;
+  line-height: 1; letter-spacing: -0.03em;
+}
+.stat span { display: block; margin-top: 0.4rem; font-size: 0.8rem; color: var(--ink-soft); }
+.panel {
+  background: rgba(251,250,248,0.85); border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 2px); padding: 1.1rem 1.15rem; margin: 1rem 0;
+  backdrop-filter: blur(10px);
+}
+.panel h2 {
+  margin: 0 0 0.75rem; font-family: var(--font-display); font-size: 1.2rem; font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.bars { display: grid; gap: 0.45rem; }
+.bar-row { display: grid; grid-template-columns: 7.5rem 1fr 3.2rem; gap: 0.6rem; align-items: center; font-size: 0.9rem; }
+.bar-track { height: 0.5rem; background: var(--wash); border-radius: 999px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--accent); border-radius: 999px; }
+.panel.reveal .bar-fill {
+  width: 0;
+  transition: width 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.panel.reveal.is-visible .bar-fill { width: var(--bar-w, 0%); }
+.panel.reveal {
+  opacity: 0;
+  transform: translateY(0.85rem);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.panel.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .panel.reveal {
+    opacity: 1; transform: none; transition: none;
+  }
+  .panel.reveal .bar-fill { transition: none; width: var(--bar-w, 0%); }
+}
+.bar-row span:last-child { text-align: right; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.muted { color: var(--ink-soft); font-size: 0.88rem; }
+.stack-wrap { margin-top: 0.75rem; }
+.stack-legend {
+  display: flex; flex-wrap: wrap; gap: 0.45rem 0.9rem; margin: 0 0 1rem;
+  font-size: 0.82rem; color: var(--ink-soft);
+}
+.stack-legend .stack-legend-item {
+  appearance: none; border: 0; background: transparent; font: inherit;
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  cursor: pointer; border-radius: 6px; padding: 0.15rem 0.35rem;
+  color: inherit;
+  transition: opacity 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+.stack-legend .stack-legend-item:hover,
+.stack-wrap.is-filtering .stack-legend-item.is-active {
+  color: var(--ink); background: rgba(42,38,34,0.06);
+}
+.stack-wrap.is-filtering .stack-legend-item:not(.is-active) { opacity: 0.35; }
+.stack-swatch {
+  width: 0.7rem; height: 0.7rem; border-radius: 3px; flex: 0 0 auto;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
+}
+.stack-chart {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(2.4rem, 1fr));
+  gap: 0.45rem; align-items: end; min-height: 16rem;
+  padding: 0.25rem 0 0;
+  border-bottom: 1px solid var(--line);
+}
+.stack-col {
+  display: flex; flex-direction: column; align-items: center; gap: 0.35rem;
+  min-width: 0;
+}
+.stack-total {
+  font-family: var(--font-display); font-weight: 700; font-size: 0.85rem;
+  letter-spacing: -0.02em; color: var(--ink);
+}
+.stack-bars {
+  width: 100%; max-width: 2.75rem; height: 14rem;
+  display: flex; flex-direction: column-reverse; justify-content: flex-start;
+  border-radius: 4px 4px 0 0; overflow: hidden; background: var(--wash);
+}
+.stack-seg {
+  width: 100%; display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 0.68rem; font-weight: 700; font-variant-numeric: tabular-nums;
+  min-height: 0; cursor: pointer;
+  transition: opacity 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.25);
+}
+.stack-seg:hover,
+.stack-wrap.is-filtering .stack-seg.is-active {
+  filter: brightness(1.08); box-shadow: inset 0 0 0 2px rgba(255,255,255,0.85);
+  z-index: 1;
+}
+.stack-wrap.is-filtering .stack-seg:not(.is-active) { opacity: 0.18; filter: grayscale(0.35); }
+.stack-year {
+  font-size: 0.78rem; color: var(--ink-soft); font-variant-numeric: tabular-nums;
+}
+.chart-embed-hint {
+  margin: 0.65rem 0 0; font-size: 0.85rem; color: var(--ink-soft);
+}
+.chart-embed-hint code {
+  font-size: 0.8em; background: var(--wash); padding: 0.1rem 0.35rem; border-radius: 4px;
+}
+.chart-modal {
+  position: fixed; inset: 0; z-index: 80;
+  display: flex; align-items: flex-end; justify-content: center;
+  padding: 1rem; background: rgba(28, 24, 20, 0.45);
+}
+.chart-modal[hidden] { display: none; }
+@media (min-width: 720px) {
+  .chart-modal { align-items: center; padding: 1.5rem; }
+}
+.chart-modal-dialog {
+  width: min(40rem, 100%); max-height: min(85vh, 40rem);
+  display: flex; flex-direction: column;
+  background: var(--surface); color: var(--ink);
+  border-radius: 14px; border: 1px solid var(--line);
+  box-shadow: 0 18px 48px rgba(28, 24, 20, 0.28);
+  overflow: hidden;
+}
+.chart-modal-head {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 1rem; padding: 1rem 1.1rem 0.75rem;
+  border-bottom: 1px solid var(--line);
+}
+.chart-modal-head h3 {
+  margin: 0; font-family: var(--font-display); font-size: 1.15rem; letter-spacing: -0.02em;
+}
+.chart-modal-close {
+  appearance: none; border: 0; background: var(--wash); color: var(--ink);
+  width: 2rem; height: 2rem; border-radius: 8px; font-size: 1.2rem; line-height: 1;
+  cursor: pointer; flex: 0 0 auto;
+}
+.chart-modal-close:hover { background: var(--line); }
+.chart-modal-body {
+  overflow: auto; padding: 0.85rem 1.1rem 1.15rem;
+  display: grid; gap: 0.75rem;
+}
+.chart-modal-item {
+  padding: 0.7rem 0; border-bottom: 1px solid var(--line);
+}
+.chart-modal-item:last-child { border-bottom: 0; }
+.chart-modal-item .title {
+  margin: 0 0 0.25rem; font-size: 0.98rem;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 0.55rem;
+}
+.chart-modal-item .title > a:first-child { color: inherit; text-decoration: none; }
+.chart-modal-item .title > a:first-child:hover { color: var(--accent-hover); text-decoration: underline; }
+.chart-modal-doi {
+  font-weight: 500; font-size: 0.82rem; color: var(--ink-soft); text-decoration: none;
+  white-space: nowrap;
+}
+.chart-modal-doi:hover { color: var(--accent-hover); text-decoration: underline; }
+.chart-modal-doi code { font-size: 0.92em; }
+.chart-modal-pubs { margin: 0.25rem 0 0; padding-left: 1.1rem; font-size: 0.85rem; color: var(--ink-soft); }
+.chart-modal-pubs li { margin: 0.2rem 0; }
+.chart-modal-empty { color: var(--ink-soft); font-size: 0.92rem; padding: 0.5rem 0; }
+body.embed-page { background: var(--bg); }
+body.embed-page .wrap { max-width: 56rem; padding: 1rem 1.1rem 1.5rem; }
+.search {
+  width: 100%; border: 1px solid var(--line); border-radius: 10px;
+  padding: 0.85rem 1.1rem; font: inherit; background: var(--surface); outline: none; margin-bottom: 0.75rem;
+}
+.search:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(42,38,34,0.1); }
+.filters { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+.toolbar {
+  display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; align-items: center;
+  justify-content: space-between; margin: 0.15rem 0 0.85rem;
+}
+.toolbar-controls { display: flex; flex-wrap: wrap; gap: 0.65rem 1rem; align-items: center; }
+.toolbar-label {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  color: var(--ink-soft); font-size: 0.9rem;
+}
+.toolbar select, .toolbar input[type="search"].lab-filter {
+  border: 1px solid var(--line); border-radius: 8px; background: var(--surface);
+  color: var(--ink); font: inherit; font-size: 0.9rem; padding: 0.4rem 0.65rem;
+}
+.toolbar input[type="search"].lab-filter { min-width: 11rem; margin: 0; }
+.toolbar select.lab-select { max-width: 14rem; }
+.chip {
+  appearance: none; border: 1px solid var(--line); background: var(--surface); color: var(--ink-soft);
+  border-radius: 8px; padding: 0.4rem 0.75rem; font: inherit; font-size: 0.84rem;
+  font-weight: 500; cursor: pointer;
+}
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #faf9f7; }
+.list { display: grid; gap: 0.65rem; }
+.result {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1rem 1.1rem; display: grid; gap: 0.65rem;
+}
+.title-row { display: flex; gap: 0.75rem; justify-content: space-between; align-items: start; }
+.title {
+  margin: 0; font-family: var(--font-display); font-size: 1.05rem; font-weight: 700;
+  line-height: 1.3; letter-spacing: -0.02em;
+}
+.doi-annot {
+  display: block; margin: 0 0 0.35rem; font-size: 0.8rem; font-weight: 500;
+  color: var(--ink-soft); letter-spacing: 0.02em;
+}
+.badges { display: flex; flex-wrap: wrap; gap: 0.35rem; justify-content: flex-end; max-width: 42%; }
+.badge {
+  font-size: 0.7rem; font-weight: 600; padding: 0.28rem 0.55rem; border-radius: 6px;
+  background: var(--wash); color: var(--accent); border: 1px solid var(--line);
+}
+.sub { display: flex; flex-wrap: wrap; gap: 0.55rem 1rem; font-size: 0.86rem; color: var(--ink-soft); }
+.sub code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.82rem;
+  background: var(--paper); padding: 0.1rem 0.35rem; border-radius: 4px;
+}
+.evidence {
+  border-top: 1px solid var(--line); padding-top: 0.75rem; display: grid; gap: 0.5rem;
+}
+.ev {
+  display: grid; grid-template-columns: 6.5rem 1fr; gap: 0.75rem; font-size: 0.9rem;
+  padding: 0.55rem 0.65rem; border-radius: 8px; background: #f3f1ec;
+}
+@media (max-width: 640px) {
+  .ev { grid-template-columns: 1fr; }
+  .badges { max-width: 100%; justify-content: flex-start; }
+}
+.ev dt {
+  margin: 0; font-weight: 650; color: var(--ink-soft); font-size: 0.72rem;
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+.ev dd { margin: 0; word-break: break-word; }
+.meta-row { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin: 0.5rem 0 0.85rem; color: var(--ink-soft); font-size: 0.92rem; }
+footer { margin-top: 2rem; font-size: 0.82rem; color: var(--ink-soft); line-height: 1.5; }
+footer .updated { font-weight: 600; color: var(--ink); margin-bottom: 0.35rem; }
+footer .updated time { font-variant-numeric: tabular-nums; }
+.empty { padding: 2rem; text-align: center; color: var(--ink-soft); }
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 100;
+  padding: 0.6rem 1rem; background: var(--ink); color: #fff; border-radius: 0 0 8px 0;
+}
+.skip-link:focus { left: 0; }
+</style>
+</head>
+<body>
+  <main class="wrap" id="main">
+    
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav aria-label="Primary">
+      <a class="brand" href="./index.html" rel="home">HAL-UBE</a>
+      <a class="navlink" href="./index.html">Statistics</a>
+      <a class="navlink" href="./related-datasets.html">Nakala / RDG</a>
+      <a class="navlink" href="./all-repositories.html">All repositories</a>
+      <a class="navlink" href="./data-papers.html">Data papers</a>
+      <a class="navlink" href="./to-be-corrected.html">To Be Corrected</a>
+      <a class="navlink" href="./software.html" aria-current="page">Software</a>
+      <a class="navlink" href="./documentation.html">Documentation</a>
+    </nav>
+    <div class="uni-switcher">
+      <p class="uni-switcher-label">Open Science Snapshots of Other Universities</p>
+      <ul class="uni-logos" aria-label="Open science snapshots of other universities">
+        <li><a href="https://xiaoouwang.github.io/hal-unica/" target="_blank" rel="noopener noreferrer" title="Université Côte d’Azur — open science snapshot"><span class="uni-logo-text">UniCA</span></a></li>
+      </ul>
+    </div>
+    
+    <p class="eyebrow">HAL SOFTWARE deposits</p>
+    <h1>Software &amp; source code</h1>
+    <p class="lede">
+      UBE HAL notices with <code>docType_s=SOFTWARE</code>, including code repository
+      URLs, Software Heritage (SWHID) archives, HAL files, and related publications
+      when declared.
+    </p>
+    <div class="stats" id="stats" role="group" aria-label="Key statistics"></div>
+    <section class="panel">
+      <input id="q" class="search" type="search" placeholder="Search software title, HAL id, language, Git URL, lab…" autocomplete="off" />
+      
+      <div class="toolbar">
+        <div id="count"></div>
+        <div class="toolbar-controls">
+          <label class="toolbar-label" for="sort">
+            Sort by
+            <select id="sort">
+            <option value="retrieved_desc" selected>Newest retrieved</option>
+            <option value="retrieved_asc">Oldest retrieved</option>
+            <option value="hal_desc">Newest HAL update</option>
+            <option value="title_asc">Title A–Z</option>
+            <option value="year_desc">Year (newest)</option>
+    </select>
+          </label>
+          <label class="toolbar-label" for="yearSelect">
+            Year
+            <select id="yearSelect" class="lab-select">
+              <option value="">All years</option>
+            </select>
+          </label>
+          <label class="toolbar-label" for="labSelect">
+            Laboratory
+            <select id="labSelect" class="lab-select">
+              <option value="">All laboratories</option>
+            </select>
+          </label>
+          <label class="toolbar-label" for="labSearch">
+            <input id="labSearch" class="lab-filter" type="search" list="labList"
+              placeholder="Type lab prefix…" autocomplete="off" />
+            <datalist id="labList"></datalist>
+          </label>
+        </div>
+      </div>
+      <div class="list" id="list"></div>
+    </section>
+    <footer>
+      <div class="updated">Last updated: <time datetime="2026-09-24T15:13:26Z">24 Sep 2026, 17:13 CEST</time></div>
+      Downloads: <a href="./data/census/software_deposits.csv"><code>software_deposits.csv</code></a> · <a href="./data/census/software_deposits.jsonl"><code>software_deposits.jsonl</code></a>
+    </footer>
+  </main>
+  <script id="data" type="application/json">{"generated_at": "2026-09-24T15:13:26Z", "deposits": [{"halId_s": "hal-05127963", "uri_s": "https://hal.science/hal-05127963v1", "title_s": "Greening Scenarios for Urban Parcels", "doiId_s": null, "producedDateY_i": 2024, "producedDate_s": "2024", "modifiedDate_tdate": "2026-09-22T03:33:17Z", "structAcronym_s": ["LEEISA", "IFREMER", "UG", "CNRS", "MSH Dijon (MSHD)", "UB", "UBFC", "ThéMA", "UMLP", "CRC", "BGS"], "structName_s": ["Laboratoire Ecologie, Evolution, Interactions des Systèmes amazoniens", "Institut Français de Recherche pour l'Exploitation de la Mer", "Université de Guyane", "Centre National de la Recherche Scientifique", "Maison des Sciences de l'Homme de Dijon", "Université de Bourgogne", "Université Bourgogne Franche-Comté [COMUE]", "Théoriser et modéliser pour aménager (UMR 6049)", "Université Marie et Louis Pasteur", "Centre de Recherches de Climatologie [UMR Biogéosciences]", "Biogéosciences [UMR 6282]"], "laboratories": ["LEEISA", "IFREMER", "UG", "CNRS", "MSH Dijon (MSHD)", "UB", "UBFC", "ThéMA", "UMLP", "CRC"], "softCodeRepository_s": ["https://gitlab.in2p3.fr/JulienPergaud/urban-greening-scenarios-application.git"], "softProgrammingLanguage_s": ["Python"], "softVersion_s": [], "softPlatform_s": ["Qgis"], "softDevelopmentStatus_s": ["Actif"], "swhidId_s": ["swh:1:dir:425390dcfea364b77992e78a55488ea22af9aa88;origin=https://gitlab.in2p3.fr/JulienPergaud/urban-greening-scenarios-application;visit=swh:1:snp:ce3cf1b12036df8fc9c1549d161d39169862d840;anchor=swh:1:rev:1f74f605c6e3cd43f9dca61d649cc0d831f918de"], "swh_browse_urls": ["https://archive.softwareheritage.org/browse/swh:1:dir:425390dcfea364b77992e78a55488ea22af9aa88"], "relatedPublication_s": [], "relatedData_s": ["10.25666/DATAUBFC-2025-07-04"], "seeAlso_s": [], "fileMain_s": null, "files_s": [], "authFullName_s": ["Ludovic Granjon", "Mélissa Poupelin", "Julien Pergaud"], "retrieved_at": "2026-09-22T03:33:17Z"}, {"halId_s": "hal-04543960", "uri_s": "https://hal.science/hal-04543960v1", "title_s": "dat@UBFC", "doiId_s": null, "producedDateY_i": 2024, "producedDate_s": "2024-03-12", "modifiedDate_tdate": "2026-09-22T03:26:28Z", "structAcronym_s": ["OSU-THETA", "INSU - CNRS", "UB", "CNRS", "UMLP", "dat@UBFC", "UTBM", "SUPMICROTECH - ENSMM", "BSB", "UBFC", "Institut Agro", "LCE", "UTINAM", "BGS", "MSHE", "MESOCENTRE"], "structName_s": ["Observatoire des Sciences de l'Univers - Terre Homme Environnement Temps Astronomie (OSU-THETA)", "Institut national des sciences de l'Univers", "Université de Bourgogne", "Centre National de la Recherche Scientifique", "Université Marie et Louis Pasteur", "Atelier de la donnée Bourgogne Franche-Comté", "Université de Technologie de Belfort-Montbeliard", "SUPMICROTECH - Ecole Nationale Supérieure de Mécanique et des Microtechniques", "Burgundy School of Business (BSB) - Ecole Supérieure de Commerce de Dijon Bourgogne (ESC)", "Université Bourgogne Franche-Comté [COMUE]", "Institut Agro Dijon", "Institut national d'enseignement supérieur pour l'agriculture, l'alimentation et l'environnement", "Laboratoire Chrono-environnement (UMR 6249)", "Univers, Théorie, Interfaces, Nanostructures, Atmosphère et environnement, Molécules (UMR 6213)", "Biogéosciences [UMR 6282]", "Maison des Sciences de l'Homme et de l'Environnement Claude Nicolas Ledoux (UAR 3124)", "Mésocentre de calcul"], "laboratories": ["OSU-THETA", "INSU - CNRS", "UB", "CNRS", "UMLP", "dat@UBFC", "UTBM", "SUPMICROTECH - ENSMM", "BSB", "UBFC"], "softCodeRepository_s": ["https://gitlab.in2p3.fr/teaminfoubfc/dataubfc.git"], "softProgrammingLanguage_s": ["PHP", "postgresql", "javascript", "css3", "html5", "bootstrap"], "softVersion_s": ["3.0.0"], "softPlatform_s": ["Debian 10", "Debian 11", "Debian 12", "Ubuntu 22.04"], "softDevelopmentStatus_s": ["Actif"], "swhidId_s": ["swh:1:dir:24d38f69885cbc71c7d7282a2a59ecec120575dd;origin=https://gitlab.in2p3.fr/teaminfoubfc/dataubfc;visit=swh:1:snp:2c5dd487b1c4f4787140f2e0d31e7598e92b59e5;anchor=swh:1:rev:495db2f82b290e86d5f719cfbbb2324857d2ba15"], "swh_browse_urls": ["https://archive.softwareheritage.org/browse/swh:1:dir:24d38f69885cbc71c7d7282a2a59ecec120575dd"], "relatedPublication_s": [], "relatedData_s": [], "seeAlso_s": [], "fileMain_s": null, "files_s": [], "authFullName_s": ["Raphael Melior", "Nadir Tabbou", "Sylvie Damy", "Bernard Debray", "Léna Bouillard", "Maélys Liseron-Monfils", "Rachel Prost", "Hélène Tisserand", "Gaëlle Laporte", "Tom Annebi", "Marie Smolinski", "Sébastien Dassé", "Albane Rossi", "Julien Pergaud", "Ernest Chiarello", "Gautier Lecoutre", "Kamel Mazouzi"], "retrieved_at": "2026-09-22T03:26:28Z"}, {"halId_s": "hal-05733705", "uri_s": "https://hal.inrae.fr/hal-05733705v1", "title_s": "Datagrosyst : Scripts de traitement des données issues d'Agrosyst", "doiId_s": "10.57745/CCG8OO", "producedDateY_i": 2026, "producedDate_s": "2026-09-14", "modifiedDate_tdate": "2026-09-16T03:19:05Z", "structAcronym_s": ["INRAE", "Institut Agro", "UBE"], "structName_s": ["Agroécologie [Dijon]", "Institut National de Recherche pour l’Agriculture, l’Alimentation et l’Environnement", "Institut Agro Dijon", "Institut national d'enseignement supérieur pour l'agriculture, l'alimentation et l'environnement", "Université Bourgogne Europe"], "laboratories": ["INRAE", "Institut Agro", "UBE"], "softCodeRepository_s": ["https://github.com/beren2/catalogue_script_agrosyst"], "softProgrammingLanguage_s": ["Python", "SQL"], "softVersion_s": [], "softPlatform_s": ["Debian"], "softDevelopmentStatus_s": ["Actif"], "swhidId_s": ["swh:1:dir:0877ea11e72cc7799dc31594ccaa7f076127754a;origin=https://hal.archives-ouvertes.fr/hal-05733705;visit=swh:1:snp:1458de44c214a2840f8d538db19e8b5445d54024;anchor=swh:1:rel:52acb9c93f724ef0551f02fa7b5ceb4b266c2655;path=/"], "swh_browse_urls": ["https://archive.softwareheritage.org/browse/swh:1:dir:0877ea11e72cc7799dc31594ccaa7f076127754a"], "relatedPublication_s": [], "relatedData_s": [], "seeAlso_s": [], "fileMain_s": "https://hal.inrae.fr/hal-05733705/document", "files_s": ["https://hal.inrae.fr/hal-05733705/file/documentations.zip"], "authFullName_s": ["Berenger Vuittenez", "Lucie Baude", "Thomas Badie", "Xavier Reboud", "Solenne Rousselet", "Thibault Peyrard"], "retrieved_at": "2026-09-16T03:19:05Z"}, {"halId_s": "hal-02822928", "uri_s": "https://hal.inrae.fr/hal-02822928v1", "title_s": "Ecomic RMQS : Interface de consultation des données du projet ANR ECOMIC-RMQS", "doiId_s": null, "producedDateY_i": 2008, "producedDate_s": "2008", "modifiedDate_tdate": "2026-09-02T13:24:37Z", "structAcronym_s": ["InfoSol", "INRA", "FLAVIC", "ENESAD", "UB"], "structName_s": ["InfoSol", "Institut National de la Recherche Agronomique", "FLAveur, VIsion et Comportement du consommateur", "Etablissement National d'Enseignement Supérieur Agronomique de Dijon", "Université de Bourgogne"], "laboratories": ["InfoSol", "INRA", "FLAVIC", "ENESAD", "UB"], "softCodeRepository_s": [], "softProgrammingLanguage_s": ["PHP"], "softVersion_s": ["1.0"], "softPlatform_s": ["Linux"], "softDevelopmentStatus_s": ["n'est plus maintenu"], "swhidId_s": [], "swh_browse_urls": [], "relatedPublication_s": [], "relatedData_s": [], "seeAlso_s": ["https://www.gissol.fr/tag/rmqs"], "fileMain_s": null, "files_s": [], "authFullName_s": ["Vivianne Judith Yayende-Guedoka", "Samuel Dequiedt", "Benoit Toutain"], "retrieved_at": "2026-09-02T13:24:37Z"}, {"halId_s": "hal-02833641", "uri_s": "https://hal.inrae.fr/hal-02833641v1", "title_s": "Base de données des sols de la Saône-et-Loire", "doiId_s": null, "producedDateY_i": 2005, "producedDate_s": "2005", "modifiedDate_tdate": "2026-09-02T13:24:28Z", "structAcronym_s": ["InfoSol", "INRA", "FLAVIC", "ENESAD", "UB"], "structName_s": ["InfoSol", "Institut National de la Recherche Agronomique", "FLAveur, VIsion et Comportement du consommateur", "Etablissement National d'Enseignement Supérieur Agronomique de Dijon", "Université de Bourgogne"], "laboratories": ["InfoSol", "INRA", "FLAVIC", "ENESAD", "UB"], "softCodeRepository_s": [], "softProgrammingLanguage_s": [], "softVersion_s": ["1"], "softPlatform_s": [], "softDevelopmentStatus_s": [], "swhidId_s": [], "swh_browse_urls": [], "relatedPublication_s": [], "relatedData_s": [], "seeAlso_s": [], "fileMain_s": null, "files_s": [], "authFullName_s": ["Bertrand Laroche", "Jean Chrétien", "Dominique D. Meunier"], "retrieved_at": "2026-09-02T13:24:28Z"}, {"halId_s": "hal-02800677", "uri_s": "https://hal.inrae.fr/hal-02800677v1", "title_s": "Système d'Information Agrosyst", "doiId_s": null, "producedDateY_i": 2014, "producedDate_s": "2014", "modifiedDate_tdate": "2026-09-02T13:24:21Z", "structAcronym_s": ["InfoSol", "INRA", "UB"], "structName_s": ["InfoSol", "Institut National de la Recherche Agronomique", "Agroécologie [Dijon]", "Université de Bourgogne", "AgroSup Dijon - Institut National Supérieur des Sciences Agronomiques, de l'Alimentation et de l'Environnement", "Agronomie", "AgroParisTech"], "laboratories": ["InfoSol", "INRA", "UB"], "softCodeRepository_s": [], "softProgrammingLanguage_s": ["Java"], "softVersion_s": ["1.5"], "softPlatform_s": [], "softDevelopmentStatus_s": ["en production"], "swhidId_s": [], "swh_browse_urls": [], "relatedPublication_s": [], "relatedData_s": [], "seeAlso_s": ["https://agrosyst.fr"], "fileMain_s": "https://hal.inrae.fr/hal-02800677/document", "files_s": ["https://hal.inrae.fr/hal-02800677/file/Pr%C3%A9sentation%20Agrosyst%20-%20Ao%C3%BBt%202015%20-%203p_1"], "authFullName_s": ["Estelle Ancelet", "Antoine Schellenberger", "Ophélie Jolys", "Nicolas Munier-Jolain", "Stéphane Cadoux"], "retrieved_at": "2026-09-02T13:24:21Z"}, {"halId_s": "hal-02818492", "uri_s": "https://hal.inrae.fr/hal-02818492v1", "title_s": "Ressources génétiques microbiennes des sols (Plateforme GenoSol)", "doiId_s": null, "producedDateY_i": 2008, "producedDate_s": "2008", "modifiedDate_tdate": "2026-07-28T14:22:17Z", "structAcronym_s": ["INRA", "UB"], "structName_s": ["Microbiologie", "Institut National de la Recherche Agronomique", "Université de Bourgogne"], "laboratories": ["INRA", "UB"], "softCodeRepository_s": [], "softProgrammingLanguage_s": [], "softVersion_s": [], "softPlatform_s": [], "softDevelopmentStatus_s": [], "swhidId_s": [], "swh_browse_urls": [], "relatedPublication_s": [], "relatedData_s": [], "seeAlso_s": ["https://www2.dijon.inrae.fr/plateforme_genosol/"], "fileMain_s": null, "files_s": [], "authFullName_s": ["Lionel Ranjard"], "retrieved_at": "2026-07-28T14:22:17Z"}, {"halId_s": "hal-04907384", "uri_s": "https://hal.science/hal-04907384v1", "title_s": "cotcot: conditions of order two, conjugate times", "doiId_s": "10.5281/zenodo.14722043", "producedDateY_i": 2025, "producedDate_s": "2025-01-23", "modifiedDate_tdate": "2026-07-08T16:28:04Z", "structAcronym_s": ["LJAD", "UNS", "CNRS", "UniCA", "McTAO", "Inria", "IMB", "UBE", "LJLL (UMR_7598)", "SU", "UPCité", "CaGE"], "structName_s": ["Laboratoire Jean Alexandre Dieudonné", "Université Nice Sophia Antipolis (1965 - 2019)", "Centre National de la Recherche Scientifique", "Université Côte d'Azur", "Mathematics for Control, Transport and Applications", "Centre Inria d'Université Côte d'Azur", "Institut National de Recherche en Informatique et en Automatique", "Institut de Mathématiques de Bourgogne [Dijon]", "Université Bourgogne Europe", "Laboratoire Jacques-Louis Lions", "Sorbonne Université", "Université Paris Cité", "Control And GEometry", "Centre Inria de Sorbonne Université", "Centre Inria de Paris"], "laboratories": ["LJAD", "UNS", "CNRS", "UniCA", "McTAO", "Inria", "IMB", "UBE", "LJLL (UMR_7598)", "SU"], "softCodeRepository_s": [], "softProgrammingLanguage_s": [], "softVersion_s": [], "softPlatform_s": [], "softDevelopmentStatus_s": [], "swhidId_s": ["swh:1:dir:c02953bfb701d30f057c26e9619233821e63ecb9;origin=https://hal.archives-ouvertes.fr/hal-04907384;visit=swh:1:snp:8b88eae872d72a9c460aee25a3a93e4a842a4934;anchor=swh:1:rel:0573b1654a52251014b1a50c89054f2c597c2657;path=/"], "swh_browse_urls": ["https://archive.softwareheritage.org/browse/swh:1:dir:c02953bfb701d30f057c26e9619233821e63ecb9"], "relatedPublication_s": [], "relatedData_s": [], "seeAlso_s": [], "fileMain_s": null, "files_s": [], "authFullName_s": ["Jean-Baptiste Caillau", "Bernard Bonnard", "Emmanuel Trélat"], "retrieved_at": "2026-07-08T16:28:04Z"}, {"halId_s": "hal-02787140", "uri_s": "https://hal.inrae.fr/hal-02787140v1", "title_s": "Paquet VLE pour les modèles de cultures AZODYN", "doiId_s": null, "producedDateY_i": 2018, "producedDate_s": "2018", "modifiedDate_tdate": "2026-05-20T08:28:36Z", "structAcronym_s": ["MIAT INRA", "INRA", "UB", "UBFC"], "structName_s": ["Unité de Mathématiques et Informatique Appliquées de Toulouse", "Institut National de la Recherche Agronomique", "Agroécologie [Dijon]", "Université de Bourgogne", "AgroSup Dijon - Institut National Supérieur des Sciences Agronomiques, de l'Alimentation et de l'Environnement", "Université Bourgogne Franche-Comté [COMUE]", "Agronomie", "AgroParisTech"], "laboratories": ["MIAT INRA", "INRA", "UB", "UBFC"], "softCodeRepository_s": [], "softProgrammingLanguage_s": [], "softVersion_s": [], "softPlatform_s": [], "softDevelopmentStatus_s": [], "swhidId_s": [], "swh_browse_urls": [], "relatedPublication_s": [], "relatedData_s": [], "seeAlso_s": [], "fileMain_s": null, "files_s": [], "authFullName_s": ["Ronan Trépos", "Mathieu Chanis", "Damien Beillouin", "Clémence Ravier", "Thomas Chabert", "Maud Benezit"], "retrieved_at": "2026-05-20T08:28:36Z"}, {"halId_s": "hal-04589525", "uri_s": "https://hal.science/hal-04589525v1", "title_s": "EPoMAB. European Bronze Age solid-hilted swords database", "doiId_s": "10.5281/zenodo.10913139", "producedDateY_i": 2024, "producedDate_s": "2024", "modifiedDate_tdate": "2026-05-05T15:52:52Z", "structAcronym_s": ["UGent", "ARTeHiS", "MCC", "UB", "CNRS"], "structName_s": ["Universiteit Gent = Ghent University = Université de Gand", "Archéologie, Terre, Histoire, Sociétés [Dijon]", "Ministère de la Culture et de la Communication", "Université de Bourgogne", "Centre National de la Recherche Scientifique"], "laboratories": ["UGent", "ARTeHiS", "MCC", "UB", "CNRS"], "softCodeRepository_s": ["https://github.com/lodumont/EPoMAB"], "softProgrammingLanguage_s": ["R"], "softVersion_s": ["1.0.0"], "softPlatform_s": [], "softDevelopmentStatus_s": ["Actif"], "swhidId_s": [], "swh_browse_urls": [], "relatedPublication_s": ["tel-03815132"], "relatedData_s": ["10.25666/DATAUBFC-2024-03-06"], "seeAlso_s": ["https://analytics.huma-num.fr/Leonard.Dumont/EPoMAB/"], "fileMain_s": "https://hal.science/hal-04589525/document", "files_s": ["https://hal.science/hal-04589525/file/EPoMAB_v1_0_0.zip"], "authFullName_s": ["Léonard Dumont"], "retrieved_at": "2026-05-05T15:52:52Z"}, {"halId_s": "hal-04601100", "uri_s": "https://hal.inrae.fr/hal-04601100v1", "title_s": "hubeau: an R package for the Hub'Eau APIs. Manual of the R package version 0.5.0", "doiId_s": "10.57745/XKN6NC", "producedDateY_i": 2024, "producedDate_s": "2024-03-04", "modifiedDate_tdate": "2026-04-08T14:59:27Z", "structAcronym_s": ["UMR G-EAU", "Cirad", "BRGM", "IRD", "INRAE", "Institut Agro", "OFB - DR BZH", "OFB", "SEINORMIGR", "UB"], "structName_s": ["Gestion de l'Eau, Acteurs, Usages", "Centre de Coopération Internationale en Recherche Agronomique pour le Développement", "Bureau de Recherches Géologiques et Minières", "Institut de Recherche pour le Développement", "AgroParisTech", "Institut National de Recherche pour l’Agriculture, l’Alimentation et l’Environnement", "Institut Agro Montpellier", "Institut national d'enseignement supérieur pour l'agriculture, l'alimentation et l'environnement", "OFB Direction régionale Bretagne", "Office français de la biodiversité", "Seine-Normandie Migrateurs", "Université de Bourgogne"], "laboratories": ["UMR G-EAU", "Cirad", "BRGM", "IRD", "INRAE", "Institut Agro", "OFB - DR BZH", "OFB", "SEINORMIGR", "UB"], "softCodeRepository_s": [], "softProgrammingLanguage_s": [], "softVersion_s": [], "softPlatform_s": [], "softDevelopmentStatus_s": [], "swhidId_s": [], "swh_browse_urls": [], "relatedPublication_s": [], "relatedData_s": [], "seeAlso_s": [], "fileMain_s": "https://hal.inrae.fr/hal-04601100/document", "files_s": ["https://hal.inrae.fr/hal-04601100/file/hubeau.pdf"], "authFullName_s": ["David Dorchies", "Pascal Irz", "Sébastien Grall", "Philippe Amiotte-Suchet"], "retrieved_at": "2026-04-08T14:59:27Z"}, {"halId_s": "hal-05530445", "uri_s": "https://hal.science/hal-05530445v1", "title_s": "Enquête administrative", "doiId_s": null, "producedDateY_i": 2026, "producedDate_s": "2026-02", "modifiedDate_tdate": "2026-03-13T03:11:44Z", "structAcronym_s": ["CREDESPO", "UBE"], "structName_s": ["Centre de Recherche et d'Etude en Droit et Science Politique [Dijon]", "Université Bourgogne Europe"], "laboratories": ["CREDESPO", "UBE"], "softCodeRepository_s": ["https://github.com/mathevetlouis-cyber/enquete-administrative.git"], "softProgrammingLanguage_s": [], "softVersion_s": [], "softPlatform_s": [], "softDevelopmentStatus_s": [], "swhidId_s": ["swh:1:dir:ebff935d20fe99b55125d6c6226a4e05380d70fb;origin=https://hal.archives-ouvertes.fr/hal-05530445;visit=swh:1:snp:ee9c39b88811fd8ca4a8717a3f690488fe91f5f4;anchor=swh:1:rel:141e07d9274a2c0257147d1c3fd0650e08d1956b;path=/"], "swh_browse_urls": ["https://archive.softwareheritage.org/browse/swh:1:dir:ebff935d20fe99b55125d6c6226a4e05380d70fb"], "relatedPublication_s": [], "relatedData_s": [], "seeAlso_s": [], "fileMain_s": "https://hal.science/hal-05530445/document", "files_s": ["https://hal.science/hal-05530445/file/enquete-administrative.zip"], "authFullName_s": ["Louis Mathevet Bidini"], "retrieved_at": "2026-03-13T03:11:44Z"}, {"halId_s": "hal-05530413", "uri_s": "https://hal.science/hal-05530413v1", "title_s": "Cartographie des risques d'atteintes à la probité", "doiId_s": null, "producedDateY_i": 2026, "producedDate_s": "2026-02", "modifiedDate_tdate": "2026-03-13T03:11:44Z", "structAcronym_s": ["CREDESPO", "UBE"], "structName_s": ["Centre de Recherche et d'Etude en Droit et Science Politique [Dijon]", "Université Bourgogne Europe"], "laboratories": ["CREDESPO", "UBE"], "softCodeRepository_s": ["https://github.com/mathevetlouis-cyber/carto-risques-probite.git"], "softProgrammingLanguage_s": ["HTML 5", "CSS;HTML;Javascript"], "softVersion_s": ["1"], "softPlatform_s": [], "softDevelopmentStatus_s": ["Actif (beta)"], "swhidId_s": ["swh:1:dir:a27b54e48d436b7c8f871a7db1dac02dbf11893c;origin=https://hal.archives-ouvertes.fr/hal-05530413;visit=swh:1:snp:cf04b9ea45a57778695eede20e75a54418b462ad;anchor=swh:1:rel:989bb2cae9e298467f667c04d79a2709c25e2929;path=/"], "swh_browse_urls": ["https://archive.softwareheritage.org/browse/swh:1:dir:a27b54e48d436b7c8f871a7db1dac02dbf11893c"], "relatedPublication_s": [], "relatedData_s": [], "seeAlso_s": [], "fileMain_s": "https://hal.science/hal-05530413/document", "files_s": ["https://hal.science/hal-05530413/file/carto-risques-probite.zip"], "authFullName_s": ["Louis Mathevet Bidini"], "retrieved_at": "2026-03-13T03:11:44Z"}, {"halId_s": "hal-02789426", "uri_s": "https://hal.inrae.fr/hal-02789426v1", "title_s": "R functions to extract data from a connected weighing scale used during a meal", "doiId_s": null, "producedDateY_i": 2018, "producedDate_s": "2018", "modifiedDate_tdate": "2026-02-25T14:09:42Z", "structAcronym_s": ["CSGA", "INRA", "UB", "CNRS"], "structName_s": ["Centre des Sciences du Goût et de l'Alimentation [Dijon]", "Institut National de la Recherche Agronomique", "Université de Bourgogne", "AgroSup Dijon - Institut National Supérieur des Sciences Agronomiques, de l'Alimentation et de l'Environnement", "Centre National de la Recherche Scientifique"], "laboratories": ["CSGA", "INRA", "UB", "CNRS"], "softCodeRepository_s": [], "softProgrammingLanguage_s": [], "softVersion_s": ["1.0.0"], "softPlatform_s": [], "softDevelopmentStatus_s": ["alpha"], "swhidId_s": [], "swh_browse_urls": [], "relatedPublication_s": [], "relatedData_s": [], "seeAlso_s": [], "fileMain_s": "https://hal.inrae.fr/hal-02789426/document", "files_s": ["https://hal.inrae.fr/hal-02789426/file/2018-chabanet_R_functions_1"], "authFullName_s": ["Claire Chabanet", "Jacques Maratray", "Pauline Brugaillères", "Sylvie Issanchou", "Camille Schwartz"], "retrieved_at": "2026-02-25T14:09:42Z"}, {"halId_s": "hal-04958064", "uri_s": "https://hal.science/hal-04958064v1", "title_s": "Fine-Grained Structural Partitioning", "doiId_s": null, "producedDateY_i": 2023, "producedDate_s": "2023-06", "modifiedDate_tdate": "2025-10-30T03:19:36Z", "structAcronym_s": ["GOAL", "LIRIS", "UL2", "ECL", "UCBL", "INSA Lyon", "INSA", "CNRS", "LIB", "UB"], "structName_s": ["Graphes, AlgOrithmes et AppLications", "Laboratoire d'InfoRmatique en Image et Systèmes d'information", "Université Lumière - Lyon 2", "École Centrale de Lyon", "Université de Lyon", "Université Claude Bernard Lyon 1", "Institut National des Sciences Appliquées de Lyon", "Institut National des Sciences Appliquées", "Centre National de la Recherche Scientifique", "Equipe Combinatoire Réseaux [LIB - EA 7534]", "Laboratoire d'Informatique de Bourgogne [Dijon]", "Université de Bourgogne"], "laboratories": ["GOAL", "LIRIS", "UL2", "ECL", "UCBL", "INSA Lyon", "INSA", "CNRS", "LIB", "UB"], "softCodeRepository_s": ["https://gitlab.liris.cnrs.fr/fpitois/fgsp"], "softProgrammingLanguage_s": ["Python 3.6", "Java"], "softVersion_s": ["1.0"], "softPlatform_s": ["Linux (Ubuntu)"], "softDevelopmentStatus_s": ["Inactif"], "swhidId_s": ["swh:1:dir:6235f90f16e5180e8185bd8529fa3b83e43fb1c1;origin=https://hal.archives-ouvertes.fr/hal-04958064;visit=swh:1:snp:ca7145bc7a48f6e90269a2fa394b3fa4fdb79433;anchor=swh:1:rel:85a7b5091f027f8ecc920cc3b0f9bc60cfa4b811;path=/"], "swh_browse_urls": ["https://archive.softwareheritage.org/browse/swh:1:dir:6235f90f16e5180e8185bd8529fa3b83e43fb1c1"], "relatedPublication_s": [], "relatedData_s": [], "seeAlso_s": ["https://hal.science/hal-04194761v1"], "fileMain_s": "https://hal.science/hal-04958064/document", "files_s": ["https://hal.science/hal-04958064/file/fgsp-main.zip"], "authFullName_s": ["François Pitois", "Hamida Seba", "Mohammed Haddad"], "retrieved_at": "2025-10-30T03:19:36Z"}, {"halId_s": "hal-04718906", "uri_s": "https://hal.science/hal-04718906v1", "title_s": "graft4dendrogram", "doiId_s": null, "producedDateY_i": 2024, "producedDate_s": "2024-10-02", "modifiedDate_tdate": "2025-10-29T11:41:03Z", "structAcronym_s": ["UMR TETIS", "Cirad", "CNRS", "INRAE", "IRIMAS", "Université de Haute-Alsace (UHA)", "LIB", "UB"], "structName_s": ["Territoires, Environnement, Télédétection et Information Spatiale", "Centre de Coopération Internationale en Recherche Agronomique pour le Développement", "AgroParisTech", "Centre National de la Recherche Scientifique", "Institut National de Recherche pour l’Agriculture, l’Alimentation et l’Environnement", "Institut de Recherche en Informatique Mathématiques Automatique Signal - IRIMAS - UR 7499", "Université de Haute-Alsace (UHA) Mulhouse - Colmar", "Laboratoire d'Informatique de Bourgogne [Dijon]", "Université de Bourgogne"], "laboratories": ["UMR TETIS", "Cirad", "CNRS", "INRAE", "IRIMAS", "Université de Haute-Alsace (UHA)", "LIB", "UB"], "softCodeRepository_s": [], "softProgrammingLanguage_s": ["R"], "softVersion_s": [], "softPlatform_s": [], "softDevelopmentStatus_s": ["Concept"], "swhidId_s": [], "swh_browse_urls": [], "relatedPublication_s": [], "relatedData_s": [], "seeAlso_s": [], "fileMain_s": "https://hal.science/hal-04718906/document", "files_s": ["https://hal.science/hal-04718906/file/cubes_arbores-main.zip"], "authFullName_s": ["Lucile Sautot", "Pierre Clavier", "Ludovic Journaux"], "retrieved_at": "2025-10-29T11:41:03Z"}, {"halId_s": "hal-02823706", "uri_s": "https://hal.inrae.fr/hal-02823706v1", "title_s": "TimeSens - un logiciel Web pour l'acquisition et le traitement des données sensorielles", "doiId_s": null, "producedDateY_i": 2010, "producedDate_s": "2010", "modifiedDate_tdate": "2025-03-31T08:12:06Z", "structAcronym_s": ["CSGA", "INRA", "UB", "CNRS"], "structName_s": ["Centre des Sciences du Goût et de l'Alimentation [Dijon]", "Institut National de la Recherche Agronomique", "Université de Bourgogne", "Centre National de la Recherche Scientifique"], "laboratories": ["CSGA", "INRA", "UB", "CNRS"], "softCodeRepository_s": [], "softProgrammingLanguage_s": ["ASP.NET", "C#", "JavaScript", "Silverlight", "HTML 5"], "softVersion_s": [], "softPlatform_s": [], "softDevelopmentStatus_s": ["bêta"], "swhidId_s": [], "swh_browse_urls": [], "relatedPublication_s": [], "relatedData_s": [], "seeAlso_s": ["https://www.chemosenstools.com/timesens/"], "fileMain_s": null, "files_s": [], "authFullName_s": ["Michel Visalli"], "retrieved_at": "2025-03-31T08:12:06Z"}, {"halId_s": "hal-02811849", "uri_s": "https://hal.inrae.fr/hal-02811849v1", "title_s": "Collection de Microorganismes d’Intérêt Agro-Environnemental (MIAE)", "doiId_s": null, "producedDateY_i": 2008, "producedDate_s": "2008", "modifiedDate_tdate": "2025-03-31T08:12:06Z", "structAcronym_s": ["INRA", "UB"], "structName_s": ["Microbiologie", "Institut National de la Recherche Agronomique", "Université de Bourgogne"], "laboratories": ["INRA", "UB"], "softCodeRepository_s": [], "softProgrammingLanguage_s": [], "softVersion_s": [], "softPlatform_s": [], "softDevelopmentStatus_s": [], "swhidId_s": [], "swh_browse_urls": [], "relatedPublication_s": [], "relatedData_s": [], "seeAlso_s": [], "fileMain_s": null, "files_s": [], "authFullName_s": ["Cécile Héraud", "Christian Steinberg"], "retrieved_at": "2025-03-31T08:12:06Z"}], "summary": {"generated_at": "2026-09-24T15:13:24Z", "software_deposits": 18, "with_swhid": 7, "with_code_repository": 7, "with_related_publication": 1, "with_hal_file": 9, "programming_languages": {"Python": 2, "PHP": 2, "Java": 2, "R": 2, "HTML 5": 2, "postgresql": 1, "javascript": 1, "css3": 1, "html5": 1, "bootstrap": 1, "SQL": 1, "CSS;HTML;Javascript": 1, "Python 3.6": 1, "ASP.NET": 1, "C#": 1, "JavaScript": 1, "Silverlight": 1}}}</script>
+  <script>
+    
+    function animateStatCounts(root, { duration = 850 } = {}) {
+      const scope = root || document;
+      const els = scope.querySelectorAll("strong[data-count]");
+      if (!els.length) return;
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const fmt = (n) => Math.round(n).toLocaleString("en");
+      els.forEach((el) => {
+        const target = Number(el.getAttribute("data-count"));
+        if (!Number.isFinite(target)) return;
+        if (reduce || duration <= 0) {
+          el.textContent = fmt(target);
+          return;
+        }
+        const start = performance.now();
+        function frame(now) {
+          const t = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - t, 3);
+          el.textContent = fmt(target * eased);
+          if (t < 1) requestAnimationFrame(frame);
+          else el.textContent = fmt(target);
+        }
+        requestAnimationFrame(frame);
+      });
+    }
+
+    function esc(s) {
+      return String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+    }
+    function formatStamp(iso) {
+      if (!iso) return "";
+      const d = new Date(iso);
+      if (Number.isNaN(d.getTime())) return esc(iso);
+      return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "Europe/Paris" })
+        + ", " + d.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "Europe/Paris" })
+        + " " + (d.toLocaleTimeString("en-GB", { timeZone: "Europe/Paris", timeZoneName: "short" }).split(" ").pop() || "Paris");
+    }
+    function cmpStr(a, b) {
+      return String(a || "").localeCompare(String(b || ""), undefined, { sensitivity: "base" });
+    }
+    function cmpIsoDesc(a, b) { return String(b || "").localeCompare(String(a || "")); }
+    function cmpIsoAsc(a, b) { return String(a || "").localeCompare(String(b || "")); }
+    function uniqueLabs(items, getLabs) {
+      const set = new Set();
+      for (const item of items) {
+        for (const lab of (getLabs(item) || [])) {
+          if (lab) set.add(String(lab));
+        }
+      }
+      return [...set].sort((a, b) => cmpStr(a, b));
+    }
+    function uniqueYears(items, getYears) {
+      const set = new Set();
+      for (const item of items) {
+        for (const y of (getYears(item) || [])) {
+          const n = Number(y);
+          if (Number.isFinite(n) && n > 0) set.add(n);
+        }
+      }
+      return [...set].sort((a, b) => b - a);
+    }
+    function paintYearControls(allYears) {
+      const sel = document.getElementById("yearSelect");
+      if (!sel) return;
+      const current = sel.value;
+      sel.innerHTML = `<option value="">All years</option>` +
+        allYears.map(y => `<option value="${y}">${y}</option>`).join("");
+      if (current && [...sel.options].some(o => o.value === current)) sel.value = current;
+    }
+    function activeYearFilter() {
+      const sel = document.getElementById("yearSelect");
+      return sel ? (sel.value || "").trim() : "";
+    }
+    function yearsMatch(years, filter) {
+      if (!filter) return true;
+      const want = Number(filter);
+      return (years || []).some(y => Number(y) === want);
+    }
+    function yearLine(years) {
+      const list = [...new Set((years || []).map(y => Number(y)).filter(y => Number.isFinite(y) && y > 0))]
+        .sort((a, b) => b - a);
+      if (!list.length) return "";
+      const label = list.length === 1 ? "Publication year" : "Publication years";
+      return `<div class="muted" style="margin-top:0.2rem;font-size:0.8rem">${label}: ${esc(list.join(" · "))}</div>`;
+    }
+    function paintLabControls(allLabs) {
+      const sel = document.getElementById("labSelect");
+      const dl = document.getElementById("labList");
+      const typed = (document.getElementById("labSearch").value || "").trim().toLowerCase();
+      const forSelect = !typed
+        ? allLabs
+        : allLabs.filter(l => l.toLowerCase().startsWith(typed) || l.toLowerCase().includes(typed));
+      const forSuggest = !typed
+        ? allLabs
+        : allLabs.filter(l => l.toLowerCase().startsWith(typed));
+      const current = sel.value;
+      sel.innerHTML = `<option value="">All laboratories</option>` +
+        forSelect.map(l => `<option value="${esc(l)}">${esc(l)}</option>`).join("");
+      if (current && [...sel.options].some(o => o.value === current)) sel.value = current;
+      else if (typed && forSelect.some(l => l.toLowerCase() === typed)) {
+        const exact = forSelect.find(l => l.toLowerCase() === typed);
+        if (exact) sel.value = exact;
+      }
+      dl.innerHTML = forSuggest.slice(0, 80).map(l => `<option value="${esc(l)}"></option>`).join("");
+    }
+    function activeLabFilter() {
+      const sel = (document.getElementById("labSelect").value || "").trim();
+      const typed = (document.getElementById("labSearch").value || "").trim();
+      return sel || typed;
+    }
+    function labsMatch(labs, filter) {
+      if (!filter) return true;
+      const q = filter.toLowerCase();
+      const list = labs || [];
+      if (list.some(l => String(l).toLowerCase() === q)) return true;
+      return list.some(l => String(l).toLowerCase().startsWith(q));
+    }
+    function labsLine(labs, limit) {
+      const list = (labs || []).filter(Boolean);
+      if (!list.length) return "";
+      const shown = list.slice(0, limit || 12);
+      const more = list.length > shown.length ? "…" : "";
+      return `<div class="muted" style="margin-top:0.2rem;font-size:0.8rem">Labs: ${esc(shown.join(" · "))}${more}</div>`;
+    }
+    function wireLabControls(onChange) {
+      const sel = document.getElementById("labSelect");
+      const search = document.getElementById("labSearch");
+      const yearSel = document.getElementById("yearSelect");
+      sel.addEventListener("change", () => {
+        if (sel.value) search.value = sel.value;
+        onChange();
+      });
+      search.addEventListener("input", () => {
+        const t = search.value.trim().toLowerCase();
+        if (!t) sel.value = "";
+        else {
+          const match = [...sel.options].find(o => o.value && o.value.toLowerCase() === t);
+          sel.value = match ? match.value : "";
+        }
+        onChange();
+      });
+      if (yearSel) yearSel.addEventListener("change", onChange);
+    }
+    
+    const data = JSON.parse(document.getElementById("data").textContent);
+    const rows = data.deposits || [];
+    const s = data.summary || {};
+    const allLabs = uniqueLabs(rows, r => r.laboratories);
+    const allYears = uniqueYears(rows, r => [r.producedDateY_i]);
+
+    function pubLink(id) {
+      if (!id) return "";
+      if (/^10\./.test(id)) return `https://doi.org/${id}`;
+      if (/^https?:/.test(id)) return id;
+      return `https://hal.science/${id}`;
+    }
+
+    document.getElementById("stats").innerHTML = [
+      { v: s.software_deposits || rows.length, l: "SOFTWARE deposits" },
+      { v: s.with_swhid || 0, l: "With Software Heritage SWHID" },
+      { v: s.with_code_repository || 0, l: "With code repository URL" },
+      { v: s.with_related_publication || 0, l: "With related publication" },
+    ].map(x => `<div class="stat"><strong data-count="${x.v}">0</strong><span>${x.l}</span></div>`).join("");
+    animateStatCounts(document.getElementById("stats"));
+
+    function sortRows(list) {
+      const mode = document.getElementById("sort").value;
+      return list.slice().sort((a, b) => {
+        if (mode === "retrieved_desc") return cmpIsoDesc(a.retrieved_at, b.retrieved_at) || cmpStr(a.title_s, b.title_s);
+        if (mode === "retrieved_asc") return cmpIsoAsc(a.retrieved_at, b.retrieved_at) || cmpStr(a.title_s, b.title_s);
+        if (mode === "hal_desc") return cmpIsoDesc(a.modifiedDate_tdate, b.modifiedDate_tdate) || cmpStr(a.title_s, b.title_s);
+        if (mode === "year_desc") return (Number(b.producedDateY_i)||0) - (Number(a.producedDateY_i)||0) || cmpStr(a.title_s, b.title_s);
+        return cmpStr(a.title_s, b.title_s);
+      });
+    }
+
+    function render() {
+      paintLabControls(allLabs);
+      paintYearControls(allYears);
+      const q = document.getElementById("q").value.trim().toLowerCase();
+      const labFilter = activeLabFilter();
+      const yearFilter = activeYearFilter();
+      const filtered = rows.filter(r => {
+        if (!labsMatch(r.laboratories, labFilter)) return false;
+        if (!yearsMatch([r.producedDateY_i], yearFilter)) return false;
+        if (!q) return true;
+        const blob = [r.title_s, r.halId_s, r.doiId_s, r.producedDateY_i, ...(r.laboratories||[]), ...(r.authFullName_s||[]),
+          ...(r.softCodeRepository_s||[]), ...(r.swhidId_s||[]),
+          ...(r.softProgrammingLanguage_s||[]), ...(r.relatedPublication_s||[]), ...(r.relatedData_s||[])].join(" ").toLowerCase();
+        return blob.includes(q);
+      });
+      const list = sortRows(filtered);
+      document.getElementById("count").textContent = `${list.length} of ${rows.length} deposits`;
+      document.getElementById("list").innerHTML = list.map(r => {
+        const langs = (r.softProgrammingLanguage_s||[]).map(l => `<span class="badge">${esc(l)}</span>`).join("");
+        const repos = (r.softCodeRepository_s||[]).map(u =>
+          `<div class="ev"><dt>Code repo</dt><dd><a href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a></dd></div>`
+        ).join("");
+        const swh = (r.swhidId_s||[]).map((id, i) => {
+          const browse = (r.swh_browse_urls&&r.swh_browse_urls[i]) || ("https://archive.softwareheritage.org/browse/" + id.split(";")[0]);
+          return `<div class="ev"><dt>SWHID</dt><dd><a href="${esc(browse)}" target="_blank" rel="noopener"><code>${esc(id.split(";")[0])}</code></a></dd></div>`;
+        }).join("");
+        const pubs = (r.relatedPublication_s||[]).map(id => {
+          const href = pubLink(id);
+          return `<div class="ev"><dt>Related pub</dt><dd><a href="${esc(href)}" target="_blank" rel="noopener"><code>${esc(id)}</code></a></dd></div>`;
+        }).join("");
+        const dataLinks = (r.relatedData_s||[]).map(id => {
+          const href = pubLink(id);
+          return `<div class="ev"><dt>Related data</dt><dd><a href="${esc(href)}" target="_blank" rel="noopener"><code>${esc(id)}</code></a></dd></div>`;
+        }).join("");
+        const files = (r.files_s||[]).slice(0,3).map(u =>
+          `<div class="ev"><dt>HAL file</dt><dd><a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.split("/").pop())}</a></dd></div>`
+        ).join("");
+        const authors = (r.authFullName_s||[]).slice(0, 8);
+        const authorLine = authors.length
+          ? `<span class="muted" style="font-size:0.8rem">${esc(authors.join(", "))}${(r.authFullName_s||[]).length > 8 ? "…" : ""}</span>`
+          : "";
+        const retrieved = r.retrieved_at
+          ? `<span><time datetime="${esc(r.retrieved_at)}">Retrieved ${formatStamp(r.retrieved_at)}</time></span>`
+          : "";
+        const halMod = r.modifiedDate_tdate
+          ? `<span class="muted"><time datetime="${esc(r.modifiedDate_tdate)}">HAL updated ${formatStamp(r.modifiedDate_tdate)}</time></span>`
+          : "";
+        const yearBadge = r.producedDateY_i ? `<span class="badge">${esc(r.producedDateY_i)}</span>` : "";
+        return `<article class="result">
+          <div class="title-row">
+            <div>
+              <span class="doi-annot">HAL SOFTWARE deposit</span>
+              <h2 class="title"><a href="${esc(r.uri_s || "#")}" target="_blank" rel="noopener">${esc(r.title_s || "(untitled)")}</a></h2>
+            </div>
+            <div class="badges">${yearBadge}${langs || '<span class="badge">SOFTWARE</span>'}</div>
+          </div>
+          <div class="sub">
+            <a href="${esc(r.uri_s || "#")}" target="_blank" rel="noopener"><code>${esc(r.halId_s)}</code></a>
+            ${r.doiId_s ? `<a href="https://doi.org/${esc(r.doiId_s)}" target="_blank" rel="noopener"><code>${esc(r.doiId_s)}</code></a>` : ""}
+            <span>${(r.softCodeRepository_s||[]).length} repo(s)</span>
+            <span>${(r.swhidId_s||[]).length} SWHID(s)</span>
+            ${retrieved}
+            ${halMod}
+          </div>
+          ${yearLine([r.producedDateY_i])}
+          ${authorLine}
+          ${labsLine(r.laboratories)}
+          <div class="evidence">${repos}${swh}${pubs}${dataLinks}${files || (r.fileMain_s ? `<div class="ev"><dt>HAL file</dt><dd><a href="${esc(r.fileMain_s)}" target="_blank" rel="noopener">document</a></dd></div>` : "")}</div>
+        </article>`;
+      }).join("") || `<div class="empty">No matches.</div>`;
+    }
+    paintLabControls(allLabs);
+    paintYearControls(allYears);
+    wireLabControls(render);
+    document.getElementById("q").addEventListener("input", render);
+    document.getElementById("sort").addEventListener("change", render);
+    render();
+  </script>
+</body>
+</html>

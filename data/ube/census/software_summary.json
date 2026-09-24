@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-09-24T15:13:24Z",
+  "software_deposits": 18,
+  "with_swhid": 7,
+  "with_code_repository": 7,
+  "with_related_publication": 1,
+  "with_hal_file": 9,
+  "programming_languages": {
+    "Python": 2,
+    "PHP": 2,
+    "Java": 2,
+    "R": 2,
+    "HTML 5": 2,
+    "postgresql": 1,
+    "javascript": 1,
+    "css3": 1,
+    "html5": 1,
+    "bootstrap": 1,
+    "SQL": 1,
+    "CSS;HTML;Javascript": 1,
+    "Python 3.6": 1,
+    "ASP.NET": 1,
+    "C#": 1,
+    "JavaScript": 1,
+    "Silverlight": 1
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-09-24T15:13:24Z",
+  "unique_datasets": 173,
+  "dataset_publication_links": 199,
+  "datasets_with_multiple_publications": 20,
+  "by_repository": {
+    "Recherche Data Gouv": 82,
+    "NAKALA": 25,
+    "Zenodo": 22,
+    "Portail Data Inra": 13,
+    "Dryad": 9,
+    "Figshare": 5,
+    "Mendeley Data": 4,
+    "Progedo-Adisp": 4,
+    "Australian Antarctic Data Centre": 3,
+    "CIRAD Dataverse": 2,
+    "AU/AADC > Australian Antarctic Data Centre, Australia": 1,
+    "OSF": 1,
+    "Portail Data INRAE": 1,
+    "data.InDoRES": 1
+  }
+}
