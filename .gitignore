@@ -27,4 +27,7 @@ data/sample.jsonl.meta.json
 !data/census/**
 !data/ube/
 !data/ube/**
+# Bulk harvests stay local even under data/ube/
+data/ube/harvest.jsonl
+data/ube/harvest.jsonl.meta.json
 .vscode/
