@@ -19,6 +19,17 @@ SITE_TAGLINE = (
     "linked datasets, repositories, software, and correction queues."
 )
 
+# Partner / sibling HAL portals shown above the page eyebrow (extend as needed).
+# Each entry: id, label, href (opens in a new tab), logo filename under static/universities/.
+UNIVERSITY_PORTALS: list[dict[str, str]] = [
+    {
+        "id": "ube",
+        "label": "Université Bourgogne Europe",
+        "href": "https://ube.hal.science/",
+        "logo": "ube.png",
+    },
+]
+
 
 def _utc_now() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -704,6 +715,30 @@ nav a.navlink:hover, nav a.navlink[aria-current="page"] {
   font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--accent-hover);
 }
+.uni-logos {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.1rem;
+  margin: 0 0 0.85rem; padding: 0;
+  list-style: none;
+}
+.uni-logos a {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 2.75rem; padding: 0.2rem 0.35rem;
+  border-radius: 8px; border: 1px solid var(--line);
+  background: rgba(251,250,248,0.9);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+.uni-logos a:hover, .uni-logos a:focus-visible {
+  border-color: var(--accent); box-shadow: 0 0 0 3px rgba(42,38,34,0.08);
+  transform: translateY(-1px); outline: none;
+}
+.uni-logos img {
+  display: block; height: 2.2rem; width: auto; max-width: 9.5rem;
+  object-fit: contain;
+}
+@media (max-width: 520px) {
+  .uni-logos a { height: 2.4rem; }
+  .uni-logos img { height: 1.9rem; max-width: 8rem; }
+}
 h1 {
   margin: 0.4rem 0 0; font-family: var(--font-display); font-weight: 700;
   font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.05; letter-spacing: -0.035em;
@@ -1339,6 +1374,33 @@ STACK_CHART_JS = r"""
 """
 
 
+def _university_logos_html() -> str:
+    """Row of university logos linking to their HAL portals (new tab)."""
+    if not UNIVERSITY_PORTALS:
+        return ""
+    items = []
+    for portal in UNIVERSITY_PORTALS:
+        logo = portal.get("logo") or ""
+        href = portal.get("href") or "#"
+        label = portal.get("label") or portal.get("id") or "University"
+        src = f"./assets/universities/{logo}" if logo else ""
+        if not src:
+            continue
+        items.append(
+            f'<li><a href="{_html_attr(href)}" target="_blank" rel="noopener noreferrer" '
+            f'title="{_html_attr(label)} — open HAL portal">'
+            f'<img src="{_html_attr(src)}" alt="{_html_attr(label)}" width="160" height="82" '
+            f'loading="lazy" decoding="async" /></a></li>'
+        )
+    if not items:
+        return ""
+    return (
+        '<ul class="uni-logos" aria-label="University HAL portals">\n'
+        + "\n".join(items)
+        + "\n    </ul>"
+    )
+
+
 def _nav(active: str) -> str:
     def link(href: str, label: str, key: str) -> str:
         cur = ' aria-current="page"' if key == active else ""
@@ -1356,6 +1418,7 @@ def _nav(active: str) -> str:
       {link("./software.html", "Software", "software")}
       {link("./documentation.html", "Documentation", "docs")}
     </nav>
+    {_university_logos_html()}
     """
 
 
@@ -2556,6 +2619,18 @@ def write_site(
     payload_json = json.dumps(payload, ensure_ascii=False).replace("<", "\\u003c")
     data_dir = output_dir / "data"
     data_dir.mkdir(parents=True, exist_ok=True)
+
+    # University logos for the portal switcher row
+    import shutil
+
+    logos_src = Path(__file__).resolve().parents[2] / "static" / "universities"
+    logos_dest = output_dir / "assets" / "universities"
+    if logos_src.is_dir():
+        logos_dest.mkdir(parents=True, exist_ok=True)
+        for src in logos_src.iterdir():
+            if src.is_file() and src.suffix.lower() in {".png", ".svg", ".webp", ".jpg", ".jpeg"}:
+                shutil.copy2(src, logos_dest / src.name)
+
     (data_dir / "stats.json").write_text(
         json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
