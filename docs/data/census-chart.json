@@ -1,8 +1,8 @@
 {
-  "unique_datasets": 246,
-  "publications_with_dataset": 164,
+  "unique_datasets": 247,
+  "publications_with_dataset": 165,
   "by_repository": {
-    "Zenodo": 95,
+    "Zenodo": 96,
     "Recherche Data Gouv": 65,
     "SEANOE": 15,
     "Sismer": 10,
@@ -109,7 +109,7 @@
       11,
       35,
       35,
-      71,
+      72,
       20
     ],
     "series": [
@@ -138,7 +138,7 @@
           5,
           11,
           10,
-          24,
+          25,
           10
         ]
       },
@@ -874,6 +874,22 @@
             "halId_s": "hal-05065428",
             "title_s": "Time-lapse 3D image datasets of spruce tree wood enzymatic deconstruction",
             "uri_s": "https://hal.science/hal-05065428v1",
+            "producedDateY_i": 2025
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.17662413",
+        "dataset_title": "TOI-7510: A solar-analog system of three transiting giant planets near a Laplace resonance chain",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17662413",
+        "landing_host": "zenodo.org",
+        "year": 2025,
+        "publications": [
+          {
+            "halId_s": "hal-05760346",
+            "title_s": "TOI-7510: A solar-analog system of three transiting giant planets near a Laplace resonance chain",
+            "uri_s": "https://hal.science/hal-05760346v1",
             "producedDateY_i": 2025
           }
         ]

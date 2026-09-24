@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-09-23T09:12:44Z`  
+Generated: `2026-09-24T08:53:35Z`  
 Collection: `UNIV-COTEDAZUR`  
-Run window: `2026-09-23T09:12:43Z` → `2026-09-23T09:12:44Z`
+Run window: `2026-09-24T08:53:33Z` → `2026-09-24T08:53:35Z`
 
 ## Goal
 
@@ -53,22 +53,22 @@ repository root `README.md`.
 
 ## Counts (this run)
 
-- HAL notices with linked identifiers: **313**
-- Related tokens: **508**
-- Unique DOIs resolved: **401**
-- Publications with at least one dataset-repo landing: **164**
+- HAL notices with linked identifiers: **316**
+- Related tokens: **511**
+- Unique DOIs resolved: **404**
+- Publications with at least one dataset-repo landing: **165**
 - Misfiled dataset links (wrong HAL field): **72**
 - Publications with ≥1 misfiled dataset link: **53**
 
 ### Dataset DOIs by HAL source field
 
-- **`relatedData_s`**: 191
+- **`relatedData_s`**: 192
 - **`relatedPublication_s`**: 71
 - **`seeAlso_s`**: 2
 
 ### By repository (DOI evidence)
 
-- **Zenodo**: 96
+- **Zenodo**: 97
 - **Recherche Data Gouv**: 78
 - **Journal DOI (10.1007)**: 31
 - **Journal DOI (10.1109)**: 20
@@ -113,6 +113,7 @@ repository root `README.md`.
 - **RADAR KIT**: 2
 - **data.InDoRES**: 2
 - **Canal-U**: 1
+- **DACE**: 1
 - **DOI prefix 10.1044**: 1
 - **DOI prefix 10.1051**: 1
 - **DOI prefix 10.1075**: 1
@@ -152,13 +153,14 @@ repository root `README.md`.
 - **OSU OREME**: 1
 - **OpenNeuro**: 1
 - **PANGAEA**: 1
+- **Pensoft via Plazi**: 1
 - **Progedo-Adisp**: 1
 - **STScI/MAST**: 1
 - **University of Bristol data.bris**: 1
 
 ### By landing host
 
-- `zenodo.org`: 95
+- `zenodo.org`: 96
 - `entrepot.recherche.data.gouv.fr`: 52
 - `data.inrae.fr`: 24
 - `seanoe.org`: 15
@@ -185,6 +187,8 @@ repository root `README.md`.
 - `canal-u.tv`: 1
 - `carrtel-collection.hub.inrae.fr`: 1
 - `cdsarc.cds.unistra.fr`: 1
+- `checklistbank.org`: 1
+- `dace.unige.ch`: 1
 - `data.bris.ac.uk`: 1
 - `data.oreme.org`: 1
 - `data.progedo.fr`: 1
@@ -196,5 +200,3 @@ repository root `README.md`.
 - `ncei.noaa.gov`: 1
 - `networks.seismo.ethz.ch`: 1
 - `openneuro.org`: 1
-- `pdssbn.astro.umd.edu`: 1
-- `pid.geoscience.gov.au`: 1

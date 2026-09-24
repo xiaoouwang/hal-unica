@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T11:27:51Z",
+  "generated_at": "2026-09-24T08:53:37Z",
   "collection": "UNIV-COTEDAZUR",
   "collection_url": "https://hal.science/UNIV-COTEDAZUR",
   "harvest": {
@@ -292,16 +292,17 @@
       }
     ],
     "year_min": 1918,
-    "year_max": 2026
+    "year_max": 2026,
+    "stale": true
   },
   "data_links": {
-    "total_hits": 246,
+    "total_hits": 247,
     "by_platform": {
       "nakala": 9,
       "rdg": 47
     },
     "by_repository": {
-      "Zenodo": 95,
+      "Zenodo": 96,
       "Recherche Data Gouv": 65,
       "SEANOE": 15,
       "Sismer": 10,
@@ -345,6 +346,80 @@
       "NAKALA": 9
     },
     "publications": [
+      {
+        "halId_s": "hal-05114056",
+        "uri_s": "https://hal.science/hal-05114056v2",
+        "title_s": "Le Rhône aménagé vu du ciel. Constitution d'une base de données photographiques obliques pour documenter la trajectoire socio-environnementale du fleuve contemporain (1910-1960)",
+        "docType_s": "ART",
+        "doiId_s": "10.46298/dc.15880",
+        "laboratories": [
+          "EVS",
+          "ENS de Lyon",
+          "Mines Saint-Étienne MSE",
+          "IMT",
+          "UL2",
+          "UJML",
+          "INSA Lyon",
+          "INSA",
+          "UJM",
+          "UJM EPE"
+        ],
+        "modifiedDate_tdate": "2026-09-24T03:35:08Z",
+        "producedDateY_i": 2025,
+        "repositories": [
+          "NAKALA"
+        ],
+        "datasets": [
+          {
+            "doi": "10.34847/nkl.e63a22n9",
+            "repository": "NAKALA",
+            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+            "landing_url": "https://nakala.fr/10.34847/nkl.e63a22n9",
+            "landing_host": "nakala.fr",
+            "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-04694490",
+        "uri_s": "https://hal.science/hal-04694490v1",
+        "title_s": "Unraveling genetic load dynamics during biological invasion: insights from two invasive insect species",
+        "docType_s": "UNDEFINED",
+        "doiId_s": "10.1101/2024.09.02.610743",
+        "laboratories": [
+          "ISA",
+          "UNS",
+          "CNRS",
+          "INRAE",
+          "UniCA",
+          "UMR 8030",
+          "GENOSCOPE",
+          "DRF (CEA)",
+          "CEA",
+          "UEVE"
+        ],
+        "modifiedDate_tdate": "2026-09-23T14:29:44Z",
+        "producedDateY_i": 2024,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/ESQFDB",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/ESQFDB",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Scripts used for data analyzing in the manuscript: “Unraveling genetic load dynamics during biological invasion: insights from two invasive insect species”",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
       {
         "halId_s": "hal-03288922",
         "uri_s": "https://hal.inrae.fr/hal-03288922v1",
@@ -544,43 +619,6 @@
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/JYWUIY",
             "landing_host": "entrepot.recherche.data.gouv.fr",
             "dataset_title": "Données de l'enquête ADBU sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-05114056",
-        "uri_s": "https://hal.science/hal-05114056v2",
-        "title_s": "Le Rhône aménagé vu du ciel. Constitution d'une base de données photographiques obliques pour documenter la trajectoire socio-environnementale du fleuve contemporain (1910-1960)",
-        "docType_s": "ART",
-        "doiId_s": "10.46298/dc.15880",
-        "laboratories": [
-          "EVS",
-          "ENS de Lyon",
-          "Mines Saint-Étienne MSE",
-          "IMT",
-          "UL2",
-          "UJML",
-          "INSA Lyon",
-          "INSA",
-          "UJM",
-          "UJM EPE"
-        ],
-        "modifiedDate_tdate": "2026-09-22T03:25:40Z",
-        "producedDateY_i": 2025,
-        "repositories": [
-          "NAKALA"
-        ],
-        "datasets": [
-          {
-            "doi": "10.34847/nkl.e63a22n9",
-            "repository": "NAKALA",
-            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-            "landing_url": "https://nakala.fr/10.34847/nkl.e63a22n9",
-            "landing_host": "nakala.fr",
-            "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -1566,43 +1604,6 @@
             "landing_url": "https://nakala.fr/10.34847/nkl.2cec5407",
             "landing_host": "nakala.fr",
             "dataset_title": "LIARArg: A dataset for fake news detection enhanced by argumentative features",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-04694490",
-        "uri_s": "https://hal.science/hal-04694490v1",
-        "title_s": "Unraveling genetic load dynamics during biological invasion: insights from two invasive insect species",
-        "docType_s": "UNDEFINED",
-        "doiId_s": "10.1101/2024.09.02.610743",
-        "laboratories": [
-          "ISA",
-          "UNS",
-          "CNRS",
-          "INRAE",
-          "UniCA",
-          "UMR 8030",
-          "GENOSCOPE",
-          "DRF (CEA)",
-          "CEA",
-          "UEVE"
-        ],
-        "modifiedDate_tdate": "2026-06-17T03:23:44Z",
-        "producedDateY_i": 2024,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.57745/ESQFDB",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/ESQFDB",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "Scripts used for data analyzing in the manuscript: “Unraveling genetic load dynamics during biological invasion: insights from two invasive insect species”",
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -2739,10 +2740,10 @@
     "scope": "nakala_rdg_focus"
   },
   "census_chart": {
-    "unique_datasets": 246,
-    "publications_with_dataset": 164,
+    "unique_datasets": 247,
+    "publications_with_dataset": 165,
     "by_repository": {
-      "Zenodo": 95,
+      "Zenodo": 96,
       "Recherche Data Gouv": 65,
       "SEANOE": 15,
       "Sismer": 10,
@@ -2849,7 +2850,7 @@
         11,
         35,
         35,
-        71,
+        72,
         20
       ],
       "series": [
@@ -2878,7 +2879,7 @@
             5,
             11,
             10,
-            24,
+            25,
             10
           ]
         },
@@ -3614,6 +3615,22 @@
               "halId_s": "hal-05065428",
               "title_s": "Time-lapse 3D image datasets of spruce tree wood enzymatic deconstruction",
               "uri_s": "https://hal.science/hal-05065428v1",
+              "producedDateY_i": 2025
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.5281/zenodo.17662413",
+          "dataset_title": "TOI-7510: A solar-analog system of three transiting giant planets near a Laplace resonance chain",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17662413",
+          "landing_host": "zenodo.org",
+          "year": 2025,
+          "publications": [
+            {
+              "halId_s": "hal-05760346",
+              "title_s": "TOI-7510: A solar-analog system of three transiting giant planets near a Laplace resonance chain",
+              "uri_s": "https://hal.science/hal-05760346v1",
               "producedDateY_i": 2025
             }
           ]
