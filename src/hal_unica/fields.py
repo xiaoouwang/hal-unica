@@ -25,6 +25,7 @@ DEFAULT_FL = [
     "structAcronym_s",
     "producedDate_s",
     "producedDateY_i",
+    "producedDateM_i",
     "submittedDate_s",
     "modifiedDate_tdate",
     "releasedDate_s",

@@ -2,10 +2,13 @@ name: Daily incremental refresh
 
 on:
   schedule:
-    # Daily 04:00 UTC — Mon–Sat incremental (2-day lookback)
-    - cron: "0 4 * * 1-6"
-    # Sunday 04:00 UTC — full relatedData rebuild (DOI cache still reused)
-    - cron: "0 4 * * 0"
+    # Off the top of the hour (GitHub delays :00 crons more under load).
+    # Primary: ~04:17 UTC = 06:17 CEST / 05:17 CET
+    - cron: "17 4 * * 1-6"   # Mon–Sat incremental
+    - cron: "17 4 * * 0"     # Sunday full
+    # Catch-up if the morning run was delayed past useful time:
+    # ~08:17 UTC = 10:17 CEST / 09:17 CET
+    - cron: "17 8 * * *"
   workflow_dispatch:
     inputs:
       mode:
@@ -51,8 +54,8 @@ jobs:
         run: |
           MODE="${{ github.event.inputs.mode }}"
           if [ -z "$MODE" ]; then
-            # cron: Sunday schedule string ends with "0"
-            if [ "${{ github.event.schedule }}" = "0 4 * * 0" ]; then
+            # Only the Sunday primary slot is full; catch-up stays incremental.
+            if [ "${{ github.event.schedule }}" = "17 4 * * 0" ]; then
               MODE=full
             else
               MODE=incremental

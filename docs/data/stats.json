@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T08:53:37Z",
+  "generated_at": "2026-09-24T09:06:11Z",
   "collection": "UNIV-COTEDAZUR",
   "collection_url": "https://hal.science/UNIV-COTEDAZUR",
   "harvest": {
@@ -292,8 +292,7 @@
       }
     ],
     "year_min": 1918,
-    "year_max": 2026,
-    "stale": true
+    "year_max": 2026
   },
   "data_links": {
     "total_hits": 247,
@@ -2803,6 +2802,31 @@
       2026
     ],
     "stacked": {
+      "periods": [
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
       "years": [
         2004,
         2005,
@@ -2827,6 +2851,31 @@
         2024,
         2025,
         2026
+      ],
+      "labels": [
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
       ],
       "totals": [
         1,
@@ -3231,7 +3280,8 @@
             0
           ]
         }
-      ]
+      ],
+      "period_kind": "year"
     },
     "cell_details": {
       "2025|Zenodo": [
@@ -3247,7 +3297,8 @@
               "halId_s": "hal-05232248",
               "title_s": "Back to the Source: Connecting the Seismological Observations of Le Teil Earthquake (M w 4.9, 2019/11/11, France) to the Local Geology",
               "uri_s": "https://hal.science/hal-05232248v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 8
             }
           ]
         },
@@ -3263,7 +3314,8 @@
               "halId_s": "hal-04429351",
               "title_s": "Exploring, walking, and interacting in virtual reality with simulated low vision: a living contextual dataset",
               "uri_s": "https://inria.hal.science/hal-04429351v2",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 2
             }
           ]
         },
@@ -3279,7 +3331,8 @@
               "halId_s": "hal-05250749",
               "title_s": "Prospects for dark matter observations in dwarf spheroidal galaxies with the Cherenkov Telescope Array Observatory",
               "uri_s": "https://hal.science/hal-05250749v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -3295,7 +3348,8 @@
               "halId_s": "hal-05171564",
               "title_s": "An analysis of the dynamic range of Distributed Acoustic Sensing for Earthquake Early Warning",
               "uri_s": "https://hal.science/hal-05171564v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 4
             }
           ]
         },
@@ -3311,7 +3365,8 @@
               "halId_s": "hal-05226636",
               "title_s": "Bubble removal in microfluidic channels surrounded by gas-permeable media: experiments and a predictive model",
               "uri_s": "https://hal.science/hal-05226636v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 8
             }
           ]
         },
@@ -3327,7 +3382,8 @@
               "halId_s": "hal-05266438",
               "title_s": "The Role of Stress Distribution in Seismic Cycle Complexity of a Long Laboratory Fault",
               "uri_s": "https://hal.science/hal-05266438v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -3343,7 +3399,8 @@
               "halId_s": "hal-05625446",
               "title_s": "Ungulate mobility and Neandertal predation agenda in Axlor level D (Basque Country, northatlantic Iberia)",
               "uri_s": "https://hal.science/hal-05625446v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -3359,7 +3416,8 @@
               "halId_s": "hal-04642776",
               "title_s": "Constructive characterisations of the must-preorder for asynchrony",
               "uri_s": "https://hal.science/hal-04642776v2",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -3375,7 +3433,8 @@
               "halId_s": "hal-05270001",
               "title_s": "Offshore Record of Explosive Volcanic Eruptions in the Southern Part of the Panamá Basin During the Past 10 Myr: 1. Tephrostratigraphy, Cross‐Correlations and Geochemical Characterization",
               "uri_s": "https://hal.science/hal-05270001v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -3391,7 +3450,8 @@
               "halId_s": "hal-05249760",
               "title_s": "GW250114: Testing Hawking’s Area Law and the Kerr Nature of Black Holes",
               "uri_s": "https://hal.science/hal-05249760v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -3407,7 +3467,8 @@
               "halId_s": "hal-05239495",
               "title_s": "LUNDIsim : model meshes for flow simulation and scientific data compression benchmarks",
               "uri_s": "https://hal.science/hal-05239495v2",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 10
             }
           ]
         },
@@ -3423,7 +3484,8 @@
               "halId_s": "hal-04985988",
               "title_s": "On the emergence of fault afterslip during laboratory seismic cycles",
               "uri_s": "https://minesparis-psl.hal.science/hal-04985988v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -3439,7 +3501,8 @@
               "halId_s": "hal-05129574",
               "title_s": "Young apple tree development under agroforestry radiative conditions: a multi-scale morphological and architectural dataset",
               "uri_s": "https://hal.inrae.fr/hal-05129574v2",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 8
             }
           ]
         },
@@ -3455,7 +3518,8 @@
               "halId_s": "hal-05538163",
               "title_s": "Modeling omics integration with HIVE identifies response signatures to multifactorial stress in plants",
               "uri_s": "https://hal.inrae.fr/hal-05538163v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 12
             }
           ]
         },
@@ -3471,7 +3535,8 @@
               "halId_s": "insu-04923392",
               "title_s": "Local Generation of Mirror Modes by Pickup Protons at Mars",
               "uri_s": "https://insu.hal.science/insu-04923392v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 1
             }
           ]
         },
@@ -3487,7 +3552,8 @@
               "halId_s": "hal-05396154",
               "title_s": "Dynamics of transport by helical edge states",
               "uri_s": "https://hal.science/hal-05396154v2",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 11
             }
           ]
         },
@@ -3503,7 +3569,8 @@
               "halId_s": "hal-05157073",
               "title_s": "Imaging the Sediment Cover Offshore Central Chile With Surface‐Wave Dispersion and P‐Wave Conversion Using Distributed Acoustic Sensing",
               "uri_s": "https://hal.science/hal-05157073v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -3519,7 +3586,8 @@
               "halId_s": "hal-05142757",
               "title_s": "P-Wave Arrival-Time Tomography of the Middle East Using ISC-EHB and Waveform Data",
               "uri_s": "https://hal.science/hal-05142757v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 6
             }
           ]
         },
@@ -3535,7 +3603,8 @@
               "halId_s": "hal-05194659",
               "title_s": "Physical Properties Controlling Earthquake Ruptures: Two Study Cases Along the South American Subduction Zone",
               "uri_s": "https://hal.science/hal-05194659v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -3551,7 +3620,8 @@
               "halId_s": "hal-05217546",
               "title_s": "Inductive Predicates via Least Fixpoints in Higher-Order Separation Logic",
               "uri_s": "https://inria.hal.science/hal-05217546v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -3567,7 +3637,8 @@
               "halId_s": "hal-05456294",
               "title_s": "Toward Back‐Projection Earthquake Rupture Imaging With Ocean Bottom Distributed Acoustic Sensing",
               "uri_s": "https://hal.science/hal-05456294v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 8
             }
           ]
         },
@@ -3583,7 +3654,8 @@
               "halId_s": "hal-05538129",
               "title_s": "High-resolution genome assembly and linkage mapping in Meloidogyne hapla reveal non-canonical telomere repeats and recombination hotspots associated with effector proteins",
               "uri_s": "https://hal.inrae.fr/hal-05538129v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 11
             }
           ]
         },
@@ -3599,7 +3671,8 @@
               "halId_s": "insu-05082245",
               "title_s": "Enhancing Debris Flow Warning via Machine Learning Feature Reduction and Model Selection",
               "uri_s": "https://insu.hal.science/insu-05082245v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -3615,7 +3688,8 @@
               "halId_s": "hal-05065428",
               "title_s": "Time-lapse 3D image datasets of spruce tree wood enzymatic deconstruction",
               "uri_s": "https://hal.science/hal-05065428v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -3631,7 +3705,8 @@
               "halId_s": "hal-05760346",
               "title_s": "TOI-7510: A solar-analog system of three transiting giant planets near a Laplace resonance chain",
               "uri_s": "https://hal.science/hal-05760346v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 9
             }
           ]
         }
@@ -3649,7 +3724,8 @@
               "halId_s": "insu-04197021",
               "title_s": "Space Plasma Diagnostics and Spacecraft Charging. The Impact of Plasma Inhomogeneities on Mutual Impedance Experiments",
               "uri_s": "https://insu.hal.science/insu-04197021v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -3665,7 +3741,8 @@
               "halId_s": "hal-04127943",
               "title_s": "AJAR: An Argumentation-based Judging Agents Framework for Ethical Reinforcement Learning",
               "uri_s": "https://hal.science/hal-04127943v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -3681,7 +3758,8 @@
               "halId_s": "insu-04379375",
               "title_s": "Spacecraft Charging Simulations of Probe B1 of Comet Interceptor during the Cometary Flyby",
               "uri_s": "https://insu.hal.science/insu-04379375v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -3697,7 +3775,8 @@
               "halId_s": "hal-04322179",
               "title_s": "Estimating Compositions and Nutritional Values of Seed Mixes Based on Vision Transformers",
               "uri_s": "https://inria.hal.science/hal-04322179v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 11
             }
           ]
         },
@@ -3713,7 +3792,8 @@
               "halId_s": "insu-04227973",
               "title_s": "Maps of Solar Wind Plasma Precipitation onto Mercury's Surface: A Geographical Perspective",
               "uri_s": "https://insu.hal.science/insu-04227973v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -3729,7 +3809,8 @@
               "halId_s": "hal-03528633",
               "title_s": "Landscape connectivity alters the evolution of density-dependent dispersal during pushed range expansions",
               "uri_s": "https://hal.inrae.fr/hal-03528633v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 11
             }
           ]
         },
@@ -3745,7 +3826,8 @@
               "halId_s": "hal-04180802",
               "title_s": "A machine learning framework for the quantification of experimental uveitis in murine OCT",
               "uri_s": "https://hal.science/hal-04180802v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -3761,7 +3843,8 @@
               "halId_s": "insu-03996509",
               "title_s": "Instrumentation for Ionized Space Environments: New High Time Resolution Instrumental Modes of Mutual Impedance Experiments",
               "uri_s": "https://insu.hal.science/insu-03996509v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 2
             }
           ]
         },
@@ -3777,7 +3860,8 @@
               "halId_s": "hal-04205666",
               "title_s": "NINSAR: New itineraries for agroecology using cooperative robots",
               "uri_s": "https://hal.science/hal-04205666v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 2
             }
           ]
         },
@@ -3793,7 +3877,8 @@
               "halId_s": "hal-04122511",
               "title_s": "Early Release Science of the exoplanet WASP-39b with JWST NIRSpec G395H",
               "uri_s": "https://hal.science/hal-04122511v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -3809,7 +3894,8 @@
               "halId_s": "hal-04189178",
               "title_s": "An Open Database to Evaluate the Fundamental Frequency of Historical Masonry Towers through Empirical and Physics-Based Formulations",
               "uri_s": "https://hal.science/hal-04189178v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 9
             }
           ]
         }
@@ -3827,7 +3913,8 @@
               "halId_s": "hal-04162960",
               "title_s": "airGRdatasets: Hydro-Meteorological Catchments Datasets for the 'airGR' Packages. Manual of the R package version 0.2.3",
               "uri_s": "https://hal.inrae.fr/hal-04162960v4",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 12
             }
           ]
         },
@@ -3843,19 +3930,22 @@
               "halId_s": "hal-01774729",
               "title_s": "BRC4Env, a network of Biological Resource Centres for research in environmental and agricultural sciences",
               "uri_s": "https://hal.science/hal-01774729v1",
-              "producedDateY_i": 2018
+              "producedDateY_i": 2018,
+              "producedDateM_i": 9
             },
             {
               "halId_s": "hal-02570868",
               "title_s": "The hidden side of the Allee effect: correlated demographic traits and extinction risk in experimental populations",
               "uri_s": "https://hal.science/hal-02570868v4",
-              "producedDateY_i": 2021
+              "producedDateY_i": 2021,
+              "producedDateM_i": 4
             },
             {
               "halId_s": "hal-05231498",
               "title_s": "BRC4Env, le pilier environnement de l’infrastructure RARe",
               "uri_s": "https://hal.inrae.fr/hal-05231498v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 8
             }
           ]
         },
@@ -3871,19 +3961,22 @@
               "halId_s": "hal-03687235",
               "title_s": "CAMELS-FR: A large sample hydroclimatic dataset for France to explore hydrological diversity and support model benchmarking",
               "uri_s": "https://hal.inrae.fr/hal-03687235v1",
-              "producedDateY_i": 2022
+              "producedDateY_i": 2022,
+              "producedDateM_i": 5
             },
             {
               "halId_s": "hal-04790476",
               "title_s": "CAMELS-FR dataset: A large-sample hydroclimatic dataset for France to explore hydrological diversity and support model benchmarking",
               "uri_s": "https://hal.science/hal-04790476v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 11
             },
             {
               "halId_s": "hal-05028312",
               "title_s": "CAMELS-FR dataset: a large-sample hydroclimatic dataset for France to explore hydrological diversity and support model benchmarking",
               "uri_s": "https://hal.inrae.fr/hal-05028312v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 4
             }
           ]
         },
@@ -3899,19 +3992,22 @@
               "halId_s": "hal-03687235",
               "title_s": "CAMELS-FR: A large sample hydroclimatic dataset for France to explore hydrological diversity and support model benchmarking",
               "uri_s": "https://hal.inrae.fr/hal-03687235v1",
-              "producedDateY_i": 2022
+              "producedDateY_i": 2022,
+              "producedDateM_i": 5
             },
             {
               "halId_s": "hal-04790476",
               "title_s": "CAMELS-FR dataset: A large-sample hydroclimatic dataset for France to explore hydrological diversity and support model benchmarking",
               "uri_s": "https://hal.science/hal-04790476v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 11
             },
             {
               "halId_s": "hal-05028312",
               "title_s": "CAMELS-FR dataset: a large-sample hydroclimatic dataset for France to explore hydrological diversity and support model benchmarking",
               "uri_s": "https://hal.inrae.fr/hal-05028312v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 4
             }
           ]
         },
@@ -3927,19 +4023,22 @@
               "halId_s": "hal-03687235",
               "title_s": "CAMELS-FR: A large sample hydroclimatic dataset for France to explore hydrological diversity and support model benchmarking",
               "uri_s": "https://hal.inrae.fr/hal-03687235v1",
-              "producedDateY_i": 2022
+              "producedDateY_i": 2022,
+              "producedDateM_i": 5
             },
             {
               "halId_s": "hal-04790476",
               "title_s": "CAMELS-FR dataset: A large-sample hydroclimatic dataset for France to explore hydrological diversity and support model benchmarking",
               "uri_s": "https://hal.science/hal-04790476v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 11
             },
             {
               "halId_s": "hal-05028312",
               "title_s": "CAMELS-FR dataset: a large-sample hydroclimatic dataset for France to explore hydrological diversity and support model benchmarking",
               "uri_s": "https://hal.inrae.fr/hal-05028312v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 4
             }
           ]
         },
@@ -3955,7 +4054,8 @@
               "halId_s": "hal-05221870",
               "title_s": "Enquête sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
               "uri_s": "https://hal.science/hal-05221870v2",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 8
             }
           ]
         },
@@ -3971,7 +4071,8 @@
               "halId_s": "hal-04954634",
               "title_s": "High-fidelity annotated triploid genome of the quarantine root-knot nematode, Meloidogyne enterolobii",
               "uri_s": "https://hal.inrae.fr/hal-04954634v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 1
             }
           ]
         },
@@ -3987,7 +4088,8 @@
               "halId_s": "hal-04954634",
               "title_s": "High-fidelity annotated triploid genome of the quarantine root-knot nematode, Meloidogyne enterolobii",
               "uri_s": "https://hal.inrae.fr/hal-04954634v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 1
             }
           ]
         },
@@ -4003,7 +4105,8 @@
               "halId_s": "hal-04954634",
               "title_s": "High-fidelity annotated triploid genome of the quarantine root-knot nematode, Meloidogyne enterolobii",
               "uri_s": "https://hal.inrae.fr/hal-04954634v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 1
             }
           ]
         },
@@ -4019,7 +4122,8 @@
               "halId_s": "hal-04954634",
               "title_s": "High-fidelity annotated triploid genome of the quarantine root-knot nematode, Meloidogyne enterolobii",
               "uri_s": "https://hal.inrae.fr/hal-04954634v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 1
             }
           ]
         },
@@ -4035,7 +4139,8 @@
               "halId_s": "hal-04954634",
               "title_s": "High-fidelity annotated triploid genome of the quarantine root-knot nematode, Meloidogyne enterolobii",
               "uri_s": "https://hal.inrae.fr/hal-04954634v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 1
             }
           ]
         },
@@ -4051,7 +4156,8 @@
               "halId_s": "hal-05163483",
               "title_s": "Analyser la perception de l’alerte par les populations : questionnements empiriques, enjeux scientifiques et retombées opérationnelles",
               "uri_s": "https://hal.science/hal-05163483v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -4067,7 +4173,8 @@
               "halId_s": "hal-05468120",
               "title_s": "Introducing furanocoumarin biosynthetic genes in tomato results in coumarins accumulation and impacted growth",
               "uri_s": "https://hal.science/hal-05468120v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 5
             }
           ]
         }
@@ -4085,7 +4192,8 @@
               "halId_s": "hal-05114056",
               "title_s": "Le Rhône aménagé vu du ciel. Constitution d'une base de données photographiques obliques pour documenter la trajectoire socio-environnementale du fleuve contemporain (1910-1960)",
               "uri_s": "https://hal.science/hal-05114056v2",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 12
             }
           ]
         },
@@ -4101,7 +4209,8 @@
               "halId_s": "hal-05017906",
               "title_s": "When automated fact-checking meets argumentation: unveiling fake news through argumentative evidence",
               "uri_s": "https://hal.science/hal-05017906v2",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 4
             }
           ]
         }
@@ -4119,7 +4228,8 @@
               "halId_s": "hal-05753637",
               "title_s": "Tracking Deep Mantle Melting on Mars Using Phobos Tides",
               "uri_s": "https://hal.science/hal-05753637v1",
-              "producedDateY_i": 2026
+              "producedDateY_i": 2026,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -4135,7 +4245,8 @@
               "halId_s": "hal-05721920",
               "title_s": "Semi‐Natural Habitats Buffer the Effects of Crop Diversification on Arthropod Pest Control Services in Agricultural Landscapes",
               "uri_s": "https://hal.science/hal-05721920v1",
-              "producedDateY_i": 2026
+              "producedDateY_i": 2026,
+              "producedDateM_i": 8
             }
           ]
         },
@@ -4151,7 +4262,8 @@
               "halId_s": "hal-05689658",
               "title_s": "Propagation of fluid-driven aseismic slip fronts under upper crustal conditions",
               "uri_s": "https://minesparis-psl.hal.science/hal-05689658v1",
-              "producedDateY_i": 2026
+              "producedDateY_i": 2026,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -4167,7 +4279,8 @@
               "halId_s": "insu-05620657",
               "title_s": "Fault Volume Digital Twin to Reproduce the Full Slip Spectrum, Scaling, and Statistical Laws",
               "uri_s": "https://insu.hal.science/insu-05620657v1",
-              "producedDateY_i": 2026
+              "producedDateY_i": 2026,
+              "producedDateM_i": 4
             }
           ]
         },
@@ -4183,13 +4296,15 @@
               "halId_s": "hal-04012636",
               "title_s": "A biologically plausible decision-making model based on interacting neural populations",
               "uri_s": "https://hal.science/hal-04012636v4",
-              "producedDateY_i": 2026
+              "producedDateY_i": 2026,
+              "producedDateM_i": 6
             },
             {
               "halId_s": "hal-04012636",
               "title_s": "A biologically plausible decision-making model based on interacting neural populations",
               "uri_s": "https://hal.science/hal-04012636v4",
-              "producedDateY_i": 2026
+              "producedDateY_i": 2026,
+              "producedDateM_i": 6
             }
           ]
         },
@@ -4205,7 +4320,8 @@
               "halId_s": "hal-05456289",
               "title_s": "Harnessing converted phases for rapid magnitude estimation and early warning with distributed acoustic sensing offshore Chile",
               "uri_s": "https://hal.science/hal-05456289v1",
-              "producedDateY_i": 2026
+              "producedDateY_i": 2026,
+              "producedDateM_i": 6
             }
           ]
         },
@@ -4221,7 +4337,8 @@
               "halId_s": "insu-05687170",
               "title_s": "Effect of Solar Wind Turbulence on Temperature-Anisotropy-Driven Modes in Mercury's Magnetosheath",
               "uri_s": "https://insu.hal.science/insu-05687170v1",
-              "producedDateY_i": 2026
+              "producedDateY_i": 2026,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -4237,7 +4354,8 @@
               "halId_s": "insu-05687170",
               "title_s": "Effect of Solar Wind Turbulence on Temperature-Anisotropy-Driven Modes in Mercury's Magnetosheath",
               "uri_s": "https://insu.hal.science/insu-05687170v1",
-              "producedDateY_i": 2026
+              "producedDateY_i": 2026,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -4253,7 +4371,8 @@
               "halId_s": "hal-05681913",
               "title_s": "Safety First! Modelling Requirements from GPT-5 System Card using Lightweight Safety Models",
               "uri_s": "https://hal.science/hal-05681913v1",
-              "producedDateY_i": 2026
+              "producedDateY_i": 2026,
+              "producedDateM_i": 8
             }
           ]
         },
@@ -4269,7 +4388,8 @@
               "halId_s": "hal-05593448",
               "title_s": "A Rate‐and‐State Friction Based Criterion for the Probability of Earthquake Fault Jumps",
               "uri_s": "https://hal.science/hal-05593448v1",
-              "producedDateY_i": 2026
+              "producedDateY_i": 2026,
+              "producedDateM_i": 3
             }
           ]
         }
@@ -4287,7 +4407,8 @@
               "halId_s": "obspm-05218404",
               "title_s": "Towards 0.1mm/yr stability over decades for measuring sea level using tide gauges together with GNSS-based instruments?",
               "uri_s": "https://hal-obspm.ccsd.cnrs.fr/obspm-05218404v1",
-              "producedDateY_i": 2026
+              "producedDateY_i": 2026,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -4303,7 +4424,8 @@
               "halId_s": "obspm-05218404",
               "title_s": "Towards 0.1mm/yr stability over decades for measuring sea level using tide gauges together with GNSS-based instruments?",
               "uri_s": "https://hal-obspm.ccsd.cnrs.fr/obspm-05218404v1",
-              "producedDateY_i": 2026
+              "producedDateY_i": 2026,
+              "producedDateM_i": 9
             }
           ]
         }
@@ -4321,7 +4443,8 @@
               "halId_s": "hal-04905900",
               "title_s": "Photosynthesis, water‐use and nitrogen relate to both plant height and leaf structure in 60 species from the Mediterranean",
               "uri_s": "https://hal.inrae.fr/hal-04905900v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 1
             }
           ]
         }
@@ -4339,7 +4462,8 @@
               "halId_s": "lirmm-02162114",
               "title_s": "Expertise-based decision support for managing food quality in agri-food companies",
               "uri_s": "https://hal-lirmm.ccsd.cnrs.fr/lirmm-02162114v1",
-              "producedDateY_i": 2019
+              "producedDateY_i": 2019,
+              "producedDateM_i": 8
             }
           ]
         },
@@ -4355,7 +4479,8 @@
               "halId_s": "hal-02462553",
               "title_s": "Meteospace, a New Instrument for Solar Survey at the Calern Observatory",
               "uri_s": "https://hal.science/hal-02462553v1",
-              "producedDateY_i": 2019
+              "producedDateY_i": 2019,
+              "producedDateM_i": 12
             }
           ]
         }
@@ -4373,7 +4498,8 @@
               "halId_s": "hal-04689830",
               "title_s": "Binary progenitor systems for Type Ic supernovae",
               "uri_s": "https://hal.science/hal-04689830v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -4389,7 +4515,8 @@
               "halId_s": "hal-04177913",
               "title_s": "Trocq: Proof Transfer for Free, With or Without Univalence",
               "uri_s": "https://hal.science/hal-04177913v5",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 4
             }
           ]
         },
@@ -4405,7 +4532,8 @@
               "halId_s": "hal-04478565",
               "title_s": "Geospatial identification of stakeholders to support dynamic ocean management in transboundary areas",
               "uri_s": "https://hal.science/hal-04478565v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -4421,7 +4549,8 @@
               "halId_s": "hal-04478565",
               "title_s": "Geospatial identification of stakeholders to support dynamic ocean management in transboundary areas",
               "uri_s": "https://hal.science/hal-04478565v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -4437,7 +4566,8 @@
               "halId_s": "hal-04807540",
               "title_s": "ISSA Pipeline",
               "uri_s": "https://hal.science/hal-04807540v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 11
             }
           ]
         },
@@ -4453,7 +4583,8 @@
               "halId_s": "hal-05282767",
               "title_s": "Identification and characterization of specific motifs in effector proteins of plant parasites using MOnSTER",
               "uri_s": "https://hal.inrae.fr/hal-05282767v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -4469,7 +4600,8 @@
               "halId_s": "hal-04462176",
               "title_s": "Locus-level L1 DNA methylation profiling reveals the epigenetic and transcriptional interplay between L1s and their integration sites",
               "uri_s": "https://hal.science/hal-04462176v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 2
             }
           ]
         },
@@ -4485,7 +4617,8 @@
               "halId_s": "hal-04462176",
               "title_s": "Locus-level L1 DNA methylation profiling reveals the epigenetic and transcriptional interplay between L1s and their integration sites",
               "uri_s": "https://hal.science/hal-04462176v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 2
             }
           ]
         },
@@ -4501,7 +4634,8 @@
               "halId_s": "hal-04791315",
               "title_s": "Insights into early animal evolution from the genome of the xenacoelomorph worm Xenoturbella bocki",
               "uri_s": "https://hal.science/hal-04791315v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -4517,7 +4651,8 @@
               "halId_s": "hal-04337163",
               "title_s": "Sea surface temperature reconstruction in the Pacific Ocean using multi-elemental proxy in Porites and Diploastrea corals: Application to Palau Archipelago",
               "uri_s": "https://hal.science/hal-04337163v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 9
             }
           ]
         }
@@ -4535,7 +4670,8 @@
               "halId_s": "insu-05410854",
               "title_s": "SpectroTranslator: Deep-neural network algorithm for homogenising spectroscopic parameters",
               "uri_s": "https://insu.hal.science/insu-05410854v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -4551,7 +4687,8 @@
               "halId_s": "hal-04258700",
               "title_s": "The XXL Survey LV. Pressure profile and $Y_{\\rm SZ}$-$M$ scaling relation in three low-mass galaxy clusters at $z\\sim1$ observed with NIKA2",
               "uri_s": "https://hal.science/hal-04258700v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 9
             }
           ]
         }
@@ -4569,7 +4706,8 @@
               "halId_s": "hal-02200605",
               "title_s": "Fluid‐Induced Swarms and Coseismic Stress Transfer: A Dual Process Highlighted in the Aftershock Sequence of the 7 April 2014 Earthquake (Ml 4.8, Ubaye, France)",
               "uri_s": "https://hal.science/hal-02200605v1",
-              "producedDateY_i": 2019
+              "producedDateY_i": 2019,
+              "producedDateM_i": 4
             }
           ]
         }
@@ -4587,7 +4725,8 @@
               "halId_s": "hal-05721890",
               "title_s": "The Asian ladybird Harmonia axyridis at the interface between biological control and invasion: insights from population and quantitative genetics",
               "uri_s": "https://hal.science/hal-05721890v1",
-              "producedDateY_i": 2026
+              "producedDateY_i": 2026,
+              "producedDateM_i": 8
             }
           ]
         },
@@ -4603,7 +4742,8 @@
               "halId_s": "hal-05630218",
               "title_s": "Towards Tsunami Early-Warning with Distributed Acoustic Sensing: Expected Seafloor Strains Induced by Tsunamis",
               "uri_s": "https://hal.science/hal-05630218v1",
-              "producedDateY_i": 2026
+              "producedDateY_i": 2026,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -4619,7 +4759,8 @@
               "halId_s": "hal-05633888",
               "title_s": "Untargeted metabolomic dataset of leaves from twenty-four accessions of wild and cultivated tomato plants",
               "uri_s": "https://hal.science/hal-05633888v1",
-              "producedDateY_i": 2026
+              "producedDateY_i": 2026,
+              "producedDateM_i": 5
             }
           ]
         }
@@ -4637,7 +4778,8 @@
               "halId_s": "hal-05456294",
               "title_s": "Toward Back‐Projection Earthquake Rupture Imaging With Ocean Bottom Distributed Acoustic Sensing",
               "uri_s": "https://hal.science/hal-05456294v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 8
             }
           ]
         },
@@ -4653,7 +4795,8 @@
               "halId_s": "hal-05442132",
               "title_s": "Monitoring and volatile organic compounds characterization (isoprene, monoterpene and BTEX) in a tropical-oceanic environment in Reunion island (Indian ocean, south hemisphere)",
               "uri_s": "https://hal.science/hal-05442132v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 11
             }
           ]
         },
@@ -4669,7 +4812,8 @@
               "halId_s": "hal-05442132",
               "title_s": "Monitoring and volatile organic compounds characterization (isoprene, monoterpene and BTEX) in a tropical-oceanic environment in Reunion island (Indian ocean, south hemisphere)",
               "uri_s": "https://hal.science/hal-05442132v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 11
             }
           ]
         },
@@ -4685,7 +4829,8 @@
               "halId_s": "insu-05140539",
               "title_s": "Evidence for a sub-Jovian planet in the young TWA 7 disk",
               "uri_s": "https://insu.hal.science/insu-05140539v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 6
             }
           ]
         },
@@ -4701,7 +4846,8 @@
               "halId_s": "hal-05194659",
               "title_s": "Physical Properties Controlling Earthquake Ruptures: Two Study Cases Along the South American Subduction Zone",
               "uri_s": "https://hal.science/hal-05194659v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -4717,7 +4863,8 @@
               "halId_s": "hal-05123213",
               "title_s": "Plate‐Scale Strike‐Slip Fault System in the Barbados Accretionary Wedge of the Lesser Antilles Subduction Zone",
               "uri_s": "https://hal.science/hal-05123213v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -4733,7 +4880,8 @@
               "halId_s": "insu-04909657",
               "title_s": "Optimal choice of closest approach distance for a comet flyby: Application to the Comet Interceptor mission",
               "uri_s": "https://insu.hal.science/insu-04909657v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 8
             }
           ]
         },
@@ -4749,7 +4897,8 @@
               "halId_s": "hal-05054154",
               "title_s": "Constraining the Effect of Bathymetric High Subduction in an Accretionary Wedge: Evidence From the Tokai Area of the Nankai Trough, Japan",
               "uri_s": "https://hal.science/hal-05054154v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -4765,7 +4914,8 @@
               "halId_s": "hal-05054154",
               "title_s": "Constraining the Effect of Bathymetric High Subduction in an Accretionary Wedge: Evidence From the Tokai Area of the Nankai Trough, Japan",
               "uri_s": "https://hal.science/hal-05054154v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -4781,7 +4931,8 @@
               "halId_s": "hal-05194659",
               "title_s": "Physical Properties Controlling Earthquake Ruptures: Two Study Cases Along the South American Subduction Zone",
               "uri_s": "https://hal.science/hal-05194659v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -4797,7 +4948,8 @@
               "halId_s": "insu-05082245",
               "title_s": "Enhancing Debris Flow Warning via Machine Learning Feature Reduction and Model Selection",
               "uri_s": "https://insu.hal.science/insu-05082245v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -4813,7 +4965,8 @@
               "halId_s": "insu-04974387",
               "title_s": "Timing of Contractional Stress Propagation, From the Pyrenean Orogen to the Intraplate Domain, Evidenced by U‐Pb Dating of Syn‐Kinematic Calcite",
               "uri_s": "https://insu.hal.science/insu-04974387v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 2
             }
           ]
         }
@@ -4831,7 +4984,8 @@
               "halId_s": "hal-02928114",
               "title_s": "Aphid infestation differently affects the defences of nitrate-fed and nitrogen-fixing Medicago truncatula and alters symbiotic nitrogen fixation",
               "uri_s": "https://hal.inrae.fr/hal-02928114v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -4847,7 +5001,8 @@
               "halId_s": "hal-03144754",
               "title_s": "BRC4Env, a network of Biological Resource Centres for environmental resources",
               "uri_s": "https://hal.science/hal-03144754v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 10
             }
           ]
         },
@@ -4863,13 +5018,15 @@
               "halId_s": "hal-01633879",
               "title_s": "Two genomes of highly polyphagous lepidopteran pests (Spodoptera frugiperda, Noctuidae) with different host-plant ranges",
               "uri_s": "https://inria.hal.science/hal-01633879v1",
-              "producedDateY_i": 2017
+              "producedDateY_i": 2017,
+              "producedDateM_i": 12
             },
             {
               "halId_s": "hal-03065279",
               "title_s": "Adaptation by copy number variation increases insecticide resistance in the fall armyworm",
               "uri_s": "https://inria.hal.science/hal-03065279v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 11
             }
           ]
         },
@@ -4885,13 +5042,15 @@
               "halId_s": "hal-01633879",
               "title_s": "Two genomes of highly polyphagous lepidopteran pests (Spodoptera frugiperda, Noctuidae) with different host-plant ranges",
               "uri_s": "https://inria.hal.science/hal-01633879v1",
-              "producedDateY_i": 2017
+              "producedDateY_i": 2017,
+              "producedDateM_i": 12
             },
             {
               "halId_s": "hal-03065279",
               "title_s": "Adaptation by copy number variation increases insecticide resistance in the fall armyworm",
               "uri_s": "https://inria.hal.science/hal-03065279v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 11
             }
           ]
         },
@@ -4907,7 +5066,8 @@
               "halId_s": "hal-03013147",
               "title_s": "Food transformation process description using PO2 and FoodOn",
               "uri_s": "https://agroparistech.hal.science/hal-03013147v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -4923,7 +5083,8 @@
               "halId_s": "hal-02555136",
               "title_s": "Argumentation Corrected Context Weighting-Life Cycle Assessment: A Practical Method of Including Stakeholder Perspectives in Multi-Criteria Decision Support for LCA",
               "uri_s": "https://hal.inrae.fr/hal-02555136v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 3
             }
           ]
         }
@@ -4941,7 +5102,8 @@
               "halId_s": "hal-05621424",
               "title_s": "An archaeo-metabolomics approach for identifying cedar tar in archaeological samples: differentiating plant products and production processes",
               "uri_s": "https://hal.science/hal-05621424v1",
-              "producedDateY_i": 2026
+              "producedDateY_i": 2026,
+              "producedDateM_i": 9
             }
           ]
         }
@@ -4959,7 +5121,8 @@
               "halId_s": "hal-03521600",
               "title_s": "Ridge Polariton Laser: Different from a Semiconductor Edge-Emitting Laser",
               "uri_s": "https://hal.science/hal-03521600v2",
-              "producedDateY_i": 2022
+              "producedDateY_i": 2022,
+              "producedDateM_i": 10
             }
           ]
         },
@@ -4975,7 +5138,8 @@
               "halId_s": "hal-04169728",
               "title_s": "A nationwide pest risk analysis in the context of the ongoing Japanese beetle invasion in Continental Europe: The case of metropolitan France",
               "uri_s": "https://hal.inrae.fr/hal-04169728v1",
-              "producedDateY_i": 2022
+              "producedDateY_i": 2022,
+              "producedDateM_i": 12
             }
           ]
         },
@@ -4991,7 +5155,8 @@
               "halId_s": "hal-03931195",
               "title_s": "Improvement of eukaryotic protein predictions from soil metagenomes",
               "uri_s": "https://hal.inrae.fr/hal-03931195v1",
-              "producedDateY_i": 2022
+              "producedDateY_i": 2022,
+              "producedDateM_i": 6
             }
           ]
         },
@@ -5007,7 +5172,8 @@
               "halId_s": "hal-03997711",
               "title_s": "Enquête sur les Données de la Recherche au sein de deux universités françaises",
               "uri_s": "https://hal.science/hal-03997711v1",
-              "producedDateY_i": 2022
+              "producedDateY_i": 2022,
+              "producedDateM_i": 12
             }
           ]
         }
@@ -5025,7 +5191,8 @@
               "halId_s": "hal-03210867",
               "title_s": "Food and habitat supplementation promotes predatory mites and enhances pest control",
               "uri_s": "https://hal.inrae.fr/hal-03210867v1",
-              "producedDateY_i": 2021
+              "producedDateY_i": 2021,
+              "producedDateM_i": 8
             }
           ]
         },
@@ -5041,7 +5208,8 @@
               "halId_s": "hal-03474067",
               "title_s": "A process reverse engineering approach using Process and Observation Ontology and Probabilistic Relational Models: application to processing of bio-composites for food packaging",
               "uri_s": "https://hal.science/hal-03474067v1",
-              "producedDateY_i": 2021
+              "producedDateY_i": 2021,
+              "producedDateM_i": 11
             }
           ]
         },
@@ -5057,7 +5225,8 @@
               "halId_s": "hal-03288922",
               "title_s": "The discernible and hidden effects of clonality on the genotypic and genetic states of populations: Improving our estimation of clonal rates",
               "uri_s": "https://hal.inrae.fr/hal-03288922v1",
-              "producedDateY_i": 2021
+              "producedDateY_i": 2021,
+              "producedDateM_i": 5
             }
           ]
         }
@@ -5075,13 +5244,15 @@
               "halId_s": "hal-01774729",
               "title_s": "BRC4Env, a network of Biological Resource Centres for research in environmental and agricultural sciences",
               "uri_s": "https://hal.science/hal-01774729v1",
-              "producedDateY_i": 2018
+              "producedDateY_i": 2018,
+              "producedDateM_i": 9
             },
             {
               "halId_s": "hal-02622160",
               "title_s": "Pushing the limits of whole genome amplification: successful sequencing of RADseq library from a single microhymenopteran (Chalcidoidea, Trichogramma)",
               "uri_s": "https://hal.inrae.fr/hal-02622160v1",
-              "producedDateY_i": 2018
+              "producedDateY_i": 2018,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -5097,7 +5268,8 @@
               "halId_s": "hal-01774729",
               "title_s": "BRC4Env, a network of Biological Resource Centres for research in environmental and agricultural sciences",
               "uri_s": "https://hal.science/hal-01774729v1",
-              "producedDateY_i": 2018
+              "producedDateY_i": 2018,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -5113,7 +5285,8 @@
               "halId_s": "hal-01889268",
               "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
               "uri_s": "https://hal.science/hal-01889268v2",
-              "producedDateY_i": 2018
+              "producedDateY_i": 2018,
+              "producedDateM_i": 8
             }
           ]
         },
@@ -5129,7 +5302,8 @@
               "halId_s": "hal-01889268",
               "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
               "uri_s": "https://hal.science/hal-01889268v2",
-              "producedDateY_i": 2018
+              "producedDateY_i": 2018,
+              "producedDateM_i": 8
             }
           ]
         },
@@ -5145,13 +5319,15 @@
               "halId_s": "hal-01889268",
               "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
               "uri_s": "https://hal.science/hal-01889268v2",
-              "producedDateY_i": 2018
+              "producedDateY_i": 2018,
+              "producedDateM_i": 8
             },
             {
               "halId_s": "lirmm-01892712",
               "title_s": "Choice of environment-friendly food packagings through argumentation systems and preferences",
               "uri_s": "https://hal-lirmm.ccsd.cnrs.fr/lirmm-01892712v1",
-              "producedDateY_i": 2018
+              "producedDateY_i": 2018,
+              "producedDateM_i": 11
             }
           ]
         },
@@ -5167,7 +5343,8 @@
               "halId_s": "hal-01889268",
               "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
               "uri_s": "https://hal.science/hal-01889268v2",
-              "producedDateY_i": 2018
+              "producedDateY_i": 2018,
+              "producedDateM_i": 8
             }
           ]
         },
@@ -5183,7 +5360,8 @@
               "halId_s": "hal-01889268",
               "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
               "uri_s": "https://hal.science/hal-01889268v2",
-              "producedDateY_i": 2018
+              "producedDateY_i": 2018,
+              "producedDateM_i": 8
             }
           ]
         },
@@ -5199,7 +5377,8 @@
               "halId_s": "hal-01889268",
               "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
               "uri_s": "https://hal.science/hal-01889268v2",
-              "producedDateY_i": 2018
+              "producedDateY_i": 2018,
+              "producedDateM_i": 8
             }
           ]
         },
@@ -5215,13 +5394,15 @@
               "halId_s": "hal-01889268",
               "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
               "uri_s": "https://hal.science/hal-01889268v2",
-              "producedDateY_i": 2018
+              "producedDateY_i": 2018,
+              "producedDateM_i": 8
             },
             {
               "halId_s": "lirmm-01892712",
               "title_s": "Choice of environment-friendly food packagings through argumentation systems and preferences",
               "uri_s": "https://hal-lirmm.ccsd.cnrs.fr/lirmm-01892712v1",
-              "producedDateY_i": 2018
+              "producedDateY_i": 2018,
+              "producedDateM_i": 11
             }
           ]
         },
@@ -5237,7 +5418,8 @@
               "halId_s": "hal-01889268",
               "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
               "uri_s": "https://hal.science/hal-01889268v2",
-              "producedDateY_i": 2018
+              "producedDateY_i": 2018,
+              "producedDateM_i": 8
             }
           ]
         },
@@ -5253,7 +5435,8 @@
               "halId_s": "hal-01889268",
               "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
               "uri_s": "https://hal.science/hal-01889268v2",
-              "producedDateY_i": 2018
+              "producedDateY_i": 2018,
+              "producedDateM_i": 8
             }
           ]
         },
@@ -5269,7 +5452,8 @@
               "halId_s": "lirmm-01893516",
               "title_s": "A Decision Support Tool for Agricultural Applications Based on Computational Social Choice and Argumentation",
               "uri_s": "https://hal-lirmm.ccsd.cnrs.fr/lirmm-01893516v1",
-              "producedDateY_i": 2018
+              "producedDateY_i": 2018,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -5285,7 +5469,8 @@
               "halId_s": "hal-01774729",
               "title_s": "BRC4Env, a network of Biological Resource Centres for research in environmental and agricultural sciences",
               "uri_s": "https://hal.science/hal-01774729v1",
-              "producedDateY_i": 2018
+              "producedDateY_i": 2018,
+              "producedDateM_i": 9
             }
           ]
         }
@@ -5303,7 +5488,8 @@
               "halId_s": "hal-04289970",
               "title_s": "Combining different points of view on plant descriptions: mapping agricultural plant roles and biological taxa",
               "uri_s": "https://hal.science/hal-04289970v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 4
             }
           ]
         },
@@ -5319,7 +5505,8 @@
               "halId_s": "hal-04251300",
               "title_s": "Electrostatic modulation of excitonic fluid in GaN/AlGaN quantum wells by deposition of few-layer graphene and nickel/gold films",
               "uri_s": "https://hal.science/hal-04251300v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -5335,7 +5522,8 @@
               "halId_s": "hal-04906304",
               "title_s": "Mobi-Switch : un jeu de société sur la durabilité de la mobilité urbaine",
               "uri_s": "https://ube.hal.science/hal-04906304v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -5351,7 +5539,8 @@
               "halId_s": "hal-04198172",
               "title_s": "Genome sequence and annotation of Periconia digitata a hopeful biocontrol agent of phytopathogenic oomycetes",
               "uri_s": "https://hal.inrae.fr/hal-04198172v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -5367,7 +5556,8 @@
               "halId_s": "hal-04198172",
               "title_s": "Genome sequence and annotation of Periconia digitata a hopeful biocontrol agent of phytopathogenic oomycetes",
               "uri_s": "https://hal.inrae.fr/hal-04198172v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -5383,7 +5573,8 @@
               "halId_s": "hal-04198172",
               "title_s": "Genome sequence and annotation of Periconia digitata a hopeful biocontrol agent of phytopathogenic oomycetes",
               "uri_s": "https://hal.inrae.fr/hal-04198172v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -5399,7 +5590,8 @@
               "halId_s": "hal-04198172",
               "title_s": "Genome sequence and annotation of Periconia digitata a hopeful biocontrol agent of phytopathogenic oomycetes",
               "uri_s": "https://hal.inrae.fr/hal-04198172v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -5415,7 +5607,8 @@
               "halId_s": "hal-04198172",
               "title_s": "Genome sequence and annotation of Periconia digitata a hopeful biocontrol agent of phytopathogenic oomycetes",
               "uri_s": "https://hal.inrae.fr/hal-04198172v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -5431,7 +5624,8 @@
               "halId_s": "hal-04198172",
               "title_s": "Genome sequence and annotation of Periconia digitata a hopeful biocontrol agent of phytopathogenic oomycetes",
               "uri_s": "https://hal.inrae.fr/hal-04198172v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -5447,7 +5641,8 @@
               "halId_s": "hal-04198172",
               "title_s": "Genome sequence and annotation of Periconia digitata a hopeful biocontrol agent of phytopathogenic oomycetes",
               "uri_s": "https://hal.inrae.fr/hal-04198172v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -5463,7 +5658,8 @@
               "halId_s": "hal-04214908",
               "title_s": "On the visual detection of non-natural records in streamflow time series: challenges and impacts",
               "uri_s": "https://hal.inrae.fr/hal-04214908v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -5479,7 +5675,8 @@
               "halId_s": "hal-04130380",
               "title_s": "Temporal Brain Networks Dataset",
               "uri_s": "https://hal.science/hal-04130380v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 6
             }
           ]
         }
@@ -5497,7 +5694,8 @@
               "halId_s": "hal-01794665",
               "title_s": "A database of the coseismic effects following the 30 October 2016 Norcia earthquake in Central Italy",
               "uri_s": "https://hal.science/hal-01794665v1",
-              "producedDateY_i": 2018
+              "producedDateY_i": 2018,
+              "producedDateM_i": 9
             }
           ]
         }
@@ -5515,7 +5713,8 @@
               "halId_s": "hal-02972492",
               "title_s": "Genome assembly and annotation of Meloidogyne enterolobii, an emerging parthenogenetic root- knot nematode",
               "uri_s": "https://hal.inrae.fr/hal-02972492v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 9
             }
           ]
         }
@@ -5533,7 +5732,8 @@
               "halId_s": "hal-05251997",
               "title_s": "Hommages dans les universités. Constitution d’une base de données sur les doctorats honoris causa en France",
               "uri_s": "https://hal.science/hal-05251997v3",
-              "producedDateY_i": 2026
+              "producedDateY_i": 2026,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -5549,7 +5749,8 @@
               "halId_s": "hal-05708417",
               "title_s": "Le début du Néolithique moyen en Provence occidentale : vers un phasage chronologique des productions matérielles céramiques et lithiques du 5e millénaire avant notre ère",
               "uri_s": "https://hal.science/hal-05708417v1",
-              "producedDateY_i": 2026
+              "producedDateY_i": 2026,
+              "producedDateM_i": 8
             }
           ]
         },
@@ -5565,7 +5766,8 @@
               "halId_s": "hal-05662277",
               "title_s": "The ExEco Dataset: A Textual Dataset of French Economic and Social Thought (1918–1960)",
               "uri_s": "https://hal.science/hal-05662277v1",
-              "producedDateY_i": 2026
+              "producedDateY_i": 2026,
+              "producedDateM_i": 6
             }
           ]
         }
@@ -5583,7 +5785,8 @@
               "halId_s": "hal-05194659",
               "title_s": "Physical Properties Controlling Earthquake Ruptures: Two Study Cases Along the South American Subduction Zone",
               "uri_s": "https://hal.science/hal-05194659v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -5599,7 +5802,8 @@
               "halId_s": "hal-05456294",
               "title_s": "Toward Back‐Projection Earthquake Rupture Imaging With Ocean Bottom Distributed Acoustic Sensing",
               "uri_s": "https://hal.science/hal-05456294v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 8
             }
           ]
         },
@@ -5615,7 +5819,8 @@
               "halId_s": "hal-05194659",
               "title_s": "Physical Properties Controlling Earthquake Ruptures: Two Study Cases Along the South American Subduction Zone",
               "uri_s": "https://hal.science/hal-05194659v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -5631,7 +5836,8 @@
               "halId_s": "hal-05194659",
               "title_s": "Physical Properties Controlling Earthquake Ruptures: Two Study Cases Along the South American Subduction Zone",
               "uri_s": "https://hal.science/hal-05194659v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 7
             }
           ]
         }
@@ -5649,7 +5855,8 @@
               "halId_s": "hal-03523976",
               "title_s": "La faune marine",
               "uri_s": "https://hal.science/hal-03523976v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -5665,7 +5872,8 @@
               "halId_s": "hal-02890453",
               "title_s": "Towards a sonic ecology of urban life: Ethnography of sound perception in Cairo",
               "uri_s": "https://hal.science/hal-02890453v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -5681,7 +5889,8 @@
               "halId_s": "hal-02890453",
               "title_s": "Towards a sonic ecology of urban life: Ethnography of sound perception in Cairo",
               "uri_s": "https://hal.science/hal-02890453v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -5697,7 +5906,8 @@
               "halId_s": "hal-02942641",
               "title_s": "Experimental Tuning of Transport Regimes in Hyperuniform Disordered Photonic Materials",
               "uri_s": "https://hal.science/hal-02942641v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -5713,7 +5923,8 @@
               "halId_s": "hal-02890453",
               "title_s": "Towards a sonic ecology of urban life: Ethnography of sound perception in Cairo",
               "uri_s": "https://hal.science/hal-02890453v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -5729,7 +5940,8 @@
               "halId_s": "hal-02890453",
               "title_s": "Towards a sonic ecology of urban life: Ethnography of sound perception in Cairo",
               "uri_s": "https://hal.science/hal-02890453v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -5745,7 +5957,8 @@
               "halId_s": "hal-02890453",
               "title_s": "Towards a sonic ecology of urban life: Ethnography of sound perception in Cairo",
               "uri_s": "https://hal.science/hal-02890453v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -5761,7 +5974,8 @@
               "halId_s": "hal-02890453",
               "title_s": "Towards a sonic ecology of urban life: Ethnography of sound perception in Cairo",
               "uri_s": "https://hal.science/hal-02890453v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -5777,7 +5991,8 @@
               "halId_s": "hal-02890453",
               "title_s": "Towards a sonic ecology of urban life: Ethnography of sound perception in Cairo",
               "uri_s": "https://hal.science/hal-02890453v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -5793,7 +6008,8 @@
               "halId_s": "hal-02890453",
               "title_s": "Towards a sonic ecology of urban life: Ethnography of sound perception in Cairo",
               "uri_s": "https://hal.science/hal-02890453v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -5809,7 +6025,8 @@
               "halId_s": "hal-02890453",
               "title_s": "Towards a sonic ecology of urban life: Ethnography of sound perception in Cairo",
               "uri_s": "https://hal.science/hal-02890453v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -5825,7 +6042,8 @@
               "halId_s": "hal-02890453",
               "title_s": "Towards a sonic ecology of urban life: Ethnography of sound perception in Cairo",
               "uri_s": "https://hal.science/hal-02890453v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -5841,7 +6059,8 @@
               "halId_s": "hal-02890453",
               "title_s": "Towards a sonic ecology of urban life: Ethnography of sound perception in Cairo",
               "uri_s": "https://hal.science/hal-02890453v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -5857,7 +6076,8 @@
               "halId_s": "hal-02890453",
               "title_s": "Towards a sonic ecology of urban life: Ethnography of sound perception in Cairo",
               "uri_s": "https://hal.science/hal-02890453v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -5873,7 +6093,8 @@
               "halId_s": "hal-02890453",
               "title_s": "Towards a sonic ecology of urban life: Ethnography of sound perception in Cairo",
               "uri_s": "https://hal.science/hal-02890453v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -5889,7 +6110,8 @@
               "halId_s": "hal-02890453",
               "title_s": "Towards a sonic ecology of urban life: Ethnography of sound perception in Cairo",
               "uri_s": "https://hal.science/hal-02890453v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -5905,7 +6127,8 @@
               "halId_s": "hal-02890453",
               "title_s": "Towards a sonic ecology of urban life: Ethnography of sound perception in Cairo",
               "uri_s": "https://hal.science/hal-02890453v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -5921,7 +6144,8 @@
               "halId_s": "hal-02890453",
               "title_s": "Towards a sonic ecology of urban life: Ethnography of sound perception in Cairo",
               "uri_s": "https://hal.science/hal-02890453v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -5937,7 +6161,8 @@
               "halId_s": "hal-02890453",
               "title_s": "Towards a sonic ecology of urban life: Ethnography of sound perception in Cairo",
               "uri_s": "https://hal.science/hal-02890453v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -5953,7 +6178,8 @@
               "halId_s": "hal-02890453",
               "title_s": "Towards a sonic ecology of urban life: Ethnography of sound perception in Cairo",
               "uri_s": "https://hal.science/hal-02890453v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -5969,7 +6195,8 @@
               "halId_s": "hal-02890453",
               "title_s": "Towards a sonic ecology of urban life: Ethnography of sound perception in Cairo",
               "uri_s": "https://hal.science/hal-02890453v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -5985,7 +6212,8 @@
               "halId_s": "hal-02890453",
               "title_s": "Towards a sonic ecology of urban life: Ethnography of sound perception in Cairo",
               "uri_s": "https://hal.science/hal-02890453v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -6001,7 +6229,8 @@
               "halId_s": "hal-02890453",
               "title_s": "Towards a sonic ecology of urban life: Ethnography of sound perception in Cairo",
               "uri_s": "https://hal.science/hal-02890453v1",
-              "producedDateY_i": 2020
+              "producedDateY_i": 2020,
+              "producedDateM_i": 7
             }
           ]
         }
@@ -6019,7 +6248,8 @@
               "halId_s": "hal-04884084",
               "title_s": "Detachment Faulting and Mantle Exhumation Beneath an Allochthonous Carbonate Cover: Insights From the Gouffre Georges (Lherz Massif, Pyrenees, France)",
               "uri_s": "https://hal.science/hal-04884084v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 9
             }
           ]
         }
@@ -6037,7 +6267,8 @@
               "halId_s": "hal-04328624",
               "title_s": "Channel change during catastrophic flood: Example of Storm Alex in the Vésubie and Roya valleys",
               "uri_s": "https://hal.science/hal-04328624v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 2
             }
           ]
         }
@@ -6055,7 +6286,8 @@
               "halId_s": "hal-03283627",
               "title_s": "Capturing the diversity of analyses on the Linux kernel variability",
               "uri_s": "https://hal.science/hal-03283627v1",
-              "producedDateY_i": 2021
+              "producedDateY_i": 2021,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -6071,7 +6303,8 @@
               "halId_s": "hal-02567829",
               "title_s": "The origin of the allometric scaling of lung's ventilation in mammals",
               "uri_s": "https://hal.science/hal-02567829v3",
-              "producedDateY_i": 2021
+              "producedDateY_i": 2021,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -6087,7 +6320,8 @@
               "halId_s": "hal-03284626",
               "title_s": "Extending the Identification of Object-Oriented Variability Implementations using Usage Relationships",
               "uri_s": "https://hal.science/hal-03284626v1",
-              "producedDateY_i": 2021
+              "producedDateY_i": 2021,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -6103,7 +6337,8 @@
               "halId_s": "hal-03272953",
               "title_s": "Low Temperature Deposition of Highly Cyclable Porous Prussian Blue Cathode for Lithium‐Ion Microbattery",
               "uri_s": "https://laas.hal.science/hal-03272953v1",
-              "producedDateY_i": 2021
+              "producedDateY_i": 2021,
+              "producedDateM_i": 6
             }
           ]
         },
@@ -6119,7 +6354,8 @@
               "halId_s": "hal-02570868",
               "title_s": "The hidden side of the Allee effect: correlated demographic traits and extinction risk in experimental populations",
               "uri_s": "https://hal.science/hal-02570868v4",
-              "producedDateY_i": 2021
+              "producedDateY_i": 2021,
+              "producedDateM_i": 4
             }
           ]
         },
@@ -6135,7 +6371,8 @@
               "halId_s": "hal-03312487",
               "title_s": "Visualization of Object-Oriented Variability Implementations as Cities",
               "uri_s": "https://hal.science/hal-03312487v1",
-              "producedDateY_i": 2021
+              "producedDateY_i": 2021,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -6151,7 +6388,8 @@
               "halId_s": "hal-03033777",
               "title_s": "Network alignment and similarity reveal atlas-based topological differences in structural connectomes",
               "uri_s": "https://hal.science/hal-03033777v2",
-              "producedDateY_i": 2021
+              "producedDateY_i": 2021,
+              "producedDateM_i": 5
             }
           ]
         }
@@ -6169,7 +6407,8 @@
               "halId_s": "hal-04962117",
               "title_s": "Les sens du mouvement",
               "uri_s": "https://hal.science/hal-04962117v1",
-              "producedDateY_i": 2019
+              "producedDateY_i": 2019,
+              "producedDateM_i": 10
             }
           ]
         }
@@ -6187,7 +6426,8 @@
               "halId_s": "hal-04776451",
               "title_s": "Mode-locked waveguide polariton laser",
               "uri_s": "https://hal.science/hal-04776451v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -6203,7 +6443,8 @@
               "halId_s": "hal-04694490",
               "title_s": "Unraveling genetic load dynamics during biological invasion: insights from two invasive insect species",
               "uri_s": "https://hal.science/hal-04694490v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -6219,7 +6460,8 @@
               "halId_s": "hal-04495022",
               "title_s": "A Unified approach to publish semantic annotations of agricultural documents as knowledge graphs",
               "uri_s": "https://hal.science/hal-04495022v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 1
             }
           ]
         }
@@ -6237,7 +6479,8 @@
               "halId_s": "hal-04908237",
               "title_s": "CLEC12B Regulates Melanocyte Immunity and Homeostasis in the Skin through the Signal Transducer and Activator of Transcription 1/IRF1 Axis",
               "uri_s": "https://hal.science/hal-04908237v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 12
             }
           ]
         },
@@ -6253,7 +6496,8 @@
               "halId_s": "hal-04829691",
               "title_s": "Reconstruction of nearshore surface gravity wave heights from distributed acoustic sensing data",
               "uri_s": "https://hal.science/hal-04829691v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -6269,7 +6513,8 @@
               "halId_s": "hal-04391146",
               "title_s": "Atypical Hemispheric Re-Organization of the Reading Network in High-Functioning Adults with Dyslexia: Evidence from Representational Similarity Analysis",
               "uri_s": "https://hal.science/hal-04391146v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 1
             }
           ]
         },
@@ -6285,7 +6530,8 @@
               "halId_s": "hal-04798037",
               "title_s": "Dating the Solar System’s giant planet orbital instability using enstatite meteorites",
               "uri_s": "https://hal.science/hal-04798037v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 4
             }
           ]
         },
@@ -6301,7 +6547,8 @@
               "halId_s": "hal-04717945",
               "title_s": "Seismological evidence for a multifault network at the subduction interface",
               "uri_s": "https://hal.science/hal-04717945v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 4
             }
           ]
         },
@@ -6317,13 +6564,15 @@
               "halId_s": "hal-04361293",
               "title_s": "Simbi : base de données hydro-climatiques historiques et signatures de 24 bassins versants haïtiens",
               "uri_s": "https://hal.science/hal-04361293v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 10
             },
             {
               "halId_s": "hal-04564899",
               "title_s": "Simbi: historical hydro-meteorological time series and signatures for 24 catchments in Haiti",
               "uri_s": "https://hal.science/hal-04564899v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 4
             }
           ]
         },
@@ -6339,7 +6588,8 @@
               "halId_s": "hal-04594231",
               "title_s": "STIVi: Turning Perspective Sketching Videos into Interactive Tutorials",
               "uri_s": "https://hal.science/hal-04594231v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 6
             }
           ]
         },
@@ -6355,7 +6605,8 @@
               "halId_s": "insu-04551236",
               "title_s": "In situ plasma and neutral gas observation time windows during a comet flyby: Application to the Comet Interceptor mission",
               "uri_s": "https://insu.hal.science/insu-04551236v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 12
             }
           ]
         }
@@ -6373,13 +6624,15 @@
               "halId_s": "hal-03589161",
               "title_s": "ESPON Big Data for Territorial - Analysis and Housing Dynamics. Wellbeing of European citizens regarding the affordability of housing.",
               "uri_s": "https://hal.science/hal-03589161v1",
-              "producedDateY_i": 2019
+              "producedDateY_i": 2019,
+              "producedDateM_i": 7
             },
             {
               "halId_s": "halshs-03370962",
               "title_s": "Unequal housing affordability across European cities. The ESPON Housing Database, Insights on Affordability in Selected Cities in Europe",
               "uri_s": "https://shs.hal.science/halshs-03370962v1",
-              "producedDateY_i": 2021
+              "producedDateY_i": 2021,
+              "producedDateM_i": 4
             }
           ]
         }
@@ -6397,7 +6650,8 @@
               "halId_s": "hal-04064296",
               "title_s": "Multi-source datasets acquired over Toulouse (France) in 2021 for urban microclimate studies during the CAMCATT/AI4GEO field campaign",
               "uri_s": "https://hal.science/hal-04064296v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 4
             }
           ]
         },
@@ -6413,7 +6667,8 @@
               "halId_s": "hal-04064296",
               "title_s": "Multi-source datasets acquired over Toulouse (France) in 2021 for urban microclimate studies during the CAMCATT/AI4GEO field campaign",
               "uri_s": "https://hal.science/hal-04064296v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 4
             }
           ]
         },
@@ -6429,7 +6684,8 @@
               "halId_s": "hal-04064296",
               "title_s": "Multi-source datasets acquired over Toulouse (France) in 2021 for urban microclimate studies during the CAMCATT/AI4GEO field campaign",
               "uri_s": "https://hal.science/hal-04064296v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 4
             }
           ]
         },
@@ -6445,7 +6701,8 @@
               "halId_s": "hal-04064296",
               "title_s": "Multi-source datasets acquired over Toulouse (France) in 2021 for urban microclimate studies during the CAMCATT/AI4GEO field campaign",
               "uri_s": "https://hal.science/hal-04064296v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 4
             }
           ]
         },
@@ -6461,7 +6718,8 @@
               "halId_s": "hal-04064296",
               "title_s": "Multi-source datasets acquired over Toulouse (France) in 2021 for urban microclimate studies during the CAMCATT/AI4GEO field campaign",
               "uri_s": "https://hal.science/hal-04064296v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 4
             }
           ]
         },
@@ -6477,7 +6735,8 @@
               "halId_s": "hal-04064296",
               "title_s": "Multi-source datasets acquired over Toulouse (France) in 2021 for urban microclimate studies during the CAMCATT/AI4GEO field campaign",
               "uri_s": "https://hal.science/hal-04064296v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 4
             }
           ]
         },
@@ -6493,7 +6752,8 @@
               "halId_s": "hal-04064296",
               "title_s": "Multi-source datasets acquired over Toulouse (France) in 2021 for urban microclimate studies during the CAMCATT/AI4GEO field campaign",
               "uri_s": "https://hal.science/hal-04064296v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 4
             }
           ]
         },
@@ -6509,7 +6769,8 @@
               "halId_s": "hal-04064296",
               "title_s": "Multi-source datasets acquired over Toulouse (France) in 2021 for urban microclimate studies during the CAMCATT/AI4GEO field campaign",
               "uri_s": "https://hal.science/hal-04064296v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 4
             }
           ]
         }
@@ -6527,7 +6788,8 @@
               "halId_s": "hal-04180802",
               "title_s": "A machine learning framework for the quantification of experimental uveitis in murine OCT",
               "uri_s": "https://hal.science/hal-04180802v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -6543,7 +6805,8 @@
               "halId_s": "hal-04127383",
               "title_s": "Les enseignant(e)s de la Martinique en période de confinement : la continuité pédagogique en question",
               "uri_s": "https://hal.science/hal-04127383v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -6559,7 +6822,8 @@
               "halId_s": "insu-04197043",
               "title_s": "Two types of slab components under Ecuadorian volcanoes supported by primitive olivine-hosted melt inclusion study",
               "uri_s": "https://insu.hal.science/insu-04197043v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 4
             }
           ]
         }
@@ -6577,7 +6841,8 @@
               "halId_s": "hal-04581266",
               "title_s": "Mapping global orchid assemblages with deep learning provides novel conservation insights",
               "uri_s": "https://hal.inrae.fr/hal-04581266v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -6593,7 +6858,8 @@
               "halId_s": "hal-04766885",
               "title_s": "Reconstitution of ORP-mediated lipid exchange coupled to PI4P metabolism",
               "uri_s": "https://hal.science/hal-04766885v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 2
             }
           ]
         }
@@ -6611,7 +6877,8 @@
               "halId_s": "hal-03936013",
               "title_s": "A Positive Feedback Between Crustal Thickness and Melt Extraction for the Origin of the Martian Dichotomy",
               "uri_s": "https://hal.science/hal-03936013v1",
-              "producedDateY_i": 2022
+              "producedDateY_i": 2022,
+              "producedDateM_i": 4
             }
           ]
         },
@@ -6627,7 +6894,8 @@
               "halId_s": "hal-03601464",
               "title_s": "Can Artificial Intelligence Help in the Study of Vegetative Growth Patterns from Herbarium Collections? An Evaluation of the Tropical Flora of the French Guiana Forest",
               "uri_s": "https://hal.inrae.fr/hal-03601464v1",
-              "producedDateY_i": 2022
+              "producedDateY_i": 2022,
+              "producedDateM_i": 2
             }
           ]
         },
@@ -6643,7 +6911,8 @@
               "halId_s": "hal-03717858",
               "title_s": "Customizable Visualization of Quality Metrics for Object-Oriented Variability Implementations",
               "uri_s": "https://hal.science/hal-03717858v1",
-              "producedDateY_i": 2022
+              "producedDateY_i": 2022,
+              "producedDateM_i": 9
             }
           ]
         },
@@ -6659,7 +6928,8 @@
               "halId_s": "hal-03545512",
               "title_s": "Pratiques et usages des outils numériques dans les communautés scientifiques en France",
               "uri_s": "https://hal-lara.archives-ouvertes.fr/hal-03545512v1",
-              "producedDateY_i": 2022
+              "producedDateY_i": 2022,
+              "producedDateM_i": 1
             }
           ]
         },
@@ -6675,7 +6945,8 @@
               "halId_s": "hal-03545512",
               "title_s": "Pratiques et usages des outils numériques dans les communautés scientifiques en France",
               "uri_s": "https://hal-lara.archives-ouvertes.fr/hal-03545512v1",
-              "producedDateY_i": 2022
+              "producedDateY_i": 2022,
+              "producedDateM_i": 1
             }
           ]
         }
@@ -6693,7 +6964,8 @@
               "halId_s": "hal-05123213",
               "title_s": "Plate‐Scale Strike‐Slip Fault System in the Barbados Accretionary Wedge of the Lesser Antilles Subduction Zone",
               "uri_s": "https://hal.science/hal-05123213v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -6709,7 +6981,8 @@
               "halId_s": "hal-05123213",
               "title_s": "Plate‐Scale Strike‐Slip Fault System in the Barbados Accretionary Wedge of the Lesser Antilles Subduction Zone",
               "uri_s": "https://hal.science/hal-05123213v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -6725,7 +6998,8 @@
               "halId_s": "hal-05123213",
               "title_s": "Plate‐Scale Strike‐Slip Fault System in the Barbados Accretionary Wedge of the Lesser Antilles Subduction Zone",
               "uri_s": "https://hal.science/hal-05123213v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -6741,7 +7015,8 @@
               "halId_s": "hal-05123213",
               "title_s": "Plate‐Scale Strike‐Slip Fault System in the Barbados Accretionary Wedge of the Lesser Antilles Subduction Zone",
               "uri_s": "https://hal.science/hal-05123213v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -6757,13 +7032,15 @@
               "halId_s": "hal-04436131",
               "title_s": "Sedimentary Records in the Lesser Antilles Fore‐Arc Basins Provide Evidence of Large Late Quaternary Megathrust Earthquakes",
               "uri_s": "https://hal.science/hal-04436131v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 1
             },
             {
               "halId_s": "hal-05123213",
               "title_s": "Plate‐Scale Strike‐Slip Fault System in the Barbados Accretionary Wedge of the Lesser Antilles Subduction Zone",
               "uri_s": "https://hal.science/hal-05123213v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -6779,7 +7056,8 @@
               "halId_s": "hal-05123213",
               "title_s": "Plate‐Scale Strike‐Slip Fault System in the Barbados Accretionary Wedge of the Lesser Antilles Subduction Zone",
               "uri_s": "https://hal.science/hal-05123213v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -6795,7 +7073,8 @@
               "halId_s": "hal-05123213",
               "title_s": "Plate‐Scale Strike‐Slip Fault System in the Barbados Accretionary Wedge of the Lesser Antilles Subduction Zone",
               "uri_s": "https://hal.science/hal-05123213v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -6811,7 +7090,8 @@
               "halId_s": "hal-05123213",
               "title_s": "Plate‐Scale Strike‐Slip Fault System in the Barbados Accretionary Wedge of the Lesser Antilles Subduction Zone",
               "uri_s": "https://hal.science/hal-05123213v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 5
             }
           ]
         }
@@ -6829,7 +7109,8 @@
               "halId_s": "hal-04538386",
               "title_s": "Campagne océanographique AMARYLLIS - AMAGAS",
               "uri_s": "https://hal.science/hal-04538386v1",
-              "producedDateY_i": 2023
+              "producedDateY_i": 2023,
+              "producedDateM_i": 5
             }
           ]
         }
@@ -6847,7 +7128,8 @@
               "halId_s": "hal-03657077",
               "title_s": "ROV3G 2021 database: geophysical data on the continental shelf offshore Santo Stefano al Mare and San Lorenzo al mare, Liguria, Italy.",
               "uri_s": "https://hal.science/hal-03657077v1",
-              "producedDateY_i": 2022
+              "producedDateY_i": 2022,
+              "producedDateM_i": 5
             }
           ]
         }
@@ -6865,7 +7147,8 @@
               "halId_s": "hal-04770544",
               "title_s": "Large seafloor rupture caused by the 1956 Amorgos tsunamigenic earthquake, Greece",
               "uri_s": "https://hal.science/hal-04770544v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 11
             }
           ]
         },
@@ -6881,7 +7164,8 @@
               "halId_s": "hal-04770544",
               "title_s": "Large seafloor rupture caused by the 1956 Amorgos tsunamigenic earthquake, Greece",
               "uri_s": "https://hal.science/hal-04770544v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 11
             }
           ]
         },
@@ -6897,7 +7181,8 @@
               "halId_s": "hal-04770544",
               "title_s": "Large seafloor rupture caused by the 1956 Amorgos tsunamigenic earthquake, Greece",
               "uri_s": "https://hal.science/hal-04770544v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 11
             }
           ]
         },
@@ -6913,7 +7198,8 @@
               "halId_s": "hal-04436131",
               "title_s": "Sedimentary Records in the Lesser Antilles Fore‐Arc Basins Provide Evidence of Large Late Quaternary Megathrust Earthquakes",
               "uri_s": "https://hal.science/hal-04436131v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 1
             }
           ]
         },
@@ -6929,7 +7215,8 @@
               "halId_s": "hal-04436131",
               "title_s": "Sedimentary Records in the Lesser Antilles Fore‐Arc Basins Provide Evidence of Large Late Quaternary Megathrust Earthquakes",
               "uri_s": "https://hal.science/hal-04436131v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 1
             }
           ]
         },
@@ -6945,7 +7232,8 @@
               "halId_s": "hal-04436131",
               "title_s": "Sedimentary Records in the Lesser Antilles Fore‐Arc Basins Provide Evidence of Large Late Quaternary Megathrust Earthquakes",
               "uri_s": "https://hal.science/hal-04436131v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 1
             }
           ]
         },
@@ -6961,7 +7249,8 @@
               "halId_s": "hal-04436131",
               "title_s": "Sedimentary Records in the Lesser Antilles Fore‐Arc Basins Provide Evidence of Large Late Quaternary Megathrust Earthquakes",
               "uri_s": "https://hal.science/hal-04436131v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 1
             }
           ]
         },
@@ -6977,7 +7266,8 @@
               "halId_s": "hal-04436131",
               "title_s": "Sedimentary Records in the Lesser Antilles Fore‐Arc Basins Provide Evidence of Large Late Quaternary Megathrust Earthquakes",
               "uri_s": "https://hal.science/hal-04436131v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 1
             }
           ]
         },
@@ -6993,7 +7283,8 @@
               "halId_s": "hal-04436131",
               "title_s": "Sedimentary Records in the Lesser Antilles Fore‐Arc Basins Provide Evidence of Large Late Quaternary Megathrust Earthquakes",
               "uri_s": "https://hal.science/hal-04436131v1",
-              "producedDateY_i": 2024
+              "producedDateY_i": 2024,
+              "producedDateM_i": 1
             }
           ]
         }
@@ -7011,7 +7302,8 @@
               "halId_s": "hal-05123213",
               "title_s": "Plate‐Scale Strike‐Slip Fault System in the Barbados Accretionary Wedge of the Lesser Antilles Subduction Zone",
               "uri_s": "https://hal.science/hal-05123213v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -7027,7 +7319,8 @@
               "halId_s": "hal-05123213",
               "title_s": "Plate‐Scale Strike‐Slip Fault System in the Barbados Accretionary Wedge of the Lesser Antilles Subduction Zone",
               "uri_s": "https://hal.science/hal-05123213v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -7043,7 +7336,8 @@
               "halId_s": "hal-05123213",
               "title_s": "Plate‐Scale Strike‐Slip Fault System in the Barbados Accretionary Wedge of the Lesser Antilles Subduction Zone",
               "uri_s": "https://hal.science/hal-05123213v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -7059,7 +7353,8 @@
               "halId_s": "hal-05123213",
               "title_s": "Plate‐Scale Strike‐Slip Fault System in the Barbados Accretionary Wedge of the Lesser Antilles Subduction Zone",
               "uri_s": "https://hal.science/hal-05123213v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -7075,7 +7370,8 @@
               "halId_s": "hal-05123213",
               "title_s": "Plate‐Scale Strike‐Slip Fault System in the Barbados Accretionary Wedge of the Lesser Antilles Subduction Zone",
               "uri_s": "https://hal.science/hal-05123213v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 5
             }
           ]
         }
@@ -7093,7 +7389,8 @@
               "halId_s": "ird-03774373",
               "title_s": "ReefTEMPS documente l'impact local du changement climatique et les paramètres qui influent sur la résilience des écosystèmes récifaux",
               "uri_s": "https://ird.hal.science/ird-03774373v1",
-              "producedDateY_i": 2021
+              "producedDateY_i": 2021,
+              "producedDateM_i": 11
             }
           ]
         }
@@ -7111,7 +7408,8 @@
               "halId_s": "hal-05438311",
               "title_s": "Precise relocation of the 14 August 2021 M<sub>w</sub> 7.2 Nippes, Haiti, earthquake sequence using broadband and citizen-hosted short-period seismometers",
               "uri_s": "https://hal.science/hal-05438311v1",
-              "producedDateY_i": 2026
+              "producedDateY_i": 2026,
+              "producedDateM_i": 5
             }
           ]
         }
@@ -7129,7 +7427,8 @@
               "halId_s": "hal-05157073",
               "title_s": "Imaging the Sediment Cover Offshore Central Chile With Surface‐Wave Dispersion and P‐Wave Conversion Using Distributed Acoustic Sensing",
               "uri_s": "https://hal.science/hal-05157073v1",
-              "producedDateY_i": 2025
+              "producedDateY_i": 2025,
+              "producedDateM_i": 5
             }
           ]
         }
@@ -7147,7 +7446,8 @@
               "halId_s": "hal-01897110",
               "title_s": "Integrated high-resolution dataset of high-intensity European and Mediterranean flash floods",
               "uri_s": "https://hal.science/hal-01897110v1",
-              "producedDateY_i": 2018
+              "producedDateY_i": 2018,
+              "producedDateM_i": 9
             }
           ]
         }
@@ -7165,7 +7465,8 @@
               "halId_s": "hal-01552148",
               "title_s": "A generic ontological network for Agri-food experiment integration – Application to viticulture and winemaking",
               "uri_s": "https://hal.science/hal-01552148v1",
-              "producedDateY_i": 2017
+              "producedDateY_i": 2017,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -7181,7 +7482,8 @@
               "halId_s": "hal-01897114",
               "title_s": "A high space–time resolution dataset linking meteorological forcing and hydro-sedimentary response in a mesoscale Mediterranean catchment (Auzon) of the Ardèche region, France",
               "uri_s": "https://hal.science/hal-01897114v1",
-              "producedDateY_i": 2017
+              "producedDateY_i": 2017,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -7197,7 +7499,8 @@
               "halId_s": "hal-01552148",
               "title_s": "A generic ontological network for Agri-food experiment integration – Application to viticulture and winemaking",
               "uri_s": "https://hal.science/hal-01552148v1",
-              "producedDateY_i": 2017
+              "producedDateY_i": 2017,
+              "producedDateM_i": 5
             }
           ]
         },
@@ -7213,7 +7516,8 @@
               "halId_s": "hal-01602779",
               "title_s": "Hybridization and polyploidy enable genomic plasticity without sex in the most devastating plant-parasitic nematodes",
               "uri_s": "https://hal.science/hal-01602779v1",
-              "producedDateY_i": 2017
+              "producedDateY_i": 2017,
+              "producedDateM_i": 5
             }
           ]
         }
@@ -7231,7 +7535,8 @@
               "halId_s": "hal-02190845",
               "title_s": "MUSDB18 - a corpus for music separation",
               "uri_s": "https://inria.hal.science/hal-02190845v1",
-              "producedDateY_i": 2017
+              "producedDateY_i": 2017,
+              "producedDateM_i": 12
             }
           ]
         }
@@ -7249,7 +7554,8 @@
               "halId_s": "halshs-00006898",
               "title_s": "Les débuts dans la vie active des jeunes issus de l'immigration après des études supérieures",
               "uri_s": "https://shs.hal.science/halshs-00006898v1",
-              "producedDateY_i": 2004
+              "producedDateY_i": 2004,
+              "producedDateM_i": 2
             }
           ]
         }
@@ -7267,13 +7573,15 @@
               "halId_s": "hal-04948456",
               "title_s": "Couches SIG des circonscriptions administratives d'Algérie (1942- 1949) : départements d’Alger, Constantine et Oran",
               "uri_s": "https://hal.science/hal-04948456v1",
-              "producedDateY_i": 2022
+              "producedDateY_i": 2022,
+              "producedDateM_i": 5
             },
             {
               "halId_s": "hal-04948456",
               "title_s": "Couches SIG des circonscriptions administratives d'Algérie (1942- 1949) : départements d’Alger, Constantine et Oran",
               "uri_s": "https://hal.science/hal-04948456v1",
-              "producedDateY_i": 2022
+              "producedDateY_i": 2022,
+              "producedDateM_i": 5
             }
           ]
         }
@@ -7291,7 +7599,8 @@
               "halId_s": "lirmm-00642899",
               "title_s": "Fuzzy Web Data Tables Integration Guided by an Ontological and Terminological Resource",
               "uri_s": "https://hal-lirmm.ccsd.cnrs.fr/lirmm-00642899v1",
-              "producedDateY_i": 2013
+              "producedDateY_i": 2013,
+              "producedDateM_i": 5
             }
           ]
         }
@@ -7309,7 +7618,8 @@
               "halId_s": "lirmm-01346685",
               "title_s": "A decision support system for eco-efficient biorefinery process comparison using a semantic approach",
               "uri_s": "https://hal-lirmm.ccsd.cnrs.fr/lirmm-01346685v1",
-              "producedDateY_i": 2016
+              "producedDateY_i": 2016,
+              "producedDateM_i": 9
             }
           ]
         }
@@ -7327,7 +7637,8 @@
               "halId_s": "hal-03909555",
               "title_s": "La catena di influenze nella ricezione moderna di Plutarco e il riuso delle Vite di Cesare e Bruto: teoria e prassi dei Classical Reception Studies",
               "uri_s": "https://hal.science/hal-03909555v1",
-              "producedDateY_i": 2019
+              "producedDateY_i": 2019,
+              "producedDateM_i": 6
             }
           ]
         },
@@ -7343,7 +7654,8 @@
               "halId_s": "hal-01661608",
               "title_s": "An explicit pseudo-energy conserving time-integration scheme for Hamiltonian dynamics",
               "uri_s": "https://enpc.hal.science/hal-01661608v5",
-              "producedDateY_i": 2019
+              "producedDateY_i": 2019,
+              "producedDateM_i": 4
             }
           ]
         }
@@ -7361,7 +7673,8 @@
               "halId_s": "hal-04128090",
               "title_s": "Morph-xR2RML: MongoDB-to-RDF translation",
               "uri_s": "https://hal.science/hal-04128090v1",
-              "producedDateY_i": 2015
+              "producedDateY_i": 2015,
+              "producedDateM_i": 4
             }
           ]
         }
@@ -7379,7 +7692,8 @@
               "halId_s": "hal-03033777",
               "title_s": "Network alignment and similarity reveal atlas-based topological differences in structural connectomes",
               "uri_s": "https://hal.science/hal-03033777v2",
-              "producedDateY_i": 2021
+              "producedDateY_i": 2021,
+              "producedDateM_i": 5
             }
           ]
         }
@@ -7397,12 +7711,695 @@
               "halId_s": "hal-02099602",
               "title_s": "museval",
               "uri_s": "https://inria.hal.science/hal-02099602v1",
-              "producedDateY_i": 2018
+              "producedDateY_i": 2018,
+              "producedDateM_i": 9
             }
           ]
         }
       ]
     },
-    "note": "Unique dataset DOIs linked from UniCA HAL notices, by year of the newest linking publication (producedDateY_i). All data repositories; chart shows top 12 plus Autre. Click a segment to list datasets."
+    "note": "Unique dataset DOIs linked from UniCA HAL notices, by year of the newest linking publication (producedDateY_i). All data repositories; chart shows top 12 plus Autre. Click a segment to list datasets.",
+    "stacked_months": {
+      "year": 2026,
+      "periods": [
+        "2026-01",
+        "2026-02",
+        "2026-03",
+        "2026-04",
+        "2026-05",
+        "2026-06",
+        "2026-07",
+        "2026-08",
+        "2026-09",
+        "2026-10",
+        "2026-11",
+        "2026-12"
+      ],
+      "labels": [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ],
+      "totals": [
+        0,
+        0,
+        1,
+        1,
+        3,
+        3,
+        3,
+        4,
+        5,
+        0,
+        0,
+        0
+      ],
+      "series": [
+        {
+          "repository": "Zenodo",
+          "color": "#e85d75",
+          "counts": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            2,
+            3,
+            2,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "repository": "Recherche Data Gouv",
+          "color": "#f4a261",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "repository": "SEANOE",
+          "color": "#e76f51",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "repository": "Sismer",
+          "color": "#2a9d8f",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "repository": "SEDOO / Theia",
+          "color": "#4cc9f0",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "repository": "NAKALA",
+          "color": "#90be6d",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "repository": "Figshare",
+          "color": "#f9c74f",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "repository": "FDSN / seismic network",
+          "color": "#577590",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "repository": "Mercator Ocean / Copernicus Marine",
+          "color": "#f28482",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "repository": "data.InDoRES",
+          "color": "#43aa8b",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "repository": "CDS",
+          "color": "#9b5de5",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "repository": "Epos-France Seismological Data Center",
+          "color": "#00bbf9",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "repository": "Autre",
+          "color": "#adb5bd",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "period_kind": "month",
+      "datasets_in_year": 20,
+      "unknown_month": 0
+    },
+    "cell_details_months": {
+      "2026-09|Zenodo": [
+        {
+          "dataset_doi": "10.5281/zenodo.21775722",
+          "dataset_title": "Data : Tracking Mantle Melting on Mars Using Phobos Tides",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.21775722",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05753637",
+              "title_s": "Tracking Deep Mantle Melting on Mars Using Phobos Tides",
+              "uri_s": "https://hal.science/hal-05753637v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 9
+            }
+          ],
+          "month": 9
+        }
+      ],
+      "2026-09|Mercator Ocean / Copernicus Marine": [
+        {
+          "dataset_doi": "10.48670/moi-00242",
+          "dataset_title": "Global Ocean Sea Surface Temperature time series and trend from Observations Reprocessing",
+          "repository": "Mercator Ocean / Copernicus Marine",
+          "landing_url": "https://resources.marine.copernicus.eu/product-detail/GLOBAL_OMI_TEMPSAL_sst_area_averaged_anomalies/INFORMATION",
+          "landing_host": "resources.marine.copernicus.eu",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "obspm-05218404",
+              "title_s": "Towards 0.1mm/yr stability over decades for measuring sea level using tide gauges together with GNSS-based instruments?",
+              "uri_s": "https://hal-obspm.ccsd.cnrs.fr/obspm-05218404v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 9
+            }
+          ],
+          "month": 9
+        },
+        {
+          "dataset_doi": "10.48670/moi-00268",
+          "dataset_title": "Mediterranean Sea Surface Temperature time series and trend from Observations Reprocessing",
+          "repository": "Mercator Ocean / Copernicus Marine",
+          "landing_url": "https://resources.marine.copernicus.eu/product-detail/MEDSEA_OMI_TEMPSAL_sst_area_averaged_anomalies/INFORMATION",
+          "landing_host": "resources.marine.copernicus.eu",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "obspm-05218404",
+              "title_s": "Towards 0.1mm/yr stability over decades for measuring sea level using tide gauges together with GNSS-based instruments?",
+              "uri_s": "https://hal-obspm.ccsd.cnrs.fr/obspm-05218404v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 9
+            }
+          ],
+          "month": 9
+        }
+      ],
+      "2026-05|Recherche Data Gouv": [
+        {
+          "dataset_doi": "10.57745/ENBAIS",
+          "dataset_title": "Replication Data for: Towards tsunami early-warning with Distributed Acoustic Sensing: expected seafloor strains induced by tsunamis",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/ENBAIS",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05630218",
+              "title_s": "Towards Tsunami Early-Warning with Distributed Acoustic Sensing: Expected Seafloor Strains Induced by Tsunamis",
+              "uri_s": "https://hal.science/hal-05630218v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 5
+            }
+          ],
+          "month": 5
+        },
+        {
+          "dataset_doi": "10.57745/QM0BOR",
+          "dataset_title": "Untargeted metabolomic dataset of leaves from twenty four accessions of wild and cultivated tomato plants",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/QM0BOR",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05633888",
+              "title_s": "Untargeted metabolomic dataset of leaves from twenty-four accessions of wild and cultivated tomato plants",
+              "uri_s": "https://hal.science/hal-05633888v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 5
+            }
+          ],
+          "month": 5
+        }
+      ],
+      "2026-09|Figshare": [
+        {
+          "dataset_doi": "10.6084/m9.figshare.30665321",
+          "dataset_title": "An archaeo-metabolomics approach for identifying cedar tar in archaeological samples: differentiating plant products and production processes (data set)",
+          "repository": "Figshare",
+          "landing_url": "https://figshare.com/articles/dataset/An_archaeo-metabolomics_approach_for_identifying_cedar_tar_in_archaeological_samples_differentiating_plant_products_and_production_processes_data_set_/30665321",
+          "landing_host": "figshare.com",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05621424",
+              "title_s": "An archaeo-metabolomics approach for identifying cedar tar in archaeological samples: differentiating plant products and production processes",
+              "uri_s": "https://hal.science/hal-05621424v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 9
+            }
+          ],
+          "month": 9
+        }
+      ],
+      "2026-04|Zenodo": [
+        {
+          "dataset_doi": "10.5281/zenodo.18599125",
+          "dataset_title": "Fault volume digital twin to reproduce the full slip spectrum, scaling and statistical laws",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.18599125",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "insu-05620657",
+              "title_s": "Fault Volume Digital Twin to Reproduce the Full Slip Spectrum, Scaling, and Statistical Laws",
+              "uri_s": "https://insu.hal.science/insu-05620657v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 4
+            }
+          ],
+          "month": 4
+        }
+      ],
+      "2026-08|Zenodo": [
+        {
+          "dataset_doi": "10.5281/zenodo.17379612",
+          "dataset_title": "Data and Code from : Semi-natural habitats buffer the context-dependent effects of crop diversification on pest control services in agricultural landscapes",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17379612",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05721920",
+              "title_s": "Semi‐Natural Habitats Buffer the Effects of Crop Diversification on Arthropod Pest Control Services in Agricultural Landscapes",
+              "uri_s": "https://hal.science/hal-05721920v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 8
+            }
+          ],
+          "month": 8
+        },
+        {
+          "dataset_doi": "10.5281/zenodo.20446669",
+          "dataset_title": "MoDRE26 - Safety First! Modelling Requirements from GPT-5 System Card using Lightweight Safety Models",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.20446669",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05681913",
+              "title_s": "Safety First! Modelling Requirements from GPT-5 System Card using Lightweight Safety Models",
+              "uri_s": "https://hal.science/hal-05681913v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 8
+            }
+          ],
+          "month": 8
+        }
+      ],
+      "2026-07|Zenodo": [
+        {
+          "dataset_doi": "10.5281/zenodo.19255031",
+          "dataset_title": "Dataset for: Propagation of fluid-driven aseismic slip fronts under upper crustal conditions",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.19255031",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05689658",
+              "title_s": "Propagation of fluid-driven aseismic slip fronts under upper crustal conditions",
+              "uri_s": "https://minesparis-psl.hal.science/hal-05689658v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 7
+            }
+          ],
+          "month": 7
+        },
+        {
+          "dataset_doi": "10.5281/zenodo.17672514",
+          "dataset_title": "Mercury's magnetosphere with laminar solar wind conditions using the Menura solver",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17672514",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "insu-05687170",
+              "title_s": "Effect of Solar Wind Turbulence on Temperature-Anisotropy-Driven Modes in Mercury's Magnetosheath",
+              "uri_s": "https://insu.hal.science/insu-05687170v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 7
+            }
+          ],
+          "month": 7
+        },
+        {
+          "dataset_doi": "10.5281/zenodo.17672619",
+          "dataset_title": "Mercury's magnetosphere with turbulent solar wind conditions using the Menura solver",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17672619",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "insu-05687170",
+              "title_s": "Effect of Solar Wind Turbulence on Temperature-Anisotropy-Driven Modes in Mercury's Magnetosheath",
+              "uri_s": "https://insu.hal.science/insu-05687170v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 7
+            }
+          ],
+          "month": 7
+        }
+      ],
+      "2026-09|NAKALA": [
+        {
+          "dataset_doi": "10.34847/nkl.6cae1i7s",
+          "dataset_title": "Inventaire des doctorats honoris causa en France",
+          "repository": "NAKALA",
+          "landing_url": "https://nakala.fr/10.34847/nkl.6cae1i7s",
+          "landing_host": "nakala.fr",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05251997",
+              "title_s": "Hommages dans les universités. Constitution d’une base de données sur les doctorats honoris causa en France",
+              "uri_s": "https://hal.science/hal-05251997v3",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 9
+            }
+          ],
+          "month": 9
+        }
+      ],
+      "2026-08|Recherche Data Gouv": [
+        {
+          "dataset_doi": "10.57745/QHUQOP",
+          "dataset_title": "Data package for the manuscript \"The Asian ladybird Harmonia axyridis at the interface between biological control and invasion: insights from population and quantitative genetics\"",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/QHUQOP",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05721890",
+              "title_s": "The Asian ladybird Harmonia axyridis at the interface between biological control and invasion: insights from population and quantitative genetics",
+              "uri_s": "https://hal.science/hal-05721890v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 8
+            }
+          ],
+          "month": 8
+        }
+      ],
+      "2026-08|NAKALA": [
+        {
+          "dataset_doi": "10.34847/nkl.f3e98xlq",
+          "dataset_title": "La céramique du début du Néolithique moyen en Provence occidentale : matériaux exploités et dégraissants",
+          "repository": "NAKALA",
+          "landing_url": "https://nakala.fr/10.34847/nkl.f3e98xlq",
+          "landing_host": "nakala.fr",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05708417",
+              "title_s": "Le début du Néolithique moyen en Provence occidentale : vers un phasage chronologique des productions matérielles céramiques et lithiques du 5e millénaire avant notre ère",
+              "uri_s": "https://hal.science/hal-05708417v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 8
+            }
+          ],
+          "month": 8
+        }
+      ],
+      "2026-03|Zenodo": [
+        {
+          "dataset_doi": "10.5281/zenodo.18503858",
+          "dataset_title": "Seismic cycle simulations and results for manuscript:  A rate-and-state friction based criterion for the probability of earthquake fault jumps",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.18503858",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05593448",
+              "title_s": "A Rate‐and‐State Friction Based Criterion for the Probability of Earthquake Fault Jumps",
+              "uri_s": "https://hal.science/hal-05593448v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 3
+            }
+          ],
+          "month": 3
+        }
+      ],
+      "2026-06|Zenodo": [
+        {
+          "dataset_doi": "10.5281/zenodo.7682309",
+          "dataset_title": "Jupyter notebook of a biophysically plausible decision-making model based on interacting cortical columns",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/record/7682309",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-04012636",
+              "title_s": "A biologically plausible decision-making model based on interacting neural populations",
+              "uri_s": "https://hal.science/hal-04012636v4",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 6
+            },
+            {
+              "halId_s": "hal-04012636",
+              "title_s": "A biologically plausible decision-making model based on interacting neural populations",
+              "uri_s": "https://hal.science/hal-04012636v4",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 6
+            }
+          ],
+          "month": 6
+        },
+        {
+          "dataset_doi": "10.5281/zenodo.17915024",
+          "dataset_title": "Materials for \"Harnessing converted phases for rapid magnitude estimation and early warning with distributed acoustic sensing offshore Chile\"",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17915024",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05456289",
+              "title_s": "Harnessing converted phases for rapid magnitude estimation and early warning with distributed acoustic sensing offshore Chile",
+              "uri_s": "https://hal.science/hal-05456289v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 6
+            }
+          ],
+          "month": 6
+        }
+      ],
+      "2026-06|NAKALA": [
+        {
+          "dataset_doi": "10.34847/nkl.0dee15ow",
+          "dataset_title": "The ExEco Dataset: A Textual Dataset of French Economic and Social Thought (1918–1960)",
+          "repository": "NAKALA",
+          "landing_url": "https://nakala.fr/10.34847/nkl.0dee15ow",
+          "landing_host": "nakala.fr",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05662277",
+              "title_s": "The ExEco Dataset: A Textual Dataset of French Economic and Social Thought (1918–1960)",
+              "uri_s": "https://hal.science/hal-05662277v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 6
+            }
+          ],
+          "month": 6
+        }
+      ],
+      "2026-05|FDSN / seismic network": [
+        {
+          "dataset_doi": "10.7914/sn/hy",
+          "dataset_title": "UEH Seismic Network",
+          "repository": "FDSN / seismic network",
+          "landing_url": "https://www.fdsn.org/networks/detail/HY/",
+          "landing_host": "fdsn.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05438311",
+              "title_s": "Precise relocation of the 14 August 2021 M<sub>w</sub> 7.2 Nippes, Haiti, earthquake sequence using broadband and citizen-hosted short-period seismometers",
+              "uri_s": "https://hal.science/hal-05438311v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 5
+            }
+          ],
+          "month": 5
+        }
+      ]
+    },
+    "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 20 datasets in 2026. Click a segment to list datasets."
   }
 }

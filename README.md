@@ -166,6 +166,74 @@ Preview locally: `python -m http.server 8765 -d docs`.
 
 ---
 
+## Typical routines (how to combine the scripts)
+
+### A. First-time / cold start (empty `data/census/`)
+
+```bash
+pip install -e .
+
+# 1) Optional but useful for homepage HAL document counts + lab backfill
+hal-unica harvest -o data/unica_hal_metadata.jsonl
+
+# 2) One orchestration pass builds census, software, data papers, focus links, site
+hal-unica refresh --full
+
+# 3) Preview
+python -m http.server 8765 -d docs
+```
+
+After this you have `data/census/*`, `docs/*`, and can push to GitHub Pages.
+
+### B. Normal local day (same as CI)
+
+```bash
+hal-unica refresh --lookback-days 2
+# → upserts recently modified relatedData notices
+# → re-harvests SOFTWARE + data papers
+# → rebuilds dataset index, Nakala/RDG focus file, docs/
+```
+
+### C. “I only changed site.py / CSS”
+
+```bash
+hal-unica build-site
+```
+
+No HAL/DataCite calls; rebuilds HTML from existing JSONL/CSV.
+
+### D. “I only care about data papers / software today”
+
+```bash
+hal-unica data-papers    # needs existing doi_resolutions.jsonl for link enrichment
+hal-unica software
+hal-unica build-site
+```
+
+### E. Debug a census issue without touching the site
+
+```bash
+hal-unica census --lookback-days 2
+# inspect data/census/summary.json, misfiled_dataset_links.csv, run.log
+hal-unica build-site     # when ready to publish
+```
+
+### F. Recommended dependency order
+
+```
+harvest (optional) ─┐
+                    ├─→ refresh ─┬─→ census artifacts
+census (alone)   ───┘           ├─→ software_deposits.*
+                                ├─→ data_papers.*
+                                ├─→ dataset_to_publications.*
+                                ├─→ unica_data_repo_links.jsonl
+                                └─→ build-site → docs/
+```
+
+In practice **prefer `refresh`** over chaining pieces yourself unless you are debugging.
+
+---
+
 ## List pages (shared UX)
 
 **All repositories · Related datasets · Software · Data papers · To Be Corrected** share the same list patterns where relevant:
@@ -195,14 +263,20 @@ HAL exposes `modifiedDate_tdate`. When a depositor edits an old notice, HAL bump
 
 Workflow: [`.github/workflows/daily-refresh.yml`](.github/workflows/daily-refresh.yml)
 
-| When (UTC) | Paris (CEST / CET) | Mode |
-|---|---|---|
-| Mon–Sat **04:00 UTC** | **06:00** / **05:00** | Incremental (`--lookback-days 2`) |
-| Sunday **04:00 UTC** | **06:00** / **05:00** | Full census (`--full`) |
+GitHub often delays crons that fire at `:00`. We therefore:
+
+1. Run **off the hour** (`:17`)
+2. Add a **catch-up** mid-morning Paris time if the first run was delayed
+
+| Slot | Cron (UTC) | Paris (CEST / CET) | Mode |
+|---|---|---|---|
+| Primary | `17 4 * * 1-6` | **06:17** / **05:17** | Incremental |
+| Primary Sunday | `17 4 * * 0` | **06:17** / **05:17** | Full census |
+| Catch-up (daily) | `17 8 * * *` | **10:17** / **09:17** | Incremental |
 
 After a successful refresh **with file changes**, the same workflow deploys GitHub Pages (bot pushes with `GITHUB_TOKEN` do not trigger `pages.yml` alone).
 
-**Caveat:** GitHub scheduled workflows are often delayed (minutes to hours). Manual run: Actions → **Daily incremental refresh** → `incremental` or `full`.
+Delays can still happen under GitHub load; the catch-up slot is there so you usually do not need a manual refresh. Manual run: Actions → **Daily incremental refresh** → `incremental` or `full`.
 
 If Actions is down longer than the lookback window, the next **Sunday full** run closes the gap.
 

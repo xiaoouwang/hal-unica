@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
@@ -279,22 +280,99 @@ _STACK_COLORS = [
 ]
 
 
+def _parse_produced_month(pub: dict[str, Any]) -> int | None:
+    """Return 1–12 from producedDateM_i / producedDate_s, else modifiedDate month."""
+    m = pub.get("producedDateM_i")
+    try:
+        mi = int(m)
+        if 1 <= mi <= 12:
+            return mi
+    except (TypeError, ValueError):
+        pass
+    s = str(pub.get("producedDate_s") or "").strip()
+    m2 = re.match(r"^\d{4}-(\d{2})", s)
+    if m2:
+        mi = int(m2.group(1))
+        if 1 <= mi <= 12:
+            return mi
+    md = str(pub.get("modifiedDate_tdate") or "")
+    m3 = re.match(r"^\d{4}-(\d{2})", md)
+    if m3:
+        mi = int(m3.group(1))
+        if 1 <= mi <= 12:
+            return mi
+    return None
+
+
+def _enrich_pubs_dates_from_harvest(
+    pubs_by_id: dict[str, dict[str, Any]],
+    harvest_path: Path,
+) -> int:
+    """Copy producedDate_s / producedDateM_i from the local harvest when missing."""
+    if not harvest_path.exists() or not pubs_by_id:
+        return 0
+    need = {
+        hid: pub
+        for hid, pub in pubs_by_id.items()
+        if not pub.get("producedDate_s") or pub.get("producedDateM_i") in (None, 0, "0")
+    }
+    if not need:
+        return 0
+    filled = 0
+    with harvest_path.open(encoding="utf-8") as fh:
+        for line in fh:
+            if not need:
+                break
+            if not line.strip():
+                continue
+            try:
+                doc = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            hid = doc.get("halId_s")
+            if isinstance(hid, list):
+                hid = hid[0] if hid else None
+            if not hid or str(hid) not in need:
+                continue
+            pub = need.pop(str(hid))
+            if not pub.get("producedDate_s"):
+                s = doc.get("producedDate_s")
+                if isinstance(s, list):
+                    s = s[0] if s else None
+                if s:
+                    pub["producedDate_s"] = str(s)
+            if pub.get("producedDateM_i") in (None, 0, "0"):
+                m = doc.get("producedDateM_i")
+                if isinstance(m, list):
+                    m = m[0] if m else None
+                if m not in (None, 0, "0"):
+                    pub["producedDateM_i"] = m
+            filled += 1
+    return filled
+
+
 def census_homepage_stats(
     census_dir: Path,
     *,
     year_min: int = 2016,
     top_repos: int = 12,
+    focus_year: int | None = None,
+    harvest_path: Path | None = None,
 ) -> dict[str, Any] | None:
     """
     All-repository dataset stats for the homepage (not Nakala/RDG-only).
 
     Years use the newest ``producedDateY_i`` among UniCA HAL notices that link
-    each dataset DOI (one count per dataset DOI).
+    each dataset DOI (one count per dataset DOI). Also builds a month×repository
+    stacked series for ``focus_year`` (default: current UTC year).
     """
     ds_path = census_dir / "dataset_to_publications.jsonl"
     pubs_path = census_dir / "publications_related_data.jsonl"
     if not ds_path.exists():
         return None
+
+    if focus_year is None:
+        focus_year = datetime.now(timezone.utc).year
 
     pubs_by_id: dict[str, dict[str, Any]] = {}
     if pubs_path.exists():
@@ -307,12 +385,19 @@ def census_homepage_stats(
                 if hid:
                     pubs_by_id[str(hid)] = pub
 
+    if harvest_path is None:
+        harvest_path = Path("data/unica_hal_metadata.jsonl")
+    _enrich_pubs_dates_from_harvest(pubs_by_id, harvest_path)
+
     by_year_repo: dict[int, Counter[str]] = defaultdict(Counter)
+    by_month_repo: dict[int, Counter[str]] = defaultdict(Counter)
     by_repo: Counter[str] = Counter()
     pubs_with_dataset: set[str] = set()
     datasets = 0
-    # year → repo → list of dataset detail dicts (for click panel)
     details: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    month_details: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    focus_year_datasets = 0
+    focus_year_unknown_month = 0
 
     with ds_path.open(encoding="utf-8") as fh:
         for line in fh:
@@ -322,91 +407,135 @@ def census_homepage_stats(
             datasets += 1
             repo = row.get("repository") or "Unknown"
             by_repo[repo] += 1
-            years: list[int] = []
+            year_months: list[tuple[int, int | None]] = []
             pub_briefs: list[dict[str, Any]] = []
             for p in row.get("publications") or []:
                 hid = p.get("halId_s")
                 if hid:
                     pubs_with_dataset.add(str(hid))
                 pub = pubs_by_id.get(str(hid)) if hid else None
-                y = (pub or {}).get("producedDateY_i")
-                if y is None:
-                    y = p.get("producedDateY_i")
+                merged = {**(pub or {}), **{k: v for k, v in p.items() if v is not None}}
+                y = merged.get("producedDateY_i")
                 try:
                     yi = int(y)
                 except (TypeError, ValueError):
                     yi = None
+                mi = _parse_produced_month(merged) if yi is not None else None
                 if yi is not None and 1950 <= yi <= 2100:
-                    years.append(yi)
+                    year_months.append((yi, mi))
                 pub_briefs.append(
                     {
                         "halId_s": hid,
                         "title_s": p.get("title_s") or (pub or {}).get("title_s"),
                         "uri_s": p.get("uri_s") or (pub or {}).get("uri_s"),
                         "producedDateY_i": yi,
+                        "producedDateM_i": mi,
                     }
                 )
-            if not years:
+            if not year_months:
                 continue
-            year = max(years)
+            year = max(ym[0] for ym in year_months)
             by_year_repo[year][repo] += 1
-            details[f"{year}|{repo}"].append(
-                {
-                    "dataset_doi": row.get("dataset_doi"),
-                    "dataset_title": row.get("dataset_title"),
-                    "repository": repo,
-                    "landing_url": row.get("landing_url"),
-                    "landing_host": row.get("landing_host"),
-                    "year": year,
-                    "publications": pub_briefs,
-                }
-            )
+            detail = {
+                "dataset_doi": row.get("dataset_doi"),
+                "dataset_title": row.get("dataset_title"),
+                "repository": repo,
+                "landing_url": row.get("landing_url"),
+                "landing_host": row.get("landing_host"),
+                "year": year,
+                "publications": pub_briefs,
+            }
+            details[f"{year}|{repo}"].append(detail)
+
+            if year == focus_year:
+                focus_year_datasets += 1
+                # Newest linking pub in focus_year, preferring known month
+                candidates = [(yi, mi) for yi, mi in year_months if yi == focus_year]
+                month = None
+                dated = [mi for _, mi in candidates if mi is not None]
+                if dated:
+                    month = max(dated)
+                if month is None:
+                    focus_year_unknown_month += 1
+                else:
+                    by_month_repo[month][repo] += 1
+                    month_details[f"{focus_year}-{month:02d}|{repo}"].append(
+                        {**detail, "month": month}
+                    )
 
     if not by_year_repo:
         years_list = list(range(year_min, datetime.now(timezone.utc).year + 1))
     else:
         years_list = list(range(min(by_year_repo), max(by_year_repo) + 1))
 
-    # Top repositories overall; remainder → Autre (still counted)
     ranked = [r for r, _ in by_repo.most_common()]
     keep = ranked[:top_repos]
     other_label = "Autre"
     series_names = keep + ([other_label] if len(ranked) > len(keep) else [])
     keep_set = set(keep)
 
-    # Remap Autre cells for the click panel
-    cell_details: dict[str, list[dict[str, Any]]] = {}
-    for key, items in details.items():
-        year_s, repo = key.split("|", 1)
-        chart_repo = repo if repo in keep_set else other_label
-        cell_details.setdefault(f"{year_s}|{chart_repo}", []).extend(items)
-    for items in cell_details.values():
-        items.sort(key=lambda d: (d.get("dataset_title") or d.get("dataset_doi") or "").lower())
+    def _series_for(
+        axis: list,
+        counter: dict,
+        *,
+        key_fn,
+    ) -> tuple[list[dict[str, Any]], list[int], dict[str, list[dict[str, Any]]]]:
+        cell: dict[str, list[dict[str, Any]]] = {}
+        source = details if counter is by_year_repo else month_details
+        for key, items in source.items():
+            axis_key, repo = key.split("|", 1)
+            chart_repo = repo if repo in keep_set else other_label
+            cell.setdefault(f"{axis_key}|{chart_repo}", []).extend(items)
+        for items in cell.values():
+            items.sort(
+                key=lambda d: (d.get("dataset_title") or d.get("dataset_doi") or "").lower()
+            )
+        series: list[dict[str, Any]] = []
+        for i, name in enumerate(series_names):
+            counts: list[int] = []
+            for ax in axis:
+                bucket = counter[key_fn(ax)]
+                if name == other_label:
+                    counts.append(sum(c for r, c in bucket.items() if r not in keep_set))
+                else:
+                    counts.append(int(bucket.get(name, 0)))
+            color = (
+                "#adb5bd"
+                if name == other_label
+                else _STACK_COLORS[i % (len(_STACK_COLORS) - 1)]
+            )
+            series.append({"repository": name, "color": color, "counts": counts})
+        totals = [sum(s["counts"][i] for s in series) for i in range(len(axis))]
+        return series, totals, cell
 
-    series: list[dict[str, Any]] = []
-    for i, name in enumerate(series_names):
-        counts: list[int] = []
-        for y in years_list:
-            if name == other_label:
-                counts.append(
-                    sum(c for r, c in by_year_repo[y].items() if r not in keep_set)
-                )
-            else:
-                counts.append(int(by_year_repo[y].get(name, 0)))
-        color = (
-            "#adb5bd"
-            if name == other_label
-            else _STACK_COLORS[i % (len(_STACK_COLORS) - 1)]
-        )
-        series.append(
-            {
-                "repository": name,
-                "color": color,
-                "counts": counts,
-            }
-        )
+    series, totals, cell_details = _series_for(
+        years_list, by_year_repo, key_fn=lambda y: y
+    )
+    year_periods = [str(y) for y in years_list]
+    # cell_details keys already use string years from f"{year}|{repo}"
+    year_cells: dict[str, list[dict[str, Any]]] = {}
+    for key, items in cell_details.items():
+        year_cells[key] = items
 
-    totals = [sum(s["counts"][i] for s in series) for i in range(len(years_list))]
+    month_nums = list(range(1, 13))
+    month_labels = [
+        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+    ]
+    month_periods = [f"{focus_year}-{m:02d}" for m in month_nums]
+    m_series, m_totals, m_cells = _series_for(
+        month_nums, by_month_repo, key_fn=lambda m: m
+    )
+    month_cell_details: dict[str, list[dict[str, Any]]] = {}
+    for key, items in m_cells.items():
+        axis_s, repo = key.split("|", 1)
+        if re.fullmatch(r"\d{1,2}", axis_s):
+            period = f"{focus_year}-{int(axis_s):02d}"
+        elif re.fullmatch(r"\d{4}-\d{2}", axis_s):
+            period = axis_s
+        else:
+            period = axis_s
+        month_cell_details[f"{period}|{repo}"] = items
 
     return {
         "unique_datasets": datasets,
@@ -416,15 +545,41 @@ def census_homepage_stats(
         "repositories_total": len(by_repo),
         "year_axis": years_list,
         "stacked": {
+            "periods": year_periods,
             "years": years_list,
+            "labels": year_periods,
             "totals": totals,
             "series": series,
+            "period_kind": "year",
         },
-        "cell_details": cell_details,
+        "cell_details": year_cells,
         "note": (
             "Unique dataset DOIs linked from UniCA HAL notices, by year of the "
             "newest linking publication (producedDateY_i). All data repositories; "
             f"chart shows top {len(keep)} plus Autre. Click a segment to list datasets."
+        ),
+        "stacked_months": {
+            "year": focus_year,
+            "periods": month_periods,
+            "labels": month_labels,
+            "totals": m_totals,
+            "series": m_series,
+            "period_kind": "month",
+            "datasets_in_year": focus_year_datasets,
+            "unknown_month": focus_year_unknown_month,
+        },
+        "cell_details_months": month_cell_details,
+        "months_note": (
+            f"Same dataset DOIs whose newest linking publication year is {focus_year}, "
+            f"broken down by production month (producedDate_s / producedDateM_i; "
+            f"falls back to modifiedDate month when the notice only stores a year). "
+            f"{focus_year_datasets} datasets in {focus_year}"
+            + (
+                f"; {focus_year_unknown_month} without a usable month"
+                if focus_year_unknown_month
+                else ""
+            )
+            + ". Click a segment to list datasets."
         ),
     }
 
@@ -462,7 +617,11 @@ def build_site_payload(
         for repo in row.get("repositories") or []:
             related_repos[repo] += 1
 
-    census_stats = census_homepage_stats(census_dir) if census_dir else None
+    census_stats = (
+        census_homepage_stats(census_dir, harvest_path=harvest_path)
+        if census_dir
+        else None
+    )
 
     focus_by_repo = dict(
         sorted(related_repos.items(), key=lambda kv: (-kv[1], kv[0]))
@@ -1034,18 +1193,21 @@ STACK_CHART_JS = r"""
     function esc(s) {
       return String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
     }
-    function mountStackChart(chart, { noteEl, legendEl, chartEl, modalEl }) {
-      if (!chart || !chart.stacked || !chart.stacked.years || !chart.stacked.years.length) {
-        if (noteEl) noteEl.textContent = "Census chart unavailable — run a census refresh to populate dataset×year series.";
+    function mountStackChart(chart, { noteEl, legendEl, chartEl, modalEl, detailsKey }) {
+      const stacked = chart && (chart.stacked || chart);
+      if (!chart || !stacked || !(stacked.periods || stacked.years || []).length) {
+        if (noteEl) noteEl.textContent = "Census chart unavailable — run a census refresh to populate the series.";
         if (legendEl) legendEl.innerHTML = "";
         if (chartEl) chartEl.innerHTML = "";
         return;
       }
-      if (noteEl) noteEl.textContent = chart.note || "";
-      const series = chart.stacked.series || [];
-      const years = chart.stacked.years;
-      const totals = chart.stacked.totals || [];
-      const details = chart.cell_details || {};
+      if (noteEl) noteEl.textContent = chart.note || chart.months_note || "";
+      const series = stacked.series || [];
+      const periods = stacked.periods || stacked.years || [];
+      const labels = stacked.labels || periods.map(String);
+      const totals = stacked.totals || [];
+      const details = (detailsKey && chart[detailsKey]) || chart.cell_details || {};
+      const periodKind = stacked.period_kind || "year";
       const maxTotal = Math.max(1, ...totals);
       const wrap = legendEl.closest(".stack-wrap");
 
@@ -1054,22 +1216,23 @@ STACK_CHART_JS = r"""
           <i class="stack-swatch" style="background:${s.color}"></i>${esc(s.repository)}
         </button>`
       ).join("");
-      chartEl.innerHTML = years.map((year, i) => {
+      chartEl.innerHTML = periods.map((period, i) => {
         const total = totals[i] || 0;
+        const label = labels[i] != null ? labels[i] : period;
         const segs = series.map(s => {
           const n = (s.counts && s.counts[i]) || 0;
           if (!n) return "";
           const pct = (100 * n / maxTotal).toFixed(2);
-          const label = n >= 3 ? String(n) : "";
+          const segLabel = n >= 3 ? String(n) : "";
           return `<div class="stack-seg" role="button" tabindex="0"
-            data-repo="${esc(s.repository)}" data-year="${year}" data-count="${n}"
+            data-repo="${esc(s.repository)}" data-period="${esc(period)}" data-count="${n}"
             style="flex:0 0 ${pct}%; background:${s.color}"
-            title="${esc(s.repository)} · ${year}: ${n} — click for list">${label}</div>`;
+            title="${esc(s.repository)} · ${esc(label)}: ${n} — click for list">${segLabel}</div>`;
         }).join("");
         return `<div class="stack-col">
           <div class="stack-total">${total}</div>
           <div class="stack-bars">${segs}</div>
-          <div class="stack-year">${year}</div>
+          <div class="stack-year">${esc(label)}</div>
         </div>`;
       }).join("");
 
@@ -1105,12 +1268,18 @@ STACK_CHART_JS = r"""
         modalEl.hidden = true;
         document.body.style.overflow = "";
       }
-      function openModal(repo, year) {
-        const key = `${year}|${repo}`;
+      function openModal(repo, period) {
+        const key = `${period}|${repo}`;
         const items = details[key] || [];
-        titleEl.textContent = `${repo} · ${year}`;
+        const idx = periods.map(String).indexOf(String(period));
+        const nice = idx >= 0 ? labels[idx] : period;
+        const titlePeriod = periodKind === "month"
+          ? `${stacked.year || ""} ${nice}`.trim()
+          : nice;
+        titleEl.textContent = `${repo} · ${titlePeriod}`;
+        const unit = periodKind === "month" ? "month" : "year";
         subEl.textContent = items.length
-          ? `${items.length} dataset${items.length === 1 ? "" : "s"} (newest linking publication year)`
+          ? `${items.length} dataset${items.length === 1 ? "" : "s"} (newest linking publication ${unit})`
           : "No datasets listed for this segment.";
         bodyEl.innerHTML = items.length
           ? items.map(d => {
@@ -1136,7 +1305,7 @@ STACK_CHART_JS = r"""
                 ${pubsHtml}
               </article>`;
             }).join("")
-          : `<div class="chart-modal-empty">No datasets for this year and repository.</div>`;
+          : `<div class="chart-modal-empty">No datasets for this ${unit} and repository.</div>`;
         modalEl.hidden = false;
         document.body.style.overflow = "hidden";
         closeBtn.focus();
@@ -1145,8 +1314,8 @@ STACK_CHART_JS = r"""
       function onSegActivate(el) {
         if (!el || !el.classList.contains("stack-seg")) return;
         const repo = el.getAttribute("data-repo");
-        const year = el.getAttribute("data-year");
-        if (repo && year) openModal(repo, year);
+        const period = el.getAttribute("data-period");
+        if (repo && period) openModal(repo, period);
       }
       wrap.addEventListener("click", (ev) => {
         const el = ev.target.closest(".stack-seg");
@@ -1230,6 +1399,16 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
       </p>
     </section>
 
+    <section class="panel">
+      <h2 id="chartMonthsTitle">Linked datasets by month (2026)</h2>
+      <p class="muted" style="margin:0" id="chartMonthsNote"></p>
+      <div class="stack-wrap">
+        <div class="stack-legend" id="stackMonthsLegend"></div>
+        <div class="stack-chart" id="stackMonthsChart"></div>
+      </div>
+      <p class="chart-embed-hint">Same repositories as above, limited to the current production year — columns are months.</p>
+    </section>
+
     <section class="panel reveal" id="panelDocTypes">
       <h2>Document types in HAL</h2>
       <div class="bars" id="docTypes"></div>
@@ -1290,6 +1469,25 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
       legendEl: document.getElementById("stackLegend"),
       chartEl: document.getElementById("stackChart"),
       modalEl: document.getElementById("chartModal"),
+    });
+    const monthPayload = chart && chart.stacked_months
+      ? {
+          ...chart,
+          stacked: chart.stacked_months,
+          note: chart.months_note,
+          cell_details: chart.cell_details_months,
+        }
+      : null;
+    if (monthPayload && monthPayload.stacked && monthPayload.stacked.year) {
+      const title = document.getElementById("chartMonthsTitle");
+      if (title) title.textContent = `Linked datasets by month (${monthPayload.stacked.year})`;
+    }
+    mountStackChart(monthPayload, {
+      noteEl: document.getElementById("chartMonthsNote"),
+      legendEl: document.getElementById("stackMonthsLegend"),
+      chartEl: document.getElementById("stackMonthsChart"),
+      modalEl: document.getElementById("chartModal"),
+      detailsKey: "cell_details_months",
     });
 """
     tail = f"""
