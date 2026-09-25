@@ -13,7 +13,7 @@ UBE snapshot: https://xiaoouwang.github.io/hal-unica/ube/
 | Chart embed (iframe) | [/embed-chart.html](https://xiaoouwang.github.io/hal-unica/embed-chart.html) | [/ube/embed-chart.html](https://xiaoouwang.github.io/hal-unica/ube/embed-chart.html) |
 | Nakala / Recherche Data Gouv | [/related-datasets.html](https://xiaoouwang.github.io/hal-unica/related-datasets.html) | [/ube/related-datasets.html](https://xiaoouwang.github.io/hal-unica/ube/related-datasets.html) |
 | **All repositories** | [/all-repositories.html](https://xiaoouwang.github.io/hal-unica/all-repositories.html) | [/ube/all-repositories.html](https://xiaoouwang.github.io/hal-unica/ube/all-repositories.html) |
-| **DataCite datasets** (affiliation / ROR) | [/datacite-datasets.html](https://xiaoouwang.github.io/hal-unica/datacite-datasets.html) | — (UniCA only for now) |
+| **DataCite datasets** (affiliation / ROR) | [/datacite-datasets.html](https://xiaoouwang.github.io/hal-unica/datacite-datasets.html) | [/ube/datacite-datasets.html](https://xiaoouwang.github.io/hal-unica/ube/datacite-datasets.html) |
 | **Data papers** | [/data-papers.html](https://xiaoouwang.github.io/hal-unica/data-papers.html) | [/ube/data-papers.html](https://xiaoouwang.github.io/hal-unica/ube/data-papers.html) |
 | **To Be Corrected** | [/to-be-corrected.html](https://xiaoouwang.github.io/hal-unica/to-be-corrected.html) | [/ube/to-be-corrected.html](https://xiaoouwang.github.io/hal-unica/ube/to-be-corrected.html) |
 | Software & source code | [/software.html](https://xiaoouwang.github.io/hal-unica/software.html) | [/ube/software.html](https://xiaoouwang.github.io/hal-unica/ube/software.html) |
@@ -172,9 +172,11 @@ hal-unica census --lookback-days 2
 hal-unica software
 hal-unica data-papers
 
-# Institutional DataCite datasets (UniCA; needs ror_ids / affiliation_names in universities.py)
+# Institutional DataCite datasets (needs ror_ids / affiliation_names in universities.py)
 hal-unica datacite-census
+hal-unica datacite-census --university ube
 hal-unica build-site
+hal-unica build-site --university ube
 
 # Nakala/RDG focus tooling
 hal-unica find-data-repos -o data/unica_data_repo_links.jsonl
@@ -243,7 +245,7 @@ No code change is needed for the logo row: every tenant automatically lists **ot
 
 ### Optional: DataCite institutional datasets
 
-UniCA also runs a **DataCite-first** census (see [DataCite datasets](https://xiaoouwang.github.io/hal-unica/datacite-datasets.html)):
+UniCA and UBE run a **DataCite-first** census (see [UniCA](https://xiaoouwang.github.io/hal-unica/datacite-datasets.html) · [UBE](https://xiaoouwang.github.io/hal-unica/ube/datacite-datasets.html)):
 
 - Query DataCite for `resourceTypeGeneral:Dataset` whose creators/contributors list the university’s **ROR** and/or **affiliation name** strings (`universities.py`: `ror_ids`, `affiliation_names`).
 - Crosswalk DOIs against HAL `dataset_to_publications.jsonl`.
@@ -407,6 +409,7 @@ Top **data** repositories (All repositories index): Zenodo · Recherche Data Gou
 | [`data/census/software_deposits.csv`](data/census/software_deposits.csv) | SOFTWARE + code repos + SWHIDs |
 | [`data/census/data_papers.csv`](data/census/data_papers.csv) | Data papers + linked datasets / journals |
 | [`data/census/datacite_datasets.csv`](data/census/datacite_datasets.csv) | UniCA DataCite Dataset DOIs (affiliation / ROR) + HAL crosswalk |
+| [`data/ube/census/datacite_datasets.csv`](data/ube/census/datacite_datasets.csv) | UBE DataCite Dataset DOIs (affiliation / ROR) + HAL crosswalk |
 | [`data/census/summary.json`](data/census/summary.json) | Full-census aggregates |
 | [`data/census/census.meta.json`](data/census/census.meta.json) | Watermark for incremental refresh |
 | [`data/census/METHODOLOGY.md`](data/census/METHODOLOGY.md) | Auto-generated method + counts for last census run |

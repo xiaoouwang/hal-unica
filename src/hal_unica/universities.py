@@ -116,6 +116,14 @@ UBE = University(
     site_dir=Path("docs/ube"),
     stats_fallback=Path("docs/ube/data/stats.json"),
     log_path=Path("logs/ube-census.log"),
+    ror_ids=("https://ror.org/00g700j37",),
+    affiliation_names=(
+        "Université Bourgogne Europe",
+        "Universite Bourgogne Europe",
+        "Université de Bourgogne",
+        "Universite de Bourgogne",
+        "University of Burgundy",
+    ),
 )
 
 UNIVERSITIES: dict[str, University] = {
