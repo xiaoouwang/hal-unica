@@ -30,6 +30,9 @@ class University:
     site_dir: Path
     stats_fallback: Path
     log_path: Path
+    # DataCite institutional dataset census (optional — empty = skip).
+    ror_ids: tuple[str, ...] = ()
+    affiliation_names: tuple[str, ...] = ()
 
     @property
     def site_base_url(self) -> str:
@@ -44,6 +47,10 @@ class University:
     @property
     def absolute_home_url(self) -> str:
         return f"{self.site_base_url}/"
+
+    @property
+    def has_datacite_census(self) -> bool:
+        return bool(self.ror_ids or self.affiliation_names)
 
     def snapshot_href_from(self, viewer: University) -> str:
         """Relative link from ``viewer``'s site root to this university's index."""
@@ -79,6 +86,15 @@ UNICA = University(
     site_dir=Path("docs"),
     stats_fallback=Path("docs/data/stats.json"),
     log_path=Path("logs/census.log"),
+    ror_ids=("https://ror.org/019tgvf94",),
+    affiliation_names=(
+        "Université Côte d'Azur",
+        "Universite Cote d'Azur",
+        "Univ. Côte d'Azur",
+        "Univ Côte d'Azur",
+        "University Côte d'Azur",
+        "University Cote d'Azur",
+    ),
 )
 
 UBE = University(

@@ -37,6 +37,7 @@ from .data_papers import (
     harvest_data_papers,
     write_data_paper_artifacts,
 )
+from .datacite_census import run_datacite_census, write_datacite_census_artifacts
 from .site import write_site
 from .timeutil import effective_since, read_watermark
 from .universities import resolve_university
@@ -467,6 +468,51 @@ def data_papers_cmd(
     typer.echo(f"Wrote → {out_dir}/")
 
 
+@app.command("datacite-census")
+def datacite_census_cmd(
+    university: Optional[str] = typer.Option(
+        None,
+        "--university",
+        "-u",
+        help="Tenant id with DataCite ROR/affiliation config (default: unica)",
+    ),
+    page_size: int = typer.Option(100, min=1, max=1000, help="DataCite page size"),
+    max_records: Optional[int] = typer.Option(
+        None, "--max-records", help="Stop after N DOIs (smoke tests)"
+    ),
+    rate: float = typer.Option(0.15, help="Min seconds between DataCite requests"),
+) -> None:
+    """
+    Harvest Dataset DOIs attributed to the university on DataCite (ROR / affiliation).
+
+    Complements the HAL relatedData census: datasets with no HAL publication still appear.
+    Writes datacite_datasets.* under the tenant census directory.
+    """
+    from .datacite import DataCiteClient
+
+    uni = resolve_university(university)
+    if not uni.has_datacite_census:
+        raise typer.BadParameter(
+            f"{uni.id} has no ror_ids/affiliation_names — configure universities.py first"
+        )
+    with DataCiteClient(min_interval=rate) as dc:
+        result = run_datacite_census(
+            university=uni,
+            datacite=dc,
+            page_size=page_size,
+            max_records=max_records,
+            log=None,
+        )
+    paths = write_datacite_census_artifacts(result, uni.census_dir)
+    typer.echo(
+        f"DataCite datasets={len(result.datasets)} "
+        f"(also_on_hal={result.also_on_hal}, datacite_only={result.datacite_only}, "
+        f"hal_only={result.hal_only}) → {uni.census_dir}/"
+    )
+    for p in paths.values():
+        typer.echo(f"  {p}")
+
+
 @app.command("refresh")
 def refresh_cmd(
     university: Optional[str] = typer.Option(
@@ -624,6 +670,7 @@ def build_site_cmd(
         "embed-chart.html",
         "related-datasets.html",
         "all-repositories.html",
+        "datacite-datasets.html",
         "to-be-corrected.html",
         "software.html",
         "data-papers.html",

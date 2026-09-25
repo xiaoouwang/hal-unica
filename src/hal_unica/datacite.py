@@ -5,12 +5,13 @@ from __future__ import annotations
 import json
 import time
 from dataclasses import asdict, dataclass
-from typing import Any
+from typing import Any, Iterator
 from urllib.parse import quote, urlparse
 
 import httpx
 
 DATACITE_DOI = "https://api.datacite.org/dois/{doi}"
+DATACITE_DOIS = "https://api.datacite.org/dois"
 
 
 @dataclass
@@ -324,6 +325,53 @@ class DataCiteClient:
 
         self._cache[doi] = result
         return result
+
+    def search_page(
+        self,
+        *,
+        query: str,
+        page_size: int = 100,
+        cursor: str | None = "1",
+    ) -> dict[str, Any]:
+        """One page of DataCite DOI search results (JSON:API)."""
+        self._throttle()
+        self._last = time.monotonic()
+        params: dict[str, Any] = {
+            "query": query,
+            "page[size]": min(max(page_size, 1), 1000),
+        }
+        if cursor is not None:
+            params["page[cursor]"] = cursor
+        resp = self._client.get(DATACITE_DOIS, params=params)
+        resp.raise_for_status()
+        return resp.json()
+
+    def iter_dois(
+        self,
+        *,
+        query: str,
+        page_size: int = 100,
+        max_records: int | None = None,
+    ) -> Iterator[dict[str, Any]]:
+        """Yield raw DataCite DOI JSON:API ``data`` items for a Lucene query."""
+        cursor: str | None = "1"
+        yielded = 0
+        while cursor:
+            payload = self.search_page(query=query, page_size=page_size, cursor=cursor)
+            for item in payload.get("data") or []:
+                yield item
+                yielded += 1
+                if max_records is not None and yielded >= max_records:
+                    return
+            next_url = (payload.get("links") or {}).get("next")
+            if not next_url:
+                return
+            # Extract page[cursor] from the next link.
+            from urllib.parse import parse_qs, urlparse as _urlparse
+
+            qs = parse_qs(_urlparse(next_url).query)
+            cursors = qs.get("page[cursor]") or qs.get("page%5Bcursor%5D")
+            cursor = cursors[0] if cursors else None
 
     def dump_cache(self) -> list[dict[str, Any]]:
         return [r.to_dict() for r in self._cache.values()]

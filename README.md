@@ -13,6 +13,7 @@ UBE snapshot: https://xiaoouwang.github.io/hal-unica/ube/
 | Chart embed (iframe) | [/embed-chart.html](https://xiaoouwang.github.io/hal-unica/embed-chart.html) | [/ube/embed-chart.html](https://xiaoouwang.github.io/hal-unica/ube/embed-chart.html) |
 | Nakala / Recherche Data Gouv | [/related-datasets.html](https://xiaoouwang.github.io/hal-unica/related-datasets.html) | [/ube/related-datasets.html](https://xiaoouwang.github.io/hal-unica/ube/related-datasets.html) |
 | **All repositories** | [/all-repositories.html](https://xiaoouwang.github.io/hal-unica/all-repositories.html) | [/ube/all-repositories.html](https://xiaoouwang.github.io/hal-unica/ube/all-repositories.html) |
+| **DataCite datasets** (affiliation / ROR) | [/datacite-datasets.html](https://xiaoouwang.github.io/hal-unica/datacite-datasets.html) | — (UniCA only for now) |
 | **Data papers** | [/data-papers.html](https://xiaoouwang.github.io/hal-unica/data-papers.html) | [/ube/data-papers.html](https://xiaoouwang.github.io/hal-unica/ube/data-papers.html) |
 | **To Be Corrected** | [/to-be-corrected.html](https://xiaoouwang.github.io/hal-unica/to-be-corrected.html) | [/ube/to-be-corrected.html](https://xiaoouwang.github.io/hal-unica/ube/to-be-corrected.html) |
 | Software & source code | [/software.html](https://xiaoouwang.github.io/hal-unica/software.html) | [/ube/software.html](https://xiaoouwang.github.io/hal-unica/ube/software.html) |
@@ -84,12 +85,13 @@ Tenants are declared in `src/hal_unica/universities.py`. CLI entrypoint: `hal-un
 | `timeutil.py` | UTC helpers, watermarks, lookback / `--since` windows |
 | `harvest.py` | Full or incremental archive of HAL metadata (upsert by `halId_s`) |
 | `census.py` | Related-identifier census, DOI resolution orchestration, misfiled queue, census artifacts |
-| `datacite.py` | DataCite DOI resolve + repository / `object_kind` classification |
+| `datacite.py` | DataCite DOI resolve + repository / `object_kind` classification + DOI search |
+| `datacite_census.py` | Institutional DataCite Dataset harvest (ROR / affiliation) + HAL crosswalk |
 | `data_repos.py` | Nakala / RDG focus scan + DOI enrichment helpers |
 | `focus_links.py` | Build Nakala/RDG focus links JSONL from census publications |
 | `software.py` | SOFTWARE deposits harvest + **dataset→publications** index builder |
 | `data_papers.py` | Data-paper harvest (`DATAPAPER`) + linked-dataset enrichment from census cache |
-| `refresh.py` | Daily orchestration: census → software → data papers → index → focus → site |
+| `refresh.py` | Daily orchestration: census → software → data papers → index → focus → DataCite (if configured) → site |
 | `universities.py` | Multi-university tenant registry (collection, paths, branding, logo) |
 | `site.py` | Static HTML/CSS/JS under `docs/` (stats, lists, chart, SEO, embed) |
 | `report.py` | Standalone HTML report for focus-link results (legacy / optional) |
@@ -148,6 +150,7 @@ What it **does**:
 | `hal-unica census` | Full or incremental related-data census + DataCite + misfiled CSV/JSONL | Debug census without rebuilding the whole site |
 | `hal-unica software` | Harvest `docType_s=SOFTWARE` → `software_deposits.*` | Refresh software page inputs only |
 | `hal-unica data-papers` | Harvest `docSubType_s=DATAPAPER` → `data_papers.*` (enriches links from census DOI cache) | Refresh data-papers page inputs only |
+| `hal-unica datacite-census` | Harvest Dataset DOIs attributed to the university on DataCite (ROR / affiliation names) | Complements HAL: datasets with no HAL link |
 | `hal-unica find-data-repos` | Find Nakala / Recherche Data Gouv links (focus scan) | Legacy / focused audit |
 | `hal-unica resolve-repos` | Re-resolve DOIs in an existing links JSONL via DataCite | Refresh repository labels on focus hits |
 | `hal-unica report` | HTML report from focus-link JSONL | Optional offline report |
@@ -168,6 +171,10 @@ hal-unica census --lookback-days 2
 # Software / data papers only
 hal-unica software
 hal-unica data-papers
+
+# Institutional DataCite datasets (UniCA; needs ror_ids / affiliation_names in universities.py)
+hal-unica datacite-census
+hal-unica build-site
 
 # Nakala/RDG focus tooling
 hal-unica find-data-repos -o data/unica_data_repo_links.jsonl
@@ -233,6 +240,21 @@ Without the harvest step, the snapshot still works (charts, related datasets, �
 In [`.github/workflows/daily-refresh.yml`](.github/workflows/daily-refresh.yml), add a second `hal-unica refresh --university <id> …` next to the existing UniCA and UBE calls, and `git add` the new `data/<tenant>/` paths.
 
 No code change is needed for the logo row: every tenant automatically lists **other** universities under **Open Science Snapshots of Other Universities**, linking to each snapshot’s absolute URL in a new tab.
+
+### Optional: DataCite institutional datasets
+
+UniCA also runs a **DataCite-first** census (see [DataCite datasets](https://xiaoouwang.github.io/hal-unica/datacite-datasets.html)):
+
+- Query DataCite for `resourceTypeGeneral:Dataset` whose creators/contributors list the university’s **ROR** and/or **affiliation name** strings (`universities.py`: `ror_ids`, `affiliation_names`).
+- Crosswalk DOIs against HAL `dataset_to_publications.jsonl`.
+- Surfaces **DataCite-only** datasets (no HAL link) and **HAL-only** datasets (linked on HAL but missing UniCA affiliation metadata on DataCite).
+
+```bash
+hal-unica datacite-census          # or: included in `hal-unica refresh` when configured
+hal-unica build-site
+```
+
+Enable the same for another university by filling `ror_ids` / `affiliation_names` on its `University` entry.
 
 ---
 
@@ -384,6 +406,7 @@ Top **data** repositories (All repositories index): Zenodo · Recherche Data Gou
 | [`data/census/publications_related_data.jsonl`](data/census/publications_related_data.jsonl) | Per-notice tokens + resolutions |
 | [`data/census/software_deposits.csv`](data/census/software_deposits.csv) | SOFTWARE + code repos + SWHIDs |
 | [`data/census/data_papers.csv`](data/census/data_papers.csv) | Data papers + linked datasets / journals |
+| [`data/census/datacite_datasets.csv`](data/census/datacite_datasets.csv) | UniCA DataCite Dataset DOIs (affiliation / ROR) + HAL crosswalk |
 | [`data/census/summary.json`](data/census/summary.json) | Full-census aggregates |
 | [`data/census/census.meta.json`](data/census/census.meta.json) | Watermark for incremental refresh |
 | [`data/census/METHODOLOGY.md`](data/census/METHODOLOGY.md) | Auto-generated method + counts for last census run |

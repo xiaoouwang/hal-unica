@@ -144,6 +144,7 @@ def _write_seo_files(output_dir: Path, *, generated_at: str | None = None) -> No
         ("", "1.0"),
         ("related-datasets.html", "0.9"),
         ("all-repositories.html", "0.9"),
+        ("datacite-datasets.html", "0.9"),
         ("data-papers.html", "0.9"),
         ("to-be-corrected.html", "0.8"),
         ("software.html", "0.8"),
@@ -1453,6 +1454,12 @@ def _nav(active: str) -> str:
         return f'<a class="navlink" href="{href}"{cur}>{label}</a>'
 
     brand = _site_name()
+    uni = get_university()
+    datacite_nav = (
+        link("./datacite-datasets.html", "DataCite datasets", "datacite")
+        if uni.has_datacite_census
+        else ""
+    )
     return f"""
     <a class="skip-link" href="#main">Skip to content</a>
     <nav aria-label="Primary">
@@ -1460,6 +1467,7 @@ def _nav(active: str) -> str:
       {link("./index.html", "Statistics", "stats")}
       {link("./related-datasets.html", "Nakala / RDG", "related")}
       {link("./all-repositories.html", "All repositories", "census")}
+      {datacite_nav}
       {link("./data-papers.html", "Data papers", "datapapers")}
       {link("./to-be-corrected.html", "To Be Corrected", "corrections")}
       {link("./software.html", "Software", "software")}
@@ -1493,6 +1501,7 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
       Metadata harvest of the institutional HAL collection
       <a id="collectionLink" href="{uni.collection_url}">{uni.collection}</a>,
       plus every linked data-repository DOI declared on those notices.
+      {"A complementary <a href=\"./datacite-datasets.html\">DataCite affiliation census</a> lists Dataset DOIs attributed to the university even when no HAL publication links them." if uni.has_datacite_census else ""}
     </p>
     <div class="stats" id="stats" role="group" aria-label="Key statistics"></div>
 
@@ -1854,6 +1863,154 @@ def render_related(payload_json: str, *, generated_at: str | None = None) -> str
     paintLabControls(allLabs);
     paintYearControls(allYears);
     wireLabControls(render);
+    document.getElementById("q").addEventListener("input", render);
+    document.getElementById("sort").addEventListener("change", render);
+    render();
+  </script>
+</body>
+</html>
+"""
+
+
+def render_datacite_datasets(payload_json: str, *, generated_at: str | None = None) -> str:
+    """Institutional DataCite Dataset DOIs (affiliation / ROR), crosswalked to HAL."""
+    uni = get_university()
+    sort_opts = """
+            <option value="year_desc" selected>Publication year (newest)</option>
+            <option value="doi_asc">DOI A–Z</option>
+            <option value="repo_asc">Repository A–Z</option>
+            <option value="title_asc">Title A–Z</option>
+    """
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+{_seo_head(
+    title="DataCite datasets",
+    description=(
+        f"Dataset DOIs on DataCite attributed to {uni.display_name} via ROR / affiliation, "
+        "including those not linked from any HAL publication."
+    ),
+    path="datacite-datasets.html",
+    extra_head=f"  <style>{SHARED_CSS}</style>",
+)}
+</head>
+<body>
+  <main class="wrap" id="main">
+    {_nav("datacite")}
+    <p class="eyebrow">DataCite · institutional affiliation</p>
+    <h1>DataCite datasets</h1>
+    <p class="lede">
+      Dataset DOIs registered in DataCite whose creators or contributors list
+      {uni.display_name} (ROR and/or affiliation name). This is broader than
+      <a href="./all-repositories.html">HAL-linked repositories</a>: many datasets
+      never appear on a HAL notice.
+    </p>
+    <div class="stats" id="stats" role="group" aria-label="Key statistics"></div>
+    <section class="panel">
+      <div class="filters" id="linkFilters" style="margin-bottom:0.65rem"></div>
+      <input id="q" class="search" type="search" placeholder="Search DOI, title, repository, client…" autocomplete="off" />
+      <div class="filters" id="filters"></div>
+      {_list_toolbar_html(sort_options_html=sort_opts)}
+      <div class="list" id="list"></div>
+    </section>
+    {_footer(generated_at, "Source: DataCite REST API + crosswalk to HAL <code>dataset_to_publications</code>.")}
+  </main>
+  <script id="data" type="application/json">{payload_json}</script>
+  <script>
+{_shared_list_helpers_js()}
+    const data = JSON.parse(document.getElementById("data").textContent);
+    const rows = data.datasets || [];
+    const s = data.summary || {{}};
+    let activeRepo = "all";
+    let activeLink = "all";
+
+    document.getElementById("stats").innerHTML = [
+      {{ v: s.datacite_datasets || rows.length, l: "DataCite Dataset DOIs" }},
+      {{ v: s.also_on_hal || 0, l: "Also linked from HAL" }},
+      {{ v: s.datacite_only || 0, l: "DataCite only (not on HAL)" }},
+      {{ v: s.hal_only || 0, l: "HAL-linked but missing on DataCite filter" }},
+    ].map(x => `<div class="stat"><strong data-count="${{x.v}}">0</strong><span>${{x.l}}</span></div>`).join("");
+    animateStatCounts(document.getElementById("stats"));
+
+    const byRepo = s.by_repository || {{}};
+    const repos = ["all", ...Object.keys(byRepo)];
+    const onHal = rows.filter(r => r.also_on_hal).length;
+    const onlyDc = rows.length - onHal;
+
+    function paintLinkFilters() {{
+      const opts = [
+        {{ v: "all", l: `All (${{rows.length}})` }},
+        {{ v: "both", l: `Also on HAL (${{onHal}})` }},
+        {{ v: "datacite_only", l: `DataCite only (${{onlyDc}})` }},
+      ];
+      document.getElementById("linkFilters").innerHTML = opts.map(o => `
+        <button type="button" class="chip" data-v="${{o.v}}" aria-pressed="${{activeLink===o.v}}">${{esc(o.l)}}</button>
+      `).join("");
+      document.querySelectorAll("#linkFilters button").forEach(btn => btn.addEventListener("click", () => {{
+        activeLink = btn.dataset.v; paintLinkFilters(); render();
+      }}));
+    }}
+
+    function paintRepoFilters() {{
+      document.getElementById("filters").innerHTML = repos.map(r => `
+        <button type="button" class="chip" data-v="${{esc(r)}}" aria-pressed="${{activeRepo===r}}">${{esc(r==="all"?"All repositories":r)}}</button>
+      `).join("");
+      document.querySelectorAll("#filters button").forEach(btn => btn.addEventListener("click", () => {{
+        activeRepo = btn.dataset.v; paintRepoFilters(); render();
+      }}));
+    }}
+
+    function sortRows(list) {{
+      const mode = document.getElementById("sort").value;
+      return list.slice().sort((a, b) => {{
+        if (mode === "year_desc") return (Number(b.publication_year)||0) - (Number(a.publication_year)||0) || cmpStr(a.doi, b.doi);
+        if (mode === "repo_asc") return cmpStr(a.repository, b.repository) || cmpStr(a.doi, b.doi);
+        if (mode === "title_asc") return cmpStr(a.title, b.title) || cmpStr(a.doi, b.doi);
+        return cmpStr(a.doi, b.doi);
+      }});
+    }}
+
+    function render() {{
+      const q = document.getElementById("q").value.trim().toLowerCase();
+      const filtered = rows.filter(r => {{
+        if (activeRepo !== "all" && r.repository !== activeRepo) return false;
+        if (activeLink === "both" && !r.also_on_hal) return false;
+        if (activeLink === "datacite_only" && r.also_on_hal) return false;
+        if (!q) return true;
+        const blob = [r.doi, r.title, r.repository, r.publisher, r.client_id, r.landing_host,
+          ...(r.affiliation_names||[]), ...(r.hal_ids||[]), ...(r.match_reasons||[])].join(" ").toLowerCase();
+        return blob.includes(q);
+      }});
+      const list = sortRows(filtered);
+      document.getElementById("count").textContent = `${{list.length}} of ${{rows.length}} datasets`;
+      document.getElementById("list").innerHTML = list.map(r => {{
+        const href = r.landing_url || (r.doi ? `https://doi.org/${{r.doi}}` : "#");
+        const badge = r.also_on_hal
+          ? `<span class="badge">also on HAL</span>`
+          : `<span class="badge" style="color:var(--accent-hover)">DataCite only</span>`;
+        const year = r.publication_year != null ? `<span class="badge">${{esc(r.publication_year)}}</span>` : "";
+        const hal = (r.hal_ids || []).map(id =>
+          `<a href="https://hal.science/${{esc(id)}}" target="_blank" rel="noopener"><code>${{esc(id)}}</code></a>`
+        ).join(" · ");
+        const aff = (r.affiliation_names || []).slice(0, 4).map(esc).join(" · ");
+        return `<article class="result">
+          <div class="card-head">
+            <h2><a href="${{esc(href)}}" target="_blank" rel="noopener">${{esc(r.title || r.doi)}}</a></h2>
+            <div class="badges">${{year}}${{badge}}<span class="badge">${{esc(r.repository || "Unknown")}}</span></div>
+          </div>
+          <div class="sub">
+            <a href="https://doi.org/${{esc(r.doi)}}" target="_blank" rel="noopener"><code>${{esc(r.doi)}}</code></a>
+            ${{r.client_id ? `<span>client <code>${{esc(r.client_id)}}</code></span>` : ""}}
+            ${{r.publisher ? `<span>${{esc(r.publisher)}}</span>` : ""}}
+          </div>
+          ${{aff ? `<p class="muted" style="margin:0.4rem 0 0">Affiliations: ${{aff}}</p>` : ""}}
+          ${{hal ? `<p class="muted" style="margin:0.4rem 0 0">HAL: ${{hal}}</p>` : ""}}
+        </article>`;
+      }}).join("") || `<div class="empty">No matches.</div>`;
+    }}
+
+    paintLinkFilters();
+    paintRepoFilters();
     document.getElementById("q").addEventListener("input", render);
     document.getElementById("sort").addEventListener("change", render);
     render();
@@ -2778,6 +2935,26 @@ def _write_site_inner(
             render_census(census_json, generated_at=generated_at), encoding="utf-8"
         )
 
+        # Institutional DataCite census (optional per university)
+        dc_sum_path = dest / "datacite_datasets_summary.json"
+        dc_file = dest / "datacite_datasets.jsonl"
+        if dc_sum_path.exists() and dc_file.exists():
+            dc_summary = json.loads(dc_sum_path.read_text(encoding="utf-8"))
+            dc_rows: list[dict[str, Any]] = []
+            for line in dc_file.read_text(encoding="utf-8").splitlines():
+                if line.strip():
+                    dc_rows.append(json.loads(line))
+            dc_payload = {
+                "generated_at": generated_at,
+                "summary": dc_summary,
+                "datasets": dc_rows,
+            }
+            dc_json = json.dumps(dc_payload, ensure_ascii=False).replace("<", "\\u003c")
+            (output_dir / "datacite-datasets.html").write_text(
+                render_datacite_datasets(dc_json, generated_at=generated_at),
+                encoding="utf-8",
+            )
+
         # Correction queue page (misfiled dataset links)
         import csv as _csv
 
@@ -2880,6 +3057,9 @@ def _write_site_inner(
             "data_papers.jsonl",
             "data_papers_summary.json",
             "misfiled_dataset_links.csv",
+            "datacite_datasets.csv",
+            "datacite_datasets.jsonl",
+            "datacite_datasets_summary.json",
         ):
             if (dest / name).exists():
                 manifest.setdefault("artifacts", {})[name] = f"data/census/{name}"

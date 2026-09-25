@@ -28,6 +28,7 @@ from .data_papers import (
     harvest_data_papers,
     write_data_paper_artifacts,
 )
+from .datacite_census import run_datacite_census, write_datacite_census_artifacts
 from .site import write_site
 from .timeutil import effective_since, format_hal_date, read_watermark, utc_now
 from .universities import DEFAULT_UNIVERSITY, University, resolve_university
@@ -156,6 +157,24 @@ def run_refresh(
     hits = hits_from_census_publications(pubs_path)
     focus_summary = write_focus_links(hits, links_path)
     say(f"synced focus links → {links_path} ({focus_summary['total_hits']} hits)")
+
+    if uni.has_datacite_census:
+        say("harvesting institutional DataCite datasets (affiliation / ROR)")
+        try:
+            with DataCiteClient(min_interval=rate) as dc:
+                dc_result = run_datacite_census(
+                    university=uni,
+                    datacite=dc,
+                    log=log,
+                )
+            write_datacite_census_artifacts(dc_result, census_dir)
+            say(
+                f"DataCite datasets={len(dc_result.datasets)} "
+                f"also_on_hal={dc_result.also_on_hal} "
+                f"datacite_only={dc_result.datacite_only}"
+            )
+        except Exception as exc:  # noqa: BLE001 — do not fail HAL refresh on DataCite outage
+            say(f"WARNING: DataCite institutional census failed: {exc}")
 
     write_site(
         harvest_path=harvest_path if harvest_path.exists() else None,
