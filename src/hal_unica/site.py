@@ -1913,7 +1913,7 @@ def render_datacite_datasets(payload_json: str, *, generated_at: str | None = No
       {_list_toolbar_html(sort_options_html=sort_opts)}
       <div class="list" id="list"></div>
     </section>
-    {_footer(generated_at, "Source: DataCite REST API + crosswalk to HAL <code>dataset_to_publications</code>.")}
+    {_footer(generated_at, 'Source: <a href="https://commons.datacite.org/" target="_blank" rel="noopener">DataCite Commons</a> / REST API + crosswalk to HAL <code>dataset_to_publications</code>.')}
   </main>
   <script id="data" type="application/json">{payload_json}</script>
   <script>
@@ -1985,6 +1985,7 @@ def render_datacite_datasets(payload_json: str, *, generated_at: str | None = No
       document.getElementById("count").textContent = `${{list.length}} of ${{rows.length}} datasets`;
       document.getElementById("list").innerHTML = list.map(r => {{
         const href = r.landing_url || (r.doi ? `https://doi.org/${{r.doi}}` : "#");
+        const commons = r.commons_url || (r.doi ? `https://commons.datacite.org/doi.org/${{r.doi}}` : "");
         const badge = r.also_on_hal
           ? `<span class="badge">also on HAL</span>`
           : `<span class="badge" style="color:var(--accent-hover)">DataCite only</span>`;
@@ -2000,6 +2001,7 @@ def render_datacite_datasets(payload_json: str, *, generated_at: str | None = No
           </div>
           <div class="sub">
             <a href="https://doi.org/${{esc(r.doi)}}" target="_blank" rel="noopener"><code>${{esc(r.doi)}}</code></a>
+            ${{commons ? `<span><a href="${{esc(commons)}}" target="_blank" rel="noopener">DataCite Commons</a></span>` : ""}}
             ${{r.client_id ? `<span>client <code>${{esc(r.client_id)}}</code></span>` : ""}}
             ${{r.publisher ? `<span>${{esc(r.publisher)}}</span>` : ""}}
           </div>
