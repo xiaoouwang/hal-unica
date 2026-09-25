@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T14:50:54Z",
+  "generated_at": "2026-09-25T15:18:58Z",
   "collection": "UNIV-BOURGOGNE",
   "collection_url": "https://hal.science/UNIV-BOURGOGNE",
   "harvest": {
@@ -8483,6 +8483,8 @@
         }
       ]
     },
-    "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 20 datasets in 2026. Click a segment to list datasets."
+    "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 20 datasets in 2026. Click a segment to list datasets.",
+    "segment_hint": "newest linking publication year",
+    "months_segment_hint": "newest linking publication month"
   }
 }

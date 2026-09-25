@@ -604,6 +604,211 @@ def census_homepage_stats(
             )
             + ". Click a segment to list datasets."
         ),
+        "segment_hint": "newest linking publication year",
+        "months_segment_hint": "newest linking publication month",
+    }
+
+
+def _datacite_focus_month(row: dict[str, Any], focus_year: int) -> int | None:
+    """Month 1–12 from created/registered when that timestamp falls in focus_year."""
+    for field in ("created", "registered"):
+        s = str(row.get(field) or "").strip()
+        m = re.match(r"^(\d{4})-(\d{2})", s)
+        if not m:
+            continue
+        if int(m.group(1)) != focus_year:
+            continue
+        mi = int(m.group(2))
+        if 1 <= mi <= 12:
+            return mi
+    return None
+
+
+def datacite_chart_stats(
+    datasets: list[dict[str, Any]],
+    *,
+    year_min: int = 2016,
+    top_repos: int = 12,
+    focus_year: int | None = None,
+) -> dict[str, Any] | None:
+    """
+    Stacked year×repository and focus-year month×repository charts for
+    institutional DataCite Dataset DOIs (publicationYear / created month).
+    """
+    if not datasets:
+        return None
+
+    if focus_year is None:
+        focus_year = datetime.now(timezone.utc).year
+
+    by_year_repo: dict[int, Counter[str]] = defaultdict(Counter)
+    by_month_repo: dict[int, Counter[str]] = defaultdict(Counter)
+    by_repo: Counter[str] = Counter()
+    details: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    month_details: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    focus_year_datasets = 0
+    focus_year_unknown_month = 0
+    also_on_hal = 0
+
+    for row in datasets:
+        repo = row.get("repository") or "Unknown"
+        by_repo[repo] += 1
+        if row.get("also_on_hal"):
+            also_on_hal += 1
+        try:
+            year = int(row.get("publication_year"))
+        except (TypeError, ValueError):
+            continue
+        if not (1950 <= year <= 2100):
+            continue
+
+        by_year_repo[year][repo] += 1
+        pubs = [
+            {
+                "halId_s": hid,
+                "title_s": hid,
+                "uri_s": f"https://hal.science/{hid}",
+            }
+            for hid in (row.get("hal_ids") or [])
+            if hid
+        ]
+        detail = {
+            "dataset_doi": row.get("doi"),
+            "dataset_title": row.get("title"),
+            "repository": repo,
+            "landing_url": row.get("landing_url")
+            or row.get("commons_url")
+            or (f"https://doi.org/{row['doi']}" if row.get("doi") else None),
+            "year": year,
+            "publications": pubs,
+        }
+        details[f"{year}|{repo}"].append(detail)
+
+        if year == focus_year:
+            focus_year_datasets += 1
+            month = _datacite_focus_month(row, focus_year)
+            if month is None:
+                focus_year_unknown_month += 1
+            else:
+                by_month_repo[month][repo] += 1
+                month_details[f"{focus_year}-{month:02d}|{repo}"].append(
+                    {**detail, "month": month}
+                )
+
+    if not by_year_repo:
+        return None
+
+    years_list = list(range(min(min(by_year_repo), year_min), max(by_year_repo) + 1))
+    ranked = [r for r, _ in by_repo.most_common()]
+    keep = ranked[:top_repos]
+    other_label = "Autre"
+    series_names = keep + ([other_label] if len(ranked) > len(keep) else [])
+    keep_set = set(keep)
+
+    def _series_for(
+        axis: list,
+        counter: dict,
+        *,
+        key_fn,
+        source: dict[str, list[dict[str, Any]]],
+    ) -> tuple[list[dict[str, Any]], list[int], dict[str, list[dict[str, Any]]]]:
+        cell: dict[str, list[dict[str, Any]]] = {}
+        for key, items in source.items():
+            axis_key, repo = key.split("|", 1)
+            chart_repo = repo if repo in keep_set else other_label
+            cell.setdefault(f"{axis_key}|{chart_repo}", []).extend(items)
+        for items in cell.values():
+            items.sort(
+                key=lambda d: (d.get("dataset_title") or d.get("dataset_doi") or "").lower()
+            )
+        series: list[dict[str, Any]] = []
+        for i, name in enumerate(series_names):
+            counts: list[int] = []
+            for ax in axis:
+                bucket = counter[key_fn(ax)]
+                if name == other_label:
+                    counts.append(sum(c for r, c in bucket.items() if r not in keep_set))
+                else:
+                    counts.append(int(bucket.get(name, 0)))
+            color = (
+                "#adb5bd"
+                if name == other_label
+                else _STACK_COLORS[i % (len(_STACK_COLORS) - 1)]
+            )
+            series.append({"repository": name, "color": color, "counts": counts})
+        totals = [sum(s["counts"][i] for s in series) for i in range(len(axis))]
+        return series, totals, cell
+
+    series, totals, year_cells = _series_for(
+        years_list, by_year_repo, key_fn=lambda y: y, source=details
+    )
+    year_periods = [str(y) for y in years_list]
+
+    month_nums = list(range(1, 13))
+    month_labels = [
+        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+    ]
+    month_periods = [f"{focus_year}-{m:02d}" for m in month_nums]
+    m_series, m_totals, m_cells = _series_for(
+        month_nums, by_month_repo, key_fn=lambda m: m, source=month_details
+    )
+    month_cell_details: dict[str, list[dict[str, Any]]] = {}
+    for key, items in m_cells.items():
+        axis_s, repo = key.split("|", 1)
+        if re.fullmatch(r"\d{1,2}", axis_s):
+            period = f"{focus_year}-{int(axis_s):02d}"
+        elif re.fullmatch(r"\d{4}-\d{2}", axis_s):
+            period = axis_s
+        else:
+            period = axis_s
+        month_cell_details[f"{period}|{repo}"] = items
+
+    return {
+        "unique_datasets": len(datasets),
+        "also_on_hal": also_on_hal,
+        "by_repository": dict(sorted(by_repo.items(), key=lambda kv: (-kv[1], kv[0]))),
+        "repositories_in_chart": len(keep),
+        "repositories_total": len(by_repo),
+        "year_axis": years_list,
+        "stacked": {
+            "periods": year_periods,
+            "years": years_list,
+            "labels": year_periods,
+            "totals": totals,
+            "series": series,
+            "period_kind": "year",
+        },
+        "cell_details": year_cells,
+        "note": (
+            "Institutional DataCite Dataset DOIs by DataCite publicationYear, "
+            "stacked by landing repository. "
+            f"Chart shows top {len(keep)} plus Autre. Click a segment to list datasets."
+        ),
+        "stacked_months": {
+            "year": focus_year,
+            "periods": month_periods,
+            "labels": month_labels,
+            "totals": m_totals,
+            "series": m_series,
+            "period_kind": "month",
+            "datasets_in_year": focus_year_datasets,
+            "unknown_month": focus_year_unknown_month,
+        },
+        "cell_details_months": month_cell_details,
+        "months_note": (
+            f"Datasets with publicationYear {focus_year}, broken down by month of "
+            f"DataCite created (falls back to registered). "
+            f"{focus_year_datasets} datasets in {focus_year}"
+            + (
+                f"; {focus_year_unknown_month} without a usable {focus_year} month"
+                if focus_year_unknown_month
+                else ""
+            )
+            + ". Click a segment to list datasets."
+        ),
+        "segment_hint": "DataCite publication year",
+        "months_segment_hint": "DataCite created / registered month",
     }
 
 
@@ -1265,10 +1470,14 @@ def _chart_modal_html() -> str:
 
 
 # Shared stacked-chart + click-to-list logic (plain JS; not an f-string).
-STACK_CHART_JS = r"""
+# Callers must define ``esc`` first (``ESC_JS`` or ``_shared_list_helpers_js``).
+ESC_JS = r"""
     function esc(s) {
       return String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
     }
+"""
+
+STACK_CHART_JS = r"""
     function mountStackChart(chart, { noteEl, legendEl, chartEl, modalEl, detailsKey }) {
       const stacked = chart && (chart.stacked || chart);
       if (!chart || !stacked || !(stacked.periods || stacked.years || []).length) {
@@ -1354,8 +1563,9 @@ STACK_CHART_JS = r"""
           : nice;
         titleEl.textContent = `${repo} · ${titlePeriod}`;
         const unit = periodKind === "month" ? "month" : "year";
+        const hint = chart.segment_hint || `newest linking publication ${unit}`;
         subEl.textContent = items.length
-          ? `${items.length} dataset${items.length === 1 ? "" : "s"} (newest linking publication ${unit})`
+          ? `${items.length} dataset${items.length === 1 ? "" : "s"} (${hint})`
           : "No datasets listed for this segment.";
         bodyEl.innerHTML = items.length
           ? items.map(d => {
@@ -1584,7 +1794,7 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
 """
     mid = STAT_COUNT_UP_JS + """
     animateStatCounts(document.getElementById("stats"));
-""" + STACK_CHART_JS + """
+""" + ESC_JS + STACK_CHART_JS + """
     mountStackChart(chart, {
       noteEl: document.getElementById("chartNote"),
       legendEl: document.getElementById("stackLegend"),
@@ -1597,6 +1807,7 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
           stacked: chart.stacked_months,
           note: chart.months_note,
           cell_details: chart.cell_details_months,
+          segment_hint: chart.months_segment_hint || "newest linking publication month",
         }
       : null;
     if (monthPayload && monthPayload.stacked && monthPayload.stacked.year) {
@@ -1697,6 +1908,7 @@ def render_embed_chart(chart_json: str, *, generated_at: str | None = None) -> s
 """
     return (
         head
+        + ESC_JS
         + STACK_CHART_JS
         + """
     mountStackChart(chart, {
@@ -1881,7 +2093,7 @@ def render_datacite_datasets(payload_json: str, *, generated_at: str | None = No
             <option value="repo_asc">Repository A–Z</option>
             <option value="title_asc">Title A–Z</option>
     """
-    return f"""<!DOCTYPE html>
+    head = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 {_seo_head(
@@ -1906,6 +2118,27 @@ def render_datacite_datasets(payload_json: str, *, generated_at: str | None = No
       never appear on a HAL notice.
     </p>
     <div class="stats" id="stats" role="group" aria-label="Key statistics"></div>
+
+    <section class="panel">
+      <h2>DataCite datasets by year and repository</h2>
+      <p class="muted" style="margin:0" id="chartNote"></p>
+      <div class="stack-wrap">
+        <div class="stack-legend" id="stackLegend"></div>
+        <div class="stack-chart" id="stackChart"></div>
+      </div>
+      <p class="chart-embed-hint">Click a coloured segment to list its datasets. Axis: DataCite <code>publicationYear</code>.</p>
+    </section>
+
+    <section class="panel">
+      <h2 id="chartMonthsTitle">DataCite datasets by month (2026)</h2>
+      <p class="muted" style="margin:0" id="chartMonthsNote"></p>
+      <div class="stack-wrap">
+        <div class="stack-legend" id="stackMonthsLegend"></div>
+        <div class="stack-chart" id="stackMonthsChart"></div>
+      </div>
+      <p class="chart-embed-hint">Same repositories, limited to the current publication year — columns are months of DataCite <code>created</code>.</p>
+    </section>
+
     <section class="panel">
       <div class="filters" id="linkFilters" style="margin-bottom:0.65rem"></div>
       <input id="q" class="search" type="search" placeholder="Search DOI, title, repository, client…" autocomplete="off" />
@@ -1915,12 +2148,14 @@ def render_datacite_datasets(payload_json: str, *, generated_at: str | None = No
     </section>
     {_footer(generated_at, 'Source: <a href="https://commons.datacite.org/" target="_blank" rel="noopener">DataCite Commons</a> / REST API + crosswalk to HAL <code>dataset_to_publications</code>.')}
   </main>
+  {_chart_modal_html()}
   <script id="data" type="application/json">{payload_json}</script>
   <script>
 {_shared_list_helpers_js()}
     const data = JSON.parse(document.getElementById("data").textContent);
     const rows = data.datasets || [];
     const s = data.summary || {{}};
+    const chart = data.chart || null;
     let activeRepo = "all";
     let activeLink = "all";
 
@@ -1931,7 +2166,36 @@ def render_datacite_datasets(payload_json: str, *, generated_at: str | None = No
       {{ v: s.hal_only || 0, l: "HAL-linked but missing on DataCite filter" }},
     ].map(x => `<div class="stat"><strong data-count="${{x.v}}">0</strong><span>${{x.l}}</span></div>`).join("");
     animateStatCounts(document.getElementById("stats"));
-
+"""
+    mid = STACK_CHART_JS + """
+    mountStackChart(chart, {
+      noteEl: document.getElementById("chartNote"),
+      legendEl: document.getElementById("stackLegend"),
+      chartEl: document.getElementById("stackChart"),
+      modalEl: document.getElementById("chartModal"),
+    });
+    const monthPayload = chart && chart.stacked_months
+      ? {
+          ...chart,
+          stacked: chart.stacked_months,
+          note: chart.months_note,
+          cell_details: chart.cell_details_months,
+          segment_hint: chart.months_segment_hint || "DataCite created / registered month",
+        }
+      : null;
+    if (monthPayload && monthPayload.stacked && monthPayload.stacked.year) {
+      const title = document.getElementById("chartMonthsTitle");
+      if (title) title.textContent = `DataCite datasets by month (${monthPayload.stacked.year})`;
+    }
+    mountStackChart(monthPayload, {
+      noteEl: document.getElementById("chartMonthsNote"),
+      legendEl: document.getElementById("stackMonthsLegend"),
+      chartEl: document.getElementById("stackMonthsChart"),
+      modalEl: document.getElementById("chartModal"),
+      detailsKey: "cell_details_months",
+    });
+"""
+    tail = f"""
     const byRepo = s.by_repository || {{}};
     const repos = ["all", ...Object.keys(byRepo)];
     const onHal = rows.filter(r => r.also_on_hal).length;
@@ -2020,6 +2284,7 @@ def render_datacite_datasets(payload_json: str, *, generated_at: str | None = No
 </body>
 </html>
 """
+    return head + mid + tail
 
 
 def render_census(census_json: str, *, generated_at: str | None = None) -> str:
@@ -2950,6 +3215,7 @@ def _write_site_inner(
                 "generated_at": generated_at,
                 "summary": dc_summary,
                 "datasets": dc_rows,
+                "chart": datacite_chart_stats(dc_rows),
             }
             dc_json = json.dumps(dc_payload, ensure_ascii=False).replace("<", "\\u003c")
             (output_dir / "datacite-datasets.html").write_text(
