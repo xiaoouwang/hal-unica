@@ -1,31 +1,48 @@
 # hal-unica
 
-Open-science monitoring for **[Université Côte d’Azur](https://univ-cotedazur.fr/)** on HAL (`UNIV-COTEDAZUR`), with sibling snapshots for other universities (currently **[Université Bourgogne Europe](https://www.ube.fr/)** / `UNIV-BOURGOGNE`).
+Open-science monitoring for **[Université Côte d’Azur](https://univ-cotedazur.fr/)** on HAL (`UNIV-COTEDAZUR`), with a sibling snapshot for **[Université Bourgogne Europe](https://www.ube.fr/)** (`UNIV-BOURGOGNE`).
 
-This repository harvests institutional HAL notices, resolves linked identifiers (especially dataset DOIs), classifies which landings are real **data repositories** vs publications/preprints, and publishes a static site on GitHub Pages.
+The project:
 
-Live site: https://xiaoouwang.github.io/hal-unica/  
-UBE snapshot: https://xiaoouwang.github.io/hal-unica/ube/
+1. Harvests institutional **HAL** notices and related identifiers (especially dataset DOIs)
+2. Resolves landings via **DataCite** and classifies real **data repositories** vs publications/preprints
+3. Runs a complementary **DataCite affiliation census** (ROR / affiliation names) for datasets that never appear on HAL
+4. Publishes static GitHub Pages sites with charts, lists, correction queues, and downloadable CSVs
+
+| | UniCA | UBE |
+|---|---|---|
+| Live site | https://xiaoouwang.github.io/hal-unica/ | https://xiaoouwang.github.io/hal-unica/ube/ |
+| HAL collection | `UNIV-COTEDAZUR` | `UNIV-BOURGOGNE` |
+| ROR | [019tgvf94](https://ror.org/019tgvf94) | [00g700j37](https://ror.org/00g700j37) |
 
 | Page | UniCA | UBE |
 |---|---|---|
 | Statistics | [/](https://xiaoouwang.github.io/hal-unica/) | [/ube/](https://xiaoouwang.github.io/hal-unica/ube/) |
 | Chart embed (iframe) | [/embed-chart.html](https://xiaoouwang.github.io/hal-unica/embed-chart.html) | [/ube/embed-chart.html](https://xiaoouwang.github.io/hal-unica/ube/embed-chart.html) |
 | Nakala / Recherche Data Gouv | [/related-datasets.html](https://xiaoouwang.github.io/hal-unica/related-datasets.html) | [/ube/related-datasets.html](https://xiaoouwang.github.io/hal-unica/ube/related-datasets.html) |
-| **All repositories** | [/all-repositories.html](https://xiaoouwang.github.io/hal-unica/all-repositories.html) | [/ube/all-repositories.html](https://xiaoouwang.github.io/hal-unica/ube/all-repositories.html) |
-| **DataCite datasets** (affiliation / ROR) | [/datacite-datasets.html](https://xiaoouwang.github.io/hal-unica/datacite-datasets.html) | [/ube/datacite-datasets.html](https://xiaoouwang.github.io/hal-unica/ube/datacite-datasets.html) |
+| **All repositories** (HAL → datasets) | [/all-repositories.html](https://xiaoouwang.github.io/hal-unica/all-repositories.html) | [/ube/all-repositories.html](https://xiaoouwang.github.io/hal-unica/ube/all-repositories.html) |
+| **DataCite datasets** (affiliation → datasets) | [/datacite-datasets.html](https://xiaoouwang.github.io/hal-unica/datacite-datasets.html) | [/ube/datacite-datasets.html](https://xiaoouwang.github.io/hal-unica/ube/datacite-datasets.html) |
 | **Data papers** | [/data-papers.html](https://xiaoouwang.github.io/hal-unica/data-papers.html) | [/ube/data-papers.html](https://xiaoouwang.github.io/hal-unica/ube/data-papers.html) |
 | **To Be Corrected** | [/to-be-corrected.html](https://xiaoouwang.github.io/hal-unica/to-be-corrected.html) | [/ube/to-be-corrected.html](https://xiaoouwang.github.io/hal-unica/ube/to-be-corrected.html) |
 | Software & source code | [/software.html](https://xiaoouwang.github.io/hal-unica/software.html) | [/ube/software.html](https://xiaoouwang.github.io/hal-unica/ube/software.html) |
 | Documentation + downloads | [/documentation.html](https://xiaoouwang.github.io/hal-unica/documentation.html) | [/ube/documentation.html](https://xiaoouwang.github.io/hal-unica/ube/documentation.html) |
 
-Each site shows a logo row labeled **Open Science Snapshots of Other Universities**; clicking a logo opens that university’s snapshot in a new tab.
+Each site shows a logo row labeled **Open Science Snapshots of Other Universities**; clicking a logo opens that university’s snapshot **in a new tab** (same app features, that university’s data).
 
 ---
 
 ## Mental model (read this first)
 
-HAL notices can declare related identifiers in several fields:
+### Two complementary views of “datasets”
+
+| View | Question answered | Blind spot |
+|---|---|---|
+| **HAL → DataCite** (All repositories, charts, To Be Corrected) | Which dataset DOIs are **declared on HAL notices**? | Datasets never linked from a publication |
+| **DataCite → affiliation** (DataCite datasets page) | Which Dataset DOIs are **attributed to the university** on DataCite (ROR / affiliation)? | Incomplete affiliation metadata; multi-affiliation noise |
+
+Use both: the gap (DataCite-only vs HAL-only) is intentional and useful for open-science monitoring.
+
+### HAL related-identifier fields
 
 | HAL field | Intended use | What we do |
 |---|---|---|
@@ -35,7 +52,7 @@ HAL notices can declare related identifiers in several fields:
 
 Every token keeps **provenance** (`source_field`). If a DOI resolves to a data repository but was **not** filed in `relatedData_s`, it appears on **To Be Corrected** and in `misfiled_dataset_links.csv` — **unless** the same DOI is already present in `relatedData_s` on that notice (then the extra field is treated as supplementary).
 
-Each resolved DOI gets an `object_kind`:
+### `object_kind` (DataCite landing classification)
 
 | `object_kind` | Meaning | Shown on All repositories? |
 |---|---|---|
@@ -54,24 +71,27 @@ The **All repositories** page and `dataset_to_publications.*` are **dataset-only
 ## Architecture
 
 ```
-HAL Search API (per collection, e.g. UNIV-COTEDAZUR or UNIV-BOURGOGNE)
+HAL Search API (per collection)
         │
-        ├─ harvest      → data/<tenant>/harvest.jsonl   (or data/unica_hal_metadata.jsonl)
-        │                 ~full collection; homepage document / DOI / doc-type stats
+        ├─ harvest           → data/unica_hal_metadata.jsonl  or  data/ube/harvest.jsonl
+        │                      (gitignored; homepage DOI % / doc-type bars)
         │
-        └─ refresh / census → data/<tenant>/census/   (UniCA: data/census/)
-              │         publications_related_data.jsonl
-              │         doi_resolutions.jsonl              (DataCite cache)
-              │         summary.json, CSVs, METHODOLOGY.md
-              │
-              ├─ software     → software_deposits.*
-              ├─ data-papers  → data_papers.*
-              ├─ invert index → dataset_to_publications.*  (dataset_repo only)
-              ├─ focus filter → data/<tenant>/links.jsonl  (Nakala/RDG)
-              └─ build-site   → docs/ or docs/<site_path>/  (+ sitemap.xml, robots.txt)
+        └─ refresh
+              ├─ census      → publications_related_data.jsonl, doi_resolutions.jsonl, CSVs
+              ├─ software    → software_deposits.*
+              ├─ data-papers → data_papers.*
+              ├─ invert      → dataset_to_publications.*     (HAL → datasets)
+              ├─ focus       → Nakala/RDG links JSONL
+              ├─ datacite-census → datacite_datasets.*       (affiliation → datasets; if ROR configured)
+              └─ build-site  → docs/  or  docs/ube/
 ```
 
-Tenants are declared in `src/hal_unica/universities.py`. CLI entrypoint: `hal-unica` (package under `src/hal_unica/`).
+| Tenant | HAL collection | Data dir | Site |
+|---|---|---|---|
+| `unica` (default) | `UNIV-COTEDAZUR` | `data/census/`, `data/unica_*` | `docs/` |
+| `ube` | `UNIV-BOURGOGNE` | `data/ube/` | `docs/ube/` |
+
+Tenants are declared in [`src/hal_unica/universities.py`](src/hal_unica/universities.py). CLI: `hal-unica`.
 
 ---
 
@@ -79,28 +99,26 @@ Tenants are declared in `src/hal_unica/universities.py`. CLI entrypoint: `hal-un
 
 | Module | Role |
 |---|---|
-| `cli.py` | Typer CLI: all `hal-unica` commands |
-| `client.py` | HAL Search API client (pagination, retries, throttling) |
+| `cli.py` | Typer CLI: all `hal-unica` commands (`--university` where relevant) |
+| `client.py` | HAL Search API client (pagination, retries, connect/read timeouts) |
 | `fields.py` | Default Solr field lists for harvests |
 | `timeutil.py` | UTC helpers, watermarks, lookback / `--since` windows |
 | `harvest.py` | Full or incremental archive of HAL metadata (upsert by `halId_s`) |
-| `census.py` | Related-identifier census, DOI resolution orchestration, misfiled queue, census artifacts |
-| `datacite.py` | DataCite DOI resolve + repository / `object_kind` classification + DOI search |
+| `census.py` | Related-identifier census, DOI resolution, misfiled queue, census artifacts |
+| `datacite.py` | DataCite DOI resolve, search pagination, repository / `object_kind` classification |
 | `datacite_census.py` | Institutional DataCite Dataset harvest (ROR / affiliation) + HAL crosswalk |
 | `data_repos.py` | Nakala / RDG focus scan + DOI enrichment helpers |
 | `focus_links.py` | Build Nakala/RDG focus links JSONL from census publications |
 | `software.py` | SOFTWARE deposits harvest + **dataset→publications** index builder |
 | `data_papers.py` | Data-paper harvest (`DATAPAPER`) + linked-dataset enrichment from census cache |
-| `refresh.py` | Daily orchestration: census → software → data papers → index → focus → DataCite (if configured) → site |
-| `universities.py` | Multi-university tenant registry (collection, paths, branding, logo) |
+| `refresh.py` | Daily orchestration (HAL census → … → DataCite census → site) |
+| `universities.py` | Multi-university tenant registry (collection, paths, branding, logo, ROR) |
 | `site.py` | Static HTML/CSS/JS under `docs/` (stats, lists, chart, SEO, embed) |
 | `report.py` | Standalone HTML report for focus-link results (legacy / optional) |
 
 ---
 
 ## CLI tutorial (`hal-unica`)
-
-Install once:
 
 ```bash
 pip install -e .
@@ -111,13 +129,13 @@ hal-unica --help
 
 | Command | When to use | What it does |
 |---|---|---|
-| `hal-unica refresh` | **Default daily path** (UniCA) | Incremental census → software → data papers → dataset index → Nakala/RDG focus → rebuild `docs/` |
+| `hal-unica refresh` | **Default daily path** (UniCA) | Incremental HAL census → software → data papers → dataset index → Nakala/RDG focus → **DataCite census** → rebuild `docs/` |
 | `hal-unica refresh --university ube` | Same for UBE | Writes under `data/ube/` and `docs/ube/` |
 | `hal-unica refresh --full` | Sunday / repair gaps | Full related-data census query (still reuses DOI cache) |
-| `hal-unica build-site` / `--university ube` | After local data edits | Rebuild Pages HTML from existing data (no HAL calls unless live count fallback) |
+| `hal-unica build-site` / `--university ube` | After local data edits | Rebuild Pages HTML from existing data |
 
 ```bash
-# Weekday-style incremental (2-day lookback) — both tenants in CI
+# Weekday-style incremental (both tenants — same as CI)
 hal-unica refresh --lookback-days 2
 hal-unica refresh --university ube --lookback-days 2
 
@@ -130,33 +148,34 @@ hal-unica build-site
 hal-unica build-site --university ube
 ```
 
-What `refresh` does **not** do: re-download the ~99k-document metadata corpus.
+What `refresh` does **not** do: re-download the full metadata harvest JSONL (~tens of thousands of notices; gitignored).
 
 What it **does**:
 
-1. Pull notices matching the census query modified since `max(watermark − 1h, now − lookback)`.
+1. Pull HAL notices matching the census query modified since `max(watermark − 1h, now − lookback)`.
 2. Upsert them into `publications_related_data.jsonl`.
 3. Resolve **only new** DOIs; reuse `doi_resolutions.jsonl`.
 4. Re-harvest SOFTWARE and data papers (small full pulls).
-5. Rebuild `dataset_to_publications.*` and focus links.
-6. Rebuild `docs/` (including `data-papers.html`, chart, SEO files).
+5. Rebuild `dataset_to_publications.*` and Nakala/RDG focus links.
+6. If the tenant has `ror_ids` / `affiliation_names`: run **DataCite institutional census**.
+7. Rebuild the static site (charts, SEO, all list pages).
 
 ### Pieces in isolation
 
 | Command | Role | Typical use |
 |---|---|---|
-| `hal-unica count` | Print HAL document count for the collection (optional time window) | Quick API sanity check |
-| `hal-unica harvest` | Archive latest-version metadata for the whole collection (or a lookback window) into JSONL | Homepage “HAL documents” stats; lab backfills. Large file. |
-| `hal-unica census` | Full or incremental related-data census + DataCite + misfiled CSV/JSONL | Debug census without rebuilding the whole site |
-| `hal-unica software` | Harvest `docType_s=SOFTWARE` → `software_deposits.*` | Refresh software page inputs only |
-| `hal-unica data-papers` | Harvest `docSubType_s=DATAPAPER` → `data_papers.*` (enriches links from census DOI cache) | Refresh data-papers page inputs only |
-| `hal-unica datacite-census` | Harvest Dataset DOIs attributed to the university on DataCite (ROR / affiliation names) | Complements HAL: datasets with no HAL link |
-| `hal-unica find-data-repos` | Find Nakala / Recherche Data Gouv links (focus scan) | Legacy / focused audit |
-| `hal-unica resolve-repos` | Re-resolve DOIs in an existing links JSONL via DataCite | Refresh repository labels on focus hits |
+| `hal-unica count` | Print HAL document count | API sanity check |
+| `hal-unica harvest` | Full/incremental metadata JSONL (`--university`) | Homepage DOI % / doc types; lab backfill |
+| `hal-unica census` | Related-data census + DataCite resolve + misfiled CSVs | Debug without rebuilding the site |
+| `hal-unica software` | `docType_s=SOFTWARE` → `software_deposits.*` | Software page only |
+| `hal-unica data-papers` | `docSubType_s=DATAPAPER` → `data_papers.*` | Data-papers page only |
+| `hal-unica datacite-census` | Affiliation Dataset DOIs on DataCite + HAL crosswalk | DataCite page / gap analysis |
+| `hal-unica find-data-repos` | Nakala / RDG focus scan | Legacy / focused audit |
+| `hal-unica resolve-repos` | Re-resolve DOIs in a links JSONL | Refresh repository labels |
 | `hal-unica report` | HTML report from focus-link JSONL | Optional offline report |
 
 ```bash
-# Full metadata archive (optional but needed for DOI % / doc-type bars; large; gitignored)
+# Full metadata archive (large; gitignored)
 hal-unica harvest
 hal-unica harvest --university ube
 
@@ -164,48 +183,40 @@ hal-unica harvest --university ube
 hal-unica harvest --lookback-days 2 --from-watermark
 hal-unica harvest --university ube --lookback-days 2 --from-watermark
 
-# Census only (defaults to UniCA paths; pass --collection / dirs for others)
+# HAL census only
 hal-unica census
 hal-unica census --lookback-days 2
 
-# Software / data papers only
+# Software / data papers
 hal-unica software
 hal-unica data-papers
 
-# Institutional DataCite datasets (needs ror_ids / affiliation_names in universities.py)
+# DataCite institutional census
 hal-unica datacite-census
 hal-unica datacite-census --university ube
 hal-unica build-site
 hal-unica build-site --university ube
-
-# Nakala/RDG focus tooling
-hal-unica find-data-repos -o data/unica_data_repo_links.jsonl
-hal-unica resolve-repos --links data/unica_data_repo_links.jsonl
-hal-unica report --links data/unica_data_repo_links.jsonl -o docs/report.html
 ```
 
-Preview locally: `python -m http.server 8765 -d docs` (UBE under `/ube/`).
+Preview locally: `python -m http.server 8765 -d docs` (UBE at `/ube/`).
 
 ---
 
 ## Adding another university
 
-Each university is a **tenant**: same pages and pipeline, separate HAL collection, data directory, and Pages subdirectory. Registration lives in [`src/hal_unica/universities.py`](src/hal_unica/universities.py).
+Each university is a **tenant**: same pages and pipeline, separate HAL collection, data directory, and Pages subdirectory. Registration: [`src/hal_unica/universities.py`](src/hal_unica/universities.py).
 
 ### 1. Confirm the HAL collection code
 
-Probe the Search API (must return a non-zero `numFound`):
-
 ```bash
 hal-unica count --collection UNIV-BOURGOGNE
-# or: curl 'https://api.archives-ouvertes.fr/search/UNIV-BOURGOGNE/?q=*:*&rows=0&wt=json'
 ```
 
-Institutional portals often use `UNIV-…` codes (UniCA = `UNIV-COTEDAZUR`, UBE = `UNIV-BOURGOGNE`). Aurehal instance nicknames (e.g. `univ-bourgogne`) are not always valid collection paths.
+Institutional portals often use `UNIV-…` codes. Aurehal instance nicknames (e.g. `univ-bourgogne`) are not always valid Search API paths.
 
 ### 2. Add a `University` entry
 
-In `universities.py`, copy the `UBE` example and set:
+Copy the `UBE` example and set:
 
 | Field | Meaning |
 |---|---|
@@ -217,64 +228,56 @@ In `universities.py`, copy the `UBE` example and set:
 | `logo` | Filename under `static/universities/` (or `None` for a text chip) |
 | `census_dir` / `links_path` / `harvest_path` | Local data paths (keep tenants separate) |
 | `site_dir` / `stats_fallback` / `log_path` | Output site + CI log |
+| `ror_ids` / `affiliation_names` | Optional — enables DataCite institutional census + nav link |
 
-Register it in `UNIVERSITIES` (e.g. `UNIVERSITIES[MY_UNI.id] = MY_UNI`).
+Register it in `UNIVERSITIES`.
 
-### 3. Drop the logo asset
+### 3. Logo asset
 
-Put a PNG/SVG/WebP in `static/universities/<logo>` (e.g. `ube.png`). `build-site` / `refresh` copies it into each site’s `assets/universities/`. Omit `logo` to show the `short_name` as a text chip in the switcher.
+Put a PNG/SVG/WebP in `static/universities/<logo>`. `build-site` / `refresh` copies it into each site’s `assets/universities/`.
 
-### 4. Cold-start the tenant
+### 4. Cold-start
 
 ```bash
-# Full related-data census + software + data papers + site
 hal-unica refresh --university <id> --full
-
-# Homepage DOI % / document types (large; gitignored like UniCA harvest)
-hal-unica harvest --university <id>
+hal-unica harvest --university <id>          # homepage DOI % / doc types
 hal-unica build-site --university <id>
+# If ror_ids / affiliation_names set, refresh already ran datacite-census;
+# or: hal-unica datacite-census --university <id>
 ```
 
-Without the harvest step, the snapshot still works (charts, related datasets, …) but homepage **document / DOI / doc-type** stats fall back to a live HAL count only (`live_count_only`).
+Without the harvest step, charts and related-data pages still work; homepage document/DOI/doc-type stats fall back to a live HAL count (`live_count_only`).
 
 ### 5. Wire daily CI
 
-In [`.github/workflows/daily-refresh.yml`](.github/workflows/daily-refresh.yml), add a second `hal-unica refresh --university <id> …` next to the existing UniCA and UBE calls, and `git add` the new `data/<tenant>/` paths.
+In [`.github/workflows/daily-refresh.yml`](.github/workflows/daily-refresh.yml), add a `Refresh <Name>` step next to UniCA/UBE (with `continue-on-error` + retry pattern), and `git add` the new `data/<tenant>/` paths.
 
-No code change is needed for the logo row: every tenant automatically lists **other** universities under **Open Science Snapshots of Other Universities**, linking to each snapshot’s absolute URL in a new tab.
+The logo row updates automatically: every tenant lists **other** universities under **Open Science Snapshots of Other Universities**.
 
-### Optional: DataCite institutional datasets
+### DataCite institutional datasets (UniCA + UBE)
 
-UniCA and UBE run a **DataCite-first** census (see [UniCA](https://xiaoouwang.github.io/hal-unica/datacite-datasets.html) · [UBE](https://xiaoouwang.github.io/hal-unica/ube/datacite-datasets.html)):
-
-- Query DataCite for `resourceTypeGeneral:Dataset` whose creators/contributors list the university’s **ROR** and/or **affiliation name** strings (`universities.py`: `ror_ids`, `affiliation_names`).
+- Query DataCite for `resourceTypeGeneral:Dataset` whose creators/contributors match **ROR** and/or **affiliation name** strings.
 - Crosswalk DOIs against HAL `dataset_to_publications.jsonl`.
-- Surfaces **DataCite-only** datasets (no HAL link) and **HAL-only** datasets (linked on HAL but missing UniCA affiliation metadata on DataCite).
+- Page filters: **All / Also on HAL / DataCite only**.
+- Stats also report **HAL-only** (linked on HAL but missing from the affiliation filter — often incomplete DataCite metadata).
 
-```bash
-hal-unica datacite-census          # or: included in `hal-unica refresh` when configured
-hal-unica build-site
-```
+| Tenant | ROR | Example affiliation names |
+|---|---|---|
+| UniCA | `https://ror.org/019tgvf94` | Université Côte d’Azur, Universite Cote d’Azur, … |
+| UBE | `https://ror.org/00g700j37` | Université Bourgogne Europe, Université de Bourgogne, University of Burgundy, … |
 
-Enable the same for another university by filling `ror_ids` / `affiliation_names` on its `University` entry.
+Avoid very short affiliation strings (e.g. `uB`, `Univ. X`) — they inflate false positives.
 
 ---
 
-## Typical routines (how to combine the scripts)
+## Typical routines
 
-### A. First-time / cold start (empty census)
+### A. First-time / cold start
 
 ```bash
 pip install -e .
-
-# UniCA
-hal-unica harvest                    # optional but fixes DOI % / doc types
-hal-unica refresh --full
-
-# UBE (or any --university <id>)
-hal-unica harvest --university ube
-hal-unica refresh --university ube --full
-
+hal-unica harvest && hal-unica refresh --full
+hal-unica harvest --university ube && hal-unica refresh --university ube --full
 python -m http.server 8765 -d docs
 ```
 
@@ -282,62 +285,59 @@ python -m http.server 8765 -d docs
 
 ```bash
 hal-unica refresh --lookback-days 2
-# → upserts recently modified relatedData notices
-# → re-harvests SOFTWARE + data papers
-# → rebuilds dataset index, Nakala/RDG focus file, docs/
+hal-unica refresh --university ube --lookback-days 2
 ```
 
-### C. “I only changed site.py / CSS”
+### C. Site / CSS only
 
 ```bash
 hal-unica build-site
+hal-unica build-site --university ube
 ```
 
-No HAL/DataCite calls; rebuilds HTML from existing JSONL/CSV.
-
-### D. “I only care about data papers / software today”
+### D. Data papers / software only
 
 ```bash
-hal-unica data-papers    # needs existing doi_resolutions.jsonl for link enrichment
-hal-unica software
-hal-unica build-site
+hal-unica data-papers && hal-unica software && hal-unica build-site
 ```
 
-### E. Debug a census issue without touching the site
+### E. DataCite gap analysis only
 
 ```bash
-hal-unica census --lookback-days 2
-# inspect data/census/summary.json, misfiled_dataset_links.csv, run.log
-hal-unica build-site     # when ready to publish
+hal-unica datacite-census
+hal-unica datacite-census --university ube
+hal-unica build-site && hal-unica build-site --university ube
 ```
 
-### F. Recommended dependency order
+### F. Dependency order
 
 ```
 harvest (optional) ─┐
-                    ├─→ refresh ─┬─→ census artifacts
-census (alone)   ───┘           ├─→ software_deposits.*
-                                ├─→ data_papers.*
+                    ├─→ refresh ─┬─→ HAL census artifacts
+census (alone)   ───┘           ├─→ software / data_papers
                                 ├─→ dataset_to_publications.*
-                                ├─→ unica_data_repo_links.jsonl
-                                └─→ build-site → docs/
+                                ├─→ focus links
+                                ├─→ datacite_datasets.*   (if ROR configured)
+                                └─→ build-site → docs/ or docs/ube/
 ```
 
-In practice **prefer `refresh`** over chaining pieces yourself unless you are debugging.
+Prefer **`refresh`** unless you are debugging one piece.
 
 ---
 
 ## List pages (shared UX)
 
-**All repositories · Related datasets · Software · Data papers · To Be Corrected** share the same list patterns where relevant:
+**All repositories · Related datasets · DataCite datasets · Software · Data papers · To Be Corrected** share:
 
-- **Sort** — newest/oldest retrieved and/or HAL update (plus title / repository / journal)
-- **Year** — publication year filter
-- **Laboratory** — dropdown + type-ahead (prefix match)
-- Rich cards — HAL ids, Paris-local timestamps, labs, linked evidence
-- Stat cards — quick count-up animation on load
+- Sort (retrieved / HAL update / year / title / repository where relevant)
+- Year and laboratory filters on HAL-backed pages
+- Search, chips, count-up stat cards
+- Paris-local timestamps (`datetime` attributes stay UTC)
 
-Data papers also have chips for **All / With linked dataset / Without linked dataset**, plus journal filters.
+| Page | Extra filters |
+|---|---|
+| Data papers | All / With linked dataset / Without linked dataset (+ journal) |
+| DataCite datasets | All / Also on HAL / DataCite only (+ repository) |
 
 ### Retrieval dates on All repositories
 
@@ -346,9 +346,7 @@ Data papers also have chips for **All / With linked dataset / Without linked dat
 | `retrieved_at` | First time this dataset DOI entered **our** index (sticky across rebuilds) |
 | `hal_modified_at` | Latest HAL `modifiedDate_tdate` among linked notices |
 
-Default sort: **Newest retrieved**. Edits to old HAL notices that introduce a **new** dataset DOI get a fresh `retrieved_at`.
-
-HAL exposes `modifiedDate_tdate`. When a depositor edits an old notice, HAL bumps that timestamp; the daily job merges by `halId_s`.
+Default sort: **Newest retrieved**.
 
 ---
 
@@ -356,77 +354,107 @@ HAL exposes `modifiedDate_tdate`. When a depositor edits an old notice, HAL bump
 
 Workflow: [`.github/workflows/daily-refresh.yml`](.github/workflows/daily-refresh.yml)
 
-GitHub often delays crons that fire at `:00`. We therefore:
-
-1. Run **off the hour** (`:17`)
-2. Add a **catch-up** mid-morning Paris time if the first run was delayed
-
 | Slot | Cron (UTC) | Paris (CEST / CET) | Mode |
 |---|---|---|---|
 | Primary | `17 4 * * 1-6` | **06:17** / **05:17** | Incremental |
 | Primary Sunday | `17 4 * * 0` | **06:17** / **05:17** | Full census |
 | Catch-up (daily) | `17 8 * * *` | **10:17** / **09:17** | Incremental |
 
-After a successful refresh **with file changes**, the same workflow deploys GitHub Pages (bot pushes with `GITHUB_TOKEN` do not trigger `pages.yml` alone). Each scheduled run refreshes **UniCA then UBE**.
+CI behaviour:
 
-Delays can still happen under GitHub load; the catch-up slot is there so you usually do not need a manual refresh. Manual run: Actions → **Daily incremental refresh** → `incremental` or `full`.
+- Refreshes **UniCA** and **UBE** as **separate steps** (one HAL outage does not skip the other)
+- **Automatic retry** once if a tenant fails (common `ConnectTimeout` against HAL/DataCite)
+- **Commits whatever succeeded**, then fails the job if any tenant is still broken
+- Deploys Pages when `docs/` changed (bot `GITHUB_TOKEN` pushes do not trigger `pages.yml` alone)
 
-If Actions is down longer than the lookback window, the next **Sunday full** run closes the gap.
-
+Manual run: Actions → **Daily incremental refresh** → `incremental` or `full`.  
 Deploy-on-push for human commits: [`.github/workflows/pages.yml`](.github/workflows/pages.yml).
 
 ---
 
 ## Snapshot (indicative)
 
-Figures move with each refresh; check `data/census/summary.json`, `dataset_to_publications_summary.json`, `software_summary.json`, and `data_papers_summary.json`.
+Figures move with each refresh. Sources: `summary.json`, `dataset_to_publications_summary.json`, `datacite_datasets_summary.json`, homepage `stats.json`.
 
-| Metric | Approx. value |
+### UniCA
+
+| Metric | Approx. |
 |---:|---:|
-| HAL notices with linked identifiers (census) | **313** |
-| Unique DOIs resolved (all kinds) | **401** |
-| Of which `dataset_repo` landings (links) | **264** |
-| Unique dataset DOIs on All repositories | **246** |
-| Pubs with ≥1 dataset-repo landing | **164** |
-| Misfiled dataset links (wrong HAL field) | **72** |
-| HAL `SOFTWARE` deposits | **78** |
-| HAL data papers (`DATAPAPER`) | **54** |
+| HAL documents (harvest) | **99 165** (~**42%** with DOI) |
+| HAL notices with linked identifiers | **316** |
+| Unique DOIs resolved (all kinds) | **404** |
+| Unique dataset DOIs (All repositories) | **247** |
+| Pubs with ≥1 dataset-repo landing | **165** |
+| Misfiled dataset links | **72** |
+| SOFTWARE / data papers | **78** / **55** |
+| DataCite Dataset DOIs (affiliation) | **1 344** |
+| … also on HAL / DataCite-only / HAL-only | **31** / **1 313** / **216** |
 
-Top **data** repositories (All repositories index): Zenodo · Recherche Data Gouv · SEANOE · Sismer · SEDOO/Theia · NAKALA · …
+Top HAL-linked data repos: Zenodo · Recherche Data Gouv · SEANOE · Sismer · SEDOO/Theia · NAKALA · …
+
+### UBE
+
+| Metric | Approx. |
+|---:|---:|
+| HAL documents (harvest) | **76 081** (~**37%** with DOI) |
+| HAL notices with linked identifiers | **261** |
+| Unique DOIs resolved (all kinds) | **301** |
+| Unique dataset DOIs (All repositories) | **176** |
+| Pubs with ≥1 dataset-repo landing | **147** |
+| Misfiled dataset links | **20** |
+| SOFTWARE / data papers | **18** / **54** |
+| DataCite Dataset DOIs (affiliation) | **717** |
+| … also on HAL / DataCite-only / HAL-only | **7** / **710** / **169** |
+
+Top HAL-linked / DataCite repos vary; UBE DataCite is often heavy on Recherche Data Gouv and Zenodo.
 
 ---
 
 ## Artifacts
 
+### UniCA (`data/census/`, mirrored under `docs/data/census/`)
+
 | Path | Meaning |
 |---|---|
-| [`data/census/dataset_to_publications.csv`](data/census/dataset_to_publications.csv) | **Dataset DOI → HAL publication(s)** (+ `retrieved_at`) — All repositories |
-| [`data/census/misfiled_dataset_links.csv`](data/census/misfiled_dataset_links.csv) | Dataset DOIs filed outside `relatedData_s` (correction queue) |
-| [`data/census/doi_to_repository.csv`](data/census/doi_to_repository.csv) | Every related DOI → repository / kind (includes journals) |
-| [`data/census/doi_hal_repository_map.csv`](data/census/doi_hal_repository_map.csv) | HAL notice ↔ DOI ↔ repository ↔ source field |
-| [`data/census/doi_resolutions.jsonl`](data/census/doi_resolutions.jsonl) | DataCite resolution cache |
-| [`data/census/publications_related_data.jsonl`](data/census/publications_related_data.jsonl) | Per-notice tokens + resolutions |
-| [`data/census/software_deposits.csv`](data/census/software_deposits.csv) | SOFTWARE + code repos + SWHIDs |
-| [`data/census/data_papers.csv`](data/census/data_papers.csv) | Data papers + linked datasets / journals |
-| [`data/census/datacite_datasets.csv`](data/census/datacite_datasets.csv) | UniCA DataCite Dataset DOIs (affiliation / ROR) + HAL crosswalk |
-| [`data/ube/census/datacite_datasets.csv`](data/ube/census/datacite_datasets.csv) | UBE DataCite Dataset DOIs (affiliation / ROR) + HAL crosswalk |
-| [`data/census/summary.json`](data/census/summary.json) | Full-census aggregates |
-| [`data/census/census.meta.json`](data/census/census.meta.json) | Watermark for incremental refresh |
-| [`data/census/METHODOLOGY.md`](data/census/METHODOLOGY.md) | Auto-generated method + counts for last census run |
-| [`data/unica_data_repo_links.jsonl`](data/unica_data_repo_links.jsonl) | Nakala/RDG focus hits |
-| [`docs/`](docs/) | Published site (`docs/data/census/` mirrors UniCA census; `docs/ube/` is the UBE snapshot) |
-| [`docs/sitemap.xml`](docs/sitemap.xml) / [`docs/robots.txt`](docs/robots.txt) | SEO crawl hints |
-| [`src/hal_unica/universities.py`](src/hal_unica/universities.py) | Tenant registry — add universities here |
-| [`static/universities/`](static/universities/) | Logo source files copied into each site’s `assets/universities/` |
+| [`dataset_to_publications.csv`](data/census/dataset_to_publications.csv) | Dataset DOI → HAL publication(s) (+ `retrieved_at`) |
+| [`misfiled_dataset_links.csv`](data/census/misfiled_dataset_links.csv) | Dataset DOIs filed outside `relatedData_s` |
+| [`doi_to_repository.csv`](data/census/doi_to_repository.csv) | Every related DOI → repository / kind |
+| [`doi_hal_repository_map.csv`](data/census/doi_hal_repository_map.csv) | HAL notice ↔ DOI ↔ repository ↔ source field |
+| [`doi_resolutions.jsonl`](data/census/doi_resolutions.jsonl) | DataCite resolution cache |
+| [`publications_related_data.jsonl`](data/census/publications_related_data.jsonl) | Per-notice tokens + resolutions |
+| [`software_deposits.csv`](data/census/software_deposits.csv) | SOFTWARE + code repos + SWHIDs |
+| [`data_papers.csv`](data/census/data_papers.csv) | Data papers + linked datasets / journals |
+| [`datacite_datasets.csv`](data/census/datacite_datasets.csv) | DataCite affiliation Dataset DOIs + HAL crosswalk |
+| [`summary.json`](data/census/summary.json) | HAL census aggregates |
+| [`METHODOLOGY.md`](data/census/METHODOLOGY.md) | Auto-generated method notes |
+| [`../unica_data_repo_links.jsonl`](data/unica_data_repo_links.jsonl) | Nakala/RDG focus hits |
+
+### UBE (`data/ube/census/`, mirrored under `docs/ube/data/census/`)
+
+Same filenames as above under `data/ube/census/`, plus [`datacite_datasets.csv`](data/ube/census/datacite_datasets.csv). Focus links: `data/ube/links.jsonl`.
+
+### Site & config
+
+| Path | Meaning |
+|---|---|
+| [`docs/`](docs/) | UniCA Pages root |
+| [`docs/ube/`](docs/ube/) | UBE snapshot |
+| [`docs/sitemap.xml`](docs/sitemap.xml) / [`robots.txt`](docs/robots.txt) | SEO |
+| [`src/hal_unica/universities.py`](src/hal_unica/universities.py) | Tenant registry |
+| [`static/universities/`](static/universities/) | Logo sources → `assets/universities/` |
+
+Bulk harvests (`data/unica_hal_metadata.jsonl`, `data/ube/harvest.jsonl`) stay **local / gitignored**.
 
 ---
 
 ## Design decisions worth remembering
 
-1. **Do not treat every related DOI as a dataset.** Journals, arXiv, ResearchGate, publisher platforms are `publication_landing`. Unknown hosts must not default to `dataset_repo`.
-2. **Track wrong fields instead of dropping them.** Misfiled Nakala/Zenodo DOIs in `relatedPublication_s` feed the correction queue — unless the same DOI is already in `relatedData_s`.
-3. **Upsert + watermark**, never wipe the JSONL on `--since` / lookback harvests.
-4. **Sunday full rebuild** is the safety net for missed incrementals.
-5. **`retrieved_at` is sticky** so newly discovered datasets stay sortable after later rebuilds.
-6. **Timestamps on the site are Europe/Paris** (CET/CEST); machine-readable `datetime` attributes stay UTC.
-7. **Daily refresh deploys Pages itself** when it commits, because `GITHUB_TOKEN` pushes do not trigger `pages.yml`.
+1. **Do not treat every related DOI as a dataset.** Journals, arXiv, ResearchGate, publisher platforms are `publication_landing`.
+2. **Track wrong fields instead of dropping them.** Misfiled dataset DOIs feed the correction queue — unless already in `relatedData_s`.
+3. **HAL and DataCite answer different questions.** Keep both; do not replace HAL monitoring with affiliation search alone.
+4. **Upsert + watermark**, never wipe JSONL on lookback harvests.
+5. **Sunday full rebuild** is the safety net for missed incrementals.
+6. **`retrieved_at` is sticky** across rebuilds.
+7. **Timestamps on the site are Europe/Paris**; machine-readable `datetime` stays UTC.
+8. **Daily refresh deploys Pages itself** when it commits (`GITHUB_TOKEN` does not trigger `pages.yml`).
+9. **CI isolates tenants** and retries transient HAL/DataCite timeouts so one outage does not discard the other’s successful refresh.
