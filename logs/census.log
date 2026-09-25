@@ -1,13 +1,13 @@
-incremental census since=2026-09-22T08:53:33Z (existing pubs=313, doi cache=401)
-[2026-09-24T08:53:33Z] census start collection=UNIV-COTEDAZUR since=2026-09-22T08:53:33Z
+university=unica collection=UNIV-COTEDAZUR site=docs
+incremental census since=2026-09-23T09:39:19Z (existing pubs=316, doi cache=404)
+[2026-09-25T09:39:19Z] census start collection=UNIV-COTEDAZUR since=2026-09-23T09:39:19Z
 HAL publications with linked identifiers (merged): 316
   query: (relatedData_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)
-  fetched this run: 17 (updated=14, inserted=3)
+  fetched this run: 17 (updated=17, inserted=0)
 link tokens: 511
 unique DOI candidates: 404
-DataCite cache hits: 401; to resolve: 3
-DataCite resolved 3/3
-[2026-09-24T08:53:35Z] census done
+DataCite cache hits: 404; to resolve: 0
+[2026-09-25T09:39:20Z] census done
 harvesting SOFTWARE deposits (full)
 harvesting data papers (docSubType_s:DATAPAPER)
 updated dataset→publications index

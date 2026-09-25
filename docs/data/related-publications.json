@@ -6,6 +6,161 @@
   },
   "publications": [
     {
+      "halId_s": "hal-04954634",
+      "uri_s": "https://hal.inrae.fr/hal-04954634v1",
+      "title_s": "High-fidelity annotated triploid genome of the quarantine root-knot nematode, Meloidogyne enterolobii",
+      "docType_s": "ART",
+      "doiId_s": "10.1038/s41597-025-04434-w",
+      "laboratories": [
+        "ISA",
+        "UNS",
+        "CNRS",
+        "INRAE",
+        "UniCA",
+        "JKI",
+        "GeT-PlaGe",
+        "GET",
+        "GENOTOUL",
+        "ENVT"
+      ],
+      "modifiedDate_tdate": "2026-09-25T09:53:34Z",
+      "producedDateY_i": 2025,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/EGUUHK",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/EGUUHK",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Meloidogyne enterolobii scripts",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.57745/5MXZSJ",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/5MXZSJ",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Meloidogyne enterolobii assemblies",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.57745/KGA7CI",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/KGA7CI",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Meloidogyne genus OrthoFinder analysis",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.57745/Y0O2LP",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/Y0O2LP",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Meloidogyne enterolobii E1834 gene prediction",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.57745/VEKHQS",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/VEKHQS",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Meloidogyne enterolobii E1834 genome structure analysis",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-03521600",
+      "uri_s": "https://hal.science/hal-03521600v2",
+      "title_s": "Ridge Polariton Laser: Different from a Semiconductor Edge-Emitting Laser",
+      "docType_s": "ART",
+      "doiId_s": "10.1103/PhysRevApplied.18.044029",
+      "laboratories": [
+        "L2C",
+        "CNRS",
+        "UM",
+        "C2N",
+        "CRHEA",
+        "UNS",
+        "UniCA",
+        "IP",
+        "UCA",
+        "INP Clermont Auvergne"
+      ],
+      "modifiedDate_tdate": "2026-09-25T09:20:24Z",
+      "producedDateY_i": 2022,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/VCC5KV",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/VCC5KV",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Data associated with the article \"Ridge polariton laser: different from a semiconductor edge-emitting laser\"",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-04776451",
+      "uri_s": "https://hal.science/hal-04776451v1",
+      "title_s": "Mode-locked waveguide polariton laser",
+      "docType_s": "ART",
+      "doiId_s": "10.1364/OPTICA.524753",
+      "laboratories": [
+        "L2C",
+        "CNRS",
+        "UM",
+        "C2N",
+        "IP",
+        "UCA",
+        "INP Clermont Auvergne",
+        "CRHEA",
+        "UNS",
+        "UniCA"
+      ],
+      "modifiedDate_tdate": "2026-09-25T09:20:24Z",
+      "producedDateY_i": 2024,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/IAU0UK",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/IAU0UK",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Data associated with the article \"Mode-locked waveguide polariton laser\"",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
       "halId_s": "hal-05114056",
       "uri_s": "https://hal.science/hal-05114056v2",
       "title_s": "Le Rhône aménagé vu du ciel. Constitution d'une base de données photographiques obliques pour documenter la trajectoire socio-environnementale du fleuve contemporain (1910-1960)",
@@ -23,7 +178,7 @@
         "UJM",
         "UJM EPE"
       ],
-      "modifiedDate_tdate": "2026-09-24T03:35:08Z",
+      "modifiedDate_tdate": "2026-09-25T03:28:15Z",
       "producedDateY_i": 2025,
       "repositories": [
         "NAKALA"
@@ -565,87 +720,6 @@
           "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/E2VTRB",
           "landing_host": "data.inrae.fr",
           "dataset_title": "Improvement of eukaryotic protein predictions from soil metagenomes",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-04954634",
-      "uri_s": "https://hal.inrae.fr/hal-04954634v1",
-      "title_s": "High-fidelity annotated triploid genome of the quarantine root-knot nematode, Meloidogyne enterolobii",
-      "docType_s": "ART",
-      "doiId_s": "10.1038/s41597-025-04434-w",
-      "laboratories": [
-        "ISA",
-        "UNS",
-        "CNRS",
-        "INRAE",
-        "UniCA",
-        "JKI",
-        "GeT-PlaGe",
-        "GET",
-        "GENOTOUL",
-        "ENVT"
-      ],
-      "modifiedDate_tdate": "2026-09-14T14:18:06Z",
-      "producedDateY_i": 2025,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/EGUUHK",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/EGUUHK",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Meloidogyne enterolobii scripts",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.57745/5MXZSJ",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/5MXZSJ",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Meloidogyne enterolobii assemblies",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.57745/KGA7CI",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/KGA7CI",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Meloidogyne genus OrthoFinder analysis",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.57745/Y0O2LP",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/Y0O2LP",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Meloidogyne enterolobii E1834 gene prediction",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.57745/VEKHQS",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/VEKHQS",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Meloidogyne enterolobii E1834 genome structure analysis",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
@@ -1742,43 +1816,6 @@
       ]
     },
     {
-      "halId_s": "hal-04776451",
-      "uri_s": "https://hal.science/hal-04776451v1",
-      "title_s": "Mode-locked waveguide polariton laser",
-      "docType_s": "ART",
-      "doiId_s": "10.1364/OPTICA.524753",
-      "laboratories": [
-        "L2C",
-        "CNRS",
-        "UM",
-        "C2N",
-        "IP",
-        "UCA",
-        "INP Clermont Auvergne",
-        "CRHEA",
-        "UNS",
-        "UniCA"
-      ],
-      "modifiedDate_tdate": "2026-05-05T15:53:16Z",
-      "producedDateY_i": 2024,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/IAU0UK",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/IAU0UK",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Data associated with the article \"Mode-locked waveguide polariton laser\"",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
       "halId_s": "hal-04948456",
       "uri_s": "https://hal.science/hal-04948456v1",
       "title_s": "Couches SIG des circonscriptions administratives d'Algérie (1942- 1949) : départements d’Alger, Constantine et Oran",
@@ -1960,43 +1997,6 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/BIC6MB",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "Réponses Enquête Données de la recherche Université de Strasbourg et Université Côte d’Azur",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-03521600",
-      "uri_s": "https://hal.science/hal-03521600v2",
-      "title_s": "Ridge Polariton Laser: Different from a Semiconductor Edge-Emitting Laser",
-      "docType_s": "ART",
-      "doiId_s": "10.1103/PhysRevApplied.18.044029",
-      "laboratories": [
-        "L2C",
-        "CNRS",
-        "UM",
-        "C2N",
-        "CRHEA",
-        "UNS",
-        "UniCA",
-        "IP",
-        "UCA",
-        "INP Clermont Auvergne"
-      ],
-      "modifiedDate_tdate": "2026-05-05T15:52:27Z",
-      "producedDateY_i": 2022,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/VCC5KV",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/VCC5KV",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Data associated with the article \"Ridge polariton laser: different from a semiconductor edge-emitting laser\"",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false

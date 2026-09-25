@@ -1,9 +1,9 @@
 {
-  "unique_datasets": 173,
-  "publications_with_dataset": 145,
+  "unique_datasets": 176,
+  "publications_with_dataset": 147,
   "by_repository": {
-    "Recherche Data Gouv": 82,
-    "NAKALA": 25,
+    "Recherche Data Gouv": 83,
+    "NAKALA": 27,
     "Zenodo": 22,
     "Portail Data Inra": 13,
     "Dryad": 9,
@@ -141,7 +141,7 @@
       9,
       27,
       18,
-      11,
+      14,
       38,
       20
     ],
@@ -170,7 +170,7 @@
           5,
           5,
           12,
-          6,
+          7,
           16,
           9
         ]
@@ -199,7 +199,7 @@
           0,
           19,
           1,
-          2,
+          4,
           3,
           0
         ]
@@ -547,6 +547,23 @@
       }
     ],
     "2024|Recherche Data Gouv": [
+      {
+        "dataset_doi": "10.57745/R1QHIL",
+        "dataset_title": null,
+        "repository": "Recherche Data Gouv",
+        "landing_url": null,
+        "landing_host": null,
+        "year": 2024,
+        "publications": [
+          {
+            "halId_s": "hal-04612748",
+            "title_s": "Wheat dwarfing reshapes plant and fungal development in arbuscular mycorrhizal symbiosis",
+            "uri_s": "https://hal.inrae.fr/hal-04612748v1",
+            "producedDateY_i": 2024,
+            "producedDateM_i": 7
+          }
+        ]
+      },
       {
         "dataset_doi": "10.57745/GPDV7F",
         "dataset_title": "A dataset of food supplies and preferences of French university students",
@@ -2102,6 +2119,76 @@
         ]
       }
     ],
+    "2024|NAKALA": [
+      {
+        "dataset_doi": "10.34847/nkl.8f0a0nm9/70868f81bfe0cfeee0dbd086ceb428ad913551e3",
+        "dataset_title": null,
+        "repository": "NAKALA",
+        "landing_url": null,
+        "landing_host": null,
+        "year": 2024,
+        "publications": [
+          {
+            "halId_s": "hal-05409059",
+            "title_s": "Bilan scientifique annuel : L’habitat de l’âge du Bronze à La Tène ancienne en Hauts-de-France",
+            "uri_s": "https://hal.science/hal-05409059v1",
+            "producedDateY_i": 2024,
+            "producedDateM_i": 1
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.34847/nkl.929ax2kn",
+        "dataset_title": null,
+        "repository": "NAKALA",
+        "landing_url": null,
+        "landing_host": null,
+        "year": 2024,
+        "publications": [
+          {
+            "halId_s": "hal-04529211",
+            "title_s": "L’habitat groupé laténien de Verdun-sur-le-Doubs : rapport de fouille programmée 2023 dans le cadre du PCR «La confluence Saône/Doubs à l’âge du fer»",
+            "uri_s": "https://hal.science/hal-04529211v1",
+            "producedDateY_i": 2024,
+            "producedDateM_i": 2
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.34847/nkl.8f0a0nm9",
+        "dataset_title": "Bilan scientifique 2024 : L’habitat de l’âge du Bronze à La Tène ancienne en Hauts-de-France",
+        "repository": "NAKALA",
+        "landing_url": "https://nakala.fr/10.34847/nkl.8f0a0nm9",
+        "landing_host": "nakala.fr",
+        "year": 2024,
+        "publications": [
+          {
+            "halId_s": "hal-05409059",
+            "title_s": "Bilan scientifique annuel : L’habitat de l’âge du Bronze à La Tène ancienne en Hauts-de-France",
+            "uri_s": "https://hal.science/hal-05409059v1",
+            "producedDateY_i": 2024,
+            "producedDateM_i": 1
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.34847/nkl.dbffy9lu",
+        "dataset_title": "Rapport intermédiaire 2023 du programme de recherche archéologique 2022-2025 sur le mont Beuvray, Référentiel",
+        "repository": "NAKALA",
+        "landing_url": "https://nakala.fr/10.34847/nkl.dbffy9lu",
+        "landing_host": "nakala.fr",
+        "year": 2024,
+        "publications": [
+          {
+            "halId_s": "hal-05034702",
+            "title_s": "Rapport intermédiaire 2023 du programme de recherche archéologique 2022-2025 sur le mont Beuvray",
+            "uri_s": "https://hal.science/hal-05034702v1",
+            "producedDateY_i": 2024,
+            "producedDateM_i": 2
+          }
+        ]
+      }
+    ],
     "2025|Recherche Data Gouv": [
       {
         "dataset_doi": "10.57745/RXJXHW",
@@ -3569,42 +3656,6 @@
             "uri_s": "https://hal.science/hal-05034734v1",
             "producedDateY_i": 2023,
             "producedDateM_i": 1
-          }
-        ]
-      }
-    ],
-    "2024|NAKALA": [
-      {
-        "dataset_doi": "10.34847/nkl.8f0a0nm9",
-        "dataset_title": "Bilan scientifique 2024 : L’habitat de l’âge du Bronze à La Tène ancienne en Hauts-de-France",
-        "repository": "NAKALA",
-        "landing_url": "https://nakala.fr/10.34847/nkl.8f0a0nm9",
-        "landing_host": "nakala.fr",
-        "year": 2024,
-        "publications": [
-          {
-            "halId_s": "hal-05409059",
-            "title_s": "Bilan scientifique annuel : L’habitat de l’âge du Bronze à La Tène ancienne en Hauts-de-France",
-            "uri_s": "https://hal.science/hal-05409059v1",
-            "producedDateY_i": 2024,
-            "producedDateM_i": 1
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.34847/nkl.dbffy9lu",
-        "dataset_title": "Rapport intermédiaire 2023 du programme de recherche archéologique 2022-2025 sur le mont Beuvray, Référentiel",
-        "repository": "NAKALA",
-        "landing_url": "https://nakala.fr/10.34847/nkl.dbffy9lu",
-        "landing_host": "nakala.fr",
-        "year": 2024,
-        "publications": [
-          {
-            "halId_s": "hal-05034702",
-            "title_s": "Rapport intermédiaire 2023 du programme de recherche archéologique 2022-2025 sur le mont Beuvray",
-            "uri_s": "https://hal.science/hal-05034702v1",
-            "producedDateY_i": 2024,
-            "producedDateM_i": 2
           }
         ]
       }

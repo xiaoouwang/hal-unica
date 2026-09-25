@@ -1,10 +1,84 @@
 {
-  "publication_count": 94,
+  "publication_count": 96,
   "by_repository": {
-    "Recherche Data Gouv": 86,
-    "NAKALA": 8
+    "Recherche Data Gouv": 87,
+    "NAKALA": 9
   },
   "publications": [
+    {
+      "halId_s": "hal-03534007",
+      "uri_s": "https://hal.inrae.fr/hal-03534007v1",
+      "title_s": "Key questions for next-generation of biomonitoring",
+      "docType_s": "COUV",
+      "doiId_s": "10.3389/978-2-88966-027-8",
+      "laboratories": [
+        "UB",
+        "UBFC",
+        "INRAE",
+        "ECCC",
+        "CARRTEL",
+        "USMB [Université de Savoie] [Université de Chambéry]",
+        "Fédération OSUG",
+        "IGEPP",
+        "UR",
+        "Institut Agro"
+      ],
+      "modifiedDate_tdate": "2026-09-25T11:17:33Z",
+      "producedDateY_i": 2020,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.15454/HYRVUH",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/HYRVUH",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Rsyst::diatom_rbcl_align_312bp database: a database adapted to DNA metabarcoding (version v7: 23-02-2018)",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-05143887",
+      "uri_s": "https://hal.inrae.fr/hal-05143887v1",
+      "title_s": "Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
+      "docType_s": "REPORT",
+      "doiId_s": "10.17180/ayg4-0b92",
+      "laboratories": [
+        "IFREMER",
+        "PSH",
+        "INRAE",
+        "BFP",
+        "UB",
+        "CESBIO",
+        "IRD",
+        "INSU - CNRS",
+        "CNES",
+        "CNRS"
+      ],
+      "modifiedDate_tdate": "2026-09-25T09:54:52Z",
+      "producedDateY_i": 2025,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/3NAHSN",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/3NAHSN",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Annexe pour : Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
     {
       "halId_s": "hal-04593965",
       "uri_s": "https://hal.inrae.fr/hal-04593965v1",
@@ -68,43 +142,6 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/B35XCS",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "Template to share sensory evaluation data",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-03534007",
-      "uri_s": "https://hal.inrae.fr/hal-03534007v1",
-      "title_s": "Key questions for next-generation of biomonitoring",
-      "docType_s": "COUV",
-      "doiId_s": "10.3389/978-2-88966-027-8",
-      "laboratories": [
-        "UB",
-        "UBFC",
-        "INRAE",
-        "ECCC",
-        "CARRTEL",
-        "USMB [Université de Savoie] [Université de Chambéry]",
-        "Fédération OSUG",
-        "IGEPP",
-        "UR",
-        "Institut Agro"
-      ],
-      "modifiedDate_tdate": "2026-09-23T08:46:54Z",
-      "producedDateY_i": 2020,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.15454/HYRVUH",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/HYRVUH",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Rsyst::diatom_rbcl_align_312bp database: a database adapted to DNA metabarcoding (version v7: 23-02-2018)",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
@@ -283,6 +320,43 @@
           "field": "seeAlso_s",
           "misfiled": false,
           "also_in_relatedData_s": true
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-04529211",
+      "uri_s": "https://hal.science/hal-04529211v1",
+      "title_s": "L’habitat groupé laténien de Verdun-sur-le-Doubs : rapport de fouille programmée 2023 dans le cadre du PCR «La confluence Saône/Doubs à l’âge du fer»",
+      "docType_s": "REPORT",
+      "doiId_s": null,
+      "laboratories": [
+        "LCE",
+        "CNRS",
+        "UMLP",
+        "UFC UFR SLHS",
+        "Inrap",
+        "EVEHA",
+        "ArScAn",
+        "UP1",
+        "UP8",
+        "UPN"
+      ],
+      "modifiedDate_tdate": "2026-09-22T03:42:46Z",
+      "producedDateY_i": 2024,
+      "repositories": [
+        "NAKALA"
+      ],
+      "datasets": [
+        {
+          "doi": "10.34847/nkl.929ax2kn",
+          "repository": "NAKALA",
+          "publisher": null,
+          "landing_url": null,
+          "landing_host": null,
+          "dataset_title": null,
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
         }
       ]
     },
@@ -665,43 +739,6 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/HPEMYW",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "Spatio-temporal field, landscape and meteorological datasets describing bruchid beetle populations, grain damage and parasitism in faba bean and lentil fields in France",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-05143887",
-      "uri_s": "https://hal.inrae.fr/hal-05143887v1",
-      "title_s": "Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
-      "docType_s": "REPORT",
-      "doiId_s": "10.17180/ayg4-0b92",
-      "laboratories": [
-        "IFREMER",
-        "PSH",
-        "INRAE",
-        "BFP",
-        "UB",
-        "CESBIO",
-        "IRD",
-        "INSU - CNRS",
-        "CNES",
-        "CNRS"
-      ],
-      "modifiedDate_tdate": "2026-09-15T16:11:41Z",
-      "producedDateY_i": 2025,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/3NAHSN",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/3NAHSN",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Annexe pour : Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
@@ -3555,6 +3592,54 @@
           "landing_url": "https://nakala.fr/10.34847/nkl.8f0a0nm9",
           "landing_host": "nakala.fr",
           "dataset_title": "Bilan scientifique 2024 : L’habitat de l’âge du Bronze à La Tène ancienne en Hauts-de-France",
+          "field": "relatedPublication_s",
+          "misfiled": true,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.34847/nkl.8f0a0nm9/70868f81bfe0cfeee0dbd086ceb428ad913551e3",
+          "repository": "NAKALA",
+          "publisher": null,
+          "landing_url": null,
+          "landing_host": null,
+          "dataset_title": null,
+          "field": "seeAlso_s",
+          "misfiled": true,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-04612748",
+      "uri_s": "https://hal.inrae.fr/hal-04612748v1",
+      "title_s": "Wheat dwarfing reshapes plant and fungal development in arbuscular mycorrhizal symbiosis",
+      "docType_s": "ART",
+      "doiId_s": "10.1007/s00572-024-01150-y",
+      "laboratories": [
+        "ISYEB",
+        "MNHN",
+        "EPHE",
+        "PSL",
+        "SU",
+        "CNRS",
+        "UA",
+        "UB",
+        "UBFC",
+        "INRAE"
+      ],
+      "modifiedDate_tdate": "2025-08-12T17:07:49Z",
+      "producedDateY_i": 2024,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/R1QHIL",
+          "repository": "Recherche Data Gouv",
+          "publisher": null,
+          "landing_url": null,
+          "landing_host": null,
+          "dataset_title": null,
           "field": "relatedPublication_s",
           "misfiled": true,
           "also_in_relatedData_s": false

@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-09-24T15:13:23Z`  
+Generated: `2026-09-25T09:39:22Z`  
 Collection: `UNIV-BOURGOGNE`  
-Run window: `2026-09-24T15:12:20Z` → `2026-09-24T15:13:23Z`
+Run window: `2026-09-25T09:39:22Z` → `2026-09-25T09:39:22Z`
 
 ## Goal
 
@@ -56,42 +56,74 @@ repository root `README.md`.
 - HAL notices with linked identifiers: **261**
 - Related tokens: **385**
 - Unique DOIs resolved: **301**
-- Publications with at least one dataset-repo landing: **145**
-- Misfiled dataset links (wrong HAL field): **18**
-- Publications with ≥1 misfiled dataset link: **18**
+- Publications with at least one dataset-repo landing: **147**
+- Misfiled dataset links (wrong HAL field): **20**
+- Publications with ≥1 misfiled dataset link: **19**
 
 ### Dataset DOIs by HAL source field
 
-- **`relatedData_s`**: 176
-- **`relatedPublication_s`**: 17
-- **`seeAlso_s`**: 6
+- **`relatedData_s`**: 177
+- **`relatedPublication_s`**: 18
+- **`seeAlso_s`**: 7
 
 ### By repository (DOI evidence)
 
-- **Recherche Data Gouv**: 99
-- **Unknown (DOI not in DataCite)**: 98
-- **NAKALA**: 26
+- **Recherche Data Gouv**: 104
+- **NAKALA**: 28
+- **Journal DOI (10.4000)**: 24
 - **Zenodo**: 23
 - **dataUBFC - Atelier de la donnée de Bourgogne-Franche-Comté**: 15
 - **Portail Data Inra**: 13
 - **Dryad**: 10
+- **Journal DOI (10.1007)**: 9
+- **Journal DOI (10.3917)**: 9
 - **Progedo-Adisp**: 9
+- **Journal DOI (10.1002)**: 7
 - **Figshare**: 5
+- **Journal DOI (10.1016)**: 5
 - **Mendeley Data**: 4
 - **Australian Antarctic Data Centre**: 3
 - **CIRAD Dataverse**: 3
+- **DOI prefix 10.3390**: 3
 - **Imagerie et Vision Artificielle**: 3
+- **Journal DOI (10.1093)**: 3
 - **Agroscope**: 2
 - **Autorité de sûreté nucléaire et de radioprotection**: 2
 - **Centre interlangues : texte, image, langage**: 2
 - **Classiques Garnier**: 2
+- **DOI prefix 10.1111**: 2
+- **DOI prefix 10.1515**: 2
+- **DOI prefix 10.25666**: 2
+- **DOI prefix 10.37811**: 2
 - **Editions et presses universitaires de Reims**: 2
 - **GitHub**: 2
 - **INRAE (prefix 10.15454)**: 2
+- **Journal DOI (10.1109)**: 2
 - **Laboratoire Chrono-environnement (UMR 6249)**: 2
 - **arXiv**: 2
 - **AU/AADC > Australian Antarctic Data Centre, Australia**: 1
 - **Copernicus Climate Change Service (C3S) Climate Data Store (CDS)**: 1
+- **DOI prefix 10.1021**: 1
+- **DOI prefix 10.1046**: 1
+- **DOI prefix 10.1128**: 1
+- **DOI prefix 10.1364**: 1
+- **DOI prefix 10.17504**: 1
+- **DOI prefix 10.18485**: 1
+- **DOI prefix 10.20870**: 1
+- **DOI prefix 10.24310**: 1
+- **DOI prefix 10.26820**: 1
+- **DOI prefix 10.33386**: 1
+- **DOI prefix 10.3389**: 1
+- **DOI prefix 10.33996**: 1
+- **DOI prefix 10.35381**: 1
+- **DOI prefix 10.3897**: 1
+- **DOI prefix 10.4324**: 1
+- **DOI prefix 10.5194**: 1
+- **DOI prefix 10.52497**: 1
+- **DOI prefix 10.57088**: 1
+- **Journal DOI (10.1017)**: 1
+- **Journal DOI (10.1038)**: 1
+- **Journal DOI (10.1371)**: 1
 - **KIT publications**: 1
 - **Laboratoire Chrono-environnement**: 1
 - **OSF**: 1

@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-24T15:30:52Z",
-  "unique_datasets": 173,
-  "dataset_publication_links": 199,
+  "generated_at": "2026-09-25T09:39:23Z",
+  "unique_datasets": 176,
+  "dataset_publication_links": 202,
   "datasets_with_multiple_publications": 20,
   "by_repository": {
-    "Recherche Data Gouv": 82,
-    "NAKALA": 25,
+    "Recherche Data Gouv": 83,
+    "NAKALA": 27,
     "Zenodo": 22,
     "Portail Data Inra": 13,
     "Dryad": 9,

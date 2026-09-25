@@ -1,45 +1,45 @@
 doi,repository,object_kind,publisher,landing_url,landing_host,prefix,client_id,title,error
-10.1002/9780470986325,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1002/9781119476252,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1002/9781119779933,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1002/9781119818359,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1002/9781119842651,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1002/jms.4214,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1007/978-3-030-51369-6_38,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1007/978-3-031-41921-8,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1007/978-3-031-50646-8,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1007/978-3-031-61000-4,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1007/978-3-032-36033-5,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1007/978-3-319-72150-7,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1007/978-3-319-75541-0,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1007/978-94-017-9633-0,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1007/s11159-005-0588-7,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1016/j.accpm.2021.100901,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1016/j.ando.2018.06.291,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1016/j.ando.2018.06.399,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1016/j.dib.2020.105890,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1016/j.jalgebra.2011.09.039,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1017/9781782049081.037,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1021/acs.nanolett.5b02056,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1038/s41467-019-09415-3,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1046/j.1432-1327.1999.00429.x,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1093/jxb/erz114,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1093/oso/9780199535323.001.0001,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1093/oxfordhb/9780198804123.001.0001,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1109/SII59315.2025,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1109/SII59315.2025.10870926,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1111/2041-210X.13316,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1111/joss.70023,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1128/spectrum.00336-24,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
+10.1002/9780470986325,Journal DOI (10.1002),publication_landing,,,,,,,not_found
+10.1002/9781119476252,Journal DOI (10.1002),publication_landing,,,,,,,not_found
+10.1002/9781119779933,Journal DOI (10.1002),publication_landing,,,,,,,not_found
+10.1002/9781119818359,Journal DOI (10.1002),publication_landing,,,,,,,not_found
+10.1002/9781119842651,Journal DOI (10.1002),publication_landing,,,,,,,not_found
+10.1002/jms.4214,Journal DOI (10.1002),publication_landing,,,,,,,not_found
+10.1007/978-3-030-51369-6_38,Journal DOI (10.1007),publication_landing,,,,,,,not_found
+10.1007/978-3-031-41921-8,Journal DOI (10.1007),publication_landing,,,,,,,not_found
+10.1007/978-3-031-50646-8,Journal DOI (10.1007),publication_landing,,,,,,,not_found
+10.1007/978-3-031-61000-4,Journal DOI (10.1007),publication_landing,,,,,,,not_found
+10.1007/978-3-032-36033-5,Journal DOI (10.1007),publication_landing,,,,,,,not_found
+10.1007/978-3-319-72150-7,Journal DOI (10.1007),publication_landing,,,,,,,not_found
+10.1007/978-3-319-75541-0,Journal DOI (10.1007),publication_landing,,,,,,,not_found
+10.1007/978-94-017-9633-0,Journal DOI (10.1007),publication_landing,,,,,,,not_found
+10.1007/s11159-005-0588-7,Journal DOI (10.1007),publication_landing,,,,,,,not_found
+10.1016/j.accpm.2021.100901,Journal DOI (10.1016),publication_landing,,,,,,,not_found
+10.1016/j.ando.2018.06.291,Journal DOI (10.1016),publication_landing,,,,,,,not_found
+10.1016/j.ando.2018.06.399,Journal DOI (10.1016),publication_landing,,,,,,,not_found
+10.1016/j.dib.2020.105890,Journal DOI (10.1016),publication_landing,,,,,,,not_found
+10.1016/j.jalgebra.2011.09.039,Journal DOI (10.1016),publication_landing,,,,,,,not_found
+10.1017/9781782049081.037,Journal DOI (10.1017),publication_landing,,,,,,,not_found
+10.1021/acs.nanolett.5b02056,DOI prefix 10.1021,unresolved,,,,,,,not_found
+10.1038/s41467-019-09415-3,Journal DOI (10.1038),publication_landing,,,,,,,not_found
+10.1046/j.1432-1327.1999.00429.x,DOI prefix 10.1046,unresolved,,,,,,,not_found
+10.1093/jxb/erz114,Journal DOI (10.1093),publication_landing,,,,,,,not_found
+10.1093/oso/9780199535323.001.0001,Journal DOI (10.1093),publication_landing,,,,,,,not_found
+10.1093/oxfordhb/9780198804123.001.0001,Journal DOI (10.1093),publication_landing,,,,,,,not_found
+10.1109/SII59315.2025,Journal DOI (10.1109),publication_landing,,,,,,,not_found
+10.1109/SII59315.2025.10870926,Journal DOI (10.1109),publication_landing,,,,,,,not_found
+10.1111/2041-210X.13316,DOI prefix 10.1111,unresolved,,,,,,,not_found
+10.1111/joss.70023,DOI prefix 10.1111,unresolved,,,,,,,not_found
+10.1128/spectrum.00336-24,DOI prefix 10.1128,unresolved,,,,,,,not_found
 10.13144/lil-0167,Progedo-Adisp,dataset_repo,Progedo-Adisp,https://data.progedo.fr/studies/doi/10.13144/lil-0167,data.progedo.fr,10.13144,inist.adisp,Génération 1998 - Interrogation à 3 ans - 2001,
 10.13144/lil-0474,Progedo-Adisp,dataset_repo,Progedo-Adisp,https://data.progedo.fr/studies/doi/10.13144/lil-0474,data.progedo.fr,10.13144,inist.adisp,Génération 2004 - Interrogation à 3 ans - 2007,
 10.13144/lil-1084,Progedo-Adisp,dataset_repo,Progedo-Adisp,https://data.progedo.fr/studies/doi/10.13144/lil-1084,data.progedo.fr,10.13144,inist.adisp,Génération 2010 - Interrogation à 3 ans - 2013,
 10.13144/lil-1649,Progedo-Adisp,dataset_repo,Progedo-Adisp,https://data.progedo.fr/studies/doi/10.13144/lil-1649,data.progedo.fr,10.13144,inist.adisp,Génération 2017 - Interrogation à 3 ans - 2020,
-10.1364/JOSAB.521161,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1371/journal.pone.0240538,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
+10.1364/JOSAB.521161,DOI prefix 10.1364,unresolved,,,,,,,not_found
+10.1371/journal.pone.0240538,Journal DOI (10.1371),publication_landing,,,,,,,not_found
 10.15122/isbn.978-2-406-09220-9.p.0123,Classiques Garnier,other,Classiques Garnier,https://classiques-garnier.com/doi/garnier?article=EnoMS06_123,classiques-garnier.com,10.15122,inist.garnier,Qu’est-ce qu’un conte pour enfant ?,
-10.1515/9782763753324,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.1515/9783111332543,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
+10.1515/9782763753324,DOI prefix 10.1515,unresolved,,,,,,,not_found
+10.1515/9783111332543,DOI prefix 10.1515,unresolved,,,,,,,not_found
 10.15454/10XUKC,Recherche Data Gouv,dataset_repo,Portail Data INRAE,https://data.inrae.fr/citation?persistentId=doi:10.15454/10XUKC,data.inrae.fr,10.15454,rdg.prod,Caractéristiques physico-chimiques des sols en semis direct sous couvert. Enquête sur un réseau d'agriculteurs en Bourgogne-Franche-Comté: 2018-2019,
 10.15454/2YDSBL,Recherche Data Gouv,dataset_repo,Recherche Data Gouv,https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/2YDSBL,entrepot.recherche.data.gouv.fr,10.15454,rdg.prod,Leaf microbiome data for European cultivated grapevine (Vitis vinifera L.) during downy mildew (Plasmopara viticola) epidemics in three wine-producing regions in France,
 10.15454/3DPFNJ,Portail Data Inra,dataset_repo,Portail Data Inra,https://data.inra.fr/citation?persistentId=doi:10.15454/3DPFNJ,data.inra.fr,10.15454,rdg.prod,DNA metabarcoding of foliar fungal communities in conventional and organic vineyards,
@@ -62,7 +62,7 @@ doi,repository,object_kind,publisher,landing_url,landing_host,prefix,client_id,t
 10.15454/ECLYGT,Recherche Data Gouv,dataset_repo,Recherche Data Gouv,https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/ECLYGT,entrepot.recherche.data.gouv.fr,10.15454,rdg.prod,Land Use Land Cover High Resolution Map (5-m) for Côte-d’Or (21),
 10.15454/F0CNNS,Portail Data Inra,dataset_repo,Portail Data Inra,https://data.inra.fr/citation?persistentId=doi:10.15454/F0CNNS,data.inra.fr,10.15454,rdg.prod,Ecophysiology and Grain-Legumes WoS DataSet 1980-2018,
 10.15454/F40EXP,Recherche Data Gouv,dataset_repo,Portail Data INRAE,https://data.inrae.fr/citation?persistentId=doi:10.15454/F40EXP,data.inrae.fr,10.15454,rdg.prod,"Dataset on model cheeses composition, rheological and sensory properties, from six different projects exported from BaGaTel database.",
-10.15454/GSTA8V,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
+10.15454/GSTA8V,Recherche Data Gouv,other,,,,,,,not_found
 10.15454/HYRVUH,Recherche Data Gouv,dataset_repo,Recherche Data Gouv,https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/HYRVUH,entrepot.recherche.data.gouv.fr,10.15454,rdg.prod,Rsyst::diatom_rbcl_align_312bp database: a database adapted to DNA metabarcoding (version v7: 23-02-2018),
 10.15454/ILMSYG,Recherche Data Gouv,dataset_repo,Portail Data INRAE,https://data.inrae.fr/citation?persistentId=doi:10.15454/ILMSYG,data.inrae.fr,10.15454,rdg.prod,Characterization of lactic acid bacteria by FTIR and other analytical approaches to identify markers of cryoresistance,
 10.15454/J9H4BS,Recherche Data Gouv,dataset_repo,Portail Data INRAE,https://data.inrae.fr/citation?persistentId=doi:10.15454/J9H4BS,data.inrae.fr,10.15454,rdg.prod,Données de réplication pour : Biogeography of soil bacteria and archaea across France,
@@ -70,13 +70,13 @@ doi,repository,object_kind,publisher,landing_url,landing_host,prefix,client_id,t
 10.15454/L79X2K,Portail Data Inra,dataset_repo,Portail Data Inra,https://data.inra.fr/citation?persistentId=doi:10.15454/L79X2K,data.inra.fr,10.15454,rdg.prod,Biotic Stress and Grain-Legumes WoS DataSet 1980-2018,
 10.15454/L7QN45,INRAE (prefix 10.15454),other,INRAE,https://www2.dijon.inrae.fr/plateforme_genosol/,www2.dijon.inrae.fr,10.15454,rdg.prod,Soil Microbial Metagenomics Facility,
 10.15454/MJTRXM,Recherche Data Gouv,dataset_repo,Portail Data INRAE,https://data.inrae.fr/citation?persistentId=doi:10.15454/MJTRXM,data.inrae.fr,10.15454,rdg.prod,Nutritional status according to weight status in French older adults,
-10.15454/OXRS55,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
+10.15454/OXRS55,Recherche Data Gouv,other,,,,,,,not_found
 10.15454/PDXRYM,Portail Data Inra,dataset_repo,Portail Data Inra,https://data.inra.fr/citation?persistentId=doi:10.15454/PDXRYM,data.inra.fr,10.15454,rdg.prod,Acceptability and Grain-Legumes WoS DataSet 1980-2018,
 10.15454/PFV9JK,Portail Data Inra,dataset_repo,Portail Data Inra,https://data.inra.fr/citation?persistentId=doi:10.15454/PFV9JK,data.inra.fr,10.15454,rdg.prod,Genetics and Grain-Legumes WoS DataSet 1980-2018,
 10.15454/QBQFCX,Portail Data Inra,dataset_repo,Portail Data Inra,https://data.inra.fr/citation?persistentId=doi:10.15454/QBQFCX,data.inra.fr,10.15454,rdg.prod,Grain-Legumes Species WoS DataSet 1980-2018,
 10.15454/QEI1OO,Recherche Data Gouv,dataset_repo,Portail Data INRAE,https://data.inrae.fr/citation?persistentId=doi:10.15454/QEI1OO,data.inrae.fr,10.15454,rdg.prod,Caractéristiques biologiques de 301 taxons observés dans la flore associée au semis direct sous couvert en région Bourgogne-Franche-Comté.,
 10.15454/QSXKGA,Recherche Data Gouv,dataset_repo,Portail Data INRAE,https://data.inrae.fr/citation?persistentId=doi:10.15454/QSXKGA,data.inrae.fr,10.15454,rdg.prod,"Analyses physico-chimiques des sites du Réseau de Mesures de la Qualité des Sols (RMQS) du territoire métropolitain pour la 1ère campagne (2000-2009), avec coordonnées théoriques",
-10.15454/RIC0ZJ,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
+10.15454/RIC0ZJ,Recherche Data Gouv,other,,,,,,,not_found
 10.15454/TEVEC3,Recherche Data Gouv,dataset_repo,Portail Data INRAE,https://data.inrae.fr/citation?persistentId=doi:10.15454/TEVEC3,data.inrae.fr,10.15454,rdg.prod,La flore adventice associée au semis direct sous couvert. Enquête sur un réseau d'agriculteurs en Bourgogne-Franche-Comté: 2018-2019.,
 10.15454/TRBJTB,Recherche Data Gouv,dataset_repo,Portail Data INRAE,https://data.inrae.fr/citation?persistentId=doi:10.15454/TRBJTB,data.inrae.fr,10.15454,rdg.prod,"BRC4Env, the Biological Resource Centre for the Environment",
 10.15454/UDMKHL,Recherche Data Gouv,dataset_repo,Portail Data INRAE,https://data.inrae.fr/citation?persistentId=doi:10.15454/UDMKHL,data.inrae.fr,10.15454,rdg.prod,Le semis direct sous couvert : pratiques culturales et problèmes malherbologiques. Enquête nationale auprès des agriculteurs.,
@@ -88,8 +88,8 @@ doi,repository,object_kind,publisher,landing_url,landing_host,prefix,client_id,t
 10.15454/XETXQU,Recherche Data Gouv,dataset_repo,Portail Data INRAE,https://data.inrae.fr/citation?persistentId=doi:10.15454/XETXQU,data.inrae.fr,10.15454,rdg.prod,Hypothalamic and caecal microbiota and metabolomic data,
 10.15454/XSVVBW,Recherche Data Gouv,dataset_repo,Recherche Data Gouv,https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/XSVVBW,entrepot.recherche.data.gouv.fr,10.15454,rdg.prod,PO² Process and Observation Ontology,
 10.15454/YRD4JC,Recherche Data Gouv,dataset_repo,Recherche Data Gouv,https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/YRD4JC,entrepot.recherche.data.gouv.fr,10.15454,rdg.prod,Composition nutritionnelle et impacts environnementaux de plats servis en restauration scolaire en France,
-10.15454/YWLPLN,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.17504/protocols.io.b4s5qwg6,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
+10.15454/YWLPLN,Recherche Data Gouv,other,,,,,,,not_found
+10.17504/protocols.io.b4s5qwg6,DOI prefix 10.17504,unresolved,,,,,,,not_found
 10.17605/OSF.IO/W7RDB,OSF,dataset_repo,OSF,https://osf.io/w7rdb/,osf.io,10.17605,cos.osf,Does the impact of calorie (energy) labelling of food and drink products on consumer behaviour differ by socioeconomic status?,
 10.17632/729tsts8ng.1,Mendeley Data,dataset_repo,Mendeley,https://data.mendeley.com/datasets/729tsts8ng/1,data.mendeley.com,10.17632,bl.mendeley,A dataset on concurrent and retrospective methods for measuring sensory perception and preferences of lemon-flavoured carbonated alcoholic drinks.,
 10.17632/f9wtj7s9b8.1,Mendeley Data,dataset_repo,Mendeley,https://data.mendeley.com/datasets/f9wtj7s9b8/1,data.mendeley.com,10.17632,bl.mendeley,A dataset on the sensory and affective perception of Bordeaux and Rioja red wines collected from French and Spanish consumers at home and international wine students in the lab.,
@@ -97,9 +97,9 @@ doi,repository,object_kind,publisher,landing_url,landing_host,prefix,client_id,t
 10.17632/zscjbdvr9v.3,Mendeley Data,dataset_repo,Mendeley,https://data.mendeley.com/datasets/zscjbdvr9v/3,data.mendeley.com,10.17632,bl.mendeley,Parcel Manager Data set,
 10.18167/DVN1/HIEXNF,CIRAD Dataverse,dataset_repo,CIRAD Dataverse,https://dataverse.cirad.fr/citation?persistentId=doi:10.18167/DVN1/HIEXNF,dataverse.cirad.fr,10.18167,inist.cirad,"A dataset on above- and below-ground traits of 17 cover crops, two wild plant species and two banana cultivars, cultivated individually",
 10.18167/DVN1/ZRTW02,CIRAD Dataverse,dataset_repo,CIRAD Dataverse,https://dataverse.cirad.fr/citation?persistentId=doi:10.18167/DVN1/ZRTW02,dataverse.cirad.fr,10.18167,inist.cirad,Grand Débat National - Données enrichies,
-10.18485/efa.2024.15,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.20870/Revue-SET.2023.43.7642,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.24310/Fotocinema,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
+10.18485/efa.2024.15,DOI prefix 10.18485,unresolved,,,,,,,not_found
+10.20870/Revue-SET.2023.43.7642,DOI prefix 10.20870,unresolved,,,,,,,not_found
+10.24310/Fotocinema,DOI prefix 10.24310,unresolved,,,,,,,not_found
 10.24381/cds.adbb2d47,Copernicus Climate Change Service (C3S) Climate Data Store (CDS),other,Copernicus Climate Change Service (C3S) Climate Data Store (CDS),https://cds.climate.copernicus.eu/doi/10.24381/cds.adbb2d47,cds.climate.copernicus.eu,10.24381,bl.ecmwf,ERA5 hourly data on single levels from 1940 to present,
 10.25666/DATAOSU-2016-12-09,GitHub,other,GitHub,https://search-data.ubfc.fr/FR-18008901306731-2016-12-09_Water-sanctuaries-in-Eastern-Gaul-origin.html,search-data.ubfc.fr,10.25666,inist.osutheta,"Water sanctuaries in Eastern Gaul : origin, organization and evolution from first century B.C to fourth century A.D",
 10.25666/DATAOSU-2017-11-24-02,Laboratoire Chrono-environnement (UMR 6249),other,Laboratoire Chrono-environnement (UMR 6249),https://search-data.ubfc.fr/FR-18008901306731-2017-11-24-02_Pollen-analysis-Vix-F-21-En-la-Laune.html,search-data.ubfc.fr,10.25666,inist.osutheta,"Pollen analysis - Vix (F-21), En-la-Laune",
@@ -119,19 +119,19 @@ doi,repository,object_kind,publisher,landing_url,landing_host,prefix,client_id,t
 10.25666/DATAUBFC-2025-03-28,dataUBFC - Atelier de la donnée de Bourgogne-Franche-Comté,other,dataUBFC - Atelier de la donnée de Bourgogne-Franche-Comté,https://search-data.ubfc.fr/FR-13002091000019-2025-03-28_Floral-offer-and-seasonality-shape.html,search-data.ubfc.fr,10.25666,inist.osutheta,Floral offer and seasonality shape plant-pollinator networks in tropical gardens,
 10.25666/DATAUBFC-2025-05-09,dataUBFC - Atelier de la donnée de Bourgogne-Franche-Comté,other,dataUBFC - Atelier de la donnée de Bourgogne-Franche-Comté,https://search-data.ubfc.fr/FR-13002091000019-2025-05-09_Characterization-of-a-cyanide-responsive.html,search-data.ubfc.fr,10.25666,inist.osutheta,"Characterization of a cyanide-responsive ""covalent-assembly"" fluorogenic probe",
 10.25666/DATAUBFC-2025-06-02,dataUBFC - Atelier de la donnée de Bourgogne-Franche-Comté,other,dataUBFC - Atelier de la donnée de Bourgogne-Franche-Comté,https://search-data.ubfc.fr/FR-13002091000019-2025-06-02_Stage-specific-effects-of-a-fungicide-and-global.html,search-data.ubfc.fr,10.25666,inist.osutheta,Stage-specific effects of a fungicide and global warming on copper accumulation and development in a major vineyard insect pest,
-10.25666/DATAUBFC-2025-07-04,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
+10.25666/DATAUBFC-2025-07-04,DOI prefix 10.25666,unresolved,,,,,,,not_found
 10.25666/DATAUBFC-2026-01-07,dataUBFC - Atelier de la donnée de Bourgogne-Franche-Comté,other,dataUBFC - Atelier de la donnée de Bourgogne-Franche-Comté,https://search-data.ubfc.fr/FR-13002091000019-2026-01-07_Adsorption-Data-Base-ASP.html,search-data.ubfc.fr,10.25666,inist.osutheta,Adsorption Data Base - ASP,
 10.25666/DATAUBFC-2026-04-08,dataUBFC - Atelier de la donnée de Bourgogne-Franche-Comté,other,dataUBFC - Atelier de la donnée de Bourgogne-Franche-Comté,https://search-data.ubfc.fr/FR-13002091000019-2026-04-08_Deep-Learning-for-enhanced-3D-landmark.html,search-data.ubfc.fr,10.25666,inist.osutheta,Deep Learning for enhanced 3D landmark positioning: addressing biases in traditional registration methods,
 10.25666/DATAUBFC-2026-04-16,dataUBFC - Atelier de la donnée de Bourgogne-Franche-Comté,other,dataUBFC - Atelier de la donnée de Bourgogne-Franche-Comté,https://search-data.ubfc.fr/FR-13002091000019-2026-04-16_Dissolved-Organic-Carbon-concentrations-and.html,search-data.ubfc.fr,10.25666,inist.osutheta,Dissolved Organic Carbon concentrations and isotopes in Mexican lakes and aquifers,
 10.26179/372t-4q89,Australian Antarctic Data Centre,dataset_repo,Australian Antarctic Data Centre,https://data.aad.gov.au/metadata/AAS_4414_MountBrownSouth_SurfaceCore_isotopes,data.aad.gov.au,10.26179,aad.repo,"The Mount Brown South surface core (MBS1718 'Alpha', 'Bravo', and 'Charlie') chronologies and stable water isotope records",
 10.26179/5zm0-v192,Australian Antarctic Data Centre,dataset_repo,Australian Antarctic Data Centre,https://data.aad.gov.au/metadata/DSS_2k_data_compilation,data.aad.gov.au,10.26179,aad.repo,The Law Dome ice core 2000 year dataset collection.,
-10.26820/recimundo/4.(3,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.33386/593dp.2023.1-1.1658,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.3389/978-2-88966-027-8,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.3390/agronomy10060843,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.3390/geometry2010001,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.3390/jof5040095,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.33996/alternancia.v3i4.327,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
+10.26820/recimundo/4.(3,DOI prefix 10.26820,unresolved,,,,,,,not_found
+10.33386/593dp.2023.1-1.1658,DOI prefix 10.33386,unresolved,,,,,,,not_found
+10.3389/978-2-88966-027-8,DOI prefix 10.3389,unresolved,,,,,,,not_found
+10.3390/agronomy10060843,DOI prefix 10.3390,unresolved,,,,,,,not_found
+10.3390/geometry2010001,DOI prefix 10.3390,unresolved,,,,,,,not_found
+10.3390/jof5040095,DOI prefix 10.3390,unresolved,,,,,,,not_found
+10.33996/alternancia.v3i4.327,DOI prefix 10.33996,unresolved,,,,,,,not_found
 10.34776/afs12-78g,Agroscope,other,Agroscope,https://ira.agroscope.ch/de/publication/46464,ira.agroscope.ch,10.34776,ethz.agroscope,Neue Entscheidungshilfen für eine nachhaltige Unkrautbekämpfung,
 10.34847/nkl.0d0f3cfn,NAKALA,dataset_repo,NAKALA - https://nakala.fr (Huma-Num - CNRS),https://nakala.fr/10.34847/nkl.0d0f3cfn,nakala.fr,10.34847,inist.humanum,"Reconstruction micro-tomographique de l'épée du Bronze final de Saint-Romain-en-Gal (Rhône, France)",
 10.34847/nkl.1b988e6g,NAKALA,dataset_repo,NAKALA - https://nakala.fr (Huma-Num - CNRS),https://nakala.fr/10.34847/nkl.1b988e6g,nakala.fr,10.34847,inist.humanum,"Fouille du plateau de Blis 2021, jeu de données",
@@ -143,8 +143,8 @@ doi,repository,object_kind,publisher,landing_url,landing_host,prefix,client_id,t
 10.34847/nkl.43cfm658,NAKALA,dataset_repo,NAKALA - https://nakala.fr (Huma-Num - CNRS),https://nakala.fr/10.34847/nkl.43cfm658,nakala.fr,10.34847,inist.humanum,"Reconstruction micro-tomographique de l'épée du Bronze final Rh 62 de Grigny (métropole de Lyon, France)",
 10.34847/nkl.57b97j11,NAKALA,dataset_repo,NAKALA - https://nakala.fr (Huma-Num - CNRS),https://nakala.fr/10.34847/nkl.57b97j11,nakala.fr,10.34847,inist.humanum,"Reconstruction micro-tomographique de l'épée du Bronze final Rh 81 de Grigny (métropole de Lyon, France)",
 10.34847/nkl.8f0a0nm9,NAKALA,dataset_repo,NAKALA - https://nakala.fr (Huma-Num - CNRS),https://nakala.fr/10.34847/nkl.8f0a0nm9,nakala.fr,10.34847,inist.humanum,Bilan scientifique 2024 : L’habitat de l’âge du Bronze à La Tène ancienne en Hauts-de-France,
-10.34847/nkl.8f0a0nm9/70868f81bfe0cfeee0dbd086ceb428ad913551e3,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.34847/nkl.929ax2kn,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
+10.34847/nkl.8f0a0nm9/70868f81bfe0cfeee0dbd086ceb428ad913551e3,NAKALA,dataset_repo,,,,,,,not_found
+10.34847/nkl.929ax2kn,NAKALA,dataset_repo,,,,,,,not_found
 10.34847/nkl.9effky97,NAKALA,dataset_repo,NAKALA - https://nakala.fr (Huma-Num - CNRS),https://nakala.fr/10.34847/nkl.9effky97,nakala.fr,10.34847,inist.humanum,Sites web militants lesbiens francophones et analyse de la qualité de leur archivage,
 10.34847/nkl.aadfk393,NAKALA,dataset_repo,NAKALA - https://nakala.fr (Huma-Num - CNRS),https://nakala.fr/10.34847/nkl.aadfk393,nakala.fr,10.34847,inist.humanum,"Rapport intermédiaire 2024 du programme de recherche archéologique 2022-2025 sur le mont Beuvray, Référentiel",
 10.34847/nkl.b397xqmx,NAKALA,dataset_repo,NAKALA - https://nakala.fr (Huma-Num - CNRS),https://nakala.fr/10.34847/nkl.b397xqmx,nakala.fr,10.34847,inist.humanum,"Reconstruction micro-tomographique de l'épée du Bronze final d'Asper (Gavere, Belgique)",
@@ -161,44 +161,44 @@ doi,repository,object_kind,publisher,landing_url,landing_host,prefix,client_id,t
 10.34847/nkl.dbffy9lu,NAKALA,dataset_repo,NAKALA - https://nakala.fr (Huma-Num - CNRS),https://nakala.fr/10.34847/nkl.dbffy9lu,nakala.fr,10.34847,inist.humanum,"Rapport intermédiaire 2023 du programme de recherche archéologique 2022-2025 sur le mont Beuvray, Référentiel",
 10.34847/nkl.ffc45fsr,NAKALA,dataset_repo,NAKALA - https://nakala.fr (Huma-Num - CNRS),https://nakala.fr/10.34847/nkl.ffc45fsr,nakala.fr,10.34847,inist.humanum,"Rapport intermédiaire 2022 du programme de recherche archéologique 2022-2025 sur le mont Beuvray, Référentiel",
 10.34929/79sj-t281,Editions et presses universitaires de Reims,other,Editions et presses universitaires de Reims,https://library.oapen.org/handle/20.500.12657/53139,library.oapen.org,10.34929,inist.epure,La fabrique de l'information sportive : L'Auto (1900-1944),
-10.35381/cm.v6i11.327,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.37811/cl_rcm.v7i2.5942,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.37811/cl_rcm.v8i1.10047,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.3897/aca.2.e38379,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.3917/dbu.annai.2023.01,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.3917/eph.631.0048,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.3917/eres.ancet.2023.01,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.3917/mav.123.0067,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.3917/pres.brink.2025.01,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.3917/puv.cervu.2024.01,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.3917/rfse.001.0027,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.3917/vse.204.0095,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.4000/12j33,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.4000/13fhp,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.4000/14yo6,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.4000/154en,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.4000/154na,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.4000/atlante.15432,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.4000/atlante.809,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.4000/books.apu.11466,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.4000/books.artehis.13809,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.4000/books.efr.53708,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.4000/books.enseditions.32610,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.4000/books.pan.60,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.4000/books.psorbonne.26910,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.4000/books.pupvd.32297,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.4000/books.pus.37626,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.4000/cem.13574,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.4000/communiquer.10563,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.4000/communiquer.1605,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.4000/episteme.904,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.4000/jgqb,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.4000/jgqc,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.4000/mots.32321,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.4000/vnxd,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
+10.35381/cm.v6i11.327,DOI prefix 10.35381,unresolved,,,,,,,not_found
+10.37811/cl_rcm.v7i2.5942,DOI prefix 10.37811,unresolved,,,,,,,not_found
+10.37811/cl_rcm.v8i1.10047,DOI prefix 10.37811,unresolved,,,,,,,not_found
+10.3897/aca.2.e38379,DOI prefix 10.3897,unresolved,,,,,,,not_found
+10.3917/dbu.annai.2023.01,Journal DOI (10.3917),publication_landing,,,,,,,not_found
+10.3917/eph.631.0048,Journal DOI (10.3917),publication_landing,,,,,,,not_found
+10.3917/eres.ancet.2023.01,Journal DOI (10.3917),publication_landing,,,,,,,not_found
+10.3917/mav.123.0067,Journal DOI (10.3917),publication_landing,,,,,,,not_found
+10.3917/pres.brink.2025.01,Journal DOI (10.3917),publication_landing,,,,,,,not_found
+10.3917/puv.cervu.2024.01,Journal DOI (10.3917),publication_landing,,,,,,,not_found
+10.3917/rfse.001.0027,Journal DOI (10.3917),publication_landing,,,,,,,not_found
+10.3917/vse.204.0095,Journal DOI (10.3917),publication_landing,,,,,,,not_found
+10.4000/12j33,Journal DOI (10.4000),publication_landing,,,,,,,not_found
+10.4000/13fhp,Journal DOI (10.4000),publication_landing,,,,,,,not_found
+10.4000/14yo6,Journal DOI (10.4000),publication_landing,,,,,,,not_found
+10.4000/154en,Journal DOI (10.4000),publication_landing,,,,,,,not_found
+10.4000/154na,Journal DOI (10.4000),publication_landing,,,,,,,not_found
+10.4000/atlante.15432,Journal DOI (10.4000),publication_landing,,,,,,,not_found
+10.4000/atlante.809,Journal DOI (10.4000),publication_landing,,,,,,,not_found
+10.4000/books.apu.11466,Journal DOI (10.4000),publication_landing,,,,,,,not_found
+10.4000/books.artehis.13809,Journal DOI (10.4000),publication_landing,,,,,,,not_found
+10.4000/books.efr.53708,Journal DOI (10.4000),publication_landing,,,,,,,not_found
+10.4000/books.enseditions.32610,Journal DOI (10.4000),publication_landing,,,,,,,not_found
+10.4000/books.pan.60,Journal DOI (10.4000),publication_landing,,,,,,,not_found
+10.4000/books.psorbonne.26910,Journal DOI (10.4000),publication_landing,,,,,,,not_found
+10.4000/books.pupvd.32297,Journal DOI (10.4000),publication_landing,,,,,,,not_found
+10.4000/books.pus.37626,Journal DOI (10.4000),publication_landing,,,,,,,not_found
+10.4000/cem.13574,Journal DOI (10.4000),publication_landing,,,,,,,not_found
+10.4000/communiquer.10563,Journal DOI (10.4000),publication_landing,,,,,,,not_found
+10.4000/communiquer.1605,Journal DOI (10.4000),publication_landing,,,,,,,not_found
+10.4000/episteme.904,Journal DOI (10.4000),publication_landing,,,,,,,not_found
+10.4000/jgqb,Journal DOI (10.4000),publication_landing,,,,,,,not_found
+10.4000/jgqc,Journal DOI (10.4000),publication_landing,,,,,,,not_found
+10.4000/mots.32321,Journal DOI (10.4000),publication_landing,,,,,,,not_found
+10.4000/vnxd,Journal DOI (10.4000),publication_landing,,,,,,,not_found
 10.4225/15/58eedf00d78fe,Australian Antarctic Data Centre,dataset_repo,Australian Antarctic Data Centre,https://data.aad.gov.au/metadata/AAS_4537_z500_SynopticTyping_SouthernIndianOcean,data.aad.gov.au,10.4225,aad.repo,Daily synoptic weather types of southern Indian Ocean: January 1979-October 2018,
 10.4225/15/58eedf6812621,"AU/AADC > Australian Antarctic Data Centre, Australia",dataset_repo,"AU/AADC > Australian Antarctic Data Centre, Australia",https://data.aad.gov.au/metadata/AAS_4414_MountBrownSouth_LawDome_icecores_seasalt_accumulation_2020,data.aad.gov.au,10.4225,aad.repo,"El Niño Southern Oscillation signal in a new East Antarctic ice core, Mount Brown South",
-10.4324/9780203073414,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
+10.4324/9780203073414,DOI prefix 10.4324,unresolved,,,,,,,not_found
 10.48550/arXiv.2306.11693,arXiv,publication_landing,arXiv,https://arxiv.org/abs/2306.11693,arxiv.org,10.48550,arxiv.content,Structure of deformed $w_{1+\infty}$ symmetry and topological generalization in Celestial CFT,
 10.48550/arXiv.2410.19578,arXiv,publication_landing,arXiv,https://arxiv.org/abs/2410.19578,arxiv.org,10.48550,arxiv.content,Temporal reversibility of reactive systems out of equilibrium: Molecular dynamics simulation,
 10.48579/PRO/TRX6VQ,data.InDoRES,dataset_repo,data.InDoRES,https://data.indores.fr:443/citation?persistentId=doi:10.48579/PRO/TRX6VQ,data.indores.fr:443,10.48579,jbru.bbees,Herbicide-induced metabolic changes in a plant-aphid system: How soil bacteria drive the fate and impact of an environmental dose of Isoproturon,
@@ -212,8 +212,8 @@ doi,repository,object_kind,publisher,landing_url,landing_host,prefix,client_id,t
 10.5061/dryad.nk98sf82b,Dryad,dataset_repo,Dryad,https://datadryad.org/dataset/doi:10.5061/dryad.nk98sf82b,datadryad.org,10.5061,dryad.dryad,Data for: Critical habitat thresholds for effective pollinator conservation in agricultural landscapes,
 10.5061/dryad.qv9s4mwkv,Dryad,dataset_repo,Dryad,https://datadryad.org/dataset/doi:10.5061/dryad.qv9s4mwkv,datadryad.org,10.5061,dryad.dryad,Direct and indirect estimates of dispersal support strong juvenile philopatry and male-biased dispersal in a freshwater turtle species (Emys orbicularis),
 10.5061/dryad.t4b8gtjb1,Dryad,dataset_repo,Dryad,https://datadryad.org/dataset/doi:10.5061/dryad.t4b8gtjb1,datadryad.org,10.5061,dryad.dryad,Data from: Weed management modifies functional properties of both weeds and microbial nitrogen-cycling communities in Mediterranean vineyards,
-10.5194/soil-10-251-2024-supplement,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
-10.52497/viatica565,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
+10.5194/soil-10-251-2024-supplement,DOI prefix 10.5194,unresolved,,,,,,,not_found
+10.52497/viatica565,DOI prefix 10.52497,unresolved,,,,,,,not_found
 10.5281/ZENODO.3763342,Zenodo,dataset_repo,Zenodo,https://zenodo.org/record/3763342,zenodo.org,10.5281,cern.zenodo,"Soil-meteorological dataset collected at Frasne peatland (192ha, Jura Mountains, France)",
 10.5281/ZENODO.3763766,Zenodo,dataset_repo,Zenodo,https://zenodo.org/record/3763766,zenodo.org,10.5281,cern.zenodo,"Water table depth dataset collected at Frasne peatland (192ha, Jura Mountains, France)",
 10.5281/zenodo.10597854,Zenodo,dataset_repo,Zenodo,https://zenodo.org/doi/10.5281/zenodo.10597854,zenodo.org,10.5281,cern.zenodo,Data supporting: Are high-throughput root-phenotyping platforms suitable for informing root-system architecture models with genotype-specific parameters? An evaluation based on the root model ArchiSimple and a small panel of wheat cultivars,
@@ -237,7 +237,7 @@ doi,repository,object_kind,publisher,landing_url,landing_host,prefix,client_id,t
 10.5281/zenodo.7447302,Zenodo,dataset_repo,Zenodo,https://zenodo.org/record/7447302,zenodo.org,10.5281,cern.zenodo,Berlin EmoDB,
 10.5281/zenodo.8387335,Zenodo,dataset_repo,Zenodo,https://zenodo.org/record/8387335,zenodo.org,10.5281,cern.zenodo,"Comment on Manna et al. SARS-CoV-2 Inactivation in Aerosol by Means of Radiated Microwaves. Viruses 2023, 15, 1443",
 10.5445/IR/1000150635,KIT publications,publication_landing,Karlsruher Institut für Technologie (KIT),https://publikationen.bibliothek.kit.edu/1000150635,publikationen.bibliothek.kit.edu,10.5445,tib.kit,Cloud observing data of 85 stations in western Central Africa,
-10.57088/978-3-7329-8690-3,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
+10.57088/978-3-7329-8690-3,DOI prefix 10.57088,unresolved,,,,,,,not_found
 10.57745/0G65L7,Recherche Data Gouv,dataset_repo,Recherche Data Gouv,https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/0G65L7,entrepot.recherche.data.gouv.fr,10.57745,rdg.prod,Task 3.4 - Deliverable 1 - Life cycle assessment of the LETSPROSEED pulse protein ingredients,
 10.57745/2HITDV,Recherche Data Gouv,dataset_repo,Recherche Data Gouv,https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/2HITDV,entrepot.recherche.data.gouv.fr,10.57745,rdg.prod,DEPHY FERME network's low input winegrowing systems: performances and traceability,
 10.57745/2V46MF,Recherche Data Gouv,dataset_repo,Recherche Data Gouv,https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/2V46MF,entrepot.recherche.data.gouv.fr,10.57745,rdg.prod,Unité Expérimentale d'Epoisses : Données collectées dans le cadre des études de sol du réseau CAREX,
@@ -279,7 +279,7 @@ doi,repository,object_kind,publisher,landing_url,landing_host,prefix,client_id,t
 10.57745/NMIPCY,Recherche Data Gouv,dataset_repo,Recherche Data Gouv,https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/NMIPCY,entrepot.recherche.data.gouv.fr,10.57745,rdg.prod,"Data associated to the paper ""Scale dependence in agricultural drivers of field margin plant communities: influence of spatial resolution and extent""",
 10.57745/OMJUXC,Recherche Data Gouv,dataset_repo,Recherche Data Gouv,https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/OMJUXC,entrepot.recherche.data.gouv.fr,10.57745,rdg.prod,Data for Metagenomics reveals contrasted responses of microbial communities to wheat straw amendment in cropland and grassland soils,
 10.57745/P4G16N,Recherche Data Gouv,dataset_repo,Recherche Data Gouv,https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/P4G16N,entrepot.recherche.data.gouv.fr,10.57745,rdg.prod,"Cover crop and weed biomass with their nitrogen and carbon content sampled in cover crop mixture according to mixture, irriguation and nitrogen fertilisation at sowing",
-10.57745/R1QHIL,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
+10.57745/R1QHIL,Recherche Data Gouv,dataset_repo,,,,,,,not_found
 10.57745/RXJXHW,Recherche Data Gouv,dataset_repo,Recherche Data Gouv,https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/RXJXHW,entrepot.recherche.data.gouv.fr,10.57745,rdg.prod,Additional figures for analysis report,
 10.57745/SLUKIO,Recherche Data Gouv,dataset_repo,Recherche Data Gouv,https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/SLUKIO,entrepot.recherche.data.gouv.fr,10.57745,rdg.prod,Horses discriminate human body odours between fear and joy contexts in a habituation-discrimination protocol.,
 10.57745/T2RTDR,Recherche Data Gouv,dataset_repo,Recherche Data Gouv,https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/T2RTDR,entrepot.recherche.data.gouv.fr,10.57745,rdg.prod,Human emotional odours influence horses’ behaviour and physiology,

@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-24T08:53:37Z",
-  "data_papers": 54,
-  "with_doi": 53,
+  "generated_at": "2026-09-25T09:39:21Z",
+  "data_papers": 55,
+  "with_doi": 54,
   "with_linked_dataset": 18,
-  "with_journal": 54,
+  "with_journal": 55,
   "with_hal_file": 30,
   "by_year": {
     "2001": 1,
@@ -19,12 +19,13 @@
     "2023": 7,
     "2024": 9,
     "2025": 6,
-    "2026": 4
+    "2026": 5
   },
   "by_journal": {
     "Scientific Data": 6,
     "Data in Brief": 6,
     "Earth System Science Data": 3,
+    "Nature Communications": 2,
     "Blood": 2,
     "Nucleic Acids Research": 1,
     "Recherche Data Gouv": 1,
@@ -45,7 +46,6 @@
     "Journal of Investigative Dermatology": 1,
     "PLoS Biology": 1,
     "Cellular and Molecular Biology Letters": 1,
-    "Nature Communications": 1,
     "Bulletin of the American Schools of Oriental Research": 1,
     "Geoscience Data Journal": 1,
     "Database - The journal of Biological Databases and Curation": 1,
