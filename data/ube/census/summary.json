@@ -1,8 +1,8 @@
 {
   "collection": "UNIV-BOURGOGNE",
-  "started_at": "2026-09-25T09:39:22Z",
-  "finished_at": "2026-09-25T09:39:22Z",
-  "since": "2026-09-23T09:39:22Z",
+  "started_at": "2026-09-25T13:56:31Z",
+  "finished_at": "2026-09-25T13:56:32Z",
+  "since": "2026-09-23T13:56:31Z",
   "hal_publications_with_relatedData": 261,
   "related_tokens": 385,
   "unique_dois_resolved": 301,
