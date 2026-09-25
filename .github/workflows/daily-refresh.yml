@@ -64,20 +64,72 @@ jobs:
           echo "mode=$MODE" >> "$GITHUB_OUTPUT"
           echo "lookback=${{ github.event.inputs.lookback_days || '2' }}" >> "$GITHUB_OUTPUT"
 
-      - name: Run incremental refresh
-        if: steps.mode.outputs.mode == 'incremental'
+      # Tenants run as separate steps so one HAL outage does not skip the other,
+      # and successful artifacts can still be committed below.
+      - name: Refresh UniCA
+        id: unica
+        continue-on-error: true
         run: |
-          hal-unica refresh --lookback-days "${{ steps.mode.outputs.lookback }}"
-          hal-unica refresh --university ube --lookback-days "${{ steps.mode.outputs.lookback }}"
+          set -euo pipefail
+          if [ "${{ steps.mode.outputs.mode }}" = "full" ]; then
+            hal-unica refresh --full
+          else
+            hal-unica refresh --lookback-days "${{ steps.mode.outputs.lookback }}"
+          fi
 
-      - name: Run full refresh
-        if: steps.mode.outputs.mode == 'full'
+      - name: Refresh UBE
+        id: ube
+        continue-on-error: true
         run: |
-          hal-unica refresh --full
-          hal-unica refresh --university ube --full
+          set -euo pipefail
+          if [ "${{ steps.mode.outputs.mode }}" = "full" ]; then
+            hal-unica refresh --university ube --full
+          else
+            hal-unica refresh --university ube --lookback-days "${{ steps.mode.outputs.lookback }}"
+          fi
+
+      # One automatic retry for tenants that timed out talking to HAL/DataCite.
+      - name: Retry failed refreshes
+        id: retry
+        if: always() && !cancelled() && (steps.unica.outcome == 'failure' || steps.ube.outcome == 'failure')
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          sleep 30
+          MODE="${{ steps.mode.outputs.mode }}"
+          LOOKBACK="${{ steps.mode.outputs.lookback }}"
+          UNICA_OK=0
+          UBE_OK=0
+          if [ "${{ steps.unica.outcome }}" = "failure" ]; then
+            echo "Retrying UniCA…"
+            if [ "$MODE" = "full" ]; then
+              hal-unica refresh --full && UNICA_OK=1 || UNICA_OK=0
+            else
+              hal-unica refresh --lookback-days "$LOOKBACK" && UNICA_OK=1 || UNICA_OK=0
+            fi
+          else
+            UNICA_OK=1
+          fi
+          if [ "${{ steps.ube.outcome }}" = "failure" ]; then
+            echo "Retrying UBE…"
+            if [ "$MODE" = "full" ]; then
+              hal-unica refresh --university ube --full && UBE_OK=1 || UBE_OK=0
+            else
+              hal-unica refresh --university ube --lookback-days "$LOOKBACK" && UBE_OK=1 || UBE_OK=0
+            fi
+          else
+            UBE_OK=1
+          fi
+          echo "unica_ok=$UNICA_OK" >> "$GITHUB_OUTPUT"
+          echo "ube_ok=$UBE_OK" >> "$GITHUB_OUTPUT"
+          if [ "$UNICA_OK" != 1 ] || [ "$UBE_OK" != 1 ]; then
+            echo "Retry still incomplete (unica_ok=$UNICA_OK ube_ok=$UBE_OK)"
+            exit 1
+          fi
 
       - name: Commit and push site + census
         id: commit
+        if: always() && !cancelled()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -98,10 +150,30 @@ jobs:
             echo "has_changes=true" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Fail if any university refresh failed
+        if: always() && !cancelled()
+        run: |
+          UNICA="${{ steps.unica.outcome }}"
+          UBE="${{ steps.ube.outcome }}"
+          RETRY_UNICA="${{ steps.retry.outputs.unica_ok }}"
+          RETRY_UBE="${{ steps.retry.outputs.ube_ok }}"
+          # Success if first attempt OK, or retry reported OK for that tenant.
+          ok_unica=0
+          ok_ube=0
+          if [ "$UNICA" = "success" ] || [ "$RETRY_UNICA" = "1" ]; then ok_unica=1; fi
+          if [ "$UBE" = "success" ] || [ "$RETRY_UBE" = "1" ]; then ok_ube=1; fi
+          echo "unica first=$UNICA retry=$RETRY_UNICA → $ok_unica"
+          echo "ube first=$UBE retry=$RETRY_UBE → $ok_ube"
+          if [ "$ok_unica" != 1 ] || [ "$ok_ube" != 1 ]; then
+            echo "::error::One or more university refreshes failed after retry"
+            exit 1
+          fi
+
   # GITHUB_TOKEN pushes do not trigger pages.yml — deploy here when docs changed.
+  # Run even if a tenant refresh ultimately failed, as long as something was committed.
   deploy-pages:
     needs: refresh
-    if: needs.refresh.outputs.has_changes == 'true'
+    if: always() && !cancelled() && needs.refresh.outputs.has_changes == 'true'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

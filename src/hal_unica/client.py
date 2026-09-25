@@ -9,6 +9,11 @@ import httpx
 DEFAULT_BASE = "https://api.archives-ouvertes.fr"
 DEFAULT_COLLECTION = "UNIV-COTEDAZUR"
 
+# Connect fails fast so we can retry more often; reads may be slow on big pages.
+_DEFAULT_TIMEOUT = httpx.Timeout(connect=20.0, read=90.0, write=30.0, pool=20.0)
+# Backoff after connect/transport/5xx failures (seconds). Total budget ≈ a few minutes.
+_RETRY_DELAYS = (0.0, 2.0, 5.0, 10.0, 20.0, 40.0, 60.0)
+
 
 class HalClient:
     """Thin HAL Search API client with polite retries."""
@@ -18,7 +23,7 @@ class HalClient:
         *,
         base_url: str = DEFAULT_BASE,
         collection: str = DEFAULT_COLLECTION,
-        timeout: float = 60.0,
+        timeout: float | httpx.Timeout = _DEFAULT_TIMEOUT,
         min_interval: float = 0.25,
         user_agent: str = "hal-unica/0.1 (+metadata-harvest; contact=local)",
     ) -> None:
@@ -48,9 +53,8 @@ class HalClient:
 
     def _get(self, path: str, params: dict[str, Any]) -> dict[str, Any]:
         url = urljoin(self.base_url, path.lstrip("/"))
-        delays = (1.0, 2.0, 5.0, 10.0)
         last_exc: Exception | None = None
-        for attempt, delay in enumerate([0.0, *delays]):
+        for attempt, delay in enumerate(_RETRY_DELAYS):
             if delay:
                 time.sleep(delay)
             self._throttle()
