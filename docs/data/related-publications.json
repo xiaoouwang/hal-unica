@@ -6,6 +6,43 @@
   },
   "publications": [
     {
+      "halId_s": "hal-05114056",
+      "uri_s": "https://hal.science/hal-05114056v2",
+      "title_s": "Le Rhône aménagé vu du ciel. Constitution d'une base de données photographiques obliques pour documenter la trajectoire socio-environnementale du fleuve contemporain (1910-1960)",
+      "docType_s": "ART",
+      "doiId_s": "10.46298/dc.15880",
+      "laboratories": [
+        "EVS",
+        "ENS de Lyon",
+        "Mines Saint-Étienne MSE",
+        "IMT",
+        "UL2",
+        "UJML",
+        "INSA Lyon",
+        "INSA",
+        "UJM",
+        "UJM EPE"
+      ],
+      "modifiedDate_tdate": "2026-09-26T03:36:10Z",
+      "producedDateY_i": 2025,
+      "repositories": [
+        "NAKALA"
+      ],
+      "datasets": [
+        {
+          "doi": "10.34847/nkl.e63a22n9",
+          "repository": "NAKALA",
+          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+          "landing_url": "https://nakala.fr/10.34847/nkl.e63a22n9",
+          "landing_host": "nakala.fr",
+          "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
       "halId_s": "hal-04954634",
       "uri_s": "https://hal.inrae.fr/hal-04954634v1",
       "title_s": "High-fidelity annotated triploid genome of the quarantine root-knot nematode, Meloidogyne enterolobii",
@@ -23,7 +60,7 @@
         "GENOTOUL",
         "ENVT"
       ],
-      "modifiedDate_tdate": "2026-09-25T09:53:34Z",
+      "modifiedDate_tdate": "2026-09-26T03:25:28Z",
       "producedDateY_i": 2025,
       "repositories": [
         "Recherche Data Gouv"
@@ -154,43 +191,6 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/IAU0UK",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "Data associated with the article \"Mode-locked waveguide polariton laser\"",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-05114056",
-      "uri_s": "https://hal.science/hal-05114056v2",
-      "title_s": "Le Rhône aménagé vu du ciel. Constitution d'une base de données photographiques obliques pour documenter la trajectoire socio-environnementale du fleuve contemporain (1910-1960)",
-      "docType_s": "ART",
-      "doiId_s": "10.46298/dc.15880",
-      "laboratories": [
-        "EVS",
-        "ENS de Lyon",
-        "Mines Saint-Étienne MSE",
-        "IMT",
-        "UL2",
-        "UJML",
-        "INSA Lyon",
-        "INSA",
-        "UJM",
-        "UJM EPE"
-      ],
-      "modifiedDate_tdate": "2026-09-25T03:28:15Z",
-      "producedDateY_i": 2025,
-      "repositories": [
-        "NAKALA"
-      ],
-      "datasets": [
-        {
-          "doi": "10.34847/nkl.e63a22n9",
-          "repository": "NAKALA",
-          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-          "landing_url": "https://nakala.fr/10.34847/nkl.e63a22n9",
-          "landing_host": "nakala.fr",
-          "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false

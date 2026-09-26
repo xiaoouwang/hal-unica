@@ -6,6 +6,43 @@
   },
   "publications": [
     {
+      "halId_s": "hal-05143887",
+      "uri_s": "https://hal.inrae.fr/hal-05143887v1",
+      "title_s": "Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
+      "docType_s": "REPORT",
+      "doiId_s": "10.17180/ayg4-0b92",
+      "laboratories": [
+        "IFREMER",
+        "PSH",
+        "INRAE",
+        "BFP",
+        "UB",
+        "CESBIO",
+        "IRD",
+        "INSU - CNRS",
+        "CNES",
+        "CNRS"
+      ],
+      "modifiedDate_tdate": "2026-09-26T03:26:23Z",
+      "producedDateY_i": 2025,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/3NAHSN",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/3NAHSN",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Annexe pour : Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
       "halId_s": "hal-03534007",
       "uri_s": "https://hal.inrae.fr/hal-03534007v1",
       "title_s": "Key questions for next-generation of biomonitoring",
@@ -36,43 +73,6 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/HYRVUH",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "Rsyst::diatom_rbcl_align_312bp database: a database adapted to DNA metabarcoding (version v7: 23-02-2018)",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-05143887",
-      "uri_s": "https://hal.inrae.fr/hal-05143887v1",
-      "title_s": "Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
-      "docType_s": "REPORT",
-      "doiId_s": "10.17180/ayg4-0b92",
-      "laboratories": [
-        "IFREMER",
-        "PSH",
-        "INRAE",
-        "BFP",
-        "UB",
-        "CESBIO",
-        "IRD",
-        "INSU - CNRS",
-        "CNES",
-        "CNRS"
-      ],
-      "modifiedDate_tdate": "2026-09-25T09:54:52Z",
-      "producedDateY_i": 2025,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/3NAHSN",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/3NAHSN",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Annexe pour : Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
