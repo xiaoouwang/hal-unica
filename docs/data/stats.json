@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T10:03:05Z",
+  "generated_at": "2026-09-27T13:58:48Z",
   "collection": "UNIV-COTEDAZUR",
   "collection_url": "https://hal.science/UNIV-COTEDAZUR",
   "harvest": {
@@ -296,14 +296,14 @@
     "stale": true
   },
   "data_links": {
-    "total_hits": 246,
+    "total_hits": 248,
     "by_platform": {
       "nakala": 9,
-      "rdg": 46
+      "rdg": 47
     },
     "by_repository": {
-      "Zenodo": 96,
-      "Recherche Data Gouv": 64,
+      "Zenodo": 97,
+      "Recherche Data Gouv": 65,
       "SEANOE": 15,
       "Sismer": 10,
       "SEDOO / Theia": 9,
@@ -335,14 +335,14 @@
       "University of Bristol data.bris": 1
     },
     "by_object_kind": {
-      "dataset_repo": 55
+      "dataset_repo": 56
     },
     "scope": "all_repositories"
   },
   "related_datasets": {
-    "publication_count": 55,
+    "publication_count": 56,
     "by_repository": {
-      "Recherche Data Gouv": 46,
+      "Recherche Data Gouv": 47,
       "NAKALA": 9
     },
     "publications": [
@@ -656,6 +656,41 @@
             "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda rice strain",
             "field": "relatedData_s",
             "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-02928114",
+        "uri_s": "https://hal.inrae.fr/hal-02928114v1",
+        "title_s": "Aphid infestation differently affects the defences of nitrate-fed and nitrogen-fixing Medicago truncatula and alters symbiotic nitrogen fixation",
+        "docType_s": "ART",
+        "doiId_s": "10.1098/rspb.2020.1493",
+        "laboratories": [
+          "ISA",
+          "UNS",
+          "CNRS",
+          "INRAE",
+          "UniCA",
+          "IGEPP",
+          "UR",
+          "Institut Agro"
+        ],
+        "modifiedDate_tdate": "2026-09-23T08:44:36Z",
+        "producedDateY_i": 2020,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/WGBWYO",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedPublication_s",
+            "misfiled": true,
             "also_in_relatedData_s": false
           }
         ]
@@ -2705,11 +2740,11 @@
     "scope": "nakala_rdg_focus"
   },
   "census_chart": {
-    "unique_datasets": 246,
-    "publications_with_dataset": 164,
+    "unique_datasets": 248,
+    "publications_with_dataset": 166,
     "by_repository": {
-      "Zenodo": 96,
-      "Recherche Data Gouv": 64,
+      "Zenodo": 97,
+      "Recherche Data Gouv": 65,
       "SEANOE": 15,
       "Sismer": 10,
       "SEDOO / Theia": 9,
@@ -2859,8 +2894,8 @@
         1,
         5,
         16,
-        5,
-        29,
+        6,
+        30,
         13,
         11,
         35,
@@ -2888,7 +2923,7 @@
             0,
             1,
             1,
-            1,
+            2,
             23,
             7,
             5,
@@ -2918,7 +2953,7 @@
             4,
             13,
             2,
-            5,
+            6,
             3,
             4,
             12,
@@ -3869,6 +3904,124 @@
               "uri_s": "https://hal.science/hal-05760346v1",
               "producedDateY_i": 2025,
               "producedDateM_i": 12
+            }
+          ]
+        }
+      ],
+      "2020|Recherche Data Gouv": [
+        {
+          "dataset_doi": "10.57745/WGBWYO",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2020,
+          "publications": [
+            {
+              "halId_s": "hal-02928114",
+              "title_s": "Aphid infestation differently affects the defences of nitrate-fed and nitrogen-fixing Medicago truncatula and alters symbiotic nitrogen fixation",
+              "uri_s": "https://hal.inrae.fr/hal-02928114v1",
+              "producedDateY_i": 2020,
+              "producedDateM_i": 9
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.15454/D6XAKL",
+          "dataset_title": "CBGP - Continental Arthropod Collection",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/D6XAKL",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2020,
+          "publications": [
+            {
+              "halId_s": "hal-03144754",
+              "title_s": "BRC4Env, a network of Biological Resource Centres for environmental resources",
+              "uri_s": "https://hal.science/hal-03144754v1",
+              "producedDateY_i": 2020,
+              "producedDateM_i": 10
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/D4TG2M",
+          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda corn strain",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/D4TG2M",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2020,
+          "publications": [
+            {
+              "halId_s": "hal-01633879",
+              "title_s": "Two genomes of highly polyphagous lepidopteran pests (Spodoptera frugiperda, Noctuidae) with different host-plant ranges",
+              "uri_s": "https://inria.hal.science/hal-01633879v1",
+              "producedDateY_i": 2017,
+              "producedDateM_i": 12
+            },
+            {
+              "halId_s": "hal-03065279",
+              "title_s": "Adaptation by copy number variation increases insecticide resistance in the fall armyworm",
+              "uri_s": "https://inria.hal.science/hal-03065279v1",
+              "producedDateY_i": 2020,
+              "producedDateM_i": 11
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/XDVEQW",
+          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda rice strain",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2020,
+          "publications": [
+            {
+              "halId_s": "hal-01633879",
+              "title_s": "Two genomes of highly polyphagous lepidopteran pests (Spodoptera frugiperda, Noctuidae) with different host-plant ranges",
+              "uri_s": "https://inria.hal.science/hal-01633879v1",
+              "producedDateY_i": 2017,
+              "producedDateM_i": 12
+            },
+            {
+              "halId_s": "hal-03065279",
+              "title_s": "Adaptation by copy number variation increases insecticide resistance in the fall armyworm",
+              "uri_s": "https://inria.hal.science/hal-03065279v1",
+              "producedDateY_i": 2020,
+              "producedDateM_i": 11
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.15454/XSVVBW",
+          "dataset_title": "PO² Process and Observation Ontology",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/XSVVBW",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2020,
+          "publications": [
+            {
+              "halId_s": "hal-03013147",
+              "title_s": "Food transformation process description using PO2 and FoodOn",
+              "uri_s": "https://agroparistech.hal.science/hal-03013147v1",
+              "producedDateY_i": 2020,
+              "producedDateM_i": 9
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.15454/XVL4BA",
+          "dataset_title": "Preferences and justifications of NoAW stakeholders about the importance on LCA (Life Cycle Analysis) impact categories",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/XVL4BA",
+          "landing_host": "data.inrae.fr",
+          "year": 2020,
+          "publications": [
+            {
+              "halId_s": "hal-02555136",
+              "title_s": "Argumentation Corrected Context Weighting-Life Cycle Assessment: A Practical Method of Including Stakeholder Perspectives in Multi-Criteria Decision Support for LCA",
+              "uri_s": "https://hal.inrae.fr/hal-02555136v1",
+              "producedDateY_i": 2020,
+              "producedDateM_i": 3
             }
           ]
         }
@@ -4950,107 +5103,6 @@
               "uri_s": "https://insu.hal.science/insu-04974387v1",
               "producedDateY_i": 2025,
               "producedDateM_i": 2
-            }
-          ]
-        }
-      ],
-      "2020|Recherche Data Gouv": [
-        {
-          "dataset_doi": "10.15454/D6XAKL",
-          "dataset_title": "CBGP - Continental Arthropod Collection",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/D6XAKL",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2020,
-          "publications": [
-            {
-              "halId_s": "hal-03144754",
-              "title_s": "BRC4Env, a network of Biological Resource Centres for environmental resources",
-              "uri_s": "https://hal.science/hal-03144754v1",
-              "producedDateY_i": 2020,
-              "producedDateM_i": 10
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.57745/D4TG2M",
-          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda corn strain",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/D4TG2M",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2020,
-          "publications": [
-            {
-              "halId_s": "hal-01633879",
-              "title_s": "Two genomes of highly polyphagous lepidopteran pests (Spodoptera frugiperda, Noctuidae) with different host-plant ranges",
-              "uri_s": "https://inria.hal.science/hal-01633879v1",
-              "producedDateY_i": 2017,
-              "producedDateM_i": 12
-            },
-            {
-              "halId_s": "hal-03065279",
-              "title_s": "Adaptation by copy number variation increases insecticide resistance in the fall armyworm",
-              "uri_s": "https://inria.hal.science/hal-03065279v1",
-              "producedDateY_i": 2020,
-              "producedDateM_i": 11
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.57745/XDVEQW",
-          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda rice strain",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2020,
-          "publications": [
-            {
-              "halId_s": "hal-01633879",
-              "title_s": "Two genomes of highly polyphagous lepidopteran pests (Spodoptera frugiperda, Noctuidae) with different host-plant ranges",
-              "uri_s": "https://inria.hal.science/hal-01633879v1",
-              "producedDateY_i": 2017,
-              "producedDateM_i": 12
-            },
-            {
-              "halId_s": "hal-03065279",
-              "title_s": "Adaptation by copy number variation increases insecticide resistance in the fall armyworm",
-              "uri_s": "https://inria.hal.science/hal-03065279v1",
-              "producedDateY_i": 2020,
-              "producedDateM_i": 11
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.15454/XSVVBW",
-          "dataset_title": "PO² Process and Observation Ontology",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/XSVVBW",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2020,
-          "publications": [
-            {
-              "halId_s": "hal-03013147",
-              "title_s": "Food transformation process description using PO2 and FoodOn",
-              "uri_s": "https://agroparistech.hal.science/hal-03013147v1",
-              "producedDateY_i": 2020,
-              "producedDateM_i": 9
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.15454/XVL4BA",
-          "dataset_title": "Preferences and justifications of NoAW stakeholders about the importance on LCA (Life Cycle Analysis) impact categories",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/XVL4BA",
-          "landing_host": "data.inrae.fr",
-          "year": 2020,
-          "publications": [
-            {
-              "halId_s": "hal-02555136",
-              "title_s": "Argumentation Corrected Context Weighting-Life Cycle Assessment: A Practical Method of Including Stakeholder Perspectives in Multi-Criteria Decision Support for LCA",
-              "uri_s": "https://hal.inrae.fr/hal-02555136v1",
-              "producedDateY_i": 2020,
-              "producedDateM_i": 3
             }
           ]
         }
@@ -7591,6 +7643,23 @@
         }
       ],
       "2019|Zenodo": [
+        {
+          "dataset_doi": "10.5281/zenodo.37660964",
+          "dataset_title": null,
+          "repository": "Zenodo",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2019,
+          "publications": [
+            {
+              "halId_s": "hal-03909555",
+              "title_s": "La catena di influenze nella ricezione moderna di Plutarco e il riuso delle Vite di Cesare e Bruto: teoria e prassi dei Classical Reception Studies",
+              "uri_s": "https://hal.science/hal-03909555v1",
+              "producedDateY_i": 2019,
+              "producedDateM_i": 6
+            }
+          ]
+        },
         {
           "dataset_doi": "10.5281/zenodo.3339369",
           "dataset_title": "marazzaf/MEMM: Zenodo",

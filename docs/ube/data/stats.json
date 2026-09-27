@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T10:04:34Z",
+  "generated_at": "2026-09-27T13:59:07Z",
   "collection": "UNIV-BOURGOGNE",
   "collection_url": "https://hal.science/UNIV-BOURGOGNE",
   "harvest": {
@@ -308,17 +308,18 @@
     "stale": true
   },
   "data_links": {
-    "total_hits": 137,
+    "total_hits": 176,
     "by_platform": {
-      "nakala": 8,
-      "rdg": 53
+      "nakala": 9,
+      "rdg": 87
     },
     "by_repository": {
-      "Recherche Data Gouv": 51,
-      "NAKALA": 25,
+      "Recherche Data Gouv": 83,
+      "NAKALA": 27,
       "Zenodo": 22,
       "Portail Data Inra": 13,
       "Dryad": 9,
+      "Figshare": 5,
       "Mendeley Data": 4,
       "Progedo-Adisp": 4,
       "Australian Antarctic Data Centre": 3,
@@ -329,15 +330,15 @@
       "data.InDoRES": 1
     },
     "by_object_kind": {
-      "dataset_repo": 61
+      "dataset_repo": 96
     },
     "scope": "all_repositories"
   },
   "related_datasets": {
-    "publication_count": 61,
+    "publication_count": 96,
     "by_repository": {
-      "Recherche Data Gouv": 53,
-      "NAKALA": 8
+      "Recherche Data Gouv": 87,
+      "NAKALA": 9
     },
     "publications": [
       {
@@ -408,6 +409,40 @@
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/HYRVUH",
             "landing_host": "entrepot.recherche.data.gouv.fr",
             "dataset_title": "Rsyst::diatom_rbcl_align_312bp database: a database adapted to DNA metabarcoding (version v7: 23-02-2018)",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-04593965",
+        "uri_s": "https://hal.inrae.fr/hal-04593965v1",
+        "title_s": "A dataset of perception and preferences of French consumers for commercial cooked hams sampled according to their nutritional values and claims",
+        "docType_s": "ART",
+        "doiId_s": "10.1016/j.dib.2024.110549",
+        "laboratories": [
+          "CSGA",
+          "UB",
+          "CNRS",
+          "INRAE",
+          "Institut Agro",
+          "Oniris VetAgroBio",
+          "StatSC"
+        ],
+        "modifiedDate_tdate": "2026-09-23T08:54:28Z",
+        "producedDateY_i": 2024,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/GA5R6S",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -625,6 +660,80 @@
         ]
       },
       {
+        "halId_s": "hal-04529211",
+        "uri_s": "https://hal.science/hal-04529211v1",
+        "title_s": "L’habitat groupé laténien de Verdun-sur-le-Doubs : rapport de fouille programmée 2023 dans le cadre du PCR «La confluence Saône/Doubs à l’âge du fer»",
+        "docType_s": "REPORT",
+        "doiId_s": null,
+        "laboratories": [
+          "LCE",
+          "CNRS",
+          "UMLP",
+          "UFC UFR SLHS",
+          "Inrap",
+          "EVEHA",
+          "ArScAn",
+          "UP1",
+          "UP8",
+          "UPN"
+        ],
+        "modifiedDate_tdate": "2026-09-22T03:42:46Z",
+        "producedDateY_i": 2024,
+        "repositories": [
+          "NAKALA"
+        ],
+        "datasets": [
+          {
+            "doi": "10.34847/nkl.929ax2kn",
+            "repository": "NAKALA",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-05221870",
+        "uri_s": "https://hal.science/hal-05221870v2",
+        "title_s": "Enquête sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
+        "docType_s": "REPORT",
+        "doiId_s": null,
+        "laboratories": [
+          "Comue de Toulouse",
+          "ADBU",
+          "UBE",
+          "dat@UBFC",
+          "UTBM",
+          "SUPMICROTECH - ENSMM",
+          "BSB",
+          "Institut Agro",
+          "UMLP",
+          "UPPA"
+        ],
+        "modifiedDate_tdate": "2026-09-22T03:40:11Z",
+        "producedDateY_i": 2025,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/JYWUIY",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
         "halId_s": "hal-05492047",
         "uri_s": "https://hal.science/hal-05492047v1",
         "title_s": "Feature points evaluation on omnidirectional vision with a photorealistic fisheye sequence -- A report on experiments done in 2014",
@@ -721,6 +830,75 @@
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/ECLYGT",
             "landing_host": "entrepot.recherche.data.gouv.fr",
             "dataset_title": "Land Use Land Cover High Resolution Map (5-m) for Côte-d’Or (21)",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-05674166",
+        "uri_s": "https://institut-agro-dijon.hal.science/hal-05674166v1",
+        "title_s": "A dataset of in vitro aroma release kinetics performed with Proton Transfer Reaction-Time of Flight- Mass Spectrometry (PTR-ToF-MS)",
+        "docType_s": "ART",
+        "doiId_s": "10.1016/j.dib.2026.112994",
+        "laboratories": [
+          "CSGA",
+          "CNRS",
+          "INRAE",
+          "Institut Agro",
+          "UBE",
+          "FFOPP",
+          "SayFood"
+        ],
+        "modifiedDate_tdate": "2026-09-18T17:36:42Z",
+        "producedDateY_i": 2026,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/GVXDND",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-04635083",
+        "uri_s": "https://hal.science/hal-04635083v3",
+        "title_s": "Imaging Bajocian coral ridges in the Paris Basin and deciphering their origin",
+        "docType_s": "ART",
+        "doiId_s": "10.1111/bre.70034",
+        "laboratories": [
+          "GEOPS",
+          "INSU - CNRS",
+          "CNRS",
+          "BGS",
+          "EPHE",
+          "PSL",
+          "UBE",
+          "ANDRA"
+        ],
+        "modifiedDate_tdate": "2026-09-17T03:56:51Z",
+        "producedDateY_i": 2025,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/TMB0HR",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -860,6 +1038,80 @@
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/QSXKGA",
             "landing_host": "data.inrae.fr",
             "dataset_title": "Analyses physico-chimiques des sites du Réseau de Mesures de la Qualité des Sols (RMQS) du territoire métropolitain pour la 1ère campagne (2000-2009), avec coordonnées théoriques",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-05526495",
+        "uri_s": "https://hal.inrae.fr/hal-05526495v1",
+        "title_s": "Colonization and spatiotemporal distribution of bruchid pests in lentil and faba bean fields",
+        "docType_s": "ART",
+        "doiId_s": "10.1002/ps.70679",
+        "laboratories": [
+          "ENSFEA",
+          "AGIR",
+          "Toulouse INP",
+          "Comue de Toulouse",
+          "INRAE",
+          "EI Purpan",
+          "Agronomie",
+          "IGEPP",
+          "UR",
+          "Institut Agro"
+        ],
+        "modifiedDate_tdate": "2026-09-15T16:11:52Z",
+        "producedDateY_i": 2026,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/HPEMYW",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-03329588",
+        "uri_s": "https://hal.science/hal-03329588v1",
+        "title_s": "Quantifying and simulating carbon and nitrogen mineralization from diverse exogenous organic matters",
+        "docType_s": "ART",
+        "doiId_s": "10.1111/sum.12745",
+        "laboratories": [
+          "ECOSYS",
+          "INRAE",
+          "FARE",
+          "URCA",
+          "UA",
+          "ULiège",
+          "UPJV",
+          "ULCO",
+          "JUNIA",
+          "UCL"
+        ],
+        "modifiedDate_tdate": "2026-09-15T16:10:34Z",
+        "producedDateY_i": 2022,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/JGHVYV",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -1078,6 +1330,17 @@
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.57745/WIRXIC",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
           }
         ]
       },
@@ -1108,6 +1371,98 @@
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/4W9DM2",
             "landing_host": "data.inrae.fr",
             "dataset_title": "Données de réplication pour : Reduced microbial diversity induces larger volatile organic compound emissions from soils.",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-05070613",
+        "uri_s": "https://hal.inrae.fr/hal-05070613v1",
+        "title_s": "Metagenomics reveals contrasted responses of microbial communities to wheat straw amendment in cropland and grassland soils",
+        "docType_s": "ART",
+        "doiId_s": "10.1038/s41598-025-98903-2",
+        "laboratories": [
+          "INRAE",
+          "Institut Agro",
+          "UBE",
+          "MaIAGE",
+          "P3F",
+          "ECOSYS"
+        ],
+        "modifiedDate_tdate": "2026-09-14T14:16:11Z",
+        "producedDateY_i": 2025,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/OMJUXC",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.57745/HXN1XT",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.57745/RXJXHW",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-04011829",
+        "uri_s": "https://hal.inrae.fr/hal-04011829v1",
+        "title_s": "Horses discriminate human body odors between fear and joy contexts in a habituation-discrimination protocol",
+        "docType_s": "ART",
+        "doiId_s": "10.1038/s41598-023-30119-8",
+        "laboratories": [
+          "PRC",
+          "IFCE",
+          "UT",
+          "NEOLAiA",
+          "CNRS",
+          "INRAE",
+          "CSGA",
+          "UB",
+          "Institut Agro",
+          "UBFC"
+        ],
+        "modifiedDate_tdate": "2026-09-14T14:16:11Z",
+        "producedDateY_i": 2023,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/SLUKIO",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -1152,6 +1507,121 @@
         ]
       },
       {
+        "halId_s": "hal-01843156",
+        "uri_s": "https://hal.science/hal-01843156v1",
+        "title_s": "Mapping and predictive variations of soil bacterial richness across France",
+        "docType_s": "ART",
+        "doiId_s": "10.1371/journal.pone.0186766",
+        "laboratories": [
+          "INRA",
+          "UB",
+          "UBFC",
+          "InfoSol",
+          "GENOSCOPE",
+          "DRF (CEA)",
+          "CEA",
+          "iEES",
+          "UPMC",
+          "UPEC UP12"
+        ],
+        "modifiedDate_tdate": "2026-09-02T13:24:31Z",
+        "producedDateY_i": 2017,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/XBFOJP",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.57745/ZZWKGQ",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-00698381",
+        "uri_s": "https://hal.science/hal-00698381v1",
+        "title_s": "Biogeographical patterns of soil molecular microbial biomass as influenced by soil characteristics and management",
+        "docType_s": "ART",
+        "doiId_s": "10.1111/j.1466-8238.2010.00628.x",
+        "laboratories": [
+          "MSE",
+          "INRA",
+          "UB",
+          "InfoSol",
+          "LBBE",
+          "UCBL",
+          "VAS",
+          "CNRS",
+          "ADEME"
+        ],
+        "modifiedDate_tdate": "2026-09-02T13:24:26Z",
+        "producedDateY_i": 2011,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/VLWJ51",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-01844377",
+        "uri_s": "https://institut-agro-dijon.hal.science/hal-01844377v1",
+        "title_s": "Predictive model of soil molecular microbial biomass",
+        "docType_s": "ART",
+        "doiId_s": "10.1016/j.ecolind.2015.12.004",
+        "laboratories": [
+          "INRA",
+          "UB",
+          "InfoSol",
+          "ADEME"
+        ],
+        "modifiedDate_tdate": "2026-09-02T13:24:14Z",
+        "producedDateY_i": 2016,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/VLWJ51",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
         "halId_s": "hal-02791157",
         "uri_s": "https://hal.inrae.fr/hal-02791157v1",
         "title_s": "UE Epoisses cartograhie des sols et de la réserve utile - Approche pédologique raisonnée par une prospection géophysique",
@@ -1178,6 +1648,43 @@
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/2V46MF",
             "landing_host": "entrepot.recherche.data.gouv.fr",
             "dataset_title": "Unité Expérimentale d'Epoisses : Données collectées dans le cadre des études de sol du réseau CAREX",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-05279443",
+        "uri_s": "https://hal.science/hal-05279443v2",
+        "title_s": "Human emotional odours influence horses’ behaviour and physiology",
+        "docType_s": "ART",
+        "doiId_s": "10.1371/journal.pone.0337948",
+        "laboratories": [
+          "PRC",
+          "UT",
+          "NEOLAiA",
+          "CNRS",
+          "INRAE",
+          "IFCE",
+          "DOCC",
+          "CSGA",
+          "Institut Agro",
+          "UBE"
+        ],
+        "modifiedDate_tdate": "2026-08-12T12:16:06Z",
+        "producedDateY_i": 2026,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/T2RTDR",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -1215,6 +1722,40 @@
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/5MDE99",
             "landing_host": "entrepot.recherche.data.gouv.fr",
             "dataset_title": "Dataset from \"A new genome assembly of the pea cultivar Cameor provides resources for functional genomics and genetics\"",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-05709987",
+        "uri_s": "https://hal.inrae.fr/hal-05709987v1",
+        "title_s": "Field-scale and landscape-scale drivers of insecticide use in oilseed rape crops across France",
+        "docType_s": "ART",
+        "doiId_s": "10.1016/j.agsy.2026.104770",
+        "laboratories": [
+          "INRAE",
+          "Institut Agro",
+          "UBE",
+          "UMR ABSys",
+          "Cirad",
+          "CIHEAM-IAMM",
+          "CIHEAM"
+        ],
+        "modifiedDate_tdate": "2026-08-04T03:20:07Z",
+        "producedDateY_i": 2026,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/YGWKU2",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -1325,6 +1866,79 @@
         ]
       },
       {
+        "halId_s": "hal-02181902",
+        "uri_s": "https://univ-reims.hal.science/hal-02181902v1",
+        "title_s": "Cytotoxicity of Labruscol, a New Resveratrol Dimer Produced by Grapevine Cell Suspensions, on Human Skin Melanoma Cancer Cell Line HT-144",
+        "docType_s": "ART",
+        "doiId_s": "10.3390/molecules22111940",
+        "laboratories": [
+          "MEDyC",
+          "URCA",
+          "CNRS",
+          "ICMR",
+          "INC-CNRS",
+          "URVVC",
+          "LNC",
+          "UB",
+          "INSERM",
+          "ENSBANA"
+        ],
+        "modifiedDate_tdate": "2026-07-22T09:58:01Z",
+        "producedDateY_i": 2017,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/HBRMRX",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-01555716",
+        "uri_s": "https://ube.hal.science/hal-01555716v1",
+        "title_s": "Anti-Cancer Activity of Resveratrol and Derivatives Produced by Grapevine Cell Suspensions in a 14 L Stirred Bioreactor.",
+        "docType_s": "ART",
+        "doiId_s": "10.3390/molecules22030474",
+        "laboratories": [
+          "MEDyC",
+          "URCA",
+          "CNRS",
+          "ICMR",
+          "INC-CNRS",
+          "URVVC",
+          "LNC",
+          "UB",
+          "INSERM"
+        ],
+        "modifiedDate_tdate": "2026-07-22T09:58:01Z",
+        "producedDateY_i": 2017,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/HBRMRX",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
         "halId_s": "hal-03197788",
         "uri_s": "https://hal.inrae.fr/hal-03197788v1",
         "title_s": "Relationships between cheese composition, rheological and sensory properties highlighted using the BaGaTel database",
@@ -1386,6 +2000,80 @@
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/XSVVBW",
             "landing_host": "entrepot.recherche.data.gouv.fr",
             "dataset_title": "PO² Process and Observation Ontology",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-05639869",
+        "uri_s": "https://institut-agro-dijon.hal.science/hal-05639869v1",
+        "title_s": "Plant carbon inputs drive the stratification of soil organic carbon, microbial biomass and mineralizable nitrogen after reducing soil tillage",
+        "docType_s": "ART",
+        "doiId_s": "10.1016/j.geoderma.2026.117874",
+        "laboratories": [
+          "UA",
+          "ULiège",
+          "UPJV",
+          "ULCO",
+          "INRAE",
+          "JUNIA",
+          "UCL",
+          "UMR Eco&Sols",
+          "Cirad",
+          "IRD"
+        ],
+        "modifiedDate_tdate": "2026-07-16T14:48:02Z",
+        "producedDateY_i": 2026,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/VWYUEB",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-05374840",
+        "uri_s": "https://hal.science/hal-05374840v2",
+        "title_s": "Heading Toward Apertures Using Panoramic Optic Flow for Aerial Exploration",
+        "docType_s": "ART",
+        "doiId_s": "10.1080/01691864.2026.2667369",
+        "laboratories": [
+          "ISM",
+          "AMU",
+          "CNRS",
+          "LIB",
+          "UBE",
+          "UB",
+          "LCFC",
+          "UL",
+          "Lab-STICC_ROBEX",
+          "Lab-STICC"
+        ],
+        "modifiedDate_tdate": "2026-07-10T11:46:36Z",
+        "producedDateY_i": 2025,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/MEV4FF",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -1507,6 +2195,112 @@
         ]
       },
       {
+        "halId_s": "hal-04827822",
+        "uri_s": "https://hal.inrae.fr/hal-04827822v1",
+        "title_s": "Quantitative assessment and spatial distribution of Plasmopara viticola oospores in vineyard soil",
+        "docType_s": "UNDEFINED",
+        "doiId_s": "10.1101/2024.07.29.605284",
+        "laboratories": [
+          "Bordeaux Sciences Agro",
+          "UMR SAVE",
+          "UB",
+          "INRAE",
+          "CSGA",
+          "CNRS",
+          "Institut Agro",
+          "UBE",
+          "UMR EGFV",
+          "UMR CBGP"
+        ],
+        "modifiedDate_tdate": "2026-06-17T03:23:56Z",
+        "producedDateY_i": 2024,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/Z4HXOQ",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-03014310",
+        "uri_s": "https://institut-agro-dijon.hal.science/hal-03014310v1",
+        "title_s": "Biogeography of soil microbial habitats across France",
+        "docType_s": "ART",
+        "doiId_s": "10.1111/geb.13118",
+        "laboratories": [
+          "UB",
+          "UBFC",
+          "INRAE",
+          "LAE",
+          "UL",
+          "InfoSol",
+          "UMR 8030",
+          "GENOSCOPE",
+          "DRF (CEA)",
+          "CEA"
+        ],
+        "modifiedDate_tdate": "2026-06-05T03:27:04Z",
+        "producedDateY_i": 2020,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/JK5WCD",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-04052344",
+        "uri_s": "https://hal.inrae.fr/hal-04052344v1",
+        "title_s": "Carry-over effects of cover crops on weeds and crop productivity in no-till systems",
+        "docType_s": "ART",
+        "doiId_s": "10.1016/j.fcr.2023.108899",
+        "laboratories": [
+          "UB",
+          "UBFC",
+          "INRAE",
+          "Institut Agro",
+          "DIJ EPOISSES"
+        ],
+        "modifiedDate_tdate": "2026-06-02T14:22:20Z",
+        "producedDateY_i": 2023,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/P4G16N",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
         "halId_s": "hal-03583862",
         "uri_s": "https://hal.inrae.fr/hal-03583862v1",
         "title_s": "La diversité des vignobles français face au changement climatique : simulations climatiques et prospective participative",
@@ -1544,6 +2338,80 @@
         ]
       },
       {
+        "halId_s": "hal-05446093",
+        "uri_s": "https://hal.science/hal-05446093v1",
+        "title_s": "Assessing the non-target effects of herbicides on field margin plant communities after controlling for soil, climate, local context and landscape metrics",
+        "docType_s": "ART",
+        "doiId_s": "10.1016/j.agee.2025.110190",
+        "laboratories": [
+          "INRAE",
+          "Institut Agro",
+          "UBE",
+          "LSV Montpellier",
+          "LSV",
+          "ANSES",
+          "UMR CBGP",
+          "Cirad",
+          "IRD [Occitanie]",
+          "IRD"
+        ],
+        "modifiedDate_tdate": "2026-05-12T17:02:04Z",
+        "producedDateY_i": 2026,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/HORXAJ",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-04254641",
+        "uri_s": "https://hal.inrae.fr/hal-04254641v1",
+        "title_s": "Agricultural drivers of field margin plant communities are scale-dependent",
+        "docType_s": "ART",
+        "doiId_s": "10.1016/j.baae.2023.08.003",
+        "laboratories": [
+          "UMR CBGP",
+          "Cirad",
+          "IRD [Occitanie]",
+          "IRD",
+          "INRAE",
+          "Institut Agro",
+          "UM",
+          "LSV Montpellier",
+          "LSV",
+          "ANSES"
+        ],
+        "modifiedDate_tdate": "2026-05-12T17:02:04Z",
+        "producedDateY_i": 2023,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/NMIPCY",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
         "halId_s": "hal-04581536",
         "uri_s": "https://hal.inrae.fr/hal-04581536v1",
         "title_s": "To what extent can a phase-out of pesticides in viticulture be achieved? Learning from the efforts of a large farm network after 10 years",
@@ -1574,6 +2442,37 @@
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/2HITDV",
             "landing_host": "entrepot.recherche.data.gouv.fr",
             "dataset_title": "DEPHY FERME network's low input winegrowing systems: performances and traceability",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-05504216",
+        "uri_s": "https://hal.inrae.fr/hal-05504216v1",
+        "title_s": "How does low-input crop management perform? Economic, environmental and social assessment data on different arable crop management strategies in France",
+        "docType_s": "ART",
+        "doiId_s": "10.1016/j.dib.2025.112316",
+        "laboratories": [
+          "INRAE",
+          "Institut Agro",
+          "UBE",
+          "Agronomie"
+        ],
+        "modifiedDate_tdate": "2026-05-05T15:53:43Z",
+        "producedDateY_i": 2026,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/LCA116",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -1845,6 +2744,105 @@
         ]
       },
       {
+        "halId_s": "hal-03641417",
+        "uri_s": "https://institut-agro-dijon.hal.science/hal-03641417v1",
+        "title_s": "Weed suppression in cover crop mixtures under contrasted levels of resource availability",
+        "docType_s": "ART",
+        "doiId_s": "10.1016/j.eja.2022.126499",
+        "laboratories": [
+          "UB",
+          "UBFC",
+          "INRAE",
+          "DIJ EPOISSES"
+        ],
+        "modifiedDate_tdate": "2026-05-05T15:52:56Z",
+        "producedDateY_i": 2022,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/P4G16N",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-04423592",
+        "uri_s": "https://hal.inrae.fr/hal-04423592v1",
+        "title_s": "Reducing pest pressure and insecticide use by increasing hedgerows in the landscape",
+        "docType_s": "ART",
+        "doiId_s": "10.1016/j.scitotenv.2024.170182",
+        "laboratories": [
+          "UB",
+          "UBFC",
+          "INRAE",
+          "Institut Agro",
+          "UMR ABSys",
+          "Cirad",
+          "CIHEAM-IAMM",
+          "CIHEAM"
+        ],
+        "modifiedDate_tdate": "2026-05-05T15:52:47Z",
+        "producedDateY_i": 2024,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/MLZFRO",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-03426763",
+        "uri_s": "https://hal.inrae.fr/hal-03426763v1",
+        "title_s": "Identifying drivers of liking and characterizing the ideal product thanks to Free-Comment",
+        "docType_s": "ART",
+        "doiId_s": "10.1016/j.foodqual.2021.104389",
+        "laboratories": [
+          "CSGA",
+          "UB",
+          "CNRS",
+          "INRAE",
+          "Institut Agro",
+          "UBFC"
+        ],
+        "modifiedDate_tdate": "2026-05-05T15:52:42Z",
+        "producedDateY_i": 2022,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/GA5R6S",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
         "halId_s": "hal-04197618",
         "uri_s": "https://hal.inrae.fr/hal-04197618v1",
         "title_s": "PO2/TransformON, an ontology for data integration on food, feed, bioproducts and biowaste engineering",
@@ -1989,6 +2987,76 @@
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/2YDSBL",
             "landing_host": "entrepot.recherche.data.gouv.fr",
             "dataset_title": "Leaf microbiome data for European cultivated grapevine (Vitis vinifera L.) during downy mildew (Plasmopara viticola) epidemics in three wine-producing regions in France",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-03910388",
+        "uri_s": "https://hal.science/hal-03910388v1",
+        "title_s": "Botrytis cinerea strains infecting grapevine and tomato display contrasted repertoires of accessory chromosomes, transposons and small RNAs",
+        "docType_s": "ART",
+        "doiId_s": "10.24072/pcjournal.211",
+        "laboratories": [
+          "BIOGER",
+          "INRAE",
+          "UMR PHIM",
+          "Cirad",
+          "IRD",
+          "Institut Agro",
+          "UM",
+          "UB",
+          "UBFC"
+        ],
+        "modifiedDate_tdate": "2026-05-05T15:52:30Z",
+        "producedDateY_i": 2022,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/HYWRNM",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-03882929",
+        "uri_s": "https://hal.inrae.fr/hal-03882929v1",
+        "title_s": "OOPS, the Ontology for Odor Perceptual Space: From Molecular Composition to Sensory Attributes of Odor Objects",
+        "docType_s": "ART",
+        "doiId_s": "10.3390/molecules27227888",
+        "laboratories": [
+          "CSGA",
+          "UB",
+          "CNRS",
+          "INRAE",
+          "Institut Agro",
+          "UBFC",
+          "MIA Paris-Saclay"
+        ],
+        "modifiedDate_tdate": "2026-05-05T15:52:29Z",
+        "producedDateY_i": 2022,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/KLHMJ4",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -2393,6 +3461,36 @@
         ]
       },
       {
+        "halId_s": "hal-03129732",
+        "uri_s": "https://hal.inrae.fr/hal-03129732v1",
+        "title_s": "ReClustOR: a re‐clustering tool using an open‐reference method that improves operational taxonomic unit definition",
+        "docType_s": "ART",
+        "doiId_s": "10.1111/2041-210x.13316",
+        "laboratories": [
+          "UB",
+          "UBFC",
+          "INRAE"
+        ],
+        "modifiedDate_tdate": "2026-05-05T15:52:13Z",
+        "producedDateY_i": 2020,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/ZZWKGQ",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
         "halId_s": "tel-03133176",
         "uri_s": "https://theses.hal.science/tel-03133176v1",
         "title_s": "Adoption de l’agriculture de conservation : adaptations agronomiques et réponses des communautés adventices",
@@ -2531,6 +3629,41 @@
         ]
       },
       {
+        "halId_s": "hal-02636359",
+        "uri_s": "https://hal.inrae.fr/hal-02636359v1",
+        "title_s": "Temporal differentiation of soil communities in response to arable crop management strategies",
+        "docType_s": "ART",
+        "doiId_s": "10.1016/j.agee.2016.03.029",
+        "laboratories": [
+          "ECOSYS",
+          "INRA",
+          "FARE",
+          "URCA",
+          "NU",
+          "UNIROUEN",
+          "UB",
+          "AgroImpact"
+        ],
+        "modifiedDate_tdate": "2026-05-05T15:52:08Z",
+        "producedDateY_i": 2016,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/TJRSVH",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
         "halId_s": "hal-02499730",
         "uri_s": "https://institut-agro-dijon.hal.science/hal-02499730v1",
         "title_s": "Two-step multi-spectral registration via key-point detector and gradient similarity. Application to agronomic scenes for proxy-sensing",
@@ -2591,6 +3724,43 @@
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/YRD4JC",
             "landing_host": "entrepot.recherche.data.gouv.fr",
             "dataset_title": "Composition nutritionnelle et impacts environnementaux de plats servis en restauration scolaire en France",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-01820982",
+        "uri_s": "https://ube.hal.science/hal-01820982v1",
+        "title_s": "Molecular analysis of differential antiproliferative activity of resveratrol, epsilon viniferin and labruscol on melanoma cells and normal dermal cells",
+        "docType_s": "ART",
+        "doiId_s": "10.1016/j.fct.2018.04.043",
+        "laboratories": [
+          "SiRMa",
+          "MEDyC",
+          "URCA",
+          "CNRS",
+          "LNC",
+          "UB",
+          "INSERM",
+          "SEBIO",
+          "INERIS",
+          "ULH"
+        ],
+        "modifiedDate_tdate": "2026-05-05T15:52:01Z",
+        "producedDateY_i": 2018,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/HBRMRX",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -2661,6 +3831,73 @@
         ]
       },
       {
+        "halId_s": "hal-03744281",
+        "uri_s": "https://hal.inrae.fr/hal-03744281v1",
+        "title_s": "Multi-attribute temporal descriptive methods in sensory analysis applied in food science: Protocol for a scoping review",
+        "docType_s": "ART",
+        "doiId_s": "10.1371/journal.pone.0270969",
+        "laboratories": [
+          "CSGA",
+          "UB",
+          "CNRS",
+          "INRAE",
+          "Institut Agro",
+          "UBFC",
+          "UCA"
+        ],
+        "modifiedDate_tdate": "2026-02-21T11:07:40Z",
+        "producedDateY_i": 2022,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/JUJRTJ",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedPublication_s",
+            "misfiled": true,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-04676601",
+        "uri_s": "https://hal.inrae.fr/hal-04676601v1",
+        "title_s": "Development and validation of a web application to collect food supply data associated with their nutritional composition and environmental impacts",
+        "docType_s": "ART",
+        "doiId_s": "10.1016/j.mex.2024.102891",
+        "laboratories": [
+          "CSGA",
+          "UB",
+          "CNRS",
+          "INRAE",
+          "Institut Agro",
+          "CESAER"
+        ],
+        "modifiedDate_tdate": "2026-02-21T11:05:16Z",
+        "producedDateY_i": 2024,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/GPDV7F",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedPublication_s",
+            "misfiled": true,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
         "halId_s": "hal-05409059",
         "uri_s": "https://hal.science/hal-05409059v1",
         "title_s": "Bilan scientifique annuel : L’habitat de l’âge du Bronze à La Tène ancienne en Hauts-de-France",
@@ -2691,6 +3928,54 @@
             "landing_url": "https://nakala.fr/10.34847/nkl.8f0a0nm9",
             "landing_host": "nakala.fr",
             "dataset_title": "Bilan scientifique 2024 : L’habitat de l’âge du Bronze à La Tène ancienne en Hauts-de-France",
+            "field": "relatedPublication_s",
+            "misfiled": true,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.34847/nkl.8f0a0nm9/70868f81bfe0cfeee0dbd086ceb428ad913551e3",
+            "repository": "NAKALA",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "seeAlso_s",
+            "misfiled": true,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-04612748",
+        "uri_s": "https://hal.inrae.fr/hal-04612748v1",
+        "title_s": "Wheat dwarfing reshapes plant and fungal development in arbuscular mycorrhizal symbiosis",
+        "docType_s": "ART",
+        "doiId_s": "10.1007/s00572-024-01150-y",
+        "laboratories": [
+          "ISYEB",
+          "MNHN",
+          "EPHE",
+          "PSL",
+          "SU",
+          "CNRS",
+          "UA",
+          "UB",
+          "UBFC",
+          "INRAE"
+        ],
+        "modifiedDate_tdate": "2025-08-12T17:07:49Z",
+        "producedDateY_i": 2024,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/R1QHIL",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
             "field": "relatedPublication_s",
             "misfiled": true,
             "also_in_relatedData_s": false
@@ -2731,14 +4016,15 @@
     "scope": "nakala_rdg_focus"
   },
   "census_chart": {
-    "unique_datasets": 137,
-    "publications_with_dataset": 107,
+    "unique_datasets": 176,
+    "publications_with_dataset": 147,
     "by_repository": {
-      "Recherche Data Gouv": 51,
-      "NAKALA": 25,
+      "Recherche Data Gouv": 83,
+      "NAKALA": 27,
       "Zenodo": 22,
       "Portail Data Inra": 13,
       "Dryad": 9,
+      "Figshare": 5,
       "Mendeley Data": 4,
       "Progedo-Adisp": 4,
       "Australian Antarctic Data Centre": 3,
@@ -2749,7 +4035,7 @@
       "data.InDoRES": 1
     },
     "repositories_in_chart": 12,
-    "repositories_total": 13,
+    "repositories_total": 14,
     "year_axis": [
       2004,
       2005,
@@ -2864,17 +4150,17 @@
         0,
         0,
         0,
-        1,
         3,
-        7,
-        13,
-        15,
+        4,
         9,
-        23,
-        15,
-        5,
-        30,
-        13
+        13,
+        18,
+        9,
+        27,
+        18,
+        14,
+        38,
+        20
       ],
       "series": [
         {
@@ -2893,17 +4179,17 @@
             0,
             0,
             0,
-            0,
             2,
-            5,
+            3,
+            7,
             1,
-            13,
+            15,
             5,
-            1,
-            9,
-            2,
-            10,
-            2
+            5,
+            12,
+            7,
+            16,
+            9
           ]
         },
         {
@@ -2930,7 +4216,7 @@
             0,
             19,
             1,
-            2,
+            4,
             3,
             0
           ]
@@ -3023,8 +4309,37 @@
           ]
         },
         {
-          "repository": "Mendeley Data",
+          "repository": "Figshare",
           "color": "#90be6d",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            2,
+            2,
+            0
+          ]
+        },
+        {
+          "repository": "Mendeley Data",
+          "color": "#f9c74f",
           "counts": [
             0,
             0,
@@ -3053,7 +4368,7 @@
         },
         {
           "repository": "Progedo-Adisp",
-          "color": "#f9c74f",
+          "color": "#577590",
           "counts": [
             1,
             0,
@@ -3082,7 +4397,7 @@
         },
         {
           "repository": "Australian Antarctic Data Centre",
-          "color": "#577590",
+          "color": "#f28482",
           "counts": [
             0,
             0,
@@ -3111,7 +4426,7 @@
         },
         {
           "repository": "CIRAD Dataverse",
-          "color": "#f28482",
+          "color": "#43aa8b",
           "counts": [
             0,
             0,
@@ -3140,35 +4455,6 @@
         },
         {
           "repository": "data.InDoRES",
-          "color": "#43aa8b",
-          "counts": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            1
-          ]
-        },
-        {
-          "repository": "AU/AADC > Australian Antarctic Data Centre, Australia",
           "color": "#9b5de5",
           "counts": [
             0,
@@ -3197,7 +4483,7 @@
           ]
         },
         {
-          "repository": "Portail Data INRAE",
+          "repository": "AU/AADC > Australian Antarctic Data Centre, Australia",
           "color": "#00bbf9",
           "counts": [
             0,
@@ -3217,12 +4503,12 @@
             0,
             0,
             0,
-            1,
             0,
             0,
             0,
             0,
-            0
+            0,
+            1
           ]
         },
         {
@@ -3246,7 +4532,7 @@
             0,
             0,
             0,
-            0,
+            1,
             0,
             1,
             0,
@@ -3277,7 +4563,200 @@
           ]
         }
       ],
+      "2024|Recherche Data Gouv": [
+        {
+          "dataset_doi": "10.57745/GA5R6S",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2024,
+          "publications": [
+            {
+              "halId_s": "hal-03426763",
+              "title_s": "Identifying drivers of liking and characterizing the ideal product thanks to Free-Comment",
+              "uri_s": "https://hal.inrae.fr/hal-03426763v1",
+              "producedDateY_i": 2022,
+              "producedDateM_i": 3
+            },
+            {
+              "halId_s": "hal-04593965",
+              "title_s": "A dataset of perception and preferences of French consumers for commercial cooked hams sampled according to their nutritional values and claims",
+              "uri_s": "https://hal.inrae.fr/hal-04593965v1",
+              "producedDateY_i": 2024,
+              "producedDateM_i": 5
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/GPDV7F",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2024,
+          "publications": [
+            {
+              "halId_s": "hal-04676601",
+              "title_s": "Development and validation of a web application to collect food supply data associated with their nutritional composition and environmental impacts",
+              "uri_s": "https://hal.inrae.fr/hal-04676601v1",
+              "producedDateY_i": 2024,
+              "producedDateM_i": 12
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/MLZFRO",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2024,
+          "publications": [
+            {
+              "halId_s": "hal-04423592",
+              "title_s": "Reducing pest pressure and insecticide use by increasing hedgerows in the landscape",
+              "uri_s": "https://hal.inrae.fr/hal-04423592v1",
+              "producedDateY_i": 2024,
+              "producedDateM_i": 3
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/R1QHIL",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2024,
+          "publications": [
+            {
+              "halId_s": "hal-04612748",
+              "title_s": "Wheat dwarfing reshapes plant and fungal development in arbuscular mycorrhizal symbiosis",
+              "uri_s": "https://hal.inrae.fr/hal-04612748v1",
+              "producedDateY_i": 2024,
+              "producedDateM_i": 7
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/Z4HXOQ",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2024,
+          "publications": [
+            {
+              "halId_s": "hal-04827822",
+              "title_s": "Quantitative assessment and spatial distribution of Plasmopara viticola oospores in vineyard soil",
+              "uri_s": "https://hal.inrae.fr/hal-04827822v1",
+              "producedDateY_i": 2024,
+              "producedDateM_i": 12
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/2HITDV",
+          "dataset_title": "DEPHY FERME network's low input winegrowing systems: performances and traceability",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/2HITDV",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2024,
+          "publications": [
+            {
+              "halId_s": "hal-04547704",
+              "title_s": "French low-input winegrowing demonstration farms: a dataset of their operations traceability and sustainability performances.",
+              "uri_s": "https://hal.inrae.fr/hal-04547704v1",
+              "producedDateY_i": 2024,
+              "producedDateM_i": 4
+            },
+            {
+              "halId_s": "hal-04581536",
+              "title_s": "To what extent can a phase-out of pesticides in viticulture be achieved? Learning from the efforts of a large farm network after 10 years",
+              "uri_s": "https://hal.inrae.fr/hal-04581536v1",
+              "producedDateY_i": 2024,
+              "producedDateM_i": 5
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/DFGUGB",
+          "dataset_title": "Impact des digestats de méthanisation sur la qualité biologique des sols : Evaluation d’impact à court terme en conditions contrôlées (Microcosmes)",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/DFGUGB",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2024,
+          "publications": [
+            {
+              "halId_s": "hal-04266661",
+              "title_s": "The short-term response of soil microbial communities to digestate application depends on the characteristics of the digestate and soil type",
+              "uri_s": "https://hal.science/hal-04266661v1",
+              "producedDateY_i": 2024,
+              "producedDateM_i": 1
+            }
+          ]
+        }
+      ],
       "2023|Recherche Data Gouv": [
+        {
+          "dataset_doi": "10.57745/NMIPCY",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2023,
+          "publications": [
+            {
+              "halId_s": "hal-04254641",
+              "title_s": "Agricultural drivers of field margin plant communities are scale-dependent",
+              "uri_s": "https://hal.inrae.fr/hal-04254641v1",
+              "producedDateY_i": 2023,
+              "producedDateM_i": 11
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/P4G16N",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2023,
+          "publications": [
+            {
+              "halId_s": "hal-03641417",
+              "title_s": "Weed suppression in cover crop mixtures under contrasted levels of resource availability",
+              "uri_s": "https://institut-agro-dijon.hal.science/hal-03641417v1",
+              "producedDateY_i": 2022,
+              "producedDateM_i": 5
+            },
+            {
+              "halId_s": "hal-04052344",
+              "title_s": "Carry-over effects of cover crops on weeds and crop productivity in no-till systems",
+              "uri_s": "https://hal.inrae.fr/hal-04052344v1",
+              "producedDateY_i": 2023,
+              "producedDateM_i": 5
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/SLUKIO",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2023,
+          "publications": [
+            {
+              "halId_s": "hal-04011829",
+              "title_s": "Horses discriminate human body odors between fear and joy contexts in a habituation-discrimination protocol",
+              "uri_s": "https://hal.inrae.fr/hal-04011829v1",
+              "producedDateY_i": 2023,
+              "producedDateM_i": 3
+            }
+          ]
+        },
         {
           "dataset_doi": "10.57745/AKSR1A",
           "dataset_title": "Biogeographical patterns of the soil fungal:bacterial ratio across France",
@@ -3468,6 +4947,47 @@
         }
       ],
       "2020|Recherche Data Gouv": [
+        {
+          "dataset_doi": "10.57745/JK5WCD",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2020,
+          "publications": [
+            {
+              "halId_s": "hal-03014310",
+              "title_s": "Biogeography of soil microbial habitats across France",
+              "uri_s": "https://institut-agro-dijon.hal.science/hal-03014310v1",
+              "producedDateY_i": 2020,
+              "producedDateM_i": 8
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/ZZWKGQ",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2020,
+          "publications": [
+            {
+              "halId_s": "hal-01843156",
+              "title_s": "Mapping and predictive variations of soil bacterial richness across France",
+              "uri_s": "https://hal.science/hal-01843156v1",
+              "producedDateY_i": 2017,
+              "producedDateM_i": 10
+            },
+            {
+              "halId_s": "hal-03129732",
+              "title_s": "ReClustOR: a re‐clustering tool using an open‐reference method that improves operational taxonomic unit definition",
+              "uri_s": "https://hal.inrae.fr/hal-03129732v1",
+              "producedDateY_i": 2020,
+              "producedDateM_i": 1
+            }
+          ]
+        },
         {
           "dataset_doi": "10.15454/QEI1OO",
           "dataset_title": "Caractéristiques biologiques de 301 taxons observés dans la flore associée au semis direct sous couvert en région Bourgogne-Franche-Comté.",
@@ -4578,6 +6098,25 @@
           ]
         }
       ],
+      "2020|Figshare": [
+        {
+          "dataset_doi": "10.6084/m9.figshare.8128178.v1",
+          "dataset_title": null,
+          "repository": "Figshare",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2020,
+          "publications": [
+            {
+              "halId_s": "hal-01616322",
+              "title_s": "Quantifying discretization errors for soft tissue simulation in computer assisted surgery: a preliminary study",
+              "uri_s": "https://hal.science/hal-01616322v4",
+              "producedDateY_i": 2020,
+              "producedDateM_i": 9
+            }
+          ]
+        }
+      ],
       "2021|Dryad": [
         {
           "dataset_doi": "10.5061/dryad.6q573n5xr",
@@ -4597,7 +6136,491 @@
           ]
         }
       ],
+      "2024|NAKALA": [
+        {
+          "dataset_doi": "10.34847/nkl.8f0a0nm9/70868f81bfe0cfeee0dbd086ceb428ad913551e3",
+          "dataset_title": null,
+          "repository": "NAKALA",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2024,
+          "publications": [
+            {
+              "halId_s": "hal-05409059",
+              "title_s": "Bilan scientifique annuel : L’habitat de l’âge du Bronze à La Tène ancienne en Hauts-de-France",
+              "uri_s": "https://hal.science/hal-05409059v1",
+              "producedDateY_i": 2024,
+              "producedDateM_i": 1
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.34847/nkl.929ax2kn",
+          "dataset_title": null,
+          "repository": "NAKALA",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2024,
+          "publications": [
+            {
+              "halId_s": "hal-04529211",
+              "title_s": "L’habitat groupé laténien de Verdun-sur-le-Doubs : rapport de fouille programmée 2023 dans le cadre du PCR «La confluence Saône/Doubs à l’âge du fer»",
+              "uri_s": "https://hal.science/hal-04529211v1",
+              "producedDateY_i": 2024,
+              "producedDateM_i": 2
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.34847/nkl.8f0a0nm9",
+          "dataset_title": "Bilan scientifique 2024 : L’habitat de l’âge du Bronze à La Tène ancienne en Hauts-de-France",
+          "repository": "NAKALA",
+          "landing_url": "https://nakala.fr/10.34847/nkl.8f0a0nm9",
+          "landing_host": "nakala.fr",
+          "year": 2024,
+          "publications": [
+            {
+              "halId_s": "hal-05409059",
+              "title_s": "Bilan scientifique annuel : L’habitat de l’âge du Bronze à La Tène ancienne en Hauts-de-France",
+              "uri_s": "https://hal.science/hal-05409059v1",
+              "producedDateY_i": 2024,
+              "producedDateM_i": 1
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.34847/nkl.dbffy9lu",
+          "dataset_title": "Rapport intermédiaire 2023 du programme de recherche archéologique 2022-2025 sur le mont Beuvray, Référentiel",
+          "repository": "NAKALA",
+          "landing_url": "https://nakala.fr/10.34847/nkl.dbffy9lu",
+          "landing_host": "nakala.fr",
+          "year": 2024,
+          "publications": [
+            {
+              "halId_s": "hal-05034702",
+              "title_s": "Rapport intermédiaire 2023 du programme de recherche archéologique 2022-2025 sur le mont Beuvray",
+              "uri_s": "https://hal.science/hal-05034702v1",
+              "producedDateY_i": 2024,
+              "producedDateM_i": 2
+            }
+          ]
+        }
+      ],
+      "2025|Recherche Data Gouv": [
+        {
+          "dataset_doi": "10.57745/HXN1XT",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2025,
+          "publications": [
+            {
+              "halId_s": "hal-05070613",
+              "title_s": "Metagenomics reveals contrasted responses of microbial communities to wheat straw amendment in cropland and grassland soils",
+              "uri_s": "https://hal.inrae.fr/hal-05070613v1",
+              "producedDateY_i": 2025,
+              "producedDateM_i": 4
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/JYWUIY",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2025,
+          "publications": [
+            {
+              "halId_s": "hal-05221870",
+              "title_s": "Enquête sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
+              "uri_s": "https://hal.science/hal-05221870v2",
+              "producedDateY_i": 2025,
+              "producedDateM_i": 8
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/MEV4FF",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2025,
+          "publications": [
+            {
+              "halId_s": "hal-05374840",
+              "title_s": "Heading Toward Apertures Using Panoramic Optic Flow for Aerial Exploration",
+              "uri_s": "https://hal.science/hal-05374840v2",
+              "producedDateY_i": 2025,
+              "producedDateM_i": 11
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/OMJUXC",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2025,
+          "publications": [
+            {
+              "halId_s": "hal-05070613",
+              "title_s": "Metagenomics reveals contrasted responses of microbial communities to wheat straw amendment in cropland and grassland soils",
+              "uri_s": "https://hal.inrae.fr/hal-05070613v1",
+              "producedDateY_i": 2025,
+              "producedDateM_i": 4
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/RXJXHW",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2025,
+          "publications": [
+            {
+              "halId_s": "hal-05070613",
+              "title_s": "Metagenomics reveals contrasted responses of microbial communities to wheat straw amendment in cropland and grassland soils",
+              "uri_s": "https://hal.inrae.fr/hal-05070613v1",
+              "producedDateY_i": 2025,
+              "producedDateM_i": 4
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/TMB0HR",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2025,
+          "publications": [
+            {
+              "halId_s": "hal-04635083",
+              "title_s": "Imaging Bajocian coral ridges in the Paris Basin and deciphering their origin",
+              "uri_s": "https://hal.science/hal-04635083v3",
+              "producedDateY_i": 2025,
+              "producedDateM_i": 9
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/3NAHSN",
+          "dataset_title": "Annexe pour : Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/3NAHSN",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2025,
+          "publications": [
+            {
+              "halId_s": "hal-05143887",
+              "title_s": "Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
+              "uri_s": "https://hal.inrae.fr/hal-05143887v1",
+              "producedDateY_i": 2025,
+              "producedDateM_i": 9
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.15454/TRBJTB",
+          "dataset_title": "BRC4Env, the Biological Resource Centre for the Environment",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/TRBJTB",
+          "landing_host": "data.inrae.fr",
+          "year": 2025,
+          "publications": [
+            {
+              "halId_s": "hal-01774729",
+              "title_s": "BRC4Env, a network of Biological Resource Centres for research in environmental and agricultural sciences",
+              "uri_s": "https://hal.science/hal-01774729v1",
+              "producedDateY_i": 2018,
+              "producedDateM_i": 9
+            },
+            {
+              "halId_s": "hal-05231498",
+              "title_s": "BRC4Env, le pilier environnement de l’infrastructure RARe",
+              "uri_s": "https://hal.inrae.fr/hal-05231498v1",
+              "producedDateY_i": 2025,
+              "producedDateM_i": 8
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/DZIM2L",
+          "dataset_title": "Camera images from embedded Camera on a drone flying in front of walls and nettings in simulation and experimental data",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/DZIM2L",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2025,
+          "publications": [
+            {
+              "halId_s": "hal-04966013",
+              "title_s": "Netting and Background Distinction with In-Flight Optic Flow",
+              "uri_s": "https://hal.science/hal-04966013v3",
+              "producedDateY_i": 2025,
+              "producedDateM_i": 4
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/5VJQHM",
+          "dataset_title": "Camera Underwater images in front of underwater nettings at Lake Guerlédan",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/5VJQHM",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2025,
+          "publications": [
+            {
+              "halId_s": "hal-04139578",
+              "title_s": "Safety Net Detection by Optic Flow Processing",
+              "uri_s": "https://hal.science/hal-04139578v1",
+              "producedDateY_i": 2023,
+              "producedDateM_i": 6
+            },
+            {
+              "halId_s": "hal-05120953",
+              "title_s": "Underwater Netting Detection and Distance Estimation using Optic Flow",
+              "uri_s": "https://hal.science/hal-05120953v1",
+              "producedDateY_i": 2025,
+              "producedDateM_i": 6
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/5BU8MG",
+          "dataset_title": "Dataset and R script from \"Do semi-natural habitats enhance overwintering of generalist predators in arable cropping systems? A meta-analysis\"",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/5BU8MG",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2025,
+          "publications": [
+            {
+              "halId_s": "hal-04906415",
+              "title_s": "Do semi-natural habitats enhance overwintering of generalist predators in arable cropping systems? A meta-analysis",
+              "uri_s": "https://agroparistech.hal.science/hal-04906415v1",
+              "producedDateY_i": 2025,
+              "producedDateM_i": 2
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/F0SIEX",
+          "dataset_title": "Integration DeepLabv3+ applied to RGB images and vegetation indices for nitrogen status in cereal-legume inter-cropping system",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/F0SIEX",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2025,
+          "publications": [
+            {
+              "halId_s": "hal-05242519",
+              "title_s": "Monitoring the nitrogen status of a cereal in intercropping by semantic segmentation of RGB images",
+              "uri_s": "https://hal.inrae.fr/hal-05242519v1",
+              "producedDateY_i": 2025,
+              "producedDateM_i": 6
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/EOAKKA",
+          "dataset_title": "Quantitative sodium MRI in carrots",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/EOAKKA",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2025,
+          "publications": [
+            {
+              "halId_s": "hal-05051650",
+              "title_s": "Impact of salting practices on sodium distribution in carrots assessed by quantitative MRI",
+              "uri_s": "https://hal.inrae.fr/hal-05051650v1",
+              "producedDateY_i": 2025,
+              "producedDateM_i": 6
+            },
+            {
+              "halId_s": "hal-05051650",
+              "title_s": "Impact of salting practices on sodium distribution in carrots assessed by quantitative MRI",
+              "uri_s": "https://hal.inrae.fr/hal-05051650v1",
+              "producedDateY_i": 2025,
+              "producedDateM_i": 6
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/BRGZNJ",
+          "dataset_title": "Spatiotemporal quantification of sodium concentration in carrot",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/BRGZNJ",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2025,
+          "publications": [
+            {
+              "halId_s": "hal-05051655",
+              "title_s": "Spatiotemporal quantification of sodium concentration in food using magnetic resonance imaging",
+              "uri_s": "https://hal.inrae.fr/hal-05051655v1",
+              "producedDateY_i": 2025,
+              "producedDateM_i": 6
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/0G65L7",
+          "dataset_title": "Task 3.4 - Deliverable 1 - Life cycle assessment of the LETSPROSEED pulse protein ingredients",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/0G65L7",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2025,
+          "publications": [
+            {
+              "halId_s": "hal-05371151",
+              "title_s": "Life cycle inventories and environmental impact datasets for the semi-industrial processing of food Faba bean or Pea protein ingredients",
+              "uri_s": "https://hal.science/hal-05371151v1",
+              "producedDateY_i": 2025,
+              "producedDateM_i": 12
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/CBSTP0",
+          "dataset_title": "Wild hop bacterial microbiota (Humulus lupulus L.)",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/CBSTP0",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2025,
+          "publications": [
+            {
+              "halId_s": "hal-05166702",
+              "title_s": "Fingerprinting and chemotyping approaches reveal a wide genetic and metabolic diversity among wild hops (Humulus lupulus L.)",
+              "uri_s": "https://hal.inrae.fr/hal-05166702v1",
+              "producedDateY_i": 2025,
+              "producedDateM_i": 5
+            }
+          ]
+        }
+      ],
       "2026|Recherche Data Gouv": [
+        {
+          "dataset_doi": "10.57745/GVXDND",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05674166",
+              "title_s": "A dataset of in vitro aroma release kinetics performed with Proton Transfer Reaction-Time of Flight- Mass Spectrometry (PTR-ToF-MS)",
+              "uri_s": "https://institut-agro-dijon.hal.science/hal-05674166v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 8
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/HORXAJ",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05446093",
+              "title_s": "Assessing the non-target effects of herbicides on field margin plant communities after controlling for soil, climate, local context and landscape metrics",
+              "uri_s": "https://hal.science/hal-05446093v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 4
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/HPEMYW",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05526495",
+              "title_s": "Colonization and spatiotemporal distribution of bruchid pests in lentil and faba bean fields",
+              "uri_s": "https://hal.inrae.fr/hal-05526495v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 9
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/LCA116",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05504216",
+              "title_s": "How does low-input crop management perform? Economic, environmental and social assessment data on different arable crop management strategies in France",
+              "uri_s": "https://hal.inrae.fr/hal-05504216v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 5
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/T2RTDR",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05279443",
+              "title_s": "Human emotional odours influence horses’ behaviour and physiology",
+              "uri_s": "https://hal.science/hal-05279443v2",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 8
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/VWYUEB",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05639869",
+              "title_s": "Plant carbon inputs drive the stratification of soil organic carbon, microbial biomass and mineralizable nitrogen after reducing soil tillage",
+              "uri_s": "https://institut-agro-dijon.hal.science/hal-05639869v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 7
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/YGWKU2",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05709987",
+              "title_s": "Field-scale and landscape-scale drivers of insecticide use in oilseed rape crops across France",
+              "uri_s": "https://hal.inrae.fr/hal-05709987v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 4
+            }
+          ]
+        },
         {
           "dataset_doi": "10.57745/ESBF7R",
           "dataset_title": "Gaussian Splatting Map Registration with Orthographic Bird’s-Eye-View Renderings",
@@ -4669,6 +6692,42 @@
           ]
         }
       ],
+      "2024|Figshare": [
+        {
+          "dataset_doi": "10.6084/m9.figshare.24454609",
+          "dataset_title": null,
+          "repository": "Figshare",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2024,
+          "publications": [
+            {
+              "halId_s": "hal-04513209",
+              "title_s": "Blocking then stinging as a case of two-step evolution of defensive cage architectures in herbivore-driven ecosystems",
+              "uri_s": "https://hal.inrae.fr/hal-04513209v1",
+              "producedDateY_i": 2024,
+              "producedDateM_i": 3
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.6084/m9.figshare.25907659.v2",
+          "dataset_title": null,
+          "repository": "Figshare",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2024,
+          "publications": [
+            {
+              "halId_s": "hal-04759332",
+              "title_s": "Seed morphometrics unravels the evolutionary history of grapevine in France",
+              "uri_s": "https://hal.science/hal-04759332v1",
+              "producedDateY_i": 2024,
+              "producedDateM_i": 9
+            }
+          ]
+        }
+      ],
       "2023|Zenodo": [
         {
           "dataset_doi": "10.5281/zenodo.7447302",
@@ -4706,6 +6765,54 @@
         }
       ],
       "2018|Recherche Data Gouv": [
+        {
+          "dataset_doi": "10.57745/HBRMRX",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2018,
+          "publications": [
+            {
+              "halId_s": "hal-01555716",
+              "title_s": "Anti-Cancer Activity of Resveratrol and Derivatives Produced by Grapevine Cell Suspensions in a 14 L Stirred Bioreactor.",
+              "uri_s": "https://ube.hal.science/hal-01555716v1",
+              "producedDateY_i": 2017,
+              "producedDateM_i": 3
+            },
+            {
+              "halId_s": "hal-01820982",
+              "title_s": "Molecular analysis of differential antiproliferative activity of resveratrol, epsilon viniferin and labruscol on melanoma cells and normal dermal cells",
+              "uri_s": "https://ube.hal.science/hal-01820982v1",
+              "producedDateY_i": 2018,
+              "producedDateM_i": 6
+            },
+            {
+              "halId_s": "hal-02181902",
+              "title_s": "Cytotoxicity of Labruscol, a New Resveratrol Dimer Produced by Grapevine Cell Suspensions, on Human Skin Melanoma Cancer Cell Line HT-144",
+              "uri_s": "https://univ-reims.hal.science/hal-02181902v1",
+              "producedDateY_i": 2017,
+              "producedDateM_i": 11
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/WIRXIC",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2018,
+          "publications": [
+            {
+              "halId_s": "hal-01843961",
+              "title_s": "Biogeography of soil bacteria and archaea across France",
+              "uri_s": "https://institut-agro-dijon.hal.science/hal-01843961v1",
+              "producedDateY_i": 2018,
+              "producedDateM_i": 7
+            }
+          ]
+        },
         {
           "dataset_doi": "10.15454/AY4LMT",
           "dataset_title": "BRC “Egg Parasitoids Collection” (EP-Coll)",
@@ -4949,49 +7056,6 @@
           ]
         }
       ],
-      "2024|Recherche Data Gouv": [
-        {
-          "dataset_doi": "10.57745/2HITDV",
-          "dataset_title": "DEPHY FERME network's low input winegrowing systems: performances and traceability",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/2HITDV",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2024,
-          "publications": [
-            {
-              "halId_s": "hal-04547704",
-              "title_s": "French low-input winegrowing demonstration farms: a dataset of their operations traceability and sustainability performances.",
-              "uri_s": "https://hal.inrae.fr/hal-04547704v1",
-              "producedDateY_i": 2024,
-              "producedDateM_i": 4
-            },
-            {
-              "halId_s": "hal-04581536",
-              "title_s": "To what extent can a phase-out of pesticides in viticulture be achieved? Learning from the efforts of a large farm network after 10 years",
-              "uri_s": "https://hal.inrae.fr/hal-04581536v1",
-              "producedDateY_i": 2024,
-              "producedDateM_i": 5
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.57745/DFGUGB",
-          "dataset_title": "Impact des digestats de méthanisation sur la qualité biologique des sols : Evaluation d’impact à court terme en conditions contrôlées (Microcosmes)",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/DFGUGB",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2024,
-          "publications": [
-            {
-              "halId_s": "hal-04266661",
-              "title_s": "The short-term response of soil microbial communities to digestate application depends on the characteristics of the digestate and soil type",
-              "uri_s": "https://hal.science/hal-04266661v1",
-              "producedDateY_i": 2024,
-              "producedDateM_i": 1
-            }
-          ]
-        }
-      ],
       "2023|Dryad": [
         {
           "dataset_doi": "10.5061/dryad.qv9s4mwkv",
@@ -5030,194 +7094,88 @@
           ]
         }
       ],
-      "2025|Recherche Data Gouv": [
+      "2022|Recherche Data Gouv": [
         {
-          "dataset_doi": "10.57745/3NAHSN",
-          "dataset_title": "Annexe pour : Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
+          "dataset_doi": "10.57745/HYWRNM",
+          "dataset_title": null,
           "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/3NAHSN",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2025,
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2022,
           "publications": [
             {
-              "halId_s": "hal-05143887",
-              "title_s": "Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
-              "uri_s": "https://hal.inrae.fr/hal-05143887v1",
-              "producedDateY_i": 2025,
-              "producedDateM_i": 9
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.15454/TRBJTB",
-          "dataset_title": "BRC4Env, the Biological Resource Centre for the Environment",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/TRBJTB",
-          "landing_host": "data.inrae.fr",
-          "year": 2025,
-          "publications": [
-            {
-              "halId_s": "hal-01774729",
-              "title_s": "BRC4Env, a network of Biological Resource Centres for research in environmental and agricultural sciences",
-              "uri_s": "https://hal.science/hal-01774729v1",
-              "producedDateY_i": 2018,
-              "producedDateM_i": 9
-            },
-            {
-              "halId_s": "hal-05231498",
-              "title_s": "BRC4Env, le pilier environnement de l’infrastructure RARe",
-              "uri_s": "https://hal.inrae.fr/hal-05231498v1",
-              "producedDateY_i": 2025,
-              "producedDateM_i": 8
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.57745/DZIM2L",
-          "dataset_title": "Camera images from embedded Camera on a drone flying in front of walls and nettings in simulation and experimental data",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/DZIM2L",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2025,
-          "publications": [
-            {
-              "halId_s": "hal-04966013",
-              "title_s": "Netting and Background Distinction with In-Flight Optic Flow",
-              "uri_s": "https://hal.science/hal-04966013v3",
-              "producedDateY_i": 2025,
-              "producedDateM_i": 4
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.57745/5VJQHM",
-          "dataset_title": "Camera Underwater images in front of underwater nettings at Lake Guerlédan",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/5VJQHM",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2025,
-          "publications": [
-            {
-              "halId_s": "hal-04139578",
-              "title_s": "Safety Net Detection by Optic Flow Processing",
-              "uri_s": "https://hal.science/hal-04139578v1",
-              "producedDateY_i": 2023,
-              "producedDateM_i": 6
-            },
-            {
-              "halId_s": "hal-05120953",
-              "title_s": "Underwater Netting Detection and Distance Estimation using Optic Flow",
-              "uri_s": "https://hal.science/hal-05120953v1",
-              "producedDateY_i": 2025,
-              "producedDateM_i": 6
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.57745/5BU8MG",
-          "dataset_title": "Dataset and R script from \"Do semi-natural habitats enhance overwintering of generalist predators in arable cropping systems? A meta-analysis\"",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/5BU8MG",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2025,
-          "publications": [
-            {
-              "halId_s": "hal-04906415",
-              "title_s": "Do semi-natural habitats enhance overwintering of generalist predators in arable cropping systems? A meta-analysis",
-              "uri_s": "https://agroparistech.hal.science/hal-04906415v1",
-              "producedDateY_i": 2025,
-              "producedDateM_i": 2
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.57745/F0SIEX",
-          "dataset_title": "Integration DeepLabv3+ applied to RGB images and vegetation indices for nitrogen status in cereal-legume inter-cropping system",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/F0SIEX",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2025,
-          "publications": [
-            {
-              "halId_s": "hal-05242519",
-              "title_s": "Monitoring the nitrogen status of a cereal in intercropping by semantic segmentation of RGB images",
-              "uri_s": "https://hal.inrae.fr/hal-05242519v1",
-              "producedDateY_i": 2025,
-              "producedDateM_i": 6
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.57745/EOAKKA",
-          "dataset_title": "Quantitative sodium MRI in carrots",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/EOAKKA",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2025,
-          "publications": [
-            {
-              "halId_s": "hal-05051650",
-              "title_s": "Impact of salting practices on sodium distribution in carrots assessed by quantitative MRI",
-              "uri_s": "https://hal.inrae.fr/hal-05051650v1",
-              "producedDateY_i": 2025,
-              "producedDateM_i": 6
-            },
-            {
-              "halId_s": "hal-05051650",
-              "title_s": "Impact of salting practices on sodium distribution in carrots assessed by quantitative MRI",
-              "uri_s": "https://hal.inrae.fr/hal-05051650v1",
-              "producedDateY_i": 2025,
-              "producedDateM_i": 6
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.57745/BRGZNJ",
-          "dataset_title": "Spatiotemporal quantification of sodium concentration in carrot",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/BRGZNJ",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2025,
-          "publications": [
-            {
-              "halId_s": "hal-05051655",
-              "title_s": "Spatiotemporal quantification of sodium concentration in food using magnetic resonance imaging",
-              "uri_s": "https://hal.inrae.fr/hal-05051655v1",
-              "producedDateY_i": 2025,
-              "producedDateM_i": 6
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.57745/0G65L7",
-          "dataset_title": "Task 3.4 - Deliverable 1 - Life cycle assessment of the LETSPROSEED pulse protein ingredients",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/0G65L7",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2025,
-          "publications": [
-            {
-              "halId_s": "hal-05371151",
-              "title_s": "Life cycle inventories and environmental impact datasets for the semi-industrial processing of food Faba bean or Pea protein ingredients",
-              "uri_s": "https://hal.science/hal-05371151v1",
-              "producedDateY_i": 2025,
+              "halId_s": "hal-03910388",
+              "title_s": "Botrytis cinerea strains infecting grapevine and tomato display contrasted repertoires of accessory chromosomes, transposons and small RNAs",
+              "uri_s": "https://hal.science/hal-03910388v1",
+              "producedDateY_i": 2022,
               "producedDateM_i": 12
             }
           ]
         },
         {
-          "dataset_doi": "10.57745/CBSTP0",
-          "dataset_title": "Wild hop bacterial microbiota (Humulus lupulus L.)",
+          "dataset_doi": "10.57745/JGHVYV",
+          "dataset_title": null,
           "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/CBSTP0",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2025,
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2022,
           "publications": [
             {
-              "halId_s": "hal-05166702",
-              "title_s": "Fingerprinting and chemotyping approaches reveal a wide genetic and metabolic diversity among wild hops (Humulus lupulus L.)",
-              "uri_s": "https://hal.inrae.fr/hal-05166702v1",
-              "producedDateY_i": 2025,
+              "halId_s": "hal-03329588",
+              "title_s": "Quantifying and simulating carbon and nitrogen mineralization from diverse exogenous organic matters",
+              "uri_s": "https://hal.science/hal-03329588v1",
+              "producedDateY_i": 2022,
+              "producedDateM_i": 9
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/JUJRTJ",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2022,
+          "publications": [
+            {
+              "halId_s": "hal-03744281",
+              "title_s": "Multi-attribute temporal descriptive methods in sensory analysis applied in food science: Protocol for a scoping review",
+              "uri_s": "https://hal.inrae.fr/hal-03744281v1",
+              "producedDateY_i": 2022,
+              "producedDateM_i": 7
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/KLHMJ4",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2022,
+          "publications": [
+            {
+              "halId_s": "hal-03882929",
+              "title_s": "OOPS, the Ontology for Odor Perceptual Space: From Molecular Composition to Sensory Attributes of Odor Objects",
+              "uri_s": "https://hal.inrae.fr/hal-03882929v1",
+              "producedDateY_i": 2022,
+              "producedDateM_i": 11
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.15454/MJTRXM",
+          "dataset_title": "Nutritional status according to weight status in French older adults",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/MJTRXM",
+          "landing_host": "data.inrae.fr",
+          "year": 2022,
+          "publications": [
+            {
+              "halId_s": "hal-03711804",
+              "title_s": "Prevalence of Undernutrition and Risk of Undernutrition in Overweight and Obese Older People",
+              "uri_s": "https://hal.inrae.fr/hal-03711804v1",
+              "producedDateY_i": 2022,
               "producedDateM_i": 5
             }
           ]
@@ -5335,6 +7293,23 @@
       ],
       "2017|Recherche Data Gouv": [
         {
+          "dataset_doi": "10.57745/XBFOJP",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2017,
+          "publications": [
+            {
+              "halId_s": "hal-01843156",
+              "title_s": "Mapping and predictive variations of soil bacterial richness across France",
+              "uri_s": "https://hal.science/hal-01843156v1",
+              "producedDateY_i": 2017,
+              "producedDateM_i": 10
+            }
+          ]
+        },
+        {
           "dataset_doi": "10.15454/ILMSYG",
           "dataset_title": "Characterization of lactic acid bacteria by FTIR and other analytical approaches to identify markers of cryoresistance",
           "repository": "Recherche Data Gouv",
@@ -5365,6 +7340,49 @@
               "uri_s": "https://hal.inrae.fr/hal-02791157v1",
               "producedDateY_i": 2017,
               "producedDateM_i": 9
+            }
+          ]
+        }
+      ],
+      "2016|Recherche Data Gouv": [
+        {
+          "dataset_doi": "10.57745/TJRSVH",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2016,
+          "publications": [
+            {
+              "halId_s": "hal-02636359",
+              "title_s": "Temporal differentiation of soil communities in response to arable crop management strategies",
+              "uri_s": "https://hal.inrae.fr/hal-02636359v1",
+              "producedDateY_i": 2016,
+              "producedDateM_i": 5
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/VLWJ51",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2016,
+          "publications": [
+            {
+              "halId_s": "hal-00698381",
+              "title_s": "Biogeographical patterns of soil molecular microbial biomass as influenced by soil characteristics and management",
+              "uri_s": "https://hal.science/hal-00698381v1",
+              "producedDateY_i": 2011,
+              "producedDateM_i": 9
+            },
+            {
+              "halId_s": "hal-01844377",
+              "title_s": "Predictive model of soil molecular microbial biomass",
+              "uri_s": "https://institut-agro-dijon.hal.science/hal-01844377v1",
+              "producedDateY_i": 2016,
+              "producedDateM_i": 5
             }
           ]
         }
@@ -5578,6 +7596,42 @@
           ]
         }
       ],
+      "2025|Figshare": [
+        {
+          "dataset_doi": "10.6084/m9.figshare.27201498",
+          "dataset_title": null,
+          "repository": "Figshare",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2025,
+          "publications": [
+            {
+              "halId_s": "hal-05286789",
+              "title_s": "Unravelling the drivers of marine biodiversity across the Phanerozoic",
+              "uri_s": "https://hal.science/hal-05286789v1",
+              "producedDateY_i": 2025,
+              "producedDateM_i": 9
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.6084/m9.figshare.29473952",
+          "dataset_title": null,
+          "repository": "Figshare",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2025,
+          "publications": [
+            {
+              "halId_s": "hal-05269143",
+              "title_s": "Substituent Effect on the Nucleophilic Aromatic Substitution of Thiophenes With Pyrrolidine: Theoretical Mechanistic and Reactivity Study",
+              "uri_s": "https://ube.hal.science/hal-05269143v1",
+              "producedDateY_i": 2025,
+              "producedDateM_i": 7
+            }
+          ]
+        }
+      ],
       "2019|CIRAD Dataverse": [
         {
           "dataset_doi": "10.18167/DVN1/ZRTW02",
@@ -5623,42 +7677,6 @@
           ]
         }
       ],
-      "2024|NAKALA": [
-        {
-          "dataset_doi": "10.34847/nkl.8f0a0nm9",
-          "dataset_title": "Bilan scientifique 2024 : L’habitat de l’âge du Bronze à La Tène ancienne en Hauts-de-France",
-          "repository": "NAKALA",
-          "landing_url": "https://nakala.fr/10.34847/nkl.8f0a0nm9",
-          "landing_host": "nakala.fr",
-          "year": 2024,
-          "publications": [
-            {
-              "halId_s": "hal-05409059",
-              "title_s": "Bilan scientifique annuel : L’habitat de l’âge du Bronze à La Tène ancienne en Hauts-de-France",
-              "uri_s": "https://hal.science/hal-05409059v1",
-              "producedDateY_i": 2024,
-              "producedDateM_i": 1
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.34847/nkl.dbffy9lu",
-          "dataset_title": "Rapport intermédiaire 2023 du programme de recherche archéologique 2022-2025 sur le mont Beuvray, Référentiel",
-          "repository": "NAKALA",
-          "landing_url": "https://nakala.fr/10.34847/nkl.dbffy9lu",
-          "landing_host": "nakala.fr",
-          "year": 2024,
-          "publications": [
-            {
-              "halId_s": "hal-05034702",
-              "title_s": "Rapport intermédiaire 2023 du programme de recherche archéologique 2022-2025 sur le mont Beuvray",
-              "uri_s": "https://hal.science/hal-05034702v1",
-              "producedDateY_i": 2024,
-              "producedDateM_i": 2
-            }
-          ]
-        }
-      ],
       "2020|Mendeley Data": [
         {
           "dataset_doi": "10.17632/p3zzk5kmc6.1",
@@ -5697,25 +7715,6 @@
           ]
         }
       ],
-      "2022|Recherche Data Gouv": [
-        {
-          "dataset_doi": "10.15454/MJTRXM",
-          "dataset_title": "Nutritional status according to weight status in French older adults",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/MJTRXM",
-          "landing_host": "data.inrae.fr",
-          "year": 2022,
-          "publications": [
-            {
-              "halId_s": "hal-03711804",
-              "title_s": "Prevalence of Undernutrition and Risk of Undernutrition in Overweight and Obese Older People",
-              "uri_s": "https://hal.inrae.fr/hal-03711804v1",
-              "producedDateY_i": 2022,
-              "producedDateM_i": 5
-            }
-          ]
-        }
-      ],
       "2019|Recherche Data Gouv": [
         {
           "dataset_doi": "10.15454/8CVWRR",
@@ -5735,7 +7734,7 @@
           ]
         }
       ],
-      "2021|Portail Data INRAE": [
+      "2021|Autre": [
         {
           "dataset_doi": "10.15454/A24N4C",
           "dataset_title": "DNA metabarcoding of foliar fungal communities in an untreated vineyard",
@@ -5845,12 +7844,12 @@
         2,
         2,
         1,
+        3,
         1,
         0,
-        0,
-        0,
-        0,
-        7,
+        1,
+        2,
+        8,
         0,
         0,
         0
@@ -5863,12 +7862,12 @@
             0,
             1,
             1,
+            2,
+            1,
             0,
-            0,
-            0,
-            0,
-            0,
-            0,
+            1,
+            2,
+            1,
             0,
             0,
             0
@@ -5947,7 +7946,7 @@
           ]
         },
         {
-          "repository": "Mendeley Data",
+          "repository": "Figshare",
           "color": "#90be6d",
           "counts": [
             0,
@@ -5965,7 +7964,7 @@
           ]
         },
         {
-          "repository": "Progedo-Adisp",
+          "repository": "Mendeley Data",
           "color": "#f9c74f",
           "counts": [
             0,
@@ -5983,8 +7982,26 @@
           ]
         },
         {
-          "repository": "Australian Antarctic Data Centre",
+          "repository": "Progedo-Adisp",
           "color": "#577590",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "repository": "Australian Antarctic Data Centre",
+          "color": "#f28482",
           "counts": [
             0,
             0,
@@ -6002,7 +8019,7 @@
         },
         {
           "repository": "CIRAD Dataverse",
-          "color": "#f28482",
+          "color": "#43aa8b",
           "counts": [
             0,
             0,
@@ -6020,24 +8037,6 @@
         },
         {
           "repository": "data.InDoRES",
-          "color": "#43aa8b",
-          "counts": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            1,
-            0,
-            0,
-            0
-          ]
-        },
-        {
-          "repository": "AU/AADC > Australian Antarctic Data Centre, Australia",
           "color": "#9b5de5",
           "counts": [
             0,
@@ -6055,7 +8054,7 @@
           ]
         },
         {
-          "repository": "Portail Data INRAE",
+          "repository": "AU/AADC > Australian Antarctic Data Centre, Australia",
           "color": "#00bbf9",
           "counts": [
             0,
@@ -6066,7 +8065,7 @@
             0,
             0,
             0,
-            0,
+            1,
             0,
             0,
             0
@@ -6092,7 +8091,7 @@
         }
       ],
       "period_kind": "month",
-      "datasets_in_year": 13,
+      "datasets_in_year": 20,
       "unknown_month": 0
     },
     "cell_details_months": {
@@ -6136,6 +8135,44 @@
           "month": 3
         }
       ],
+      "2026-08|Recherche Data Gouv": [
+        {
+          "dataset_doi": "10.57745/GVXDND",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05674166",
+              "title_s": "A dataset of in vitro aroma release kinetics performed with Proton Transfer Reaction-Time of Flight- Mass Spectrometry (PTR-ToF-MS)",
+              "uri_s": "https://institut-agro-dijon.hal.science/hal-05674166v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 8
+            }
+          ],
+          "month": 8
+        },
+        {
+          "dataset_doi": "10.57745/T2RTDR",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05279443",
+              "title_s": "Human emotional odours influence horses’ behaviour and physiology",
+              "uri_s": "https://hal.science/hal-05279443v2",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 8
+            }
+          ],
+          "month": 8
+        }
+      ],
       "2026-09|Zenodo": [
         {
           "dataset_doi": "10.5281/zenodo.20523512",
@@ -6167,6 +8204,26 @@
               "halId_s": "hal-05624738",
               "title_s": "Weather Regimes Preclude the Observation of a Southern Annular Mode Signal in Two Coastal East Antarctic Ice Cores",
               "uri_s": "https://hal.science/hal-05624738v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 9
+            }
+          ],
+          "month": 9
+        }
+      ],
+      "2026-09|Recherche Data Gouv": [
+        {
+          "dataset_doi": "10.57745/HPEMYW",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05526495",
+              "title_s": "Colonization and spatiotemporal distribution of bruchid pests in lentil and faba bean fields",
+              "uri_s": "https://hal.inrae.fr/hal-05526495v1",
               "producedDateY_i": 2026,
               "producedDateM_i": 9
             }
@@ -6290,6 +8347,64 @@
           "month": 2
         }
       ],
+      "2026-04|Recherche Data Gouv": [
+        {
+          "dataset_doi": "10.57745/HORXAJ",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05446093",
+              "title_s": "Assessing the non-target effects of herbicides on field margin plant communities after controlling for soil, climate, local context and landscape metrics",
+              "uri_s": "https://hal.science/hal-05446093v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 4
+            }
+          ],
+          "month": 4
+        },
+        {
+          "dataset_doi": "10.57745/YGWKU2",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05709987",
+              "title_s": "Field-scale and landscape-scale drivers of insecticide use in oilseed rape crops across France",
+              "uri_s": "https://hal.inrae.fr/hal-05709987v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 4
+            }
+          ],
+          "month": 4
+        }
+      ],
+      "2026-07|Recherche Data Gouv": [
+        {
+          "dataset_doi": "10.57745/VWYUEB",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05639869",
+              "title_s": "Plant carbon inputs drive the stratification of soil organic carbon, microbial biomass and mineralizable nitrogen after reducing soil tillage",
+              "uri_s": "https://institut-agro-dijon.hal.science/hal-05639869v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 7
+            }
+          ],
+          "month": 7
+        }
+      ],
       "2026-01|Zenodo": [
         {
           "dataset_doi": "10.5281/zenodo.16994482",
@@ -6347,9 +8462,29 @@
           ],
           "month": 4
         }
+      ],
+      "2026-05|Recherche Data Gouv": [
+        {
+          "dataset_doi": "10.57745/LCA116",
+          "dataset_title": null,
+          "repository": "Recherche Data Gouv",
+          "landing_url": null,
+          "landing_host": null,
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05504216",
+              "title_s": "How does low-input crop management perform? Economic, environmental and social assessment data on different arable crop management strategies in France",
+              "uri_s": "https://hal.inrae.fr/hal-05504216v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 5
+            }
+          ],
+          "month": 5
+        }
       ]
     },
-    "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 13 datasets in 2026. Click a segment to list datasets.",
+    "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 20 datasets in 2026. Click a segment to list datasets.",
     "segment_hint": "newest linking publication year",
     "months_segment_hint": "newest linking publication month"
   }
