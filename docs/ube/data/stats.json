@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T11:00:14Z",
+  "generated_at": "2026-09-28T16:45:58Z",
   "collection": "UNIV-BOURGOGNE",
   "collection_url": "https://hal.science/UNIV-BOURGOGNE",
   "harvest": {
@@ -308,7 +308,7 @@
     "stale": true
   },
   "data_links": {
-    "total_hits": 176,
+    "total_hits": 177,
     "by_platform": {
       "nakala": 9,
       "rdg": 87
@@ -320,7 +320,7 @@
       "Portail Data Inra": 13,
       "Dryad": 9,
       "Figshare": 5,
-      "Mendeley Data": 4,
+      "Mendeley Data": 5,
       "Progedo-Adisp": 4,
       "Australian Antarctic Data Centre": 3,
       "CIRAD Dataverse": 2,
@@ -4016,8 +4016,8 @@
     "scope": "nakala_rdg_focus"
   },
   "census_chart": {
-    "unique_datasets": 176,
-    "publications_with_dataset": 147,
+    "unique_datasets": 177,
+    "publications_with_dataset": 148,
     "by_repository": {
       "Recherche Data Gouv": 83,
       "NAKALA": 27,
@@ -4025,7 +4025,7 @@
       "Portail Data Inra": 13,
       "Dryad": 9,
       "Figshare": 5,
-      "Mendeley Data": 4,
+      "Mendeley Data": 5,
       "Progedo-Adisp": 4,
       "Australian Antarctic Data Centre": 3,
       "CIRAD Dataverse": 2,
@@ -4160,7 +4160,7 @@
         18,
         14,
         38,
-        20
+        21
       ],
       "series": [
         {
@@ -4309,7 +4309,7 @@
           ]
         },
         {
-          "repository": "Figshare",
+          "repository": "Mendeley Data",
           "color": "#90be6d",
           "counts": [
             0,
@@ -4330,15 +4330,15 @@
             0,
             1,
             0,
+            2,
+            1,
             0,
             0,
-            2,
-            2,
-            0
+            1
           ]
         },
         {
-          "repository": "Mendeley Data",
+          "repository": "Figshare",
           "color": "#f9c74f",
           "counts": [
             0,
@@ -4359,10 +4359,10 @@
             0,
             1,
             0,
+            0,
+            0,
             2,
-            1,
-            0,
-            0,
+            2,
             0
           ]
         },
@@ -4544,6 +4544,25 @@
       "period_kind": "year"
     },
     "cell_details": {
+      "2026|Mendeley Data": [
+        {
+          "dataset_doi": "10.17632/8jtpwp7ntf.1",
+          "dataset_title": "Data Set Article: \"Pollinators in blackcurrant orchards: Complementary roles of sown and spontaneous flower strips and limited spillover of small wild bees within fields\"",
+          "repository": "Mendeley Data",
+          "landing_url": "https://data.mendeley.com/datasets/8jtpwp7ntf/1",
+          "landing_host": "data.mendeley.com",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05756636",
+              "title_s": "Pollinators in blackcurrant orchards: complementary roles of sown and spontaneous flower strips and limited spillover of small wild bees within fields",
+              "uri_s": "https://ube.hal.science/hal-05756636v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 9
+            }
+          ]
+        }
+      ],
       "2023|Mendeley Data": [
         {
           "dataset_doi": "10.17632/f9wtj7s9b8.1",
@@ -7849,7 +7868,7 @@
         0,
         1,
         2,
-        8,
+        9,
         0,
         0,
         0
@@ -7946,7 +7965,7 @@
           ]
         },
         {
-          "repository": "Figshare",
+          "repository": "Mendeley Data",
           "color": "#90be6d",
           "counts": [
             0,
@@ -7957,14 +7976,14 @@
             0,
             0,
             0,
-            0,
+            1,
             0,
             0,
             0
           ]
         },
         {
-          "repository": "Mendeley Data",
+          "repository": "Figshare",
           "color": "#f9c74f",
           "counts": [
             0,
@@ -8091,10 +8110,30 @@
         }
       ],
       "period_kind": "month",
-      "datasets_in_year": 20,
+      "datasets_in_year": 21,
       "unknown_month": 0
     },
     "cell_details_months": {
+      "2026-09|Mendeley Data": [
+        {
+          "dataset_doi": "10.17632/8jtpwp7ntf.1",
+          "dataset_title": "Data Set Article: \"Pollinators in blackcurrant orchards: Complementary roles of sown and spontaneous flower strips and limited spillover of small wild bees within fields\"",
+          "repository": "Mendeley Data",
+          "landing_url": "https://data.mendeley.com/datasets/8jtpwp7ntf/1",
+          "landing_host": "data.mendeley.com",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05756636",
+              "title_s": "Pollinators in blackcurrant orchards: complementary roles of sown and spontaneous flower strips and limited spillover of small wild bees within fields",
+              "uri_s": "https://ube.hal.science/hal-05756636v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 9
+            }
+          ],
+          "month": 9
+        }
+      ],
       "2026-02|Recherche Data Gouv": [
         {
           "dataset_doi": "10.57745/DYIVVU",
@@ -8484,7 +8523,7 @@
         }
       ]
     },
-    "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 20 datasets in 2026. Click a segment to list datasets.",
+    "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 21 datasets in 2026. Click a segment to list datasets.",
     "segment_hint": "newest linking publication year",
     "months_segment_hint": "newest linking publication month"
   }

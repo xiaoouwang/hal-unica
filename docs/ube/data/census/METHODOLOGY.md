@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-09-28T11:00:01Z`  
+Generated: `2026-09-28T16:45:53Z`  
 Collection: `UNIV-BOURGOGNE`  
-Run window: `2026-09-28T11:00:00Z` → `2026-09-28T11:00:01Z`
+Run window: `2026-09-28T16:45:51Z` → `2026-09-28T16:45:53Z`
 
 ## Goal
 
@@ -53,16 +53,16 @@ repository root `README.md`.
 
 ## Counts (this run)
 
-- HAL notices with linked identifiers: **263**
-- Related tokens: **387**
-- Unique DOIs resolved: **301**
-- Publications with at least one dataset-repo landing: **147**
+- HAL notices with linked identifiers: **264**
+- Related tokens: **388**
+- Unique DOIs resolved: **302**
+- Publications with at least one dataset-repo landing: **148**
 - Misfiled dataset links (wrong HAL field): **20**
 - Publications with ≥1 misfiled dataset link: **19**
 
 ### Dataset DOIs by HAL source field
 
-- **`relatedData_s`**: 177
+- **`relatedData_s`**: 178
 - **`relatedPublication_s`**: 18
 - **`seeAlso_s`**: 7
 
@@ -81,7 +81,7 @@ repository root `README.md`.
 - **Journal DOI (10.1002)**: 7
 - **Figshare**: 5
 - **Journal DOI (10.1016)**: 5
-- **Mendeley Data**: 4
+- **Mendeley Data**: 5
 - **Australian Antarctic Data Centre**: 3
 - **CIRAD Dataverse**: 3
 - **DOI prefix 10.3390**: 3
@@ -142,8 +142,8 @@ repository root `README.md`.
 - `data.inra.fr`: 14
 - `datadryad.org`: 10
 - `data.progedo.fr`: 9
+- `data.mendeley.com`: 5
 - `data.aad.gov.au`: 4
-- `data.mendeley.com`: 4
 - `dataverse.cirad.fr`: 3
 - `arxiv.org`: 2
 - `classiques-garnier.com`: 2
