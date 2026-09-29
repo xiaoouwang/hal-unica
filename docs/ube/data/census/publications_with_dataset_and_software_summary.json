@@ -1,0 +1,24 @@
+{
+  "university_id": "ube",
+  "collection": "UNIV-BOURGOGNE",
+  "query": "collCode_s:UNIV-BOURGOGNE AND (relatedData_s:* OR relatedSoftware_s:* OR swhidId_s:* OR softCodeRepository_s:*)",
+  "started_at": "2026-09-29T15:24:16Z",
+  "finished_at": "2026-09-29T15:24:17Z",
+  "publications": 4,
+  "with_typed_relatedData_and_relatedSoftware": 3,
+  "by_match_basis": {
+    "relatedData_s+relatedSoftware_s": 3,
+    "relatedData_s+software_signals": 1
+  },
+  "by_docType": {
+    "THESE": 2,
+    "ART": 1,
+    "UNDEFINED": 1
+  },
+  "method": [
+    "Prefer HAL typed API fields relatedData_s and relatedSoftware_s.",
+    "Enrich from TEI relatedItem (@type DataCite relation, @subtype COAR).",
+    "Also accept swhidId_s / softCodeRepository_s and SOFTWARE deposit backlinks.",
+    "Do not classify solely by DataCite DOI resolution."
+  ]
+}

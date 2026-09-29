@@ -23,6 +23,7 @@ The project:
 | **All repositories** (HAL → datasets) | [/all-repositories.html](https://xiaoouwang.github.io/hal-unica/all-repositories.html) | [/ube/all-repositories.html](https://xiaoouwang.github.io/hal-unica/ube/all-repositories.html) |
 | **DataCite datasets** (affiliation → datasets) | [/datacite-datasets.html](https://xiaoouwang.github.io/hal-unica/datacite-datasets.html) | [/ube/datacite-datasets.html](https://xiaoouwang.github.io/hal-unica/ube/datacite-datasets.html) |
 | **Data papers** | [/data-papers.html](https://xiaoouwang.github.io/hal-unica/data-papers.html) | [/ube/data-papers.html](https://xiaoouwang.github.io/hal-unica/ube/data-papers.html) |
+| **Pub + data + software** (open science triptych) | [/open-science-triptych.html](https://xiaoouwang.github.io/hal-unica/open-science-triptych.html) | [/ube/open-science-triptych.html](https://xiaoouwang.github.io/hal-unica/ube/open-science-triptych.html) |
 | **To Be Corrected** | [/to-be-corrected.html](https://xiaoouwang.github.io/hal-unica/to-be-corrected.html) | [/ube/to-be-corrected.html](https://xiaoouwang.github.io/hal-unica/ube/to-be-corrected.html) |
 | Software & source code | [/software.html](https://xiaoouwang.github.io/hal-unica/software.html) | [/ube/software.html](https://xiaoouwang.github.io/hal-unica/ube/software.html) |
 | Documentation + downloads | [/documentation.html](https://xiaoouwang.github.io/hal-unica/documentation.html) | [/ube/documentation.html](https://xiaoouwang.github.io/hal-unica/ube/documentation.html) |
@@ -47,6 +48,7 @@ Use both: the gap (DataCite-only vs HAL-only) is intentional and useful for open
 | HAL field | Intended use | What we do |
 |---|---|---|
 | `relatedData_s` | Related **datasets** | Expected home for dataset DOIs |
+| `relatedSoftware_s` | Related **software / source code** (often SWHID) | Used for the open science triptych page |
 | `relatedPublication_s` | Related **publications** | Still scanned — depositors sometimes put Nakala/Zenodo DOIs here by mistake |
 | `seeAlso_s` | Miscellaneous links | Scanned for DOIs / repo URLs |
 
@@ -168,6 +170,7 @@ What it **does**:
 | `hal-unica harvest` | Full/incremental metadata JSONL (`--university`) | Homepage DOI % / doc types; lab backfill |
 | `hal-unica census` | Related-data census + DataCite resolve + misfiled CSVs | Debug without rebuilding the site |
 | `hal-unica software` | `docType_s=SOFTWARE` → `software_deposits.*` | Software page only |
+| `hal-unica pub-data-software` | Pubs with `relatedData` + `relatedSoftware` (triptych) | Open science triptych page |
 | `hal-unica data-papers` | `docSubType_s=DATAPAPER` → `data_papers.*` | Data-papers page only |
 | `hal-unica datacite-census` | Affiliation Dataset DOIs on DataCite + HAL crosswalk | DataCite page / gap analysis |
 | `hal-unica find-data-repos` | Nakala / RDG focus scan | Legacy / focused audit |
@@ -327,7 +330,7 @@ Prefer **`refresh`** unless you are debugging one piece.
 
 ## List pages (shared UX)
 
-**All repositories · Related datasets · DataCite datasets · Software · Data papers · To Be Corrected** share:
+**All repositories · Related datasets · DataCite datasets · Software · Data papers · Pub + data + software · To Be Corrected** share:
 
 - Sort (retrieved / HAL update / year / title / repository where relevant)
 - Year and laboratory filters on HAL-backed pages
@@ -424,6 +427,7 @@ Top HAL-linked / DataCite repos vary; UBE DataCite is often heavy on Recherche D
 | [`publications_related_data.jsonl`](data/census/publications_related_data.jsonl) | Per-notice tokens + resolutions |
 | [`software_deposits.csv`](data/census/software_deposits.csv) | SOFTWARE + code repos + SWHIDs |
 | [`data_papers.csv`](data/census/data_papers.csv) | Data papers + linked datasets / journals |
+| [`publications_with_dataset_and_software.csv`](data/census/publications_with_dataset_and_software.csv) | Open science triptych (pub + data + software) |
 | [`datacite_datasets.csv`](data/census/datacite_datasets.csv) | DataCite affiliation Dataset DOIs + HAL crosswalk |
 | [`summary.json`](data/census/summary.json) | HAL census aggregates |
 | [`METHODOLOGY.md`](data/census/METHODOLOGY.md) | Auto-generated method notes |

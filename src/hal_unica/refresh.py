@@ -145,6 +145,19 @@ def run_refresh(
         enrich_software_from_harvest(soft_rows, harvest_path)
         write_software_artifacts(soft_rows, census_dir)
 
+        say("listing publications with dataset + software (open science triptych)")
+        from .related_triplets import (
+            find_publication_dataset_software,
+            write_triplet_artifacts,
+        )
+
+        triplet = find_publication_dataset_software(
+            university=uni,
+            client=client,
+        )
+        write_triplet_artifacts(triplet, census_dir)
+        say(f"open science triptych publications={len(triplet.rows)}")
+
         say("harvesting data papers (docSubType_s:DATAPAPER)")
         paper_rows = harvest_data_papers(client)
         enrich_data_papers_from_resolutions(paper_rows, census_dir)

@@ -27,6 +27,7 @@ SOFTWARE_FL = [
     "softRuntimePlatform_s",
     "relatedPublication_s",
     "relatedData_s",
+    "relatedSoftware_s",
     "seeAlso_s",
     "fileMain_s",
     "files_s",

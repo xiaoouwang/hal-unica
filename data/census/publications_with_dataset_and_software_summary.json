@@ -1,0 +1,25 @@
+{
+  "university_id": "unica",
+  "collection": "UNIV-COTEDAZUR",
+  "query": "collCode_s:UNIV-COTEDAZUR AND (relatedData_s:* OR relatedSoftware_s:* OR swhidId_s:* OR softCodeRepository_s:*)",
+  "started_at": "2026-09-29T15:24:02Z",
+  "finished_at": "2026-09-29T15:24:03Z",
+  "publications": 3,
+  "with_typed_relatedData_and_relatedSoftware": 1,
+  "by_match_basis": {
+    "relatedData_s+software_signals": 1,
+    "relatedData_s+relatedSoftware_s": 1,
+    "mixed_or_software_deposit": 1
+  },
+  "by_docType": {
+    "OTHER": 1,
+    "ART": 1,
+    "COMM": 1
+  },
+  "method": [
+    "Prefer HAL typed API fields relatedData_s and relatedSoftware_s.",
+    "Enrich from TEI relatedItem (@type DataCite relation, @subtype COAR).",
+    "Also accept swhidId_s / softCodeRepository_s and SOFTWARE deposit backlinks.",
+    "Do not classify solely by DataCite DOI resolution."
+  ]
+}

@@ -22,6 +22,7 @@ CENSUS_FL = [
     "docType_s",
     "doiId_s",
     "relatedData_s",
+    "relatedSoftware_s",
     "relatedPublication_s",
     "seeAlso_s",
     "producedDate_s",
@@ -41,9 +42,11 @@ LINK_SOURCE_FIELDS = (
 )
 EXPECTED_DATASET_FIELD = "relatedData_s"
 
-# Broad enough to catch relatedData plus DOIs / Nakala URLs filed elsewhere.
+# Broad enough to catch relatedData plus DOIs / Nakala URLs filed elsewhere,
+# and typed software associations (relatedSoftware_s).
 CENSUS_Q = (
-    "(relatedData_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)"
+    "(relatedData_s:*) OR (relatedSoftware_s:*) OR "
+    "(relatedPublication_s:10.*) OR (seeAlso_s:*)"
 )
 
 DOI_RE = re.compile(

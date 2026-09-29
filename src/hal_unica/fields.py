@@ -36,6 +36,7 @@ DEFAULT_FL = [
     "softCodeRepository_s",
     "relatedPublication_s",
     "relatedData_s",
+    "relatedSoftware_s",
     "seeAlso_s",
     "isbn_s",
     "issn_s",

@@ -146,7 +146,21 @@ jobs:
             echo "has_changes=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "Daily HAL incremental refresh ($(date -u +%Y-%m-%d))"
-            git push
+            # GitHub occasionally returns "Internal Server Error" on push; retry.
+            ok=0
+            for attempt in 1 2 3 4 5; do
+              if git push; then
+                ok=1
+                break
+              fi
+              echo "git push failed (attempt $attempt); waiting before retry…"
+              sleep $((attempt * 20))
+              git pull --rebase --autostash origin main || true
+            done
+            if [ "$ok" != 1 ]; then
+              echo "::error::git push failed after retries"
+              exit 1
+            fi
             echo "has_changes=true" >> "$GITHUB_OUTPUT"
           fi
 

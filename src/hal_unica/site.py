@@ -146,6 +146,7 @@ def _write_seo_files(output_dir: Path, *, generated_at: str | None = None) -> No
         ("all-repositories.html", "0.9"),
         ("datacite-datasets.html", "0.9"),
         ("data-papers.html", "0.9"),
+        ("open-science-triptych.html", "0.9"),
         ("to-be-corrected.html", "0.8"),
         ("software.html", "0.8"),
         ("documentation.html", "0.7"),
@@ -1012,6 +1013,18 @@ h1 {
   margin: 0 0 0.75rem; font-family: var(--font-display); font-size: 1.2rem; font-weight: 700;
   letter-spacing: -0.02em;
 }
+.panel h3 {
+  margin: 0 0 0.35rem; font-family: var(--font-display); font-size: 1.02rem; font-weight: 700;
+  letter-spacing: -0.015em;
+}
+.triptych-pillars {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem 1.35rem;
+  margin: 1rem 0 0; padding-top: 0.85rem; border-top: 1px solid var(--line);
+}
+.triptych-pillars p { margin: 0; color: var(--ink-soft); font-size: 0.92rem; line-height: 1.5; }
+@media (max-width: 800px) {
+  .triptych-pillars { grid-template-columns: 1fr; }
+}
 .bars { display: grid; gap: 0.45rem; }
 .bar-row { display: grid; grid-template-columns: 7.5rem 1fr 3.2rem; gap: 0.6rem; align-items: center; font-size: 0.9rem; }
 .bar-track { height: 0.5rem; background: var(--wash); border-radius: 999px; overflow: hidden; }
@@ -1679,6 +1692,7 @@ def _nav(active: str) -> str:
       {link("./all-repositories.html", "All repositories", "census")}
       {datacite_nav}
       {link("./data-papers.html", "Data papers", "datapapers")}
+      {link("./open-science-triptych.html", "Pub + data + software", "triptych")}
       {link("./to-be-corrected.html", "To Be Corrected", "corrections")}
       {link("./software.html", "Software", "software")}
       {link("./documentation.html", "Documentation", "docs")}
@@ -1757,6 +1771,8 @@ def render_index(payload_json: str, *, generated_at: str | None = None) -> str:
         <a href="./all-repositories.html">All repositories (+ publications) →</a>
         &nbsp;·&nbsp;
         <a href="./data-papers.html">Data papers →</a>
+        &nbsp;·&nbsp;
+        <a href="./open-science-triptych.html">Pub + data + software →</a>
         &nbsp;·&nbsp;
         <a href="./related-datasets.html">Nakala / Recherche Data Gouv focus →</a>
         &nbsp;·&nbsp;
@@ -2663,6 +2679,226 @@ def render_software(software_json: str, *, generated_at: str | None = None) -> s
 """
 
 
+def render_open_science_triptych(payload_json: str, *, generated_at: str | None = None) -> str:
+    """Publications that declare both research data and software/source code."""
+    uni = get_university()
+    sort_opts = """
+            <option value="year_desc" selected>Year (newest)</option>
+            <option value="title_asc">Title A–Z</option>
+            <option value="typed_first">Typed HAL links first</option>
+    """
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+{_seo_head(
+    title="Open science triptych",
+    description=(
+        f"{uni.display_name} HAL publications that link research data and software "
+        "alongside the scholarly text — the open science triptych."
+    ),
+    path="open-science-triptych.html",
+    extra_head=f"  <style>{SHARED_CSS}</style>",
+)}
+</head>
+<body>
+  <main class="wrap" id="main">
+    {_nav("triptych")}
+    <p class="eyebrow">Publication · data · software</p>
+    <h1>Open science triptych</h1>
+    <p class="lede">
+      {uni.short_name} HAL notices where the scholarly publication is explicitly
+      associated with <strong>research data</strong> and <strong>software / source code</strong>
+      — the three pillars of open science on one deposit.
+    </p>
+
+    <section class="panel">
+      <h2>Why this combination matters</h2>
+      <p class="muted" style="margin:0; max-width:46rem; line-height:1.55">
+        The open science triptych rests on opening three fundamental pillars:
+        publications, research data, and free software or source code. Together they
+        make results readable, reusable, and reproducible.
+      </p>
+      <div class="triptych-pillars">
+        <div>
+          <h3>Publications</h3>
+          <p>
+            Make articles and books freely available to everyone in open access,
+            without a paywall.
+          </p>
+        </div>
+        <div>
+          <h3>Research data</h3>
+          <p>
+            Structure, share, and disseminate the raw data behind the work according
+            to the FAIR principles (Findable, Accessible, Interoperable, Reusable).
+          </p>
+        </div>
+        <div>
+          <h3>Software &amp; source code</h3>
+          <p>
+            Open and document the codes and tools used to process the data, so that
+            methods are transparent and results can be reproduced end to end.
+          </p>
+        </div>
+      </div>
+      <p class="muted" style="margin:1rem 0 0; font-size:0.9rem; max-width:46rem; line-height:1.5">
+        Detection uses HAL’s typed associated-resource fields
+        (<code>relatedData_s</code>, <code>relatedSoftware_s</code>) and TEI
+        <code>relatedItem</code> COAR types (dataset / software), not DOI guessing alone.
+        A linked HAL <code>SOFTWARE</code> deposit may also complete the triangle.
+      </p>
+    </section>
+
+    <div class="stats" id="stats" role="group" aria-label="Key statistics"></div>
+    <section class="panel">
+      <div class="filters" id="basisFilters" style="margin-bottom:0.65rem"></div>
+      <input id="q" class="search" type="search" placeholder="Search title, HAL id, DOI, dataset, software, lab…" autocomplete="off" />
+      {_list_toolbar_html(sort_options_html=sort_opts)}
+      <div class="list" id="list"></div>
+    </section>
+    {_footer(
+      generated_at,
+      'Downloads: <a href="./data/census/publications_with_dataset_and_software.csv"><code>publications_with_dataset_and_software.csv</code></a> · '
+      '<a href="./data/census/publications_with_dataset_and_software.jsonl"><code>.jsonl</code></a> · '
+      '<a href="./data/census/publications_with_dataset_and_software.md"><code>.md</code></a>',
+    )}
+  </main>
+  <script id="data" type="application/json">{payload_json}</script>
+  <script>
+{_shared_list_helpers_js()}
+    const data = JSON.parse(document.getElementById("data").textContent);
+    const rows = data.publications || [];
+    const s = data.summary || {{}};
+    let activeBasis = "all";
+    const allLabs = uniqueLabs(rows, r => r.laboratories);
+    const allYears = uniqueYears(rows, r => [r.publication_year]);
+
+    const typedBoth = rows.filter(r => r.has_typed_relatedData && r.has_typed_relatedSoftware).length;
+
+    document.getElementById("stats").innerHTML = [
+      {{ v: s.publications || rows.length, l: "Publications in the triptych" }},
+      {{ v: s.with_typed_relatedData_and_relatedSoftware || typedBoth, l: "Typed relatedData + relatedSoftware" }},
+      {{ v: rows.filter(r => (r.datasets||[]).length).length, l: "With ≥1 dataset link" }},
+      {{ v: rows.filter(r => (r.software_signals||[]).length).length, l: "With ≥1 software signal" }},
+    ].map(x => `<div class="stat"><strong data-count="${{x.v}}">0</strong><span>${{x.l}}</span></div>`).join("");
+    animateStatCounts(document.getElementById("stats"));
+
+    function resourceHref(value) {{
+      const v = String(value || "");
+      if (!v) return "#";
+      if (/^https?:/i.test(v)) return v;
+      if (/^10\\./.test(v)) return `https://doi.org/${{v}}`;
+      if (/^swh:/i.test(v)) {{
+        const core = v.split(";")[0];
+        return `https://archive.softwareheritage.org/browse/${{core}}`;
+      }}
+      if (/^[a-z]+-\\d+/i.test(v)) return `https://hal.science/${{v}}`;
+      return v;
+    }}
+
+    function paintBasisFilters() {{
+      const opts = [
+        {{ v: "all", l: `All (${{rows.length}})` }},
+        {{ v: "typed", l: `Typed HAL fields (${{typedBoth}})` }},
+        {{ v: "other", l: `Other signals (${{rows.length - typedBoth}})` }},
+      ];
+      document.getElementById("basisFilters").innerHTML = opts.map(o => `
+        <button type="button" class="chip" data-v="${{o.v}}" aria-pressed="${{activeBasis===o.v}}">${{esc(o.l)}}</button>
+      `).join("");
+      document.querySelectorAll("#basisFilters button").forEach(btn => btn.addEventListener("click", () => {{
+        activeBasis = btn.dataset.v; paintBasisFilters(); render();
+      }}));
+    }}
+
+    function sortRows(list) {{
+      const mode = document.getElementById("sort").value;
+      return list.slice().sort((a, b) => {{
+        if (mode === "typed_first") {{
+          const at = (a.has_typed_relatedData && a.has_typed_relatedSoftware) ? 1 : 0;
+          const bt = (b.has_typed_relatedData && b.has_typed_relatedSoftware) ? 1 : 0;
+          return bt - at || (Number(b.publication_year)||0) - (Number(a.publication_year)||0);
+        }}
+        if (mode === "title_asc") return cmpStr(a.publication_title, b.publication_title);
+        return (Number(b.publication_year)||0) - (Number(a.publication_year)||0) || cmpStr(a.publication_title, b.publication_title);
+      }});
+    }}
+
+    function render() {{
+      const q = document.getElementById("q").value.trim().toLowerCase();
+      const lab = activeLabFilter();
+      const yearFilter = (document.getElementById("yearSelect").value || "").trim();
+      const filtered = rows.filter(r => {{
+        const typed = r.has_typed_relatedData && r.has_typed_relatedSoftware;
+        if (activeBasis === "typed" && !typed) return false;
+        if (activeBasis === "other" && typed) return false;
+        if (!labsMatch(r.laboratories, lab)) return false;
+        if (!yearsMatch([r.publication_year], yearFilter)) return false;
+        if (!q) return true;
+        const blob = [
+          r.publication_halId, r.publication_title, r.publication_doi, r.match_basis,
+          ...(r.relatedData_s||[]), ...(r.relatedSoftware_s||[]),
+          ...(r.dataset_values||[]), ...(r.laboratories||[]),
+          ...(r.software_halIds||[]), ...(r.software_titles||[]),
+          ...((r.software_signals||[]).map(s => s.value)),
+        ].join(" ").toLowerCase();
+        return blob.includes(q);
+      }});
+      const list = sortRows(filtered);
+      document.getElementById("count").textContent = `${{list.length}} of ${{rows.length}} publications`;
+      document.getElementById("list").innerHTML = list.map(r => {{
+        const typed = r.has_typed_relatedData && r.has_typed_relatedSoftware;
+        const yearBadge = r.publication_year != null ? `<span class="badge">${{esc(r.publication_year)}}</span>` : "";
+        const typeBadge = r.publication_docType ? `<span class="badge">${{esc(r.publication_docType)}}</span>` : "";
+        const typedBadge = typed
+          ? `<span class="badge">typed HAL links</span>`
+          : `<span class="badge" style="color:var(--accent-hover)">mixed signals</span>`;
+        const datasets = (r.datasets || []).map(d => {{
+          const href = resourceHref(d.value);
+          const rel = d.relation ? ` · ${{esc(d.relation)}}` : "";
+          return `<div class="ev"><dt>Dataset</dt><dd><a href="${{esc(href)}}" target="_blank" rel="noopener"><code>${{esc(d.value)}}</code></a>${{rel}} <span class="muted">(${{esc(d.source)}})</span></dd></div>`;
+        }}).join("");
+        const soft = (r.software_signals || []).map(s => {{
+          const href = resourceHref(s.value);
+          return `<div class="ev"><dt>Software</dt><dd><a href="${{esc(href)}}" target="_blank" rel="noopener"><code>${{esc(s.value)}}</code></a> <span class="muted">(${{esc(s.kind)}} · ${{esc(s.source)}})</span></dd></div>`;
+        }}).join("");
+        const softDeps = (r.software_halIds || []).map((id, i) => {{
+          const uri = (r.software_uris || [])[i] || `https://hal.science/${{id}}`;
+          const title = (r.software_titles || [])[i] || id;
+          return `<div class="ev"><dt>SOFTWARE deposit</dt><dd><a href="${{esc(uri)}}" target="_blank" rel="noopener">${{esc(title)}}</a> · <code>${{esc(id)}}</code></dd></div>`;
+        }}).join("");
+        const doi = r.publication_doi
+          ? `<a href="https://doi.org/${{esc(r.publication_doi)}}" target="_blank" rel="noopener"><code>${{esc(r.publication_doi)}}</code></a>`
+          : "";
+        return `<article class="result">
+          <div class="card-head">
+            <h2><a href="${{esc(r.publication_uri || "#")}}" target="_blank" rel="noopener">${{esc(r.publication_title || r.publication_halId)}}</a></h2>
+            <div class="badges">${{yearBadge}}${{typeBadge}}${{typedBadge}}</div>
+          </div>
+          <div class="sub">
+            <a href="${{esc(r.publication_uri || "#")}}" target="_blank" rel="noopener"><code>${{esc(r.publication_halId)}}</code></a>
+            ${{doi}}
+            <span>${{esc(r.match_basis || "")}}</span>
+          </div>
+          ${{yearLine([r.publication_year])}}
+          ${{labsLine(r.laboratories)}}
+          <div class="evidence">${{datasets}}${{soft}}${{softDeps}}</div>
+        </article>`;
+      }}).join("") || `<div class="empty">No publications currently match the triptych criteria for this collection.</div>`;
+    }}
+
+    paintBasisFilters();
+    paintLabControls(allLabs);
+    paintYearControls(allYears);
+    wireLabControls(render);
+    document.getElementById("q").addEventListener("input", render);
+    document.getElementById("sort").addEventListener("change", render);
+    render();
+  </script>
+</body>
+</html>
+"""
+
+
 def render_data_papers(papers_json: str, *, generated_at: str | None = None) -> str:
     uni = get_university()
     sort_opts = """
@@ -3282,6 +3518,29 @@ def _write_site_inner(
                 render_software(soft_json, generated_at=generated_at), encoding="utf-8"
             )
 
+        triptych_rows: list[dict[str, Any]] = []
+        triptych_file = dest / "publications_with_dataset_and_software.jsonl"
+        if triptych_file.exists():
+            for line in triptych_file.read_text(encoding="utf-8").splitlines():
+                if line.strip():
+                    triptych_rows.append(json.loads(line))
+        triptych_summary: dict[str, Any] = {}
+        triptych_sum = dest / "publications_with_dataset_and_software_summary.json"
+        if triptych_sum.exists():
+            triptych_summary = json.loads(triptych_sum.read_text(encoding="utf-8"))
+        triptych_json = json.dumps(
+            {
+                "generated_at": generated_at,
+                "publications": triptych_rows,
+                "summary": triptych_summary,
+            },
+            ensure_ascii=False,
+        ).replace("<", "\\u003c")
+        (output_dir / "open-science-triptych.html").write_text(
+            render_open_science_triptych(triptych_json, generated_at=generated_at),
+            encoding="utf-8",
+        )
+
         paper_rows: list[dict[str, Any]] = []
         paper_file = dest / "data_papers.jsonl"
         if paper_file.exists():
@@ -3328,6 +3587,10 @@ def _write_site_inner(
             "datacite_datasets.csv",
             "datacite_datasets.jsonl",
             "datacite_datasets_summary.json",
+            "publications_with_dataset_and_software.csv",
+            "publications_with_dataset_and_software.jsonl",
+            "publications_with_dataset_and_software.md",
+            "publications_with_dataset_and_software_summary.json",
         ):
             if (dest / name).exists():
                 manifest.setdefault("artifacts", {})[name] = f"data/census/{name}"

@@ -513,6 +513,56 @@ def datacite_census_cmd(
         typer.echo(f"  {p}")
 
 
+@app.command("pub-data-software")
+def pub_data_software_cmd(
+    university: Optional[str] = typer.Option(
+        None, "--university", "-u", help="Tenant id (default: unica)"
+    ),
+    typed_software_only: bool = typer.Option(
+        False,
+        "--typed-software-only",
+        help="Require relatedSoftware_s (or TEI COAR software)",
+    ),
+    no_software_backlinks: bool = typer.Option(
+        False,
+        "--no-software-backlinks",
+        help="Ignore SOFTWARE deposits linked via relatedPublication_s",
+    ),
+) -> None:
+    """
+    List publications that associate both a dataset and software.
+
+    Uses HAL typed fields relatedData_s / relatedSoftware_s (and TEI relatedItem
+    COAR subtypes), not DOI-resolution heuristics alone.
+    """
+    from .related_triplets import find_publication_dataset_software, write_triplet_artifacts
+
+    uni = resolve_university(university)
+    with HalClient(collection=uni.collection) as client:
+        result = find_publication_dataset_software(
+            university=uni,
+            client=client,
+            include_software_deposit_backlinks=not no_software_backlinks,
+            require_typed_software_field=typed_software_only,
+        )
+    paths = write_triplet_artifacts(result, uni.census_dir)
+    docs_census = uni.site_dir / "data" / "census"
+    if docs_census.is_dir():
+        for p in paths.values():
+            (docs_census / p.name).write_bytes(p.read_bytes())
+    typed_both = sum(
+        1
+        for r in result.rows
+        if r.get("has_typed_relatedData") and r.get("has_typed_relatedSoftware")
+    )
+    typer.echo(
+        f"Publications with dataset+software: {len(result.rows)} "
+        f"(typed relatedData+relatedSoftware: {typed_both})"
+    )
+    for p in paths.values():
+        typer.echo(f"  {p}")
+
+
 @app.command("refresh")
 def refresh_cmd(
     university: Optional[str] = typer.Option(
@@ -673,6 +723,7 @@ def build_site_cmd(
         "datacite-datasets.html",
         "to-be-corrected.html",
         "software.html",
+        "open-science-triptych.html",
         "data-papers.html",
         "documentation.html",
         "sitemap.xml",
