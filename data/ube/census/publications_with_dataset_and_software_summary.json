@@ -1,14 +1,21 @@
 {
   "university_id": "ube",
   "collection": "UNIV-BOURGOGNE",
-  "query": "collCode_s:UNIV-BOURGOGNE AND (relatedData_s:* OR relatedSoftware_s:* OR swhidId_s:* OR softCodeRepository_s:*)",
-  "started_at": "2026-09-29T15:24:16Z",
-  "finished_at": "2026-09-29T15:24:17Z",
+  "query": "relatedData_s:* OR relatedSoftware_s:* OR relatedPublication_s:* OR swhidId_s:* OR softCodeRepository_s:* OR docType_s:SOFTWARE",
+  "started_at": "2026-09-29T15:30:33Z",
+  "finished_at": "2026-09-29T15:30:38Z",
   "publications": 4,
   "with_typed_relatedData_and_relatedSoftware": 3,
+  "by_hub": {
+    "publication": 4,
+    "software": 1
+  },
+  "by_primary_hub": {
+    "publication": 4
+  },
   "by_match_basis": {
-    "relatedData_s+relatedSoftware_s": 3,
-    "relatedData_s+software_signals": 1
+    "publication_hub:relatedData+relatedSoftware": 3,
+    "publication_hub:relatedData+software_signals|software_hub:relatedPublication+relatedData": 1
   },
   "by_docType": {
     "THESE": 2,
@@ -16,9 +23,10 @@
     "UNDEFINED": 1
   },
   "method": [
-    "Prefer HAL typed API fields relatedData_s and relatedSoftware_s.",
-    "Enrich from TEI relatedItem (@type DataCite relation, @subtype COAR).",
-    "Also accept swhidId_s / softCodeRepository_s and SOFTWARE deposit backlinks.",
+    "Publication hub: relatedData_s + software signals on a scholarly notice.",
+    "Software hub: SOFTWARE with relatedPublication_s + relatedData_s (DOI→HAL).",
+    "Dataset hub: dataset-like / OTHER notice with relatedPublication + relatedSoftware.",
+    "TEI relatedItem COAR subtypes enrich dataset vs software typing.",
     "Do not classify solely by DataCite DOI resolution."
   ]
 }
