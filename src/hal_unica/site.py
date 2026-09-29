@@ -2680,11 +2680,12 @@ def render_software(software_json: str, *, generated_at: str | None = None) -> s
 
 
 def render_open_science_triptych(payload_json: str, *, generated_at: str | None = None) -> str:
-    """Publications that declare both research data and software/source code."""
+    """Candidates that complete publication + research data + software."""
     uni = get_university()
     sort_opts = """
             <option value="year_desc" selected>Year (newest)</option>
             <option value="title_asc">Title A–Z</option>
+            <option value="hubs_first">Multi-hub first</option>
             <option value="typed_first">Typed HAL links first</option>
     """
     return f"""<!DOCTYPE html>
@@ -2693,8 +2694,8 @@ def render_open_science_triptych(payload_json: str, *, generated_at: str | None 
 {_seo_head(
     title="Open science triptych",
     description=(
-        f"{uni.display_name} HAL publications that link research data and software "
-        "alongside the scholarly text — the open science triptych."
+        f"{uni.display_name} HAL candidates that link a publication, research data, "
+        "and software — the open science triptych."
     ),
     path="open-science-triptych.html",
     extra_head=f"  <style>{SHARED_CSS}</style>",
@@ -2706,9 +2707,9 @@ def render_open_science_triptych(payload_json: str, *, generated_at: str | None 
     <p class="eyebrow">Publication · data · software</p>
     <h1>Open science triptych</h1>
     <p class="lede">
-      {uni.short_name} HAL notices where the scholarly publication is explicitly
-      associated with <strong>research data</strong> and <strong>software / source code</strong>
-      — the three pillars of open science on one deposit.
+      {uni.short_name} candidates where a <strong>publication</strong>, <strong>research data</strong>,
+      and <strong>software / source code</strong> are explicitly associated on HAL —
+      the three pillars of open science, found from any corner of the triangle.
     </p>
 
     <section class="panel">
@@ -2742,17 +2743,29 @@ def render_open_science_triptych(payload_json: str, *, generated_at: str | None 
         </div>
       </div>
       <p class="muted" style="margin:1rem 0 0; font-size:0.9rem; max-width:46rem; line-height:1.5">
-        Detection uses HAL’s typed associated-resource fields
-        (<code>relatedData_s</code>, <code>relatedSoftware_s</code>) and TEI
-        <code>relatedItem</code> COAR types (dataset / software), not DOI guessing alone.
-        A linked HAL <code>SOFTWARE</code> deposit may also complete the triangle.
+        The same triangle can be declared from three hubs on HAL. We merge them into
+        one candidate per publication (DOI→HAL when needed):
+      </p>
+      <ul class="muted" style="margin:0.55rem 0 0; padding-left:1.2rem; font-size:0.9rem; max-width:46rem; line-height:1.5">
+        <li><strong>Publication hub</strong> — scholarly notice with <code>relatedData_s</code>
+          plus software (<code>relatedSoftware_s</code> / SWHID / code repo / linked SOFTWARE).</li>
+        <li><strong>Software hub</strong> — <code>SOFTWARE</code> deposit with
+          <code>relatedPublication_s</code> and <code>relatedData_s</code>.</li>
+        <li><strong>Dataset hub</strong> — dataset-like notice (often <code>OTHER</code>) with
+          <code>relatedPublication_s</code> and <code>relatedSoftware_s</code>; the notice itself
+          is the data pillar.</li>
+      </ul>
+      <p class="muted" style="margin:0.75rem 0 0; font-size:0.9rem; max-width:46rem; line-height:1.5">
+        Typing also uses TEI <code>relatedItem</code> COAR subtypes (dataset / software).
+        We do not classify solely by DataCite DOI guessing.
       </p>
     </section>
 
     <div class="stats" id="stats" role="group" aria-label="Key statistics"></div>
     <section class="panel">
+      <div class="filters" id="hubFilters" style="margin-bottom:0.45rem"></div>
       <div class="filters" id="basisFilters" style="margin-bottom:0.65rem"></div>
-      <input id="q" class="search" type="search" placeholder="Search title, HAL id, DOI, dataset, software, lab…" autocomplete="off" />
+      <input id="q" class="search" type="search" placeholder="Search title, HAL id, DOI, hub, dataset, software, lab…" autocomplete="off" />
       {_list_toolbar_html(sort_options_html=sort_opts)}
       <div class="list" id="list"></div>
     </section>
@@ -2769,17 +2782,21 @@ def render_open_science_triptych(payload_json: str, *, generated_at: str | None 
     const data = JSON.parse(document.getElementById("data").textContent);
     const rows = data.publications || [];
     const s = data.summary || {{}};
+    let activeHub = "all";
     let activeBasis = "all";
     const allLabs = uniqueLabs(rows, r => r.laboratories);
     const allYears = uniqueYears(rows, r => [r.publication_year]);
 
     const typedBoth = rows.filter(r => r.has_typed_relatedData && r.has_typed_relatedSoftware).length;
+    const byHub = s.by_hub || {{}};
+    const hubCount = (name) =>
+      byHub[name] != null ? byHub[name] : rows.filter(r => (r.hubs || []).includes(name)).length;
 
     document.getElementById("stats").innerHTML = [
-      {{ v: s.publications || rows.length, l: "Publications in the triptych" }},
-      {{ v: s.with_typed_relatedData_and_relatedSoftware || typedBoth, l: "Typed relatedData + relatedSoftware" }},
-      {{ v: rows.filter(r => (r.datasets||[]).length).length, l: "With ≥1 dataset link" }},
-      {{ v: rows.filter(r => (r.software_signals||[]).length).length, l: "With ≥1 software signal" }},
+      {{ v: s.publications || rows.length, l: "Triptych candidates" }},
+      {{ v: hubCount("publication"), l: "Via publication hub" }},
+      {{ v: hubCount("software"), l: "Via software hub" }},
+      {{ v: hubCount("dataset"), l: "Via dataset / OTHER hub" }},
     ].map(x => `<div class="stat"><strong data-count="${{x.v}}">0</strong><span>${{x.l}}</span></div>`).join("");
     animateStatCounts(document.getElementById("stats"));
 
@@ -2796,11 +2813,26 @@ def render_open_science_triptych(payload_json: str, *, generated_at: str | None 
       return v;
     }}
 
+    function paintHubFilters() {{
+      const opts = [
+        {{ v: "all", l: `All hubs (${{rows.length}})` }},
+        {{ v: "publication", l: `Publication (${{hubCount("publication")}})` }},
+        {{ v: "software", l: `Software (${{hubCount("software")}})` }},
+        {{ v: "dataset", l: `Dataset / OTHER (${{hubCount("dataset")}})` }},
+      ];
+      document.getElementById("hubFilters").innerHTML = opts.map(o => `
+        <button type="button" class="chip" data-v="${{o.v}}" aria-pressed="${{activeHub===o.v}}">${{esc(o.l)}}</button>
+      `).join("");
+      document.querySelectorAll("#hubFilters button").forEach(btn => btn.addEventListener("click", () => {{
+        activeHub = btn.dataset.v; paintHubFilters(); render();
+      }}));
+    }}
+
     function paintBasisFilters() {{
       const opts = [
-        {{ v: "all", l: `All (${{rows.length}})` }},
-        {{ v: "typed", l: `Typed HAL fields (${{typedBoth}})` }},
-        {{ v: "other", l: `Other signals (${{rows.length - typedBoth}})` }},
+        {{ v: "all", l: `All signals (${{rows.length}})` }},
+        {{ v: "typed", l: `Typed relatedData + relatedSoftware (${{typedBoth}})` }},
+        {{ v: "other", l: `Other / mixed (${{rows.length - typedBoth}})` }},
       ];
       document.getElementById("basisFilters").innerHTML = opts.map(o => `
         <button type="button" class="chip" data-v="${{o.v}}" aria-pressed="${{activeBasis===o.v}}">${{esc(o.l)}}</button>
@@ -2813,6 +2845,10 @@ def render_open_science_triptych(payload_json: str, *, generated_at: str | None 
     function sortRows(list) {{
       const mode = document.getElementById("sort").value;
       return list.slice().sort((a, b) => {{
+        if (mode === "hubs_first") {{
+          return (b.hubs||[]).length - (a.hubs||[]).length
+            || (Number(b.publication_year)||0) - (Number(a.publication_year)||0);
+        }}
         if (mode === "typed_first") {{
           const at = (a.has_typed_relatedData && a.has_typed_relatedSoftware) ? 1 : 0;
           const bt = (b.has_typed_relatedData && b.has_typed_relatedSoftware) ? 1 : 0;
@@ -2823,11 +2859,20 @@ def render_open_science_triptych(payload_json: str, *, generated_at: str | None 
       }});
     }}
 
+    function hubBadges(hubs) {{
+      const labels = {{ publication: "publication hub", software: "software hub", dataset: "dataset hub" }};
+      return (hubs || []).map(h =>
+        `<span class="badge">${{esc(labels[h] || h)}}</span>`
+      ).join("");
+    }}
+
     function render() {{
       const q = document.getElementById("q").value.trim().toLowerCase();
       const lab = activeLabFilter();
       const yearFilter = (document.getElementById("yearSelect").value || "").trim();
       const filtered = rows.filter(r => {{
+        const hubs = r.hubs || [];
+        if (activeHub !== "all" && !hubs.includes(activeHub)) return false;
         const typed = r.has_typed_relatedData && r.has_typed_relatedSoftware;
         if (activeBasis === "typed" && !typed) return false;
         if (activeBasis === "other" && typed) return false;
@@ -2835,16 +2880,19 @@ def render_open_science_triptych(payload_json: str, *, generated_at: str | None 
         if (!yearsMatch([r.publication_year], yearFilter)) return false;
         if (!q) return true;
         const blob = [
-          r.publication_halId, r.publication_title, r.publication_doi, r.match_basis,
+          r.candidate_key, r.publication_halId, r.publication_title, r.publication_doi,
+          r.match_basis, ...(r.hubs||[]), ...(r.match_bases||[]),
           ...(r.relatedData_s||[]), ...(r.relatedSoftware_s||[]),
           ...(r.dataset_values||[]), ...(r.laboratories||[]),
           ...(r.software_halIds||[]), ...(r.software_titles||[]),
+          ...((r.dataset_notices||[]).map(d => [d.halId_s, d.title_s].join(" "))),
           ...((r.software_signals||[]).map(s => s.value)),
+          ...(r.unresolved_relatedPublication_s||[]),
         ].join(" ").toLowerCase();
         return blob.includes(q);
       }});
       const list = sortRows(filtered);
-      document.getElementById("count").textContent = `${{list.length}} of ${{rows.length}} publications`;
+      document.getElementById("count").textContent = `${{list.length}} of ${{rows.length}} candidates`;
       document.getElementById("list").innerHTML = list.map(r => {{
         const typed = r.has_typed_relatedData && r.has_typed_relatedSoftware;
         const yearBadge = r.publication_year != null ? `<span class="badge">${{esc(r.publication_year)}}</span>` : "";
@@ -2852,40 +2900,66 @@ def render_open_science_triptych(payload_json: str, *, generated_at: str | None 
         const typedBadge = typed
           ? `<span class="badge">typed HAL links</span>`
           : `<span class="badge" style="color:var(--accent-hover)">mixed signals</span>`;
+        const title = r.publication_title
+          || (r.publication_doi ? `Unresolved publication · ${{r.publication_doi}}` : null)
+          || r.publication_halId
+          || r.candidate_key
+          || "Triptych candidate";
+        const titleHref = r.publication_uri
+          || (r.publication_doi ? `https://doi.org/${{r.publication_doi}}` : "#");
         const datasets = (r.datasets || []).map(d => {{
           const href = resourceHref(d.value);
           const rel = d.relation ? ` · ${{esc(d.relation)}}` : "";
-          return `<div class="ev"><dt>Dataset</dt><dd><a href="${{esc(href)}}" target="_blank" rel="noopener"><code>${{esc(d.value)}}</code></a>${{rel}} <span class="muted">(${{esc(d.source)}})</span></dd></div>`;
+          const label = d.label ? ` — ${{esc(d.label)}}` : "";
+          const kind = d.kind === "dataset_notice" ? "Dataset notice" : "Dataset";
+          return `<div class="ev"><dt>${{kind}}</dt><dd><a href="${{esc(href)}}" target="_blank" rel="noopener"><code>${{esc(d.value)}}</code></a>${{label}}${{rel}} <span class="muted">(${{esc(d.source)}})</span></dd></div>`;
+        }}).join("");
+        const notices = (r.dataset_notices || []).map(d => {{
+          const uri = d.uri_s || (d.halId_s ? `https://hal.science/${{d.halId_s}}` : "#");
+          const dt = d.docType_s ? ` · ${{esc(d.docType_s)}}` : "";
+          return `<div class="ev"><dt>Data notice (hub)</dt><dd><a href="${{esc(uri)}}" target="_blank" rel="noopener">${{esc(d.title_s || d.halId_s)}}</a> · <code>${{esc(d.halId_s)}}</code>${{dt}}</dd></div>`;
         }}).join("");
         const soft = (r.software_signals || []).map(s => {{
           const href = resourceHref(s.value);
           return `<div class="ev"><dt>Software</dt><dd><a href="${{esc(href)}}" target="_blank" rel="noopener"><code>${{esc(s.value)}}</code></a> <span class="muted">(${{esc(s.kind)}} · ${{esc(s.source)}})</span></dd></div>`;
         }}).join("");
-        const softDeps = (r.software_halIds || []).map((id, i) => {{
-          const uri = (r.software_uris || [])[i] || `https://hal.science/${{id}}`;
-          const title = (r.software_titles || [])[i] || id;
-          return `<div class="ev"><dt>SOFTWARE deposit</dt><dd><a href="${{esc(uri)}}" target="_blank" rel="noopener">${{esc(title)}}</a> · <code>${{esc(id)}}</code></dd></div>`;
+        const softDepRows = (r.software_deposits && r.software_deposits.length)
+          ? r.software_deposits
+          : (r.software_halIds || []);
+        const softDeps = softDepRows.map((dep, i) => {{
+          const id = typeof dep === "string" ? dep : (dep.halId_s || "");
+          const uri = (typeof dep === "object" && dep.uri_s)
+            || (r.software_uris || [])[i]
+            || (id ? `https://hal.science/${{id}}` : "#");
+          const titleSoft = (typeof dep === "object" && dep.title_s)
+            || (r.software_titles || [])[i]
+            || id;
+          return `<div class="ev"><dt>SOFTWARE deposit</dt><dd><a href="${{esc(uri)}}" target="_blank" rel="noopener">${{esc(titleSoft)}}</a> · <code>${{esc(id)}}</code></dd></div>`;
         }}).join("");
         const doi = r.publication_doi
           ? `<a href="https://doi.org/${{esc(r.publication_doi)}}" target="_blank" rel="noopener"><code>${{esc(r.publication_doi)}}</code></a>`
           : "";
+        const halLink = r.publication_halId
+          ? `<a href="${{esc(r.publication_uri || ("https://hal.science/" + r.publication_halId))}}" target="_blank" rel="noopener"><code>${{esc(r.publication_halId)}}</code></a>`
+          : "";
         return `<article class="result">
           <div class="card-head">
-            <h2><a href="${{esc(r.publication_uri || "#")}}" target="_blank" rel="noopener">${{esc(r.publication_title || r.publication_halId)}}</a></h2>
-            <div class="badges">${{yearBadge}}${{typeBadge}}${{typedBadge}}</div>
+            <h2><a href="${{esc(titleHref)}}" target="_blank" rel="noopener">${{esc(title)}}</a></h2>
+            <div class="badges">${{yearBadge}}${{typeBadge}}${{hubBadges(r.hubs)}}${{typedBadge}}</div>
           </div>
           <div class="sub">
-            <a href="${{esc(r.publication_uri || "#")}}" target="_blank" rel="noopener"><code>${{esc(r.publication_halId)}}</code></a>
+            ${{halLink}}
             ${{doi}}
             <span>${{esc(r.match_basis || "")}}</span>
           </div>
           ${{yearLine([r.publication_year])}}
           ${{labsLine(r.laboratories)}}
-          <div class="evidence">${{datasets}}${{soft}}${{softDeps}}</div>
+          <div class="evidence">${{notices}}${{datasets}}${{soft}}${{softDeps}}</div>
         </article>`;
-      }}).join("") || `<div class="empty">No publications currently match the triptych criteria for this collection.</div>`;
+      }}).join("") || `<div class="empty">No candidates currently match the triptych criteria for this collection.</div>`;
     }}
 
+    paintHubFilters();
     paintBasisFilters();
     paintLabControls(allLabs);
     paintYearControls(allYears);

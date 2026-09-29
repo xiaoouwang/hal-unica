@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>HAL-UniCA · Open science triptych</title>
-  <meta name="description" content="Université Côte d’Azur HAL publications that link research data and software alongside the scholarly text — the open science triptych." />
+  <meta name="description" content="Université Côte d’Azur HAL candidates that link a publication, research data, and software — the open science triptych." />
   <meta name="robots" content="index,follow" />
   <meta name="author" content="HAL-UniCA · Université Côte d’Azur" />
   <meta name="theme-color" content="#f4f0ea" />
@@ -13,15 +13,15 @@
   <meta property="og:site_name" content="HAL-UniCA" />
   <meta property="og:locale" content="en_GB" />
   <meta property="og:title" content="HAL-UniCA · Open science triptych" />
-  <meta property="og:description" content="Université Côte d’Azur HAL publications that link research data and software alongside the scholarly text — the open science triptych." />
+  <meta property="og:description" content="Université Côte d’Azur HAL candidates that link a publication, research data, and software — the open science triptych." />
   <meta property="og:url" content="https://xiaoouwang.github.io/hal-unica/open-science-triptych.html" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="HAL-UniCA · Open science triptych" />
-  <meta name="twitter:description" content="Université Côte d’Azur HAL publications that link research data and software alongside the scholarly text — the open science triptych." />
+  <meta name="twitter:description" content="Université Côte d’Azur HAL candidates that link a publication, research data, and software — the open science triptych." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://xiaoouwang.github.io/hal-unica/#website","name":"HAL-UniCA","url":"https://xiaoouwang.github.io/hal-unica/","description":"Open-science monitoring for Université Côte d’Azur on HAL: linked datasets, repositories, software, and correction queues.","inLanguage":"en","publisher":{"@type":"Organization","name":"Université Côte d’Azur","url":"https://univ-cotedazur.fr/","sameAs":["https://hal.science/UNIV-COTEDAZUR"]}},{"@type":"WebPage","@id":"https://xiaoouwang.github.io/hal-unica/open-science-triptych.html#webpage","url":"https://xiaoouwang.github.io/hal-unica/open-science-triptych.html","name":"HAL-UniCA · Open science triptych","description":"Université Côte d’Azur HAL publications that link research data and software alongside the scholarly text — the open science triptych.","isPartOf":{"@id":"https://xiaoouwang.github.io/hal-unica/#website"},"inLanguage":"en"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://xiaoouwang.github.io/hal-unica/#website","name":"HAL-UniCA","url":"https://xiaoouwang.github.io/hal-unica/","description":"Open-science monitoring for Université Côte d’Azur on HAL: linked datasets, repositories, software, and correction queues.","inLanguage":"en","publisher":{"@type":"Organization","name":"Université Côte d’Azur","url":"https://univ-cotedazur.fr/","sameAs":["https://hal.science/UNIV-COTEDAZUR"]}},{"@type":"WebPage","@id":"https://xiaoouwang.github.io/hal-unica/open-science-triptych.html#webpage","url":"https://xiaoouwang.github.io/hal-unica/open-science-triptych.html","name":"HAL-UniCA · Open science triptych","description":"Université Côte d’Azur HAL candidates that link a publication, research data, and software — the open science triptych.","isPartOf":{"@id":"https://xiaoouwang.github.io/hal-unica/#website"},"inLanguage":"en"}]}</script>
   <style>
 :root {
   --ink: #161513;
@@ -392,9 +392,9 @@ footer .updated time { font-variant-numeric: tabular-nums; }
     <p class="eyebrow">Publication · data · software</p>
     <h1>Open science triptych</h1>
     <p class="lede">
-      UniCA HAL notices where the scholarly publication is explicitly
-      associated with <strong>research data</strong> and <strong>software / source code</strong>
-      — the three pillars of open science on one deposit.
+      UniCA candidates where a <strong>publication</strong>, <strong>research data</strong>,
+      and <strong>software / source code</strong> are explicitly associated on HAL —
+      the three pillars of open science, found from any corner of the triangle.
     </p>
 
     <section class="panel">
@@ -428,17 +428,29 @@ footer .updated time { font-variant-numeric: tabular-nums; }
         </div>
       </div>
       <p class="muted" style="margin:1rem 0 0; font-size:0.9rem; max-width:46rem; line-height:1.5">
-        Detection uses HAL’s typed associated-resource fields
-        (<code>relatedData_s</code>, <code>relatedSoftware_s</code>) and TEI
-        <code>relatedItem</code> COAR types (dataset / software), not DOI guessing alone.
-        A linked HAL <code>SOFTWARE</code> deposit may also complete the triangle.
+        The same triangle can be declared from three hubs on HAL. We merge them into
+        one candidate per publication (DOI→HAL when needed):
+      </p>
+      <ul class="muted" style="margin:0.55rem 0 0; padding-left:1.2rem; font-size:0.9rem; max-width:46rem; line-height:1.5">
+        <li><strong>Publication hub</strong> — scholarly notice with <code>relatedData_s</code>
+          plus software (<code>relatedSoftware_s</code> / SWHID / code repo / linked SOFTWARE).</li>
+        <li><strong>Software hub</strong> — <code>SOFTWARE</code> deposit with
+          <code>relatedPublication_s</code> and <code>relatedData_s</code>.</li>
+        <li><strong>Dataset hub</strong> — dataset-like notice (often <code>OTHER</code>) with
+          <code>relatedPublication_s</code> and <code>relatedSoftware_s</code>; the notice itself
+          is the data pillar.</li>
+      </ul>
+      <p class="muted" style="margin:0.75rem 0 0; font-size:0.9rem; max-width:46rem; line-height:1.5">
+        Typing also uses TEI <code>relatedItem</code> COAR subtypes (dataset / software).
+        We do not classify solely by DataCite DOI guessing.
       </p>
     </section>
 
     <div class="stats" id="stats" role="group" aria-label="Key statistics"></div>
     <section class="panel">
+      <div class="filters" id="hubFilters" style="margin-bottom:0.45rem"></div>
       <div class="filters" id="basisFilters" style="margin-bottom:0.65rem"></div>
-      <input id="q" class="search" type="search" placeholder="Search title, HAL id, DOI, dataset, software, lab…" autocomplete="off" />
+      <input id="q" class="search" type="search" placeholder="Search title, HAL id, DOI, hub, dataset, software, lab…" autocomplete="off" />
       
       <div class="toolbar">
         <div id="count"></div>
@@ -448,6 +460,7 @@ footer .updated time { font-variant-numeric: tabular-nums; }
             <select id="sort">
             <option value="year_desc" selected>Year (newest)</option>
             <option value="title_asc">Title A–Z</option>
+            <option value="hubs_first">Multi-hub first</option>
             <option value="typed_first">Typed HAL links first</option>
     </select>
           </label>
@@ -473,11 +486,11 @@ footer .updated time { font-variant-numeric: tabular-nums; }
       <div class="list" id="list"></div>
     </section>
     <footer>
-      <div class="updated">Last updated: <time datetime="2026-09-29T15:24:11Z">29 Sep 2026, 17:24 CEST</time></div>
+      <div class="updated">Last updated: <time datetime="2026-09-29T15:30:51Z">29 Sep 2026, 17:30 CEST</time></div>
       Downloads: <a href="./data/census/publications_with_dataset_and_software.csv"><code>publications_with_dataset_and_software.csv</code></a> · <a href="./data/census/publications_with_dataset_and_software.jsonl"><code>.jsonl</code></a> · <a href="./data/census/publications_with_dataset_and_software.md"><code>.md</code></a>
     </footer>
   </main>
-  <script id="data" type="application/json">{"generated_at": "2026-09-29T15:24:11Z", "publications": [{"publication_halId": "hal-04162960", "publication_uri": "https://hal.inrae.fr/hal-04162960v4", "publication_title": "airGRdatasets: Hydro-Meteorological Catchments Datasets for the 'airGR' Packages. Manual of the R package version 0.2.3", "publication_doi": null, "publication_docType": "OTHER", "publication_year": 2025, "laboratories": ["UR HYCAR", "INRAE", "EPU Nice -Polytech'Nice-Sophia", "UNS", "UniCA", "GEOAZUR 7329", "INSU - CNRS", "UniCA", "CNRS", "IRD [Occitanie]", "IRD", "UniCA"], "relatedData_s": ["10.57745/3SPJ4B"], "relatedSoftware_s": [], "relatedPublication_s": [], "seeAlso_s": ["https://CRAN.R-project.org/package=airGRdatasets"], "swhidId_s": [], "n_datasets": 1, "datasets": [{"value": "10.57745/3SPJ4B", "source": "publication.relatedData_s", "kind": "dataset", "relation": "Cites", "coar_subtype": "http://purl.org/coar/resource_type/c_ddb1", "tei_kind": "dataset"}], "dataset_values": ["10.57745/3SPJ4B"], "n_software_signals": 2, "software_signals": [{"kind": "software_deposit_relatedPublication", "value": "hal-04481411", "source": "software.relatedPublication_s"}, {"kind": "swhid_from_software_deposit", "value": "swh:1:dir:b047cd45ee4f9346a6fa7338c8d7ec230825143d;origin=https://cran.r-project.org/package%253DairGRdatasets;visit=swh:1:snp:c09c87412da9be257d813ea1173036ec6181d5d3;anchor=swh:1:rel:a68ddd145c52c5f9de5771dde91cecd942aecee9;path=/airGRdatasets/", "source": "software:hal-04481411.swhidId_s"}], "software_halIds": ["hal-04481411"], "software_uris": ["https://hal.inrae.fr/hal-04481411v4"], "software_titles": ["airGRdatasets: Hydro-Meteorological Catchments Datasets for the 'airGR' Packages. R package version 0.2.3"], "has_typed_relatedData": true, "has_typed_relatedSoftware": false, "match_basis": "relatedData_s+software_signals"}, {"publication_halId": "hal-04208050", "publication_uri": "https://hal.inrae.fr/hal-04208050v1", "publication_title": "airGRteaching: an open-source tool for teaching hydrological modeling with R", "publication_doi": "10.5194/hess-27-3293-2023", "publication_docType": "ART", "publication_year": 2023, "laboratories": ["UR HYCAR", "INRAE", "GEOAZUR 7329", "INSU - CNRS", "UniCA", "CNRS", "IRD [Occitanie]", "IRD", "UniCA", "EDF Direction Technique", "EDF [E.D.F.]"], "relatedData_s": ["10.32614/CRAN.package.airGRdatasets", "10.32614/CRAN.package.airGRteaching"], "relatedSoftware_s": ["swh:1:dir:3ddc33933e5818871e5d5dfc5aeb3f857c40f8b1;origin=https://cran.r-project.org/package%253DairGRteaching;visit=swh:1:snp:cb9adfa360a7cb140bd65ef48c34fd0ee076a7e1;anchor=swh:1:rel:ba15b1b00733887709ff37c99460cdaf6773e3dc;path=/airGRteaching/"], "relatedPublication_s": [], "seeAlso_s": [], "swhidId_s": [], "n_datasets": 2, "datasets": [{"value": "10.32614/CRAN.package.airGRdatasets", "source": "publication.relatedData_s", "kind": "dataset", "relation": "IsSupplementedBy", "coar_subtype": "http://purl.org/coar/resource_type/c_ddb1", "tei_kind": "dataset"}, {"value": "10.32614/CRAN.package.airGRteaching", "source": "publication.relatedData_s", "kind": "dataset", "relation": "Cites", "coar_subtype": "http://purl.org/coar/resource_type/c_ddb1", "tei_kind": "dataset"}], "dataset_values": ["10.32614/CRAN.package.airGRdatasets", "10.32614/CRAN.package.airGRteaching"], "n_software_signals": 2, "software_signals": [{"kind": "relatedSoftware_s", "value": "swh:1:dir:3ddc33933e5818871e5d5dfc5aeb3f857c40f8b1;origin=https://cran.r-project.org/package%253DairGRteaching;visit=swh:1:snp:cb9adfa360a7cb140bd65ef48c34fd0ee076a7e1;anchor=swh:1:rel:ba15b1b00733887709ff37c99460cdaf6773e3dc;path=/airGRteaching/", "source": "publication.relatedSoftware_s"}, {"kind": "tei_relatedItem_software", "value": "https://archive.softwareheritage.org/swh:1:dir:3ddc33933e5818871e5d5dfc5aeb3f857c40f8b1;origin=https://cran.r-project.org/package%253DairGRteaching;visit=swh:1:snp:cb9adfa360a7cb140bd65ef48c34fd0ee076a7e1;anchor=swh:1:rel:ba15b1b00733887709ff37c99460cdaf6773e3dc;path=/airGRteaching/", "source": "tei.relatedItem:IsSupplementedBy", "relation": "IsSupplementedBy", "coar_subtype": "http://purl.org/coar/resource_type/c_5ce6"}], "software_halIds": [], "software_uris": [], "software_titles": [], "has_typed_relatedData": true, "has_typed_relatedSoftware": true, "match_basis": "relatedData_s+relatedSoftware_s"}, {"publication_halId": "hal-03807744", "publication_uri": "https://hal.science/hal-03807744v1", "publication_title": "ISSA: Generic Pipeline, Knowledge Model and Visualization tools to Help Scientists Search and Make Sense of a Scientific Archive", "publication_doi": "10.1007/978-3-031-19433-7_38", "publication_docType": "COMM", "publication_year": 2022, "laboratories": ["Cirad -Dgdrs-DIST", "Cirad-Dgdrs", "Cirad", "Laboratoire I3S - SPARKS", "I3S", "UNS", "CNRS", "UniCA", "WIMMICS", "Inria", "Laboratoire I3S - SPARKS", "I3S", "UNS", "CNRS", "UniCA", "Euromov DHM", "IMT", "UM"], "relatedData_s": [], "relatedSoftware_s": ["hal-04128090"], "relatedPublication_s": [], "seeAlso_s": ["Vidéo : https://iswc2022.semanticweb.org/index.php/accepted-papers/#1a2"], "swhidId_s": [], "n_datasets": 1, "datasets": [{"value": "10.5281/zenodo.10381606", "source": "software:hal-04807540.relatedData_s", "kind": "dataset"}], "dataset_values": ["10.5281/zenodo.10381606"], "n_software_signals": 6, "software_signals": [{"kind": "relatedSoftware_s", "value": "hal-04128090", "source": "publication.relatedSoftware_s"}, {"kind": "tei_relatedItem_software", "value": "https://hal.science/hal-04128090v1", "source": "tei.relatedItem:References", "relation": "References", "coar_subtype": "http://purl.org/coar/resource_type/c_5ce6"}, {"kind": "software_deposit_relatedPublication", "value": "hal-04807540", "source": "software.relatedPublication_s"}, {"kind": "swhid_from_software_deposit", "value": "swh:1:rev:0ca5a450c3ba350eb2bb413a7b1fcdc7aa2a293b", "source": "software:hal-04807540.swhidId_s"}, {"kind": "software_deposit_relatedPublication", "value": "hal-04128090", "source": "software.relatedPublication_s"}, {"kind": "swhid_from_software_deposit", "value": "swh:1:dir:8ea716c0d9e69527a5f50378bf135c5952b1a229;origin=https://github.com/frmichel/morph-xr2rml;visit=swh:1:snp:1a5ab65813d598dd4d7353a5f982f7a815e9537c;anchor=swh:1:rev:04f1cd7c5db406bccdb92c29d9fc74bf61a3813c", "source": "software:hal-04128090.swhidId_s"}], "software_halIds": ["hal-04807540", "hal-04128090"], "software_uris": ["https://hal.science/hal-04807540v1", "https://hal.science/hal-04128090v1"], "software_titles": ["ISSA Pipeline", "Morph-xR2RML: MongoDB-to-RDF translation"], "has_typed_relatedData": false, "has_typed_relatedSoftware": true, "match_basis": "mixed_or_software_deposit"}], "summary": {"university_id": "unica", "collection": "UNIV-COTEDAZUR", "query": "collCode_s:UNIV-COTEDAZUR AND (relatedData_s:* OR relatedSoftware_s:* OR swhidId_s:* OR softCodeRepository_s:*)", "started_at": "2026-09-29T15:24:02Z", "finished_at": "2026-09-29T15:24:03Z", "publications": 3, "with_typed_relatedData_and_relatedSoftware": 1, "by_match_basis": {"relatedData_s+software_signals": 1, "relatedData_s+relatedSoftware_s": 1, "mixed_or_software_deposit": 1}, "by_docType": {"OTHER": 1, "ART": 1, "COMM": 1}, "method": ["Prefer HAL typed API fields relatedData_s and relatedSoftware_s.", "Enrich from TEI relatedItem (@type DataCite relation, @subtype COAR).", "Also accept swhidId_s / softCodeRepository_s and SOFTWARE deposit backlinks.", "Do not classify solely by DataCite DOI resolution."]}}</script>
+  <script id="data" type="application/json">{"generated_at": "2026-09-29T15:30:51Z", "publications": [{"candidate_key": "pub:hal-05700643", "hubs": ["dataset"], "primary_hub": "dataset", "publication_halId": "hal-05700643", "publication_uri": "https://hal.science/hal-05700643v1", "publication_title": "Are you Talking Logic to Me? Assessing Language Models Syllogistic Reasoning Capabilities", "publication_doi": null, "publication_docType": "COMM", "publication_year": 2026, "laboratories": ["WIMMICS", "Inria", "Laboratoire I3S - SPARKS", "I3S", "UNS", "CNRS", "UniCA", "DSTI Labs"], "unresolved_relatedPublication_s": [], "n_datasets": 1, "datasets": [{"value": "hal-05709317", "source": "dataset_notice:hal-05709317.self", "kind": "dataset_notice", "label": "Logic in the Era of Artificial Intelligence: Common Logic Grammar Construction Framework"}], "dataset_values": ["hal-05709317"], "n_software_signals": 2, "software_signals": [{"kind": "relatedSoftware_s", "value": "hal-05608340", "source": "dataset_notice:hal-05709317.relatedSoftware_s"}, {"kind": "tei_relatedItem_software", "value": "https://hal.science/hal-05608340", "source": "dataset_notice:hal-05709317.tei.relatedItem:Cites", "relation": "Cites", "coar_subtype": "http://purl.org/coar/resource_type/c_5ce6"}], "software_halIds": [], "software_uris": [], "software_titles": [], "software_deposits": [], "dataset_notices": [{"halId_s": "hal-05709317", "uri_s": "https://hal.science/hal-05709317v1", "title_s": "Logic in the Era of Artificial Intelligence: Common Logic Grammar Construction Framework", "docType_s": "OTHER", "docSubType_s": null, "doiId_s": null, "producedDateY_i": 2026, "laboratories": ["WIMMICS", "Inria", "Laboratoire I3S - SPARKS", "I3S", "UNS", "CNRS", "UniCA", "DSTI Labs"]}], "relatedData_s": [], "relatedSoftware_s": ["hal-05608340"], "has_typed_relatedData": false, "has_typed_relatedSoftware": true, "match_basis": "dataset_hub:relatedPublication+relatedSoftware", "match_bases": ["dataset_hub:relatedPublication+relatedSoftware"]}, {"candidate_key": "pub:hal-04162960", "hubs": ["publication"], "primary_hub": "publication", "publication_halId": "hal-04162960", "publication_uri": "https://hal.inrae.fr/hal-04162960v4", "publication_title": "airGRdatasets: Hydro-Meteorological Catchments Datasets for the 'airGR' Packages. Manual of the R package version 0.2.3", "publication_doi": null, "publication_docType": "OTHER", "publication_year": 2025, "laboratories": ["UR HYCAR", "INRAE", "EPU Nice -Polytech'Nice-Sophia", "UNS", "UniCA", "GEOAZUR 7329", "INSU - CNRS", "UniCA", "CNRS", "IRD [Occitanie]", "IRD", "UniCA"], "unresolved_relatedPublication_s": [], "n_datasets": 1, "datasets": [{"value": "10.57745/3SPJ4B", "source": "publication.relatedData_s", "kind": "dataset", "relation": "Cites", "coar_subtype": "http://purl.org/coar/resource_type/c_ddb1", "tei_kind": "dataset"}], "dataset_values": ["10.57745/3SPJ4B"], "n_software_signals": 2, "software_signals": [{"kind": "software_deposit_relatedPublication", "value": "hal-04481411", "source": "software.relatedPublication_s"}, {"kind": "swhid_from_software_deposit", "value": "swh:1:dir:b047cd45ee4f9346a6fa7338c8d7ec230825143d;origin=https://cran.r-project.org/package%253DairGRdatasets;visit=swh:1:snp:c09c87412da9be257d813ea1173036ec6181d5d3;anchor=swh:1:rel:a68ddd145c52c5f9de5771dde91cecd942aecee9;path=/airGRdatasets/", "source": "software:hal-04481411.swhidId_s"}], "software_halIds": ["hal-04481411"], "software_uris": ["https://hal.inrae.fr/hal-04481411v4"], "software_titles": ["airGRdatasets: Hydro-Meteorological Catchments Datasets for the 'airGR' Packages. R package version 0.2.3"], "software_deposits": [{"halId_s": "hal-04481411", "uri_s": "https://hal.inrae.fr/hal-04481411v4", "title_s": "airGRdatasets: Hydro-Meteorological Catchments Datasets for the 'airGR' Packages. R package version 0.2.3", "docType_s": "SOFTWARE", "docSubType_s": null, "doiId_s": "10.32614/CRAN.package.airGRdatasets", "producedDateY_i": 2025, "laboratories": ["UR HYCAR", "INRAE", "EPU Nice -Polytech'Nice-Sophia", "UNS", "UniCA", "GEOAZUR 7329", "INSU - CNRS", "UniCA", "CNRS", "IRD [Occitanie]", "IRD", "UniCA"]}], "dataset_notices": [], "relatedData_s": ["10.57745/3SPJ4B"], "relatedSoftware_s": [], "has_typed_relatedData": true, "has_typed_relatedSoftware": false, "match_basis": "publication_hub:relatedData+software_signals", "match_bases": ["publication_hub:relatedData+software_signals"]}, {"candidate_key": "pub:hal-04208050", "hubs": ["publication"], "primary_hub": "publication", "publication_halId": "hal-04208050", "publication_uri": "https://hal.inrae.fr/hal-04208050v1", "publication_title": "airGRteaching: an open-source tool for teaching hydrological modeling with R", "publication_doi": "10.5194/hess-27-3293-2023", "publication_docType": "ART", "publication_year": 2023, "laboratories": ["UR HYCAR", "INRAE", "GEOAZUR 7329", "INSU - CNRS", "UniCA", "CNRS", "IRD [Occitanie]", "IRD", "UniCA", "EDF Direction Technique", "EDF [E.D.F.]"], "unresolved_relatedPublication_s": [], "n_datasets": 2, "datasets": [{"value": "10.32614/CRAN.package.airGRdatasets", "source": "publication.relatedData_s", "kind": "dataset", "relation": "IsSupplementedBy", "coar_subtype": "http://purl.org/coar/resource_type/c_ddb1", "tei_kind": "dataset"}, {"value": "10.32614/CRAN.package.airGRteaching", "source": "publication.relatedData_s", "kind": "dataset", "relation": "Cites", "coar_subtype": "http://purl.org/coar/resource_type/c_ddb1", "tei_kind": "dataset"}], "dataset_values": ["10.32614/CRAN.package.airGRdatasets", "10.32614/CRAN.package.airGRteaching"], "n_software_signals": 4, "software_signals": [{"kind": "relatedSoftware_s", "value": "swh:1:dir:3ddc33933e5818871e5d5dfc5aeb3f857c40f8b1;origin=https://cran.r-project.org/package%253DairGRteaching;visit=swh:1:snp:cb9adfa360a7cb140bd65ef48c34fd0ee076a7e1;anchor=swh:1:rel:ba15b1b00733887709ff37c99460cdaf6773e3dc;path=/airGRteaching/", "source": "publication.relatedSoftware_s"}, {"kind": "tei_relatedItem_software", "value": "https://archive.softwareheritage.org/swh:1:dir:3ddc33933e5818871e5d5dfc5aeb3f857c40f8b1;origin=https://cran.r-project.org/package%253DairGRteaching;visit=swh:1:snp:cb9adfa360a7cb140bd65ef48c34fd0ee076a7e1;anchor=swh:1:rel:ba15b1b00733887709ff37c99460cdaf6773e3dc;path=/airGRteaching/", "source": "publication.tei.relatedItem:IsSupplementedBy", "relation": "IsSupplementedBy", "coar_subtype": "http://purl.org/coar/resource_type/c_5ce6"}, {"kind": "software_deposit_relatedPublication", "value": "hal-04412872", "source": "software.relatedPublication_s"}, {"kind": "swhid_from_software_deposit", "value": "swh:1:dir:6e59bda8283ea05228d81c884933d1df7e9574d1;origin=https://cran.r-project.org/package%253DairGRteaching;visit=swh:1:snp:c2eccf233a8b854f85cc5c72a5f7527eb954ae5b;anchor=swh:1:rel:7e8c0045edeb6f8e72495e4b334e4daa187a948d;path=/airGRteaching/", "source": "software:hal-04412872.swhidId_s"}], "software_halIds": ["hal-04412872"], "software_uris": ["https://hal.inrae.fr/hal-04412872v15"], "software_titles": ["airGRteaching: Teaching Hydrological Modelling with the GR Rainfall-Runoff Models ('Shiny' Interface Included). R package version 0.3.3"], "software_deposits": [{"halId_s": "hal-04412872", "uri_s": "https://hal.inrae.fr/hal-04412872v15", "title_s": "airGRteaching: Teaching Hydrological Modelling with the GR Rainfall-Runoff Models ('Shiny' Interface Included). R package version 0.3.3", "docType_s": "SOFTWARE", "docSubType_s": null, "doiId_s": null, "producedDateY_i": 2024, "laboratories": ["UR HYCAR", "INRAE", "UR HBAN", "IRSTEA", "DTG", "EDF [E.D.F.]", "GEOAZUR 7329", "INSU - CNRS", "UniCA", "CNRS", "IRD [Occitanie]", "IRD", "UniCA", "EPU Nice -Polytech'Nice-Sophia", "UNS", "UniCA"]}], "dataset_notices": [], "relatedData_s": ["10.32614/CRAN.package.airGRdatasets", "10.32614/CRAN.package.airGRteaching"], "relatedSoftware_s": ["swh:1:dir:3ddc33933e5818871e5d5dfc5aeb3f857c40f8b1;origin=https://cran.r-project.org/package%253DairGRteaching;visit=swh:1:snp:cb9adfa360a7cb140bd65ef48c34fd0ee076a7e1;anchor=swh:1:rel:ba15b1b00733887709ff37c99460cdaf6773e3dc;path=/airGRteaching/"], "has_typed_relatedData": true, "has_typed_relatedSoftware": true, "match_basis": "publication_hub:relatedData+relatedSoftware", "match_bases": ["publication_hub:relatedData+relatedSoftware"]}, {"candidate_key": "pub:hal-03807744", "hubs": ["publication", "software"], "primary_hub": "publication", "publication_halId": "hal-03807744", "publication_uri": "https://hal.science/hal-03807744v1", "publication_title": "ISSA: Generic Pipeline, Knowledge Model and Visualization tools to Help Scientists Search and Make Sense of a Scientific Archive", "publication_doi": "10.1007/978-3-031-19433-7_38", "publication_docType": "COMM", "publication_year": 2022, "laboratories": ["Cirad -Dgdrs-DIST", "Cirad-Dgdrs", "Cirad", "Laboratoire I3S - SPARKS", "I3S", "UNS", "CNRS", "UniCA", "WIMMICS", "Inria", "Laboratoire I3S - SPARKS", "I3S", "UNS", "CNRS", "UniCA", "Euromov DHM", "IMT", "UM"], "unresolved_relatedPublication_s": [], "n_datasets": 1, "datasets": [{"value": "10.5281/zenodo.10381606", "source": "software:hal-04807540.relatedData_s", "kind": "dataset"}], "dataset_values": ["10.5281/zenodo.10381606"], "n_software_signals": 6, "software_signals": [{"kind": "relatedSoftware_s", "value": "hal-04128090", "source": "publication.relatedSoftware_s"}, {"kind": "tei_relatedItem_software", "value": "https://hal.science/hal-04128090v1", "source": "publication.tei.relatedItem:References", "relation": "References", "coar_subtype": "http://purl.org/coar/resource_type/c_5ce6"}, {"kind": "software_deposit_relatedPublication", "value": "hal-04807540", "source": "software.relatedPublication_s"}, {"kind": "swhid_from_software_deposit", "value": "swh:1:rev:0ca5a450c3ba350eb2bb413a7b1fcdc7aa2a293b", "source": "software:hal-04807540.swhidId_s"}, {"kind": "swhid_from_software_deposit", "value": "swh:1:dir:8ea716c0d9e69527a5f50378bf135c5952b1a229;origin=https://github.com/frmichel/morph-xr2rml;visit=swh:1:snp:1a5ab65813d598dd4d7353a5f982f7a815e9537c;anchor=swh:1:rev:04f1cd7c5db406bccdb92c29d9fc74bf61a3813c", "source": "software:hal-04128090.swhidId_s"}, {"kind": "softCodeRepository_s", "value": "https://github.com/issa-project/issa-pipeline", "source": "software:hal-04807540.softCodeRepository_s"}], "software_halIds": ["hal-04807540", "hal-04128090"], "software_uris": ["https://hal.science/hal-04807540v1", "https://hal.science/hal-04128090v1"], "software_titles": ["ISSA Pipeline", "Morph-xR2RML: MongoDB-to-RDF translation"], "software_deposits": [{"halId_s": "hal-04807540", "uri_s": "https://hal.science/hal-04807540v1", "title_s": "ISSA Pipeline", "docType_s": "SOFTWARE", "docSubType_s": null, "doiId_s": "10.5281/zenodo.1423046", "producedDateY_i": 2024, "laboratories": ["WIMMICS", "Inria", "Laboratoire I3S - SPARKS", "I3S", "UNS", "CNRS", "UniCA", "Laboratoire I3S - SPARKS", "I3S", "UNS", "CNRS", "UniCA", "Euromov DHM", "IMT", "UM", "Cirad"]}, {"halId_s": "hal-04128090", "uri_s": "https://hal.science/hal-04128090v1", "title_s": "Morph-xR2RML: MongoDB-to-RDF translation", "docType_s": "SOFTWARE", "docSubType_s": null, "doiId_s": null, "producedDateY_i": 2015, "laboratories": ["WIMMICS", "Inria", "Laboratoire I3S - SPARKS", "I3S", "UNS", "CNRS", "UniCA"]}], "dataset_notices": [], "relatedData_s": [], "relatedSoftware_s": ["hal-04128090"], "has_typed_relatedData": false, "has_typed_relatedSoftware": true, "match_basis": "publication_hub:relatedData+software_signals|software_hub:relatedPublication+relatedData", "match_bases": ["publication_hub:relatedData+software_signals", "software_hub:relatedPublication+relatedData"]}], "summary": {"university_id": "unica", "collection": "UNIV-COTEDAZUR", "query": "relatedData_s:* OR relatedSoftware_s:* OR relatedPublication_s:* OR swhidId_s:* OR softCodeRepository_s:* OR docType_s:SOFTWARE", "started_at": "2026-09-29T15:30:26Z", "finished_at": "2026-09-29T15:30:33Z", "publications": 4, "with_typed_relatedData_and_relatedSoftware": 1, "by_hub": {"dataset": 1, "publication": 3, "software": 1}, "by_primary_hub": {"dataset": 1, "publication": 3}, "by_match_basis": {"dataset_hub:relatedPublication+relatedSoftware": 1, "publication_hub:relatedData+software_signals": 1, "publication_hub:relatedData+relatedSoftware": 1, "publication_hub:relatedData+software_signals|software_hub:relatedPublication+relatedData": 1}, "by_docType": {"COMM": 2, "OTHER": 1, "ART": 1}, "method": ["Publication hub: relatedData_s + software signals on a scholarly notice.", "Software hub: SOFTWARE with relatedPublication_s + relatedData_s (DOI→HAL).", "Dataset hub: dataset-like / OTHER notice with relatedPublication + relatedSoftware.", "TEI relatedItem COAR subtypes enrich dataset vs software typing.", "Do not classify solely by DataCite DOI resolution."]}}</script>
   <script>
 
     function animateStatCounts(root, { duration = 850 } = {}) {
@@ -626,17 +639,21 @@ footer .updated time { font-variant-numeric: tabular-nums; }
     const data = JSON.parse(document.getElementById("data").textContent);
     const rows = data.publications || [];
     const s = data.summary || {};
+    let activeHub = "all";
     let activeBasis = "all";
     const allLabs = uniqueLabs(rows, r => r.laboratories);
     const allYears = uniqueYears(rows, r => [r.publication_year]);
 
     const typedBoth = rows.filter(r => r.has_typed_relatedData && r.has_typed_relatedSoftware).length;
+    const byHub = s.by_hub || {};
+    const hubCount = (name) =>
+      byHub[name] != null ? byHub[name] : rows.filter(r => (r.hubs || []).includes(name)).length;
 
     document.getElementById("stats").innerHTML = [
-      { v: s.publications || rows.length, l: "Publications in the triptych" },
-      { v: s.with_typed_relatedData_and_relatedSoftware || typedBoth, l: "Typed relatedData + relatedSoftware" },
-      { v: rows.filter(r => (r.datasets||[]).length).length, l: "With ≥1 dataset link" },
-      { v: rows.filter(r => (r.software_signals||[]).length).length, l: "With ≥1 software signal" },
+      { v: s.publications || rows.length, l: "Triptych candidates" },
+      { v: hubCount("publication"), l: "Via publication hub" },
+      { v: hubCount("software"), l: "Via software hub" },
+      { v: hubCount("dataset"), l: "Via dataset / OTHER hub" },
     ].map(x => `<div class="stat"><strong data-count="${x.v}">0</strong><span>${x.l}</span></div>`).join("");
     animateStatCounts(document.getElementById("stats"));
 
@@ -653,11 +670,26 @@ footer .updated time { font-variant-numeric: tabular-nums; }
       return v;
     }
 
+    function paintHubFilters() {
+      const opts = [
+        { v: "all", l: `All hubs (${rows.length})` },
+        { v: "publication", l: `Publication (${hubCount("publication")})` },
+        { v: "software", l: `Software (${hubCount("software")})` },
+        { v: "dataset", l: `Dataset / OTHER (${hubCount("dataset")})` },
+      ];
+      document.getElementById("hubFilters").innerHTML = opts.map(o => `
+        <button type="button" class="chip" data-v="${o.v}" aria-pressed="${activeHub===o.v}">${esc(o.l)}</button>
+      `).join("");
+      document.querySelectorAll("#hubFilters button").forEach(btn => btn.addEventListener("click", () => {
+        activeHub = btn.dataset.v; paintHubFilters(); render();
+      }));
+    }
+
     function paintBasisFilters() {
       const opts = [
-        { v: "all", l: `All (${rows.length})` },
-        { v: "typed", l: `Typed HAL fields (${typedBoth})` },
-        { v: "other", l: `Other signals (${rows.length - typedBoth})` },
+        { v: "all", l: `All signals (${rows.length})` },
+        { v: "typed", l: `Typed relatedData + relatedSoftware (${typedBoth})` },
+        { v: "other", l: `Other / mixed (${rows.length - typedBoth})` },
       ];
       document.getElementById("basisFilters").innerHTML = opts.map(o => `
         <button type="button" class="chip" data-v="${o.v}" aria-pressed="${activeBasis===o.v}">${esc(o.l)}</button>
@@ -670,6 +702,10 @@ footer .updated time { font-variant-numeric: tabular-nums; }
     function sortRows(list) {
       const mode = document.getElementById("sort").value;
       return list.slice().sort((a, b) => {
+        if (mode === "hubs_first") {
+          return (b.hubs||[]).length - (a.hubs||[]).length
+            || (Number(b.publication_year)||0) - (Number(a.publication_year)||0);
+        }
         if (mode === "typed_first") {
           const at = (a.has_typed_relatedData && a.has_typed_relatedSoftware) ? 1 : 0;
           const bt = (b.has_typed_relatedData && b.has_typed_relatedSoftware) ? 1 : 0;
@@ -680,11 +716,20 @@ footer .updated time { font-variant-numeric: tabular-nums; }
       });
     }
 
+    function hubBadges(hubs) {
+      const labels = { publication: "publication hub", software: "software hub", dataset: "dataset hub" };
+      return (hubs || []).map(h =>
+        `<span class="badge">${esc(labels[h] || h)}</span>`
+      ).join("");
+    }
+
     function render() {
       const q = document.getElementById("q").value.trim().toLowerCase();
       const lab = activeLabFilter();
       const yearFilter = (document.getElementById("yearSelect").value || "").trim();
       const filtered = rows.filter(r => {
+        const hubs = r.hubs || [];
+        if (activeHub !== "all" && !hubs.includes(activeHub)) return false;
         const typed = r.has_typed_relatedData && r.has_typed_relatedSoftware;
         if (activeBasis === "typed" && !typed) return false;
         if (activeBasis === "other" && typed) return false;
@@ -692,16 +737,19 @@ footer .updated time { font-variant-numeric: tabular-nums; }
         if (!yearsMatch([r.publication_year], yearFilter)) return false;
         if (!q) return true;
         const blob = [
-          r.publication_halId, r.publication_title, r.publication_doi, r.match_basis,
+          r.candidate_key, r.publication_halId, r.publication_title, r.publication_doi,
+          r.match_basis, ...(r.hubs||[]), ...(r.match_bases||[]),
           ...(r.relatedData_s||[]), ...(r.relatedSoftware_s||[]),
           ...(r.dataset_values||[]), ...(r.laboratories||[]),
           ...(r.software_halIds||[]), ...(r.software_titles||[]),
+          ...((r.dataset_notices||[]).map(d => [d.halId_s, d.title_s].join(" "))),
           ...((r.software_signals||[]).map(s => s.value)),
+          ...(r.unresolved_relatedPublication_s||[]),
         ].join(" ").toLowerCase();
         return blob.includes(q);
       });
       const list = sortRows(filtered);
-      document.getElementById("count").textContent = `${list.length} of ${rows.length} publications`;
+      document.getElementById("count").textContent = `${list.length} of ${rows.length} candidates`;
       document.getElementById("list").innerHTML = list.map(r => {
         const typed = r.has_typed_relatedData && r.has_typed_relatedSoftware;
         const yearBadge = r.publication_year != null ? `<span class="badge">${esc(r.publication_year)}</span>` : "";
@@ -709,40 +757,66 @@ footer .updated time { font-variant-numeric: tabular-nums; }
         const typedBadge = typed
           ? `<span class="badge">typed HAL links</span>`
           : `<span class="badge" style="color:var(--accent-hover)">mixed signals</span>`;
+        const title = r.publication_title
+          || (r.publication_doi ? `Unresolved publication · ${r.publication_doi}` : null)
+          || r.publication_halId
+          || r.candidate_key
+          || "Triptych candidate";
+        const titleHref = r.publication_uri
+          || (r.publication_doi ? `https://doi.org/${r.publication_doi}` : "#");
         const datasets = (r.datasets || []).map(d => {
           const href = resourceHref(d.value);
           const rel = d.relation ? ` · ${esc(d.relation)}` : "";
-          return `<div class="ev"><dt>Dataset</dt><dd><a href="${esc(href)}" target="_blank" rel="noopener"><code>${esc(d.value)}</code></a>${rel} <span class="muted">(${esc(d.source)})</span></dd></div>`;
+          const label = d.label ? ` — ${esc(d.label)}` : "";
+          const kind = d.kind === "dataset_notice" ? "Dataset notice" : "Dataset";
+          return `<div class="ev"><dt>${kind}</dt><dd><a href="${esc(href)}" target="_blank" rel="noopener"><code>${esc(d.value)}</code></a>${label}${rel} <span class="muted">(${esc(d.source)})</span></dd></div>`;
+        }).join("");
+        const notices = (r.dataset_notices || []).map(d => {
+          const uri = d.uri_s || (d.halId_s ? `https://hal.science/${d.halId_s}` : "#");
+          const dt = d.docType_s ? ` · ${esc(d.docType_s)}` : "";
+          return `<div class="ev"><dt>Data notice (hub)</dt><dd><a href="${esc(uri)}" target="_blank" rel="noopener">${esc(d.title_s || d.halId_s)}</a> · <code>${esc(d.halId_s)}</code>${dt}</dd></div>`;
         }).join("");
         const soft = (r.software_signals || []).map(s => {
           const href = resourceHref(s.value);
           return `<div class="ev"><dt>Software</dt><dd><a href="${esc(href)}" target="_blank" rel="noopener"><code>${esc(s.value)}</code></a> <span class="muted">(${esc(s.kind)} · ${esc(s.source)})</span></dd></div>`;
         }).join("");
-        const softDeps = (r.software_halIds || []).map((id, i) => {
-          const uri = (r.software_uris || [])[i] || `https://hal.science/${id}`;
-          const title = (r.software_titles || [])[i] || id;
-          return `<div class="ev"><dt>SOFTWARE deposit</dt><dd><a href="${esc(uri)}" target="_blank" rel="noopener">${esc(title)}</a> · <code>${esc(id)}</code></dd></div>`;
+        const softDepRows = (r.software_deposits && r.software_deposits.length)
+          ? r.software_deposits
+          : (r.software_halIds || []);
+        const softDeps = softDepRows.map((dep, i) => {
+          const id = typeof dep === "string" ? dep : (dep.halId_s || "");
+          const uri = (typeof dep === "object" && dep.uri_s)
+            || (r.software_uris || [])[i]
+            || (id ? `https://hal.science/${id}` : "#");
+          const titleSoft = (typeof dep === "object" && dep.title_s)
+            || (r.software_titles || [])[i]
+            || id;
+          return `<div class="ev"><dt>SOFTWARE deposit</dt><dd><a href="${esc(uri)}" target="_blank" rel="noopener">${esc(titleSoft)}</a> · <code>${esc(id)}</code></dd></div>`;
         }).join("");
         const doi = r.publication_doi
           ? `<a href="https://doi.org/${esc(r.publication_doi)}" target="_blank" rel="noopener"><code>${esc(r.publication_doi)}</code></a>`
           : "";
+        const halLink = r.publication_halId
+          ? `<a href="${esc(r.publication_uri || ("https://hal.science/" + r.publication_halId))}" target="_blank" rel="noopener"><code>${esc(r.publication_halId)}</code></a>`
+          : "";
         return `<article class="result">
           <div class="card-head">
-            <h2><a href="${esc(r.publication_uri || "#")}" target="_blank" rel="noopener">${esc(r.publication_title || r.publication_halId)}</a></h2>
-            <div class="badges">${yearBadge}${typeBadge}${typedBadge}</div>
+            <h2><a href="${esc(titleHref)}" target="_blank" rel="noopener">${esc(title)}</a></h2>
+            <div class="badges">${yearBadge}${typeBadge}${hubBadges(r.hubs)}${typedBadge}</div>
           </div>
           <div class="sub">
-            <a href="${esc(r.publication_uri || "#")}" target="_blank" rel="noopener"><code>${esc(r.publication_halId)}</code></a>
+            ${halLink}
             ${doi}
             <span>${esc(r.match_basis || "")}</span>
           </div>
           ${yearLine([r.publication_year])}
           ${labsLine(r.laboratories)}
-          <div class="evidence">${datasets}${soft}${softDeps}</div>
+          <div class="evidence">${notices}${datasets}${soft}${softDeps}</div>
         </article>`;
-      }).join("") || `<div class="empty">No publications currently match the triptych criteria for this collection.</div>`;
+      }).join("") || `<div class="empty">No candidates currently match the triptych criteria for this collection.</div>`;
     }
 
+    paintHubFilters();
     paintBasisFilters();
     paintLabControls(allLabs);
     paintYearControls(allYears);

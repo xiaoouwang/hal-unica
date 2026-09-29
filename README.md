@@ -48,11 +48,26 @@ Use both: the gap (DataCite-only vs HAL-only) is intentional and useful for open
 | HAL field | Intended use | What we do |
 |---|---|---|
 | `relatedData_s` | Related **datasets** | Expected home for dataset DOIs |
-| `relatedSoftware_s` | Related **software / source code** (often SWHID) | Used for the open science triptych page |
-| `relatedPublication_s` | Related **publications** | Still scanned — depositors sometimes put Nakala/Zenodo DOIs here by mistake |
+| `relatedSoftware_s` | Related **software / source code** (often SWHID) | Publication / dataset hubs of the open science triptych |
+| `relatedPublication_s` | Related **publications** | Software / dataset hubs of the triptych; also scanned for misfiled dataset DOIs |
 | `seeAlso_s` | Miscellaneous links | Scanned for DOIs / repo URLs |
 
 Every token keeps **provenance** (`source_field`). If a DOI resolves to a data repository but was **not** filed in `relatedData_s`, it appears on **To Be Corrected** and in `misfiled_dataset_links.csv` — **unless** the same DOI is already present in `relatedData_s` on that notice (then the extra field is treated as supplementary).
+
+### Open science triptych (pub + data + software)
+
+The same publication–data–software triangle can be declared from three HAL hubs
+(`hal-unica pub-data-software` → Open science triptych page):
+
+1. **Publication hub** — scholarly notice with `relatedData_s` + software signals
+   (`relatedSoftware_s` / SWHID / code repo / linked `SOFTWARE`).
+2. **Software hub** — `SOFTWARE` deposit with `relatedPublication_s` + `relatedData_s`
+   (DOI→HAL when the publication ref is a DOI).
+3. **Dataset hub** — dataset-like notice (often `OTHER`) with
+   `relatedPublication_s` + `relatedSoftware_s`; the notice itself is the data pillar.
+
+Candidates are merged by publication HAL id. Typing also uses TEI `relatedItem`
+COAR subtypes; we do not classify solely by DataCite DOI guessing.
 
 ### `object_kind` (DataCite landing classification)
 
@@ -170,7 +185,7 @@ What it **does**:
 | `hal-unica harvest` | Full/incremental metadata JSONL (`--university`) | Homepage DOI % / doc types; lab backfill |
 | `hal-unica census` | Related-data census + DataCite resolve + misfiled CSVs | Debug without rebuilding the site |
 | `hal-unica software` | `docType_s=SOFTWARE` → `software_deposits.*` | Software page only |
-| `hal-unica pub-data-software` | Pubs with `relatedData` + `relatedSoftware` (triptych) | Open science triptych page |
+| `hal-unica pub-data-software` | Triptych via publication / software / dataset hubs | Open science triptych page |
 | `hal-unica data-papers` | `docSubType_s=DATAPAPER` → `data_papers.*` | Data-papers page only |
 | `hal-unica datacite-census` | Affiliation Dataset DOIs on DataCite + HAL crosswalk | DataCite page / gap analysis |
 | `hal-unica find-data-repos` | Nakala / RDG focus scan | Legacy / focused audit |
@@ -427,7 +442,7 @@ Top HAL-linked / DataCite repos vary; UBE DataCite is often heavy on Recherche D
 | [`publications_related_data.jsonl`](data/census/publications_related_data.jsonl) | Per-notice tokens + resolutions |
 | [`software_deposits.csv`](data/census/software_deposits.csv) | SOFTWARE + code repos + SWHIDs |
 | [`data_papers.csv`](data/census/data_papers.csv) | Data papers + linked datasets / journals |
-| [`publications_with_dataset_and_software.csv`](data/census/publications_with_dataset_and_software.csv) | Open science triptych (pub + data + software) |
+| [`publications_with_dataset_and_software.csv`](data/census/publications_with_dataset_and_software.csv) | Open science triptych candidates (publication / software / dataset hubs) |
 | [`datacite_datasets.csv`](data/census/datacite_datasets.csv) | DataCite affiliation Dataset DOIs + HAL crosswalk |
 | [`summary.json`](data/census/summary.json) | HAL census aggregates |
 | [`METHODOLOGY.md`](data/census/METHODOLOGY.md) | Auto-generated method notes |
@@ -462,3 +477,4 @@ Bulk harvests (`data/unica_hal_metadata.jsonl`, `data/ube/harvest.jsonl`) stay *
 7. **Timestamps on the site are Europe/Paris**; machine-readable `datetime` stays UTC.
 8. **Daily refresh deploys Pages itself** when it commits (`GITHUB_TOKEN` does not trigger `pages.yml`).
 9. **CI isolates tenants** and retries transient HAL/DataCite timeouts so one outage does not discard the other’s successful refresh.
+10. **Triptych detection is hub-agnostic.** Publication-, software-, and dataset-side typed links can complete the same triangle; merge by publication HAL id (DOI→HAL when needed).
