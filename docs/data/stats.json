@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T16:45:51Z",
+  "generated_at": "2026-09-29T10:44:55Z",
   "collection": "UNIV-COTEDAZUR",
   "collection_url": "https://hal.science/UNIV-COTEDAZUR",
   "harvest": {
@@ -347,6 +347,473 @@
     },
     "publications": [
       {
+        "halId_s": "hal-02928114",
+        "uri_s": "https://hal.inrae.fr/hal-02928114v1",
+        "title_s": "Aphid infestation differently affects the defences of nitrate-fed and nitrogen-fixing Medicago truncatula and alters symbiotic nitrogen fixation",
+        "docType_s": "ART",
+        "doiId_s": "10.1098/rspb.2020.1493",
+        "laboratories": [
+          "ISA",
+          "UNS",
+          "CNRS",
+          "INRAE",
+          "UniCA",
+          "IGEPP",
+          "UR",
+          "Institut Agro"
+        ],
+        "modifiedDate_tdate": "2026-09-29T11:12:38Z",
+        "producedDateY_i": 2020,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/WGBWYO",
+            "repository": "Recherche Data Gouv",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedPublication_s",
+            "misfiled": true,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-03288922",
+        "uri_s": "https://hal.inrae.fr/hal-03288922v1",
+        "title_s": "The discernible and hidden effects of clonality on the genotypic and genetic states of populations: Improving our estimation of clonal rates",
+        "docType_s": "ART",
+        "doiId_s": "10.1111/1755-0998.13316",
+        "laboratories": [
+          "IGEPP",
+          "UR",
+          "INRAE",
+          "Institut Agro",
+          "UMR MARBEC",
+          "IRD",
+          "IFREMER",
+          "UM",
+          "CNRS",
+          "IRCAN"
+        ],
+        "modifiedDate_tdate": "2026-09-29T11:12:10Z",
+        "producedDateY_i": 2021,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.15454/FEQ1Z6",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Portail Data INRAE",
+            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/FEQ1Z6",
+            "landing_host": "data.inrae.fr",
+            "dataset_title": "The discernible and hidden effects of clonality on the genotypic and genetic states of populations: improving our estimation of clonal rates",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-04169728",
+        "uri_s": "https://hal.inrae.fr/hal-04169728v1",
+        "title_s": "A nationwide pest risk analysis in the context of the ongoing Japanese beetle invasion in Continental Europe: The case of metropolitan France",
+        "docType_s": "ART",
+        "doiId_s": "10.3389/finsc.2022.1079756",
+        "laboratories": [
+          "IGEPP",
+          "UR",
+          "INRAE",
+          "Institut Agro",
+          "ISA",
+          "UNS",
+          "CNRS",
+          "UniCA",
+          "BioGeCo",
+          "UB"
+        ],
+        "modifiedDate_tdate": "2026-09-29T11:11:44Z",
+        "producedDateY_i": 2022,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/SXZNQF",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/SXZNQF",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Host plants of Popillia japonica: a review",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-03144754",
+        "uri_s": "https://hal.science/hal-03144754v1",
+        "title_s": "BRC4Env, a network of Biological Resource Centres for environmental resources",
+        "docType_s": "POSTER",
+        "doiId_s": "10.15454/TRBJTB",
+        "laboratories": [
+          "ECOSYS",
+          "INRAE",
+          "UMR CBGP",
+          "Cirad",
+          "UM",
+          "IRD [Occitanie]",
+          "IRD",
+          "Institut Agro",
+          "UB",
+          "UBFC"
+        ],
+        "modifiedDate_tdate": "2026-09-29T11:10:28Z",
+        "producedDateY_i": 2020,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.15454/D6XAKL",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/D6XAKL",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "CBGP - Continental Arthropod Collection",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-05028312",
+        "uri_s": "https://hal.inrae.fr/hal-05028312v1",
+        "title_s": "CAMELS-FR dataset: a large-sample hydroclimatic dataset for France to explore hydrological diversity and support model benchmarking",
+        "docType_s": "ART",
+        "doiId_s": "10.5194/essd-17-1461-2025",
+        "laboratories": [
+          "UR HYCAR",
+          "INRAE",
+          "GEOAZUR 7329",
+          "INSU - CNRS",
+          "UniCA",
+          "CNRS",
+          "IRD [Occitanie]",
+          "IRD",
+          "ENS Rennes",
+          "GR"
+        ],
+        "modifiedDate_tdate": "2026-09-29T11:09:30Z",
+        "producedDateY_i": 2025,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/WH7FJR",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/WH7FJR",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "CAMELS-FR dataset",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.57745/HBQWP5",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/HBQWP5",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "CAMELS-FR time series dynamic graphs",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.57745/KK2SVJ",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/KK2SVJ",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "CAMELS-FR graphical fact sheets",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-03065279",
+        "uri_s": "https://inria.hal.science/hal-03065279v1",
+        "title_s": "Adaptation by copy number variation increases insecticide resistance in the fall armyworm",
+        "docType_s": "ART",
+        "doiId_s": "10.1038/s42003-020-01382-6",
+        "laboratories": [
+          "DGIMI",
+          "UM",
+          "INRAE",
+          "ISA",
+          "UNS",
+          "CNRS",
+          "UniCA",
+          "USDA",
+          "IGEPP",
+          "UR"
+        ],
+        "modifiedDate_tdate": "2026-09-29T11:08:59Z",
+        "producedDateY_i": 2020,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/D4TG2M",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/D4TG2M",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda corn strain",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.57745/XDVEQW",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda rice strain",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-01633879",
+        "uri_s": "https://inria.hal.science/hal-01633879v1",
+        "title_s": "Two genomes of highly polyphagous lepidopteran pests (Spodoptera frugiperda, Noctuidae) with different host-plant ranges",
+        "docType_s": "ART",
+        "doiId_s": "10.1038/s41598-017-10461-4",
+        "laboratories": [
+          "GenScale",
+          "Inria",
+          "IRISA-D7",
+          "IRISA",
+          "UR",
+          "INSA Rennes",
+          "UBS",
+          "ENS Rennes",
+          "CNRS",
+          "IMT Atlantique"
+        ],
+        "modifiedDate_tdate": "2026-09-29T11:08:58Z",
+        "producedDateY_i": 2017,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/D4TG2M",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/D4TG2M",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda corn strain",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.57745/XDVEQW",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda rice strain",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-04790476",
+        "uri_s": "https://hal.science/hal-04790476v1",
+        "title_s": "CAMELS-FR dataset: A large-sample hydroclimatic dataset for France to explore hydrological diversity and support model benchmarking",
+        "docType_s": "UNDEFINED",
+        "doiId_s": "10.5194/essd-2024-415",
+        "laboratories": [
+          "UR HYCAR",
+          "INRAE",
+          "GEOAZUR 7329",
+          "INSU - CNRS",
+          "UniCA",
+          "CNRS",
+          "IRD [Occitanie]",
+          "IRD",
+          "ENS Rennes",
+          "GR"
+        ],
+        "modifiedDate_tdate": "2026-09-29T11:07:11Z",
+        "producedDateY_i": 2024,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/WH7FJR",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/WH7FJR",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "CAMELS-FR dataset",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.57745/HBQWP5",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/HBQWP5",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "CAMELS-FR time series dynamic graphs",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.57745/KK2SVJ",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/KK2SVJ",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "CAMELS-FR graphical fact sheets",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-01774729",
+        "uri_s": "https://hal.science/hal-01774729v1",
+        "title_s": "BRC4Env, a network of Biological Resource Centres for research in environmental and agricultural sciences",
+        "docType_s": "ART",
+        "doiId_s": "10.1007/s11356-018-1973-7",
+        "laboratories": [
+          "ECOSYS",
+          "INRA",
+          "UMR CBGP",
+          "Cirad",
+          "Montpellier SupAgro",
+          "UM",
+          "IRD [Occitanie]",
+          "IRD",
+          "UEEA",
+          "UB"
+        ],
+        "modifiedDate_tdate": "2026-09-29T11:04:56Z",
+        "producedDateY_i": 2018,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.15454/D3ODJM",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Portail Data INRAE",
+            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/D3ODJM",
+            "landing_host": "data.inrae.fr",
+            "dataset_title": "Colisa, the collection of ichthyological samples.",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.15454/AY4LMT",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Portail Data INRAE",
+            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/AY4LMT",
+            "landing_host": "data.inrae.fr",
+            "dataset_title": "BRC “Egg Parasitoids Collection” (EP-Coll)",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.15454/UQEMVW",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Portail Data Inra",
+            "landing_url": "https://carrtel-collection.hub.inrae.fr/",
+            "landing_host": "carrtel-collection.hub.inrae.fr",
+            "dataset_title": "Thonon Culture Collection -TCC- a freshwater microalgae collection",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.15454/TRBJTB",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Portail Data INRAE",
+            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/TRBJTB",
+            "landing_host": "data.inrae.fr",
+            "dataset_title": "BRC4Env, the Biological Resource Centre for the Environment",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-05231498",
+        "uri_s": "https://hal.inrae.fr/hal-05231498v1",
+        "title_s": "BRC4Env, le pilier environnement de l’infrastructure RARe",
+        "docType_s": "POSTER",
+        "doiId_s": null,
+        "laboratories": [
+          "ECOSYS",
+          "INRAE",
+          "UMR CBGP",
+          "Cirad",
+          "IRD [Occitanie]",
+          "IRD",
+          "Institut Agro",
+          "UM",
+          "UBE",
+          "U3E"
+        ],
+        "modifiedDate_tdate": "2026-09-29T11:04:42Z",
+        "producedDateY_i": 2025,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.15454/TRBJTB",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Portail Data INRAE",
+            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/TRBJTB",
+            "landing_host": "data.inrae.fr",
+            "dataset_title": "BRC4Env, the Biological Resource Centre for the Environment",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
         "halId_s": "hal-05114056",
         "uri_s": "https://hal.science/hal-05114056v2",
         "title_s": "Le Rhône aménagé vu du ciel. Constitution d'une base de données photographiques obliques pour documenter la trajectoire socio-environnementale du fleuve contemporain (1910-1960)",
@@ -364,7 +831,7 @@
           "UJM",
           "UJM EPE"
         ],
-        "modifiedDate_tdate": "2026-09-28T03:25:10Z",
+        "modifiedDate_tdate": "2026-09-29T03:30:32Z",
         "producedDateY_i": 2025,
         "repositories": [
           "NAKALA"
@@ -576,174 +1043,6 @@
         ]
       },
       {
-        "halId_s": "hal-03288922",
-        "uri_s": "https://hal.inrae.fr/hal-03288922v1",
-        "title_s": "The discernible and hidden effects of clonality on the genotypic and genetic states of populations: Improving our estimation of clonal rates",
-        "docType_s": "ART",
-        "doiId_s": "10.1111/1755-0998.13316",
-        "laboratories": [
-          "IGEPP",
-          "UR",
-          "INRAE",
-          "Institut Agro",
-          "UMR MARBEC",
-          "IRD",
-          "IFREMER",
-          "UM",
-          "CNRS",
-          "IRCAN"
-        ],
-        "modifiedDate_tdate": "2026-09-23T08:45:59Z",
-        "producedDateY_i": 2021,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.15454/FEQ1Z6",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Portail Data INRAE",
-            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/FEQ1Z6",
-            "landing_host": "data.inrae.fr",
-            "dataset_title": "The discernible and hidden effects of clonality on the genotypic and genetic states of populations: improving our estimation of clonal rates",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-03065279",
-        "uri_s": "https://inria.hal.science/hal-03065279v1",
-        "title_s": "Adaptation by copy number variation increases insecticide resistance in the fall armyworm",
-        "docType_s": "ART",
-        "doiId_s": "10.1038/s42003-020-01382-6",
-        "laboratories": [
-          "DGIMI",
-          "UM",
-          "INRAE",
-          "ISA",
-          "UNS",
-          "CNRS",
-          "UniCA",
-          "USDA",
-          "IGEPP",
-          "UR"
-        ],
-        "modifiedDate_tdate": "2026-09-23T08:45:44Z",
-        "producedDateY_i": 2020,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.57745/D4TG2M",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/D4TG2M",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda corn strain",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          },
-          {
-            "doi": "10.57745/XDVEQW",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda rice strain",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-02928114",
-        "uri_s": "https://hal.inrae.fr/hal-02928114v1",
-        "title_s": "Aphid infestation differently affects the defences of nitrate-fed and nitrogen-fixing Medicago truncatula and alters symbiotic nitrogen fixation",
-        "docType_s": "ART",
-        "doiId_s": "10.1098/rspb.2020.1493",
-        "laboratories": [
-          "ISA",
-          "UNS",
-          "CNRS",
-          "INRAE",
-          "UniCA",
-          "IGEPP",
-          "UR",
-          "Institut Agro"
-        ],
-        "modifiedDate_tdate": "2026-09-23T08:44:36Z",
-        "producedDateY_i": 2020,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.57745/WGBWYO",
-            "repository": "Recherche Data Gouv",
-            "publisher": null,
-            "landing_url": null,
-            "landing_host": null,
-            "dataset_title": null,
-            "field": "relatedPublication_s",
-            "misfiled": true,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-01633879",
-        "uri_s": "https://inria.hal.science/hal-01633879v1",
-        "title_s": "Two genomes of highly polyphagous lepidopteran pests (Spodoptera frugiperda, Noctuidae) with different host-plant ranges",
-        "docType_s": "ART",
-        "doiId_s": "10.1038/s41598-017-10461-4",
-        "laboratories": [
-          "GenScale",
-          "Inria",
-          "IRISA-D7",
-          "IRISA",
-          "UR",
-          "INSA Rennes",
-          "UBS",
-          "ENS Rennes",
-          "CNRS",
-          "IMT Atlantique"
-        ],
-        "modifiedDate_tdate": "2026-09-23T08:38:20Z",
-        "producedDateY_i": 2017,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.57745/D4TG2M",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/D4TG2M",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda corn strain",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          },
-          {
-            "doi": "10.57745/XDVEQW",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda rice strain",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
         "halId_s": "hal-05221870",
         "uri_s": "https://hal.science/hal-05221870v2",
         "title_s": "Enquête sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
@@ -848,187 +1147,6 @@
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/QM0BOR",
             "landing_host": "entrepot.recherche.data.gouv.fr",
             "dataset_title": "Untargeted metabolomic dataset of leaves from twenty four accessions of wild and cultivated tomato plants",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-04169728",
-        "uri_s": "https://hal.inrae.fr/hal-04169728v1",
-        "title_s": "A nationwide pest risk analysis in the context of the ongoing Japanese beetle invasion in Continental Europe: The case of metropolitan France",
-        "docType_s": "ART",
-        "doiId_s": "10.3389/finsc.2022.1079756",
-        "laboratories": [
-          "IGEPP",
-          "UR",
-          "INRAE",
-          "Institut Agro",
-          "ISA",
-          "UNS",
-          "CNRS",
-          "UniCA",
-          "BioGeCo",
-          "UB"
-        ],
-        "modifiedDate_tdate": "2026-09-15T16:10:56Z",
-        "producedDateY_i": 2022,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.57745/SXZNQF",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/SXZNQF",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "Host plants of Popillia japonica: a review",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-05231498",
-        "uri_s": "https://hal.inrae.fr/hal-05231498v1",
-        "title_s": "BRC4Env, le pilier environnement de l’infrastructure RARe",
-        "docType_s": "POSTER",
-        "doiId_s": null,
-        "laboratories": [
-          "ECOSYS",
-          "INRAE",
-          "UMR CBGP",
-          "Cirad",
-          "IRD [Occitanie]",
-          "IRD",
-          "Institut Agro",
-          "UM",
-          "UBE",
-          "U3E"
-        ],
-        "modifiedDate_tdate": "2026-09-15T16:09:43Z",
-        "producedDateY_i": 2025,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.15454/TRBJTB",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Portail Data INRAE",
-            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/TRBJTB",
-            "landing_host": "data.inrae.fr",
-            "dataset_title": "BRC4Env, the Biological Resource Centre for the Environment",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-01774729",
-        "uri_s": "https://hal.science/hal-01774729v1",
-        "title_s": "BRC4Env, a network of Biological Resource Centres for research in environmental and agricultural sciences",
-        "docType_s": "ART",
-        "doiId_s": "10.1007/s11356-018-1973-7",
-        "laboratories": [
-          "ECOSYS",
-          "INRA",
-          "UMR CBGP",
-          "Cirad",
-          "Montpellier SupAgro",
-          "UM",
-          "IRD [Occitanie]",
-          "IRD",
-          "UEEA",
-          "UB"
-        ],
-        "modifiedDate_tdate": "2026-09-15T16:09:41Z",
-        "producedDateY_i": 2018,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.15454/D3ODJM",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Portail Data INRAE",
-            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/D3ODJM",
-            "landing_host": "data.inrae.fr",
-            "dataset_title": "Colisa, the collection of ichthyological samples.",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          },
-          {
-            "doi": "10.15454/AY4LMT",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Portail Data INRAE",
-            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/AY4LMT",
-            "landing_host": "data.inrae.fr",
-            "dataset_title": "BRC “Egg Parasitoids Collection” (EP-Coll)",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          },
-          {
-            "doi": "10.15454/UQEMVW",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Portail Data Inra",
-            "landing_url": "https://carrtel-collection.hub.inrae.fr/",
-            "landing_host": "carrtel-collection.hub.inrae.fr",
-            "dataset_title": "Thonon Culture Collection -TCC- a freshwater microalgae collection",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          },
-          {
-            "doi": "10.15454/TRBJTB",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Portail Data INRAE",
-            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/TRBJTB",
-            "landing_host": "data.inrae.fr",
-            "dataset_title": "BRC4Env, the Biological Resource Centre for the Environment",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-03144754",
-        "uri_s": "https://hal.science/hal-03144754v1",
-        "title_s": "BRC4Env, a network of Biological Resource Centres for environmental resources",
-        "docType_s": "POSTER",
-        "doiId_s": "10.15454/TRBJTB",
-        "laboratories": [
-          "ECOSYS",
-          "INRAE",
-          "UMR CBGP",
-          "Cirad",
-          "UM",
-          "IRD [Occitanie]",
-          "IRD",
-          "Institut Agro",
-          "UB",
-          "UBFC"
-        ],
-        "modifiedDate_tdate": "2026-09-15T16:08:54Z",
-        "producedDateY_i": 2020,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.15454/D6XAKL",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/D6XAKL",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "CBGP - Continental Arthropod Collection",
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -1814,124 +1932,6 @@
         ],
         "modifiedDate_tdate": "2026-05-12T17:02:04Z",
         "producedDateY_i": 2022,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.57745/WH7FJR",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/WH7FJR",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "CAMELS-FR dataset",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          },
-          {
-            "doi": "10.57745/HBQWP5",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/HBQWP5",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "CAMELS-FR time series dynamic graphs",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          },
-          {
-            "doi": "10.57745/KK2SVJ",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/KK2SVJ",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "CAMELS-FR graphical fact sheets",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-04790476",
-        "uri_s": "https://hal.science/hal-04790476v1",
-        "title_s": "CAMELS-FR dataset: A large-sample hydroclimatic dataset for France to explore hydrological diversity and support model benchmarking",
-        "docType_s": "UNDEFINED",
-        "doiId_s": "10.5194/essd-2024-415",
-        "laboratories": [
-          "UR HYCAR",
-          "INRAE",
-          "GEOAZUR 7329",
-          "INSU - CNRS",
-          "UniCA",
-          "CNRS",
-          "IRD [Occitanie]",
-          "IRD",
-          "ENS Rennes",
-          "GR"
-        ],
-        "modifiedDate_tdate": "2026-05-12T17:02:04Z",
-        "producedDateY_i": 2024,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.57745/WH7FJR",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/WH7FJR",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "CAMELS-FR dataset",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          },
-          {
-            "doi": "10.57745/HBQWP5",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/HBQWP5",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "CAMELS-FR time series dynamic graphs",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          },
-          {
-            "doi": "10.57745/KK2SVJ",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/KK2SVJ",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "CAMELS-FR graphical fact sheets",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-05028312",
-        "uri_s": "https://hal.inrae.fr/hal-05028312v1",
-        "title_s": "CAMELS-FR dataset: a large-sample hydroclimatic dataset for France to explore hydrological diversity and support model benchmarking",
-        "docType_s": "ART",
-        "doiId_s": "10.5194/essd-17-1461-2025",
-        "laboratories": [
-          "UR HYCAR",
-          "INRAE",
-          "GEOAZUR 7329",
-          "INSU - CNRS",
-          "UniCA",
-          "CNRS",
-          "IRD [Occitanie]",
-          "IRD",
-          "ENS Rennes",
-          "GR"
-        ],
-        "modifiedDate_tdate": "2026-05-12T17:02:04Z",
-        "producedDateY_i": 2025,
         "repositories": [
           "Recherche Data Gouv"
         ],

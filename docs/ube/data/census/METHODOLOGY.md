@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-09-28T16:45:53Z`  
+Generated: `2026-09-29T10:44:57Z`  
 Collection: `UNIV-BOURGOGNE`  
-Run window: `2026-09-28T16:45:51Z` → `2026-09-28T16:45:53Z`
+Run window: `2026-09-29T10:44:55Z` → `2026-09-29T10:44:57Z`
 
 ## Goal
 
@@ -53,16 +53,16 @@ repository root `README.md`.
 
 ## Counts (this run)
 
-- HAL notices with linked identifiers: **264**
-- Related tokens: **388**
-- Unique DOIs resolved: **302**
-- Publications with at least one dataset-repo landing: **148**
+- HAL notices with linked identifiers: **265**
+- Related tokens: **389**
+- Unique DOIs resolved: **303**
+- Publications with at least one dataset-repo landing: **149**
 - Misfiled dataset links (wrong HAL field): **20**
 - Publications with ≥1 misfiled dataset link: **19**
 
 ### Dataset DOIs by HAL source field
 
-- **`relatedData_s`**: 178
+- **`relatedData_s`**: 179
 - **`relatedPublication_s`**: 18
 - **`seeAlso_s`**: 7
 
@@ -79,7 +79,7 @@ repository root `README.md`.
 - **Journal DOI (10.3917)**: 9
 - **Progedo-Adisp**: 9
 - **Journal DOI (10.1002)**: 7
-- **Figshare**: 5
+- **Figshare**: 6
 - **Journal DOI (10.1016)**: 5
 - **Mendeley Data**: 5
 - **Australian Antarctic Data Centre**: 3
@@ -150,6 +150,7 @@ repository root `README.md`.
 - `ira.agroscope.ch`: 2
 - `library.oapen.org`: 2
 - `www2.dijon.inrae.fr`: 2
+- `aip.figshare.com`: 1
 - `carrtel-collection.hub.inrae.fr`: 1
 - `cds.climate.copernicus.eu`: 1
 - `data.indores.fr:443`: 1

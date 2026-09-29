@@ -1,13 +1,13 @@
 {
-  "unique_datasets": 177,
-  "publications_with_dataset": 148,
+  "unique_datasets": 178,
+  "publications_with_dataset": 149,
   "by_repository": {
     "Recherche Data Gouv": 83,
     "NAKALA": 27,
     "Zenodo": 22,
     "Portail Data Inra": 13,
     "Dryad": 9,
-    "Figshare": 5,
+    "Figshare": 6,
     "Mendeley Data": 5,
     "Progedo-Adisp": 4,
     "Australian Antarctic Data Centre": 3,
@@ -143,7 +143,7 @@
       18,
       14,
       38,
-      21
+      22
     ],
     "series": [
       {
@@ -292,8 +292,37 @@
         ]
       },
       {
-        "repository": "Mendeley Data",
+        "repository": "Figshare",
         "color": "#90be6d",
+        "counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          2,
+          2,
+          1
+        ]
+      },
+      {
+        "repository": "Mendeley Data",
+        "color": "#f9c74f",
         "counts": [
           0,
           0,
@@ -318,35 +347,6 @@
           0,
           0,
           1
-        ]
-      },
-      {
-        "repository": "Figshare",
-        "color": "#f9c74f",
-        "counts": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
-          0,
-          0,
-          2,
-          2,
-          0
         ]
       },
       {
@@ -527,6 +527,25 @@
     "period_kind": "year"
   },
   "cell_details": {
+    "2026|Figshare": [
+      {
+        "dataset_doi": "10.60893/figshare.jcp.32981894.v1",
+        "dataset_title": "Supplement Number 1",
+        "repository": "Figshare",
+        "landing_url": "https://aip.figshare.com/articles/dataset/Supplement_Number_1/32981894/1",
+        "landing_host": "aip.figshare.com",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05767239",
+            "title_s": "Analysis of a non-LTE hypersonic spectrum of ethylene between 5880 and 6200 cm-1",
+            "uri_s": "https://hal.science/hal-05767239v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 9
+          }
+        ]
+      }
+    ],
     "2026|Mendeley Data": [
       {
         "dataset_doi": "10.17632/8jtpwp7ntf.1",
@@ -3851,7 +3870,7 @@
       0,
       1,
       2,
-      9,
+      10,
       0,
       0,
       0
@@ -3948,7 +3967,7 @@
         ]
       },
       {
-        "repository": "Mendeley Data",
+        "repository": "Figshare",
         "color": "#90be6d",
         "counts": [
           0,
@@ -3966,7 +3985,7 @@
         ]
       },
       {
-        "repository": "Figshare",
+        "repository": "Mendeley Data",
         "color": "#f9c74f",
         "counts": [
           0,
@@ -3977,7 +3996,7 @@
           0,
           0,
           0,
-          0,
+          1,
           0,
           0,
           0
@@ -4093,10 +4112,30 @@
       }
     ],
     "period_kind": "month",
-    "datasets_in_year": 21,
+    "datasets_in_year": 22,
     "unknown_month": 0
   },
   "cell_details_months": {
+    "2026-09|Figshare": [
+      {
+        "dataset_doi": "10.60893/figshare.jcp.32981894.v1",
+        "dataset_title": "Supplement Number 1",
+        "repository": "Figshare",
+        "landing_url": "https://aip.figshare.com/articles/dataset/Supplement_Number_1/32981894/1",
+        "landing_host": "aip.figshare.com",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05767239",
+            "title_s": "Analysis of a non-LTE hypersonic spectrum of ethylene between 5880 and 6200 cm-1",
+            "uri_s": "https://hal.science/hal-05767239v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 9
+          }
+        ],
+        "month": 9
+      }
+    ],
     "2026-09|Mendeley Data": [
       {
         "dataset_doi": "10.17632/8jtpwp7ntf.1",
@@ -4506,7 +4545,7 @@
       }
     ]
   },
-  "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 21 datasets in 2026. Click a segment to list datasets.",
+  "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 22 datasets in 2026. Click a segment to list datasets.",
   "segment_hint": "newest linking publication year",
   "months_segment_hint": "newest linking publication month"
 }

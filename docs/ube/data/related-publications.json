@@ -6,6 +6,80 @@
   },
   "publications": [
     {
+      "halId_s": "hal-01173741",
+      "uri_s": "https://hal.science/hal-01173741v1",
+      "title_s": "L'état des sols de France",
+      "docType_s": "OUV",
+      "doiId_s": null,
+      "laboratories": [
+        "SOeS",
+        "InfoSol",
+        "INRA",
+        "ADEME",
+        "IRD",
+        "CODIR",
+        "USS",
+        "EGC",
+        "ANSES",
+        "ASTRO"
+      ],
+      "modifiedDate_tdate": "2026-09-29T11:18:04Z",
+      "producedDateY_i": 2011,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.15454/QSXKGA",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Portail Data INRAE",
+          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/QSXKGA",
+          "landing_host": "data.inrae.fr",
+          "dataset_title": "Analyses physico-chimiques des sites du Réseau de Mesures de la Qualité des Sols (RMQS) du territoire métropolitain pour la 1ère campagne (2000-2009), avec coordonnées théoriques",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-05526495",
+      "uri_s": "https://hal.inrae.fr/hal-05526495v1",
+      "title_s": "Colonization and spatiotemporal distribution of bruchid pests in lentil and faba bean fields",
+      "docType_s": "ART",
+      "doiId_s": "10.1002/ps.70679",
+      "laboratories": [
+        "ENSFEA",
+        "AGIR",
+        "Toulouse INP",
+        "Comue de Toulouse",
+        "INRAE",
+        "EI Purpan",
+        "Agronomie",
+        "IGEPP",
+        "UR",
+        "Institut Agro"
+      ],
+      "modifiedDate_tdate": "2026-09-29T11:14:09Z",
+      "producedDateY_i": 2026,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/HPEMYW",
+          "repository": "Recherche Data Gouv",
+          "publisher": null,
+          "landing_url": null,
+          "landing_host": null,
+          "dataset_title": null,
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
       "halId_s": "hal-05143887",
       "uri_s": "https://hal.inrae.fr/hal-05143887v1",
       "title_s": "Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
@@ -23,7 +97,7 @@
         "CNES",
         "CNRS"
       ],
-      "modifiedDate_tdate": "2026-09-26T03:26:23Z",
+      "modifiedDate_tdate": "2026-09-29T11:13:54Z",
       "producedDateY_i": 2025,
       "repositories": [
         "Recherche Data Gouv"
@@ -36,6 +110,154 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/3NAHSN",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "Annexe pour : Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-04266661",
+      "uri_s": "https://hal.science/hal-04266661v1",
+      "title_s": "The short-term response of soil microbial communities to digestate application depends on the characteristics of the digestate and soil type",
+      "docType_s": "ART",
+      "doiId_s": "10.1016/j.apsoil.2023.105105",
+      "laboratories": [
+        "UB",
+        "UBFC",
+        "INRAE",
+        "Institut Agro",
+        "UR OPAALE",
+        "LEVA",
+        "ESA",
+        "IPSL",
+        "ENS-PSL",
+        "PSL"
+      ],
+      "modifiedDate_tdate": "2026-09-29T11:12:52Z",
+      "producedDateY_i": 2024,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/DFGUGB",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/DFGUGB",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Impact des digestats de méthanisation sur la qualité biologique des sols : Evaluation d’impact à court terme en conditions contrôlées (Microcosmes)",
+          "field": "relatedPublication_s",
+          "misfiled": true,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-03967717",
+      "uri_s": "https://hal.inrae.fr/hal-03967717v1",
+      "title_s": "Carabid beetles have hump‐shaped responses to disturbance and resource gradients within agricultural landscapes",
+      "docType_s": "ART",
+      "doiId_s": "10.1111/1365-2664.14357",
+      "laboratories": [
+        "UB",
+        "UBFC",
+        "INRAE",
+        "Institut Agro",
+        "UMR ABSys",
+        "Cirad",
+        "CIHEAM-IAMM",
+        "CIHEAM",
+        "DYNAFOR",
+        "ENSAT, INP-ENSAT, AgroToulouse, INP-AgroToulouse"
+      ],
+      "modifiedDate_tdate": "2026-09-29T11:10:41Z",
+      "producedDateY_i": 2023,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.15454/BMLIQI",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/BMLIQI",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Carabid beetles have hump-shaped responses to disturbance and resource gradients within agricultural landscapes - Dataset",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-03144754",
+      "uri_s": "https://hal.science/hal-03144754v1",
+      "title_s": "BRC4Env, a network of Biological Resource Centres for environmental resources",
+      "docType_s": "POSTER",
+      "doiId_s": "10.15454/TRBJTB",
+      "laboratories": [
+        "ECOSYS",
+        "INRAE",
+        "UMR CBGP",
+        "Cirad",
+        "UM",
+        "IRD [Occitanie]",
+        "IRD",
+        "Institut Agro",
+        "UB",
+        "UBFC"
+      ],
+      "modifiedDate_tdate": "2026-09-29T11:10:28Z",
+      "producedDateY_i": 2020,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.15454/D6XAKL",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/D6XAKL",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "CBGP - Continental Arthropod Collection",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-03329588",
+      "uri_s": "https://hal.science/hal-03329588v1",
+      "title_s": "Quantifying and simulating carbon and nitrogen mineralization from diverse exogenous organic matters",
+      "docType_s": "ART",
+      "doiId_s": "10.1111/sum.12745",
+      "laboratories": [
+        "ECOSYS",
+        "INRAE",
+        "FARE",
+        "URCA",
+        "UA",
+        "ULiège",
+        "UPJV",
+        "ULCO",
+        "JUNIA",
+        "UCL"
+      ],
+      "modifiedDate_tdate": "2026-09-29T11:08:05Z",
+      "producedDateY_i": 2022,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/JGHVYV",
+          "repository": "Recherche Data Gouv",
+          "publisher": null,
+          "landing_url": null,
+          "landing_host": null,
+          "dataset_title": null,
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
@@ -60,7 +282,7 @@
         "UR",
         "Institut Agro"
       ],
-      "modifiedDate_tdate": "2026-09-25T11:17:33Z",
+      "modifiedDate_tdate": "2026-09-29T11:04:58Z",
       "producedDateY_i": 2020,
       "repositories": [
         "Recherche Data Gouv"
@@ -73,6 +295,150 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/HYRVUH",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "Rsyst::diatom_rbcl_align_312bp database: a database adapted to DNA metabarcoding (version v7: 23-02-2018)",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-01774729",
+      "uri_s": "https://hal.science/hal-01774729v1",
+      "title_s": "BRC4Env, a network of Biological Resource Centres for research in environmental and agricultural sciences",
+      "docType_s": "ART",
+      "doiId_s": "10.1007/s11356-018-1973-7",
+      "laboratories": [
+        "ECOSYS",
+        "INRA",
+        "UMR CBGP",
+        "Cirad",
+        "Montpellier SupAgro",
+        "UM",
+        "IRD [Occitanie]",
+        "IRD",
+        "UEEA",
+        "UB"
+      ],
+      "modifiedDate_tdate": "2026-09-29T11:04:56Z",
+      "producedDateY_i": 2018,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.15454/D3ODJM",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Portail Data INRAE",
+          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/D3ODJM",
+          "landing_host": "data.inrae.fr",
+          "dataset_title": "Colisa, the collection of ichthyological samples.",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.15454/AY4LMT",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Portail Data INRAE",
+          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/AY4LMT",
+          "landing_host": "data.inrae.fr",
+          "dataset_title": "BRC “Egg Parasitoids Collection” (EP-Coll)",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.15454/UQEMVW",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Portail Data Inra",
+          "landing_url": "https://carrtel-collection.hub.inrae.fr/",
+          "landing_host": "carrtel-collection.hub.inrae.fr",
+          "dataset_title": "Thonon Culture Collection -TCC- a freshwater microalgae collection",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.15454/TRBJTB",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Portail Data INRAE",
+          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/TRBJTB",
+          "landing_host": "data.inrae.fr",
+          "dataset_title": "BRC4Env, the Biological Resource Centre for the Environment",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-05231498",
+      "uri_s": "https://hal.inrae.fr/hal-05231498v1",
+      "title_s": "BRC4Env, le pilier environnement de l’infrastructure RARe",
+      "docType_s": "POSTER",
+      "doiId_s": null,
+      "laboratories": [
+        "ECOSYS",
+        "INRAE",
+        "UMR CBGP",
+        "Cirad",
+        "IRD [Occitanie]",
+        "IRD",
+        "Institut Agro",
+        "UM",
+        "UBE",
+        "U3E"
+      ],
+      "modifiedDate_tdate": "2026-09-29T11:04:42Z",
+      "producedDateY_i": 2025,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.15454/TRBJTB",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Portail Data INRAE",
+          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/TRBJTB",
+          "landing_host": "data.inrae.fr",
+          "dataset_title": "BRC4Env, the Biological Resource Centre for the Environment",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-04267953",
+      "uri_s": "https://hal.inrae.fr/hal-04267953v1",
+      "title_s": "SNP discovery by exome capture and resequencing in a pea genetic resource collection",
+      "docType_s": "ART",
+      "doiId_s": "10.24072/pci.genomics.100237",
+      "laboratories": [
+        "UB",
+        "UBFC",
+        "INRAE",
+        "Institut Agro",
+        "GENOSCOPE",
+        "DRF (CEA)",
+        "CEA",
+        "UA",
+        "ULiège",
+        "UPJV"
+      ],
+      "modifiedDate_tdate": "2026-09-29T11:04:30Z",
+      "producedDateY_i": 2023,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/5MDE99",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/5MDE99",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Dataset from \"A new genome assembly of the pea cultivar Cameor provides resources for functional genomics and genetics\"",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
@@ -604,43 +970,6 @@
       ]
     },
     {
-      "halId_s": "hal-03967717",
-      "uri_s": "https://hal.inrae.fr/hal-03967717v1",
-      "title_s": "Carabid beetles have hump‐shaped responses to disturbance and resource gradients within agricultural landscapes",
-      "docType_s": "ART",
-      "doiId_s": "10.1111/1365-2664.14357",
-      "laboratories": [
-        "UB",
-        "UBFC",
-        "INRAE",
-        "Institut Agro",
-        "UMR ABSys",
-        "Cirad",
-        "CIHEAM-IAMM",
-        "CIHEAM",
-        "DYNAFOR",
-        "ENSAT, INP-ENSAT, AgroToulouse, INP-AgroToulouse"
-      ],
-      "modifiedDate_tdate": "2026-09-17T03:51:05Z",
-      "producedDateY_i": 2023,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.15454/BMLIQI",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/BMLIQI",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Carabid beetles have hump-shaped responses to disturbance and resource gradients within agricultural landscapes - Dataset",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
       "halId_s": "hal-02631162",
       "uri_s": "https://hal.inrae.fr/hal-02631162v1",
       "title_s": "Full-length <em>de novo</em> assembly of RNA-seq data in pea (<em>Pisum sativum</em> L.) provides a gene expression atlas and gives insights into root nodulation in this species",
@@ -665,298 +994,6 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/5MDE99",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "Dataset from \"A new genome assembly of the pea cultivar Cameor provides resources for functional genomics and genetics\"",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-01173741",
-      "uri_s": "https://hal.science/hal-01173741v1",
-      "title_s": "L'état des sols de France",
-      "docType_s": "OUV",
-      "doiId_s": null,
-      "laboratories": [
-        "SOeS",
-        "InfoSol",
-        "INRA",
-        "ADEME",
-        "IRD",
-        "CODIR",
-        "USS",
-        "EGC",
-        "ANSES",
-        "ASTRO"
-      ],
-      "modifiedDate_tdate": "2026-09-15T16:12:45Z",
-      "producedDateY_i": 2011,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.15454/QSXKGA",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Portail Data INRAE",
-          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/QSXKGA",
-          "landing_host": "data.inrae.fr",
-          "dataset_title": "Analyses physico-chimiques des sites du Réseau de Mesures de la Qualité des Sols (RMQS) du territoire métropolitain pour la 1ère campagne (2000-2009), avec coordonnées théoriques",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-05526495",
-      "uri_s": "https://hal.inrae.fr/hal-05526495v1",
-      "title_s": "Colonization and spatiotemporal distribution of bruchid pests in lentil and faba bean fields",
-      "docType_s": "ART",
-      "doiId_s": "10.1002/ps.70679",
-      "laboratories": [
-        "ENSFEA",
-        "AGIR",
-        "Toulouse INP",
-        "Comue de Toulouse",
-        "INRAE",
-        "EI Purpan",
-        "Agronomie",
-        "IGEPP",
-        "UR",
-        "Institut Agro"
-      ],
-      "modifiedDate_tdate": "2026-09-15T16:11:52Z",
-      "producedDateY_i": 2026,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/HPEMYW",
-          "repository": "Recherche Data Gouv",
-          "publisher": null,
-          "landing_url": null,
-          "landing_host": null,
-          "dataset_title": null,
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-03329588",
-      "uri_s": "https://hal.science/hal-03329588v1",
-      "title_s": "Quantifying and simulating carbon and nitrogen mineralization from diverse exogenous organic matters",
-      "docType_s": "ART",
-      "doiId_s": "10.1111/sum.12745",
-      "laboratories": [
-        "ECOSYS",
-        "INRAE",
-        "FARE",
-        "URCA",
-        "UA",
-        "ULiège",
-        "UPJV",
-        "ULCO",
-        "JUNIA",
-        "UCL"
-      ],
-      "modifiedDate_tdate": "2026-09-15T16:10:34Z",
-      "producedDateY_i": 2022,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/JGHVYV",
-          "repository": "Recherche Data Gouv",
-          "publisher": null,
-          "landing_url": null,
-          "landing_host": null,
-          "dataset_title": null,
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-05231498",
-      "uri_s": "https://hal.inrae.fr/hal-05231498v1",
-      "title_s": "BRC4Env, le pilier environnement de l’infrastructure RARe",
-      "docType_s": "POSTER",
-      "doiId_s": null,
-      "laboratories": [
-        "ECOSYS",
-        "INRAE",
-        "UMR CBGP",
-        "Cirad",
-        "IRD [Occitanie]",
-        "IRD",
-        "Institut Agro",
-        "UM",
-        "UBE",
-        "U3E"
-      ],
-      "modifiedDate_tdate": "2026-09-15T16:09:43Z",
-      "producedDateY_i": 2025,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.15454/TRBJTB",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Portail Data INRAE",
-          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/TRBJTB",
-          "landing_host": "data.inrae.fr",
-          "dataset_title": "BRC4Env, the Biological Resource Centre for the Environment",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-01774729",
-      "uri_s": "https://hal.science/hal-01774729v1",
-      "title_s": "BRC4Env, a network of Biological Resource Centres for research in environmental and agricultural sciences",
-      "docType_s": "ART",
-      "doiId_s": "10.1007/s11356-018-1973-7",
-      "laboratories": [
-        "ECOSYS",
-        "INRA",
-        "UMR CBGP",
-        "Cirad",
-        "Montpellier SupAgro",
-        "UM",
-        "IRD [Occitanie]",
-        "IRD",
-        "UEEA",
-        "UB"
-      ],
-      "modifiedDate_tdate": "2026-09-15T16:09:41Z",
-      "producedDateY_i": 2018,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.15454/D3ODJM",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Portail Data INRAE",
-          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/D3ODJM",
-          "landing_host": "data.inrae.fr",
-          "dataset_title": "Colisa, the collection of ichthyological samples.",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.15454/AY4LMT",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Portail Data INRAE",
-          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/AY4LMT",
-          "landing_host": "data.inrae.fr",
-          "dataset_title": "BRC “Egg Parasitoids Collection” (EP-Coll)",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.15454/UQEMVW",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Portail Data Inra",
-          "landing_url": "https://carrtel-collection.hub.inrae.fr/",
-          "landing_host": "carrtel-collection.hub.inrae.fr",
-          "dataset_title": "Thonon Culture Collection -TCC- a freshwater microalgae collection",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.15454/TRBJTB",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Portail Data INRAE",
-          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/TRBJTB",
-          "landing_host": "data.inrae.fr",
-          "dataset_title": "BRC4Env, the Biological Resource Centre for the Environment",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-04267953",
-      "uri_s": "https://hal.inrae.fr/hal-04267953v1",
-      "title_s": "SNP discovery by exome capture and resequencing in a pea genetic resource collection",
-      "docType_s": "ART",
-      "doiId_s": "10.24072/pci.genomics.100237",
-      "laboratories": [
-        "UB",
-        "UBFC",
-        "INRAE",
-        "Institut Agro",
-        "GENOSCOPE",
-        "DRF (CEA)",
-        "CEA",
-        "UA",
-        "ULiège",
-        "UPJV"
-      ],
-      "modifiedDate_tdate": "2026-09-15T16:09:40Z",
-      "producedDateY_i": 2023,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/5MDE99",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/5MDE99",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Dataset from \"A new genome assembly of the pea cultivar Cameor provides resources for functional genomics and genetics\"",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-03144754",
-      "uri_s": "https://hal.science/hal-03144754v1",
-      "title_s": "BRC4Env, a network of Biological Resource Centres for environmental resources",
-      "docType_s": "POSTER",
-      "doiId_s": "10.15454/TRBJTB",
-      "laboratories": [
-        "ECOSYS",
-        "INRAE",
-        "UMR CBGP",
-        "Cirad",
-        "UM",
-        "IRD [Occitanie]",
-        "IRD",
-        "Institut Agro",
-        "UB",
-        "UBFC"
-      ],
-      "modifiedDate_tdate": "2026-09-15T16:08:54Z",
-      "producedDateY_i": 2020,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.15454/D6XAKL",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/D6XAKL",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "CBGP - Continental Arthropod Collection",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
@@ -1456,43 +1493,6 @@
           "dataset_title": "Task 3.4 - Deliverable 1 - Life cycle assessment of the LETSPROSEED pulse protein ingredients",
           "field": "relatedData_s",
           "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-04266661",
-      "uri_s": "https://hal.science/hal-04266661v1",
-      "title_s": "The short-term response of soil microbial communities to digestate application depends on the characteristics of the digestate and soil type",
-      "docType_s": "ART",
-      "doiId_s": "10.1016/j.apsoil.2023.105105",
-      "laboratories": [
-        "UB",
-        "UBFC",
-        "INRAE",
-        "Institut Agro",
-        "UR OPAALE",
-        "LEVA",
-        "ESA",
-        "IPSL",
-        "ENS-PSL",
-        "PSL"
-      ],
-      "modifiedDate_tdate": "2026-07-28T14:22:17Z",
-      "producedDateY_i": 2024,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/DFGUGB",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/DFGUGB",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Impact des digestats de méthanisation sur la qualité biologique des sols : Evaluation d’impact à court terme en conditions contrôlées (Microcosmes)",
-          "field": "relatedPublication_s",
-          "misfiled": true,
           "also_in_relatedData_s": false
         }
       ]

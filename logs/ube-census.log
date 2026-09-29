@@ -1,22 +1,22 @@
 university=ube collection=UNIV-BOURGOGNE site=docs/ube
-incremental census since=2026-09-26T02:28:30Z (existing pubs=263, doi cache=301)
-[2026-09-28T16:45:51Z] census start collection=UNIV-BOURGOGNE since=2026-09-26T02:28:30Z
-HAL publications with linked identifiers (merged): 264
+incremental census since=2026-09-27T10:44:55Z (existing pubs=264, doi cache=302)
+[2026-09-29T10:44:55Z] census start collection=UNIV-BOURGOGNE since=2026-09-27T10:44:55Z
+HAL publications with linked identifiers (merged): 265
   query: (relatedData_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)
-  fetched this run: 4 (updated=3, inserted=1)
-link tokens: 388
-unique DOI candidates: 302
-DataCite cache hits: 301; to resolve: 1
+  fetched this run: 18 (updated=17, inserted=1)
+link tokens: 389
+unique DOI candidates: 303
+DataCite cache hits: 302; to resolve: 1
 DataCite resolved 1/1
-[2026-09-28T16:45:53Z] census done
+[2026-09-29T10:44:57Z] census done
 harvesting SOFTWARE deposits (full)
 harvesting data papers (docSubType_s:DATAPAPER)
 updated dataset→publications index
 synced focus links → data/ube/links.jsonl (96 hits)
 harvesting institutional DataCite datasets (affiliation / ROR)
-[2026-09-28T16:45:54Z] datacite census start university=ube
+[2026-09-29T10:44:59Z] datacite census start university=ube
   query: (creators.affiliation.affiliationIdentifier:"https://ror.org/00g700j37" OR contributors.affiliation.affiliationIdentifier:"https://ror.org/00g700j37" OR creators.affiliation.name:"Université Bourgogne Europe" OR contributors.affiliation.name:"Université Bourgogne Europe" OR creators.affiliation.name:"Universite Bourgogne Europe" OR contributors.affiliation.name:"Universite Bourgogne Europe" OR creators.affiliation.name:"Université de Bourgogne" OR contributors.affiliation.name:"Université de Bourgogne" OR creators.affiliation.name:"Universite de Bourgogne" OR contributors.affiliation.name:"Universite de Bourgogne" OR creators.affiliation.name:"University of Burgundy" OR contributors.affiliation.name:"University of Burgundy") AND types.resourceTypeGeneral:Dataset
   DataCite numFound≈724
-WARNING: DataCite institutional census failed: Server error '502 Bad Gateway' for url 'https://api.datacite.org/dois?query=%28creators.affiliation.affiliationIdentifier%3A%22https%3A%2F%2Fror.org%2F00g700j37%22+OR+contributors.affiliation.affiliationIdentifier%3A%22https%3A%2F%2Fror.org%2F00g700j37%22+OR+creators.affiliation.name%3A%22Universit%C3%A9+Bourgogne+Europe%22+OR+contributors.affiliation.name%3A%22Universit%C3%A9+Bourgogne+Europe%22+OR+creators.affiliation.name%3A%22Universite+Bourgogne+Europe%22+OR+contributors.affiliation.name%3A%22Universite+Bourgogne+Europe%22+OR+creators.affiliation.name%3A%22Universit%C3%A9+de+Bourgogne%22+OR+contributors.affiliation.name%3A%22Universit%C3%A9+de+Bourgogne%22+OR+creators.affiliation.name%3A%22Universite+de+Bourgogne%22+OR+contributors.affiliation.name%3A%22Universite+de+Bourgogne%22+OR+creators.affiliation.name%3A%22University+of+Burgundy%22+OR+contributors.affiliation.name%3A%22University+of+Burgundy%22%29+AND+types.resourceTypeGeneral%3ADataset&page%5Bsize%5D=100&page%5Bcursor%5D=MTYyODE4MDIxNTAwMCwxMC4yNTY2Ni9kYXRhb3N1LTIwMTctMDMtMTA'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502
+  harvested unique DOIs=724
+DataCite datasets=724 also_on_hal=7 datacite_only=717
 wrote site → docs/ube/

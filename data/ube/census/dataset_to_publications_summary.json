@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-28T16:45:54Z",
-  "unique_datasets": 177,
-  "dataset_publication_links": 203,
+  "generated_at": "2026-09-29T10:44:59Z",
+  "unique_datasets": 178,
+  "dataset_publication_links": 204,
   "datasets_with_multiple_publications": 20,
   "by_repository": {
     "Recherche Data Gouv": 83,
@@ -9,7 +9,7 @@
     "Zenodo": 22,
     "Portail Data Inra": 13,
     "Dryad": 9,
-    "Figshare": 5,
+    "Figshare": 6,
     "Mendeley Data": 5,
     "Progedo-Adisp": 4,
     "Australian Antarctic Data Centre": 3,
