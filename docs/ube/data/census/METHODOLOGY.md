@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-09-29T10:44:57Z`  
+Generated: `2026-09-29T15:24:16Z`  
 Collection: `UNIV-BOURGOGNE`  
-Run window: `2026-09-29T10:44:55Z` → `2026-09-29T10:44:57Z`
+Run window: `2026-09-29T15:24:15Z` → `2026-09-29T15:24:16Z`
 
 ## Goal
 
@@ -13,7 +13,7 @@ misfiled dataset links can be corrected.
 
 ## Pipeline
 
-1. **HAL Search API** — `q=(relatedData_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)` on `/search/UNIV-BOURGOGNE/`
+1. **HAL Search API** — `q=(relatedData_s:*) OR (relatedSoftware_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)` on `/search/UNIV-BOURGOGNE/`
    with Solr cursor pagination (`sort=docid asc`). Optional
    `modifiedDate_tdate` window for incremental refresh; merge by `halId_s`.
 2. **Token parse** — values from `relatedData_s`, `relatedPublication_s`, and

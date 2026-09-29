@@ -131,6 +131,18 @@ h1 {
   margin: 0 0 0.75rem; font-family: var(--font-display); font-size: 1.2rem; font-weight: 700;
   letter-spacing: -0.02em;
 }
+.panel h3 {
+  margin: 0 0 0.35rem; font-family: var(--font-display); font-size: 1.02rem; font-weight: 700;
+  letter-spacing: -0.015em;
+}
+.triptych-pillars {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem 1.35rem;
+  margin: 1rem 0 0; padding-top: 0.85rem; border-top: 1px solid var(--line);
+}
+.triptych-pillars p { margin: 0; color: var(--ink-soft); font-size: 0.92rem; line-height: 1.5; }
+@media (max-width: 800px) {
+  .triptych-pillars { grid-template-columns: 1fr; }
+}
 .bars { display: grid; gap: 0.45rem; }
 .bar-row { display: grid; grid-template-columns: 7.5rem 1fr 3.2rem; gap: 0.6rem; align-items: center; font-size: 0.9rem; }
 .bar-track { height: 0.5rem; background: var(--wash); border-radius: 999px; overflow: hidden; }
@@ -365,7 +377,7 @@ footer .updated time { font-variant-numeric: tabular-nums; }
     </div>
     <p class="chart-embed-hint">Click a segment to list datasets. Source: <a href="./index.html" target="_blank" rel="noopener">HAL-UBE</a></p>
     <footer>
-      <div class="updated">Last updated: <time datetime="2026-09-29T10:45:12Z">29 Sep 2026, 12:45 CEST</time></div>
+      <div class="updated">Last updated: <time datetime="2026-09-29T15:24:22Z">29 Sep 2026, 17:24 CEST</time></div>
     </footer>
   </main>
   

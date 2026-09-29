@@ -1,21 +1,23 @@
 university=unica collection=UNIV-COTEDAZUR site=docs
-incremental census since=2026-09-27T10:44:32Z (existing pubs=317, doi cache=405)
-[2026-09-29T10:44:32Z] census start collection=UNIV-COTEDAZUR since=2026-09-27T10:44:32Z
+incremental census since=2026-09-27T15:24:01Z (existing pubs=317, doi cache=405)
+[2026-09-29T15:24:01Z] census start collection=UNIV-COTEDAZUR since=2026-09-27T15:24:01Z
 HAL publications with linked identifiers (merged): 317
-  query: (relatedData_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)
-  fetched this run: 18 (updated=18, inserted=0)
+  query: (relatedData_s:*) OR (relatedSoftware_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)
+  fetched this run: 28 (updated=28, inserted=0)
 link tokens: 512
 unique DOI candidates: 405
 DataCite cache hits: 405; to resolve: 0
-[2026-09-29T10:44:34Z] census done
+[2026-09-29T15:24:02Z] census done
 harvesting SOFTWARE deposits (full)
+listing publications with dataset + software (open science triptych)
+open science triptych publications=3
 harvesting data papers (docSubType_s:DATAPAPER)
 updated dataset→publications index
 synced focus links → data/unica_data_repo_links.jsonl (56 hits)
 harvesting institutional DataCite datasets (affiliation / ROR)
-[2026-09-29T10:44:36Z] datacite census start university=unica
+[2026-09-29T15:24:03Z] datacite census start university=unica
   query: (creators.affiliation.affiliationIdentifier:"https://ror.org/019tgvf94" OR contributors.affiliation.affiliationIdentifier:"https://ror.org/019tgvf94" OR creators.affiliation.name:"Université Côte d'Azur" OR contributors.affiliation.name:"Université Côte d'Azur" OR creators.affiliation.name:"Universite Cote d'Azur" OR contributors.affiliation.name:"Universite Cote d'Azur" OR creators.affiliation.name:"Univ. Côte d'Azur" OR contributors.affiliation.name:"Univ. Côte d'Azur" OR creators.affiliation.name:"Univ Côte d'Azur" OR contributors.affiliation.name:"Univ Côte d'Azur" OR creators.affiliation.name:"University Côte d'Azur" OR contributors.affiliation.name:"University Côte d'Azur" OR creators.affiliation.name:"University Cote d'Azur" OR contributors.affiliation.name:"University Cote d'Azur") AND types.resourceTypeGeneral:Dataset
-  DataCite numFound≈1349
-  harvested unique DOIs=1349
-DataCite datasets=1349 also_on_hal=32 datacite_only=1317
+  DataCite numFound≈1362
+WARNING: DataCite institutional census failed: Server error '500 Internal Server Error' for url 'https://api.datacite.org/dois?query=%28creators.affiliation.affiliationIdentifier%3A%22https%3A%2F%2Fror.org%2F019tgvf94%22+OR+contributors.affiliation.affiliationIdentifier%3A%22https%3A%2F%2Fror.org%2F019tgvf94%22+OR+creators.affiliation.name%3A%22Universit%C3%A9+C%C3%B4te+d%27Azur%22+OR+contributors.affiliation.name%3A%22Universit%C3%A9+C%C3%B4te+d%27Azur%22+OR+creators.affiliation.name%3A%22Universite+Cote+d%27Azur%22+OR+contributors.affiliation.name%3A%22Universite+Cote+d%27Azur%22+OR+creators.affiliation.name%3A%22Univ.+C%C3%B4te+d%27Azur%22+OR+contributors.affiliation.name%3A%22Univ.+C%C3%B4te+d%27Azur%22+OR+creators.affiliation.name%3A%22Univ+C%C3%B4te+d%27Azur%22+OR+contributors.affiliation.name%3A%22Univ+C%C3%B4te+d%27Azur%22+OR+creators.affiliation.name%3A%22University+C%C3%B4te+d%27Azur%22+OR+contributors.affiliation.name%3A%22University+C%C3%B4te+d%27Azur%22+OR+creators.affiliation.name%3A%22University+Cote+d%27Azur%22+OR+contributors.affiliation.name%3A%22University+Cote+d%27Azur%22%29+AND+types.resourceTypeGeneral%3ADataset&page%5Bsize%5D=100&page%5Bcursor%5D=MTU5Mzc4OTc3NjAwMCwxMC4xNTQ1NC9lcHRkb3MvNWZweTl5'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
 wrote site → docs/

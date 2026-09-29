@@ -131,6 +131,18 @@ h1 {
   margin: 0 0 0.75rem; font-family: var(--font-display); font-size: 1.2rem; font-weight: 700;
   letter-spacing: -0.02em;
 }
+.panel h3 {
+  margin: 0 0 0.35rem; font-family: var(--font-display); font-size: 1.02rem; font-weight: 700;
+  letter-spacing: -0.015em;
+}
+.triptych-pillars {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem 1.35rem;
+  margin: 1rem 0 0; padding-top: 0.85rem; border-top: 1px solid var(--line);
+}
+.triptych-pillars p { margin: 0; color: var(--ink-soft); font-size: 0.92rem; line-height: 1.5; }
+@media (max-width: 800px) {
+  .triptych-pillars { grid-template-columns: 1fr; }
+}
 .bars { display: grid; gap: 0.45rem; }
 .bar-row { display: grid; grid-template-columns: 7.5rem 1fr 3.2rem; gap: 0.6rem; align-items: center; font-size: 0.9rem; }
 .bar-track { height: 0.5rem; background: var(--wash); border-radius: 999px; overflow: hidden; }
@@ -369,6 +381,7 @@ footer .updated time { font-variant-numeric: tabular-nums; }
       <a class="navlink" href="./all-repositories.html">All repositories</a>
       <a class="navlink" href="./datacite-datasets.html">DataCite datasets</a>
       <a class="navlink" href="./data-papers.html">Data papers</a>
+      <a class="navlink" href="./open-science-triptych.html">Pub + data + software</a>
       <a class="navlink" href="./to-be-corrected.html">To Be Corrected</a>
       <a class="navlink" href="./software.html">Software</a>
       <a class="navlink" href="./documentation.html" aria-current="page">Documentation</a>
@@ -391,10 +404,10 @@ footer .updated time { font-variant-numeric: tabular-nums; }
       <h2>Method</h2>
       <ol class="method"><li>List UniCA HAL notices with relatedData_s, relatedPublication_s DOIs, or seeAlso_s.</li><li>Record the HAL source field on every token (provenance for corrections).</li><li>Optional modifiedDate_tdate window for incremental refresh; merge by halId_s.</li><li>Parse each token as DOI, URL, HAL id, or other.</li><li>Resolve new DOIs with DataCite REST API; reuse doi_resolutions.jsonl cache.</li><li>Label repository and object_kind from landing host / publisher / known DOI prefix; never default unknown hosts to dataset_repo.</li><li>Flag dataset_repo DOIs filed only outside relatedData_s (still listed there = supplementary, not a correction).</li><li>Build dataset_to_publications (dataset_repo only) with sticky retrieved_at for the All repositories page.</li><li>Write publication-level JSONL, DOI resolution JSONL, and CSV correspondence tables.</li></ol>
       <p class="muted" style="margin:0.85rem 0 0">
-        HAL query: <code>(relatedData_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)</code> on
+        HAL query: <code>(relatedData_s:*) OR (relatedSoftware_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)</code> on
         <code>https://api.archives-ouvertes.fr/search/UNIV-BOURGOGNE/</code>.
         DOI API: <code>https://api.datacite.org/dois/{doi}</code>.
-        Run: <code>2026-09-29T10:44:55Z</code> → <code>2026-09-29T10:44:57Z</code>.
+        Run: <code>2026-09-29T15:24:15Z</code> → <code>2026-09-29T15:24:16Z</code>.
       </p>
     </section>
 
@@ -402,7 +415,7 @@ footer .updated time { font-variant-numeric: tabular-nums; }
       <h2>Artifacts (download)</h2>
       <table class="doc">
         <thead><tr><th>Role</th><th>File</th></tr></thead>
-        <tbody><tr><td><code>publications_jsonl</code></td><td><a href="./data/census/publications_related_data.jsonl"><code>publications_related_data.jsonl</code></a></td></tr><tr><td><code>doi_resolutions_jsonl</code></td><td><a href="./data/census/doi_resolutions.jsonl"><code>doi_resolutions.jsonl</code></a></td></tr><tr><td><code>doi_hal_map_csv</code></td><td><a href="./data/census/doi_hal_repository_map.csv"><code>doi_hal_repository_map.csv</code></a></td></tr><tr><td><code>misfiled_dataset_links_csv</code></td><td><a href="./data/census/misfiled_dataset_links.csv"><code>misfiled_dataset_links.csv</code></a></td></tr><tr><td><code>doi_to_repository_csv</code></td><td><a href="./data/census/doi_to_repository.csv"><code>doi_to_repository.csv</code></a></td></tr><tr><td><code>summary_json</code></td><td><a href="./data/census/summary.json"><code>summary.json</code></a></td></tr><tr><td><code>dataset_to_publications.csv</code></td><td><a href="./data/census/dataset_to_publications.csv"><code>dataset_to_publications.csv</code></a></td></tr><tr><td><code>dataset_to_publications.jsonl</code></td><td><a href="./data/census/dataset_to_publications.jsonl"><code>dataset_to_publications.jsonl</code></a></td></tr><tr><td><code>software_deposits.csv</code></td><td><a href="./data/census/software_deposits.csv"><code>software_deposits.csv</code></a></td></tr><tr><td><code>software_deposits.jsonl</code></td><td><a href="./data/census/software_deposits.jsonl"><code>software_deposits.jsonl</code></a></td></tr><tr><td><code>software_summary.json</code></td><td><a href="./data/census/software_summary.json"><code>software_summary.json</code></a></td></tr><tr><td><code>data_papers.csv</code></td><td><a href="./data/census/data_papers.csv"><code>data_papers.csv</code></a></td></tr><tr><td><code>data_papers.jsonl</code></td><td><a href="./data/census/data_papers.jsonl"><code>data_papers.jsonl</code></a></td></tr><tr><td><code>data_papers_summary.json</code></td><td><a href="./data/census/data_papers_summary.json"><code>data_papers_summary.json</code></a></td></tr><tr><td><code>misfiled_dataset_links.csv</code></td><td><a href="./data/census/misfiled_dataset_links.csv"><code>misfiled_dataset_links.csv</code></a></td></tr><tr><td><code>datacite_datasets.csv</code></td><td><a href="./data/census/datacite_datasets.csv"><code>datacite_datasets.csv</code></a></td></tr><tr><td><code>datacite_datasets.jsonl</code></td><td><a href="./data/census/datacite_datasets.jsonl"><code>datacite_datasets.jsonl</code></a></td></tr><tr><td><code>datacite_datasets_summary.json</code></td><td><a href="./data/census/datacite_datasets_summary.json"><code>datacite_datasets_summary.json</code></a></td></tr></tbody>
+        <tbody><tr><td><code>publications_jsonl</code></td><td><a href="./data/census/publications_related_data.jsonl"><code>publications_related_data.jsonl</code></a></td></tr><tr><td><code>doi_resolutions_jsonl</code></td><td><a href="./data/census/doi_resolutions.jsonl"><code>doi_resolutions.jsonl</code></a></td></tr><tr><td><code>doi_hal_map_csv</code></td><td><a href="./data/census/doi_hal_repository_map.csv"><code>doi_hal_repository_map.csv</code></a></td></tr><tr><td><code>misfiled_dataset_links_csv</code></td><td><a href="./data/census/misfiled_dataset_links.csv"><code>misfiled_dataset_links.csv</code></a></td></tr><tr><td><code>doi_to_repository_csv</code></td><td><a href="./data/census/doi_to_repository.csv"><code>doi_to_repository.csv</code></a></td></tr><tr><td><code>summary_json</code></td><td><a href="./data/census/summary.json"><code>summary.json</code></a></td></tr><tr><td><code>dataset_to_publications.csv</code></td><td><a href="./data/census/dataset_to_publications.csv"><code>dataset_to_publications.csv</code></a></td></tr><tr><td><code>dataset_to_publications.jsonl</code></td><td><a href="./data/census/dataset_to_publications.jsonl"><code>dataset_to_publications.jsonl</code></a></td></tr><tr><td><code>software_deposits.csv</code></td><td><a href="./data/census/software_deposits.csv"><code>software_deposits.csv</code></a></td></tr><tr><td><code>software_deposits.jsonl</code></td><td><a href="./data/census/software_deposits.jsonl"><code>software_deposits.jsonl</code></a></td></tr><tr><td><code>software_summary.json</code></td><td><a href="./data/census/software_summary.json"><code>software_summary.json</code></a></td></tr><tr><td><code>data_papers.csv</code></td><td><a href="./data/census/data_papers.csv"><code>data_papers.csv</code></a></td></tr><tr><td><code>data_papers.jsonl</code></td><td><a href="./data/census/data_papers.jsonl"><code>data_papers.jsonl</code></a></td></tr><tr><td><code>data_papers_summary.json</code></td><td><a href="./data/census/data_papers_summary.json"><code>data_papers_summary.json</code></a></td></tr><tr><td><code>misfiled_dataset_links.csv</code></td><td><a href="./data/census/misfiled_dataset_links.csv"><code>misfiled_dataset_links.csv</code></a></td></tr><tr><td><code>datacite_datasets.csv</code></td><td><a href="./data/census/datacite_datasets.csv"><code>datacite_datasets.csv</code></a></td></tr><tr><td><code>datacite_datasets.jsonl</code></td><td><a href="./data/census/datacite_datasets.jsonl"><code>datacite_datasets.jsonl</code></a></td></tr><tr><td><code>datacite_datasets_summary.json</code></td><td><a href="./data/census/datacite_datasets_summary.json"><code>datacite_datasets_summary.json</code></a></td></tr><tr><td><code>publications_with_dataset_and_software.csv</code></td><td><a href="./data/census/publications_with_dataset_and_software.csv"><code>publications_with_dataset_and_software.csv</code></a></td></tr><tr><td><code>publications_with_dataset_and_software.jsonl</code></td><td><a href="./data/census/publications_with_dataset_and_software.jsonl"><code>publications_with_dataset_and_software.jsonl</code></a></td></tr><tr><td><code>publications_with_dataset_and_software.md</code></td><td><a href="./data/census/publications_with_dataset_and_software.md"><code>publications_with_dataset_and_software.md</code></a></td></tr><tr><td><code>publications_with_dataset_and_software_summary.json</code></td><td><a href="./data/census/publications_with_dataset_and_software_summary.json"><code>publications_with_dataset_and_software_summary.json</code></a></td></tr></tbody>
       </table>
       <p class="muted" style="margin:0.85rem 0 0">
         Start with
@@ -430,7 +443,7 @@ footer .updated time { font-variant-numeric: tabular-nums; }
     </section>
 
     <footer>
-      <div class="updated">Last updated: <time datetime="2026-09-29T10:45:12Z">29 Sep 2026, 12:45 CEST</time></div>
+      <div class="updated">Last updated: <time datetime="2026-09-29T15:24:22Z">29 Sep 2026, 17:24 CEST</time></div>
       Source repository: <a href="https://github.com/xiaoouwang/hal-unica">github.com/xiaoouwang/hal-unica</a>
     </footer>
   </main>

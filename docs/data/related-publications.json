@@ -6,6 +6,40 @@
   },
   "publications": [
     {
+      "halId_s": "hal-05017906",
+      "uri_s": "https://hal.science/hal-05017906v2",
+      "title_s": "When automated fact-checking meets argumentation: unveiling fake news through argumentative evidence",
+      "docType_s": "ART",
+      "doiId_s": "10.1177/19462174251330980",
+      "laboratories": [
+        "CNRS",
+        "MARIANNE",
+        "Inria",
+        "Laboratoire I3S - SPARKS",
+        "I3S",
+        "UNS",
+        "UniCA"
+      ],
+      "modifiedDate_tdate": "2026-09-29T15:05:06Z",
+      "producedDateY_i": 2025,
+      "repositories": [
+        "NAKALA"
+      ],
+      "datasets": [
+        {
+          "doi": "10.34847/nkl.2cec5407",
+          "repository": "NAKALA",
+          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+          "landing_url": "https://nakala.fr/10.34847/nkl.2cec5407",
+          "landing_host": "nakala.fr",
+          "dataset_title": "LIARArg: A dataset for fake news detection enhanced by argumentative features",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
       "halId_s": "hal-02928114",
       "uri_s": "https://hal.inrae.fr/hal-02928114v1",
       "title_s": "Aphid infestation differently affects the defences of nitrate-fed and nitrogen-fixing Medicago truncatula and alters symbiotic nitrogen fixation",
@@ -1421,40 +1455,6 @@
           "landing_url": "https://nakala.fr/10.34847/nkl.0dee15ow",
           "landing_host": "nakala.fr",
           "dataset_title": "The ExEco Dataset: A Textual Dataset of French Economic and Social Thought (1918–1960)",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-05017906",
-      "uri_s": "https://hal.science/hal-05017906v2",
-      "title_s": "When automated fact-checking meets argumentation: unveiling fake news through argumentative evidence",
-      "docType_s": "ART",
-      "doiId_s": "10.1177/19462174251330980",
-      "laboratories": [
-        "CNRS",
-        "MARIANNE",
-        "Inria",
-        "Laboratoire I3S - SPARKS",
-        "I3S",
-        "UNS",
-        "UniCA"
-      ],
-      "modifiedDate_tdate": "2026-06-19T16:16:41Z",
-      "producedDateY_i": 2025,
-      "repositories": [
-        "NAKALA"
-      ],
-      "datasets": [
-        {
-          "doi": "10.34847/nkl.2cec5407",
-          "repository": "NAKALA",
-          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-          "landing_url": "https://nakala.fr/10.34847/nkl.2cec5407",
-          "landing_host": "nakala.fr",
-          "dataset_title": "LIARArg: A dataset for fake news detection enhanced by argumentative features",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
