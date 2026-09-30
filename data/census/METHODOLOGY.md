@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-09-29T15:24:02Z`  
+Generated: `2026-09-30T10:32:45Z`  
 Collection: `UNIV-COTEDAZUR`  
-Run window: `2026-09-29T15:24:01Z` → `2026-09-29T15:24:02Z`
+Run window: `2026-09-30T10:32:42Z` → `2026-09-30T10:32:45Z`
 
 ## Goal
 
@@ -53,9 +53,9 @@ repository root `README.md`.
 
 ## Counts (this run)
 
-- HAL notices with linked identifiers: **317**
-- Related tokens: **512**
-- Unique DOIs resolved: **405**
+- HAL notices with linked identifiers: **318**
+- Related tokens: **516**
+- Unique DOIs resolved: **408**
 - Publications with at least one dataset-repo landing: **166**
 - Misfiled dataset links (wrong HAL field): **72**
 - Publications with ≥1 misfiled dataset link: **53**
@@ -80,9 +80,9 @@ repository root `README.md`.
 - **SEDOO / Theia**: 9
 - **Journal DOI (10.1002)**: 6
 - **Journal DOI (10.3917)**: 6
+- **arXiv**: 6
 - **FDSN / seismic network**: 5
 - **Figshare**: 5
-- **arXiv**: 5
 - **Journal DOI (10.1093)**: 4
 - **DOI prefix 10.22489**: 3
 - **Journal DOI (10.1038)**: 3
@@ -111,6 +111,7 @@ repository root `README.md`.
 - **OSF**: 2
 - **OSU Réunion**: 2
 - **RADAR KIT**: 2
+- **Unknown (DOI not in DataCite)**: 2
 - **data.InDoRES**: 2
 - **Canal-U**: 1
 - **DACE**: 1
@@ -167,8 +168,8 @@ repository root `README.md`.
 - `campagnes.flotteoceanographique.fr`: 11
 - `nakala.fr`: 10
 - `camcatt.sedoo.fr`: 8
+- `arxiv.org`: 5
 - `fdsn.org`: 5
-- `arxiv.org`: 4
 - `figshare.com`: 4
 - `researchgate.net`: 3
 - `archimer.ifremer.fr`: 2
