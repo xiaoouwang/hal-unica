@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-09-30T10:32:45Z`  
+Generated: `2026-09-30T14:55:36Z`  
 Collection: `UNIV-COTEDAZUR`  
-Run window: `2026-09-30T10:32:42Z` → `2026-09-30T10:32:45Z`
+Run window: `2026-09-30T14:55:35Z` → `2026-09-30T14:55:36Z`
 
 ## Goal
 
@@ -83,7 +83,7 @@ repository root `README.md`.
 - **arXiv**: 6
 - **FDSN / seismic network**: 5
 - **Figshare**: 5
-- **Journal DOI (10.1093)**: 4
+- **Journal DOI (10.1093)**: 5
 - **DOI prefix 10.22489**: 3
 - **Journal DOI (10.1038)**: 3
 - **Journal DOI (10.1137)**: 3
@@ -111,7 +111,6 @@ repository root `README.md`.
 - **OSF**: 2
 - **OSU Réunion**: 2
 - **RADAR KIT**: 2
-- **Unknown (DOI not in DataCite)**: 2
 - **data.InDoRES**: 2
 - **Canal-U**: 1
 - **DACE**: 1
@@ -141,6 +140,7 @@ repository root `README.md`.
 - **DOI prefix 10.4171**: 1
 - **DOI prefix 10.5465**: 1
 - **DOI prefix 10.59641**: 1
+- **DOI prefix 10.70675**: 1
 - **DOI prefix 10.7819**: 1
 - **Dagstuhl**: 1
 - **ETH Zurich seismic networks**: 1

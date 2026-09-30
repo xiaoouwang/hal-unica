@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-09-30T10:33:15Z`  
+Generated: `2026-09-30T14:56:09Z`  
 Collection: `UNIV-BOURGOGNE`  
-Run window: `2026-09-30T10:33:13Z` → `2026-09-30T10:33:15Z`
+Run window: `2026-09-30T14:56:08Z` → `2026-09-30T14:56:09Z`
 
 ## Goal
 
@@ -122,6 +122,7 @@ repository root `README.md`.
 - **DOI prefix 10.52497**: 1
 - **DOI prefix 10.57088**: 1
 - **DOI prefix 10.57760**: 1
+- **DOI prefix 10.7220**: 1
 - **Journal DOI (10.1017)**: 1
 - **Journal DOI (10.1038)**: 1
 - **Journal DOI (10.1371)**: 1
@@ -130,7 +131,6 @@ repository root `README.md`.
 - **OSF**: 1
 - **Portail Data INRAE**: 1
 - **Recherche Data Gouv → HAL notice**: 1
-- **Unknown (DOI not in DataCite)**: 1
 - **data.InDoRES**: 1
 
 ### By landing host

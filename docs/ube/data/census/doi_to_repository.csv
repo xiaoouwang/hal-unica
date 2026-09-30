@@ -342,4 +342,4 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 10.6084/m9.figshare.8128178.v1,Figshare,dataset_repo,,,,,,,"Client error '429 Too Many Requests' for url 'https://api.datacite.org/dois/10.6084%2Fm9.figshare.8128178.v1'
 For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
 10.60893/figshare.jcp.32981894.v1,Figshare,dataset_repo,AIP Publishing,https://aip.figshare.com/articles/dataset/Supplement_Number_1/32981894/1,aip.figshare.com,10.60893,aip.figshare,Supplement Number 1,
-10.7220/2538-9122.2026,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
+10.7220/2538-9122.2026,DOI prefix 10.7220,unresolved,,,,,,,not_found

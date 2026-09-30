@@ -56,7 +56,7 @@ doi,repository,object_kind,publisher,landing_url,landing_host,prefix,client_id,t
 10.1093/gji/ggac263,Journal DOI (10.1093),publication_landing,,,,,,,not_found
 10.1093/icc/dtab009,Journal DOI (10.1093),publication_landing,,,,,,,not_found
 10.1093/icc/dtm006,Journal DOI (10.1093),publication_landing,,,,,,,not_found
-10.1093/imrn/rnaf199,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
+10.1093/imrn/rnaf199,Journal DOI (10.1093),publication_landing,,,,,,,not_found
 10.1101/2021.03.02.433228,DOI prefix 10.1101,unresolved,,,,,,,not_found
 10.1101/273557,DOI prefix 10.1101,unresolved,,,,,,,not_found
 10.1109/ACSSC.2018.8645158,Journal DOI (10.1109),publication_landing,,,,,,,not_found
@@ -396,7 +396,7 @@ doi,repository,object_kind,publisher,landing_url,landing_host,prefix,client_id,t
 10.6096/1016,SEDOO / Theia,dataset_repo,Theia,https://camcatt.sedoo.fr/camcatt-product/?uuid=8bc0a165-27ce-4580-8795-9dd2d7b95c73,camcatt.sedoo.fr,10.6096,inist.omp,Vehicle air temperature and humidity measurements,
 10.6096/1017,SEDOO / Theia,dataset_repo,Theia,https://camcatt.sedoo.fr/camcatt-product/?uuid=5b2cc16b-8bcc-4e71-82e2-7924a39f0e95,camcatt.sedoo.fr,10.6096,inist.omp,ASD surface reflectance spectra,
 10.6096/MISTRALS-HyMeX.1493,SEDOO / Theia,dataset_repo,Mistrals,https://mistrals.sedoo.fr/catalogue?uuid=b788f42d-0b21-7fa7-3b10-5ed4a7ed0f94,mistrals.sedoo.fr,10.6096,inist.omp,EuroMedeFF,
-10.70675/2460e061z1224z4824zbb25z2b0753e5e9ed,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
+10.70675/2460e061z1224z4824zbb25z2b0753e5e9ed,DOI prefix 10.70675,unresolved,,,,,,,not_found
 10.7289/V56T0JNC,NOAA NCEI,dataset_repo,NOAA National Centers for Environmental Information,https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ngdc:G01034,ncei.noaa.gov,10.7289,noaa.ncei,Multibeam Bathymetry Database (MBBDB),
 10.7819/rbgn.v23i2.4101,DOI prefix 10.7819,unresolved,,,,,,,not_found
 10.7910/DVN/KHO1ZY,Harvard Dataverse,dataset_repo,Harvard Dataverse,https://dataverse.harvard.edu/citation?persistentId=doi:10.7910/DVN/KHO1ZY,dataverse.harvard.edu,10.7910,gdcc.harvard-dv,Replication Data for: Dating Solar System's giant planet orbital instability using enstatite meteorites,
