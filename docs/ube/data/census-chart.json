@@ -541,7 +541,7 @@
             "title_s": "Analysis of a non-LTE hypersonic spectrum of ethylene between 5880 and 6200 cm-1",
             "uri_s": "https://hal.science/hal-05767239v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ]
       }
@@ -3870,8 +3870,8 @@
       0,
       1,
       2,
-      10,
-      0,
+      9,
+      1,
       0,
       0
     ],
@@ -3978,8 +3978,8 @@
           0,
           0,
           0,
-          1,
           0,
+          1,
           0,
           0
         ]
@@ -4116,7 +4116,7 @@
     "unknown_month": 0
   },
   "cell_details_months": {
-    "2026-09|Figshare": [
+    "2026-10|Figshare": [
       {
         "dataset_doi": "10.60893/figshare.jcp.32981894.v1",
         "dataset_title": "Supplement Number 1",
@@ -4130,10 +4130,10 @@
             "title_s": "Analysis of a non-LTE hypersonic spectrum of ethylene between 5880 and 6200 cm-1",
             "uri_s": "https://hal.science/hal-05767239v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ],
-        "month": 9
+        "month": 10
       }
     ],
     "2026-09|Mendeley Data": [

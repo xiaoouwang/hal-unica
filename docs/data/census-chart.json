@@ -684,7 +684,7 @@
             "title_s": "Effect of Solar Wind Turbulence on Temperature-Anisotropy-Driven Modes in Mercury's Magnetosheath",
             "uri_s": "https://insu.hal.science/insu-05687170v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 7
+            "producedDateM_i": 10
           }
         ]
       },
@@ -701,7 +701,7 @@
             "title_s": "Effect of Solar Wind Turbulence on Temperature-Anisotropy-Driven Modes in Mercury's Magnetosheath",
             "uri_s": "https://insu.hal.science/insu-05687170v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 7
+            "producedDateM_i": 10
           }
         ]
       },
@@ -5033,10 +5033,10 @@
       1,
       3,
       2,
-      4,
+      2,
       4,
       6,
-      0,
+      2,
       0,
       0
     ],
@@ -5051,10 +5051,10 @@
           1,
           0,
           1,
-          4,
           2,
           2,
-          0,
+          2,
+          2,
           0,
           0
         ]
@@ -5312,42 +5312,6 @@
             "halId_s": "hal-05764001",
             "title_s": "Follow the wobble: Statistical methods to detect astrometric binary asteroids in Gaia FPR",
             "uri_s": "https://hal.science/hal-05764001v1",
-            "producedDateY_i": 2026,
-            "producedDateM_i": 7
-          }
-        ],
-        "month": 7
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.17672514",
-        "dataset_title": "Mercury's magnetosphere with laminar solar wind conditions using the Menura solver",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17672514",
-        "landing_host": "zenodo.org",
-        "year": 2026,
-        "publications": [
-          {
-            "halId_s": "insu-05687170",
-            "title_s": "Effect of Solar Wind Turbulence on Temperature-Anisotropy-Driven Modes in Mercury's Magnetosheath",
-            "uri_s": "https://insu.hal.science/insu-05687170v1",
-            "producedDateY_i": 2026,
-            "producedDateM_i": 7
-          }
-        ],
-        "month": 7
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.17672619",
-        "dataset_title": "Mercury's magnetosphere with turbulent solar wind conditions using the Menura solver",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17672619",
-        "landing_host": "zenodo.org",
-        "year": 2026,
-        "publications": [
-          {
-            "halId_s": "insu-05687170",
-            "title_s": "Effect of Solar Wind Turbulence on Temperature-Anisotropy-Driven Modes in Mercury's Magnetosheath",
-            "uri_s": "https://insu.hal.science/insu-05687170v1",
             "producedDateY_i": 2026,
             "producedDateM_i": 7
           }
@@ -5632,6 +5596,44 @@
           }
         ],
         "month": 3
+      }
+    ],
+    "2026-10|Zenodo": [
+      {
+        "dataset_doi": "10.5281/zenodo.17672514",
+        "dataset_title": "Mercury's magnetosphere with laminar solar wind conditions using the Menura solver",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17672514",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "insu-05687170",
+            "title_s": "Effect of Solar Wind Turbulence on Temperature-Anisotropy-Driven Modes in Mercury's Magnetosheath",
+            "uri_s": "https://insu.hal.science/insu-05687170v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 10
+          }
+        ],
+        "month": 10
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.17672619",
+        "dataset_title": "Mercury's magnetosphere with turbulent solar wind conditions using the Menura solver",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17672619",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "insu-05687170",
+            "title_s": "Effect of Solar Wind Turbulence on Temperature-Anisotropy-Driven Modes in Mercury's Magnetosheath",
+            "uri_s": "https://insu.hal.science/insu-05687170v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 10
+          }
+        ],
+        "month": 10
       }
     ],
     "2026-06|NAKALA": [
