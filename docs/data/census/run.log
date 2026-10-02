@@ -1,10 +1,11 @@
 university=unica collection=UNIV-COTEDAZUR site=docs
-incremental census since=2026-09-30T10:33:21Z (existing pubs=318, doi cache=408)
-[2026-10-02T10:33:21Z] census start collection=UNIV-COTEDAZUR since=2026-09-30T10:33:21Z
-HAL publications with linked identifiers (merged): 318
+incremental census since=2026-09-30T14:44:28Z (existing pubs=318, doi cache=408)
+[2026-10-02T14:44:28Z] census start collection=UNIV-COTEDAZUR since=2026-09-30T14:44:28Z
+HAL publications with linked identifiers (merged): 319
   query: (relatedData_s:*) OR (relatedSoftware_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)
-  fetched this run: 3 (updated=3, inserted=0)
-link tokens: 516
-unique DOI candidates: 408
-DataCite cache hits: 408; to resolve: 0
-[2026-10-02T10:33:22Z] census done
+  fetched this run: 4 (updated=3, inserted=1)
+link tokens: 517
+unique DOI candidates: 409
+DataCite cache hits: 408; to resolve: 1
+DataCite resolved 1/1
+[2026-10-02T14:44:30Z] census done
