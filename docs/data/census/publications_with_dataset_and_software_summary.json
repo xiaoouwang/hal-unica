@@ -2,8 +2,8 @@
   "university_id": "unica",
   "collection": "UNIV-COTEDAZUR",
   "query": "relatedData_s:* OR relatedSoftware_s:* OR relatedPublication_s:* OR swhidId_s:* OR softCodeRepository_s:* OR docType_s:SOFTWARE",
-  "started_at": "2026-10-01T15:27:26Z",
-  "finished_at": "2026-10-01T15:27:34Z",
+  "started_at": "2026-10-02T10:33:22Z",
+  "finished_at": "2026-10-02T10:33:27Z",
   "publications": 4,
   "with_typed_relatedData_and_relatedSoftware": 1,
   "by_hub": {
