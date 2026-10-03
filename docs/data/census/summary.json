@@ -1,25 +1,25 @@
 {
   "collection": "UNIV-COTEDAZUR",
-  "started_at": "2026-10-03T09:54:50Z",
-  "finished_at": "2026-10-03T09:54:51Z",
-  "since": "2026-10-01T09:54:50Z",
-  "hal_publications_with_relatedData": 319,
-  "related_tokens": 517,
-  "unique_dois_resolved": 409,
-  "publications_with_dataset_repo_landing": 167,
+  "started_at": "2026-10-03T13:23:06Z",
+  "finished_at": "2026-10-03T13:23:08Z",
+  "since": "2026-10-01T13:23:06Z",
+  "hal_publications_with_relatedData": 320,
+  "related_tokens": 518,
+  "unique_dois_resolved": 410,
+  "publications_with_dataset_repo_landing": 168,
   "misfiled_dataset_links": 72,
   "publications_with_misfiled_dataset_link": 53,
   "expected_dataset_field": "relatedData_s",
   "incremental": {
-    "pubs_fetched": 4,
+    "pubs_fetched": 5,
     "pubs_updated": 4,
-    "pubs_inserted": 0,
-    "dois_resolved_live": 0,
+    "pubs_inserted": 1,
+    "dois_resolved_live": 1,
     "dois_from_cache": 409,
-    "watermark_modified": "2026-10-03T03:29:50Z"
+    "watermark_modified": "2026-10-03T12:25:08Z"
   },
   "by_repository": {
-    "Zenodo": 99,
+    "Zenodo": 100,
     "Recherche Data Gouv": 78,
     "Journal DOI (10.1007)": 31,
     "Journal DOI (10.1109)": 20,
@@ -111,13 +111,13 @@
     "University of Bristol data.bris": 1
   },
   "by_object_kind": {
-    "dataset_repo": 267,
+    "dataset_repo": 268,
     "other": 4,
     "publication_landing": 114,
     "unresolved": 47
   },
   "by_doi_prefix": {
-    "10.5281": 98,
+    "10.5281": 99,
     "10.57745": 45,
     "10.15454": 33,
     "10.17882": 15,
@@ -160,7 +160,7 @@
     "10.82180": 1
   },
   "by_landing_host": {
-    "zenodo.org": 98,
+    "zenodo.org": 99,
     "entrepot.recherche.data.gouv.fr": 52,
     "data.inrae.fr": 24,
     "seanoe.org": 15,
@@ -208,18 +208,18 @@
     "www2.dijon.inrae.fr": 1
   },
   "by_token_kind": {
-    "doi": 432,
+    "doi": 433,
     "hal_id": 45,
     "other": 3,
     "url": 37
   },
   "by_source_field": {
     "relatedPublication_s": 265,
-    "relatedData_s": 207,
+    "relatedData_s": 208,
     "seeAlso_s": 45
   },
   "by_dataset_source_field": {
-    "relatedData_s": 194,
+    "relatedData_s": 195,
     "relatedPublication_s": 71,
     "seeAlso_s": 2
   }

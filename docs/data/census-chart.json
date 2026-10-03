@@ -1,8 +1,8 @@
 {
-  "unique_datasets": 249,
-  "publications_with_dataset": 167,
+  "unique_datasets": 250,
+  "publications_with_dataset": 168,
   "by_repository": {
-    "Zenodo": 98,
+    "Zenodo": 99,
     "Recherche Data Gouv": 65,
     "SEANOE": 15,
     "Sismer": 10,
@@ -160,7 +160,7 @@
       35,
       35,
       72,
-      22
+      23
     ],
     "series": [
       {
@@ -189,7 +189,7 @@
           11,
           10,
           25,
-          12
+          13
         ]
       },
       {
@@ -576,6 +576,23 @@
             "uri_s": "https://hal.science/hal-05721920v1",
             "producedDateY_i": 2026,
             "producedDateM_i": 8
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.17913085",
+        "dataset_title": "Data for Extreme statistics as a probe of the superfluid to Bose-glass Berezinskii-Kosterlitz-Thouless transition",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17913085",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05412001",
+            "title_s": "Extreme statistics as a probe of the superfluid to Bose-glass Berezinskii-Kosterlitz-Thouless transition",
+            "uri_s": "https://hal.science/hal-05412001v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 10
           }
         ]
       },
@@ -5053,7 +5070,7 @@
       2,
       4,
       7,
-      2,
+      3,
       0,
       0
     ],
@@ -5071,7 +5088,7 @@
           2,
           2,
           3,
-          2,
+          3,
           0,
           0
         ]
@@ -5294,10 +5311,66 @@
       }
     ],
     "period_kind": "month",
-    "datasets_in_year": 22,
+    "datasets_in_year": 23,
     "unknown_month": 0
   },
   "cell_details_months": {
+    "2026-10|Zenodo": [
+      {
+        "dataset_doi": "10.5281/zenodo.17913085",
+        "dataset_title": "Data for Extreme statistics as a probe of the superfluid to Bose-glass Berezinskii-Kosterlitz-Thouless transition",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17913085",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05412001",
+            "title_s": "Extreme statistics as a probe of the superfluid to Bose-glass Berezinskii-Kosterlitz-Thouless transition",
+            "uri_s": "https://hal.science/hal-05412001v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 10
+          }
+        ],
+        "month": 10
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.17672514",
+        "dataset_title": "Mercury's magnetosphere with laminar solar wind conditions using the Menura solver",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17672514",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "insu-05687170",
+            "title_s": "Effect of Solar Wind Turbulence on Temperature-Anisotropy-Driven Modes in Mercury's Magnetosheath",
+            "uri_s": "https://insu.hal.science/insu-05687170v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 10
+          }
+        ],
+        "month": 10
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.17672619",
+        "dataset_title": "Mercury's magnetosphere with turbulent solar wind conditions using the Menura solver",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17672619",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "insu-05687170",
+            "title_s": "Effect of Solar Wind Turbulence on Temperature-Anisotropy-Driven Modes in Mercury's Magnetosheath",
+            "uri_s": "https://insu.hal.science/insu-05687170v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 10
+          }
+        ],
+        "month": 10
+      }
+    ],
     "2026-09|Zenodo": [
       {
         "dataset_doi": "10.5281/zenodo.21775722",
@@ -5633,44 +5706,6 @@
         "month": 3
       }
     ],
-    "2026-10|Zenodo": [
-      {
-        "dataset_doi": "10.5281/zenodo.17672514",
-        "dataset_title": "Mercury's magnetosphere with laminar solar wind conditions using the Menura solver",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17672514",
-        "landing_host": "zenodo.org",
-        "year": 2026,
-        "publications": [
-          {
-            "halId_s": "insu-05687170",
-            "title_s": "Effect of Solar Wind Turbulence on Temperature-Anisotropy-Driven Modes in Mercury's Magnetosheath",
-            "uri_s": "https://insu.hal.science/insu-05687170v1",
-            "producedDateY_i": 2026,
-            "producedDateM_i": 10
-          }
-        ],
-        "month": 10
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.17672619",
-        "dataset_title": "Mercury's magnetosphere with turbulent solar wind conditions using the Menura solver",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17672619",
-        "landing_host": "zenodo.org",
-        "year": 2026,
-        "publications": [
-          {
-            "halId_s": "insu-05687170",
-            "title_s": "Effect of Solar Wind Turbulence on Temperature-Anisotropy-Driven Modes in Mercury's Magnetosheath",
-            "uri_s": "https://insu.hal.science/insu-05687170v1",
-            "producedDateY_i": 2026,
-            "producedDateM_i": 10
-          }
-        ],
-        "month": 10
-      }
-    ],
     "2026-06|NAKALA": [
       {
         "dataset_doi": "10.34847/nkl.0dee15ow",
@@ -5732,7 +5767,7 @@
       }
     ]
   },
-  "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 22 datasets in 2026. Click a segment to list datasets.",
+  "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 23 datasets in 2026. Click a segment to list datasets.",
   "segment_hint": "newest linking publication year",
   "months_segment_hint": "newest linking publication month"
 }
