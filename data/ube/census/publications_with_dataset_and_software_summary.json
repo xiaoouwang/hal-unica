@@ -2,8 +2,8 @@
   "university_id": "ube",
   "collection": "UNIV-BOURGOGNE",
   "query": "relatedData_s:* OR relatedSoftware_s:* OR relatedPublication_s:* OR swhidId_s:* OR softCodeRepository_s:* OR docType_s:SOFTWARE",
-  "started_at": "2026-10-03T13:23:39Z",
-  "finished_at": "2026-10-03T13:23:45Z",
+  "started_at": "2026-10-04T14:05:21Z",
+  "finished_at": "2026-10-04T14:05:26Z",
   "publications": 4,
   "with_typed_relatedData_and_relatedSoftware": 3,
   "by_hub": {

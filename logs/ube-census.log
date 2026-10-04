@@ -1,3 +1,23 @@
 university=ube collection=UNIV-BOURGOGNE site=docs/ube
-full census (no date filter; rebuild from HAL)
-[2026-10-04T10:50:05Z] census start collection=UNIV-BOURGOGNE since=*
+incremental census since=2026-10-02T08:28:02Z (existing pubs=266, doi cache=304)
+[2026-10-04T14:05:20Z] census start collection=UNIV-BOURGOGNE since=2026-10-02T08:28:02Z
+HAL publications with linked identifiers (merged): 266
+  query: (relatedData_s:*) OR (relatedSoftware_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)
+  fetched this run: 1 (updated=1, inserted=0)
+link tokens: 390
+unique DOI candidates: 304
+DataCite cache hits: 304; to resolve: 0
+[2026-10-04T14:05:21Z] census done
+harvesting SOFTWARE deposits (full)
+listing publications with dataset + software (open science triptych)
+open science triptych publications=4
+harvesting data papers (docSubType_s:DATAPAPER)
+updated dataset→publications index
+synced focus links → data/ube/links.jsonl (96 hits)
+harvesting institutional DataCite datasets (affiliation / ROR)
+[2026-10-04T14:05:26Z] datacite census start university=ube
+  query: (creators.affiliation.affiliationIdentifier:"https://ror.org/00g700j37" OR contributors.affiliation.affiliationIdentifier:"https://ror.org/00g700j37" OR creators.affiliation.name:"Université Bourgogne Europe" OR contributors.affiliation.name:"Université Bourgogne Europe" OR creators.affiliation.name:"Universite Bourgogne Europe" OR contributors.affiliation.name:"Universite Bourgogne Europe" OR creators.affiliation.name:"Université de Bourgogne" OR contributors.affiliation.name:"Université de Bourgogne" OR creators.affiliation.name:"Universite de Bourgogne" OR contributors.affiliation.name:"Universite de Bourgogne" OR creators.affiliation.name:"University of Burgundy" OR contributors.affiliation.name:"University of Burgundy") AND types.resourceTypeGeneral:Dataset
+  DataCite numFound≈760
+  harvested unique DOIs=760
+DataCite datasets=760 also_on_hal=7 datacite_only=753
+wrote site → docs/ube/

@@ -1,3 +1,23 @@
 university=unica collection=UNIV-COTEDAZUR site=docs
-full census (no date filter; rebuild from HAL)
-[2026-10-04T10:45:26Z] census start collection=UNIV-COTEDAZUR since=*
+incremental census since=2026-10-02T14:04:54Z (existing pubs=320, doi cache=410)
+[2026-10-04T14:04:54Z] census start collection=UNIV-COTEDAZUR since=2026-10-02T14:04:54Z
+HAL publications with linked identifiers (merged): 320
+  query: (relatedData_s:*) OR (relatedSoftware_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)
+  fetched this run: 3 (updated=3, inserted=0)
+link tokens: 518
+unique DOI candidates: 410
+DataCite cache hits: 410; to resolve: 0
+[2026-10-04T14:04:55Z] census done
+harvesting SOFTWARE deposits (full)
+listing publications with dataset + software (open science triptych)
+open science triptych publications=4
+harvesting data papers (docSubType_s:DATAPAPER)
+updated dataset→publications index
+synced focus links → data/unica_data_repo_links.jsonl (56 hits)
+harvesting institutional DataCite datasets (affiliation / ROR)
+[2026-10-04T14:05:02Z] datacite census start university=unica
+  query: (creators.affiliation.affiliationIdentifier:"https://ror.org/019tgvf94" OR contributors.affiliation.affiliationIdentifier:"https://ror.org/019tgvf94" OR creators.affiliation.name:"Université Côte d'Azur" OR contributors.affiliation.name:"Université Côte d'Azur" OR creators.affiliation.name:"Universite Cote d'Azur" OR contributors.affiliation.name:"Universite Cote d'Azur" OR creators.affiliation.name:"Univ. Côte d'Azur" OR contributors.affiliation.name:"Univ. Côte d'Azur" OR creators.affiliation.name:"Univ Côte d'Azur" OR contributors.affiliation.name:"Univ Côte d'Azur" OR creators.affiliation.name:"University Côte d'Azur" OR contributors.affiliation.name:"University Côte d'Azur" OR creators.affiliation.name:"University Cote d'Azur" OR contributors.affiliation.name:"University Cote d'Azur") AND types.resourceTypeGeneral:Dataset
+  DataCite numFound≈1364
+  harvested unique DOIs=1364
+DataCite datasets=1364 also_on_hal=32 datacite_only=1332
+wrote site → docs/
