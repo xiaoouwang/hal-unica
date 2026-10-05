@@ -1,6 +1,6 @@
 # Open science triptych — UNIV-COTEDAZUR
 
-**4** candidate(s) — 2026-10-05T11:35:28Z.
+**4** candidate(s) — 2026-10-05T17:08:46Z.
 
 ## Detection hubs
 
