@@ -727,7 +727,9 @@ def build_site_cmd(
         "data-papers.html",
         "documentation.html",
         "sitemap.xml",
+        "sitemap-index.xml",
         "robots.txt",
+        "assets/og-card.jpg",
     ):
         if (path / name).exists():
             typer.echo(f"  {path / name}")

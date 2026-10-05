@@ -1,0 +1,6 @@
+# Paste your Google Search Console HTML-tag verification token on the next line
+# (the content= value only, no quotes). Then rebuild the site.
+# Example:
+# abcdefghijklmnopqrstuvwxyz0123456789
+#
+# Or set HAL_UNICA_GOOGLE_SITE_VERIFICATION in the environment instead.

@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 import json
+import os
 import re
+import shutil
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
@@ -13,12 +15,16 @@ from typing import Any
 from .data_repos import hits_from_jsonl, summarize
 from .universities import (
     DEFAULT_UNIVERSITY,
+    ROOT_SITE_BASE_URL,
     University,
     get_university,
     other_universities,
     reset_university,
     set_university,
 )
+
+_REPO_ROOT = Path(__file__).resolve().parents[2]
+_STATIC_DIR = _REPO_ROOT / "static"
 
 # Back-compat aliases (resolved from the active university tenant).
 SITE_BASE_URL = DEFAULT_UNIVERSITY.site_base_url
@@ -52,6 +58,35 @@ def _abs_url(path: str) -> str:
     return f"{base}/{path.lstrip('./')}"
 
 
+def _html_attr(value: str) -> str:
+    return (
+        str(value)
+        .replace("&", "&amp;")
+        .replace('"', "&quot;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+    )
+
+
+def _og_image_url(uni: University | None = None) -> str:
+    """Absolute URL of the social preview image for the active tenant."""
+    uni = uni or get_university()
+    return f"{uni.site_base_url}/assets/og-card.jpg"
+
+
+def _google_site_verification() -> str | None:
+    """Optional Google Search Console content token (not secret)."""
+    env = (os.environ.get("HAL_UNICA_GOOGLE_SITE_VERIFICATION") or "").strip()
+    if env:
+        return env
+    path = _STATIC_DIR / "google-site-verification.txt"
+    if path.is_file():
+        token = path.read_text(encoding="utf-8").strip().splitlines()[0].strip()
+        if token and not token.startswith("#"):
+            return token
+    return None
+
+
 def _seo_head(
     *,
     title: str,
@@ -72,6 +107,7 @@ def _seo_head(
     desc = " ".join((description or tagline).split())
     if len(desc) > 160:
         desc = desc[:157].rstrip() + "…"
+    og_image = _og_image_url(uni)
     website_id = f"{base}/#website"
     graph: list[dict[str, Any]] = [
         {
@@ -96,6 +132,7 @@ def _seo_head(
             "description": desc,
             "isPartOf": {"@id": website_id},
             "inLanguage": "en",
+            "primaryImageOfPage": {"@type": "ImageObject", "url": og_image},
         },
     ]
     if json_ld_extra:
@@ -105,6 +142,12 @@ def _seo_head(
         ensure_ascii=False,
         separators=(",", ":"),
     ).replace("<", "\\u003c")
+    gsc = _google_site_verification()
+    gsc_meta = (
+        f'  <meta name="google-site-verification" content="{_html_attr(gsc)}" />\n'
+        if gsc
+        else ""
+    )
     return f"""  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{full_title}</title>
@@ -112,34 +155,29 @@ def _seo_head(
   <meta name="robots" content="{_html_attr(robots)}" />
   <meta name="author" content="{_html_attr(f'{name} · {uni.display_name}')}" />
   <meta name="theme-color" content="#f4f0ea" />
-  <link rel="canonical" href="{canonical}" />
+{gsc_meta}  <link rel="canonical" href="{canonical}" />
   <meta property="og:type" content="{_html_attr(page_type)}" />
   <meta property="og:site_name" content="{name}" />
   <meta property="og:locale" content="en_GB" />
   <meta property="og:title" content="{_html_attr(full_title)}" />
   <meta property="og:description" content="{_html_attr(desc)}" />
   <meta property="og:url" content="{canonical}" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="{_html_attr(og_image)}" />
+  <meta property="og:image:alt" content="{_html_attr(full_title)}" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{_html_attr(full_title)}" />
   <meta name="twitter:description" content="{_html_attr(desc)}" />
+  <meta name="twitter:image" content="{_html_attr(og_image)}" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
   <script type="application/ld+json">{ld}</script>
 {extra_head}"""
 
-def _html_attr(value: str) -> str:
-    return (
-        str(value)
-        .replace("&", "&amp;")
-        .replace('"', "&quot;")
-        .replace("<", "&lt;")
-        .replace(">", "&gt;")
-    )
-
 
 def _write_seo_files(output_dir: Path, *, generated_at: str | None = None) -> None:
-    """robots.txt + sitemap.xml for GitHub Pages."""
+    """robots.txt + sitemap.xml (+ root sitemap index covering UniCA + UBE)."""
+    uni = get_university()
     pages = [
         ("", "1.0"),
         ("related-datasets.html", "0.9"),
@@ -175,14 +213,51 @@ def _write_seo_files(output_dir: Path, *, generated_at: str | None = None) -> No
         + "\n</urlset>\n",
         encoding="utf-8",
     )
+
+    # Root tenant: sitemap index so Google discovers UniCA + UBE in one submit.
+    sitemap_ref = f"{uni.site_base_url}/sitemap.xml"
+    if not uni.site_path:
+        index_path = output_dir / "sitemap-index.xml"
+        child_sitemaps = [
+            f"{ROOT_SITE_BASE_URL}/sitemap.xml",
+            f"{ROOT_SITE_BASE_URL}/ube/sitemap.xml",
+        ]
+        entries = []
+        for loc in child_sitemaps:
+            block = f"  <sitemap>\n    <loc>{loc}</loc>\n"
+            if lastmod:
+                block += f"    <lastmod>{lastmod}</lastmod>\n"
+            block += "  </sitemap>"
+            entries.append(block)
+        index_path.write_text(
+            '<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+            + "\n".join(entries)
+            + "\n</sitemapindex>\n",
+            encoding="utf-8",
+        )
+        sitemap_ref = f"{ROOT_SITE_BASE_URL}/sitemap-index.xml"
+
     (output_dir / "robots.txt").write_text(
         f"User-agent: *\n"
         f"Allow: /\n"
         f"Disallow: /embed-chart.html\n"
         f"Disallow: /data/\n"
-        f"Sitemap: {_site_base_url()}/sitemap.xml\n",
+        f"Sitemap: {sitemap_ref}\n",
         encoding="utf-8",
     )
+
+
+def _copy_seo_assets(output_dir: Path, uni: University) -> None:
+    """Copy Open Graph card (and optional GSC file is read at render time only)."""
+    assets_dest = output_dir / "assets"
+    assets_dest.mkdir(parents=True, exist_ok=True)
+    src_name = "og-card-ube.jpg" if uni.id == "ube" else "og-card.jpg"
+    src = _STATIC_DIR / "assets" / src_name
+    if not src.is_file() and uni.id != "unica":
+        src = _STATIC_DIR / "assets" / "og-card.jpg"
+    if src.is_file():
+        shutil.copy2(src, assets_dest / "og-card.jpg")
 
 
 def harvest_stats(harvest_path: Path) -> dict[str, Any]:
@@ -3444,15 +3519,14 @@ def _write_site_inner(
     data_dir.mkdir(parents=True, exist_ok=True)
 
     # University logos for the portal switcher row
-    import shutil
-
-    logos_src = Path(__file__).resolve().parents[2] / "static" / "universities"
+    logos_src = _STATIC_DIR / "universities"
     logos_dest = output_dir / "assets" / "universities"
     if logos_src.is_dir():
         logos_dest.mkdir(parents=True, exist_ok=True)
         for src in logos_src.iterdir():
             if src.is_file() and src.suffix.lower() in {".png", ".svg", ".webp", ".jpg", ".jpeg"}:
                 shutil.copy2(src, logos_dest / src.name)
+    _copy_seo_assets(output_dir, get_university())
 
     (data_dir / "stats.json").write_text(
         json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
@@ -3483,8 +3557,6 @@ def _write_site_inner(
         )
 
     if census_dir and census_dir.exists():
-        import shutil
-
         dest = data_dir / "census"
         if dest.exists():
             shutil.rmtree(dest)

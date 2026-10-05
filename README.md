@@ -30,6 +30,22 @@ The project:
 
 Each site shows a logo row labeled **Open Science Snapshots of Other Universities**; clicking a logo opens that university’s snapshot **in a new tab** (same app features, that university’s data).
 
+### Findability (SEO / Google)
+
+On-page SEO (titles, descriptions, canonicals, Open Graph image, JSON-LD, `robots.txt`)
+is built into every page. Google still needs an explicit crawl request:
+
+1. Open [Google Search Console](https://search.google.com/search-console) → add property
+   `https://xiaoouwang.github.io/hal-unica/`
+2. Choose **HTML tag** verification → copy the `content="…"` token
+3. Put that token alone in [`static/google-site-verification.txt`](static/google-site-verification.txt)
+   (or export `HAL_UNICA_GOOGLE_SITE_VERIFICATION`) and run `hal-unica build-site`
+4. Submit sitemap **`https://xiaoouwang.github.io/hal-unica/sitemap-index.xml`**
+   (covers UniCA + UBE)
+5. Request indexing for the homepage; ask UniCA / UBE open-science pages to link here
+
+Without Search Console + at least one inbound link, ranking is unlikely even with perfect meta tags.
+
 ---
 
 ## Mental model (read this first)
