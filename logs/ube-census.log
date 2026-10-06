@@ -1,13 +1,13 @@
 university=ube collection=UNIV-BOURGOGNE site=docs/ube
-incremental census since=2026-10-02T08:28:02Z (existing pubs=266, doi cache=304)
-[2026-10-05T17:09:09Z] census start collection=UNIV-BOURGOGNE since=2026-10-02T08:28:02Z
+incremental census since=2026-10-04T11:20:25Z (existing pubs=266, doi cache=304)
+[2026-10-06T11:20:25Z] census start collection=UNIV-BOURGOGNE since=2026-10-04T11:20:25Z
 HAL publications with linked identifiers (merged): 266
   query: (relatedData_s:*) OR (relatedSoftware_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)
   fetched this run: 2 (updated=2, inserted=0)
 link tokens: 390
 unique DOI candidates: 304
 DataCite cache hits: 304; to resolve: 0
-[2026-10-05T17:09:10Z] census done
+[2026-10-06T11:20:29Z] census done
 harvesting SOFTWARE deposits (full)
 listing publications with dataset + software (open science triptych)
 open science triptych publications=4
@@ -15,9 +15,9 @@ harvesting data papers (docSubType_s:DATAPAPER)
 updated dataset→publications index
 synced focus links → data/ube/links.jsonl (96 hits)
 harvesting institutional DataCite datasets (affiliation / ROR)
-[2026-10-05T17:09:16Z] datacite census start university=ube
+[2026-10-06T11:20:35Z] datacite census start university=ube
   query: (creators.affiliation.affiliationIdentifier:"https://ror.org/00g700j37" OR contributors.affiliation.affiliationIdentifier:"https://ror.org/00g700j37" OR creators.affiliation.name:"Université Bourgogne Europe" OR contributors.affiliation.name:"Université Bourgogne Europe" OR creators.affiliation.name:"Universite Bourgogne Europe" OR contributors.affiliation.name:"Universite Bourgogne Europe" OR creators.affiliation.name:"Université de Bourgogne" OR contributors.affiliation.name:"Université de Bourgogne" OR creators.affiliation.name:"Universite de Bourgogne" OR contributors.affiliation.name:"Universite de Bourgogne" OR creators.affiliation.name:"University of Burgundy" OR contributors.affiliation.name:"University of Burgundy") AND types.resourceTypeGeneral:Dataset
-  DataCite numFound≈767
-  harvested unique DOIs=767
-DataCite datasets=767 also_on_hal=7 datacite_only=760
+  DataCite numFound≈768
+  harvested unique DOIs=768
+DataCite datasets=768 also_on_hal=7 datacite_only=761
 wrote site → docs/ube/
