@@ -29,6 +29,7 @@ doi,repository,object_kind,publisher,landing_url,landing_host,prefix,client_id,t
 10.1109/SII59315.2025,Journal DOI (10.1109),publication_landing,,,,,,,not_found
 10.1109/SII59315.2025.10870926,Journal DOI (10.1109),publication_landing,,,,,,,not_found
 10.1111/2041-210X.13316,DOI prefix 10.1111,unresolved,,,,,,,not_found
+10.1111/apha.14251,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
 10.1111/joss.70023,DOI prefix 10.1111,unresolved,,,,,,,not_found
 10.1128/spectrum.00336-24,DOI prefix 10.1128,unresolved,,,,,,,not_found
 10.13144/lil-0167,Progedo-Adisp,dataset_repo,Progedo-Adisp,https://data.progedo.fr/studies/doi/10.13144/lil-0167,data.progedo.fr,10.13144,inist.adisp,Génération 1998 - Interrogation à 3 ans - 2001,
