@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T11:09:15Z",
+  "generated_at": "2026-10-07T15:33:56Z",
   "collection": "UNIV-COTEDAZUR",
   "collection_url": "https://hal.science/UNIV-COTEDAZUR",
   "harvest": {
@@ -346,6 +346,43 @@
       "NAKALA": 9
     },
     "publications": [
+      {
+        "halId_s": "hal-05221870",
+        "uri_s": "https://hal.science/hal-05221870v2",
+        "title_s": "Enquête sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
+        "docType_s": "REPORT",
+        "doiId_s": null,
+        "laboratories": [
+          "Comue de Toulouse",
+          "ADBU",
+          "UBE",
+          "dat@UBFC",
+          "UTBM",
+          "SUPMICROTECH - ENSMM",
+          "BSB",
+          "Institut Agro",
+          "UMLP",
+          "UPPA"
+        ],
+        "modifiedDate_tdate": "2026-10-07T15:42:07Z",
+        "producedDateY_i": 2025,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/JYWUIY",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/JYWUIY",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Données de l'enquête ADBU sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
       {
         "halId_s": "hal-05114056",
         "uri_s": "https://hal.science/hal-05114056v2",
@@ -1107,43 +1144,6 @@
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/ESQFDB",
             "landing_host": "entrepot.recherche.data.gouv.fr",
             "dataset_title": "Scripts used for data analyzing in the manuscript: “Unraveling genetic load dynamics during biological invasion: insights from two invasive insect species”",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-05221870",
-        "uri_s": "https://hal.science/hal-05221870v2",
-        "title_s": "Enquête sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
-        "docType_s": "REPORT",
-        "doiId_s": null,
-        "laboratories": [
-          "Comue de Toulouse",
-          "ADBU",
-          "UBE",
-          "dat@UBFC",
-          "UTBM",
-          "SUPMICROTECH - ENSMM",
-          "BSB",
-          "Institut Agro",
-          "UMLP",
-          "UPPA"
-        ],
-        "modifiedDate_tdate": "2026-09-22T03:40:11Z",
-        "producedDateY_i": 2025,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.57745/JYWUIY",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/JYWUIY",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "Données de l'enquête ADBU sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false

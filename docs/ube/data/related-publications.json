@@ -6,6 +6,115 @@
   },
   "publications": [
     {
+      "halId_s": "hal-03534007",
+      "uri_s": "https://hal.inrae.fr/hal-03534007v1",
+      "title_s": "Key questions for next-generation of biomonitoring",
+      "docType_s": "COUV",
+      "doiId_s": "10.3389/978-2-88966-027-8",
+      "laboratories": [
+        "UB",
+        "UBFC",
+        "INRAE",
+        "ECCC",
+        "CARRTEL",
+        "USMB [Université de Savoie] [Université de Chambéry]",
+        "Fédération OSUG",
+        "IGEPP",
+        "UR",
+        "Institut Agro"
+      ],
+      "modifiedDate_tdate": "2026-10-07T16:28:03Z",
+      "producedDateY_i": 2020,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.15454/HYRVUH",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/HYRVUH",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Rsyst::diatom_rbcl_align_312bp database: a database adapted to DNA metabarcoding (version v7: 23-02-2018)",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-05170289",
+      "uri_s": "https://hal.science/hal-05170289v1",
+      "title_s": "Être archiviste et militante ? La construction d'une mémoire lesbienne à partir d'archives du web",
+      "docType_s": "COMM",
+      "doiId_s": null,
+      "laboratories": [
+        "UB",
+        "dat@UBFC",
+        "UTBM",
+        "SUPMICROTECH - ENSMM",
+        "BSB",
+        "UBFC",
+        "Institut Agro",
+        "UMLP"
+      ],
+      "modifiedDate_tdate": "2026-10-07T15:42:07Z",
+      "producedDateY_i": 2022,
+      "repositories": [
+        "NAKALA"
+      ],
+      "datasets": [
+        {
+          "doi": "10.34847/nkl.9effky97",
+          "repository": "NAKALA",
+          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+          "landing_url": "https://nakala.fr/10.34847/nkl.9effky97",
+          "landing_host": "nakala.fr",
+          "dataset_title": "Sites web militants lesbiens francophones et analyse de la qualité de leur archivage",
+          "field": "relatedPublication_s",
+          "misfiled": true,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-05221870",
+      "uri_s": "https://hal.science/hal-05221870v2",
+      "title_s": "Enquête sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
+      "docType_s": "REPORT",
+      "doiId_s": null,
+      "laboratories": [
+        "Comue de Toulouse",
+        "ADBU",
+        "UBE",
+        "dat@UBFC",
+        "UTBM",
+        "SUPMICROTECH - ENSMM",
+        "BSB",
+        "Institut Agro",
+        "UMLP",
+        "UPPA"
+      ],
+      "modifiedDate_tdate": "2026-10-07T15:42:07Z",
+      "producedDateY_i": 2025,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/JYWUIY",
+          "repository": "Recherche Data Gouv",
+          "publisher": null,
+          "landing_url": null,
+          "landing_host": null,
+          "dataset_title": null,
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
       "halId_s": "hal-01173741",
       "uri_s": "https://hal.science/hal-01173741v1",
       "title_s": "L'état des sols de France",
@@ -265,43 +374,6 @@
       ]
     },
     {
-      "halId_s": "hal-03534007",
-      "uri_s": "https://hal.inrae.fr/hal-03534007v1",
-      "title_s": "Key questions for next-generation of biomonitoring",
-      "docType_s": "COUV",
-      "doiId_s": "10.3389/978-2-88966-027-8",
-      "laboratories": [
-        "UB",
-        "UBFC",
-        "INRAE",
-        "ECCC",
-        "CARRTEL",
-        "USMB [Université de Savoie] [Université de Chambéry]",
-        "Fédération OSUG",
-        "IGEPP",
-        "UR",
-        "Institut Agro"
-      ],
-      "modifiedDate_tdate": "2026-09-29T11:04:58Z",
-      "producedDateY_i": 2020,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.15454/HYRVUH",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/HYRVUH",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Rsyst::diatom_rbcl_align_312bp database: a database adapted to DNA metabarcoding (version v7: 23-02-2018)",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
       "halId_s": "hal-01774729",
       "uri_s": "https://hal.science/hal-01774729v1",
       "title_s": "BRC4Env, a network of Biological Resource Centres for research in environmental and agricultural sciences",
@@ -552,41 +624,6 @@
       ]
     },
     {
-      "halId_s": "hal-05170289",
-      "uri_s": "https://hal.science/hal-05170289v1",
-      "title_s": "Être archiviste et militante ? La construction d'une mémoire lesbienne à partir d'archives du web",
-      "docType_s": "COMM",
-      "doiId_s": null,
-      "laboratories": [
-        "UB",
-        "dat@UBFC",
-        "UTBM",
-        "SUPMICROTECH - ENSMM",
-        "BSB",
-        "UBFC",
-        "Institut Agro",
-        "UMLP"
-      ],
-      "modifiedDate_tdate": "2026-09-23T08:31:14Z",
-      "producedDateY_i": 2022,
-      "repositories": [
-        "NAKALA"
-      ],
-      "datasets": [
-        {
-          "doi": "10.34847/nkl.9effky97",
-          "repository": "NAKALA",
-          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-          "landing_url": "https://nakala.fr/10.34847/nkl.9effky97",
-          "landing_host": "nakala.fr",
-          "dataset_title": "Sites web militants lesbiens francophones et analyse de la qualité de leur archivage",
-          "field": "relatedPublication_s",
-          "misfiled": true,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
       "halId_s": "hal-05376427",
       "uri_s": "https://hal.science/hal-05376427v1",
       "title_s": "La topographie de Sens et de Troyes durant l’Antiquité tardive",
@@ -716,43 +753,6 @@
         {
           "doi": "10.34847/nkl.929ax2kn",
           "repository": "NAKALA",
-          "publisher": null,
-          "landing_url": null,
-          "landing_host": null,
-          "dataset_title": null,
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-05221870",
-      "uri_s": "https://hal.science/hal-05221870v2",
-      "title_s": "Enquête sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
-      "docType_s": "REPORT",
-      "doiId_s": null,
-      "laboratories": [
-        "Comue de Toulouse",
-        "ADBU",
-        "UBE",
-        "dat@UBFC",
-        "UTBM",
-        "SUPMICROTECH - ENSMM",
-        "BSB",
-        "Institut Agro",
-        "UMLP",
-        "UPPA"
-      ],
-      "modifiedDate_tdate": "2026-09-22T03:40:11Z",
-      "producedDateY_i": 2025,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/JYWUIY",
-          "repository": "Recherche Data Gouv",
           "publisher": null,
           "landing_url": null,
           "landing_host": null,

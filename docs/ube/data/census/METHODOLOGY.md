@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-10-07T11:09:17Z`  
+Generated: `2026-10-07T15:33:58Z`  
 Collection: `UNIV-BOURGOGNE`  
-Run window: `2026-10-07T11:09:15Z` → `2026-10-07T11:09:17Z`
+Run window: `2026-10-07T15:33:57Z` → `2026-10-07T15:33:58Z`
 
 ## Goal
 
@@ -84,13 +84,13 @@ repository root `README.md`.
 - **Mendeley Data**: 5
 - **Australian Antarctic Data Centre**: 3
 - **CIRAD Dataverse**: 3
+- **DOI prefix 10.1111**: 3
 - **DOI prefix 10.3390**: 3
 - **Imagerie et Vision Artificielle**: 3
 - **Journal DOI (10.1093)**: 3
 - **Agroscope**: 2
 - **Centre interlangues : texte, image, langage**: 2
 - **Classiques Garnier**: 2
-- **DOI prefix 10.1111**: 2
 - **DOI prefix 10.1515**: 2
 - **DOI prefix 10.25666**: 2
 - **DOI prefix 10.37811**: 2
@@ -131,7 +131,6 @@ repository root `README.md`.
 - **OSF**: 1
 - **Portail Data INRAE**: 1
 - **Recherche Data Gouv → HAL notice**: 1
-- **Unknown (DOI not in DataCite)**: 1
 - **data.InDoRES**: 1
 
 ### By landing host
