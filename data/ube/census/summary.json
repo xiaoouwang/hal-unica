@@ -1,22 +1,22 @@
 {
   "collection": "UNIV-BOURGOGNE",
-  "started_at": "2026-10-07T15:33:57Z",
-  "finished_at": "2026-10-07T15:33:58Z",
-  "since": "2026-10-05T15:33:57Z",
-  "hal_publications_with_relatedData": 267,
-  "related_tokens": 391,
+  "started_at": "2026-10-08T11:26:24Z",
+  "finished_at": "2026-10-08T11:26:27Z",
+  "since": "2026-10-06T11:26:24Z",
+  "hal_publications_with_relatedData": 271,
+  "related_tokens": 397,
   "unique_dois_resolved": 305,
   "publications_with_dataset_repo_landing": 149,
   "misfiled_dataset_links": 20,
   "publications_with_misfiled_dataset_link": 19,
   "expected_dataset_field": "relatedData_s",
   "incremental": {
-    "pubs_fetched": 8,
+    "pubs_fetched": 12,
     "pubs_updated": 8,
-    "pubs_inserted": 0,
+    "pubs_inserted": 4,
     "dois_resolved_live": 0,
     "dois_from_cache": 305,
-    "watermark_modified": "2026-10-07T16:40:02Z"
+    "watermark_modified": "2026-10-08T11:08:02Z"
   },
   "by_repository": {
     "Recherche Data Gouv": 104,
@@ -141,12 +141,12 @@
   "by_token_kind": {
     "doi": 342,
     "hal_id": 11,
-    "url": 38
+    "url": 44
   },
   "by_source_field": {
     "relatedData_s": 212,
     "relatedPublication_s": 125,
-    "seeAlso_s": 54
+    "seeAlso_s": 60
   },
   "by_dataset_source_field": {
     "relatedData_s": 179,

@@ -1,13 +1,13 @@
 university=ube collection=UNIV-BOURGOGNE site=docs/ube
-incremental census since=2026-10-05T15:33:57Z (existing pubs=267, doi cache=305)
-[2026-10-07T15:33:57Z] census start collection=UNIV-BOURGOGNE since=2026-10-05T15:33:57Z
-HAL publications with linked identifiers (merged): 267
+incremental census since=2026-10-06T11:26:24Z (existing pubs=267, doi cache=305)
+[2026-10-08T11:26:24Z] census start collection=UNIV-BOURGOGNE since=2026-10-06T11:26:24Z
+HAL publications with linked identifiers (merged): 271
   query: (relatedData_s:*) OR (relatedSoftware_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)
-  fetched this run: 8 (updated=8, inserted=0)
-link tokens: 391
+  fetched this run: 12 (updated=8, inserted=4)
+link tokens: 397
 unique DOI candidates: 305
 DataCite cache hits: 305; to resolve: 0
-[2026-10-07T15:33:58Z] census done
+[2026-10-08T11:26:27Z] census done
 harvesting SOFTWARE deposits (full)
 listing publications with dataset + software (open science triptych)
 open science triptych publications=4
@@ -15,7 +15,7 @@ harvesting data papers (docSubType_s:DATAPAPER)
 updated dataset→publications index
 synced focus links → data/ube/links.jsonl (96 hits)
 harvesting institutional DataCite datasets (affiliation / ROR)
-[2026-10-07T15:34:04Z] datacite census start university=ube
+[2026-10-08T11:26:32Z] datacite census start university=ube
   query: (creators.affiliation.affiliationIdentifier:"https://ror.org/00g700j37" OR contributors.affiliation.affiliationIdentifier:"https://ror.org/00g700j37" OR creators.affiliation.name:"Université Bourgogne Europe" OR contributors.affiliation.name:"Université Bourgogne Europe" OR creators.affiliation.name:"Universite Bourgogne Europe" OR contributors.affiliation.name:"Universite Bourgogne Europe" OR creators.affiliation.name:"Université de Bourgogne" OR contributors.affiliation.name:"Université de Bourgogne" OR creators.affiliation.name:"Universite de Bourgogne" OR contributors.affiliation.name:"Universite de Bourgogne" OR creators.affiliation.name:"University of Burgundy" OR contributors.affiliation.name:"University of Burgundy") AND types.resourceTypeGeneral:Dataset
   DataCite numFound≈770
   harvested unique DOIs=770

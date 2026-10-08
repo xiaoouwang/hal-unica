@@ -1,13 +1,13 @@
 university=unica collection=UNIV-COTEDAZUR site=docs
-incremental census since=2026-10-05T15:33:24Z (existing pubs=320, doi cache=410)
-[2026-10-07T15:33:25Z] census start collection=UNIV-COTEDAZUR since=2026-10-05T15:33:24Z
+incremental census since=2026-10-06T11:25:58Z (existing pubs=320, doi cache=410)
+[2026-10-08T11:25:58Z] census start collection=UNIV-COTEDAZUR since=2026-10-06T11:25:58Z
 HAL publications with linked identifiers (merged): 320
   query: (relatedData_s:*) OR (relatedSoftware_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)
-  fetched this run: 5 (updated=5, inserted=0)
+  fetched this run: 4 (updated=4, inserted=0)
 link tokens: 518
 unique DOI candidates: 410
 DataCite cache hits: 410; to resolve: 0
-[2026-10-07T15:33:26Z] census done
+[2026-10-08T11:25:59Z] census done
 harvesting SOFTWARE deposits (full)
 listing publications with dataset + software (open science triptych)
 open science triptych publications=4
@@ -15,7 +15,7 @@ harvesting data papers (docSubType_s:DATAPAPER)
 updated dataset→publications index
 synced focus links → data/unica_data_repo_links.jsonl (56 hits)
 harvesting institutional DataCite datasets (affiliation / ROR)
-[2026-10-07T15:33:33Z] datacite census start university=unica
+[2026-10-08T11:26:05Z] datacite census start university=unica
   query: (creators.affiliation.affiliationIdentifier:"https://ror.org/019tgvf94" OR contributors.affiliation.affiliationIdentifier:"https://ror.org/019tgvf94" OR creators.affiliation.name:"Université Côte d'Azur" OR contributors.affiliation.name:"Université Côte d'Azur" OR creators.affiliation.name:"Universite Cote d'Azur" OR contributors.affiliation.name:"Universite Cote d'Azur" OR creators.affiliation.name:"Univ. Côte d'Azur" OR contributors.affiliation.name:"Univ. Côte d'Azur" OR creators.affiliation.name:"Univ Côte d'Azur" OR contributors.affiliation.name:"Univ Côte d'Azur" OR creators.affiliation.name:"University Côte d'Azur" OR contributors.affiliation.name:"University Côte d'Azur" OR creators.affiliation.name:"University Cote d'Azur" OR contributors.affiliation.name:"University Cote d'Azur") AND types.resourceTypeGeneral:Dataset
   DataCite numFound≈1366
   harvested unique DOIs=1366

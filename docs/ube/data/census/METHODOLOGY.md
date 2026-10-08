@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-10-07T15:33:58Z`  
+Generated: `2026-10-08T11:26:27Z`  
 Collection: `UNIV-BOURGOGNE`  
-Run window: `2026-10-07T15:33:57Z` → `2026-10-07T15:33:58Z`
+Run window: `2026-10-08T11:26:24Z` → `2026-10-08T11:26:27Z`
 
 ## Goal
 
@@ -53,8 +53,8 @@ repository root `README.md`.
 
 ## Counts (this run)
 
-- HAL notices with linked identifiers: **267**
-- Related tokens: **391**
+- HAL notices with linked identifiers: **271**
+- Related tokens: **397**
 - Unique DOIs resolved: **305**
 - Publications with at least one dataset-repo landing: **149**
 - Misfiled dataset links (wrong HAL field): **20**
