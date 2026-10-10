@@ -6,6 +6,210 @@
   },
   "publications": [
     {
+      "halId_s": "hal-04267953",
+      "uri_s": "https://hal.inrae.fr/hal-04267953v1",
+      "title_s": "SNP discovery by exome capture and resequencing in a pea genetic resource collection",
+      "docType_s": "ART",
+      "doiId_s": "10.24072/pci.genomics.100237",
+      "laboratories": [
+        "UB",
+        "UBFC",
+        "INRAE",
+        "Institut Agro",
+        "GENOSCOPE",
+        "DRF (CEA)",
+        "CEA",
+        "UA",
+        "ULiège",
+        "UPJV"
+      ],
+      "modifiedDate_tdate": "2026-10-09T08:50:03Z",
+      "producedDateY_i": 2023,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/5MDE99",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/5MDE99",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Dataset from \"A new genome assembly of the pea cultivar Cameor provides resources for functional genomics and genetics\"",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-01843156",
+      "uri_s": "https://hal.science/hal-01843156v1",
+      "title_s": "Mapping and predictive variations of soil bacterial richness across France",
+      "docType_s": "ART",
+      "doiId_s": "10.1371/journal.pone.0186766",
+      "laboratories": [
+        "INRA",
+        "UB",
+        "UBFC",
+        "InfoSol",
+        "GENOSCOPE",
+        "DRF (CEA)",
+        "CEA",
+        "iEES",
+        "UPMC",
+        "UPEC UP12"
+      ],
+      "modifiedDate_tdate": "2026-10-09T08:50:03Z",
+      "producedDateY_i": 2017,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/XBFOJP",
+          "repository": "Recherche Data Gouv",
+          "publisher": null,
+          "landing_url": null,
+          "landing_host": null,
+          "dataset_title": null,
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.57745/ZZWKGQ",
+          "repository": "Recherche Data Gouv",
+          "publisher": null,
+          "landing_url": null,
+          "landing_host": null,
+          "dataset_title": null,
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-03014310",
+      "uri_s": "https://institut-agro-dijon.hal.science/hal-03014310v1",
+      "title_s": "Biogeography of soil microbial habitats across France",
+      "docType_s": "ART",
+      "doiId_s": "10.1111/geb.13118",
+      "laboratories": [
+        "UB",
+        "UBFC",
+        "INRAE",
+        "LAE",
+        "UL",
+        "InfoSol",
+        "UMR 8030",
+        "GENOSCOPE",
+        "DRF (CEA)",
+        "CEA"
+      ],
+      "modifiedDate_tdate": "2026-10-09T08:50:03Z",
+      "producedDateY_i": 2020,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/JK5WCD",
+          "repository": "Recherche Data Gouv",
+          "publisher": null,
+          "landing_url": null,
+          "landing_host": null,
+          "dataset_title": null,
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-01843961",
+      "uri_s": "https://institut-agro-dijon.hal.science/hal-01843961v1",
+      "title_s": "Biogeography of soil bacteria and archaea across France",
+      "docType_s": "ART",
+      "doiId_s": "10.1126/sciadv.aat1808",
+      "laboratories": [
+        "INRA",
+        "UB",
+        "UBFC",
+        "InfoSol",
+        "GENOSCOPE",
+        "DRF (CEA)",
+        "CEA"
+      ],
+      "modifiedDate_tdate": "2026-10-09T08:50:03Z",
+      "producedDateY_i": 2018,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.15454/J9H4BS",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Portail Data INRAE",
+          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/J9H4BS",
+          "landing_host": "data.inrae.fr",
+          "dataset_title": "Données de réplication pour : Biogeography of soil bacteria and archaea across France",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.57745/WIRXIC",
+          "repository": "Recherche Data Gouv",
+          "publisher": null,
+          "landing_url": null,
+          "landing_host": null,
+          "dataset_title": null,
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-02278272",
+      "uri_s": "https://hal.science/hal-02278272v1",
+      "title_s": "A reference genome for pea provides insight into legume genome evolution",
+      "docType_s": "ART",
+      "doiId_s": "10.1038/s41588-019-0480-1",
+      "laboratories": [
+        "INRA",
+        "UB",
+        "UBFC",
+        "LBGB",
+        "UMR 8030",
+        "GENOSCOPE",
+        "DRF (CEA)",
+        "UEVE",
+        "CNRS",
+        "IEB / CAS"
+      ],
+      "modifiedDate_tdate": "2026-10-09T08:50:03Z",
+      "producedDateY_i": 2019,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/5MDE99",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/5MDE99",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Dataset from \"A new genome assembly of the pea cultivar Cameor provides resources for functional genomics and genetics\"",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
       "halId_s": "hal-03534007",
       "uri_s": "https://hal.inrae.fr/hal-03534007v1",
       "title_s": "Key questions for next-generation of biomonitoring",
@@ -474,43 +678,6 @@
           "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/TRBJTB",
           "landing_host": "data.inrae.fr",
           "dataset_title": "BRC4Env, the Biological Resource Centre for the Environment",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-04267953",
-      "uri_s": "https://hal.inrae.fr/hal-04267953v1",
-      "title_s": "SNP discovery by exome capture and resequencing in a pea genetic resource collection",
-      "docType_s": "ART",
-      "doiId_s": "10.24072/pci.genomics.100237",
-      "laboratories": [
-        "UB",
-        "UBFC",
-        "INRAE",
-        "Institut Agro",
-        "GENOSCOPE",
-        "DRF (CEA)",
-        "CEA",
-        "UA",
-        "ULiège",
-        "UPJV"
-      ],
-      "modifiedDate_tdate": "2026-09-29T11:04:30Z",
-      "producedDateY_i": 2023,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/5MDE99",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/5MDE99",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Dataset from \"A new genome assembly of the pea cultivar Cameor provides resources for functional genomics and genetics\"",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
@@ -1001,51 +1168,6 @@
       ]
     },
     {
-      "halId_s": "hal-01843961",
-      "uri_s": "https://institut-agro-dijon.hal.science/hal-01843961v1",
-      "title_s": "Biogeography of soil bacteria and archaea across France",
-      "docType_s": "ART",
-      "doiId_s": "10.1126/sciadv.aat1808",
-      "laboratories": [
-        "INRA",
-        "UB",
-        "UBFC",
-        "InfoSol",
-        "GENOSCOPE",
-        "DRF (CEA)",
-        "CEA"
-      ],
-      "modifiedDate_tdate": "2026-09-14T15:18:18Z",
-      "producedDateY_i": 2018,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.15454/J9H4BS",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Portail Data INRAE",
-          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/J9H4BS",
-          "landing_host": "data.inrae.fr",
-          "dataset_title": "Données de réplication pour : Biogeography of soil bacteria and archaea across France",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.57745/WIRXIC",
-          "repository": "Recherche Data Gouv",
-          "publisher": null,
-          "landing_url": null,
-          "landing_host": null,
-          "dataset_title": null,
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
       "halId_s": "hal-02537801",
       "uri_s": "https://institut-agro-dijon.hal.science/hal-02537801v1",
       "title_s": "Reduced microbial diversity induces larger volatile organic compound emissions from soils",
@@ -1208,54 +1330,6 @@
       ]
     },
     {
-      "halId_s": "hal-01843156",
-      "uri_s": "https://hal.science/hal-01843156v1",
-      "title_s": "Mapping and predictive variations of soil bacterial richness across France",
-      "docType_s": "ART",
-      "doiId_s": "10.1371/journal.pone.0186766",
-      "laboratories": [
-        "INRA",
-        "UB",
-        "UBFC",
-        "InfoSol",
-        "GENOSCOPE",
-        "DRF (CEA)",
-        "CEA",
-        "iEES",
-        "UPMC",
-        "UPEC UP12"
-      ],
-      "modifiedDate_tdate": "2026-09-02T13:24:31Z",
-      "producedDateY_i": 2017,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/XBFOJP",
-          "repository": "Recherche Data Gouv",
-          "publisher": null,
-          "landing_url": null,
-          "landing_host": null,
-          "dataset_title": null,
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.57745/ZZWKGQ",
-          "repository": "Recherche Data Gouv",
-          "publisher": null,
-          "landing_url": null,
-          "landing_host": null,
-          "dataset_title": null,
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
       "halId_s": "hal-00698381",
       "uri_s": "https://hal.science/hal-00698381v1",
       "title_s": "Biogeographical patterns of soil molecular microbial biomass as influenced by soil characteristics and management",
@@ -1386,43 +1460,6 @@
           "landing_url": null,
           "landing_host": null,
           "dataset_title": null,
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-02278272",
-      "uri_s": "https://hal.science/hal-02278272v1",
-      "title_s": "A reference genome for pea provides insight into legume genome evolution",
-      "docType_s": "ART",
-      "doiId_s": "10.1038/s41588-019-0480-1",
-      "laboratories": [
-        "INRA",
-        "UB",
-        "UBFC",
-        "LBGB",
-        "UMR 8030",
-        "GENOSCOPE",
-        "DRF (CEA)",
-        "UEVE",
-        "CNRS",
-        "IEB / CAS"
-      ],
-      "modifiedDate_tdate": "2026-08-07T11:16:26Z",
-      "producedDateY_i": 2019,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/5MDE99",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/5MDE99",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Dataset from \"A new genome assembly of the pea cultivar Cameor provides resources for functional genomics and genetics\"",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
@@ -1884,43 +1921,6 @@
       "datasets": [
         {
           "doi": "10.57745/Z4HXOQ",
-          "repository": "Recherche Data Gouv",
-          "publisher": null,
-          "landing_url": null,
-          "landing_host": null,
-          "dataset_title": null,
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-03014310",
-      "uri_s": "https://institut-agro-dijon.hal.science/hal-03014310v1",
-      "title_s": "Biogeography of soil microbial habitats across France",
-      "docType_s": "ART",
-      "doiId_s": "10.1111/geb.13118",
-      "laboratories": [
-        "UB",
-        "UBFC",
-        "INRAE",
-        "LAE",
-        "UL",
-        "InfoSol",
-        "UMR 8030",
-        "GENOSCOPE",
-        "DRF (CEA)",
-        "CEA"
-      ],
-      "modifiedDate_tdate": "2026-06-05T03:27:04Z",
-      "producedDateY_i": 2020,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/JK5WCD",
           "repository": "Recherche Data Gouv",
           "publisher": null,
           "landing_url": null,

@@ -1,3 +1,24 @@
 university=unica collection=UNIV-COTEDAZUR site=docs
-incremental census since=2026-10-07T15:28:13Z (existing pubs=320, doi cache=410)
-[2026-10-09T15:28:14Z] census start collection=UNIV-COTEDAZUR since=2026-10-07T15:28:13Z
+incremental census since=2026-10-08T02:31:46Z (existing pubs=320, doi cache=410)
+[2026-10-10T10:39:35Z] census start collection=UNIV-COTEDAZUR since=2026-10-08T02:31:46Z
+HAL publications with linked identifiers (merged): 322
+  query: (relatedData_s:*) OR (relatedSoftware_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)
+  fetched this run: 12 (updated=10, inserted=2)
+link tokens: 520
+unique DOI candidates: 412
+DataCite cache hits: 410; to resolve: 2
+DataCite resolved 2/2
+[2026-10-10T10:39:37Z] census done
+harvesting SOFTWARE deposits (full)
+listing publications with dataset + software (open science triptych)
+open science triptych publications=4
+harvesting data papers (docSubType_s:DATAPAPER)
+updated dataset→publications index
+synced focus links → data/unica_data_repo_links.jsonl (56 hits)
+harvesting institutional DataCite datasets (affiliation / ROR)
+[2026-10-10T10:39:45Z] datacite census start university=unica
+  query: (creators.affiliation.affiliationIdentifier:"https://ror.org/019tgvf94" OR contributors.affiliation.affiliationIdentifier:"https://ror.org/019tgvf94" OR creators.affiliation.name:"Université Côte d'Azur" OR contributors.affiliation.name:"Université Côte d'Azur" OR creators.affiliation.name:"Universite Cote d'Azur" OR contributors.affiliation.name:"Universite Cote d'Azur" OR creators.affiliation.name:"Univ. Côte d'Azur" OR contributors.affiliation.name:"Univ. Côte d'Azur" OR creators.affiliation.name:"Univ Côte d'Azur" OR contributors.affiliation.name:"Univ Côte d'Azur" OR creators.affiliation.name:"University Côte d'Azur" OR contributors.affiliation.name:"University Côte d'Azur" OR creators.affiliation.name:"University Cote d'Azur" OR contributors.affiliation.name:"University Cote d'Azur") AND types.resourceTypeGeneral:Dataset
+  DataCite numFound≈1376
+  harvested unique DOIs=1376
+DataCite datasets=1376 also_on_hal=32 datacite_only=1344
+wrote site → docs/

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T11:26:24Z",
+  "generated_at": "2026-10-10T10:40:03Z",
   "collection": "UNIV-COTEDAZUR",
   "collection_url": "https://hal.science/UNIV-COTEDAZUR",
   "harvest": {
@@ -296,13 +296,13 @@
     "stale": true
   },
   "data_links": {
-    "total_hits": 250,
+    "total_hits": 252,
     "by_platform": {
       "nakala": 9,
       "rdg": 47
     },
     "by_repository": {
-      "Zenodo": 99,
+      "Zenodo": 101,
       "Recherche Data Gouv": 65,
       "SEANOE": 15,
       "Sismer": 10,
@@ -347,6 +347,43 @@
     },
     "publications": [
       {
+        "halId_s": "hal-01602779",
+        "uri_s": "https://hal.science/hal-01602779v1",
+        "title_s": "Hybridization and polyploidy enable genomic plasticity without sex in the most devastating plant-parasitic nematodes",
+        "docType_s": "ART",
+        "doiId_s": "10.1371/journal.pgen.1006777",
+        "laboratories": [
+          "ISA",
+          "INRA",
+          "UNS",
+          "CNRS",
+          "KUICR",
+          "LBGB",
+          "UMR 8030",
+          "GENOSCOPE",
+          "DRF (CEA)",
+          "UEVE"
+        ],
+        "modifiedDate_tdate": "2026-10-10T03:35:11Z",
+        "producedDateY_i": 2017,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.15454/DLDJVF",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Portail Data INRAE",
+            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/DLDJVF",
+            "landing_host": "data.inrae.fr",
+            "dataset_title": "TE-related genes: annotation, characterisation, and expression.",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
         "halId_s": "hal-05114056",
         "uri_s": "https://hal.science/hal-05114056v2",
         "title_s": "Le Rhône aménagé vu du ciel. Constitution d'une base de données photographiques obliques pour documenter la trajectoire socio-environnementale du fleuve contemporain (1910-1960)",
@@ -364,7 +401,7 @@
           "UJM",
           "UJM EPE"
         ],
-        "modifiedDate_tdate": "2026-10-08T03:31:46Z",
+        "modifiedDate_tdate": "2026-10-10T03:34:49Z",
         "producedDateY_i": 2025,
         "repositories": [
           "NAKALA"
@@ -377,6 +414,91 @@
             "landing_url": "https://nakala.fr/10.34847/nkl.e63a22n9",
             "landing_host": "nakala.fr",
             "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-04694490",
+        "uri_s": "https://hal.science/hal-04694490v1",
+        "title_s": "Unraveling genetic load dynamics during biological invasion: insights from two invasive insect species",
+        "docType_s": "UNDEFINED",
+        "doiId_s": "10.1101/2024.09.02.610743",
+        "laboratories": [
+          "ISA",
+          "UNS",
+          "CNRS",
+          "INRAE",
+          "UniCA",
+          "UMR 8030",
+          "GENOSCOPE",
+          "DRF (CEA)",
+          "CEA",
+          "UEVE"
+        ],
+        "modifiedDate_tdate": "2026-10-09T08:50:03Z",
+        "producedDateY_i": 2024,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/ESQFDB",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/ESQFDB",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Scripts used for data analyzing in the manuscript: “Unraveling genetic load dynamics during biological invasion: insights from two invasive insect species”",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-01633879",
+        "uri_s": "https://inria.hal.science/hal-01633879v1",
+        "title_s": "Two genomes of highly polyphagous lepidopteran pests (Spodoptera frugiperda, Noctuidae) with different host-plant ranges",
+        "docType_s": "ART",
+        "doiId_s": "10.1038/s41598-017-10461-4",
+        "laboratories": [
+          "GenScale",
+          "Inria",
+          "IRISA-D7",
+          "IRISA",
+          "UR",
+          "INSA Rennes",
+          "UBS",
+          "ENS Rennes",
+          "CNRS",
+          "IMT Atlantique"
+        ],
+        "modifiedDate_tdate": "2026-10-09T08:50:03Z",
+        "producedDateY_i": 2017,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/D4TG2M",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/D4TG2M",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda corn strain",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.57745/XDVEQW",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda rice strain",
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -745,54 +867,6 @@
         ]
       },
       {
-        "halId_s": "hal-01633879",
-        "uri_s": "https://inria.hal.science/hal-01633879v1",
-        "title_s": "Two genomes of highly polyphagous lepidopteran pests (Spodoptera frugiperda, Noctuidae) with different host-plant ranges",
-        "docType_s": "ART",
-        "doiId_s": "10.1038/s41598-017-10461-4",
-        "laboratories": [
-          "GenScale",
-          "Inria",
-          "IRISA-D7",
-          "IRISA",
-          "UR",
-          "INSA Rennes",
-          "UBS",
-          "ENS Rennes",
-          "CNRS",
-          "IMT Atlantique"
-        ],
-        "modifiedDate_tdate": "2026-09-29T11:08:58Z",
-        "producedDateY_i": 2017,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.57745/D4TG2M",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/D4TG2M",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda corn strain",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          },
-          {
-            "doi": "10.57745/XDVEQW",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda rice strain",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
         "halId_s": "hal-04790476",
         "uri_s": "https://hal.science/hal-04790476v1",
         "title_s": "CAMELS-FR dataset: A large-sample hydroclimatic dataset for France to explore hydrological diversity and support model benchmarking",
@@ -1107,43 +1181,6 @@
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/IAU0UK",
             "landing_host": "entrepot.recherche.data.gouv.fr",
             "dataset_title": "Data associated with the article \"Mode-locked waveguide polariton laser\"",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-04694490",
-        "uri_s": "https://hal.science/hal-04694490v1",
-        "title_s": "Unraveling genetic load dynamics during biological invasion: insights from two invasive insect species",
-        "docType_s": "UNDEFINED",
-        "doiId_s": "10.1101/2024.09.02.610743",
-        "laboratories": [
-          "ISA",
-          "UNS",
-          "CNRS",
-          "INRAE",
-          "UniCA",
-          "UMR 8030",
-          "GENOSCOPE",
-          "DRF (CEA)",
-          "CEA",
-          "UEVE"
-        ],
-        "modifiedDate_tdate": "2026-09-23T14:29:44Z",
-        "producedDateY_i": 2024,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.57745/ESQFDB",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/ESQFDB",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "Scripts used for data analyzing in the manuscript: “Unraveling genetic load dynamics during biological invasion: insights from two invasive insect species”",
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -2467,43 +2504,6 @@
         ]
       },
       {
-        "halId_s": "hal-01602779",
-        "uri_s": "https://hal.science/hal-01602779v1",
-        "title_s": "Hybridization and polyploidy enable genomic plasticity without sex in the most devastating plant-parasitic nematodes",
-        "docType_s": "ART",
-        "doiId_s": "10.1371/journal.pgen.1006777",
-        "laboratories": [
-          "ISA",
-          "INRA",
-          "UNS",
-          "CNRS",
-          "KUICR",
-          "LBGB",
-          "UMR 8030",
-          "GENOSCOPE",
-          "DRF (CEA)",
-          "UEVE"
-        ],
-        "modifiedDate_tdate": "2026-05-05T15:52:07Z",
-        "producedDateY_i": 2017,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.15454/DLDJVF",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Portail Data INRAE",
-            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/DLDJVF",
-            "landing_host": "data.inrae.fr",
-            "dataset_title": "TE-related genes: annotation, characterisation, and expression.",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
         "halId_s": "hal-02555136",
         "uri_s": "https://hal.inrae.fr/hal-02555136v1",
         "title_s": "Argumentation Corrected Context Weighting-Life Cycle Assessment: A Practical Method of Including Stakeholder Perspectives in Multi-Criteria Decision Support for LCA",
@@ -2740,10 +2740,10 @@
     "scope": "nakala_rdg_focus"
   },
   "census_chart": {
-    "unique_datasets": 250,
-    "publications_with_dataset": 168,
+    "unique_datasets": 252,
+    "publications_with_dataset": 170,
     "by_repository": {
-      "Zenodo": 99,
+      "Zenodo": 101,
       "Recherche Data Gouv": 65,
       "SEANOE": 15,
       "Sismer": 10,
@@ -2901,7 +2901,7 @@
         35,
         35,
         72,
-        23
+        25
       ],
       "series": [
         {
@@ -2930,7 +2930,7 @@
             11,
             10,
             25,
-            13
+            15
           ]
         },
         {
@@ -3287,6 +3287,23 @@
     "cell_details": {
       "2026|Zenodo": [
         {
+          "dataset_doi": "10.5281/zenodo.17449096",
+          "dataset_title": "50-km fiber interferometer for testing gravitational signatures in quantum interference",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17449096",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05781759",
+              "title_s": "50-km Fiber Interferometer for Testing Gravitational Signatures in Quantum Interference",
+              "uri_s": "https://hal.science/hal-05781759v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 3
+            }
+          ]
+        },
+        {
           "dataset_doi": "10.5281/zenodo.21775722",
           "dataset_title": "Data : Tracking Mantle Melting on Mars Using Phobos Tides",
           "repository": "Zenodo",
@@ -3351,6 +3368,23 @@
               "uri_s": "https://minesparis-psl.hal.science/hal-05689658v1",
               "producedDateY_i": 2026,
               "producedDateM_i": 7
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.5281/zenodo.17107569",
+          "dataset_title": "Dataset: From flat to steep subduction: the South Peru margin imaged by a new high-density seismic catalog",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17107569",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05784873",
+              "title_s": "From flat to steep subduction: the South Peru margin imaged by a new high-density seismic catalogue",
+              "uri_s": "https://hal.science/hal-05784873v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 6
             }
           ]
         },
@@ -4822,7 +4856,7 @@
               "title_s": "Sea surface temperature reconstruction in the Pacific Ocean using multi-elemental proxy in Porites and Diploastrea corals: Application to Palau Archipelago",
               "uri_s": "https://hal.science/hal-04337163v1",
               "producedDateY_i": 2024,
-              "producedDateM_i": 9
+              "producedDateM_i": 10
             }
           ]
         }
@@ -5747,7 +5781,7 @@
               "title_s": "A database of the coseismic effects following the 30 October 2016 Norcia earthquake in Central Italy",
               "uri_s": "https://hal.science/hal-01794665v1",
               "producedDateY_i": 2018,
-              "producedDateM_i": 9
+              "producedDateM_i": 10
             }
           ]
         }
@@ -6858,7 +6892,7 @@
               "title_s": "Les enseignant(e)s de la Martinique en période de confinement : la continuité pédagogique en question",
               "uri_s": "https://hal.science/hal-04127383v1",
               "producedDateY_i": 2023,
-              "producedDateM_i": 9
+              "producedDateM_i": 10
             }
           ]
         },
@@ -7569,7 +7603,7 @@
               "title_s": "Hybridization and polyploidy enable genomic plasticity without sex in the most devastating plant-parasitic nematodes",
               "uri_s": "https://hal.science/hal-01602779v1",
               "producedDateY_i": 2017,
-              "producedDateM_i": 5
+              "producedDateM_i": 10
             }
           ]
         }
@@ -7804,10 +7838,10 @@
       "totals": [
         0,
         0,
-        1,
+        2,
         1,
         3,
-        2,
+        3,
         2,
         4,
         7,
@@ -7822,10 +7856,10 @@
           "counts": [
             0,
             0,
-            1,
+            2,
             1,
             0,
-            1,
+            2,
             2,
             2,
             3,
@@ -8052,10 +8086,86 @@
         }
       ],
       "period_kind": "month",
-      "datasets_in_year": 23,
+      "datasets_in_year": 25,
       "unknown_month": 0
     },
     "cell_details_months": {
+      "2026-03|Zenodo": [
+        {
+          "dataset_doi": "10.5281/zenodo.17449096",
+          "dataset_title": "50-km fiber interferometer for testing gravitational signatures in quantum interference",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17449096",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05781759",
+              "title_s": "50-km Fiber Interferometer for Testing Gravitational Signatures in Quantum Interference",
+              "uri_s": "https://hal.science/hal-05781759v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 3
+            }
+          ],
+          "month": 3
+        },
+        {
+          "dataset_doi": "10.5281/zenodo.18503858",
+          "dataset_title": "Seismic cycle simulations and results for manuscript:  A rate-and-state friction based criterion for the probability of earthquake fault jumps",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.18503858",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05593448",
+              "title_s": "A Rate‐and‐State Friction Based Criterion for the Probability of Earthquake Fault Jumps",
+              "uri_s": "https://hal.science/hal-05593448v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 3
+            }
+          ],
+          "month": 3
+        }
+      ],
+      "2026-06|Zenodo": [
+        {
+          "dataset_doi": "10.5281/zenodo.17107569",
+          "dataset_title": "Dataset: From flat to steep subduction: the South Peru margin imaged by a new high-density seismic catalog",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17107569",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05784873",
+              "title_s": "From flat to steep subduction: the South Peru margin imaged by a new high-density seismic catalogue",
+              "uri_s": "https://hal.science/hal-05784873v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 6
+            }
+          ],
+          "month": 6
+        },
+        {
+          "dataset_doi": "10.5281/zenodo.17915024",
+          "dataset_title": "Materials for \"Harnessing converted phases for rapid magnitude estimation and early warning with distributed acoustic sensing offshore Chile\"",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17915024",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05456289",
+              "title_s": "Harnessing converted phases for rapid magnitude estimation and early warning with distributed acoustic sensing offshore Chile",
+              "uri_s": "https://hal.science/hal-05456289v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 6
+            }
+          ],
+          "month": 6
+        }
+      ],
       "2026-10|Zenodo": [
         {
           "dataset_doi": "10.5281/zenodo.17913085",
@@ -8427,26 +8537,6 @@
           "month": 8
         }
       ],
-      "2026-03|Zenodo": [
-        {
-          "dataset_doi": "10.5281/zenodo.18503858",
-          "dataset_title": "Seismic cycle simulations and results for manuscript:  A rate-and-state friction based criterion for the probability of earthquake fault jumps",
-          "repository": "Zenodo",
-          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.18503858",
-          "landing_host": "zenodo.org",
-          "year": 2026,
-          "publications": [
-            {
-              "halId_s": "hal-05593448",
-              "title_s": "A Rate‐and‐State Friction Based Criterion for the Probability of Earthquake Fault Jumps",
-              "uri_s": "https://hal.science/hal-05593448v1",
-              "producedDateY_i": 2026,
-              "producedDateM_i": 3
-            }
-          ],
-          "month": 3
-        }
-      ],
       "2026-06|NAKALA": [
         {
           "dataset_doi": "10.34847/nkl.0dee15ow",
@@ -8460,26 +8550,6 @@
               "halId_s": "hal-05662277",
               "title_s": "The ExEco Dataset: A Textual Dataset of French Economic and Social Thought (1918–1960)",
               "uri_s": "https://hal.science/hal-05662277v1",
-              "producedDateY_i": 2026,
-              "producedDateM_i": 6
-            }
-          ],
-          "month": 6
-        }
-      ],
-      "2026-06|Zenodo": [
-        {
-          "dataset_doi": "10.5281/zenodo.17915024",
-          "dataset_title": "Materials for \"Harnessing converted phases for rapid magnitude estimation and early warning with distributed acoustic sensing offshore Chile\"",
-          "repository": "Zenodo",
-          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17915024",
-          "landing_host": "zenodo.org",
-          "year": 2026,
-          "publications": [
-            {
-              "halId_s": "hal-05456289",
-              "title_s": "Harnessing converted phases for rapid magnitude estimation and early warning with distributed acoustic sensing offshore Chile",
-              "uri_s": "https://hal.science/hal-05456289v1",
               "producedDateY_i": 2026,
               "producedDateM_i": 6
             }
@@ -8508,7 +8578,7 @@
         }
       ]
     },
-    "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 23 datasets in 2026. Click a segment to list datasets.",
+    "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 25 datasets in 2026. Click a segment to list datasets.",
     "segment_hint": "newest linking publication year",
     "months_segment_hint": "newest linking publication month"
   }

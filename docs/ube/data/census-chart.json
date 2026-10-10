@@ -2985,7 +2985,7 @@
             "title_s": "Inventaire des capteurs et protocoles pour le projet BIODICAPT",
             "uri_s": "https://hal.science/hal-05594176v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ]
       },
@@ -3870,8 +3870,8 @@
       0,
       1,
       2,
-      9,
-      1,
+      8,
+      2,
       0,
       0
     ],
@@ -3924,8 +3924,8 @@
           0,
           0,
           0,
-          2,
-          0,
+          1,
+          1,
           0,
           0
         ]
@@ -4234,7 +4234,7 @@
         "month": 8
       }
     ],
-    "2026-09|Zenodo": [
+    "2026-10|Zenodo": [
       {
         "dataset_doi": "10.5281/zenodo.20523512",
         "dataset_title": "Inventaire des capteurs et protocoles pour le projet BIODICAPT",
@@ -4248,28 +4248,10 @@
             "title_s": "Inventaire des capteurs et protocoles pour le projet BIODICAPT",
             "uri_s": "https://hal.science/hal-05594176v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ],
-        "month": 9
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.4459259",
-        "dataset_title": "Kittel et al. (2021), The Cryosphere : MAR and ESMs data",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/record/4459259",
-        "landing_host": "zenodo.org",
-        "year": 2026,
-        "publications": [
-          {
-            "halId_s": "hal-05624738",
-            "title_s": "Weather Regimes Preclude the Observation of a Southern Annular Mode Signal in Two Coastal East Antarctic Ice Cores",
-            "uri_s": "https://hal.science/hal-05624738v1",
-            "producedDateY_i": 2026,
-            "producedDateM_i": 9
-          }
-        ],
-        "month": 9
+        "month": 10
       }
     ],
     "2026-09|Recherche Data Gouv": [
@@ -4305,6 +4287,26 @@
             "halId_s": "hal-05512215",
             "title_s": "Herbicide-induced metabolic changes in a plant-aphid system: how soil bacteria drive the fate and impact of a residual dose of Isoproturon?",
             "uri_s": "https://hal.science/hal-05512215v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 9
+          }
+        ],
+        "month": 9
+      }
+    ],
+    "2026-09|Zenodo": [
+      {
+        "dataset_doi": "10.5281/zenodo.4459259",
+        "dataset_title": "Kittel et al. (2021), The Cryosphere : MAR and ESMs data",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/record/4459259",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05624738",
+            "title_s": "Weather Regimes Preclude the Observation of a Southern Annular Mode Signal in Two Coastal East Antarctic Ice Cores",
+            "uri_s": "https://hal.science/hal-05624738v1",
             "producedDateY_i": 2026,
             "producedDateM_i": 9
           }
