@@ -1,35 +1,23 @@
 university=ube collection=UNIV-BOURGOGNE site=docs/ube
-full census (no date filter; rebuild from HAL)
-[2026-10-11T10:52:01Z] census start collection=UNIV-BOURGOGNE since=*
+incremental census since=2026-10-09T14:55:38Z (existing pubs=267, doi cache=306)
+[2026-10-11T14:55:38Z] census start collection=UNIV-BOURGOGNE since=2026-10-09T14:55:38Z
 HAL publications with linked identifiers (merged): 267
   query: (relatedData_s:*) OR (relatedSoftware_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)
-  fetched this run: 267 (updated=0, inserted=267)
+  fetched this run: 1 (updated=1, inserted=0)
 link tokens: 391
 unique DOI candidates: 306
-DataCite cache hits: 0; to resolve: 306
-DataCite resolved 25/306
-DataCite resolved 50/306
-DataCite resolved 75/306
-DataCite resolved 100/306
-DataCite resolved 125/306
-DataCite resolved 150/306
-DataCite resolved 175/306
-DataCite resolved 200/306
-DataCite resolved 225/306
-DataCite resolved 250/306
-DataCite resolved 275/306
-DataCite resolved 300/306
-DataCite resolved 306/306
-[2026-10-11T10:53:01Z] census done
+DataCite cache hits: 306; to resolve: 0
+[2026-10-11T14:55:39Z] census done
 harvesting SOFTWARE deposits (full)
 listing publications with dataset + software (open science triptych)
 open science triptych publications=4
 harvesting data papers (docSubType_s:DATAPAPER)
 updated dataset→publications index
-synced focus links → data/ube/links.jsonl (94 hits)
+synced focus links → data/ube/links.jsonl (96 hits)
 harvesting institutional DataCite datasets (affiliation / ROR)
-[2026-10-11T10:53:10Z] datacite census start university=ube
+[2026-10-11T14:55:45Z] datacite census start university=ube
   query: (creators.affiliation.affiliationIdentifier:"https://ror.org/00g700j37" OR contributors.affiliation.affiliationIdentifier:"https://ror.org/00g700j37" OR creators.affiliation.name:"Université Bourgogne Europe" OR contributors.affiliation.name:"Université Bourgogne Europe" OR creators.affiliation.name:"Universite Bourgogne Europe" OR contributors.affiliation.name:"Universite Bourgogne Europe" OR creators.affiliation.name:"Université de Bourgogne" OR contributors.affiliation.name:"Université de Bourgogne" OR creators.affiliation.name:"Universite de Bourgogne" OR contributors.affiliation.name:"Universite de Bourgogne" OR creators.affiliation.name:"University of Burgundy" OR contributors.affiliation.name:"University of Burgundy") AND types.resourceTypeGeneral:Dataset
-WARNING: DataCite institutional census failed: Client error '429 Too Many Requests' for url 'https://api.datacite.org/dois?query=%28creators.affiliation.affiliationIdentifier%3A%22https%3A%2F%2Fror.org%2F00g700j37%22+OR+contributors.affiliation.affiliationIdentifier%3A%22https%3A%2F%2Fror.org%2F00g700j37%22+OR+creators.affiliation.name%3A%22Universit%C3%A9+Bourgogne+Europe%22+OR+contributors.affiliation.name%3A%22Universit%C3%A9+Bourgogne+Europe%22+OR+creators.affiliation.name%3A%22Universite+Bourgogne+Europe%22+OR+contributors.affiliation.name%3A%22Universite+Bourgogne+Europe%22+OR+creators.affiliation.name%3A%22Universit%C3%A9+de+Bourgogne%22+OR+contributors.affiliation.name%3A%22Universit%C3%A9+de+Bourgogne%22+OR+creators.affiliation.name%3A%22Universite+de+Bourgogne%22+OR+contributors.affiliation.name%3A%22Universite+de+Bourgogne%22+OR+creators.affiliation.name%3A%22University+of+Burgundy%22+OR+contributors.affiliation.name%3A%22University+of+Burgundy%22%29+AND+types.resourceTypeGeneral%3ADataset&page%5Bsize%5D=1&page%5Bcursor%5D=1'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+  DataCite numFound≈781
+  harvested unique DOIs=781
+DataCite datasets=781 also_on_hal=7 datacite_only=774
 wrote site → docs/ube/
