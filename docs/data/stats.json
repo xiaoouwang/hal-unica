@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T14:28:42Z",
+  "generated_at": "2026-10-11T10:52:00Z",
   "collection": "UNIV-COTEDAZUR",
   "collection_url": "https://hal.science/UNIV-COTEDAZUR",
   "harvest": {
@@ -347,6 +347,43 @@
     },
     "publications": [
       {
+        "halId_s": "hal-05114056",
+        "uri_s": "https://hal.science/hal-05114056v2",
+        "title_s": "Le Rhône aménagé vu du ciel. Constitution d'une base de données photographiques obliques pour documenter la trajectoire socio-environnementale du fleuve contemporain (1910-1960)",
+        "docType_s": "ART",
+        "doiId_s": "10.46298/dc.15880",
+        "laboratories": [
+          "EVS",
+          "ENS de Lyon",
+          "Mines Saint-Étienne MSE",
+          "IMT",
+          "UL2",
+          "UJML",
+          "INSA Lyon",
+          "INSA",
+          "UJM",
+          "UJM EPE"
+        ],
+        "modifiedDate_tdate": "2026-10-11T03:26:03Z",
+        "producedDateY_i": 2025,
+        "repositories": [
+          "NAKALA"
+        ],
+        "datasets": [
+          {
+            "doi": "10.34847/nkl.e63a22n9",
+            "repository": "NAKALA",
+            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+            "landing_url": "https://nakala.fr/10.34847/nkl.e63a22n9",
+            "landing_host": "nakala.fr",
+            "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
         "halId_s": "hal-01602779",
         "uri_s": "https://hal.science/hal-01602779v1",
         "title_s": "Hybridization and polyploidy enable genomic plasticity without sex in the most devastating plant-parasitic nematodes",
@@ -377,43 +414,6 @@
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/DLDJVF",
             "landing_host": "data.inrae.fr",
             "dataset_title": "TE-related genes: annotation, characterisation, and expression.",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-05114056",
-        "uri_s": "https://hal.science/hal-05114056v2",
-        "title_s": "Le Rhône aménagé vu du ciel. Constitution d'une base de données photographiques obliques pour documenter la trajectoire socio-environnementale du fleuve contemporain (1910-1960)",
-        "docType_s": "ART",
-        "doiId_s": "10.46298/dc.15880",
-        "laboratories": [
-          "EVS",
-          "ENS de Lyon",
-          "Mines Saint-Étienne MSE",
-          "IMT",
-          "UL2",
-          "UJML",
-          "INSA Lyon",
-          "INSA",
-          "UJM",
-          "UJM EPE"
-        ],
-        "modifiedDate_tdate": "2026-10-10T03:34:49Z",
-        "producedDateY_i": 2025,
-        "repositories": [
-          "NAKALA"
-        ],
-        "datasets": [
-          {
-            "doi": "10.34847/nkl.e63a22n9",
-            "repository": "NAKALA",
-            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-            "landing_url": "https://nakala.fr/10.34847/nkl.e63a22n9",
-            "landing_host": "nakala.fr",
-            "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -609,41 +609,6 @@
             "dataset_title": "LIARArg: A dataset for fake news detection enhanced by argumentative features",
             "field": "relatedData_s",
             "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-02928114",
-        "uri_s": "https://hal.inrae.fr/hal-02928114v1",
-        "title_s": "Aphid infestation differently affects the defences of nitrate-fed and nitrogen-fixing Medicago truncatula and alters symbiotic nitrogen fixation",
-        "docType_s": "ART",
-        "doiId_s": "10.1098/rspb.2020.1493",
-        "laboratories": [
-          "ISA",
-          "UNS",
-          "CNRS",
-          "INRAE",
-          "UniCA",
-          "IGEPP",
-          "UR",
-          "Institut Agro"
-        ],
-        "modifiedDate_tdate": "2026-09-29T11:12:38Z",
-        "producedDateY_i": 2020,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.57745/WGBWYO",
-            "repository": "Recherche Data Gouv",
-            "publisher": null,
-            "landing_url": null,
-            "landing_host": null,
-            "dataset_title": null,
-            "field": "relatedPublication_s",
-            "misfiled": true,
             "also_in_relatedData_s": false
           }
         ]
@@ -2663,6 +2628,43 @@
         ]
       },
       {
+        "halId_s": "hal-04387090",
+        "uri_s": "https://hal.inrae.fr/hal-04387090v1",
+        "title_s": "Visible – Near infrared hyperspectral dataset of healthy and infected apple tree leaves images for the monitoring of apple fire blight",
+        "docType_s": "ART",
+        "doiId_s": "10.1016/j.dib.2023.109532",
+        "laboratories": [
+          "UMR ITAP",
+          "INRAE",
+          "Institut Agro",
+          "CTIFL",
+          "ZENITH",
+          "Inria",
+          "LIRMM",
+          "UPVD",
+          "CNRS",
+          "UM"
+        ],
+        "modifiedDate_tdate": "2026-04-15T11:10:12Z",
+        "producedDateY_i": 2023,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/R6AMN3",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/R6AMN3",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Visible - Near infrared hyperspectral dataset of healthy and infected apple tree leaves images for the monitoring of apple fire blight",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
         "halId_s": "hal-04289970",
         "uri_s": "https://hal.science/hal-04289970v1",
         "title_s": "Combining different points of view on plant descriptions: mapping agricultural plant roles and biological taxa",
@@ -2894,13 +2896,13 @@
         1,
         5,
         16,
-        6,
-        30,
+        5,
+        29,
         13,
         11,
+        36,
         35,
-        35,
-        72,
+        73,
         25
       ],
       "series": [
@@ -2923,13 +2925,13 @@
             0,
             1,
             1,
-            2,
+            1,
             23,
             7,
             5,
             11,
             10,
-            25,
+            26,
             15
           ]
         },
@@ -2953,10 +2955,10 @@
             4,
             13,
             2,
-            6,
+            5,
             3,
             4,
-            12,
+            13,
             3,
             13,
             3
@@ -3551,6 +3553,23 @@
       ],
       "2025|Zenodo": [
         {
+          "dataset_doi": "10.5281/zenodo.15342853",
+          "dataset_title": "Code for \"Circadian Clock Model with Sequestration Repression Motif: Existence of Periodic Orbits and Entrainment Properties\"",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.15342853",
+          "landing_host": "zenodo.org",
+          "year": 2025,
+          "publications": [
+            {
+              "halId_s": "hal-05060049",
+              "title_s": "Circadian Clock Model with Sequestration Repression Motif: Existence of Periodic Orbits and Entrainment Properties",
+              "uri_s": "https://hal.science/hal-05060049v1",
+              "producedDateY_i": 2025,
+              "producedDateM_i": 8
+            }
+          ]
+        },
+        {
           "dataset_doi": "10.5281/zenodo.15172382",
           "dataset_title": "Compute Stress Drop for a given Slip Distribution for the Le Teil Earthquake (Mw4.9, 2019/11/11, France)",
           "repository": "Zenodo",
@@ -3972,124 +3991,6 @@
               "uri_s": "https://hal.science/hal-05760346v1",
               "producedDateY_i": 2025,
               "producedDateM_i": 12
-            }
-          ]
-        }
-      ],
-      "2020|Recherche Data Gouv": [
-        {
-          "dataset_doi": "10.57745/WGBWYO",
-          "dataset_title": null,
-          "repository": "Recherche Data Gouv",
-          "landing_url": null,
-          "landing_host": null,
-          "year": 2020,
-          "publications": [
-            {
-              "halId_s": "hal-02928114",
-              "title_s": "Aphid infestation differently affects the defences of nitrate-fed and nitrogen-fixing Medicago truncatula and alters symbiotic nitrogen fixation",
-              "uri_s": "https://hal.inrae.fr/hal-02928114v1",
-              "producedDateY_i": 2020,
-              "producedDateM_i": 9
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.15454/D6XAKL",
-          "dataset_title": "CBGP - Continental Arthropod Collection",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/D6XAKL",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2020,
-          "publications": [
-            {
-              "halId_s": "hal-03144754",
-              "title_s": "BRC4Env, a network of Biological Resource Centres for environmental resources",
-              "uri_s": "https://hal.science/hal-03144754v1",
-              "producedDateY_i": 2020,
-              "producedDateM_i": 10
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.57745/D4TG2M",
-          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda corn strain",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/D4TG2M",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2020,
-          "publications": [
-            {
-              "halId_s": "hal-01633879",
-              "title_s": "Two genomes of highly polyphagous lepidopteran pests (Spodoptera frugiperda, Noctuidae) with different host-plant ranges",
-              "uri_s": "https://inria.hal.science/hal-01633879v1",
-              "producedDateY_i": 2017,
-              "producedDateM_i": 12
-            },
-            {
-              "halId_s": "hal-03065279",
-              "title_s": "Adaptation by copy number variation increases insecticide resistance in the fall armyworm",
-              "uri_s": "https://inria.hal.science/hal-03065279v1",
-              "producedDateY_i": 2020,
-              "producedDateM_i": 11
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.57745/XDVEQW",
-          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda rice strain",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2020,
-          "publications": [
-            {
-              "halId_s": "hal-01633879",
-              "title_s": "Two genomes of highly polyphagous lepidopteran pests (Spodoptera frugiperda, Noctuidae) with different host-plant ranges",
-              "uri_s": "https://inria.hal.science/hal-01633879v1",
-              "producedDateY_i": 2017,
-              "producedDateM_i": 12
-            },
-            {
-              "halId_s": "hal-03065279",
-              "title_s": "Adaptation by copy number variation increases insecticide resistance in the fall armyworm",
-              "uri_s": "https://inria.hal.science/hal-03065279v1",
-              "producedDateY_i": 2020,
-              "producedDateM_i": 11
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.15454/XSVVBW",
-          "dataset_title": "PO² Process and Observation Ontology",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/XSVVBW",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2020,
-          "publications": [
-            {
-              "halId_s": "hal-03013147",
-              "title_s": "Food transformation process description using PO2 and FoodOn",
-              "uri_s": "https://agroparistech.hal.science/hal-03013147v1",
-              "producedDateY_i": 2020,
-              "producedDateM_i": 9
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.15454/XVL4BA",
-          "dataset_title": "Preferences and justifications of NoAW stakeholders about the importance on LCA (Life Cycle Analysis) impact categories",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/XVL4BA",
-          "landing_host": "data.inrae.fr",
-          "year": 2020,
-          "publications": [
-            {
-              "halId_s": "hal-02555136",
-              "title_s": "Argumentation Corrected Context Weighting-Life Cycle Assessment: A Practical Method of Including Stakeholder Perspectives in Multi-Criteria Decision Support for LCA",
-              "uri_s": "https://hal.inrae.fr/hal-02555136v1",
-              "producedDateY_i": 2020,
-              "producedDateM_i": 3
             }
           ]
         }
@@ -5175,6 +5076,107 @@
           ]
         }
       ],
+      "2020|Recherche Data Gouv": [
+        {
+          "dataset_doi": "10.15454/D6XAKL",
+          "dataset_title": "CBGP - Continental Arthropod Collection",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/D6XAKL",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2020,
+          "publications": [
+            {
+              "halId_s": "hal-03144754",
+              "title_s": "BRC4Env, a network of Biological Resource Centres for environmental resources",
+              "uri_s": "https://hal.science/hal-03144754v1",
+              "producedDateY_i": 2020,
+              "producedDateM_i": 10
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/D4TG2M",
+          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda corn strain",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/D4TG2M",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2020,
+          "publications": [
+            {
+              "halId_s": "hal-01633879",
+              "title_s": "Two genomes of highly polyphagous lepidopteran pests (Spodoptera frugiperda, Noctuidae) with different host-plant ranges",
+              "uri_s": "https://inria.hal.science/hal-01633879v1",
+              "producedDateY_i": 2017,
+              "producedDateM_i": 12
+            },
+            {
+              "halId_s": "hal-03065279",
+              "title_s": "Adaptation by copy number variation increases insecticide resistance in the fall armyworm",
+              "uri_s": "https://inria.hal.science/hal-03065279v1",
+              "producedDateY_i": 2020,
+              "producedDateM_i": 11
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/XDVEQW",
+          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda rice strain",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2020,
+          "publications": [
+            {
+              "halId_s": "hal-01633879",
+              "title_s": "Two genomes of highly polyphagous lepidopteran pests (Spodoptera frugiperda, Noctuidae) with different host-plant ranges",
+              "uri_s": "https://inria.hal.science/hal-01633879v1",
+              "producedDateY_i": 2017,
+              "producedDateM_i": 12
+            },
+            {
+              "halId_s": "hal-03065279",
+              "title_s": "Adaptation by copy number variation increases insecticide resistance in the fall armyworm",
+              "uri_s": "https://inria.hal.science/hal-03065279v1",
+              "producedDateY_i": 2020,
+              "producedDateM_i": 11
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.15454/XSVVBW",
+          "dataset_title": "PO² Process and Observation Ontology",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/XSVVBW",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2020,
+          "publications": [
+            {
+              "halId_s": "hal-03013147",
+              "title_s": "Food transformation process description using PO2 and FoodOn",
+              "uri_s": "https://agroparistech.hal.science/hal-03013147v1",
+              "producedDateY_i": 2020,
+              "producedDateM_i": 9
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.15454/XVL4BA",
+          "dataset_title": "Preferences and justifications of NoAW stakeholders about the importance on LCA (Life Cycle Analysis) impact categories",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/XVL4BA",
+          "landing_host": "data.inrae.fr",
+          "year": 2020,
+          "publications": [
+            {
+              "halId_s": "hal-02555136",
+              "title_s": "Argumentation Corrected Context Weighting-Life Cycle Assessment: A Practical Method of Including Stakeholder Perspectives in Multi-Criteria Decision Support for LCA",
+              "uri_s": "https://hal.inrae.fr/hal-02555136v1",
+              "producedDateY_i": 2020,
+              "producedDateM_i": 3
+            }
+          ]
+        }
+      ],
       "2026|Figshare": [
         {
           "dataset_doi": "10.6084/m9.figshare.30665321",
@@ -5763,6 +5765,23 @@
               "uri_s": "https://hal.science/hal-04130380v1",
               "producedDateY_i": 2023,
               "producedDateM_i": 6
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/R6AMN3",
+          "dataset_title": "Visible - Near infrared hyperspectral dataset of healthy and infected apple tree leaves images for the monitoring of apple fire blight",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/R6AMN3",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2023,
+          "publications": [
+            {
+              "halId_s": "hal-04387090",
+              "title_s": "Visible – Near infrared hyperspectral dataset of healthy and infected apple tree leaves images for the monitoring of apple fire blight",
+              "uri_s": "https://hal.inrae.fr/hal-04387090v1",
+              "producedDateY_i": 2023,
+              "producedDateM_i": 10
             }
           ]
         }
@@ -7711,23 +7730,6 @@
         }
       ],
       "2019|Zenodo": [
-        {
-          "dataset_doi": "10.5281/zenodo.37660964",
-          "dataset_title": null,
-          "repository": "Zenodo",
-          "landing_url": null,
-          "landing_host": null,
-          "year": 2019,
-          "publications": [
-            {
-              "halId_s": "hal-03909555",
-              "title_s": "La catena di influenze nella ricezione moderna di Plutarco e il riuso delle Vite di Cesare e Bruto: teoria e prassi dei Classical Reception Studies",
-              "uri_s": "https://hal.science/hal-03909555v1",
-              "producedDateY_i": 2019,
-              "producedDateM_i": 6
-            }
-          ]
-        },
         {
           "dataset_doi": "10.5281/zenodo.3339369",
           "dataset_title": "marazzaf/MEMM: Zenodo",

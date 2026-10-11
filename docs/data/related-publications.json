@@ -6,6 +6,43 @@
   },
   "publications": [
     {
+      "halId_s": "hal-05114056",
+      "uri_s": "https://hal.science/hal-05114056v2",
+      "title_s": "Le Rhône aménagé vu du ciel. Constitution d'une base de données photographiques obliques pour documenter la trajectoire socio-environnementale du fleuve contemporain (1910-1960)",
+      "docType_s": "ART",
+      "doiId_s": "10.46298/dc.15880",
+      "laboratories": [
+        "EVS",
+        "ENS de Lyon",
+        "Mines Saint-Étienne MSE",
+        "IMT",
+        "UL2",
+        "UJML",
+        "INSA Lyon",
+        "INSA",
+        "UJM",
+        "UJM EPE"
+      ],
+      "modifiedDate_tdate": "2026-10-11T03:26:03Z",
+      "producedDateY_i": 2025,
+      "repositories": [
+        "NAKALA"
+      ],
+      "datasets": [
+        {
+          "doi": "10.34847/nkl.e63a22n9",
+          "repository": "NAKALA",
+          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+          "landing_url": "https://nakala.fr/10.34847/nkl.e63a22n9",
+          "landing_host": "nakala.fr",
+          "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
       "halId_s": "hal-01602779",
       "uri_s": "https://hal.science/hal-01602779v1",
       "title_s": "Hybridization and polyploidy enable genomic plasticity without sex in the most devastating plant-parasitic nematodes",
@@ -36,43 +73,6 @@
           "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/DLDJVF",
           "landing_host": "data.inrae.fr",
           "dataset_title": "TE-related genes: annotation, characterisation, and expression.",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-05114056",
-      "uri_s": "https://hal.science/hal-05114056v2",
-      "title_s": "Le Rhône aménagé vu du ciel. Constitution d'une base de données photographiques obliques pour documenter la trajectoire socio-environnementale du fleuve contemporain (1910-1960)",
-      "docType_s": "ART",
-      "doiId_s": "10.46298/dc.15880",
-      "laboratories": [
-        "EVS",
-        "ENS de Lyon",
-        "Mines Saint-Étienne MSE",
-        "IMT",
-        "UL2",
-        "UJML",
-        "INSA Lyon",
-        "INSA",
-        "UJM",
-        "UJM EPE"
-      ],
-      "modifiedDate_tdate": "2026-10-10T03:34:49Z",
-      "producedDateY_i": 2025,
-      "repositories": [
-        "NAKALA"
-      ],
-      "datasets": [
-        {
-          "doi": "10.34847/nkl.e63a22n9",
-          "repository": "NAKALA",
-          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-          "landing_url": "https://nakala.fr/10.34847/nkl.e63a22n9",
-          "landing_host": "nakala.fr",
-          "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
@@ -268,41 +268,6 @@
           "dataset_title": "LIARArg: A dataset for fake news detection enhanced by argumentative features",
           "field": "relatedData_s",
           "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-02928114",
-      "uri_s": "https://hal.inrae.fr/hal-02928114v1",
-      "title_s": "Aphid infestation differently affects the defences of nitrate-fed and nitrogen-fixing Medicago truncatula and alters symbiotic nitrogen fixation",
-      "docType_s": "ART",
-      "doiId_s": "10.1098/rspb.2020.1493",
-      "laboratories": [
-        "ISA",
-        "UNS",
-        "CNRS",
-        "INRAE",
-        "UniCA",
-        "IGEPP",
-        "UR",
-        "Institut Agro"
-      ],
-      "modifiedDate_tdate": "2026-09-29T11:12:38Z",
-      "producedDateY_i": 2020,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/WGBWYO",
-          "repository": "Recherche Data Gouv",
-          "publisher": null,
-          "landing_url": null,
-          "landing_host": null,
-          "dataset_title": null,
-          "field": "relatedPublication_s",
-          "misfiled": true,
           "also_in_relatedData_s": false
         }
       ]
@@ -2315,6 +2280,43 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/IZJIT7",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "Stakeholders' preferences survey about new technology acceptance and potential development for waste management in wine production in Languedoc Roussillon, France",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-04387090",
+      "uri_s": "https://hal.inrae.fr/hal-04387090v1",
+      "title_s": "Visible – Near infrared hyperspectral dataset of healthy and infected apple tree leaves images for the monitoring of apple fire blight",
+      "docType_s": "ART",
+      "doiId_s": "10.1016/j.dib.2023.109532",
+      "laboratories": [
+        "UMR ITAP",
+        "INRAE",
+        "Institut Agro",
+        "CTIFL",
+        "ZENITH",
+        "Inria",
+        "LIRMM",
+        "UPVD",
+        "CNRS",
+        "UM"
+      ],
+      "modifiedDate_tdate": "2026-04-15T11:10:12Z",
+      "producedDateY_i": 2023,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/R6AMN3",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/R6AMN3",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Visible - Near infrared hyperspectral dataset of healthy and infected apple tree leaves images for the monitoring of apple fire blight",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
