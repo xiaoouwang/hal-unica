@@ -6,6 +6,43 @@
   },
   "publications": [
     {
+      "halId_s": "hal-05633888",
+      "uri_s": "https://hal.science/hal-05633888v1",
+      "title_s": "Untargeted metabolomic dataset of leaves from twenty-four accessions of wild and cultivated tomato plants",
+      "docType_s": "ART",
+      "doiId_s": "10.1016/j.dib.2026.112828",
+      "laboratories": [
+        "GAFL",
+        "INRAE",
+        "LAE",
+        "UL",
+        "ISA",
+        "UNS",
+        "CNRS",
+        "UniCA",
+        "BBV - UR 2106",
+        "UT"
+      ],
+      "modifiedDate_tdate": "2026-10-12T14:44:06Z",
+      "producedDateY_i": 2026,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/QM0BOR",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/QM0BOR",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Untargeted metabolomic dataset of leaves from twenty four accessions of wild and cultivated tomato plants",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
       "halId_s": "hal-05114056",
       "uri_s": "https://hal.science/hal-05114056v2",
       "title_s": "Le Rhône aménagé vu du ciel. Constitution d'une base de données photographiques obliques pour documenter la trajectoire socio-environnementale du fleuve contemporain (1910-1960)",
@@ -877,43 +914,6 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/OP1JFC",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "Catalogs of solar observations of Meudon and Haute Provence Hα heliographs (1954-2004) and their instrumental capabilities",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-05633888",
-      "uri_s": "https://hal.science/hal-05633888v1",
-      "title_s": "Untargeted metabolomic dataset of leaves from twenty-four accessions of wild and cultivated tomato plants",
-      "docType_s": "ART",
-      "doiId_s": "10.1016/j.dib.2026.112828",
-      "laboratories": [
-        "GAFL",
-        "INRAE",
-        "LAE",
-        "UL",
-        "ISA",
-        "UNS",
-        "CNRS",
-        "UniCA",
-        "BBV - UR 2106",
-        "UT"
-      ],
-      "modifiedDate_tdate": "2026-09-16T16:48:10Z",
-      "producedDateY_i": 2026,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/QM0BOR",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/QM0BOR",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Untargeted metabolomic dataset of leaves from twenty four accessions of wild and cultivated tomato plants",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false

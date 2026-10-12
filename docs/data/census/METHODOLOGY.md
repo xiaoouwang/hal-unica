@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-10-12T12:06:50Z`  
+Generated: `2026-10-12T17:54:05Z`  
 Collection: `UNIV-COTEDAZUR`  
-Run window: `2026-10-12T12:06:48Z` → `2026-10-12T12:06:50Z`
+Run window: `2026-10-12T17:54:04Z` → `2026-10-12T17:54:05Z`
 
 ## Goal
 
@@ -84,6 +84,7 @@ repository root `README.md`.
 - **FDSN / seismic network**: 5
 - **Figshare**: 5
 - **Journal DOI (10.1093)**: 5
+- **DOI prefix 10.1101**: 3
 - **DOI prefix 10.22489**: 3
 - **Journal DOI (10.1038)**: 3
 - **Journal DOI (10.1137)**: 3
@@ -92,7 +93,6 @@ repository root `README.md`.
 - **Archimer (Ifremer publications)**: 2
 - **BIRA-IASB data**: 2
 - **CDS**: 2
-- **DOI prefix 10.1101**: 2
 - **DOI prefix 10.1287**: 2
 - **DOI prefix 10.23919**: 2
 - **DOI prefix 10.31223**: 2
@@ -158,7 +158,6 @@ repository root `README.md`.
 - **Progedo-Adisp**: 1
 - **STScI/MAST**: 1
 - **University of Bristol data.bris**: 1
-- **Unknown (DOI not in DataCite)**: 1
 
 ### By landing host
 

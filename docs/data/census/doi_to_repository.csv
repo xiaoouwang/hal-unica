@@ -57,7 +57,7 @@ doi,repository,object_kind,publisher,landing_url,landing_host,prefix,client_id,t
 10.1093/icc/dtm006,Journal DOI (10.1093),publication_landing,,,,,,,not_found
 10.1093/imrn/rnaf199,Journal DOI (10.1093),publication_landing,,,,,,,not_found
 10.1101/2021.03.02.433228,DOI prefix 10.1101,unresolved,,,,,,,not_found
-10.1101/2024.08.27.596794,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
+10.1101/2024.08.27.596794,DOI prefix 10.1101,unresolved,,,,,,,not_found
 10.1101/273557,DOI prefix 10.1101,unresolved,,,,,,,not_found
 10.1109/ACSSC.2018.8645158,Journal DOI (10.1109),publication_landing,,,,,,,not_found
 10.1109/AP-S/USNC-URSI47032.2022.9886510,Journal DOI (10.1109),publication_landing,,,,,,,not_found
