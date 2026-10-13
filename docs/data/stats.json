@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T17:54:26Z",
+  "generated_at": "2026-10-13T11:53:58Z",
   "collection": "UNIV-COTEDAZUR",
   "collection_url": "https://hal.science/UNIV-COTEDAZUR",
   "harvest": {
@@ -347,6 +347,91 @@
     },
     "publications": [
       {
+        "halId_s": "hal-04948456",
+        "uri_s": "https://hal.science/hal-04948456v1",
+        "title_s": "Couches SIG des circonscriptions administratives d'Algérie (1942- 1949) : départements d’Alger, Constantine et Oran",
+        "docType_s": "OTHER",
+        "doiId_s": "10.34847/nkl.e462qm6n",
+        "laboratories": [
+          "LARHRA",
+          "ENS de Lyon",
+          "UL2",
+          "UJML",
+          "CNRS",
+          "UGA",
+          "CHS",
+          "UP1",
+          "ACP",
+          "AU"
+        ],
+        "modifiedDate_tdate": "2026-10-13T12:06:02Z",
+        "producedDateY_i": 2022,
+        "repositories": [
+          "NAKALA"
+        ],
+        "datasets": [
+          {
+            "doi": "10.34847/nkl.e462qm6n",
+            "repository": "NAKALA",
+            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+            "landing_url": "https://nakala.fr/10.34847/nkl.e462qm6n",
+            "landing_host": "nakala.fr",
+            "dataset_title": "Couches SIG des circonscriptions administratives d'Algérie (1942- 1949) : départements d’Alger, Constantine et Oran",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.34847/nkl.e462qm6n",
+            "repository": "NAKALA",
+            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+            "landing_url": "https://nakala.fr/10.34847/nkl.e462qm6n",
+            "landing_host": "nakala.fr",
+            "dataset_title": "Couches SIG des circonscriptions administratives d'Algérie (1942- 1949) : départements d’Alger, Constantine et Oran",
+            "field": "seeAlso_s",
+            "misfiled": false,
+            "also_in_relatedData_s": true
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-05114056",
+        "uri_s": "https://hal.science/hal-05114056v2",
+        "title_s": "Le Rhône aménagé vu du ciel. Constitution d'une base de données photographiques obliques pour documenter la trajectoire socio-environnementale du fleuve contemporain (1910-1960)",
+        "docType_s": "ART",
+        "doiId_s": "10.46298/dc.15880",
+        "laboratories": [
+          "EVS",
+          "ENS de Lyon",
+          "Mines Saint-Étienne MSE",
+          "IMT",
+          "UL2",
+          "UJML",
+          "INSA Lyon",
+          "INSA",
+          "UJM",
+          "UJM EPE"
+        ],
+        "modifiedDate_tdate": "2026-10-13T03:31:52Z",
+        "producedDateY_i": 2025,
+        "repositories": [
+          "NAKALA"
+        ],
+        "datasets": [
+          {
+            "doi": "10.34847/nkl.e63a22n9",
+            "repository": "NAKALA",
+            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+            "landing_url": "https://nakala.fr/10.34847/nkl.e63a22n9",
+            "landing_host": "nakala.fr",
+            "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
         "halId_s": "hal-05633888",
         "uri_s": "https://hal.science/hal-05633888v1",
         "title_s": "Untargeted metabolomic dataset of leaves from twenty-four accessions of wild and cultivated tomato plants",
@@ -377,43 +462,6 @@
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/QM0BOR",
             "landing_host": "entrepot.recherche.data.gouv.fr",
             "dataset_title": "Untargeted metabolomic dataset of leaves from twenty four accessions of wild and cultivated tomato plants",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-05114056",
-        "uri_s": "https://hal.science/hal-05114056v2",
-        "title_s": "Le Rhône aménagé vu du ciel. Constitution d'une base de données photographiques obliques pour documenter la trajectoire socio-environnementale du fleuve contemporain (1910-1960)",
-        "docType_s": "ART",
-        "doiId_s": "10.46298/dc.15880",
-        "laboratories": [
-          "EVS",
-          "ENS de Lyon",
-          "Mines Saint-Étienne MSE",
-          "IMT",
-          "UL2",
-          "UJML",
-          "INSA Lyon",
-          "INSA",
-          "UJM",
-          "UJM EPE"
-        ],
-        "modifiedDate_tdate": "2026-10-12T03:24:54Z",
-        "producedDateY_i": 2025,
-        "repositories": [
-          "NAKALA"
-        ],
-        "datasets": [
-          {
-            "doi": "10.34847/nkl.e63a22n9",
-            "repository": "NAKALA",
-            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-            "landing_url": "https://nakala.fr/10.34847/nkl.e63a22n9",
-            "landing_host": "nakala.fr",
-            "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -2190,54 +2238,6 @@
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-04948456",
-        "uri_s": "https://hal.science/hal-04948456v1",
-        "title_s": "Couches SIG des circonscriptions administratives d'Algérie (1942- 1949) : départements d’Alger, Constantine et Oran",
-        "docType_s": "OTHER",
-        "doiId_s": "10.34847/nkl.e462qm6n",
-        "laboratories": [
-          "LARHRA",
-          "ENS de Lyon",
-          "UL2",
-          "UJML",
-          "CNRS",
-          "UGA",
-          "CHS",
-          "UP1",
-          "ACP",
-          "AU"
-        ],
-        "modifiedDate_tdate": "2026-05-05T15:53:14Z",
-        "producedDateY_i": 2022,
-        "repositories": [
-          "NAKALA"
-        ],
-        "datasets": [
-          {
-            "doi": "10.34847/nkl.e462qm6n",
-            "repository": "NAKALA",
-            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-            "landing_url": "https://nakala.fr/10.34847/nkl.e462qm6n",
-            "landing_host": "nakala.fr",
-            "dataset_title": "Couches SIG des circonscriptions administratives d'Algérie (1942- 1949) : départements d’Alger, Constantine et Oran",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          },
-          {
-            "doi": "10.34847/nkl.e462qm6n",
-            "repository": "NAKALA",
-            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-            "landing_url": "https://nakala.fr/10.34847/nkl.e462qm6n",
-            "landing_host": "nakala.fr",
-            "dataset_title": "Couches SIG des circonscriptions administratives d'Algérie (1942- 1949) : départements d’Alger, Constantine et Oran",
-            "field": "seeAlso_s",
-            "misfiled": false,
-            "also_in_relatedData_s": true
           }
         ]
       },
@@ -7731,14 +7731,14 @@
               "title_s": "Couches SIG des circonscriptions administratives d'Algérie (1942- 1949) : départements d’Alger, Constantine et Oran",
               "uri_s": "https://hal.science/hal-04948456v1",
               "producedDateY_i": 2022,
-              "producedDateM_i": 5
+              "producedDateM_i": 10
             },
             {
               "halId_s": "hal-04948456",
               "title_s": "Couches SIG des circonscriptions administratives d'Algérie (1942- 1949) : départements d’Alger, Constantine et Oran",
               "uri_s": "https://hal.science/hal-04948456v1",
               "producedDateY_i": 2022,
-              "producedDateM_i": 5
+              "producedDateM_i": 10
             }
           ]
         }
