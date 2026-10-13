@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-10-13T11:53:05Z`  
+Generated: `2026-10-13T15:58:43Z`  
 Collection: `UNIV-COTEDAZUR`  
-Run window: `2026-10-13T11:53:04Z` → `2026-10-13T11:53:05Z`
+Run window: `2026-10-13T15:58:41Z` → `2026-10-13T15:58:43Z`
 
 ## Goal
 
@@ -53,22 +53,22 @@ repository root `README.md`.
 
 ## Counts (this run)
 
-- HAL notices with linked identifiers: **336**
-- Related tokens: **544**
-- Unique DOIs resolved: **413**
-- Publications with at least one dataset-repo landing: **172**
-- Misfiled dataset links (wrong HAL field): **73**
-- Publications with ≥1 misfiled dataset link: **54**
+- HAL notices with linked identifiers: **337**
+- Related tokens: **546**
+- Unique DOIs resolved: **415**
+- Publications with at least one dataset-repo landing: **173**
+- Misfiled dataset links (wrong HAL field): **74**
+- Publications with ≥1 misfiled dataset link: **55**
 
 ### Dataset DOIs by HAL source field
 
-- **`relatedData_s`**: 198
-- **`relatedPublication_s`**: 71
+- **`relatedData_s`**: 199
+- **`relatedPublication_s`**: 72
 - **`seeAlso_s`**: 3
 
 ### By repository (DOI evidence)
 
-- **Zenodo**: 103
+- **Zenodo**: 105
 - **Recherche Data Gouv**: 79
 - **Journal DOI (10.1007)**: 31
 - **Journal DOI (10.1109)**: 20
@@ -161,7 +161,7 @@ repository root `README.md`.
 
 ### By landing host
 
-- `zenodo.org`: 102
+- `zenodo.org`: 104
 - `entrepot.recherche.data.gouv.fr`: 53
 - `data.inrae.fr`: 24
 - `seanoe.org`: 15

@@ -1,8 +1,8 @@
 {
-  "unique_datasets": 254,
-  "publications_with_dataset": 172,
+  "unique_datasets": 256,
+  "publications_with_dataset": 173,
   "by_repository": {
-    "Zenodo": 102,
+    "Zenodo": 104,
     "Recherche Data Gouv": 66,
     "SEANOE": 15,
     "Sismer": 10,
@@ -160,7 +160,7 @@
       36,
       35,
       73,
-      25
+      27
     ],
     "series": [
       {
@@ -189,7 +189,7 @@
           11,
           10,
           26,
-          15
+          17
         ]
       },
       {
@@ -644,6 +644,40 @@
             "uri_s": "https://hal.science/hal-05784873v1",
             "producedDateY_i": 2026,
             "producedDateM_i": 6
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.17294469",
+        "dataset_title": "ExoGRAVITY Spectral Library",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17294469",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05795661",
+            "title_s": "The ExoGRAVITY survey: A K -band spectral library of giant exoplanet and brown dwarf companions",
+            "uri_s": "https://hal.science/hal-05795661v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 1
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.17508479",
+        "dataset_title": "ExoGRAVITY Spectral Library Supplementary Material",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17508479",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05795661",
+            "title_s": "The ExoGRAVITY survey: A K -band spectral library of giant exoplanet and brown dwarf companions",
+            "uri_s": "https://hal.science/hal-05795661v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 1
           }
         ]
       },
@@ -5129,7 +5163,7 @@
       "Dec"
     ],
     "totals": [
-      0,
+      2,
       0,
       2,
       1,
@@ -5147,7 +5181,7 @@
         "repository": "Zenodo",
         "color": "#e85d75",
         "counts": [
-          0,
+          2,
           0,
           2,
           1,
@@ -5379,10 +5413,48 @@
       }
     ],
     "period_kind": "month",
-    "datasets_in_year": 25,
+    "datasets_in_year": 27,
     "unknown_month": 0
   },
   "cell_details_months": {
+    "2026-01|Zenodo": [
+      {
+        "dataset_doi": "10.5281/zenodo.17294469",
+        "dataset_title": "ExoGRAVITY Spectral Library",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17294469",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05795661",
+            "title_s": "The ExoGRAVITY survey: A K -band spectral library of giant exoplanet and brown dwarf companions",
+            "uri_s": "https://hal.science/hal-05795661v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 1
+          }
+        ],
+        "month": 1
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.17508479",
+        "dataset_title": "ExoGRAVITY Spectral Library Supplementary Material",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17508479",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05795661",
+            "title_s": "The ExoGRAVITY survey: A K -band spectral library of giant exoplanet and brown dwarf companions",
+            "uri_s": "https://hal.science/hal-05795661v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 1
+          }
+        ],
+        "month": 1
+      }
+    ],
     "2026-03|Zenodo": [
       {
         "dataset_doi": "10.5281/zenodo.17449096",
@@ -5871,7 +5943,7 @@
       }
     ]
   },
-  "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 25 datasets in 2026. Click a segment to list datasets.",
+  "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 27 datasets in 2026. Click a segment to list datasets.",
   "segment_hint": "newest linking publication year",
   "months_segment_hint": "newest linking publication month"
 }
