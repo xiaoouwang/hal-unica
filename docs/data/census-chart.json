@@ -1,8 +1,8 @@
 {
-  "unique_datasets": 256,
-  "publications_with_dataset": 173,
+  "unique_datasets": 257,
+  "publications_with_dataset": 174,
   "by_repository": {
-    "Zenodo": 104,
+    "Zenodo": 105,
     "Recherche Data Gouv": 66,
     "SEANOE": 15,
     "Sismer": 10,
@@ -160,7 +160,7 @@
       36,
       35,
       73,
-      27
+      28
     ],
     "series": [
       {
@@ -189,7 +189,7 @@
           11,
           10,
           26,
-          17
+          18
         ]
       },
       {
@@ -836,6 +836,23 @@
             "halId_s": "hal-05772744",
             "title_s": "Characterizing the Modes of Earth’s Free Oscillations via Submarine Distributed Acoustic Sensing (DAS)",
             "uri_s": "https://hal.science/hal-05772744v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 9
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.21106113",
+        "dataset_title": "Target list of the ISSP binary programme",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.21106113",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05791665",
+            "title_s": "Interferometric Survey of Stellar Parameters: Mass of the metallic A-type binary β Aur",
+            "uri_s": "https://hal.science/hal-05791665v1",
             "producedDateY_i": 2026,
             "producedDateM_i": 9
           }
@@ -5171,7 +5188,7 @@
       3,
       2,
       4,
-      7,
+      8,
       3,
       0,
       0
@@ -5189,7 +5206,7 @@
           2,
           2,
           2,
-          3,
+          4,
           3,
           0,
           0
@@ -5413,10 +5430,91 @@
       }
     ],
     "period_kind": "month",
-    "datasets_in_year": 27,
+    "datasets_in_year": 28,
     "unknown_month": 0
   },
   "cell_details_months": {
+    "2026-09|Zenodo": [
+      {
+        "dataset_doi": "10.5281/zenodo.21775722",
+        "dataset_title": "Data : Tracking Mantle Melting on Mars Using Phobos Tides",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.21775722",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05753637",
+            "title_s": "Tracking Deep Mantle Melting on Mars Using Phobos Tides",
+            "uri_s": "https://hal.science/hal-05753637v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 9
+          }
+        ],
+        "month": 9
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.7682309",
+        "dataset_title": "Jupyter notebook of a biophysically plausible decision-making model based on interacting cortical columns",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/record/7682309",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-04012636",
+            "title_s": "A biologically plausible decision-making model based on interacting neural populations",
+            "uri_s": "https://hal.science/hal-04012636v4",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 9
+          },
+          {
+            "halId_s": "hal-04012636",
+            "title_s": "A biologically plausible decision-making model based on interacting neural populations",
+            "uri_s": "https://hal.science/hal-04012636v4",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 9
+          }
+        ],
+        "month": 9
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.19349504",
+        "dataset_title": "Supporting Material for the article: \"Detection and Characterization of Normal Modes via Submarine Distributed Acoustic Sensing (DAS)\"",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.19349504",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05772744",
+            "title_s": "Characterizing the Modes of Earth’s Free Oscillations via Submarine Distributed Acoustic Sensing (DAS)",
+            "uri_s": "https://hal.science/hal-05772744v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 9
+          }
+        ],
+        "month": 9
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.21106113",
+        "dataset_title": "Target list of the ISSP binary programme",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.21106113",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05791665",
+            "title_s": "Interferometric Survey of Stellar Parameters: Mass of the metallic A-type binary β Aur",
+            "uri_s": "https://hal.science/hal-05791665v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 9
+          }
+        ],
+        "month": 9
+      }
+    ],
     "2026-01|Zenodo": [
       {
         "dataset_doi": "10.5281/zenodo.17294469",
@@ -5585,69 +5683,6 @@
           }
         ],
         "month": 10
-      }
-    ],
-    "2026-09|Zenodo": [
-      {
-        "dataset_doi": "10.5281/zenodo.21775722",
-        "dataset_title": "Data : Tracking Mantle Melting on Mars Using Phobos Tides",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.21775722",
-        "landing_host": "zenodo.org",
-        "year": 2026,
-        "publications": [
-          {
-            "halId_s": "hal-05753637",
-            "title_s": "Tracking Deep Mantle Melting on Mars Using Phobos Tides",
-            "uri_s": "https://hal.science/hal-05753637v1",
-            "producedDateY_i": 2026,
-            "producedDateM_i": 9
-          }
-        ],
-        "month": 9
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.7682309",
-        "dataset_title": "Jupyter notebook of a biophysically plausible decision-making model based on interacting cortical columns",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/record/7682309",
-        "landing_host": "zenodo.org",
-        "year": 2026,
-        "publications": [
-          {
-            "halId_s": "hal-04012636",
-            "title_s": "A biologically plausible decision-making model based on interacting neural populations",
-            "uri_s": "https://hal.science/hal-04012636v4",
-            "producedDateY_i": 2026,
-            "producedDateM_i": 9
-          },
-          {
-            "halId_s": "hal-04012636",
-            "title_s": "A biologically plausible decision-making model based on interacting neural populations",
-            "uri_s": "https://hal.science/hal-04012636v4",
-            "producedDateY_i": 2026,
-            "producedDateM_i": 9
-          }
-        ],
-        "month": 9
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.19349504",
-        "dataset_title": "Supporting Material for the article: \"Detection and Characterization of Normal Modes via Submarine Distributed Acoustic Sensing (DAS)\"",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.19349504",
-        "landing_host": "zenodo.org",
-        "year": 2026,
-        "publications": [
-          {
-            "halId_s": "hal-05772744",
-            "title_s": "Characterizing the Modes of Earth’s Free Oscillations via Submarine Distributed Acoustic Sensing (DAS)",
-            "uri_s": "https://hal.science/hal-05772744v1",
-            "producedDateY_i": 2026,
-            "producedDateM_i": 9
-          }
-        ],
-        "month": 9
       }
     ],
     "2026-07|Zenodo": [
@@ -5943,7 +5978,7 @@
       }
     ]
   },
-  "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 27 datasets in 2026. Click a segment to list datasets.",
+  "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 28 datasets in 2026. Click a segment to list datasets.",
   "segment_hint": "newest linking publication year",
   "months_segment_hint": "newest linking publication month"
 }

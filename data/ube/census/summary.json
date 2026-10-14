@@ -1,8 +1,8 @@
 {
   "collection": "UNIV-BOURGOGNE",
-  "started_at": "2026-10-13T15:59:56Z",
-  "finished_at": "2026-10-13T15:59:57Z",
-  "since": "2026-10-11T15:59:56Z",
+  "started_at": "2026-10-14T09:34:46Z",
+  "finished_at": "2026-10-14T09:34:47Z",
+  "since": "2026-10-12T09:34:46Z",
   "hal_publications_with_relatedData": 267,
   "related_tokens": 391,
   "unique_dois_resolved": 306,
@@ -16,7 +16,7 @@
     "pubs_inserted": 0,
     "dois_resolved_live": 0,
     "dois_from_cache": 306,
-    "watermark_modified": "2026-10-13T13:13:51Z"
+    "watermark_modified": "2026-10-14T10:19:02Z"
   },
   "by_repository": {
     "Recherche Data Gouv": 104,

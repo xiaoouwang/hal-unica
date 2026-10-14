@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T15:59:56Z",
+  "generated_at": "2026-10-14T09:34:46Z",
   "collection": "UNIV-COTEDAZUR",
   "collection_url": "https://hal.science/UNIV-COTEDAZUR",
   "harvest": {
@@ -296,13 +296,13 @@
     "stale": true
   },
   "data_links": {
-    "total_hits": 256,
+    "total_hits": 257,
     "by_platform": {
       "nakala": 9,
       "rdg": 48
     },
     "by_repository": {
-      "Zenodo": 104,
+      "Zenodo": 105,
       "Recherche Data Gouv": 66,
       "SEANOE": 15,
       "Sismer": 10,
@@ -346,6 +346,43 @@
       "NAKALA": 9
     },
     "publications": [
+      {
+        "halId_s": "hal-05114056",
+        "uri_s": "https://hal.science/hal-05114056v2",
+        "title_s": "Le Rhône aménagé vu du ciel. Constitution d'une base de données photographiques obliques pour documenter la trajectoire socio-environnementale du fleuve contemporain (1910-1960)",
+        "docType_s": "ART",
+        "doiId_s": "10.46298/dc.15880",
+        "laboratories": [
+          "EVS",
+          "ENS de Lyon",
+          "Mines Saint-Étienne MSE",
+          "IMT",
+          "UL2",
+          "UJML",
+          "INSA Lyon",
+          "INSA",
+          "UJM",
+          "UJM EPE"
+        ],
+        "modifiedDate_tdate": "2026-10-14T03:33:06Z",
+        "producedDateY_i": 2025,
+        "repositories": [
+          "NAKALA"
+        ],
+        "datasets": [
+          {
+            "doi": "10.34847/nkl.e63a22n9",
+            "repository": "NAKALA",
+            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+            "landing_url": "https://nakala.fr/10.34847/nkl.e63a22n9",
+            "landing_host": "nakala.fr",
+            "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
       {
         "halId_s": "hal-04948456",
         "uri_s": "https://hal.science/hal-04948456v1",
@@ -391,43 +428,6 @@
             "field": "seeAlso_s",
             "misfiled": false,
             "also_in_relatedData_s": true
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-05114056",
-        "uri_s": "https://hal.science/hal-05114056v2",
-        "title_s": "Le Rhône aménagé vu du ciel. Constitution d'une base de données photographiques obliques pour documenter la trajectoire socio-environnementale du fleuve contemporain (1910-1960)",
-        "docType_s": "ART",
-        "doiId_s": "10.46298/dc.15880",
-        "laboratories": [
-          "EVS",
-          "ENS de Lyon",
-          "Mines Saint-Étienne MSE",
-          "IMT",
-          "UL2",
-          "UJML",
-          "INSA Lyon",
-          "INSA",
-          "UJM",
-          "UJM EPE"
-        ],
-        "modifiedDate_tdate": "2026-10-13T03:31:52Z",
-        "producedDateY_i": 2025,
-        "repositories": [
-          "NAKALA"
-        ],
-        "datasets": [
-          {
-            "doi": "10.34847/nkl.e63a22n9",
-            "repository": "NAKALA",
-            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-            "landing_url": "https://nakala.fr/10.34847/nkl.e63a22n9",
-            "landing_host": "nakala.fr",
-            "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
           }
         ]
       },
@@ -2777,10 +2777,10 @@
     "scope": "nakala_rdg_focus"
   },
   "census_chart": {
-    "unique_datasets": 256,
-    "publications_with_dataset": 173,
+    "unique_datasets": 257,
+    "publications_with_dataset": 174,
     "by_repository": {
-      "Zenodo": 104,
+      "Zenodo": 105,
       "Recherche Data Gouv": 66,
       "SEANOE": 15,
       "Sismer": 10,
@@ -2938,7 +2938,7 @@
         36,
         35,
         73,
-        27
+        28
       ],
       "series": [
         {
@@ -2967,7 +2967,7 @@
             11,
             10,
             26,
-            17
+            18
           ]
         },
         {
@@ -3614,6 +3614,23 @@
               "halId_s": "hal-05772744",
               "title_s": "Characterizing the Modes of Earth’s Free Oscillations via Submarine Distributed Acoustic Sensing (DAS)",
               "uri_s": "https://hal.science/hal-05772744v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 9
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.5281/zenodo.21106113",
+          "dataset_title": "Target list of the ISSP binary programme",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.21106113",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05791665",
+              "title_s": "Interferometric Survey of Stellar Parameters: Mass of the metallic A-type binary β Aur",
+              "uri_s": "https://hal.science/hal-05791665v1",
               "producedDateY_i": 2026,
               "producedDateM_i": 9
             }
@@ -7949,7 +7966,7 @@
         3,
         2,
         4,
-        7,
+        8,
         3,
         0,
         0
@@ -7967,7 +7984,7 @@
             2,
             2,
             2,
-            3,
+            4,
             3,
             0,
             0
@@ -8191,10 +8208,91 @@
         }
       ],
       "period_kind": "month",
-      "datasets_in_year": 27,
+      "datasets_in_year": 28,
       "unknown_month": 0
     },
     "cell_details_months": {
+      "2026-09|Zenodo": [
+        {
+          "dataset_doi": "10.5281/zenodo.21775722",
+          "dataset_title": "Data : Tracking Mantle Melting on Mars Using Phobos Tides",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.21775722",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05753637",
+              "title_s": "Tracking Deep Mantle Melting on Mars Using Phobos Tides",
+              "uri_s": "https://hal.science/hal-05753637v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 9
+            }
+          ],
+          "month": 9
+        },
+        {
+          "dataset_doi": "10.5281/zenodo.7682309",
+          "dataset_title": "Jupyter notebook of a biophysically plausible decision-making model based on interacting cortical columns",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/record/7682309",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-04012636",
+              "title_s": "A biologically plausible decision-making model based on interacting neural populations",
+              "uri_s": "https://hal.science/hal-04012636v4",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 9
+            },
+            {
+              "halId_s": "hal-04012636",
+              "title_s": "A biologically plausible decision-making model based on interacting neural populations",
+              "uri_s": "https://hal.science/hal-04012636v4",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 9
+            }
+          ],
+          "month": 9
+        },
+        {
+          "dataset_doi": "10.5281/zenodo.19349504",
+          "dataset_title": "Supporting Material for the article: \"Detection and Characterization of Normal Modes via Submarine Distributed Acoustic Sensing (DAS)\"",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.19349504",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05772744",
+              "title_s": "Characterizing the Modes of Earth’s Free Oscillations via Submarine Distributed Acoustic Sensing (DAS)",
+              "uri_s": "https://hal.science/hal-05772744v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 9
+            }
+          ],
+          "month": 9
+        },
+        {
+          "dataset_doi": "10.5281/zenodo.21106113",
+          "dataset_title": "Target list of the ISSP binary programme",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.21106113",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05791665",
+              "title_s": "Interferometric Survey of Stellar Parameters: Mass of the metallic A-type binary β Aur",
+              "uri_s": "https://hal.science/hal-05791665v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 9
+            }
+          ],
+          "month": 9
+        }
+      ],
       "2026-01|Zenodo": [
         {
           "dataset_doi": "10.5281/zenodo.17294469",
@@ -8363,69 +8461,6 @@
             }
           ],
           "month": 10
-        }
-      ],
-      "2026-09|Zenodo": [
-        {
-          "dataset_doi": "10.5281/zenodo.21775722",
-          "dataset_title": "Data : Tracking Mantle Melting on Mars Using Phobos Tides",
-          "repository": "Zenodo",
-          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.21775722",
-          "landing_host": "zenodo.org",
-          "year": 2026,
-          "publications": [
-            {
-              "halId_s": "hal-05753637",
-              "title_s": "Tracking Deep Mantle Melting on Mars Using Phobos Tides",
-              "uri_s": "https://hal.science/hal-05753637v1",
-              "producedDateY_i": 2026,
-              "producedDateM_i": 9
-            }
-          ],
-          "month": 9
-        },
-        {
-          "dataset_doi": "10.5281/zenodo.7682309",
-          "dataset_title": "Jupyter notebook of a biophysically plausible decision-making model based on interacting cortical columns",
-          "repository": "Zenodo",
-          "landing_url": "https://zenodo.org/record/7682309",
-          "landing_host": "zenodo.org",
-          "year": 2026,
-          "publications": [
-            {
-              "halId_s": "hal-04012636",
-              "title_s": "A biologically plausible decision-making model based on interacting neural populations",
-              "uri_s": "https://hal.science/hal-04012636v4",
-              "producedDateY_i": 2026,
-              "producedDateM_i": 9
-            },
-            {
-              "halId_s": "hal-04012636",
-              "title_s": "A biologically plausible decision-making model based on interacting neural populations",
-              "uri_s": "https://hal.science/hal-04012636v4",
-              "producedDateY_i": 2026,
-              "producedDateM_i": 9
-            }
-          ],
-          "month": 9
-        },
-        {
-          "dataset_doi": "10.5281/zenodo.19349504",
-          "dataset_title": "Supporting Material for the article: \"Detection and Characterization of Normal Modes via Submarine Distributed Acoustic Sensing (DAS)\"",
-          "repository": "Zenodo",
-          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.19349504",
-          "landing_host": "zenodo.org",
-          "year": 2026,
-          "publications": [
-            {
-              "halId_s": "hal-05772744",
-              "title_s": "Characterizing the Modes of Earth’s Free Oscillations via Submarine Distributed Acoustic Sensing (DAS)",
-              "uri_s": "https://hal.science/hal-05772744v1",
-              "producedDateY_i": 2026,
-              "producedDateM_i": 9
-            }
-          ],
-          "month": 9
         }
       ],
       "2026-07|Zenodo": [
@@ -8721,7 +8756,7 @@
         }
       ]
     },
-    "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 27 datasets in 2026. Click a segment to list datasets.",
+    "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 28 datasets in 2026. Click a segment to list datasets.",
     "segment_hint": "newest linking publication year",
     "months_segment_hint": "newest linking publication month"
   }
