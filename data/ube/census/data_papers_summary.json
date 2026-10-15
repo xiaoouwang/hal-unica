@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-15T09:13:04Z",
-  "data_papers": 55,
-  "with_doi": 53,
+  "generated_at": "2026-10-15T13:26:45Z",
+  "data_papers": 54,
+  "with_doi": 52,
   "with_linked_dataset": 19,
-  "with_journal": 55,
-  "with_hal_file": 43,
+  "with_journal": 54,
+  "with_hal_file": 42,
   "by_year": {
     "1995": 1,
     "2013": 1,
@@ -17,7 +17,7 @@
     "2022": 6,
     "2023": 8,
     "2024": 7,
-    "2025": 14,
+    "2025": 13,
     "2026": 6
   },
   "by_journal": {
@@ -27,7 +27,6 @@
     "Dryad": 1,
     "Scientific Reports": 1,
     "Nucleic Acids Research": 1,
-    "The Anatomical Record: Advances in Integrative Anatomy and Evolutionary Biology": 1,
     "Clinical Genetics": 1,
     "Cancer Control: Journal of the Moffitt Cancer Center": 1,
     "Zookeys": 1,

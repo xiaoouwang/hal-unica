@@ -6,6 +6,69 @@
   },
   "publications": [
     {
+      "halId_s": "hal-03641417",
+      "uri_s": "https://institut-agro-dijon.hal.science/hal-03641417v1",
+      "title_s": "Weed suppression in cover crop mixtures under contrasted levels of resource availability",
+      "docType_s": "ART",
+      "doiId_s": "10.1016/j.eja.2022.126499",
+      "laboratories": [
+        "UB",
+        "UBFC",
+        "INRAE",
+        "DIJ EPOISSES"
+      ],
+      "modifiedDate_tdate": "2026-10-15T13:29:15Z",
+      "producedDateY_i": 2022,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/P4G16N",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/P4G16N",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Cover crop and weed biomass with their nitrogen and carbon content sampled in cover crop mixture according to mixture, irriguation and nitrogen fertilisation at sowing",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-04052344",
+      "uri_s": "https://hal.inrae.fr/hal-04052344v1",
+      "title_s": "Carry-over effects of cover crops on weeds and crop productivity in no-till systems",
+      "docType_s": "ART",
+      "doiId_s": "10.1016/j.fcr.2023.108899",
+      "laboratories": [
+        "UB",
+        "UBFC",
+        "INRAE",
+        "Institut Agro",
+        "DIJ EPOISSES"
+      ],
+      "modifiedDate_tdate": "2026-10-15T11:50:14Z",
+      "producedDateY_i": 2023,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/P4G16N",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/P4G16N",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Cover crop and weed biomass with their nitrogen and carbon content sampled in cover crop mixture according to mixture, irriguation and nitrogen fertilisation at sowing",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
       "halId_s": "hal-05221870",
       "uri_s": "https://hal.science/hal-05221870v2",
       "title_s": "Enquête sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
@@ -1933,38 +1996,6 @@
       ]
     },
     {
-      "halId_s": "hal-04052344",
-      "uri_s": "https://hal.inrae.fr/hal-04052344v1",
-      "title_s": "Carry-over effects of cover crops on weeds and crop productivity in no-till systems",
-      "docType_s": "ART",
-      "doiId_s": "10.1016/j.fcr.2023.108899",
-      "laboratories": [
-        "UB",
-        "UBFC",
-        "INRAE",
-        "Institut Agro",
-        "DIJ EPOISSES"
-      ],
-      "modifiedDate_tdate": "2026-06-02T14:22:20Z",
-      "producedDateY_i": 2023,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/P4G16N",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/P4G16N",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Cover crop and weed biomass with their nitrogen and carbon content sampled in cover crop mixture according to mixture, irriguation and nitrogen fertilisation at sowing",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
       "halId_s": "hal-03583862",
       "uri_s": "https://hal.inrae.fr/hal-03583862v1",
       "title_s": "La diversité des vignobles français face au changement climatique : simulations climatiques et prospective participative",
@@ -2401,37 +2432,6 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/5BU8MG",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "Dataset and R script from \"Do semi-natural habitats enhance overwintering of generalist predators in arable cropping systems? A meta-analysis\"",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-03641417",
-      "uri_s": "https://institut-agro-dijon.hal.science/hal-03641417v1",
-      "title_s": "Weed suppression in cover crop mixtures under contrasted levels of resource availability",
-      "docType_s": "ART",
-      "doiId_s": "10.1016/j.eja.2022.126499",
-      "laboratories": [
-        "UB",
-        "UBFC",
-        "INRAE",
-        "DIJ EPOISSES"
-      ],
-      "modifiedDate_tdate": "2026-05-05T15:52:56Z",
-      "producedDateY_i": 2022,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/P4G16N",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/P4G16N",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Cover crop and weed biomass with their nitrogen and carbon content sampled in cover crop mixture according to mixture, irriguation and nitrogen fertilisation at sowing",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
