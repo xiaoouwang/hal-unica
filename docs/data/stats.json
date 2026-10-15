@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T13:43:54Z",
+  "generated_at": "2026-10-15T09:12:57Z",
   "collection": "UNIV-COTEDAZUR",
   "collection_url": "https://hal.science/UNIV-COTEDAZUR",
   "harvest": {
@@ -296,14 +296,14 @@
     "stale": true
   },
   "data_links": {
-    "total_hits": 257,
+    "total_hits": 258,
     "by_platform": {
       "nakala": 9,
-      "rdg": 48
+      "rdg": 49
     },
     "by_repository": {
       "Zenodo": 105,
-      "Recherche Data Gouv": 66,
+      "Recherche Data Gouv": 67,
       "SEANOE": 15,
       "Sismer": 10,
       "SEDOO / Theia": 9,
@@ -335,14 +335,14 @@
       "University of Bristol data.bris": 1
     },
     "by_object_kind": {
-      "dataset_repo": 57
+      "dataset_repo": 58
     },
     "scope": "all_repositories"
   },
   "related_datasets": {
-    "publication_count": 57,
+    "publication_count": 58,
     "by_repository": {
-      "Recherche Data Gouv": 48,
+      "Recherche Data Gouv": 49,
       "NAKALA": 9
     },
     "publications": [
@@ -364,7 +364,7 @@
           "UJM",
           "UJM EPE"
         ],
-        "modifiedDate_tdate": "2026-10-14T03:33:06Z",
+        "modifiedDate_tdate": "2026-10-15T03:31:32Z",
         "producedDateY_i": 2025,
         "repositories": [
           "NAKALA"
@@ -377,6 +377,78 @@
             "landing_url": "https://nakala.fr/10.34847/nkl.e63a22n9",
             "landing_host": "nakala.fr",
             "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-05739203",
+        "uri_s": "https://hal.science/hal-05739203v2",
+        "title_s": "Automatiser l’évaluation de la complétude des notifications d’alerte à la population : enjeux et applications",
+        "docType_s": "UNDEFINED",
+        "doiId_s": null,
+        "laboratories": [
+          "BABEL",
+          "UTLN",
+          "ESPACE",
+          "UNS",
+          "AU",
+          "AMU",
+          "CNRS",
+          "UniCA"
+        ],
+        "modifiedDate_tdate": "2026-10-15T03:29:35Z",
+        "producedDateY_i": 2026,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/OLJYUQ",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/OLJYUQ",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Données d'automatisation de l’évaluation de la complétude des notifications d’alerte à la population : enjeux et applications",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-05221870",
+        "uri_s": "https://hal.science/hal-05221870v2",
+        "title_s": "Enquête sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
+        "docType_s": "REPORT",
+        "doiId_s": null,
+        "laboratories": [
+          "Comue de Toulouse",
+          "ADBU",
+          "UBE",
+          "dat@UBFC",
+          "UTBM",
+          "SUPMICROTECH - ENSMM",
+          "BSB",
+          "Institut Agro",
+          "UMLP",
+          "UPPA"
+        ],
+        "modifiedDate_tdate": "2026-10-14T16:06:03Z",
+        "producedDateY_i": 2025,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/JYWUIY",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/JYWUIY",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Données de l'enquête ADBU sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -584,43 +656,6 @@
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
             "landing_host": "entrepot.recherche.data.gouv.fr",
             "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda rice strain",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-05221870",
-        "uri_s": "https://hal.science/hal-05221870v2",
-        "title_s": "Enquête sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
-        "docType_s": "REPORT",
-        "doiId_s": null,
-        "laboratories": [
-          "Comue de Toulouse",
-          "ADBU",
-          "UBE",
-          "dat@UBFC",
-          "UTBM",
-          "SUPMICROTECH - ENSMM",
-          "BSB",
-          "Institut Agro",
-          "UMLP",
-          "UPPA"
-        ],
-        "modifiedDate_tdate": "2026-10-07T15:42:07Z",
-        "producedDateY_i": 2025,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.57745/JYWUIY",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/JYWUIY",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "Données de l'enquête ADBU sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -2777,11 +2812,11 @@
     "scope": "nakala_rdg_focus"
   },
   "census_chart": {
-    "unique_datasets": 257,
-    "publications_with_dataset": 174,
+    "unique_datasets": 258,
+    "publications_with_dataset": 175,
     "by_repository": {
       "Zenodo": 105,
-      "Recherche Data Gouv": 66,
+      "Recherche Data Gouv": 67,
       "SEANOE": 15,
       "Sismer": 10,
       "SEDOO / Theia": 9,
@@ -2938,7 +2973,7 @@
         36,
         35,
         73,
-        28
+        29
       ],
       "series": [
         {
@@ -2996,7 +3031,7 @@
             13,
             3,
             13,
-            3
+            4
           ]
         },
         {
@@ -3322,6 +3357,76 @@
       "period_kind": "year"
     },
     "cell_details": {
+      "2026|Recherche Data Gouv": [
+        {
+          "dataset_doi": "10.57745/QHUQOP",
+          "dataset_title": "Data package for the manuscript \"The Asian ladybird Harmonia axyridis at the interface between biological control and invasion: insights from population and quantitative genetics\"",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/QHUQOP",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05721890",
+              "title_s": "The Asian ladybird Harmonia axyridis at the interface between biological control and invasion: insights from population and quantitative genetics",
+              "uri_s": "https://hal.science/hal-05721890v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 8
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/OLJYUQ",
+          "dataset_title": "Données d'automatisation de l’évaluation de la complétude des notifications d’alerte à la population : enjeux et applications",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/OLJYUQ",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05739203",
+              "title_s": "Automatiser l’évaluation de la complétude des notifications d’alerte à la population : enjeux et applications",
+              "uri_s": "https://hal.science/hal-05739203v2",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 10
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/ENBAIS",
+          "dataset_title": "Replication Data for: Towards tsunami early-warning with Distributed Acoustic Sensing: expected seafloor strains induced by tsunamis",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/ENBAIS",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05630218",
+              "title_s": "Towards Tsunami Early-Warning with Distributed Acoustic Sensing: Expected Seafloor Strains Induced by Tsunamis",
+              "uri_s": "https://hal.science/hal-05630218v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 5
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/QM0BOR",
+          "dataset_title": "Untargeted metabolomic dataset of leaves from twenty four accessions of wild and cultivated tomato plants",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/QM0BOR",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05633888",
+              "title_s": "Untargeted metabolomic dataset of leaves from twenty-four accessions of wild and cultivated tomato plants",
+              "uri_s": "https://hal.science/hal-05633888v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 5
+            }
+          ]
+        }
+      ],
       "2026|Zenodo": [
         {
           "dataset_doi": "10.5281/zenodo.17449096",
@@ -5017,59 +5122,6 @@
               "uri_s": "https://hal.science/hal-02200605v1",
               "producedDateY_i": 2019,
               "producedDateM_i": 4
-            }
-          ]
-        }
-      ],
-      "2026|Recherche Data Gouv": [
-        {
-          "dataset_doi": "10.57745/QHUQOP",
-          "dataset_title": "Data package for the manuscript \"The Asian ladybird Harmonia axyridis at the interface between biological control and invasion: insights from population and quantitative genetics\"",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/QHUQOP",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2026,
-          "publications": [
-            {
-              "halId_s": "hal-05721890",
-              "title_s": "The Asian ladybird Harmonia axyridis at the interface between biological control and invasion: insights from population and quantitative genetics",
-              "uri_s": "https://hal.science/hal-05721890v1",
-              "producedDateY_i": 2026,
-              "producedDateM_i": 8
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.57745/ENBAIS",
-          "dataset_title": "Replication Data for: Towards tsunami early-warning with Distributed Acoustic Sensing: expected seafloor strains induced by tsunamis",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/ENBAIS",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2026,
-          "publications": [
-            {
-              "halId_s": "hal-05630218",
-              "title_s": "Towards Tsunami Early-Warning with Distributed Acoustic Sensing: Expected Seafloor Strains Induced by Tsunamis",
-              "uri_s": "https://hal.science/hal-05630218v1",
-              "producedDateY_i": 2026,
-              "producedDateM_i": 5
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.57745/QM0BOR",
-          "dataset_title": "Untargeted metabolomic dataset of leaves from twenty four accessions of wild and cultivated tomato plants",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/QM0BOR",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2026,
-          "publications": [
-            {
-              "halId_s": "hal-05633888",
-              "title_s": "Untargeted metabolomic dataset of leaves from twenty-four accessions of wild and cultivated tomato plants",
-              "uri_s": "https://hal.science/hal-05633888v1",
-              "producedDateY_i": 2026,
-              "producedDateM_i": 5
             }
           ]
         }
@@ -7967,7 +8019,7 @@
         2,
         4,
         8,
-        3,
+        4,
         0,
         0
       ],
@@ -8003,7 +8055,7 @@
             0,
             1,
             0,
-            0,
+            1,
             0,
             0
           ]
@@ -8208,10 +8260,30 @@
         }
       ],
       "period_kind": "month",
-      "datasets_in_year": 28,
+      "datasets_in_year": 29,
       "unknown_month": 0
     },
     "cell_details_months": {
+      "2026-10|Recherche Data Gouv": [
+        {
+          "dataset_doi": "10.57745/OLJYUQ",
+          "dataset_title": "Données d'automatisation de l’évaluation de la complétude des notifications d’alerte à la population : enjeux et applications",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/OLJYUQ",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05739203",
+              "title_s": "Automatiser l’évaluation de la complétude des notifications d’alerte à la population : enjeux et applications",
+              "uri_s": "https://hal.science/hal-05739203v2",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 10
+            }
+          ],
+          "month": 10
+        }
+      ],
       "2026-09|Zenodo": [
         {
           "dataset_doi": "10.5281/zenodo.21775722",
@@ -8756,7 +8828,7 @@
         }
       ]
     },
-    "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 28 datasets in 2026. Click a segment to list datasets.",
+    "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 29 datasets in 2026. Click a segment to list datasets.",
     "segment_hint": "newest linking publication year",
     "months_segment_hint": "newest linking publication month"
   }

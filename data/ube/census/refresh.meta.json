@@ -1,16 +1,16 @@
 {
   "collection": "UNIV-BOURGOGNE",
   "university": "ube",
-  "started_at": "2026-10-14T13:43:54Z",
-  "finished_at": "2026-10-14T13:44:07Z",
-  "since": "2026-10-12T13:43:54Z",
+  "started_at": "2026-10-15T09:12:57Z",
+  "finished_at": "2026-10-15T09:13:23Z",
+  "since": "2026-10-13T09:12:57Z",
   "full": false,
   "census_publications": 267,
-  "pubs_fetched": 2,
+  "pubs_fetched": 4,
   "dois_resolved_live": 0,
   "dois_from_cache": 306,
   "software_deposits": 18,
-  "data_papers": 54,
+  "data_papers": 55,
   "focus_hits": 96,
   "site_dir": "docs/ube"
 }

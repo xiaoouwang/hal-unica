@@ -1,7 +1,7 @@
 {
-  "publication_count": 57,
+  "publication_count": 58,
   "by_repository": {
-    "Recherche Data Gouv": 48,
+    "Recherche Data Gouv": 49,
     "NAKALA": 9
   },
   "publications": [
@@ -23,7 +23,7 @@
         "UJM",
         "UJM EPE"
       ],
-      "modifiedDate_tdate": "2026-10-14T03:33:06Z",
+      "modifiedDate_tdate": "2026-10-15T03:31:32Z",
       "producedDateY_i": 2025,
       "repositories": [
         "NAKALA"
@@ -36,6 +36,78 @@
           "landing_url": "https://nakala.fr/10.34847/nkl.e63a22n9",
           "landing_host": "nakala.fr",
           "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-05739203",
+      "uri_s": "https://hal.science/hal-05739203v2",
+      "title_s": "Automatiser l’évaluation de la complétude des notifications d’alerte à la population : enjeux et applications",
+      "docType_s": "UNDEFINED",
+      "doiId_s": null,
+      "laboratories": [
+        "BABEL",
+        "UTLN",
+        "ESPACE",
+        "UNS",
+        "AU",
+        "AMU",
+        "CNRS",
+        "UniCA"
+      ],
+      "modifiedDate_tdate": "2026-10-15T03:29:35Z",
+      "producedDateY_i": 2026,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/OLJYUQ",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/OLJYUQ",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Données d'automatisation de l’évaluation de la complétude des notifications d’alerte à la population : enjeux et applications",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-05221870",
+      "uri_s": "https://hal.science/hal-05221870v2",
+      "title_s": "Enquête sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
+      "docType_s": "REPORT",
+      "doiId_s": null,
+      "laboratories": [
+        "Comue de Toulouse",
+        "ADBU",
+        "UBE",
+        "dat@UBFC",
+        "UTBM",
+        "SUPMICROTECH - ENSMM",
+        "BSB",
+        "Institut Agro",
+        "UMLP",
+        "UPPA"
+      ],
+      "modifiedDate_tdate": "2026-10-14T16:06:03Z",
+      "producedDateY_i": 2025,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/JYWUIY",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/JYWUIY",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Données de l'enquête ADBU sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
@@ -243,43 +315,6 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda rice strain",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-05221870",
-      "uri_s": "https://hal.science/hal-05221870v2",
-      "title_s": "Enquête sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
-      "docType_s": "REPORT",
-      "doiId_s": null,
-      "laboratories": [
-        "Comue de Toulouse",
-        "ADBU",
-        "UBE",
-        "dat@UBFC",
-        "UTBM",
-        "SUPMICROTECH - ENSMM",
-        "BSB",
-        "Institut Agro",
-        "UMLP",
-        "UPPA"
-      ],
-      "modifiedDate_tdate": "2026-10-07T15:42:07Z",
-      "producedDateY_i": 2025,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/JYWUIY",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/JYWUIY",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Données de l'enquête ADBU sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
