@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T13:26:37Z",
+  "generated_at": "2026-10-16T09:05:21Z",
   "collection": "UNIV-COTEDAZUR",
   "collection_url": "https://hal.science/UNIV-COTEDAZUR",
   "harvest": {
@@ -364,7 +364,7 @@
           "UJM",
           "UJM EPE"
         ],
-        "modifiedDate_tdate": "2026-10-15T03:31:32Z",
+        "modifiedDate_tdate": "2026-10-16T03:30:46Z",
         "producedDateY_i": 2025,
         "repositories": [
           "NAKALA"
@@ -5102,7 +5102,7 @@
               "title_s": "The XXL Survey LV. Pressure profile and $Y_{\\rm SZ}$-$M$ scaling relation in three low-mass galaxy clusters at $z\\sim1$ observed with NIKA2",
               "uri_s": "https://hal.science/hal-04258700v1",
               "producedDateY_i": 2024,
-              "producedDateM_i": 9
+              "producedDateM_i": 10
             }
           ]
         }

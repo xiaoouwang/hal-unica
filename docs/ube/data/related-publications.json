@@ -6,6 +6,43 @@
   },
   "publications": [
     {
+      "halId_s": "hal-02517350",
+      "uri_s": "https://hal.inrae.fr/hal-02517350v1",
+      "title_s": "Composition nutritionnelle des plats complets végétariens et non-végétariens proposés en restauration scolaire : une étude du collectif EnScol",
+      "docType_s": "UNDEFINED",
+      "doiId_s": null,
+      "laboratories": [
+        "UMR MOISA",
+        "Cirad",
+        "CIHEAM-IAMM",
+        "CIHEAM",
+        "Montpellier SupAgro",
+        "INRAE",
+        "SNRC",
+        "CENA",
+        "AFDN",
+        "ADHEN"
+      ],
+      "modifiedDate_tdate": "2026-10-16T10:52:27Z",
+      "producedDateY_i": 2020,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.15454/YRD4JC",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/YRD4JC",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Composition nutritionnelle et impacts environnementaux de plats servis en restauration scolaire en France",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
       "halId_s": "hal-03641417",
       "uri_s": "https://institut-agro-dijon.hal.science/hal-03641417v1",
       "title_s": "Weed suppression in cover crop mixtures under contrasted levels of resource availability",
@@ -3351,43 +3388,6 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/DSQC8N",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "Dataset used in DeepIndices",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-02517350",
-      "uri_s": "https://hal.inrae.fr/hal-02517350v1",
-      "title_s": "Composition nutritionnelle des plats complets végétariens et non-végétariens proposés en restauration scolaire : une étude du collectif EnScol",
-      "docType_s": "UNDEFINED",
-      "doiId_s": null,
-      "laboratories": [
-        "UMR MOISA",
-        "Cirad",
-        "CIHEAM-IAMM",
-        "CIHEAM",
-        "Montpellier SupAgro",
-        "INRAE",
-        "SNRC",
-        "CENA",
-        "AFDN",
-        "ADHEN"
-      ],
-      "modifiedDate_tdate": "2026-05-05T15:52:05Z",
-      "producedDateY_i": 2020,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.15454/YRD4JC",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/YRD4JC",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Composition nutritionnelle et impacts environnementaux de plats servis en restauration scolaire en France",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false

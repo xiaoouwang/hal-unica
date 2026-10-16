@@ -3216,7 +3216,7 @@
             "title_s": "Herbicide-induced metabolic changes in a plant-aphid system: how soil bacteria drive the fate and impact of a residual dose of Isoproturon?",
             "uri_s": "https://hal.science/hal-05512215v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ]
       }
@@ -3870,8 +3870,8 @@
       0,
       1,
       2,
-      8,
-      2,
+      7,
+      3,
       0,
       0
     ],
@@ -4068,8 +4068,8 @@
           0,
           0,
           0,
-          1,
           0,
+          1,
           0,
           0
         ]
@@ -4274,7 +4274,7 @@
         "month": 9
       }
     ],
-    "2026-09|data.InDoRES": [
+    "2026-10|data.InDoRES": [
       {
         "dataset_doi": "10.48579/PRO/TRX6VQ",
         "dataset_title": "Herbicide-induced metabolic changes in a plant-aphid system: How soil bacteria drive the fate and impact of an environmental dose of Isoproturon",
@@ -4288,10 +4288,10 @@
             "title_s": "Herbicide-induced metabolic changes in a plant-aphid system: how soil bacteria drive the fate and impact of a residual dose of Isoproturon?",
             "uri_s": "https://hal.science/hal-05512215v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ],
-        "month": 9
+        "month": 10
       }
     ],
     "2026-09|Zenodo": [
