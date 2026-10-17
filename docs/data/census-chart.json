@@ -2009,7 +2009,7 @@
             "title_s": "Towards 0.1mm/yr stability over decades for measuring sea level using tide gauges together with GNSS-based instruments?",
             "uri_s": "https://hal-obspm.ccsd.cnrs.fr/obspm-05218404v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ]
       },
@@ -2026,7 +2026,7 @@
             "title_s": "Towards 0.1mm/yr stability over decades for measuring sea level using tide gauges together with GNSS-based instruments?",
             "uri_s": "https://hal-obspm.ccsd.cnrs.fr/obspm-05218404v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ]
       }
@@ -5205,8 +5205,8 @@
       3,
       2,
       4,
-      8,
-      4,
+      6,
+      6,
       0,
       0
     ],
@@ -5367,8 +5367,8 @@
           0,
           0,
           0,
-          2,
           0,
+          2,
           0,
           0
         ]
@@ -5760,7 +5760,7 @@
         "month": 7
       }
     ],
-    "2026-09|Mercator Ocean / Copernicus Marine": [
+    "2026-10|Mercator Ocean / Copernicus Marine": [
       {
         "dataset_doi": "10.48670/moi-00242",
         "dataset_title": "Global Ocean Sea Surface Temperature time series and trend from Observations Reprocessing",
@@ -5774,10 +5774,10 @@
             "title_s": "Towards 0.1mm/yr stability over decades for measuring sea level using tide gauges together with GNSS-based instruments?",
             "uri_s": "https://hal-obspm.ccsd.cnrs.fr/obspm-05218404v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ],
-        "month": 9
+        "month": 10
       },
       {
         "dataset_doi": "10.48670/moi-00268",
@@ -5792,10 +5792,10 @@
             "title_s": "Towards 0.1mm/yr stability over decades for measuring sea level using tide gauges together with GNSS-based instruments?",
             "uri_s": "https://hal-obspm.ccsd.cnrs.fr/obspm-05218404v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ],
-        "month": 9
+        "month": 10
       }
     ],
     "2026-05|Recherche Data Gouv": [

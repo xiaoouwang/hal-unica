@@ -1,8 +1,8 @@
 {
   "collection": "UNIV-COTEDAZUR",
-  "started_at": "2026-10-16T13:15:35Z",
-  "finished_at": "2026-10-16T13:15:36Z",
-  "since": "2026-10-14T13:15:34Z",
+  "started_at": "2026-10-17T08:37:47Z",
+  "finished_at": "2026-10-17T08:37:48Z",
+  "since": "2026-10-15T08:37:47Z",
   "hal_publications_with_relatedData": 339,
   "related_tokens": 549,
   "unique_dois_resolved": 417,
@@ -11,12 +11,12 @@
   "publications_with_misfiled_dataset_link": 55,
   "expected_dataset_field": "relatedData_s",
   "incremental": {
-    "pubs_fetched": 17,
-    "pubs_updated": 17,
+    "pubs_fetched": 23,
+    "pubs_updated": 23,
     "pubs_inserted": 0,
     "dois_resolved_live": 0,
     "dois_from_cache": 417,
-    "watermark_modified": "2026-10-16T11:06:30Z"
+    "watermark_modified": "2026-10-17T03:31:50Z"
   },
   "by_repository": {
     "Zenodo": 106,

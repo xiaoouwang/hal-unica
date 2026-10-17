@@ -6,6 +6,43 @@
   },
   "publications": [
     {
+      "halId_s": "hal-02627230",
+      "uri_s": "https://hal.inrae.fr/hal-02627230v1",
+      "title_s": "Water stress combined with sulfur deficiency in pea affects yield components but mitigates the effect of deficiency on seed globulin composition",
+      "docType_s": "ART",
+      "doiId_s": "10.1093/jxb/erz114",
+      "laboratories": [
+        "INRA",
+        "UB",
+        "UBFC",
+        "PRC",
+        "IFCE",
+        "UT",
+        "NEOLAiA",
+        "CNRS",
+        "GeT-PlaGe",
+        "GET"
+      ],
+      "modifiedDate_tdate": "2026-10-16T15:20:23Z",
+      "producedDateY_i": 2019,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/5MDE99",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/5MDE99",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Dataset from \"A new genome assembly of the pea cultivar Cameor provides resources for functional genomics and genetics\"",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
       "halId_s": "hal-02517350",
       "uri_s": "https://hal.inrae.fr/hal-02517350v1",
       "title_s": "Composition nutritionnelle des plats complets végétariens et non-végétariens proposés en restauration scolaire : une étude du collectif EnScol",
@@ -1386,43 +1423,6 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/SLUKIO",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "Horses discriminate human body odours between fear and joy contexts in a habituation-discrimination protocol.",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-02627230",
-      "uri_s": "https://hal.inrae.fr/hal-02627230v1",
-      "title_s": "Water stress combined with sulfur deficiency in pea affects yield components but mitigates the effect of deficiency on seed globulin composition",
-      "docType_s": "ART",
-      "doiId_s": "10.1093/jxb/erz114",
-      "laboratories": [
-        "INRA",
-        "UB",
-        "UBFC",
-        "PRC",
-        "IFCE",
-        "UT",
-        "NEOLAiA",
-        "CNRS",
-        "GeT-PlaGe",
-        "GET"
-      ],
-      "modifiedDate_tdate": "2026-09-02T13:40:05Z",
-      "producedDateY_i": 2019,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/5MDE99",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/5MDE99",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Dataset from \"A new genome assembly of the pea cultivar Cameor provides resources for functional genomics and genetics\"",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false

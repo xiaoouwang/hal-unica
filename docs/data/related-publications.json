@@ -23,7 +23,7 @@
         "UJM",
         "UJM EPE"
       ],
-      "modifiedDate_tdate": "2026-10-16T03:30:46Z",
+      "modifiedDate_tdate": "2026-10-17T03:31:07Z",
       "producedDateY_i": 2025,
       "repositories": [
         "NAKALA"
@@ -36,6 +36,227 @@
           "landing_url": "https://nakala.fr/10.34847/nkl.e63a22n9",
           "landing_host": "nakala.fr",
           "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-04251300",
+      "uri_s": "https://hal.science/hal-04251300v1",
+      "title_s": "Electrostatic modulation of excitonic fluid in GaN/AlGaN quantum wells by deposition of few-layer graphene and nickel/gold films",
+      "docType_s": "ART",
+      "doiId_s": "10.1103/PhysRevB.108.125421",
+      "laboratories": [
+        "L2C",
+        "CNRS",
+        "UM",
+        "PEPS",
+        "LPCNO",
+        "INSA Toulouse",
+        "INSA",
+        "Comue de Toulouse",
+        "ICT",
+        "IRD"
+      ],
+      "modifiedDate_tdate": "2026-10-16T15:24:02Z",
+      "producedDateY_i": 2023,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/AGKMF0",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/AGKMF0",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Data associated with the paper \"Electrostatic modulation of excitonic fluid in GaN/AlGaN quantum wells by deposition of few-layer graphene and nickel/gold films\"",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-04954634",
+      "uri_s": "https://hal.inrae.fr/hal-04954634v1",
+      "title_s": "High-fidelity annotated triploid genome of the quarantine root-knot nematode, Meloidogyne enterolobii",
+      "docType_s": "ART",
+      "doiId_s": "10.1038/s41597-025-04434-w",
+      "laboratories": [
+        "ISA",
+        "UNS",
+        "CNRS",
+        "INRAE",
+        "UniCA",
+        "JKI",
+        "GeT-PlaGe",
+        "GET",
+        "GENOTOUL",
+        "ENVT"
+      ],
+      "modifiedDate_tdate": "2026-10-16T15:20:58Z",
+      "producedDateY_i": 2025,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/EGUUHK",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/EGUUHK",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Meloidogyne enterolobii scripts",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.57745/5MXZSJ",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/5MXZSJ",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Meloidogyne enterolobii assemblies",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.57745/KGA7CI",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/KGA7CI",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Meloidogyne genus OrthoFinder analysis",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.57745/Y0O2LP",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/Y0O2LP",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Meloidogyne enterolobii E1834 gene prediction",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.57745/VEKHQS",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/VEKHQS",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Meloidogyne enterolobii E1834 genome structure analysis",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-04198172",
+      "uri_s": "https://hal.inrae.fr/hal-04198172v1",
+      "title_s": "Genome sequence and annotation of Periconia digitata a hopeful biocontrol agent of phytopathogenic oomycetes",
+      "docType_s": "ART",
+      "doiId_s": "10.1038/s41597-023-02440-4",
+      "laboratories": [
+        "ISA",
+        "UNS",
+        "CNRS",
+        "INRAE",
+        "UniCA",
+        "GeT-PlaGe",
+        "GET",
+        "GENOTOUL",
+        "UT3",
+        "ENVT"
+      ],
+      "modifiedDate_tdate": "2026-10-16T15:20:23Z",
+      "producedDateY_i": 2023,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/GU67TE",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/GU67TE",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Periconia digitata Interproscan annotation",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.57745/FB9OVN",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/FB9OVN",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Periconia digitata genome",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.57745/BAPYY5",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/BAPYY5",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Periconia digitata structural annotation",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.57745/TV4EB7",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/TV4EB7",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Periconia digitata protein fasta file",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.57745/71DS6F",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/71DS6F",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Periconia digitata CDS fasta file",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.57745/5ODV0C",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/5ODV0C",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Periconia digitata gene fasta file",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.57745/FHNYJU",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/FHNYJU",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Periconia digitata proteins identified by mass spectrometry",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
@@ -812,87 +1033,6 @@
       ]
     },
     {
-      "halId_s": "hal-04954634",
-      "uri_s": "https://hal.inrae.fr/hal-04954634v1",
-      "title_s": "High-fidelity annotated triploid genome of the quarantine root-knot nematode, Meloidogyne enterolobii",
-      "docType_s": "ART",
-      "doiId_s": "10.1038/s41597-025-04434-w",
-      "laboratories": [
-        "ISA",
-        "UNS",
-        "CNRS",
-        "INRAE",
-        "UniCA",
-        "JKI",
-        "GeT-PlaGe",
-        "GET",
-        "GENOTOUL",
-        "ENVT"
-      ],
-      "modifiedDate_tdate": "2026-09-26T03:25:28Z",
-      "producedDateY_i": 2025,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/EGUUHK",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/EGUUHK",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Meloidogyne enterolobii scripts",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.57745/5MXZSJ",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/5MXZSJ",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Meloidogyne enterolobii assemblies",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.57745/KGA7CI",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/KGA7CI",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Meloidogyne genus OrthoFinder analysis",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.57745/Y0O2LP",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/Y0O2LP",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Meloidogyne enterolobii E1834 gene prediction",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.57745/VEKHQS",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/VEKHQS",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Meloidogyne enterolobii E1834 genome structure analysis",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
       "halId_s": "hal-03521600",
       "uri_s": "https://hal.science/hal-03521600v2",
       "title_s": "Ridge Polariton Laser: Different from a Semiconductor Edge-Emitting Laser",
@@ -1029,109 +1169,6 @@
           "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/E2VTRB",
           "landing_host": "data.inrae.fr",
           "dataset_title": "Improvement of eukaryotic protein predictions from soil metagenomes",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-04198172",
-      "uri_s": "https://hal.inrae.fr/hal-04198172v1",
-      "title_s": "Genome sequence and annotation of Periconia digitata a hopeful biocontrol agent of phytopathogenic oomycetes",
-      "docType_s": "ART",
-      "doiId_s": "10.1038/s41597-023-02440-4",
-      "laboratories": [
-        "ISA",
-        "UNS",
-        "CNRS",
-        "INRAE",
-        "UniCA",
-        "GeT-PlaGe",
-        "GET",
-        "GENOTOUL",
-        "UT3",
-        "ENVT"
-      ],
-      "modifiedDate_tdate": "2026-09-14T14:18:06Z",
-      "producedDateY_i": 2023,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/GU67TE",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/GU67TE",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Periconia digitata Interproscan annotation",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.57745/FB9OVN",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/FB9OVN",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Periconia digitata genome",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.57745/BAPYY5",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/BAPYY5",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Periconia digitata structural annotation",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.57745/TV4EB7",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/TV4EB7",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Periconia digitata protein fasta file",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.57745/71DS6F",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/71DS6F",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Periconia digitata CDS fasta file",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.57745/5ODV0C",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/5ODV0C",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Periconia digitata gene fasta file",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.57745/FHNYJU",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/FHNYJU",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Periconia digitata proteins identified by mass spectrometry",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
@@ -1961,43 +1998,6 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/3VMB3Y",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "Mobi-Switch : a boardgame about urban mobility sustainability",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-04251300",
-      "uri_s": "https://hal.science/hal-04251300v1",
-      "title_s": "Electrostatic modulation of excitonic fluid in GaN/AlGaN quantum wells by deposition of few-layer graphene and nickel/gold films",
-      "docType_s": "ART",
-      "doiId_s": "10.1103/PhysRevB.108.125421",
-      "laboratories": [
-        "L2C",
-        "CNRS",
-        "UM",
-        "PEPS",
-        "LPCNO",
-        "INSA Toulouse",
-        "INSA",
-        "Comue de Toulouse",
-        "ICT",
-        "IRD"
-      ],
-      "modifiedDate_tdate": "2026-05-05T15:52:43Z",
-      "producedDateY_i": 2023,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/AGKMF0",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/AGKMF0",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Data associated with the paper \"Electrostatic modulation of excitonic fluid in GaN/AlGaN quantum wells by deposition of few-layer graphene and nickel/gold films\"",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
