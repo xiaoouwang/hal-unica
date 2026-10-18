@@ -1,19 +1,19 @@
 {
-  "total_hits": 94,
+  "total_hits": 96,
   "by_platform": {
-    "nakala": 8,
-    "rdg": 86
+    "nakala": 9,
+    "rdg": 87
   },
   "by_repository": {
-    "Recherche Data Gouv": 86,
-    "NAKALA": 8
+    "Recherche Data Gouv": 87,
+    "NAKALA": 9
   },
   "by_object_kind": {
-    "dataset_repo": 94
+    "dataset_repo": 96
   },
   "by_evidence_kind": {
-    "related_data": 88,
-    "related_publication": 6,
-    "see_also": 2
+    "related_data": 89,
+    "related_publication": 7,
+    "see_also": 3
   }
 }

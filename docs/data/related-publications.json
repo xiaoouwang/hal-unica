@@ -1,7 +1,7 @@
 {
-  "publication_count": 57,
+  "publication_count": 58,
   "by_repository": {
-    "Recherche Data Gouv": 48,
+    "Recherche Data Gouv": 49,
     "NAKALA": 9
   },
   "publications": [
@@ -609,6 +609,41 @@
           "dataset_title": "LIARArg: A dataset for fake news detection enhanced by argumentative features",
           "field": "relatedData_s",
           "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-02928114",
+      "uri_s": "https://hal.inrae.fr/hal-02928114v1",
+      "title_s": "Aphid infestation differently affects the defences of nitrate-fed and nitrogen-fixing Medicago truncatula and alters symbiotic nitrogen fixation",
+      "docType_s": "ART",
+      "doiId_s": "10.1098/rspb.2020.1493",
+      "laboratories": [
+        "ISA",
+        "UNS",
+        "CNRS",
+        "INRAE",
+        "UniCA",
+        "IGEPP",
+        "UR",
+        "Institut Agro"
+      ],
+      "modifiedDate_tdate": "2026-09-29T11:12:38Z",
+      "producedDateY_i": 2020,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/WGBWYO",
+          "repository": "Recherche Data Gouv",
+          "publisher": null,
+          "landing_url": null,
+          "landing_host": null,
+          "dataset_title": null,
+          "field": "relatedPublication_s",
+          "misfiled": true,
           "also_in_relatedData_s": false
         }
       ]
