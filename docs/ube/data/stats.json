@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T10:00:39Z",
+  "generated_at": "2026-10-20T09:29:48Z",
   "collection": "UNIV-BOURGOGNE",
   "collection_url": "https://hal.science/UNIV-BOURGOGNE",
   "harvest": {
@@ -308,7 +308,7 @@
     "stale": true
   },
   "data_links": {
-    "total_hits": 178,
+    "total_hits": 179,
     "by_platform": {
       "nakala": 9,
       "rdg": 87
@@ -316,7 +316,7 @@
     "by_repository": {
       "Recherche Data Gouv": 83,
       "NAKALA": 27,
-      "Zenodo": 22,
+      "Zenodo": 23,
       "Portail Data Inra": 13,
       "Dryad": 9,
       "Figshare": 6,
@@ -341,6 +341,155 @@
       "NAKALA": 9
     },
     "publications": [
+      {
+        "halId_s": "hal-02537801",
+        "uri_s": "https://institut-agro-dijon.hal.science/hal-02537801v1",
+        "title_s": "Reduced microbial diversity induces larger volatile organic compound emissions from soils",
+        "docType_s": "ART",
+        "doiId_s": "10.1038/s41598-020-63091-8",
+        "laboratories": [
+          "ECOSYS",
+          "INRAE",
+          "SU",
+          "TUB",
+          "UB",
+          "UBFC"
+        ],
+        "modifiedDate_tdate": "2026-10-20T10:52:03Z",
+        "producedDateY_i": 2020,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.15454/4W9DM2",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Portail Data INRAE",
+            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/4W9DM2",
+            "landing_host": "data.inrae.fr",
+            "dataset_title": "Données de réplication pour : Reduced microbial diversity induces larger volatile organic compound emissions from soils.",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-05674166",
+        "uri_s": "https://institut-agro-dijon.hal.science/hal-05674166v1",
+        "title_s": "A dataset of in vitro aroma release kinetics performed with Proton Transfer Reaction-Time of Flight- Mass Spectrometry (PTR-ToF-MS)",
+        "docType_s": "ART",
+        "doiId_s": "10.1016/j.dib.2026.112994",
+        "laboratories": [
+          "CSGA",
+          "CNRS",
+          "INRAE",
+          "Institut Agro",
+          "UBE",
+          "FFOPP",
+          "SayFood"
+        ],
+        "modifiedDate_tdate": "2026-10-20T10:38:40Z",
+        "producedDateY_i": 2026,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/GVXDND",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/GVXDND",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Dataset of aroma release in vitro (Digimouth)",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-05143887",
+        "uri_s": "https://hal.inrae.fr/hal-05143887v1",
+        "title_s": "Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
+        "docType_s": "REPORT",
+        "doiId_s": "10.17180/ayg4-0b92",
+        "laboratories": [
+          "IFREMER",
+          "PSH",
+          "INRAE",
+          "BFP",
+          "UB",
+          "CESBIO",
+          "IRD",
+          "INSU - CNRS",
+          "CNES",
+          "CNRS"
+        ],
+        "modifiedDate_tdate": "2026-10-19T22:50:02Z",
+        "producedDateY_i": 2025,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/3NAHSN",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/3NAHSN",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Annexe pour : Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-05376427",
+        "uri_s": "https://hal.science/hal-05376427v1",
+        "title_s": "La topographie de Sens et de Troyes durant l’Antiquité tardive",
+        "docType_s": "ART",
+        "doiId_s": "10.4000/15h4c",
+        "laboratories": [
+          "Inrap",
+          "ARTeHiS",
+          "MCC",
+          "CNRS",
+          "UBE",
+          "LCE",
+          "UMLP"
+        ],
+        "modifiedDate_tdate": "2026-10-19T21:58:03Z",
+        "producedDateY_i": 2025,
+        "repositories": [
+          "NAKALA"
+        ],
+        "datasets": [
+          {
+            "doi": "10.34847/nkl.b95e19i1",
+            "repository": "NAKALA",
+            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+            "landing_url": "https://nakala.fr/10.34847/nkl.b95e19i1",
+            "landing_host": "nakala.fr",
+            "dataset_title": "Annexe 1 – Sens (Yonne, France) : liste des occupations et indices d’occupation du Haut-Empire et de l’Antiquité tardive",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.34847/nkl.c63e7q0t",
+            "repository": "NAKALA",
+            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+            "landing_url": "https://nakala.fr/10.34847/nkl.c63e7q0t",
+            "landing_host": "nakala.fr",
+            "dataset_title": "Annexe 2 – Troyes (Aube, Grand Est) : inventaire des occupations et indices d’occupation du Haut-Empire et de l’Antiquité tardive",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
       {
         "halId_s": "hal-02627230",
         "uri_s": "https://hal.inrae.fr/hal-02627230v1",
@@ -866,43 +1015,6 @@
         ]
       },
       {
-        "halId_s": "hal-05143887",
-        "uri_s": "https://hal.inrae.fr/hal-05143887v1",
-        "title_s": "Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
-        "docType_s": "REPORT",
-        "doiId_s": "10.17180/ayg4-0b92",
-        "laboratories": [
-          "IFREMER",
-          "PSH",
-          "INRAE",
-          "BFP",
-          "UB",
-          "CESBIO",
-          "IRD",
-          "INSU - CNRS",
-          "CNES",
-          "CNRS"
-        ],
-        "modifiedDate_tdate": "2026-09-29T11:13:54Z",
-        "producedDateY_i": 2025,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.57745/3NAHSN",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/3NAHSN",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "Annexe pour : Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
         "halId_s": "hal-04266661",
         "uri_s": "https://hal.science/hal-04266661v1",
         "title_s": "The short-term response of soil microbial communities to digestate application depends on the characteristics of the digestate and soil type",
@@ -1264,51 +1376,6 @@
         ]
       },
       {
-        "halId_s": "hal-05376427",
-        "uri_s": "https://hal.science/hal-05376427v1",
-        "title_s": "La topographie de Sens et de Troyes durant l’Antiquité tardive",
-        "docType_s": "ART",
-        "doiId_s": "10.4000/15h4c",
-        "laboratories": [
-          "Inrap",
-          "ARTeHiS",
-          "MCC",
-          "CNRS",
-          "UBE",
-          "LCE",
-          "UMLP"
-        ],
-        "modifiedDate_tdate": "2026-09-22T03:52:58Z",
-        "producedDateY_i": 2025,
-        "repositories": [
-          "NAKALA"
-        ],
-        "datasets": [
-          {
-            "doi": "10.34847/nkl.b95e19i1",
-            "repository": "NAKALA",
-            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-            "landing_url": "https://nakala.fr/10.34847/nkl.b95e19i1",
-            "landing_host": "nakala.fr",
-            "dataset_title": "Annexe 1 – Sens (Yonne, France) : liste des occupations et indices d’occupation du Haut-Empire et de l’Antiquité tardive",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          },
-          {
-            "doi": "10.34847/nkl.c63e7q0t",
-            "repository": "NAKALA",
-            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-            "landing_url": "https://nakala.fr/10.34847/nkl.c63e7q0t",
-            "landing_host": "nakala.fr",
-            "dataset_title": "Annexe 2 – Troyes (Aube, Grand Est) : inventaire des occupations et indices d’occupation du Haut-Empire et de l’Antiquité tardive",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
         "halId_s": "hal-03599614",
         "uri_s": "https://hal.science/hal-03599614v1",
         "title_s": "Campagne de fouille 2021 sur le système de fortification de Blis à Eymet (Dordogne)",
@@ -1507,40 +1574,6 @@
         ]
       },
       {
-        "halId_s": "hal-05674166",
-        "uri_s": "https://institut-agro-dijon.hal.science/hal-05674166v1",
-        "title_s": "A dataset of in vitro aroma release kinetics performed with Proton Transfer Reaction-Time of Flight- Mass Spectrometry (PTR-ToF-MS)",
-        "docType_s": "ART",
-        "doiId_s": "10.1016/j.dib.2026.112994",
-        "laboratories": [
-          "CSGA",
-          "CNRS",
-          "INRAE",
-          "Institut Agro",
-          "UBE",
-          "FFOPP",
-          "SayFood"
-        ],
-        "modifiedDate_tdate": "2026-09-18T17:36:42Z",
-        "producedDateY_i": 2026,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.57745/GVXDND",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/GVXDND",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "Dataset of aroma release in vitro (Digimouth)",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
         "halId_s": "hal-04635083",
         "uri_s": "https://hal.science/hal-04635083v3",
         "title_s": "Imaging Bajocian coral ridges in the Paris Basin and deciphering their origin",
@@ -1634,39 +1667,6 @@
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/5MDE99",
             "landing_host": "entrepot.recherche.data.gouv.fr",
             "dataset_title": "Dataset from \"A new genome assembly of the pea cultivar Cameor provides resources for functional genomics and genetics\"",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-02537801",
-        "uri_s": "https://institut-agro-dijon.hal.science/hal-02537801v1",
-        "title_s": "Reduced microbial diversity induces larger volatile organic compound emissions from soils",
-        "docType_s": "ART",
-        "doiId_s": "10.1038/s41598-020-63091-8",
-        "laboratories": [
-          "ECOSYS",
-          "INRAE",
-          "SU",
-          "TUB",
-          "UB",
-          "UBFC"
-        ],
-        "modifiedDate_tdate": "2026-09-14T14:16:11Z",
-        "producedDateY_i": 2020,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.15454/4W9DM2",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Portail Data INRAE",
-            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/4W9DM2",
-            "landing_host": "data.inrae.fr",
-            "dataset_title": "Données de réplication pour : Reduced microbial diversity induces larger volatile organic compound emissions from soils.",
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -4016,12 +4016,12 @@
     "scope": "nakala_rdg_focus"
   },
   "census_chart": {
-    "unique_datasets": 178,
-    "publications_with_dataset": 149,
+    "unique_datasets": 179,
+    "publications_with_dataset": 150,
     "by_repository": {
       "Recherche Data Gouv": 83,
       "NAKALA": 27,
-      "Zenodo": 22,
+      "Zenodo": 23,
       "Portail Data Inra": 13,
       "Dryad": 9,
       "Figshare": 6,
@@ -4160,7 +4160,7 @@
         18,
         14,
         38,
-        22
+        23
       ],
       "series": [
         {
@@ -4247,7 +4247,7 @@
             2,
             1,
             12,
-            6
+            7
           ]
         },
         {
@@ -4544,6 +4544,127 @@
       "period_kind": "year"
     },
     "cell_details": {
+      "2026|Zenodo": [
+        {
+          "dataset_doi": "10.5281/zenodo.10809586",
+          "dataset_title": "Data and R scripts supporting the article: \"Wing shape evolution is not constrained by ancestral genetic covariances in the invasive Drosophila suzukii \"",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.10809586",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05632707",
+              "title_s": "Wing shape evolution is not constrained by ancestral genetic covariances in the invasive Drosophila suzukii",
+              "uri_s": "https://ube.hal.science/hal-05632707v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 4
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.5281/zenodo.17020328",
+          "dataset_title": "Data from \"Pygocephalids pancrustaceans from the Carboniferous of Nova Scotia, Canada, with comments on the cuticular micro-structures of Pygocephalamorpha\"",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17020328",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05575977",
+              "title_s": "Pygocephalid pancrustaceans from the late Carboniferous of Nova Scotia, Canada, with comments on the cuticular microstructures of Pygocephalamorpha",
+              "uri_s": "https://hal.science/hal-05575977v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 2
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.5281/zenodo.16994482",
+          "dataset_title": "Datasets and code of Evaluating and Understanding the Geocoding of City Directories of Paris (1787-1914)",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.16994482",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05498176",
+              "title_s": "Evaluating and Understanding the Geocoding of City Directories of Paris (1787-1914): Data-Driven Geography of Urban Sprawl and Densification",
+              "uri_s": "https://cnrs.hal.science/hal-05498176v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 1
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.5281/zenodo.20523512",
+          "dataset_title": "Inventaire des capteurs et protocoles pour le projet BIODICAPT",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.20523512",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05594176",
+              "title_s": "Inventaire des capteurs et protocoles pour le projet BIODICAPT",
+              "uri_s": "https://hal.science/hal-05594176v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 10
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.5281/zenodo.4459259",
+          "dataset_title": "Kittel et al. (2021), The Cryosphere : MAR and ESMs data",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/record/4459259",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05624738",
+              "title_s": "Weather Regimes Preclude the Observation of a Southern Annular Mode Signal in Two Coastal East Antarctic Ice Cores",
+              "uri_s": "https://hal.science/hal-05624738v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 9
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.5281/zenodo.13737015",
+          "dataset_title": "leagenty/dataset_Genty_et_al_2025_margin_services: final_version_first_submission_license_added",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.13737015",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05446068",
+              "title_s": "Intensive management negatively impacts field margin ecosystem service indicators at both field and landscape levels",
+              "uri_s": "https://hal.science/hal-05446068v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 1
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.5281/zenodo.18325280",
+          "dataset_title": "Materials of Prendre la mesure de l'enseignement et de la pratique des méthodes quantitatives en archéologie française et belge francophone paper",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.18325280",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05809597",
+              "title_s": "Prendre la mesure de l’enseignement et de la pratique des méthodes quantitatives en archéologie française et belge francophone",
+              "uri_s": "https://cnrs.hal.science/hal-05809597v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 10
+            }
+          ]
+        }
+      ],
       "2026|Figshare": [
         {
           "dataset_doi": "10.60893/figshare.jcp.32981894.v1",
@@ -5100,7 +5221,7 @@
               "title_s": "Reduced microbial diversity induces larger volatile organic compound emissions from soils",
               "uri_s": "https://institut-agro-dijon.hal.science/hal-02537801v1",
               "producedDateY_i": 2020,
-              "producedDateM_i": 9
+              "producedDateM_i": 10
             }
           ]
         },
@@ -6020,7 +6141,7 @@
               "title_s": "Hydrological and temperature controls on CO2 and CH4 exchange between a mid-altitude mountain peatland and the atmosphere",
               "uri_s": "https://insu.hal.science/insu-05295444v1",
               "producedDateY_i": 2025,
-              "producedDateM_i": 9
+              "producedDateM_i": 10
             }
           ]
         },
@@ -6078,7 +6199,7 @@
               "title_s": "Hydrological and temperature controls on CO2 and CH4 exchange between a mid-altitude mountain peatland and the atmosphere",
               "uri_s": "https://insu.hal.science/insu-05295444v1",
               "producedDateY_i": 2025,
-              "producedDateM_i": 9
+              "producedDateM_i": 10
             }
           ]
         }
@@ -6097,7 +6218,7 @@
               "title_s": "La topographie de Sens et de Troyes durant l’Antiquité tardive",
               "uri_s": "https://hal.science/hal-05376427v1",
               "producedDateY_i": 2025,
-              "producedDateM_i": 9
+              "producedDateM_i": 10
             }
           ]
         },
@@ -6114,7 +6235,7 @@
               "title_s": "La topographie de Sens et de Troyes durant l’Antiquité tardive",
               "uri_s": "https://hal.science/hal-05376427v1",
               "producedDateY_i": 2025,
-              "producedDateM_i": 9
+              "producedDateM_i": 10
             }
           ]
         },
@@ -6292,7 +6413,7 @@
               "title_s": "Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
               "uri_s": "https://hal.inrae.fr/hal-05143887v1",
               "producedDateY_i": 2025,
-              "producedDateM_i": 9
+              "producedDateM_i": 10
             }
           ]
         },
@@ -6933,110 +7054,6 @@
               "uri_s": "https://hal.science/hal-01774729v1",
               "producedDateY_i": 2018,
               "producedDateM_i": 9
-            }
-          ]
-        }
-      ],
-      "2026|Zenodo": [
-        {
-          "dataset_doi": "10.5281/zenodo.10809586",
-          "dataset_title": "Data and R scripts supporting the article: \"Wing shape evolution is not constrained by ancestral genetic covariances in the invasive Drosophila suzukii \"",
-          "repository": "Zenodo",
-          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.10809586",
-          "landing_host": "zenodo.org",
-          "year": 2026,
-          "publications": [
-            {
-              "halId_s": "hal-05632707",
-              "title_s": "Wing shape evolution is not constrained by ancestral genetic covariances in the invasive Drosophila suzukii",
-              "uri_s": "https://ube.hal.science/hal-05632707v1",
-              "producedDateY_i": 2026,
-              "producedDateM_i": 4
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.5281/zenodo.17020328",
-          "dataset_title": "Data from \"Pygocephalids pancrustaceans from the Carboniferous of Nova Scotia, Canada, with comments on the cuticular micro-structures of Pygocephalamorpha\"",
-          "repository": "Zenodo",
-          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17020328",
-          "landing_host": "zenodo.org",
-          "year": 2026,
-          "publications": [
-            {
-              "halId_s": "hal-05575977",
-              "title_s": "Pygocephalid pancrustaceans from the late Carboniferous of Nova Scotia, Canada, with comments on the cuticular microstructures of Pygocephalamorpha",
-              "uri_s": "https://hal.science/hal-05575977v1",
-              "producedDateY_i": 2026,
-              "producedDateM_i": 2
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.5281/zenodo.16994482",
-          "dataset_title": "Datasets and code of Evaluating and Understanding the Geocoding of City Directories of Paris (1787-1914)",
-          "repository": "Zenodo",
-          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.16994482",
-          "landing_host": "zenodo.org",
-          "year": 2026,
-          "publications": [
-            {
-              "halId_s": "hal-05498176",
-              "title_s": "Evaluating and Understanding the Geocoding of City Directories of Paris (1787-1914): Data-Driven Geography of Urban Sprawl and Densification",
-              "uri_s": "https://cnrs.hal.science/hal-05498176v1",
-              "producedDateY_i": 2026,
-              "producedDateM_i": 1
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.5281/zenodo.20523512",
-          "dataset_title": "Inventaire des capteurs et protocoles pour le projet BIODICAPT",
-          "repository": "Zenodo",
-          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.20523512",
-          "landing_host": "zenodo.org",
-          "year": 2026,
-          "publications": [
-            {
-              "halId_s": "hal-05594176",
-              "title_s": "Inventaire des capteurs et protocoles pour le projet BIODICAPT",
-              "uri_s": "https://hal.science/hal-05594176v1",
-              "producedDateY_i": 2026,
-              "producedDateM_i": 10
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.5281/zenodo.4459259",
-          "dataset_title": "Kittel et al. (2021), The Cryosphere : MAR and ESMs data",
-          "repository": "Zenodo",
-          "landing_url": "https://zenodo.org/record/4459259",
-          "landing_host": "zenodo.org",
-          "year": 2026,
-          "publications": [
-            {
-              "halId_s": "hal-05624738",
-              "title_s": "Weather Regimes Preclude the Observation of a Southern Annular Mode Signal in Two Coastal East Antarctic Ice Cores",
-              "uri_s": "https://hal.science/hal-05624738v1",
-              "producedDateY_i": 2026,
-              "producedDateM_i": 9
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.5281/zenodo.13737015",
-          "dataset_title": "leagenty/dataset_Genty_et_al_2025_margin_services: final_version_first_submission_license_added",
-          "repository": "Zenodo",
-          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.13737015",
-          "landing_host": "zenodo.org",
-          "year": 2026,
-          "publications": [
-            {
-              "halId_s": "hal-05446068",
-              "title_s": "Intensive management negatively impacts field margin ecosystem service indicators at both field and landscape levels",
-              "uri_s": "https://hal.science/hal-05446068v1",
-              "producedDateY_i": 2026,
-              "producedDateM_i": 1
             }
           ]
         }
@@ -7888,7 +7905,7 @@
         1,
         2,
         7,
-        3,
+        4,
         0,
         0
       ],
@@ -7942,7 +7959,7 @@
             0,
             0,
             1,
-            1,
+            2,
             0,
             0
           ]
@@ -8129,10 +8146,48 @@
         }
       ],
       "period_kind": "month",
-      "datasets_in_year": 22,
+      "datasets_in_year": 23,
       "unknown_month": 0
     },
     "cell_details_months": {
+      "2026-10|Zenodo": [
+        {
+          "dataset_doi": "10.5281/zenodo.20523512",
+          "dataset_title": "Inventaire des capteurs et protocoles pour le projet BIODICAPT",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.20523512",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05594176",
+              "title_s": "Inventaire des capteurs et protocoles pour le projet BIODICAPT",
+              "uri_s": "https://hal.science/hal-05594176v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 10
+            }
+          ],
+          "month": 10
+        },
+        {
+          "dataset_doi": "10.5281/zenodo.18325280",
+          "dataset_title": "Materials of Prendre la mesure de l'enseignement et de la pratique des méthodes quantitatives en archéologie française et belge francophone paper",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.18325280",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05809597",
+              "title_s": "Prendre la mesure de l’enseignement et de la pratique des méthodes quantitatives en archéologie française et belge francophone",
+              "uri_s": "https://cnrs.hal.science/hal-05809597v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 10
+            }
+          ],
+          "month": 10
+        }
+      ],
       "2026-10|Figshare": [
         {
           "dataset_doi": "10.60893/figshare.jcp.32981894.v1",
@@ -8249,26 +8304,6 @@
             }
           ],
           "month": 8
-        }
-      ],
-      "2026-10|Zenodo": [
-        {
-          "dataset_doi": "10.5281/zenodo.20523512",
-          "dataset_title": "Inventaire des capteurs et protocoles pour le projet BIODICAPT",
-          "repository": "Zenodo",
-          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.20523512",
-          "landing_host": "zenodo.org",
-          "year": 2026,
-          "publications": [
-            {
-              "halId_s": "hal-05594176",
-              "title_s": "Inventaire des capteurs et protocoles pour le projet BIODICAPT",
-              "uri_s": "https://hal.science/hal-05594176v1",
-              "producedDateY_i": 2026,
-              "producedDateM_i": 10
-            }
-          ],
-          "month": 10
         }
       ],
       "2026-09|Recherche Data Gouv": [
@@ -8564,7 +8599,7 @@
         }
       ]
     },
-    "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 22 datasets in 2026. Click a segment to list datasets.",
+    "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 23 datasets in 2026. Click a segment to list datasets.",
     "segment_hint": "newest linking publication year",
     "months_segment_hint": "newest linking publication month"
   }

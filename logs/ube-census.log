@@ -1,3 +1,24 @@
 university=ube collection=UNIV-BOURGOGNE site=docs/ube
-incremental census since=2026-10-17T15:50:13Z (existing pubs=267, doi cache=306)
-[2026-10-19T15:50:13Z] census start collection=UNIV-BOURGOGNE since=2026-10-17T15:50:13Z
+incremental census since=2026-10-18T09:29:28Z (existing pubs=267, doi cache=306)
+[2026-10-20T09:29:28Z] census start collection=UNIV-BOURGOGNE since=2026-10-18T09:29:28Z
+HAL publications with linked identifiers (merged): 268
+  query: (relatedData_s:*) OR (relatedSoftware_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)
+  fetched this run: 15 (updated=14, inserted=1)
+link tokens: 393
+unique DOI candidates: 307
+DataCite cache hits: 306; to resolve: 1
+DataCite resolved 1/1
+[2026-10-20T09:29:30Z] census done
+harvesting SOFTWARE deposits (full)
+listing publications with dataset + software (open science triptych)
+open science triptych publications=4
+harvesting data papers (docSubType_s:DATAPAPER)
+updated dataset→publications index
+synced focus links → data/ube/links.jsonl (96 hits)
+harvesting institutional DataCite datasets (affiliation / ROR)
+[2026-10-20T09:29:37Z] datacite census start university=ube
+  query: (creators.affiliation.affiliationIdentifier:"https://ror.org/00g700j37" OR contributors.affiliation.affiliationIdentifier:"https://ror.org/00g700j37" OR creators.affiliation.name:"Université Bourgogne Europe" OR contributors.affiliation.name:"Université Bourgogne Europe" OR creators.affiliation.name:"Universite Bourgogne Europe" OR contributors.affiliation.name:"Universite Bourgogne Europe" OR creators.affiliation.name:"Université de Bourgogne" OR contributors.affiliation.name:"Université de Bourgogne" OR creators.affiliation.name:"Universite de Bourgogne" OR contributors.affiliation.name:"Universite de Bourgogne" OR creators.affiliation.name:"University of Burgundy" OR contributors.affiliation.name:"University of Burgundy") AND types.resourceTypeGeneral:Dataset
+  DataCite numFound≈826
+  harvested unique DOIs=826
+DataCite datasets=826 also_on_hal=7 datacite_only=819
+wrote site → docs/ube/

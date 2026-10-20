@@ -6,6 +6,155 @@
   },
   "publications": [
     {
+      "halId_s": "hal-02537801",
+      "uri_s": "https://institut-agro-dijon.hal.science/hal-02537801v1",
+      "title_s": "Reduced microbial diversity induces larger volatile organic compound emissions from soils",
+      "docType_s": "ART",
+      "doiId_s": "10.1038/s41598-020-63091-8",
+      "laboratories": [
+        "ECOSYS",
+        "INRAE",
+        "SU",
+        "TUB",
+        "UB",
+        "UBFC"
+      ],
+      "modifiedDate_tdate": "2026-10-20T10:52:03Z",
+      "producedDateY_i": 2020,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.15454/4W9DM2",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Portail Data INRAE",
+          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/4W9DM2",
+          "landing_host": "data.inrae.fr",
+          "dataset_title": "Données de réplication pour : Reduced microbial diversity induces larger volatile organic compound emissions from soils.",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-05674166",
+      "uri_s": "https://institut-agro-dijon.hal.science/hal-05674166v1",
+      "title_s": "A dataset of in vitro aroma release kinetics performed with Proton Transfer Reaction-Time of Flight- Mass Spectrometry (PTR-ToF-MS)",
+      "docType_s": "ART",
+      "doiId_s": "10.1016/j.dib.2026.112994",
+      "laboratories": [
+        "CSGA",
+        "CNRS",
+        "INRAE",
+        "Institut Agro",
+        "UBE",
+        "FFOPP",
+        "SayFood"
+      ],
+      "modifiedDate_tdate": "2026-10-20T10:38:40Z",
+      "producedDateY_i": 2026,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/GVXDND",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/GVXDND",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Dataset of aroma release in vitro (Digimouth)",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-05143887",
+      "uri_s": "https://hal.inrae.fr/hal-05143887v1",
+      "title_s": "Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
+      "docType_s": "REPORT",
+      "doiId_s": "10.17180/ayg4-0b92",
+      "laboratories": [
+        "IFREMER",
+        "PSH",
+        "INRAE",
+        "BFP",
+        "UB",
+        "CESBIO",
+        "IRD",
+        "INSU - CNRS",
+        "CNES",
+        "CNRS"
+      ],
+      "modifiedDate_tdate": "2026-10-19T22:50:02Z",
+      "producedDateY_i": 2025,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/3NAHSN",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/3NAHSN",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Annexe pour : Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-05376427",
+      "uri_s": "https://hal.science/hal-05376427v1",
+      "title_s": "La topographie de Sens et de Troyes durant l’Antiquité tardive",
+      "docType_s": "ART",
+      "doiId_s": "10.4000/15h4c",
+      "laboratories": [
+        "Inrap",
+        "ARTeHiS",
+        "MCC",
+        "CNRS",
+        "UBE",
+        "LCE",
+        "UMLP"
+      ],
+      "modifiedDate_tdate": "2026-10-19T21:58:03Z",
+      "producedDateY_i": 2025,
+      "repositories": [
+        "NAKALA"
+      ],
+      "datasets": [
+        {
+          "doi": "10.34847/nkl.b95e19i1",
+          "repository": "NAKALA",
+          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+          "landing_url": "https://nakala.fr/10.34847/nkl.b95e19i1",
+          "landing_host": "nakala.fr",
+          "dataset_title": "Annexe 1 – Sens (Yonne, France) : liste des occupations et indices d’occupation du Haut-Empire et de l’Antiquité tardive",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.34847/nkl.c63e7q0t",
+          "repository": "NAKALA",
+          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+          "landing_url": "https://nakala.fr/10.34847/nkl.c63e7q0t",
+          "landing_host": "nakala.fr",
+          "dataset_title": "Annexe 2 – Troyes (Aube, Grand Est) : inventaire des occupations et indices d’occupation du Haut-Empire et de l’Antiquité tardive",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
       "halId_s": "hal-02627230",
       "uri_s": "https://hal.inrae.fr/hal-02627230v1",
       "title_s": "Water stress combined with sulfur deficiency in pea affects yield components but mitigates the effect of deficiency on seed globulin composition",
@@ -530,43 +679,6 @@
       ]
     },
     {
-      "halId_s": "hal-05143887",
-      "uri_s": "https://hal.inrae.fr/hal-05143887v1",
-      "title_s": "Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
-      "docType_s": "REPORT",
-      "doiId_s": "10.17180/ayg4-0b92",
-      "laboratories": [
-        "IFREMER",
-        "PSH",
-        "INRAE",
-        "BFP",
-        "UB",
-        "CESBIO",
-        "IRD",
-        "INSU - CNRS",
-        "CNES",
-        "CNRS"
-      ],
-      "modifiedDate_tdate": "2026-09-29T11:13:54Z",
-      "producedDateY_i": 2025,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/3NAHSN",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/3NAHSN",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Annexe pour : Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
       "halId_s": "hal-04266661",
       "uri_s": "https://hal.science/hal-04266661v1",
       "title_s": "The short-term response of soil microbial communities to digestate application depends on the characteristics of the digestate and soil type",
@@ -928,51 +1040,6 @@
       ]
     },
     {
-      "halId_s": "hal-05376427",
-      "uri_s": "https://hal.science/hal-05376427v1",
-      "title_s": "La topographie de Sens et de Troyes durant l’Antiquité tardive",
-      "docType_s": "ART",
-      "doiId_s": "10.4000/15h4c",
-      "laboratories": [
-        "Inrap",
-        "ARTeHiS",
-        "MCC",
-        "CNRS",
-        "UBE",
-        "LCE",
-        "UMLP"
-      ],
-      "modifiedDate_tdate": "2026-09-22T03:52:58Z",
-      "producedDateY_i": 2025,
-      "repositories": [
-        "NAKALA"
-      ],
-      "datasets": [
-        {
-          "doi": "10.34847/nkl.b95e19i1",
-          "repository": "NAKALA",
-          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-          "landing_url": "https://nakala.fr/10.34847/nkl.b95e19i1",
-          "landing_host": "nakala.fr",
-          "dataset_title": "Annexe 1 – Sens (Yonne, France) : liste des occupations et indices d’occupation du Haut-Empire et de l’Antiquité tardive",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.34847/nkl.c63e7q0t",
-          "repository": "NAKALA",
-          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-          "landing_url": "https://nakala.fr/10.34847/nkl.c63e7q0t",
-          "landing_host": "nakala.fr",
-          "dataset_title": "Annexe 2 – Troyes (Aube, Grand Est) : inventaire des occupations et indices d’occupation du Haut-Empire et de l’Antiquité tardive",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
       "halId_s": "hal-03599614",
       "uri_s": "https://hal.science/hal-03599614v1",
       "title_s": "Campagne de fouille 2021 sur le système de fortification de Blis à Eymet (Dordogne)",
@@ -1171,40 +1238,6 @@
       ]
     },
     {
-      "halId_s": "hal-05674166",
-      "uri_s": "https://institut-agro-dijon.hal.science/hal-05674166v1",
-      "title_s": "A dataset of in vitro aroma release kinetics performed with Proton Transfer Reaction-Time of Flight- Mass Spectrometry (PTR-ToF-MS)",
-      "docType_s": "ART",
-      "doiId_s": "10.1016/j.dib.2026.112994",
-      "laboratories": [
-        "CSGA",
-        "CNRS",
-        "INRAE",
-        "Institut Agro",
-        "UBE",
-        "FFOPP",
-        "SayFood"
-      ],
-      "modifiedDate_tdate": "2026-09-18T17:36:42Z",
-      "producedDateY_i": 2026,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/GVXDND",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/GVXDND",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Dataset of aroma release in vitro (Digimouth)",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
       "halId_s": "hal-04635083",
       "uri_s": "https://hal.science/hal-04635083v3",
       "title_s": "Imaging Bajocian coral ridges in the Paris Basin and deciphering their origin",
@@ -1298,39 +1331,6 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/5MDE99",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "Dataset from \"A new genome assembly of the pea cultivar Cameor provides resources for functional genomics and genetics\"",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-02537801",
-      "uri_s": "https://institut-agro-dijon.hal.science/hal-02537801v1",
-      "title_s": "Reduced microbial diversity induces larger volatile organic compound emissions from soils",
-      "docType_s": "ART",
-      "doiId_s": "10.1038/s41598-020-63091-8",
-      "laboratories": [
-        "ECOSYS",
-        "INRAE",
-        "SU",
-        "TUB",
-        "UB",
-        "UBFC"
-      ],
-      "modifiedDate_tdate": "2026-09-14T14:16:11Z",
-      "producedDateY_i": 2020,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.15454/4W9DM2",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Portail Data INRAE",
-          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/4W9DM2",
-          "landing_host": "data.inrae.fr",
-          "dataset_title": "Données de réplication pour : Reduced microbial diversity induces larger volatile organic compound emissions from soils.",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false

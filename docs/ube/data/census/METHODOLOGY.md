@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-10-19T10:00:16Z`  
+Generated: `2026-10-20T09:29:30Z`  
 Collection: `UNIV-BOURGOGNE`  
-Run window: `2026-10-19T10:00:15Z` → `2026-10-19T10:00:16Z`
+Run window: `2026-10-20T09:29:28Z` → `2026-10-20T09:29:30Z`
 
 ## Goal
 
@@ -53,17 +53,17 @@ repository root `README.md`.
 
 ## Counts (this run)
 
-- HAL notices with linked identifiers: **267**
-- Related tokens: **392**
-- Unique DOIs resolved: **306**
-- Publications with at least one dataset-repo landing: **149**
-- Misfiled dataset links (wrong HAL field): **20**
-- Publications with ≥1 misfiled dataset link: **19**
+- HAL notices with linked identifiers: **268**
+- Related tokens: **393**
+- Unique DOIs resolved: **307**
+- Publications with at least one dataset-repo landing: **150**
+- Misfiled dataset links (wrong HAL field): **21**
+- Publications with ≥1 misfiled dataset link: **20**
 
 ### Dataset DOIs by HAL source field
 
 - **`relatedData_s`**: 179
-- **`relatedPublication_s`**: 18
+- **`relatedPublication_s`**: 19
 - **`seeAlso_s`**: 7
 
 ### By repository (DOI evidence)
@@ -71,7 +71,7 @@ repository root `README.md`.
 - **Recherche Data Gouv**: 104
 - **NAKALA**: 28
 - **Journal DOI (10.4000)**: 24
-- **Zenodo**: 23
+- **Zenodo**: 24
 - **dataUBFC - Atelier de la donnée de Bourgogne-Franche-Comté**: 16
 - **Portail Data Inra**: 13
 - **Dryad**: 10
@@ -138,7 +138,7 @@ repository root `README.md`.
 - `entrepot.recherche.data.gouv.fr`: 77
 - `nakala.fr`: 26
 - `search-data.ubfc.fr`: 26
-- `zenodo.org`: 23
+- `zenodo.org`: 24
 - `data.inrae.fr`: 21
 - `data.inra.fr`: 14
 - `datadryad.org`: 10

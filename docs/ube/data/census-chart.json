@@ -1,10 +1,10 @@
 {
-  "unique_datasets": 178,
-  "publications_with_dataset": 149,
+  "unique_datasets": 179,
+  "publications_with_dataset": 150,
   "by_repository": {
     "Recherche Data Gouv": 83,
     "NAKALA": 27,
-    "Zenodo": 22,
+    "Zenodo": 23,
     "Portail Data Inra": 13,
     "Dryad": 9,
     "Figshare": 6,
@@ -143,7 +143,7 @@
       18,
       14,
       38,
-      22
+      23
     ],
     "series": [
       {
@@ -230,7 +230,7 @@
           2,
           1,
           12,
-          6
+          7
         ]
       },
       {
@@ -527,6 +527,127 @@
     "period_kind": "year"
   },
   "cell_details": {
+    "2026|Zenodo": [
+      {
+        "dataset_doi": "10.5281/zenodo.10809586",
+        "dataset_title": "Data and R scripts supporting the article: \"Wing shape evolution is not constrained by ancestral genetic covariances in the invasive Drosophila suzukii \"",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.10809586",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05632707",
+            "title_s": "Wing shape evolution is not constrained by ancestral genetic covariances in the invasive Drosophila suzukii",
+            "uri_s": "https://ube.hal.science/hal-05632707v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 4
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.17020328",
+        "dataset_title": "Data from \"Pygocephalids pancrustaceans from the Carboniferous of Nova Scotia, Canada, with comments on the cuticular micro-structures of Pygocephalamorpha\"",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17020328",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05575977",
+            "title_s": "Pygocephalid pancrustaceans from the late Carboniferous of Nova Scotia, Canada, with comments on the cuticular microstructures of Pygocephalamorpha",
+            "uri_s": "https://hal.science/hal-05575977v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 2
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.16994482",
+        "dataset_title": "Datasets and code of Evaluating and Understanding the Geocoding of City Directories of Paris (1787-1914)",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.16994482",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05498176",
+            "title_s": "Evaluating and Understanding the Geocoding of City Directories of Paris (1787-1914): Data-Driven Geography of Urban Sprawl and Densification",
+            "uri_s": "https://cnrs.hal.science/hal-05498176v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 1
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.20523512",
+        "dataset_title": "Inventaire des capteurs et protocoles pour le projet BIODICAPT",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.20523512",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05594176",
+            "title_s": "Inventaire des capteurs et protocoles pour le projet BIODICAPT",
+            "uri_s": "https://hal.science/hal-05594176v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 10
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.4459259",
+        "dataset_title": "Kittel et al. (2021), The Cryosphere : MAR and ESMs data",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/record/4459259",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05624738",
+            "title_s": "Weather Regimes Preclude the Observation of a Southern Annular Mode Signal in Two Coastal East Antarctic Ice Cores",
+            "uri_s": "https://hal.science/hal-05624738v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 9
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.13737015",
+        "dataset_title": "leagenty/dataset_Genty_et_al_2025_margin_services: final_version_first_submission_license_added",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.13737015",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05446068",
+            "title_s": "Intensive management negatively impacts field margin ecosystem service indicators at both field and landscape levels",
+            "uri_s": "https://hal.science/hal-05446068v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 1
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.18325280",
+        "dataset_title": "Materials of Prendre la mesure de l'enseignement et de la pratique des méthodes quantitatives en archéologie française et belge francophone paper",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.18325280",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05809597",
+            "title_s": "Prendre la mesure de l’enseignement et de la pratique des méthodes quantitatives en archéologie française et belge francophone",
+            "uri_s": "https://cnrs.hal.science/hal-05809597v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 10
+          }
+        ]
+      }
+    ],
     "2026|Figshare": [
       {
         "dataset_doi": "10.60893/figshare.jcp.32981894.v1",
@@ -1083,7 +1204,7 @@
             "title_s": "Reduced microbial diversity induces larger volatile organic compound emissions from soils",
             "uri_s": "https://institut-agro-dijon.hal.science/hal-02537801v1",
             "producedDateY_i": 2020,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ]
       },
@@ -2003,7 +2124,7 @@
             "title_s": "Hydrological and temperature controls on CO2 and CH4 exchange between a mid-altitude mountain peatland and the atmosphere",
             "uri_s": "https://insu.hal.science/insu-05295444v1",
             "producedDateY_i": 2025,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ]
       },
@@ -2061,7 +2182,7 @@
             "title_s": "Hydrological and temperature controls on CO2 and CH4 exchange between a mid-altitude mountain peatland and the atmosphere",
             "uri_s": "https://insu.hal.science/insu-05295444v1",
             "producedDateY_i": 2025,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ]
       }
@@ -2080,7 +2201,7 @@
             "title_s": "La topographie de Sens et de Troyes durant l’Antiquité tardive",
             "uri_s": "https://hal.science/hal-05376427v1",
             "producedDateY_i": 2025,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ]
       },
@@ -2097,7 +2218,7 @@
             "title_s": "La topographie de Sens et de Troyes durant l’Antiquité tardive",
             "uri_s": "https://hal.science/hal-05376427v1",
             "producedDateY_i": 2025,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ]
       },
@@ -2275,7 +2396,7 @@
             "title_s": "Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
             "uri_s": "https://hal.inrae.fr/hal-05143887v1",
             "producedDateY_i": 2025,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ]
       },
@@ -2916,110 +3037,6 @@
             "uri_s": "https://hal.science/hal-01774729v1",
             "producedDateY_i": 2018,
             "producedDateM_i": 9
-          }
-        ]
-      }
-    ],
-    "2026|Zenodo": [
-      {
-        "dataset_doi": "10.5281/zenodo.10809586",
-        "dataset_title": "Data and R scripts supporting the article: \"Wing shape evolution is not constrained by ancestral genetic covariances in the invasive Drosophila suzukii \"",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.10809586",
-        "landing_host": "zenodo.org",
-        "year": 2026,
-        "publications": [
-          {
-            "halId_s": "hal-05632707",
-            "title_s": "Wing shape evolution is not constrained by ancestral genetic covariances in the invasive Drosophila suzukii",
-            "uri_s": "https://ube.hal.science/hal-05632707v1",
-            "producedDateY_i": 2026,
-            "producedDateM_i": 4
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.17020328",
-        "dataset_title": "Data from \"Pygocephalids pancrustaceans from the Carboniferous of Nova Scotia, Canada, with comments on the cuticular micro-structures of Pygocephalamorpha\"",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17020328",
-        "landing_host": "zenodo.org",
-        "year": 2026,
-        "publications": [
-          {
-            "halId_s": "hal-05575977",
-            "title_s": "Pygocephalid pancrustaceans from the late Carboniferous of Nova Scotia, Canada, with comments on the cuticular microstructures of Pygocephalamorpha",
-            "uri_s": "https://hal.science/hal-05575977v1",
-            "producedDateY_i": 2026,
-            "producedDateM_i": 2
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.16994482",
-        "dataset_title": "Datasets and code of Evaluating and Understanding the Geocoding of City Directories of Paris (1787-1914)",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.16994482",
-        "landing_host": "zenodo.org",
-        "year": 2026,
-        "publications": [
-          {
-            "halId_s": "hal-05498176",
-            "title_s": "Evaluating and Understanding the Geocoding of City Directories of Paris (1787-1914): Data-Driven Geography of Urban Sprawl and Densification",
-            "uri_s": "https://cnrs.hal.science/hal-05498176v1",
-            "producedDateY_i": 2026,
-            "producedDateM_i": 1
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.20523512",
-        "dataset_title": "Inventaire des capteurs et protocoles pour le projet BIODICAPT",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.20523512",
-        "landing_host": "zenodo.org",
-        "year": 2026,
-        "publications": [
-          {
-            "halId_s": "hal-05594176",
-            "title_s": "Inventaire des capteurs et protocoles pour le projet BIODICAPT",
-            "uri_s": "https://hal.science/hal-05594176v1",
-            "producedDateY_i": 2026,
-            "producedDateM_i": 10
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.4459259",
-        "dataset_title": "Kittel et al. (2021), The Cryosphere : MAR and ESMs data",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/record/4459259",
-        "landing_host": "zenodo.org",
-        "year": 2026,
-        "publications": [
-          {
-            "halId_s": "hal-05624738",
-            "title_s": "Weather Regimes Preclude the Observation of a Southern Annular Mode Signal in Two Coastal East Antarctic Ice Cores",
-            "uri_s": "https://hal.science/hal-05624738v1",
-            "producedDateY_i": 2026,
-            "producedDateM_i": 9
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.13737015",
-        "dataset_title": "leagenty/dataset_Genty_et_al_2025_margin_services: final_version_first_submission_license_added",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.13737015",
-        "landing_host": "zenodo.org",
-        "year": 2026,
-        "publications": [
-          {
-            "halId_s": "hal-05446068",
-            "title_s": "Intensive management negatively impacts field margin ecosystem service indicators at both field and landscape levels",
-            "uri_s": "https://hal.science/hal-05446068v1",
-            "producedDateY_i": 2026,
-            "producedDateM_i": 1
           }
         ]
       }
@@ -3871,7 +3888,7 @@
       1,
       2,
       7,
-      3,
+      4,
       0,
       0
     ],
@@ -3925,7 +3942,7 @@
           0,
           0,
           1,
-          1,
+          2,
           0,
           0
         ]
@@ -4112,10 +4129,48 @@
       }
     ],
     "period_kind": "month",
-    "datasets_in_year": 22,
+    "datasets_in_year": 23,
     "unknown_month": 0
   },
   "cell_details_months": {
+    "2026-10|Zenodo": [
+      {
+        "dataset_doi": "10.5281/zenodo.20523512",
+        "dataset_title": "Inventaire des capteurs et protocoles pour le projet BIODICAPT",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.20523512",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05594176",
+            "title_s": "Inventaire des capteurs et protocoles pour le projet BIODICAPT",
+            "uri_s": "https://hal.science/hal-05594176v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 10
+          }
+        ],
+        "month": 10
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.18325280",
+        "dataset_title": "Materials of Prendre la mesure de l'enseignement et de la pratique des méthodes quantitatives en archéologie française et belge francophone paper",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.18325280",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05809597",
+            "title_s": "Prendre la mesure de l’enseignement et de la pratique des méthodes quantitatives en archéologie française et belge francophone",
+            "uri_s": "https://cnrs.hal.science/hal-05809597v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 10
+          }
+        ],
+        "month": 10
+      }
+    ],
     "2026-10|Figshare": [
       {
         "dataset_doi": "10.60893/figshare.jcp.32981894.v1",
@@ -4232,26 +4287,6 @@
           }
         ],
         "month": 8
-      }
-    ],
-    "2026-10|Zenodo": [
-      {
-        "dataset_doi": "10.5281/zenodo.20523512",
-        "dataset_title": "Inventaire des capteurs et protocoles pour le projet BIODICAPT",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.20523512",
-        "landing_host": "zenodo.org",
-        "year": 2026,
-        "publications": [
-          {
-            "halId_s": "hal-05594176",
-            "title_s": "Inventaire des capteurs et protocoles pour le projet BIODICAPT",
-            "uri_s": "https://hal.science/hal-05594176v1",
-            "producedDateY_i": 2026,
-            "producedDateM_i": 10
-          }
-        ],
-        "month": 10
       }
     ],
     "2026-09|Recherche Data Gouv": [
@@ -4547,7 +4582,7 @@
       }
     ]
   },
-  "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 22 datasets in 2026. Click a segment to list datasets.",
+  "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 23 datasets in 2026. Click a segment to list datasets.",
   "segment_hint": "newest linking publication year",
   "months_segment_hint": "newest linking publication month"
 }

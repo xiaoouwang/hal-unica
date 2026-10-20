@@ -1,28 +1,28 @@
 {
   "collection": "UNIV-BOURGOGNE",
-  "started_at": "2026-10-19T10:00:15Z",
-  "finished_at": "2026-10-19T10:00:16Z",
-  "since": "2026-10-16T15:19:26Z",
-  "hal_publications_with_relatedData": 267,
-  "related_tokens": 392,
-  "unique_dois_resolved": 306,
-  "publications_with_dataset_repo_landing": 149,
-  "misfiled_dataset_links": 20,
-  "publications_with_misfiled_dataset_link": 19,
+  "started_at": "2026-10-20T09:29:28Z",
+  "finished_at": "2026-10-20T09:29:30Z",
+  "since": "2026-10-18T09:29:28Z",
+  "hal_publications_with_relatedData": 268,
+  "related_tokens": 393,
+  "unique_dois_resolved": 307,
+  "publications_with_dataset_repo_landing": 150,
+  "misfiled_dataset_links": 21,
+  "publications_with_misfiled_dataset_link": 20,
   "expected_dataset_field": "relatedData_s",
   "incremental": {
-    "pubs_fetched": 8,
-    "pubs_updated": 8,
-    "pubs_inserted": 0,
-    "dois_resolved_live": 0,
+    "pubs_fetched": 15,
+    "pubs_updated": 14,
+    "pubs_inserted": 1,
+    "dois_resolved_live": 1,
     "dois_from_cache": 306,
-    "watermark_modified": "2026-10-19T10:36:15Z"
+    "watermark_modified": "2026-10-20T11:27:10Z"
   },
   "by_repository": {
     "Recherche Data Gouv": 104,
     "NAKALA": 28,
     "Journal DOI (10.4000)": 24,
-    "Zenodo": 23,
+    "Zenodo": 24,
     "dataUBFC - Atelier de la donnée de Bourgogne-Franche-Comté": 16,
     "Portail Data Inra": 13,
     "Dryad": 10,
@@ -85,7 +85,7 @@
     "data.InDoRES": 1
   },
   "by_object_kind": {
-    "dataset_repo": 204,
+    "dataset_repo": 205,
     "other": 42,
     "publication_landing": 66,
     "unresolved": 31
@@ -95,7 +95,7 @@
     "10.15454": 51,
     "10.25666": 26,
     "10.34847": 26,
-    "10.5281": 23,
+    "10.5281": 24,
     "10.5061": 10,
     "10.13144": 9,
     "10.17632": 5,
@@ -120,7 +120,7 @@
     "entrepot.recherche.data.gouv.fr": 77,
     "nakala.fr": 26,
     "search-data.ubfc.fr": 26,
-    "zenodo.org": 23,
+    "zenodo.org": 24,
     "data.inrae.fr": 21,
     "data.inra.fr": 14,
     "datadryad.org": 10,
@@ -145,18 +145,18 @@
     "scidb.cn": 1
   },
   "by_token_kind": {
-    "doi": 343,
+    "doi": 344,
     "hal_id": 11,
     "url": 38
   },
   "by_source_field": {
     "relatedData_s": 213,
-    "relatedPublication_s": 125,
+    "relatedPublication_s": 126,
     "seeAlso_s": 54
   },
   "by_dataset_source_field": {
     "relatedData_s": 179,
-    "relatedPublication_s": 18,
+    "relatedPublication_s": 19,
     "seeAlso_s": 7
   }
 }
