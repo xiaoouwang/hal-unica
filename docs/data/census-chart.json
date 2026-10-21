@@ -2516,7 +2516,7 @@
             "title_s": "An archaeo-metabolomics approach for identifying cedar tar in archaeological samples: differentiating plant products and production processes",
             "uri_s": "https://hal.science/hal-05621424v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ]
       }
@@ -3180,7 +3180,7 @@
             "title_s": "Le début du Néolithique moyen en Provence occidentale : vers un phasage chronologique des productions matérielles céramiques et lithiques du 5e millénaire avant notre ère",
             "uri_s": "https://hal.science/hal-05708417v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 8
+            "producedDateM_i": 10
           }
         ]
       },
@@ -5187,9 +5187,9 @@
       3,
       2,
       2,
-      4,
-      6,
-      6,
+      3,
+      5,
+      8,
       0,
       0
     ],
@@ -5295,9 +5295,9 @@
           0,
           1,
           0,
-          1,
-          1,
           0,
+          1,
+          1,
           0,
           0
         ]
@@ -5314,8 +5314,8 @@
           0,
           0,
           0,
-          1,
           0,
+          1,
           0,
           0
         ]
@@ -5781,7 +5781,7 @@
         "month": 5
       }
     ],
-    "2026-09|Figshare": [
+    "2026-10|Figshare": [
       {
         "dataset_doi": "10.6084/m9.figshare.30665321",
         "dataset_title": "An archaeo-metabolomics approach for identifying cedar tar in archaeological samples: differentiating plant products and production processes (data set)",
@@ -5795,10 +5795,10 @@
             "title_s": "An archaeo-metabolomics approach for identifying cedar tar in archaeological samples: differentiating plant products and production processes",
             "uri_s": "https://hal.science/hal-05621424v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ],
-        "month": 9
+        "month": 10
       }
     ],
     "2026-04|Zenodo": [
@@ -5899,7 +5899,7 @@
         "month": 8
       }
     ],
-    "2026-08|NAKALA": [
+    "2026-10|NAKALA": [
       {
         "dataset_doi": "10.34847/nkl.f3e98xlq",
         "dataset_title": "La céramique du début du Néolithique moyen en Provence occidentale : matériaux exploités et dégraissants",
@@ -5913,10 +5913,10 @@
             "title_s": "Le début du Néolithique moyen en Provence occidentale : vers un phasage chronologique des productions matérielles céramiques et lithiques du 5e millénaire avant notre ère",
             "uri_s": "https://hal.science/hal-05708417v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 8
+            "producedDateM_i": 10
           }
         ],
-        "month": 8
+        "month": 10
       }
     ],
     "2026-06|NAKALA": [

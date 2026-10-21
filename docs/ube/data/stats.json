@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T13:34:08Z",
+  "generated_at": "2026-10-21T09:25:49Z",
   "collection": "UNIV-BOURGOGNE",
   "collection_url": "https://hal.science/UNIV-BOURGOGNE",
   "harvest": {
@@ -342,6 +342,136 @@
     },
     "publications": [
       {
+        "halId_s": "hal-04529211",
+        "uri_s": "https://hal.science/hal-04529211v1",
+        "title_s": "L’habitat groupé laténien de Verdun-sur-le-Doubs : rapport de fouille programmée 2023 dans le cadre du PCR «La confluence Saône/Doubs à l’âge du fer»",
+        "docType_s": "REPORT",
+        "doiId_s": null,
+        "laboratories": [
+          "LCE",
+          "CNRS",
+          "UMLP",
+          "UFC UFR SLHS",
+          "Inrap",
+          "EVEHA",
+          "ArScAn",
+          "UP1",
+          "UP8",
+          "UPN"
+        ],
+        "modifiedDate_tdate": "2026-10-20T17:16:02Z",
+        "producedDateY_i": 2024,
+        "repositories": [
+          "NAKALA"
+        ],
+        "datasets": [
+          {
+            "doi": "10.34847/nkl.929ax2kn",
+            "repository": "NAKALA",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-05376427",
+        "uri_s": "https://hal.science/hal-05376427v1",
+        "title_s": "La topographie de Sens et de Troyes durant l’Antiquité tardive",
+        "docType_s": "ART",
+        "doiId_s": "10.4000/15h4c",
+        "laboratories": [
+          "Inrap",
+          "ARTeHiS",
+          "MCC",
+          "CNRS",
+          "UBE",
+          "LCE",
+          "UMLP"
+        ],
+        "modifiedDate_tdate": "2026-10-20T17:16:02Z",
+        "producedDateY_i": 2025,
+        "repositories": [
+          "NAKALA"
+        ],
+        "datasets": [
+          {
+            "doi": "10.34847/nkl.b95e19i1",
+            "repository": "NAKALA",
+            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+            "landing_url": "https://nakala.fr/10.34847/nkl.b95e19i1",
+            "landing_host": "nakala.fr",
+            "dataset_title": "Annexe 1 – Sens (Yonne, France) : liste des occupations et indices d’occupation du Haut-Empire et de l’Antiquité tardive",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.34847/nkl.c63e7q0t",
+            "repository": "NAKALA",
+            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+            "landing_url": "https://nakala.fr/10.34847/nkl.c63e7q0t",
+            "landing_host": "nakala.fr",
+            "dataset_title": "Annexe 2 – Troyes (Aube, Grand Est) : inventaire des occupations et indices d’occupation du Haut-Empire et de l’Antiquité tardive",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-05409059",
+        "uri_s": "https://hal.science/hal-05409059v1",
+        "title_s": "Bilan scientifique annuel : L’habitat de l’âge du Bronze à La Tène ancienne en Hauts-de-France",
+        "docType_s": "REPORT",
+        "doiId_s": "10.34847/nkl.8f0a0nm9",
+        "laboratories": [
+          "HALMA",
+          "CNRS",
+          "MC",
+          "DAP-DA",
+          "Inrap",
+          "ARTeHiS",
+          "MCC",
+          "UB",
+          "TRACES",
+          "EHESS"
+        ],
+        "modifiedDate_tdate": "2026-10-20T17:16:02Z",
+        "producedDateY_i": 2024,
+        "repositories": [
+          "NAKALA"
+        ],
+        "datasets": [
+          {
+            "doi": "10.34847/nkl.8f0a0nm9",
+            "repository": "NAKALA",
+            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+            "landing_url": "https://nakala.fr/10.34847/nkl.8f0a0nm9",
+            "landing_host": "nakala.fr",
+            "dataset_title": "Bilan scientifique 2024 : L’habitat de l’âge du Bronze à La Tène ancienne en Hauts-de-France",
+            "field": "relatedPublication_s",
+            "misfiled": true,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.34847/nkl.8f0a0nm9/70868f81bfe0cfeee0dbd086ceb428ad913551e3",
+            "repository": "NAKALA",
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "seeAlso_s",
+            "misfiled": true,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
         "halId_s": "hal-02537801",
         "uri_s": "https://institut-agro-dijon.hal.science/hal-02537801v1",
         "title_s": "Reduced microbial diversity induces larger volatile organic compound emissions from soils",
@@ -439,51 +569,6 @@
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/3NAHSN",
             "landing_host": "entrepot.recherche.data.gouv.fr",
             "dataset_title": "Annexe pour : Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-05376427",
-        "uri_s": "https://hal.science/hal-05376427v1",
-        "title_s": "La topographie de Sens et de Troyes durant l’Antiquité tardive",
-        "docType_s": "ART",
-        "doiId_s": "10.4000/15h4c",
-        "laboratories": [
-          "Inrap",
-          "ARTeHiS",
-          "MCC",
-          "CNRS",
-          "UBE",
-          "LCE",
-          "UMLP"
-        ],
-        "modifiedDate_tdate": "2026-10-19T21:58:03Z",
-        "producedDateY_i": 2025,
-        "repositories": [
-          "NAKALA"
-        ],
-        "datasets": [
-          {
-            "doi": "10.34847/nkl.b95e19i1",
-            "repository": "NAKALA",
-            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-            "landing_url": "https://nakala.fr/10.34847/nkl.b95e19i1",
-            "landing_host": "nakala.fr",
-            "dataset_title": "Annexe 1 – Sens (Yonne, France) : liste des occupations et indices d’occupation du Haut-Empire et de l’Antiquité tardive",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          },
-          {
-            "doi": "10.34847/nkl.c63e7q0t",
-            "repository": "NAKALA",
-            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-            "landing_url": "https://nakala.fr/10.34847/nkl.c63e7q0t",
-            "landing_host": "nakala.fr",
-            "dataset_title": "Annexe 2 – Troyes (Aube, Grand Est) : inventaire des occupations et indices d’occupation du Haut-Empire et de l’Antiquité tardive",
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -1430,43 +1515,6 @@
             "field": "seeAlso_s",
             "misfiled": false,
             "also_in_relatedData_s": true
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-04529211",
-        "uri_s": "https://hal.science/hal-04529211v1",
-        "title_s": "L’habitat groupé laténien de Verdun-sur-le-Doubs : rapport de fouille programmée 2023 dans le cadre du PCR «La confluence Saône/Doubs à l’âge du fer»",
-        "docType_s": "REPORT",
-        "doiId_s": null,
-        "laboratories": [
-          "LCE",
-          "CNRS",
-          "UMLP",
-          "UFC UFR SLHS",
-          "Inrap",
-          "EVEHA",
-          "ArScAn",
-          "UP1",
-          "UP8",
-          "UPN"
-        ],
-        "modifiedDate_tdate": "2026-09-22T03:42:46Z",
-        "producedDateY_i": 2024,
-        "repositories": [
-          "NAKALA"
-        ],
-        "datasets": [
-          {
-            "doi": "10.34847/nkl.929ax2kn",
-            "repository": "NAKALA",
-            "publisher": null,
-            "landing_url": null,
-            "landing_host": null,
-            "dataset_title": null,
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
           }
         ]
       },
@@ -3898,54 +3946,6 @@
         ]
       },
       {
-        "halId_s": "hal-05409059",
-        "uri_s": "https://hal.science/hal-05409059v1",
-        "title_s": "Bilan scientifique annuel : L’habitat de l’âge du Bronze à La Tène ancienne en Hauts-de-France",
-        "docType_s": "REPORT",
-        "doiId_s": "10.34847/nkl.8f0a0nm9",
-        "laboratories": [
-          "HALMA",
-          "CNRS",
-          "MC",
-          "DAP-DA",
-          "Inrap",
-          "ARTeHiS",
-          "MCC",
-          "UB",
-          "TRACES",
-          "EHESS"
-        ],
-        "modifiedDate_tdate": "2026-01-27T16:14:02Z",
-        "producedDateY_i": 2024,
-        "repositories": [
-          "NAKALA"
-        ],
-        "datasets": [
-          {
-            "doi": "10.34847/nkl.8f0a0nm9",
-            "repository": "NAKALA",
-            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-            "landing_url": "https://nakala.fr/10.34847/nkl.8f0a0nm9",
-            "landing_host": "nakala.fr",
-            "dataset_title": "Bilan scientifique 2024 : L’habitat de l’âge du Bronze à La Tène ancienne en Hauts-de-France",
-            "field": "relatedPublication_s",
-            "misfiled": true,
-            "also_in_relatedData_s": false
-          },
-          {
-            "doi": "10.34847/nkl.8f0a0nm9/70868f81bfe0cfeee0dbd086ceb428ad913551e3",
-            "repository": "NAKALA",
-            "publisher": null,
-            "landing_url": null,
-            "landing_host": null,
-            "dataset_title": null,
-            "field": "seeAlso_s",
-            "misfiled": true,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
         "halId_s": "hal-04612748",
         "uri_s": "https://hal.inrae.fr/hal-04612748v1",
         "title_s": "Wheat dwarfing reshapes plant and fungal development in arbuscular mycorrhizal symbiosis",
@@ -6309,7 +6309,7 @@
               "title_s": "Bilan scientifique annuel : L’habitat de l’âge du Bronze à La Tène ancienne en Hauts-de-France",
               "uri_s": "https://hal.science/hal-05409059v1",
               "producedDateY_i": 2024,
-              "producedDateM_i": 1
+              "producedDateM_i": 10
             }
           ]
         },
@@ -6343,7 +6343,7 @@
               "title_s": "Bilan scientifique annuel : L’habitat de l’âge du Bronze à La Tène ancienne en Hauts-de-France",
               "uri_s": "https://hal.science/hal-05409059v1",
               "producedDateY_i": 2024,
-              "producedDateM_i": 1
+              "producedDateM_i": 10
             }
           ]
         },

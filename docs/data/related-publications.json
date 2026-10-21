@@ -23,7 +23,7 @@
         "UJM",
         "UJM EPE"
       ],
-      "modifiedDate_tdate": "2026-10-20T11:47:31Z",
+      "modifiedDate_tdate": "2026-10-21T03:25:32Z",
       "producedDateY_i": 2025,
       "repositories": [
         "NAKALA"
@@ -38,6 +38,43 @@
           "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
           "field": "relatedData_s",
           "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-05708417",
+      "uri_s": "https://hal.science/hal-05708417v1",
+      "title_s": "Le début du Néolithique moyen en Provence occidentale : vers un phasage chronologique des productions matérielles céramiques et lithiques du 5e millénaire avant notre ère",
+      "docType_s": "ART",
+      "doiId_s": "10.4000/16m8a",
+      "laboratories": [
+        "Inrap",
+        "LAMPEA",
+        "AMU",
+        "CNRS",
+        "MC",
+        "ASM",
+        "UMPV",
+        "Inrap, Nîmes",
+        "TRACES",
+        "EHESS"
+      ],
+      "modifiedDate_tdate": "2026-10-20T17:16:02Z",
+      "producedDateY_i": 2026,
+      "repositories": [
+        "NAKALA"
+      ],
+      "datasets": [
+        {
+          "doi": "10.34847/nkl.f3e98xlq",
+          "repository": "NAKALA",
+          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+          "landing_url": "https://nakala.fr/10.34847/nkl.f3e98xlq",
+          "landing_host": "nakala.fr",
+          "dataset_title": "La céramique du début du Néolithique moyen en Provence occidentale : matériaux exploités et dégraissants",
+          "field": "relatedPublication_s",
+          "misfiled": true,
           "also_in_relatedData_s": false
         }
       ]
@@ -1509,43 +1546,6 @@
           "dataset_title": "Scientific arguments about food packaging functionalities for fresh strawberries - Food packaging expert’s arguments for all packagings",
           "field": "relatedData_s",
           "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-05708417",
-      "uri_s": "https://hal.science/hal-05708417v1",
-      "title_s": "Le début du Néolithique moyen en Provence occidentale : vers un phasage chronologique des productions matérielles céramiques et lithiques du 5e millénaire avant notre ère",
-      "docType_s": "ART",
-      "doiId_s": "10.4000/16m8a",
-      "laboratories": [
-        "Inrap",
-        "LAMPEA",
-        "AMU",
-        "CNRS",
-        "MC",
-        "ASM",
-        "UMPV",
-        "Inrap, Nîmes",
-        "TRACES",
-        "EHESS"
-      ],
-      "modifiedDate_tdate": "2026-08-01T03:22:46Z",
-      "producedDateY_i": 2026,
-      "repositories": [
-        "NAKALA"
-      ],
-      "datasets": [
-        {
-          "doi": "10.34847/nkl.f3e98xlq",
-          "repository": "NAKALA",
-          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-          "landing_url": "https://nakala.fr/10.34847/nkl.f3e98xlq",
-          "landing_host": "nakala.fr",
-          "dataset_title": "La céramique du début du Néolithique moyen en Provence occidentale : matériaux exploités et dégraissants",
-          "field": "relatedPublication_s",
-          "misfiled": true,
           "also_in_relatedData_s": false
         }
       ]

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T13:33:49Z",
+  "generated_at": "2026-10-21T09:25:28Z",
   "collection": "UNIV-COTEDAZUR",
   "collection_url": "https://hal.science/UNIV-COTEDAZUR",
   "harvest": {
@@ -364,7 +364,7 @@
           "UJM",
           "UJM EPE"
         ],
-        "modifiedDate_tdate": "2026-10-20T11:47:31Z",
+        "modifiedDate_tdate": "2026-10-21T03:25:32Z",
         "producedDateY_i": 2025,
         "repositories": [
           "NAKALA"
@@ -379,6 +379,43 @@
             "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
             "field": "relatedData_s",
             "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-05708417",
+        "uri_s": "https://hal.science/hal-05708417v1",
+        "title_s": "Le début du Néolithique moyen en Provence occidentale : vers un phasage chronologique des productions matérielles céramiques et lithiques du 5e millénaire avant notre ère",
+        "docType_s": "ART",
+        "doiId_s": "10.4000/16m8a",
+        "laboratories": [
+          "Inrap",
+          "LAMPEA",
+          "AMU",
+          "CNRS",
+          "MC",
+          "ASM",
+          "UMPV",
+          "Inrap, Nîmes",
+          "TRACES",
+          "EHESS"
+        ],
+        "modifiedDate_tdate": "2026-10-20T17:16:02Z",
+        "producedDateY_i": 2026,
+        "repositories": [
+          "NAKALA"
+        ],
+        "datasets": [
+          {
+            "doi": "10.34847/nkl.f3e98xlq",
+            "repository": "NAKALA",
+            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+            "landing_url": "https://nakala.fr/10.34847/nkl.f3e98xlq",
+            "landing_host": "nakala.fr",
+            "dataset_title": "La céramique du début du Néolithique moyen en Provence occidentale : matériaux exploités et dégraissants",
+            "field": "relatedPublication_s",
+            "misfiled": true,
             "also_in_relatedData_s": false
           }
         ]
@@ -1850,43 +1887,6 @@
             "dataset_title": "Scientific arguments about food packaging functionalities for fresh strawberries - Food packaging expert’s arguments for all packagings",
             "field": "relatedData_s",
             "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-05708417",
-        "uri_s": "https://hal.science/hal-05708417v1",
-        "title_s": "Le début du Néolithique moyen en Provence occidentale : vers un phasage chronologique des productions matérielles céramiques et lithiques du 5e millénaire avant notre ère",
-        "docType_s": "ART",
-        "doiId_s": "10.4000/16m8a",
-        "laboratories": [
-          "Inrap",
-          "LAMPEA",
-          "AMU",
-          "CNRS",
-          "MC",
-          "ASM",
-          "UMPV",
-          "Inrap, Nîmes",
-          "TRACES",
-          "EHESS"
-        ],
-        "modifiedDate_tdate": "2026-08-01T03:22:46Z",
-        "producedDateY_i": 2026,
-        "repositories": [
-          "NAKALA"
-        ],
-        "datasets": [
-          {
-            "doi": "10.34847/nkl.f3e98xlq",
-            "repository": "NAKALA",
-            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-            "landing_url": "https://nakala.fr/10.34847/nkl.f3e98xlq",
-            "landing_host": "nakala.fr",
-            "dataset_title": "La céramique du début du Néolithique moyen en Provence occidentale : matériaux exploités et dégraissants",
-            "field": "relatedPublication_s",
-            "misfiled": true,
             "also_in_relatedData_s": false
           }
         ]
@@ -5329,7 +5329,7 @@
               "title_s": "An archaeo-metabolomics approach for identifying cedar tar in archaeological samples: differentiating plant products and production processes",
               "uri_s": "https://hal.science/hal-05621424v1",
               "producedDateY_i": 2026,
-              "producedDateM_i": 9
+              "producedDateM_i": 10
             }
           ]
         }
@@ -5993,7 +5993,7 @@
               "title_s": "Le début du Néolithique moyen en Provence occidentale : vers un phasage chronologique des productions matérielles céramiques et lithiques du 5e millénaire avant notre ère",
               "uri_s": "https://hal.science/hal-05708417v1",
               "producedDateY_i": 2026,
-              "producedDateM_i": 8
+              "producedDateM_i": 10
             }
           ]
         },
@@ -8000,9 +8000,9 @@
         3,
         2,
         2,
-        4,
-        6,
-        6,
+        3,
+        5,
+        8,
         0,
         0
       ],
@@ -8108,9 +8108,9 @@
             0,
             1,
             0,
-            1,
-            1,
             0,
+            1,
+            1,
             0,
             0
           ]
@@ -8127,8 +8127,8 @@
             0,
             0,
             0,
-            1,
             0,
+            1,
             0,
             0
           ]
@@ -8594,7 +8594,7 @@
           "month": 5
         }
       ],
-      "2026-09|Figshare": [
+      "2026-10|Figshare": [
         {
           "dataset_doi": "10.6084/m9.figshare.30665321",
           "dataset_title": "An archaeo-metabolomics approach for identifying cedar tar in archaeological samples: differentiating plant products and production processes (data set)",
@@ -8608,10 +8608,10 @@
               "title_s": "An archaeo-metabolomics approach for identifying cedar tar in archaeological samples: differentiating plant products and production processes",
               "uri_s": "https://hal.science/hal-05621424v1",
               "producedDateY_i": 2026,
-              "producedDateM_i": 9
+              "producedDateM_i": 10
             }
           ],
-          "month": 9
+          "month": 10
         }
       ],
       "2026-04|Zenodo": [
@@ -8712,7 +8712,7 @@
           "month": 8
         }
       ],
-      "2026-08|NAKALA": [
+      "2026-10|NAKALA": [
         {
           "dataset_doi": "10.34847/nkl.f3e98xlq",
           "dataset_title": "La céramique du début du Néolithique moyen en Provence occidentale : matériaux exploités et dégraissants",
@@ -8726,10 +8726,10 @@
               "title_s": "Le début du Néolithique moyen en Provence occidentale : vers un phasage chronologique des productions matérielles céramiques et lithiques du 5e millénaire avant notre ère",
               "uri_s": "https://hal.science/hal-05708417v1",
               "producedDateY_i": 2026,
-              "producedDateM_i": 8
+              "producedDateM_i": 10
             }
           ],
-          "month": 8
+          "month": 10
         }
       ],
       "2026-06|NAKALA": [
