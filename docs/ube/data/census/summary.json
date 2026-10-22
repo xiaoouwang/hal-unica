@@ -1,8 +1,8 @@
 {
   "collection": "UNIV-BOURGOGNE",
-  "started_at": "2026-10-22T09:28:07Z",
-  "finished_at": "2026-10-22T09:28:08Z",
-  "since": "2026-10-20T09:28:07Z",
+  "started_at": "2026-10-22T13:48:16Z",
+  "finished_at": "2026-10-22T13:48:17Z",
+  "since": "2026-10-20T13:48:16Z",
   "hal_publications_with_relatedData": 268,
   "related_tokens": 393,
   "unique_dois_resolved": 307,
@@ -11,8 +11,8 @@
   "publications_with_misfiled_dataset_link": 20,
   "expected_dataset_field": "relatedData_s",
   "incremental": {
-    "pubs_fetched": 12,
-    "pubs_updated": 12,
+    "pubs_fetched": 9,
+    "pubs_updated": 9,
     "pubs_inserted": 0,
     "dois_resolved_live": 0,
     "dois_from_cache": 307,
