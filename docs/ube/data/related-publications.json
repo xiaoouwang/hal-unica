@@ -6,6 +6,150 @@
   },
   "publications": [
     {
+      "halId_s": "hal-05143887",
+      "uri_s": "https://hal.inrae.fr/hal-05143887v1",
+      "title_s": "Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
+      "docType_s": "REPORT",
+      "doiId_s": "10.17180/ayg4-0b92",
+      "laboratories": [
+        "IFREMER",
+        "PSH",
+        "INRAE",
+        "BFP",
+        "UB",
+        "CESBIO",
+        "IRD",
+        "INSU - CNRS",
+        "CNES",
+        "CNRS"
+      ],
+      "modifiedDate_tdate": "2026-10-23T03:34:31Z",
+      "producedDateY_i": 2025,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/3NAHSN",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/3NAHSN",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Annexe pour : Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-01774729",
+      "uri_s": "https://hal.science/hal-01774729v1",
+      "title_s": "BRC4Env, a network of Biological Resource Centres for research in environmental and agricultural sciences",
+      "docType_s": "ART",
+      "doiId_s": "10.1007/s11356-018-1973-7",
+      "laboratories": [
+        "ECOSYS",
+        "INRA",
+        "UMR CBGP",
+        "Cirad",
+        "Montpellier SupAgro",
+        "UM",
+        "IRD [Occitanie]",
+        "IRD",
+        "UEEA",
+        "UB"
+      ],
+      "modifiedDate_tdate": "2026-10-23T03:32:08Z",
+      "producedDateY_i": 2018,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.15454/D3ODJM",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Portail Data INRAE",
+          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/D3ODJM",
+          "landing_host": "data.inrae.fr",
+          "dataset_title": "Colisa, the collection of ichthyological samples.",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.15454/AY4LMT",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Portail Data INRAE",
+          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/AY4LMT",
+          "landing_host": "data.inrae.fr",
+          "dataset_title": "BRC “Egg Parasitoids Collection” (EP-Coll)",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.15454/UQEMVW",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Portail Data Inra",
+          "landing_url": "https://carrtel-collection.hub.inrae.fr/",
+          "landing_host": "carrtel-collection.hub.inrae.fr",
+          "dataset_title": "Thonon Culture Collection -TCC- a freshwater microalgae collection",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.15454/TRBJTB",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Portail Data INRAE",
+          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/TRBJTB",
+          "landing_host": "data.inrae.fr",
+          "dataset_title": "BRC4Env, the Biological Resource Centre for the Environment",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-03534007",
+      "uri_s": "https://hal.inrae.fr/hal-03534007v1",
+      "title_s": "Key questions for next-generation of biomonitoring",
+      "docType_s": "COUV",
+      "doiId_s": "10.3389/978-2-88966-027-8",
+      "laboratories": [
+        "UB",
+        "UBFC",
+        "INRAE",
+        "ECCC",
+        "CARRTEL",
+        "USMB [Université de Savoie] [Université de Chambéry]",
+        "Fédération OSUG",
+        "IGEPP",
+        "UR",
+        "Institut Agro"
+      ],
+      "modifiedDate_tdate": "2026-10-23T03:32:07Z",
+      "producedDateY_i": 2020,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.15454/HYRVUH",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/HYRVUH",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Rsyst::diatom_rbcl_align_312bp database: a database adapted to DNA metabarcoding (version v7: 23-02-2018)",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
       "halId_s": "hal-04529211",
       "uri_s": "https://hal.science/hal-04529211v1",
       "title_s": "L’habitat groupé laténien de Verdun-sur-le-Doubs : rapport de fouille programmée 2023 dans le cadre du PCR «La confluence Saône/Doubs à l’âge du fer»",
@@ -196,43 +340,6 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/GVXDND",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "Dataset of aroma release in vitro (Digimouth)",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-05143887",
-      "uri_s": "https://hal.inrae.fr/hal-05143887v1",
-      "title_s": "Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
-      "docType_s": "REPORT",
-      "doiId_s": "10.17180/ayg4-0b92",
-      "laboratories": [
-        "IFREMER",
-        "PSH",
-        "INRAE",
-        "BFP",
-        "UB",
-        "CESBIO",
-        "IRD",
-        "INSU - CNRS",
-        "CNES",
-        "CNRS"
-      ],
-      "modifiedDate_tdate": "2026-10-19T22:50:02Z",
-      "producedDateY_i": 2025,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/3NAHSN",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/3NAHSN",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Annexe pour : Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
@@ -618,43 +725,6 @@
       ]
     },
     {
-      "halId_s": "hal-03534007",
-      "uri_s": "https://hal.inrae.fr/hal-03534007v1",
-      "title_s": "Key questions for next-generation of biomonitoring",
-      "docType_s": "COUV",
-      "doiId_s": "10.3389/978-2-88966-027-8",
-      "laboratories": [
-        "UB",
-        "UBFC",
-        "INRAE",
-        "ECCC",
-        "CARRTEL",
-        "USMB [Université de Savoie] [Université de Chambéry]",
-        "Fédération OSUG",
-        "IGEPP",
-        "UR",
-        "Institut Agro"
-      ],
-      "modifiedDate_tdate": "2026-10-07T16:28:03Z",
-      "producedDateY_i": 2020,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.15454/HYRVUH",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/HYRVUH",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Rsyst::diatom_rbcl_align_312bp database: a database adapted to DNA metabarcoding (version v7: 23-02-2018)",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
       "halId_s": "hal-05170289",
       "uri_s": "https://hal.science/hal-05170289v1",
       "title_s": "Être archiviste et militante ? La construction d'une mémoire lesbienne à partir d'archives du web",
@@ -905,76 +975,6 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/JGHVYV",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "Carbon and nitrogen mineralization data of various exogenous organic matter (EOM) under controlled conditions",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-01774729",
-      "uri_s": "https://hal.science/hal-01774729v1",
-      "title_s": "BRC4Env, a network of Biological Resource Centres for research in environmental and agricultural sciences",
-      "docType_s": "ART",
-      "doiId_s": "10.1007/s11356-018-1973-7",
-      "laboratories": [
-        "ECOSYS",
-        "INRA",
-        "UMR CBGP",
-        "Cirad",
-        "Montpellier SupAgro",
-        "UM",
-        "IRD [Occitanie]",
-        "IRD",
-        "UEEA",
-        "UB"
-      ],
-      "modifiedDate_tdate": "2026-09-29T11:04:56Z",
-      "producedDateY_i": 2018,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.15454/D3ODJM",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Portail Data INRAE",
-          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/D3ODJM",
-          "landing_host": "data.inrae.fr",
-          "dataset_title": "Colisa, the collection of ichthyological samples.",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.15454/AY4LMT",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Portail Data INRAE",
-          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/AY4LMT",
-          "landing_host": "data.inrae.fr",
-          "dataset_title": "BRC “Egg Parasitoids Collection” (EP-Coll)",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.15454/UQEMVW",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Portail Data Inra",
-          "landing_url": "https://carrtel-collection.hub.inrae.fr/",
-          "landing_host": "carrtel-collection.hub.inrae.fr",
-          "dataset_title": "Thonon Culture Collection -TCC- a freshwater microalgae collection",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.15454/TRBJTB",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Portail Data INRAE",
-          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/TRBJTB",
-          "landing_host": "data.inrae.fr",
-          "dataset_title": "BRC4Env, the Biological Resource Centre for the Environment",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
