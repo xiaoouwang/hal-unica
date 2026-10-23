@@ -6,6 +6,162 @@
   },
   "publications": [
     {
+      "halId_s": "hal-04612748",
+      "uri_s": "https://hal.inrae.fr/hal-04612748v1",
+      "title_s": "Wheat dwarfing reshapes plant and fungal development in arbuscular mycorrhizal symbiosis",
+      "docType_s": "ART",
+      "doiId_s": "10.1007/s00572-024-01150-y",
+      "laboratories": [
+        "ISYEB",
+        "MNHN",
+        "EPHE",
+        "PSL",
+        "SU",
+        "CNRS",
+        "UA",
+        "UB",
+        "UBFC",
+        "INRAE"
+      ],
+      "modifiedDate_tdate": "2026-10-23T12:31:52Z",
+      "producedDateY_i": 2024,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/R1QHIL",
+          "repository": "Recherche Data Gouv",
+          "publisher": null,
+          "landing_url": null,
+          "landing_host": null,
+          "dataset_title": null,
+          "field": "relatedPublication_s",
+          "misfiled": true,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-03910388",
+      "uri_s": "https://hal.science/hal-03910388v1",
+      "title_s": "Botrytis cinerea strains infecting grapevine and tomato display contrasted repertoires of accessory chromosomes, transposons and small RNAs",
+      "docType_s": "ART",
+      "doiId_s": "10.24072/pcjournal.211",
+      "laboratories": [
+        "BIOGER",
+        "INRAE",
+        "UMR PHIM",
+        "Cirad",
+        "IRD",
+        "Institut Agro",
+        "UM",
+        "UB",
+        "UBFC"
+      ],
+      "modifiedDate_tdate": "2026-10-23T12:29:51Z",
+      "producedDateY_i": 2022,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/HYWRNM",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/HYWRNM",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Transposable element annotation of Botrytis cinerea Sl3 and Vvl3",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-04197618",
+      "uri_s": "https://hal.inrae.fr/hal-04197618v1",
+      "title_s": "PO2/TransformON, an ontology for data integration on food, feed, bioproducts and biowaste engineering",
+      "docType_s": "ART",
+      "doiId_s": "10.1038/s41538-023-00221-2",
+      "laboratories": [
+        "BIA",
+        "INRAE",
+        "UMR IATE",
+        "Institut Agro",
+        "UM",
+        "MIA Paris-Saclay",
+        "URTAL",
+        "TRANSFORM",
+        "CSGA",
+        "UB"
+      ],
+      "modifiedDate_tdate": "2026-10-23T12:27:01Z",
+      "producedDateY_i": 2023,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/DWX7W6",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/DWX7W6",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "TransformON",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.15454/XSVVBW",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/XSVVBW",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "PO² Process and Observation Ontology",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-04133593",
+      "uri_s": "https://hal.inrae.fr/hal-04133593v2",
+      "title_s": "Reduction in PLANT DEFENSIN 1 expression in Arabidopsis thaliana results in increased resistance to pathogens and zinc toxicity",
+      "docType_s": "ART",
+      "doiId_s": "10.1093/jxb/erad228",
+      "laboratories": [
+        "IPSIM",
+        "CNRS",
+        "INRAE",
+        "Institut Agro",
+        "UM",
+        "UB",
+        "UBFC",
+        "LEPSE"
+      ],
+      "modifiedDate_tdate": "2026-10-23T12:24:49Z",
+      "producedDateY_i": 2023,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.15454/AXY7FV",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/AXY7FV",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Replication Data for: Nguyen et al. Reduction in PLANT DEFENSIN 1 results in increased resistance to pathogens and zinc toxicity",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
       "halId_s": "hal-05143887",
       "uri_s": "https://hal.inrae.fr/hal-05143887v1",
       "title_s": "Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
@@ -2592,54 +2748,6 @@
       ]
     },
     {
-      "halId_s": "hal-04197618",
-      "uri_s": "https://hal.inrae.fr/hal-04197618v1",
-      "title_s": "PO2/TransformON, an ontology for data integration on food, feed, bioproducts and biowaste engineering",
-      "docType_s": "ART",
-      "doiId_s": "10.1038/s41538-023-00221-2",
-      "laboratories": [
-        "BIA",
-        "INRAE",
-        "UMR IATE",
-        "Institut Agro",
-        "UM",
-        "MIA Paris-Saclay",
-        "URTAL",
-        "TRANSFORM",
-        "CSGA",
-        "UB"
-      ],
-      "modifiedDate_tdate": "2026-05-05T15:52:40Z",
-      "producedDateY_i": 2023,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/DWX7W6",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/DWX7W6",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "TransformON",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.15454/XSVVBW",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/XSVVBW",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "PO² Process and Observation Ontology",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
       "halId_s": "hal-04139578",
       "uri_s": "https://hal.science/hal-04139578v1",
       "title_s": "Safety Net Detection by Optic Flow Processing",
@@ -2674,41 +2782,6 @@
       ]
     },
     {
-      "halId_s": "hal-04133593",
-      "uri_s": "https://hal.inrae.fr/hal-04133593v2",
-      "title_s": "Reduction in PLANT DEFENSIN 1 expression in Arabidopsis thaliana results in increased resistance to pathogens and zinc toxicity",
-      "docType_s": "ART",
-      "doiId_s": "10.1093/jxb/erad228",
-      "laboratories": [
-        "IPSIM",
-        "CNRS",
-        "INRAE",
-        "Institut Agro",
-        "UM",
-        "UB",
-        "UBFC",
-        "LEPSE"
-      ],
-      "modifiedDate_tdate": "2026-05-05T15:52:37Z",
-      "producedDateY_i": 2023,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.15454/AXY7FV",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/AXY7FV",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Replication Data for: Nguyen et al. Reduction in PLANT DEFENSIN 1 results in increased resistance to pathogens and zinc toxicity",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
       "halId_s": "hal-04059014",
       "uri_s": "https://hal.science/hal-04059014v1",
       "title_s": "Leaf microbiome data for European cultivated grapevine (Vitis vinifera L.) during downy mildew (Plasmopara viticola) epidemics in three wine-producing regions in France",
@@ -2736,42 +2809,6 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/2YDSBL",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "Leaf microbiome data for European cultivated grapevine (Vitis vinifera L.) during downy mildew (Plasmopara viticola) epidemics in three wine-producing regions in France",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-03910388",
-      "uri_s": "https://hal.science/hal-03910388v1",
-      "title_s": "Botrytis cinerea strains infecting grapevine and tomato display contrasted repertoires of accessory chromosomes, transposons and small RNAs",
-      "docType_s": "ART",
-      "doiId_s": "10.24072/pcjournal.211",
-      "laboratories": [
-        "BIOGER",
-        "INRAE",
-        "UMR PHIM",
-        "Cirad",
-        "IRD",
-        "Institut Agro",
-        "UM",
-        "UB",
-        "UBFC"
-      ],
-      "modifiedDate_tdate": "2026-05-05T15:52:30Z",
-      "producedDateY_i": 2022,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/HYWRNM",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/HYWRNM",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Transposable element annotation of Botrytis cinerea Sl3 and Vvl3",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
@@ -3603,43 +3640,6 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/GPDV7F",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "A dataset of food supplies and preferences of French university students",
-          "field": "relatedPublication_s",
-          "misfiled": true,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-04612748",
-      "uri_s": "https://hal.inrae.fr/hal-04612748v1",
-      "title_s": "Wheat dwarfing reshapes plant and fungal development in arbuscular mycorrhizal symbiosis",
-      "docType_s": "ART",
-      "doiId_s": "10.1007/s00572-024-01150-y",
-      "laboratories": [
-        "ISYEB",
-        "MNHN",
-        "EPHE",
-        "PSL",
-        "SU",
-        "CNRS",
-        "UA",
-        "UB",
-        "UBFC",
-        "INRAE"
-      ],
-      "modifiedDate_tdate": "2025-08-12T17:07:49Z",
-      "producedDateY_i": 2024,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/R1QHIL",
-          "repository": "Recherche Data Gouv",
-          "publisher": null,
-          "landing_url": null,
-          "landing_host": null,
-          "dataset_title": null,
           "field": "relatedPublication_s",
           "misfiled": true,
           "also_in_relatedData_s": false

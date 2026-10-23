@@ -592,7 +592,7 @@
             "title_s": "Towards Tsunami Early-Warning with Distributed Acoustic Sensing: Expected Seafloor Strains Induced by Tsunamis",
             "uri_s": "https://hal.science/hal-05630218v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 5
+            "producedDateM_i": 10
           }
         ]
       },
@@ -2699,7 +2699,7 @@
             "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
             "uri_s": "https://hal.science/hal-01889268v2",
             "producedDateY_i": 2018,
-            "producedDateM_i": 8
+            "producedDateM_i": 10
           }
         ]
       },
@@ -2716,7 +2716,7 @@
             "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
             "uri_s": "https://hal.science/hal-01889268v2",
             "producedDateY_i": 2018,
-            "producedDateM_i": 8
+            "producedDateM_i": 10
           }
         ]
       },
@@ -2733,7 +2733,7 @@
             "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
             "uri_s": "https://hal.science/hal-01889268v2",
             "producedDateY_i": 2018,
-            "producedDateM_i": 8
+            "producedDateM_i": 10
           },
           {
             "halId_s": "lirmm-01892712",
@@ -2757,7 +2757,7 @@
             "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
             "uri_s": "https://hal.science/hal-01889268v2",
             "producedDateY_i": 2018,
-            "producedDateM_i": 8
+            "producedDateM_i": 10
           }
         ]
       },
@@ -2774,7 +2774,7 @@
             "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
             "uri_s": "https://hal.science/hal-01889268v2",
             "producedDateY_i": 2018,
-            "producedDateM_i": 8
+            "producedDateM_i": 10
           }
         ]
       },
@@ -2791,7 +2791,7 @@
             "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
             "uri_s": "https://hal.science/hal-01889268v2",
             "producedDateY_i": 2018,
-            "producedDateM_i": 8
+            "producedDateM_i": 10
           }
         ]
       },
@@ -2808,7 +2808,7 @@
             "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
             "uri_s": "https://hal.science/hal-01889268v2",
             "producedDateY_i": 2018,
-            "producedDateM_i": 8
+            "producedDateM_i": 10
           },
           {
             "halId_s": "lirmm-01892712",
@@ -2832,7 +2832,7 @@
             "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
             "uri_s": "https://hal.science/hal-01889268v2",
             "producedDateY_i": 2018,
-            "producedDateM_i": 8
+            "producedDateM_i": 10
           }
         ]
       },
@@ -2849,7 +2849,7 @@
             "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
             "uri_s": "https://hal.science/hal-01889268v2",
             "producedDateY_i": 2018,
-            "producedDateM_i": 8
+            "producedDateM_i": 10
           }
         ]
       },
@@ -3927,7 +3927,7 @@
             "title_s": "Reconstruction of nearshore surface gravity wave heights from distributed acoustic sensing data",
             "uri_s": "https://hal.science/hal-04829691v1",
             "producedDateY_i": 2024,
-            "producedDateM_i": 7
+            "producedDateM_i": 10
           }
         ]
       },
@@ -4896,7 +4896,7 @@
             "title_s": "A generic ontological network for Agri-food experiment integration – Application to viticulture and winemaking",
             "uri_s": "https://hal.science/hal-01552148v1",
             "producedDateY_i": 2017,
-            "producedDateM_i": 5
+            "producedDateM_i": 10
           }
         ]
       },
@@ -4930,7 +4930,7 @@
             "title_s": "A generic ontological network for Agri-food experiment integration – Application to viticulture and winemaking",
             "uri_s": "https://hal.science/hal-01552148v1",
             "producedDateY_i": 2017,
-            "producedDateM_i": 5
+            "producedDateM_i": 10
           }
         ]
       },
@@ -5030,7 +5030,7 @@
             "title_s": "Fuzzy Web Data Tables Integration Guided by an Ontological and Terminological Resource",
             "uri_s": "https://hal-lirmm.ccsd.cnrs.fr/lirmm-00642899v1",
             "producedDateY_i": 2013,
-            "producedDateM_i": 5
+            "producedDateM_i": 10
           }
         ]
       }
@@ -5184,12 +5184,12 @@
       0,
       2,
       1,
-      3,
+      2,
       2,
       2,
       3,
       5,
-      8,
+      9,
       0,
       0
     ],
@@ -5220,12 +5220,12 @@
           0,
           0,
           0,
+          1,
+          0,
+          0,
+          1,
+          0,
           2,
-          0,
-          0,
-          1,
-          0,
-          1,
           0,
           0
         ]
@@ -5447,6 +5447,24 @@
             "halId_s": "hal-05739203",
             "title_s": "Automatiser l’évaluation de la complétude des notifications d’alerte à la population : enjeux et applications",
             "uri_s": "https://hal.science/hal-05739203v3",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 10
+          }
+        ],
+        "month": 10
+      },
+      {
+        "dataset_doi": "10.57745/ENBAIS",
+        "dataset_title": "Replication Data for: Towards tsunami early-warning with Distributed Acoustic Sensing: expected seafloor strains induced by tsunamis",
+        "repository": "Recherche Data Gouv",
+        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/ENBAIS",
+        "landing_host": "entrepot.recherche.data.gouv.fr",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05630218",
+            "title_s": "Towards Tsunami Early-Warning with Distributed Acoustic Sensing: Expected Seafloor Strains Induced by Tsunamis",
+            "uri_s": "https://hal.science/hal-05630218v1",
             "producedDateY_i": 2026,
             "producedDateM_i": 10
           }
@@ -5744,24 +5762,6 @@
       }
     ],
     "2026-05|Recherche Data Gouv": [
-      {
-        "dataset_doi": "10.57745/ENBAIS",
-        "dataset_title": "Replication Data for: Towards tsunami early-warning with Distributed Acoustic Sensing: expected seafloor strains induced by tsunamis",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/ENBAIS",
-        "landing_host": "entrepot.recherche.data.gouv.fr",
-        "year": 2026,
-        "publications": [
-          {
-            "halId_s": "hal-05630218",
-            "title_s": "Towards Tsunami Early-Warning with Distributed Acoustic Sensing: Expected Seafloor Strains Induced by Tsunamis",
-            "uri_s": "https://hal.science/hal-05630218v1",
-            "producedDateY_i": 2026,
-            "producedDateM_i": 5
-          }
-        ],
-        "month": 5
-      },
       {
         "dataset_doi": "10.57745/QM0BOR",
         "dataset_title": "Untargeted metabolomic dataset of leaves from twenty four accessions of wild and cultivated tomato plants",

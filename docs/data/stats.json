@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T09:24:25Z",
+  "generated_at": "2026-10-23T13:27:02Z",
   "collection": "UNIV-COTEDAZUR",
   "collection_url": "https://hal.science/UNIV-COTEDAZUR",
   "harvest": {
@@ -346,6 +346,560 @@
       "NAKALA": 9
     },
     "publications": [
+      {
+        "halId_s": "lirmm-00642899",
+        "uri_s": "https://hal-lirmm.ccsd.cnrs.fr/lirmm-00642899v1",
+        "title_s": "Fuzzy Web Data Tables Integration Guided by an Ontological and Terminological Resource",
+        "docType_s": "ART",
+        "doiId_s": "10.1109/TKDE.2011.245",
+        "laboratories": [
+          "GRAPHIK",
+          "LIRMM",
+          "UM",
+          "CNRS",
+          "Inria",
+          "UMR IATE",
+          "Cirad",
+          "INRA",
+          "UM2",
+          "Montpellier SupAgro"
+        ],
+        "modifiedDate_tdate": "2026-10-23T12:37:41Z",
+        "producedDateY_i": 2013,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.15454/NK24ID",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/NK24ID",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Matter Transfer Ontology",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-04495022",
+        "uri_s": "https://hal.science/hal-04495022v1",
+        "title_s": "A Unified approach to publish semantic annotations of agricultural documents as knowledge graphs",
+        "docType_s": "ART",
+        "doiId_s": "10.1016/j.atech.2024.100484",
+        "laboratories": [
+          "TWEAK",
+          "LIRIS",
+          "UL2",
+          "ECL",
+          "UCBL",
+          "INSA Lyon",
+          "INSA",
+          "CNRS",
+          "UR TSCF",
+          "INRAE"
+        ],
+        "modifiedDate_tdate": "2026-10-23T12:36:29Z",
+        "producedDateY_i": 2024,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/TAQQFZ",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/TAQQFZ",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Wheat Trait and Phenotype Ontology OWL/SKOS",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-03474067",
+        "uri_s": "https://hal.science/hal-03474067v1",
+        "title_s": "A process reverse engineering approach using Process and Observation Ontology and Probabilistic Relational Models: application to processing of bio-composites for food packaging",
+        "docType_s": "COMM",
+        "doiId_s": "10.1007/978-3-030-98876-0_1",
+        "laboratories": [
+          "UMR IATE",
+          "INRAE",
+          "Institut Agro",
+          "UM",
+          "BOREAL",
+          "Inria",
+          "LIRMM",
+          "UPVD",
+          "CNRS",
+          "UMPV"
+        ],
+        "modifiedDate_tdate": "2026-10-23T12:36:00Z",
+        "producedDateY_i": 2021,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.15454/AIF6TX",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/AIF6TX",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "PO2 Biorefinery Ontology",
+            "field": "relatedPublication_s",
+            "misfiled": true,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "lirmm-01893516",
+        "uri_s": "https://hal-lirmm.ccsd.cnrs.fr/lirmm-01893516v1",
+        "title_s": "A Decision Support Tool for Agricultural Applications Based on Computational Social Choice and Argumentation",
+        "docType_s": "ART",
+        "doiId_s": "10.4018/IJAEIS.2018070104",
+        "laboratories": [
+          "UMR IATE",
+          "Cirad",
+          "INRA",
+          "UM2",
+          "Montpellier SupAgro",
+          "UM",
+          "GRAPHIK",
+          "LIRMM",
+          "CNRS",
+          "Inria"
+        ],
+        "modifiedDate_tdate": "2026-10-23T12:36:00Z",
+        "producedDateY_i": 2018,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.15454/IZJIT7",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/IZJIT7",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Stakeholders' preferences survey about new technology acceptance and potential development for waste management in wine production in Languedoc Roussillon, France",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "lirmm-01892712",
+        "uri_s": "https://hal-lirmm.ccsd.cnrs.fr/lirmm-01892712v1",
+        "title_s": "Choice of environment-friendly food packagings through argumentation systems and preferences",
+        "docType_s": "ART",
+        "doiId_s": "10.1016/j.ecoinf.2018.07.006",
+        "laboratories": [
+          "GRAPHIK",
+          "LIRMM",
+          "UM",
+          "CNRS",
+          "Inria",
+          "UMR IATE",
+          "Cirad",
+          "INRA",
+          "UM2",
+          "Montpellier SupAgro"
+        ],
+        "modifiedDate_tdate": "2026-10-23T12:34:12Z",
+        "producedDateY_i": 2018,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.15454/F4C8I0",
+            "repository": "Recherche Data Gouv",
+            "publisher": "INRA",
+            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/F4C8I0",
+            "landing_host": "data.inrae.fr",
+            "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries - Wood packaging consumers’ arguments",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.15454/GNBUFH",
+            "repository": "Recherche Data Gouv",
+            "publisher": "INRA",
+            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/GNBUFH",
+            "landing_host": "data.inrae.fr",
+            "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries - Consumers’ answers to poll for Wood packaging",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-01889268",
+        "uri_s": "https://hal.science/hal-01889268v2",
+        "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
+        "docType_s": "ART",
+        "doiId_s": "10.1016/j.dib.2018.09.034",
+        "laboratories": [
+          "GRAPHIK",
+          "LIRMM",
+          "UM",
+          "CNRS",
+          "Inria",
+          "UMR IATE",
+          "Cirad",
+          "INRA",
+          "UM2",
+          "Montpellier SupAgro"
+        ],
+        "modifiedDate_tdate": "2026-10-23T12:28:54Z",
+        "producedDateY_i": 2018,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.15454/GNBUFH",
+            "repository": "Recherche Data Gouv",
+            "publisher": "INRA",
+            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/GNBUFH",
+            "landing_host": "data.inrae.fr",
+            "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries - Consumers’ answers to poll for Wood packaging",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.15454/UBPOQG",
+            "repository": "Recherche Data Gouv",
+            "publisher": "INRA",
+            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/UBPOQG",
+            "landing_host": "data.inrae.fr",
+            "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries - Consumers’ answers to poll for Plastic with plastic film",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.15454/HKIQFJ",
+            "repository": "Recherche Data Gouv",
+            "publisher": "INRA",
+            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/HKIQFJ",
+            "landing_host": "data.inrae.fr",
+            "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries - Consumers’ answers to poll for Plastic rigid lid",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.15454/IHVM9P",
+            "repository": "Recherche Data Gouv",
+            "publisher": "INRA",
+            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/IHVM9P",
+            "landing_host": "data.inrae.fr",
+            "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries: consumers' answers to poll for Plastic not closed",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.15454/F4C8I0",
+            "repository": "Recherche Data Gouv",
+            "publisher": "INRA",
+            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/F4C8I0",
+            "landing_host": "data.inrae.fr",
+            "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries - Wood packaging consumers’ arguments",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.15454/GMWB8Q",
+            "repository": "Recherche Data Gouv",
+            "publisher": "INRA",
+            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/GMWB8Q",
+            "landing_host": "data.inrae.fr",
+            "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries - Plastic with plastic film consumers’ arguments",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.15454/DC9PYL",
+            "repository": "Recherche Data Gouv",
+            "publisher": "INRA",
+            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/DC9PYL",
+            "landing_host": "data.inrae.fr",
+            "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries - Plastic rigid lid consumers’ arguments",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.15454/NM3WET",
+            "repository": "Recherche Data Gouv",
+            "publisher": "INRA",
+            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/NM3WET",
+            "landing_host": "data.inrae.fr",
+            "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries - Plastic not closed consumers’ arguments",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.15454/VDNRH6",
+            "repository": "Recherche Data Gouv",
+            "publisher": "INRA",
+            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/VDNRH6",
+            "landing_host": "data.inrae.fr",
+            "dataset_title": "Scientific arguments about food packaging functionalities for fresh strawberries - Food packaging expert’s arguments for all packagings",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-02555136",
+        "uri_s": "https://hal.inrae.fr/hal-02555136v1",
+        "title_s": "Argumentation Corrected Context Weighting-Life Cycle Assessment: A Practical Method of Including Stakeholder Perspectives in Multi-Criteria Decision Support for LCA",
+        "docType_s": "ART",
+        "doiId_s": "10.3390/su12062170",
+        "laboratories": [
+          "DTU",
+          "GRAPHIK",
+          "LIRMM",
+          "UM",
+          "CNRS",
+          "Inria",
+          "UMR IATE",
+          "Cirad",
+          "INRAE",
+          "Institut Agro"
+        ],
+        "modifiedDate_tdate": "2026-10-23T12:28:54Z",
+        "producedDateY_i": 2020,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.15454/XVL4BA",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Portail Data INRAE",
+            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/XVL4BA",
+            "landing_host": "data.inrae.fr",
+            "dataset_title": "Preferences and justifications of NoAW stakeholders about the importance on LCA (Life Cycle Analysis) impact categories",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-05630218",
+        "uri_s": "https://hal.science/hal-05630218v1",
+        "title_s": "Towards Tsunami Early-Warning with Distributed Acoustic Sensing: Expected Seafloor Strains Induced by Tsunamis",
+        "docType_s": "ART",
+        "doiId_s": "10.1007/s00024-026-03940-1",
+        "laboratories": [
+          "GEOAZUR 7329",
+          "INSU - CNRS",
+          "UniCA",
+          "CNRS",
+          "IRD [Occitanie]",
+          "IRD",
+          "UAH",
+          "SIO - UC San Diego",
+          "UC San Diego",
+          "UC"
+        ],
+        "modifiedDate_tdate": "2026-10-23T12:27:10Z",
+        "producedDateY_i": 2026,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/ENBAIS",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/ENBAIS",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Replication Data for: Towards tsunami early-warning with Distributed Acoustic Sensing: expected seafloor strains induced by tsunamis",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-01552148",
+        "uri_s": "https://hal.science/hal-01552148v1",
+        "title_s": "A generic ontological network for Agri-food experiment integration – Application to viticulture and winemaking",
+        "docType_s": "ART",
+        "doiId_s": "10.1016/j.compag.2017.06.020",
+        "laboratories": [
+          "MISTEA",
+          "INRA",
+          "Montpellier SupAgro",
+          "PECH ROUGE",
+          "UMR IATE",
+          "Cirad",
+          "UM2",
+          "UM",
+          "GRAPHIK",
+          "LIRMM"
+        ],
+        "modifiedDate_tdate": "2026-10-23T12:27:01Z",
+        "producedDateY_i": 2017,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.15454/RJKJBN",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Portail Data INRAE",
+            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/RJKJBN",
+            "landing_host": "data.inrae.fr",
+            "dataset_title": "Ontology for Food Processing Experiment",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          },
+          {
+            "doi": "10.15454/DPBMBW",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Portail Data INRAE",
+            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/DPBMBW",
+            "landing_host": "data.inrae.fr",
+            "dataset_title": "Agri-Food Experiment Ontology",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-03013147",
+        "uri_s": "https://agroparistech.hal.science/hal-03013147v1",
+        "title_s": "Food transformation process description using PO2 and FoodOn",
+        "docType_s": "COMM",
+        "doiId_s": null,
+        "laboratories": [
+          "LIRMM",
+          "UM",
+          "CNRS",
+          "GRAPHIK",
+          "Inria",
+          "UMR IATE",
+          "Cirad",
+          "INRAE",
+          "Institut Agro",
+          "MIA Paris-Saclay"
+        ],
+        "modifiedDate_tdate": "2026-10-23T12:25:10Z",
+        "producedDateY_i": 2020,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.15454/XSVVBW",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/XSVVBW",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "PO² Process and Observation Ontology",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "lirmm-02162114",
+        "uri_s": "https://hal-lirmm.ccsd.cnrs.fr/lirmm-02162114v1",
+        "title_s": "Expertise-based decision support for managing food quality in agri-food companies",
+        "docType_s": "ART",
+        "doiId_s": "10.1016/j.compag.2019.05.052",
+        "laboratories": [
+          "UMR IATE",
+          "Cirad",
+          "INRA",
+          "UM2",
+          "Montpellier SupAgro",
+          "UM",
+          "GRAPHIK",
+          "LIRMM",
+          "CNRS",
+          "Inria"
+        ],
+        "modifiedDate_tdate": "2026-10-23T12:21:48Z",
+        "producedDateY_i": 2019,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.15454/9Z4PS3",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/9Z4PS3",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Capex ontology",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "lirmm-01346685",
+        "uri_s": "https://hal-lirmm.ccsd.cnrs.fr/lirmm-01346685v1",
+        "title_s": "A decision support system for eco-efficient biorefinery process comparison using a semantic approach",
+        "docType_s": "ART",
+        "doiId_s": "10.1016/j.compag.2016.06.020",
+        "laboratories": [
+          "UMR IATE",
+          "Cirad",
+          "INRA",
+          "UM2",
+          "Montpellier SupAgro",
+          "UM",
+          "LGC",
+          "UT3",
+          "Comue de Toulouse",
+          "CNRS"
+        ],
+        "modifiedDate_tdate": "2026-10-23T12:21:48Z",
+        "producedDateY_i": 2016,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.15454/X2MOWO",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/X2MOWO",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Biorefinery ontology",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
       {
         "halId_s": "hal-05114056",
         "uri_s": "https://hal.science/hal-05114056v2",
@@ -1730,168 +2284,6 @@
         ]
       },
       {
-        "halId_s": "hal-04495022",
-        "uri_s": "https://hal.science/hal-04495022v1",
-        "title_s": "A Unified approach to publish semantic annotations of agricultural documents as knowledge graphs",
-        "docType_s": "ART",
-        "doiId_s": "10.1016/j.atech.2024.100484",
-        "laboratories": [
-          "TWEAK",
-          "LIRIS",
-          "UL2",
-          "ECL",
-          "UCBL",
-          "INSA Lyon",
-          "INSA",
-          "CNRS",
-          "UR TSCF",
-          "INRAE"
-        ],
-        "modifiedDate_tdate": "2026-08-07T11:16:13Z",
-        "producedDateY_i": 2024,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.57745/TAQQFZ",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/TAQQFZ",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "Wheat Trait and Phenotype Ontology OWL/SKOS",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-01889268",
-        "uri_s": "https://hal.science/hal-01889268v2",
-        "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
-        "docType_s": "ART",
-        "doiId_s": "10.1016/j.dib.2018.09.034",
-        "laboratories": [
-          "GRAPHIK",
-          "LIRMM",
-          "UM",
-          "CNRS",
-          "Inria",
-          "UMR IATE",
-          "Cirad",
-          "INRA",
-          "UM2",
-          "Montpellier SupAgro"
-        ],
-        "modifiedDate_tdate": "2026-08-06T03:22:21Z",
-        "producedDateY_i": 2018,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.15454/GNBUFH",
-            "repository": "Recherche Data Gouv",
-            "publisher": "INRA",
-            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/GNBUFH",
-            "landing_host": "data.inrae.fr",
-            "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries - Consumers’ answers to poll for Wood packaging",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          },
-          {
-            "doi": "10.15454/UBPOQG",
-            "repository": "Recherche Data Gouv",
-            "publisher": "INRA",
-            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/UBPOQG",
-            "landing_host": "data.inrae.fr",
-            "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries - Consumers’ answers to poll for Plastic with plastic film",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          },
-          {
-            "doi": "10.15454/HKIQFJ",
-            "repository": "Recherche Data Gouv",
-            "publisher": "INRA",
-            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/HKIQFJ",
-            "landing_host": "data.inrae.fr",
-            "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries - Consumers’ answers to poll for Plastic rigid lid",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          },
-          {
-            "doi": "10.15454/IHVM9P",
-            "repository": "Recherche Data Gouv",
-            "publisher": "INRA",
-            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/IHVM9P",
-            "landing_host": "data.inrae.fr",
-            "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries: consumers' answers to poll for Plastic not closed",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          },
-          {
-            "doi": "10.15454/F4C8I0",
-            "repository": "Recherche Data Gouv",
-            "publisher": "INRA",
-            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/F4C8I0",
-            "landing_host": "data.inrae.fr",
-            "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries - Wood packaging consumers’ arguments",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          },
-          {
-            "doi": "10.15454/GMWB8Q",
-            "repository": "Recherche Data Gouv",
-            "publisher": "INRA",
-            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/GMWB8Q",
-            "landing_host": "data.inrae.fr",
-            "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries - Plastic with plastic film consumers’ arguments",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          },
-          {
-            "doi": "10.15454/DC9PYL",
-            "repository": "Recherche Data Gouv",
-            "publisher": "INRA",
-            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/DC9PYL",
-            "landing_host": "data.inrae.fr",
-            "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries - Plastic rigid lid consumers’ arguments",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          },
-          {
-            "doi": "10.15454/NM3WET",
-            "repository": "Recherche Data Gouv",
-            "publisher": "INRA",
-            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/NM3WET",
-            "landing_host": "data.inrae.fr",
-            "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries - Plastic not closed consumers’ arguments",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          },
-          {
-            "doi": "10.15454/VDNRH6",
-            "repository": "Recherche Data Gouv",
-            "publisher": "INRA",
-            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/VDNRH6",
-            "landing_host": "data.inrae.fr",
-            "dataset_title": "Scientific arguments about food packaging functionalities for fresh strawberries - Food packaging expert’s arguments for all packagings",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
         "halId_s": "halshs-03370962",
         "uri_s": "https://shs.hal.science/halshs-03370962v1",
         "title_s": "Unequal housing affordability across European cities. The ESPON Housing Database, Insights on Affordability in Selected Cities in Europe",
@@ -1990,80 +2382,6 @@
             "landing_url": "https://nakala.fr/10.34847/nkl.0dee15ow",
             "landing_host": "nakala.fr",
             "dataset_title": "The ExEco Dataset: A Textual Dataset of French Economic and Social Thought (1918–1960)",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "lirmm-02162114",
-        "uri_s": "https://hal-lirmm.ccsd.cnrs.fr/lirmm-02162114v1",
-        "title_s": "Expertise-based decision support for managing food quality in agri-food companies",
-        "docType_s": "ART",
-        "doiId_s": "10.1016/j.compag.2019.05.052",
-        "laboratories": [
-          "UMR IATE",
-          "Cirad",
-          "INRA",
-          "UM2",
-          "Montpellier SupAgro",
-          "UM",
-          "GRAPHIK",
-          "LIRMM",
-          "CNRS",
-          "Inria"
-        ],
-        "modifiedDate_tdate": "2026-06-02T14:22:23Z",
-        "producedDateY_i": 2019,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.15454/9Z4PS3",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/9Z4PS3",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "Capex ontology",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-05630218",
-        "uri_s": "https://hal.science/hal-05630218v1",
-        "title_s": "Towards Tsunami Early-Warning with Distributed Acoustic Sensing: Expected Seafloor Strains Induced by Tsunamis",
-        "docType_s": "ART",
-        "doiId_s": "10.1007/s00024-026-03940-1",
-        "laboratories": [
-          "GEOAZUR 7329",
-          "INSU - CNRS",
-          "UniCA",
-          "CNRS",
-          "IRD [Occitanie]",
-          "IRD",
-          "UAH",
-          "SIO - UC San Diego",
-          "UC San Diego",
-          "UC"
-        ],
-        "modifiedDate_tdate": "2026-05-26T16:01:23Z",
-        "producedDateY_i": 2026,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.57745/ENBAIS",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/ENBAIS",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "Replication Data for: Towards tsunami early-warning with Distributed Acoustic Sensing: expected seafloor strains induced by tsunamis",
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -2417,287 +2735,6 @@
         ]
       },
       {
-        "halId_s": "hal-01552148",
-        "uri_s": "https://hal.science/hal-01552148v1",
-        "title_s": "A generic ontological network for Agri-food experiment integration – Application to viticulture and winemaking",
-        "docType_s": "ART",
-        "doiId_s": "10.1016/j.compag.2017.06.020",
-        "laboratories": [
-          "MISTEA",
-          "INRA",
-          "Montpellier SupAgro",
-          "PECH ROUGE",
-          "UMR IATE",
-          "Cirad",
-          "UM2",
-          "UM",
-          "GRAPHIK",
-          "LIRMM"
-        ],
-        "modifiedDate_tdate": "2026-05-05T15:52:24Z",
-        "producedDateY_i": 2017,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.15454/RJKJBN",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Portail Data INRAE",
-            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/RJKJBN",
-            "landing_host": "data.inrae.fr",
-            "dataset_title": "Ontology for Food Processing Experiment",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          },
-          {
-            "doi": "10.15454/DPBMBW",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Portail Data INRAE",
-            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/DPBMBW",
-            "landing_host": "data.inrae.fr",
-            "dataset_title": "Agri-Food Experiment Ontology",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "lirmm-00642899",
-        "uri_s": "https://hal-lirmm.ccsd.cnrs.fr/lirmm-00642899v1",
-        "title_s": "Fuzzy Web Data Tables Integration Guided by an Ontological and Terminological Resource",
-        "docType_s": "ART",
-        "doiId_s": "10.1109/TKDE.2011.245",
-        "laboratories": [
-          "GRAPHIK",
-          "LIRMM",
-          "UM",
-          "CNRS",
-          "Inria",
-          "UMR IATE",
-          "Cirad",
-          "INRA",
-          "UM2",
-          "Montpellier SupAgro"
-        ],
-        "modifiedDate_tdate": "2026-05-05T15:52:21Z",
-        "producedDateY_i": 2013,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.15454/NK24ID",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/NK24ID",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "Matter Transfer Ontology",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-03013147",
-        "uri_s": "https://agroparistech.hal.science/hal-03013147v1",
-        "title_s": "Food transformation process description using PO2 and FoodOn",
-        "docType_s": "COMM",
-        "doiId_s": null,
-        "laboratories": [
-          "LIRMM",
-          "UM",
-          "CNRS",
-          "GRAPHIK",
-          "Inria",
-          "UMR IATE",
-          "Cirad",
-          "INRAE",
-          "Institut Agro",
-          "MIA Paris-Saclay"
-        ],
-        "modifiedDate_tdate": "2026-05-05T15:52:12Z",
-        "producedDateY_i": 2020,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.15454/XSVVBW",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/XSVVBW",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "PO² Process and Observation Ontology",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-02555136",
-        "uri_s": "https://hal.inrae.fr/hal-02555136v1",
-        "title_s": "Argumentation Corrected Context Weighting-Life Cycle Assessment: A Practical Method of Including Stakeholder Perspectives in Multi-Criteria Decision Support for LCA",
-        "docType_s": "ART",
-        "doiId_s": "10.3390/su12062170",
-        "laboratories": [
-          "DTU",
-          "GRAPHIK",
-          "LIRMM",
-          "UM",
-          "CNRS",
-          "Inria",
-          "UMR IATE",
-          "Cirad",
-          "INRAE",
-          "Institut Agro"
-        ],
-        "modifiedDate_tdate": "2026-05-05T15:52:06Z",
-        "producedDateY_i": 2020,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.15454/XVL4BA",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Portail Data INRAE",
-            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/XVL4BA",
-            "landing_host": "data.inrae.fr",
-            "dataset_title": "Preferences and justifications of NoAW stakeholders about the importance on LCA (Life Cycle Analysis) impact categories",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "lirmm-01346685",
-        "uri_s": "https://hal-lirmm.ccsd.cnrs.fr/lirmm-01346685v1",
-        "title_s": "A decision support system for eco-efficient biorefinery process comparison using a semantic approach",
-        "docType_s": "ART",
-        "doiId_s": "10.1016/j.compag.2016.06.020",
-        "laboratories": [
-          "UMR IATE",
-          "Cirad",
-          "INRA",
-          "UM2",
-          "Montpellier SupAgro",
-          "UM",
-          "LGC",
-          "UT3",
-          "Comue de Toulouse",
-          "CNRS"
-        ],
-        "modifiedDate_tdate": "2026-05-05T15:52:03Z",
-        "producedDateY_i": 2016,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.15454/X2MOWO",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/X2MOWO",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "Biorefinery ontology",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "lirmm-01892712",
-        "uri_s": "https://hal-lirmm.ccsd.cnrs.fr/lirmm-01892712v1",
-        "title_s": "Choice of environment-friendly food packagings through argumentation systems and preferences",
-        "docType_s": "ART",
-        "doiId_s": "10.1016/j.ecoinf.2018.07.006",
-        "laboratories": [
-          "GRAPHIK",
-          "LIRMM",
-          "UM",
-          "CNRS",
-          "Inria",
-          "UMR IATE",
-          "Cirad",
-          "INRA",
-          "UM2",
-          "Montpellier SupAgro"
-        ],
-        "modifiedDate_tdate": "2026-05-05T15:52:02Z",
-        "producedDateY_i": 2018,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.15454/F4C8I0",
-            "repository": "Recherche Data Gouv",
-            "publisher": "INRA",
-            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/F4C8I0",
-            "landing_host": "data.inrae.fr",
-            "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries - Wood packaging consumers’ arguments",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          },
-          {
-            "doi": "10.15454/GNBUFH",
-            "repository": "Recherche Data Gouv",
-            "publisher": "INRA",
-            "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/GNBUFH",
-            "landing_host": "data.inrae.fr",
-            "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries - Consumers’ answers to poll for Wood packaging",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "lirmm-01893516",
-        "uri_s": "https://hal-lirmm.ccsd.cnrs.fr/lirmm-01893516v1",
-        "title_s": "A Decision Support Tool for Agricultural Applications Based on Computational Social Choice and Argumentation",
-        "docType_s": "ART",
-        "doiId_s": "10.4018/IJAEIS.2018070104",
-        "laboratories": [
-          "UMR IATE",
-          "Cirad",
-          "INRA",
-          "UM2",
-          "Montpellier SupAgro",
-          "UM",
-          "GRAPHIK",
-          "LIRMM",
-          "CNRS",
-          "Inria"
-        ],
-        "modifiedDate_tdate": "2026-05-05T15:52:02Z",
-        "producedDateY_i": 2018,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.15454/IZJIT7",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/IZJIT7",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "Stakeholders' preferences survey about new technology acceptance and potential development for waste management in wine production in Languedoc Roussillon, France",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
         "halId_s": "hal-04387090",
         "uri_s": "https://hal.inrae.fr/hal-04387090v1",
         "title_s": "Visible – Near infrared hyperspectral dataset of healthy and infected apple tree leaves images for the monitoring of apple fire blight",
@@ -2765,43 +2802,6 @@
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/LVRFWJ",
             "landing_host": "entrepot.recherche.data.gouv.fr",
             "dataset_title": "Alignment of French Crop Usage Thesaurus and French National Taxonomic Repository TAXREF-LD",
-            "field": "relatedPublication_s",
-            "misfiled": true,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-03474067",
-        "uri_s": "https://hal.science/hal-03474067v1",
-        "title_s": "A process reverse engineering approach using Process and Observation Ontology and Probabilistic Relational Models: application to processing of bio-composites for food packaging",
-        "docType_s": "COMM",
-        "doiId_s": "10.1007/978-3-030-98876-0_1",
-        "laboratories": [
-          "UMR IATE",
-          "INRAE",
-          "Institut Agro",
-          "UM",
-          "BOREAL",
-          "Inria",
-          "LIRMM",
-          "UPVD",
-          "CNRS",
-          "UMPV"
-        ],
-        "modifiedDate_tdate": "2025-12-02T03:18:23Z",
-        "producedDateY_i": 2021,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.15454/AIF6TX",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/AIF6TX",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "PO2 Biorefinery Ontology",
             "field": "relatedPublication_s",
             "misfiled": true,
             "also_in_relatedData_s": false
@@ -3405,7 +3405,7 @@
               "title_s": "Towards Tsunami Early-Warning with Distributed Acoustic Sensing: Expected Seafloor Strains Induced by Tsunamis",
               "uri_s": "https://hal.science/hal-05630218v1",
               "producedDateY_i": 2026,
-              "producedDateM_i": 5
+              "producedDateM_i": 10
             }
           ]
         },
@@ -5512,7 +5512,7 @@
               "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
               "uri_s": "https://hal.science/hal-01889268v2",
               "producedDateY_i": 2018,
-              "producedDateM_i": 8
+              "producedDateM_i": 10
             }
           ]
         },
@@ -5529,7 +5529,7 @@
               "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
               "uri_s": "https://hal.science/hal-01889268v2",
               "producedDateY_i": 2018,
-              "producedDateM_i": 8
+              "producedDateM_i": 10
             }
           ]
         },
@@ -5546,7 +5546,7 @@
               "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
               "uri_s": "https://hal.science/hal-01889268v2",
               "producedDateY_i": 2018,
-              "producedDateM_i": 8
+              "producedDateM_i": 10
             },
             {
               "halId_s": "lirmm-01892712",
@@ -5570,7 +5570,7 @@
               "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
               "uri_s": "https://hal.science/hal-01889268v2",
               "producedDateY_i": 2018,
-              "producedDateM_i": 8
+              "producedDateM_i": 10
             }
           ]
         },
@@ -5587,7 +5587,7 @@
               "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
               "uri_s": "https://hal.science/hal-01889268v2",
               "producedDateY_i": 2018,
-              "producedDateM_i": 8
+              "producedDateM_i": 10
             }
           ]
         },
@@ -5604,7 +5604,7 @@
               "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
               "uri_s": "https://hal.science/hal-01889268v2",
               "producedDateY_i": 2018,
-              "producedDateM_i": 8
+              "producedDateM_i": 10
             }
           ]
         },
@@ -5621,7 +5621,7 @@
               "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
               "uri_s": "https://hal.science/hal-01889268v2",
               "producedDateY_i": 2018,
-              "producedDateM_i": 8
+              "producedDateM_i": 10
             },
             {
               "halId_s": "lirmm-01892712",
@@ -5645,7 +5645,7 @@
               "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
               "uri_s": "https://hal.science/hal-01889268v2",
               "producedDateY_i": 2018,
-              "producedDateM_i": 8
+              "producedDateM_i": 10
             }
           ]
         },
@@ -5662,7 +5662,7 @@
               "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
               "uri_s": "https://hal.science/hal-01889268v2",
               "producedDateY_i": 2018,
-              "producedDateM_i": 8
+              "producedDateM_i": 10
             }
           ]
         },
@@ -6740,7 +6740,7 @@
               "title_s": "Reconstruction of nearshore surface gravity wave heights from distributed acoustic sensing data",
               "uri_s": "https://hal.science/hal-04829691v1",
               "producedDateY_i": 2024,
-              "producedDateM_i": 7
+              "producedDateM_i": 10
             }
           ]
         },
@@ -7709,7 +7709,7 @@
               "title_s": "A generic ontological network for Agri-food experiment integration – Application to viticulture and winemaking",
               "uri_s": "https://hal.science/hal-01552148v1",
               "producedDateY_i": 2017,
-              "producedDateM_i": 5
+              "producedDateM_i": 10
             }
           ]
         },
@@ -7743,7 +7743,7 @@
               "title_s": "A generic ontological network for Agri-food experiment integration – Application to viticulture and winemaking",
               "uri_s": "https://hal.science/hal-01552148v1",
               "producedDateY_i": 2017,
-              "producedDateM_i": 5
+              "producedDateM_i": 10
             }
           ]
         },
@@ -7843,7 +7843,7 @@
               "title_s": "Fuzzy Web Data Tables Integration Guided by an Ontological and Terminological Resource",
               "uri_s": "https://hal-lirmm.ccsd.cnrs.fr/lirmm-00642899v1",
               "producedDateY_i": 2013,
-              "producedDateM_i": 5
+              "producedDateM_i": 10
             }
           ]
         }
@@ -7997,12 +7997,12 @@
         0,
         2,
         1,
-        3,
+        2,
         2,
         2,
         3,
         5,
-        8,
+        9,
         0,
         0
       ],
@@ -8033,12 +8033,12 @@
             0,
             0,
             0,
+            1,
+            0,
+            0,
+            1,
+            0,
             2,
-            0,
-            0,
-            1,
-            0,
-            1,
             0,
             0
           ]
@@ -8260,6 +8260,24 @@
               "halId_s": "hal-05739203",
               "title_s": "Automatiser l’évaluation de la complétude des notifications d’alerte à la population : enjeux et applications",
               "uri_s": "https://hal.science/hal-05739203v3",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 10
+            }
+          ],
+          "month": 10
+        },
+        {
+          "dataset_doi": "10.57745/ENBAIS",
+          "dataset_title": "Replication Data for: Towards tsunami early-warning with Distributed Acoustic Sensing: expected seafloor strains induced by tsunamis",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/ENBAIS",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05630218",
+              "title_s": "Towards Tsunami Early-Warning with Distributed Acoustic Sensing: Expected Seafloor Strains Induced by Tsunamis",
+              "uri_s": "https://hal.science/hal-05630218v1",
               "producedDateY_i": 2026,
               "producedDateM_i": 10
             }
@@ -8557,24 +8575,6 @@
         }
       ],
       "2026-05|Recherche Data Gouv": [
-        {
-          "dataset_doi": "10.57745/ENBAIS",
-          "dataset_title": "Replication Data for: Towards tsunami early-warning with Distributed Acoustic Sensing: expected seafloor strains induced by tsunamis",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/ENBAIS",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2026,
-          "publications": [
-            {
-              "halId_s": "hal-05630218",
-              "title_s": "Towards Tsunami Early-Warning with Distributed Acoustic Sensing: Expected Seafloor Strains Induced by Tsunamis",
-              "uri_s": "https://hal.science/hal-05630218v1",
-              "producedDateY_i": 2026,
-              "producedDateM_i": 5
-            }
-          ],
-          "month": 5
-        },
         {
           "dataset_doi": "10.57745/QM0BOR",
           "dataset_title": "Untargeted metabolomic dataset of leaves from twenty four accessions of wild and cultivated tomato plants",
