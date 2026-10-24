@@ -6,6 +6,224 @@
   },
   "publications": [
     {
+      "halId_s": "hal-05114056",
+      "uri_s": "https://hal.science/hal-05114056v2",
+      "title_s": "Le Rhône aménagé vu du ciel. Constitution d'une base de données photographiques obliques pour documenter la trajectoire socio-environnementale du fleuve contemporain (1910-1960)",
+      "docType_s": "ART",
+      "doiId_s": "10.46298/dc.15880",
+      "laboratories": [
+        "EVS",
+        "ENS de Lyon",
+        "Mines Saint-Étienne MSE",
+        "IMT",
+        "UL2",
+        "UJML",
+        "INSA Lyon",
+        "INSA",
+        "UJM",
+        "UJM EPE"
+      ],
+      "modifiedDate_tdate": "2026-10-24T03:30:27Z",
+      "producedDateY_i": 2025,
+      "repositories": [
+        "NAKALA"
+      ],
+      "datasets": [
+        {
+          "doi": "10.34847/nkl.e63a22n9",
+          "repository": "NAKALA",
+          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+          "landing_url": "https://nakala.fr/10.34847/nkl.e63a22n9",
+          "landing_host": "nakala.fr",
+          "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-04948456",
+      "uri_s": "https://hal.science/hal-04948456v1",
+      "title_s": "Couches SIG des circonscriptions administratives d'Algérie (1942- 1949) : départements d’Alger, Constantine et Oran",
+      "docType_s": "OTHER",
+      "doiId_s": "10.34847/nkl.e462qm6n",
+      "laboratories": [
+        "LARHRA",
+        "ENS de Lyon",
+        "UL2",
+        "UJML",
+        "CNRS",
+        "UGA",
+        "CHS",
+        "UP1",
+        "ACP",
+        "AU"
+      ],
+      "modifiedDate_tdate": "2026-10-23T14:38:03Z",
+      "producedDateY_i": 2022,
+      "repositories": [
+        "NAKALA"
+      ],
+      "datasets": [
+        {
+          "doi": "10.34847/nkl.e462qm6n",
+          "repository": "NAKALA",
+          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+          "landing_url": "https://nakala.fr/10.34847/nkl.e462qm6n",
+          "landing_host": "nakala.fr",
+          "dataset_title": "Couches SIG des circonscriptions administratives d'Algérie (1942- 1949) : départements d’Alger, Constantine et Oran",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.34847/nkl.e462qm6n",
+          "repository": "NAKALA",
+          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+          "landing_url": "https://nakala.fr/10.34847/nkl.e462qm6n",
+          "landing_host": "nakala.fr",
+          "dataset_title": "Couches SIG des circonscriptions administratives d'Algérie (1942- 1949) : départements d’Alger, Constantine et Oran",
+          "field": "seeAlso_s",
+          "misfiled": false,
+          "also_in_relatedData_s": true
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-01897114",
+      "uri_s": "https://hal.science/hal-01897114v1",
+      "title_s": "A high space–time resolution dataset linking meteorological forcing and hydro-sedimentary response in a mesoscale Mediterranean catchment (Auzon) of the Ardèche region, France",
+      "docType_s": "ART",
+      "doiId_s": "10.5194/essd-9-221-2017",
+      "laboratories": [
+        "IGE",
+        "IRD",
+        "Grenoble INP",
+        "INSU - CNRS",
+        "CNRS",
+        "UGA [2016-2019]",
+        "Fédération OSUG",
+        "EPFL",
+        "UR HHLY",
+        "IRSTEA"
+      ],
+      "modifiedDate_tdate": "2026-10-23T13:56:45Z",
+      "producedDateY_i": 2017,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/J2A44Q",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/J2A44Q",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Numerical simulation of rainfall and runoff driven erosion at the hillslope scale: four rainfall events on the Pradel plot",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-04214908",
+      "uri_s": "https://hal.inrae.fr/hal-04214908v1",
+      "title_s": "On the visual detection of non-natural records in streamflow time series: challenges and impacts",
+      "docType_s": "ART",
+      "doiId_s": "10.5194/hess-27-3375-2023",
+      "laboratories": [
+        "UR HYCAR",
+        "INRAE",
+        "RiverLy",
+        "CA 84",
+        "GEOAZUR 7329",
+        "INSU - CNRS",
+        "UniCA",
+        "CNRS",
+        "IRD [Occitanie]",
+        "IRD"
+      ],
+      "modifiedDate_tdate": "2026-10-23T13:56:01Z",
+      "producedDateY_i": 2023,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/SO2WOV",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/SO2WOV",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Result of a visual detection of non-natural records in streamflow time series for the Explore2 project",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-05028312",
+      "uri_s": "https://hal.inrae.fr/hal-05028312v1",
+      "title_s": "CAMELS-FR dataset: a large-sample hydroclimatic dataset for France to explore hydrological diversity and support model benchmarking",
+      "docType_s": "ART",
+      "doiId_s": "10.5194/essd-17-1461-2025",
+      "laboratories": [
+        "UR HYCAR",
+        "INRAE",
+        "GEOAZUR 7329",
+        "INSU - CNRS",
+        "UniCA",
+        "CNRS",
+        "IRD [Occitanie]",
+        "IRD",
+        "ENS Rennes",
+        "GR"
+      ],
+      "modifiedDate_tdate": "2026-10-23T13:35:37Z",
+      "producedDateY_i": 2025,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/WH7FJR",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/WH7FJR",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "CAMELS-FR dataset",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.57745/HBQWP5",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/HBQWP5",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "CAMELS-FR time series dynamic graphs",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.57745/KK2SVJ",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/KK2SVJ",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "CAMELS-FR graphical fact sheets",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
       "halId_s": "lirmm-00642899",
       "uri_s": "https://hal-lirmm.ccsd.cnrs.fr/lirmm-00642899v1",
       "title_s": "Fuzzy Web Data Tables Integration Guided by an Ontological and Terminological Resource",
@@ -560,43 +778,6 @@
       ]
     },
     {
-      "halId_s": "hal-05114056",
-      "uri_s": "https://hal.science/hal-05114056v2",
-      "title_s": "Le Rhône aménagé vu du ciel. Constitution d'une base de données photographiques obliques pour documenter la trajectoire socio-environnementale du fleuve contemporain (1910-1960)",
-      "docType_s": "ART",
-      "doiId_s": "10.46298/dc.15880",
-      "laboratories": [
-        "EVS",
-        "ENS de Lyon",
-        "Mines Saint-Étienne MSE",
-        "IMT",
-        "UL2",
-        "UJML",
-        "INSA Lyon",
-        "INSA",
-        "UJM",
-        "UJM EPE"
-      ],
-      "modifiedDate_tdate": "2026-10-23T09:43:11Z",
-      "producedDateY_i": 2025,
-      "repositories": [
-        "NAKALA"
-      ],
-      "datasets": [
-        {
-          "doi": "10.34847/nkl.e63a22n9",
-          "repository": "NAKALA",
-          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-          "landing_url": "https://nakala.fr/10.34847/nkl.e63a22n9",
-          "landing_host": "nakala.fr",
-          "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
       "halId_s": "hal-04251300",
       "uri_s": "https://hal.science/hal-04251300v1",
       "title_s": "Electrostatic modulation of excitonic fluid in GaN/AlGaN quantum wells by deposition of few-layer graphene and nickel/gold films",
@@ -738,43 +919,6 @@
           "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/FEQ1Z6",
           "landing_host": "data.inrae.fr",
           "dataset_title": "The discernible and hidden effects of clonality on the genotypic and genetic states of populations: improving our estimation of clonal rates",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-04214908",
-      "uri_s": "https://hal.inrae.fr/hal-04214908v1",
-      "title_s": "On the visual detection of non-natural records in streamflow time series: challenges and impacts",
-      "docType_s": "ART",
-      "doiId_s": "10.5194/hess-27-3375-2023",
-      "laboratories": [
-        "UR HYCAR",
-        "INRAE",
-        "RiverLy",
-        "CA 84",
-        "GEOAZUR 7329",
-        "INSU - CNRS",
-        "UniCA",
-        "CNRS",
-        "IRD [Occitanie]",
-        "IRD"
-      ],
-      "modifiedDate_tdate": "2026-10-23T03:33:26Z",
-      "producedDateY_i": 2023,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/SO2WOV",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/SO2WOV",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Result of a visual detection of non-natural records in streamflow time series for the Explore2 project",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
@@ -1241,54 +1385,6 @@
       ]
     },
     {
-      "halId_s": "hal-04948456",
-      "uri_s": "https://hal.science/hal-04948456v1",
-      "title_s": "Couches SIG des circonscriptions administratives d'Algérie (1942- 1949) : départements d’Alger, Constantine et Oran",
-      "docType_s": "OTHER",
-      "doiId_s": "10.34847/nkl.e462qm6n",
-      "laboratories": [
-        "LARHRA",
-        "ENS de Lyon",
-        "UL2",
-        "UJML",
-        "CNRS",
-        "UGA",
-        "CHS",
-        "UP1",
-        "ACP",
-        "AU"
-      ],
-      "modifiedDate_tdate": "2026-10-13T12:06:02Z",
-      "producedDateY_i": 2022,
-      "repositories": [
-        "NAKALA"
-      ],
-      "datasets": [
-        {
-          "doi": "10.34847/nkl.e462qm6n",
-          "repository": "NAKALA",
-          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-          "landing_url": "https://nakala.fr/10.34847/nkl.e462qm6n",
-          "landing_host": "nakala.fr",
-          "dataset_title": "Couches SIG des circonscriptions administratives d'Algérie (1942- 1949) : départements d’Alger, Constantine et Oran",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.34847/nkl.e462qm6n",
-          "repository": "NAKALA",
-          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-          "landing_url": "https://nakala.fr/10.34847/nkl.e462qm6n",
-          "landing_host": "nakala.fr",
-          "dataset_title": "Couches SIG des circonscriptions administratives d'Algérie (1942- 1949) : départements d’Alger, Constantine et Oran",
-          "field": "seeAlso_s",
-          "misfiled": false,
-          "also_in_relatedData_s": true
-        }
-      ]
-    },
-    {
       "halId_s": "hal-05633888",
       "uri_s": "https://hal.science/hal-05633888v1",
       "title_s": "Untargeted metabolomic dataset of leaves from twenty-four accessions of wild and cultivated tomato plants",
@@ -1536,65 +1632,6 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/D6XAKL",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "CBGP - Continental Arthropod Collection",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-05028312",
-      "uri_s": "https://hal.inrae.fr/hal-05028312v1",
-      "title_s": "CAMELS-FR dataset: a large-sample hydroclimatic dataset for France to explore hydrological diversity and support model benchmarking",
-      "docType_s": "ART",
-      "doiId_s": "10.5194/essd-17-1461-2025",
-      "laboratories": [
-        "UR HYCAR",
-        "INRAE",
-        "GEOAZUR 7329",
-        "INSU - CNRS",
-        "UniCA",
-        "CNRS",
-        "IRD [Occitanie]",
-        "IRD",
-        "ENS Rennes",
-        "GR"
-      ],
-      "modifiedDate_tdate": "2026-09-29T11:09:30Z",
-      "producedDateY_i": 2025,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/WH7FJR",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/WH7FJR",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "CAMELS-FR dataset",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.57745/HBQWP5",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/HBQWP5",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "CAMELS-FR time series dynamic graphs",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.57745/KK2SVJ",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/KK2SVJ",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "CAMELS-FR graphical fact sheets",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
@@ -2210,43 +2247,6 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/G2Z4VV",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "Rnaseq data from tomato (leaves and roots) expressing the furanocoumarin biosynthetic genes",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-01897114",
-      "uri_s": "https://hal.science/hal-01897114v1",
-      "title_s": "A high space–time resolution dataset linking meteorological forcing and hydro-sedimentary response in a mesoscale Mediterranean catchment (Auzon) of the Ardèche region, France",
-      "docType_s": "ART",
-      "doiId_s": "10.5194/essd-9-221-2017",
-      "laboratories": [
-        "IGE",
-        "IRD",
-        "Grenoble INP",
-        "INSU - CNRS",
-        "CNRS",
-        "UGA [2016-2019]",
-        "Fédération OSUG",
-        "EPFL",
-        "UR HHLY",
-        "IRSTEA"
-      ],
-      "modifiedDate_tdate": "2026-05-07T09:44:27Z",
-      "producedDateY_i": 2017,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/J2A44Q",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/J2A44Q",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Numerical simulation of rainfall and runoff driven erosion at the hillslope scale: four rainfall events on the Pradel plot",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false

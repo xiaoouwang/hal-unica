@@ -609,7 +609,7 @@
             "title_s": "Weather Regimes Preclude the Observation of a Southern Annular Mode Signal in Two Coastal East Antarctic Ice Cores",
             "uri_s": "https://hal.science/hal-05624738v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ]
       },
@@ -3271,7 +3271,7 @@
             "title_s": "Weather Regimes Preclude the Observation of a Southern Annular Mode Signal in Two Coastal East Antarctic Ice Cores",
             "uri_s": "https://hal.science/hal-05624738v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ]
       },
@@ -3288,7 +3288,7 @@
             "title_s": "Weather Regimes Preclude the Observation of a Southern Annular Mode Signal in Two Coastal East Antarctic Ice Cores",
             "uri_s": "https://hal.science/hal-05624738v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ]
       },
@@ -3305,7 +3305,7 @@
             "title_s": "Weather Regimes Preclude the Observation of a Southern Annular Mode Signal in Two Coastal East Antarctic Ice Cores",
             "uri_s": "https://hal.science/hal-05624738v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ]
       }
@@ -3324,7 +3324,7 @@
             "title_s": "Weather Regimes Preclude the Observation of a Southern Annular Mode Signal in Two Coastal East Antarctic Ice Cores",
             "uri_s": "https://hal.science/hal-05624738v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ]
       }
@@ -3887,8 +3887,8 @@
       0,
       1,
       2,
-      7,
-      3,
+      2,
+      8,
       0,
       0
     ],
@@ -3941,8 +3941,8 @@
           0,
           0,
           0,
-          1,
-          2,
+          0,
+          3,
           0,
           0
         ]
@@ -4049,8 +4049,8 @@
           0,
           0,
           0,
-          3,
           0,
+          3,
           0,
           0
         ]
@@ -4103,8 +4103,8 @@
           0,
           0,
           0,
-          1,
           0,
+          1,
           0,
           0
         ]
@@ -4146,6 +4146,24 @@
             "halId_s": "hal-05594176",
             "title_s": "Inventaire des capteurs et protocoles pour le projet BIODICAPT",
             "uri_s": "https://hal.science/hal-05594176v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 10
+          }
+        ],
+        "month": 10
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.4459259",
+        "dataset_title": "Kittel et al. (2021), The Cryosphere : MAR and ESMs data",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/record/4459259",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05624738",
+            "title_s": "Weather Regimes Preclude the Observation of a Southern Annular Mode Signal in Two Coastal East Antarctic Ice Cores",
+            "uri_s": "https://hal.science/hal-05624738v1",
             "producedDateY_i": 2026,
             "producedDateM_i": 10
           }
@@ -4329,27 +4347,7 @@
         "month": 3
       }
     ],
-    "2026-09|Zenodo": [
-      {
-        "dataset_doi": "10.5281/zenodo.4459259",
-        "dataset_title": "Kittel et al. (2021), The Cryosphere : MAR and ESMs data",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/record/4459259",
-        "landing_host": "zenodo.org",
-        "year": 2026,
-        "publications": [
-          {
-            "halId_s": "hal-05624738",
-            "title_s": "Weather Regimes Preclude the Observation of a Southern Annular Mode Signal in Two Coastal East Antarctic Ice Cores",
-            "uri_s": "https://hal.science/hal-05624738v1",
-            "producedDateY_i": 2026,
-            "producedDateM_i": 9
-          }
-        ],
-        "month": 9
-      }
-    ],
-    "2026-09|Australian Antarctic Data Centre": [
+    "2026-10|Australian Antarctic Data Centre": [
       {
         "dataset_doi": "10.4225/15/58eedf00d78fe",
         "dataset_title": "Daily synoptic weather types of southern Indian Ocean: January 1979-October 2018",
@@ -4363,10 +4361,10 @@
             "title_s": "Weather Regimes Preclude the Observation of a Southern Annular Mode Signal in Two Coastal East Antarctic Ice Cores",
             "uri_s": "https://hal.science/hal-05624738v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ],
-        "month": 9
+        "month": 10
       },
       {
         "dataset_doi": "10.26179/5zm0-v192",
@@ -4381,10 +4379,10 @@
             "title_s": "Weather Regimes Preclude the Observation of a Southern Annular Mode Signal in Two Coastal East Antarctic Ice Cores",
             "uri_s": "https://hal.science/hal-05624738v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ],
-        "month": 9
+        "month": 10
       },
       {
         "dataset_doi": "10.26179/372t-4q89",
@@ -4399,13 +4397,13 @@
             "title_s": "Weather Regimes Preclude the Observation of a Southern Annular Mode Signal in Two Coastal East Antarctic Ice Cores",
             "uri_s": "https://hal.science/hal-05624738v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ],
-        "month": 9
+        "month": 10
       }
     ],
-    "2026-09|AU/AADC > Australian Antarctic Data Centre, Australia": [
+    "2026-10|AU/AADC > Australian Antarctic Data Centre, Australia": [
       {
         "dataset_doi": "10.4225/15/58eedf6812621",
         "dataset_title": "El Niño Southern Oscillation signal in a new East Antarctic ice core, Mount Brown South",
@@ -4419,10 +4417,10 @@
             "title_s": "Weather Regimes Preclude the Observation of a Southern Annular Mode Signal in Two Coastal East Antarctic Ice Cores",
             "uri_s": "https://hal.science/hal-05624738v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 9
+            "producedDateM_i": 10
           }
         ],
-        "month": 9
+        "month": 10
       }
     ],
     "2026-02|Zenodo": [
