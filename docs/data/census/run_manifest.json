@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T08:55:23Z",
+  "generated_at": "2026-10-24T12:40:32Z",
   "collection": "UNIV-COTEDAZUR",
   "hal_api": "https://api.archives-ouvertes.fr/search/UNIV-COTEDAZUR/",
   "hal_query": "(relatedData_s:*) OR (relatedSoftware_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)",
@@ -9,11 +9,11 @@
     "seeAlso_s"
   ],
   "expected_dataset_field": "relatedData_s",
-  "since": "2026-10-22T08:55:22Z",
+  "since": "2026-10-22T12:40:30Z",
   "watermark_modified": "2026-10-24T03:35:10Z",
   "datacite_api": "https://api.datacite.org/dois/{doi}",
-  "started_at": "2026-10-24T08:55:22Z",
-  "finished_at": "2026-10-24T08:55:23Z",
+  "started_at": "2026-10-24T12:40:30Z",
+  "finished_at": "2026-10-24T12:40:32Z",
   "artifacts": {
     "publications_jsonl": "data/census/publications_related_data.jsonl",
     "doi_resolutions_jsonl": "data/census/doi_resolutions.jsonl",
