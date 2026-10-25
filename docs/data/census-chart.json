@@ -1,15 +1,15 @@
 {
-  "unique_datasets": 257,
-  "publications_with_dataset": 174,
+  "unique_datasets": 233,
+  "publications_with_dataset": 158,
   "by_repository": {
-    "Zenodo": 104,
-    "Recherche Data Gouv": 67,
+    "Zenodo": 100,
+    "Recherche Data Gouv": 48,
     "SEANOE": 15,
     "Sismer": 10,
     "SEDOO / Theia": 9,
     "NAKALA": 8,
     "FDSN / seismic network": 5,
-    "Figshare": 5,
+    "Figshare": 4,
     "BIRA-IASB data": 2,
     "CDS": 2,
     "Epos-France Seismological Data Center": 2,
@@ -147,19 +147,19 @@
       0,
       0,
       0,
-      1,
+      0,
       0,
       1,
-      1,
-      5,
-      16,
+      0,
+      3,
       6,
-      30,
-      13,
-      11,
-      36,
+      4,
+      27,
+      12,
+      10,
       35,
-      73,
+      34,
+      72,
       28
     ],
     "series": [
@@ -182,13 +182,13 @@
           0,
           1,
           1,
-          2,
+          1,
           23,
           7,
-          5,
-          11,
+          4,
           10,
-          26,
+          10,
+          25,
           17
         ]
       },
@@ -205,15 +205,15 @@
           0,
           0,
           0,
-          1,
           0,
           0,
-          1,
-          4,
-          13,
+          0,
+          0,
           2,
-          6,
           3,
+          1,
+          3,
+          2,
           4,
           13,
           3,
@@ -338,37 +338,8 @@
         ]
       },
       {
-        "repository": "Figshare",
-        "color": "#f9c74f",
-        "counts": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
-          0,
-          0,
-          2,
-          1,
-          1
-        ]
-      },
-      {
         "repository": "FDSN / seismic network",
-        "color": "#577590",
+        "color": "#f9c74f",
         "counts": [
           0,
           0,
@@ -392,6 +363,35 @@
           0,
           0,
           4,
+          1
+        ]
+      },
+      {
+        "repository": "Figshare",
+        "color": "#577590",
+        "counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
           1
         ]
       },
@@ -546,6 +546,23 @@
   "cell_details": {
     "2026|Recherche Data Gouv": [
       {
+        "dataset_doi": "10.57745/OLJYUQ",
+        "dataset_title": "Contenu des alertes diffusées en France via le dispositif FR-Alert (2022-2025) et évaluation de leur complétude",
+        "repository": "Recherche Data Gouv",
+        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/OLJYUQ",
+        "landing_host": "entrepot.recherche.data.gouv.fr",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05739203",
+            "title_s": "Automatiser l’évaluation de la complétude des notifications d’alerte à la population : enjeux et applications",
+            "uri_s": "https://hal.science/hal-05739203v3",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 10
+          }
+        ]
+      },
+      {
         "dataset_doi": "10.57745/QHUQOP",
         "dataset_title": "Data package for the manuscript \"The Asian ladybird Harmonia axyridis at the interface between biological control and invasion: insights from population and quantitative genetics\"",
         "repository": "Recherche Data Gouv",
@@ -559,23 +576,6 @@
             "uri_s": "https://hal.science/hal-05721890v1",
             "producedDateY_i": 2026,
             "producedDateM_i": 8
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.57745/OLJYUQ",
-        "dataset_title": "Données d'automatisation de l’évaluation de la complétude des notifications d’alerte à la population : enjeux et applications",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/OLJYUQ",
-        "landing_host": "entrepot.recherche.data.gouv.fr",
-        "year": 2026,
-        "publications": [
-          {
-            "halId_s": "hal-05739203",
-            "title_s": "Automatiser l’évaluation de la complétude des notifications d’alerte à la population : enjeux et applications",
-            "uri_s": "https://hal.science/hal-05739203v3",
-            "producedDateY_i": 2026,
-            "producedDateM_i": 10
           }
         ]
       },
@@ -912,124 +912,6 @@
         ]
       }
     ],
-    "2020|Recherche Data Gouv": [
-      {
-        "dataset_doi": "10.57745/WGBWYO",
-        "dataset_title": null,
-        "repository": "Recherche Data Gouv",
-        "landing_url": null,
-        "landing_host": null,
-        "year": 2020,
-        "publications": [
-          {
-            "halId_s": "hal-02928114",
-            "title_s": "Aphid infestation differently affects the defences of nitrate-fed and nitrogen-fixing Medicago truncatula and alters symbiotic nitrogen fixation",
-            "uri_s": "https://hal.inrae.fr/hal-02928114v1",
-            "producedDateY_i": 2020,
-            "producedDateM_i": 9
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.15454/D6XAKL",
-        "dataset_title": "CBGP - Continental Arthropod Collection",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/D6XAKL",
-        "landing_host": "entrepot.recherche.data.gouv.fr",
-        "year": 2020,
-        "publications": [
-          {
-            "halId_s": "hal-03144754",
-            "title_s": "BRC4Env, a network of Biological Resource Centres for environmental resources",
-            "uri_s": "https://hal.science/hal-03144754v1",
-            "producedDateY_i": 2020,
-            "producedDateM_i": 10
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.57745/D4TG2M",
-        "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda corn strain",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/D4TG2M",
-        "landing_host": "entrepot.recherche.data.gouv.fr",
-        "year": 2020,
-        "publications": [
-          {
-            "halId_s": "hal-01633879",
-            "title_s": "Two genomes of highly polyphagous lepidopteran pests (Spodoptera frugiperda, Noctuidae) with different host-plant ranges",
-            "uri_s": "https://inria.hal.science/hal-01633879v1",
-            "producedDateY_i": 2017,
-            "producedDateM_i": 12
-          },
-          {
-            "halId_s": "hal-03065279",
-            "title_s": "Adaptation by copy number variation increases insecticide resistance in the fall armyworm",
-            "uri_s": "https://inria.hal.science/hal-03065279v1",
-            "producedDateY_i": 2020,
-            "producedDateM_i": 11
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.57745/XDVEQW",
-        "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda rice strain",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
-        "landing_host": "entrepot.recherche.data.gouv.fr",
-        "year": 2020,
-        "publications": [
-          {
-            "halId_s": "hal-01633879",
-            "title_s": "Two genomes of highly polyphagous lepidopteran pests (Spodoptera frugiperda, Noctuidae) with different host-plant ranges",
-            "uri_s": "https://inria.hal.science/hal-01633879v1",
-            "producedDateY_i": 2017,
-            "producedDateM_i": 12
-          },
-          {
-            "halId_s": "hal-03065279",
-            "title_s": "Adaptation by copy number variation increases insecticide resistance in the fall armyworm",
-            "uri_s": "https://inria.hal.science/hal-03065279v1",
-            "producedDateY_i": 2020,
-            "producedDateM_i": 11
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.15454/XSVVBW",
-        "dataset_title": "PO² Process and Observation Ontology",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/XSVVBW",
-        "landing_host": "entrepot.recherche.data.gouv.fr",
-        "year": 2020,
-        "publications": [
-          {
-            "halId_s": "hal-03013147",
-            "title_s": "Food transformation process description using PO2 and FoodOn",
-            "uri_s": "https://agroparistech.hal.science/hal-03013147v1",
-            "producedDateY_i": 2020,
-            "producedDateM_i": 9
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.15454/XVL4BA",
-        "dataset_title": "Preferences and justifications of NoAW stakeholders about the importance on LCA (Life Cycle Analysis) impact categories",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/XVL4BA",
-        "landing_host": "data.inrae.fr",
-        "year": 2020,
-        "publications": [
-          {
-            "halId_s": "hal-02555136",
-            "title_s": "Argumentation Corrected Context Weighting-Life Cycle Assessment: A Practical Method of Including Stakeholder Perspectives in Multi-Criteria Decision Support for LCA",
-            "uri_s": "https://hal.inrae.fr/hal-02555136v1",
-            "producedDateY_i": 2020,
-            "producedDateM_i": 3
-          }
-        ]
-      }
-    ],
     "2025|Zenodo": [
       {
         "dataset_doi": "10.5281/zenodo.15342853",
@@ -1249,23 +1131,6 @@
             "uri_s": "https://minesparis-psl.hal.science/hal-04985988v1",
             "producedDateY_i": 2025,
             "producedDateM_i": 5
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.14253433",
-        "dataset_title": "openalea/gafam: GAFAM Data paper",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.14253433",
-        "landing_host": "zenodo.org",
-        "year": 2025,
-        "publications": [
-          {
-            "halId_s": "hal-05129574",
-            "title_s": "Young apple tree development under agroforestry radiative conditions: a multi-scale morphological and architectural dataset",
-            "uri_s": "https://hal.inrae.fr/hal-05129574v2",
-            "producedDateY_i": 2025,
-            "producedDateM_i": 8
           }
         ]
       },
@@ -1523,23 +1388,6 @@
             "uri_s": "https://insu.hal.science/insu-04379375v1",
             "producedDateY_i": 2023,
             "producedDateM_i": 5
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.8169473",
-        "dataset_title": "Estimating Compositions and Nutritional Values of Seed Mixes based on Vision Transformers",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/record/8169473",
-        "landing_host": "zenodo.org",
-        "year": 2023,
-        "publications": [
-          {
-            "halId_s": "hal-04322179",
-            "title_s": "Estimating Compositions and Nutritional Values of Seed Mixes Based on Vision Transformers",
-            "uri_s": "https://inria.hal.science/hal-04322179v1",
-            "producedDateY_i": 2023,
-            "producedDateM_i": 11
           }
         ]
       },
@@ -2035,23 +1883,6 @@
     ],
     "2019|Recherche Data Gouv": [
       {
-        "dataset_doi": "10.15454/9Z4PS3",
-        "dataset_title": "Capex ontology",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/9Z4PS3",
-        "landing_host": "entrepot.recherche.data.gouv.fr",
-        "year": 2019,
-        "publications": [
-          {
-            "halId_s": "lirmm-02162114",
-            "title_s": "Expertise-based decision support for managing food quality in agri-food companies",
-            "uri_s": "https://hal-lirmm.ccsd.cnrs.fr/lirmm-02162114v1",
-            "producedDateY_i": 2019,
-            "producedDateM_i": 8
-          }
-        ]
-      },
-      {
         "dataset_doi": "10.57745/OP1JFC",
         "dataset_title": "Catalogs of solar observations of Meudon and Haute Provence Hα heliographs (1954-2004) and their instrumental capabilities",
         "repository": "Recherche Data Gouv",
@@ -2502,6 +2333,73 @@
         ]
       }
     ],
+    "2020|Recherche Data Gouv": [
+      {
+        "dataset_doi": "10.15454/D6XAKL",
+        "dataset_title": "CBGP - Continental Arthropod Collection",
+        "repository": "Recherche Data Gouv",
+        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/D6XAKL",
+        "landing_host": "entrepot.recherche.data.gouv.fr",
+        "year": 2020,
+        "publications": [
+          {
+            "halId_s": "hal-03144754",
+            "title_s": "BRC4Env, a network of Biological Resource Centres for environmental resources",
+            "uri_s": "https://hal.science/hal-03144754v1",
+            "producedDateY_i": 2020,
+            "producedDateM_i": 10
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.57745/D4TG2M",
+        "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda corn strain",
+        "repository": "Recherche Data Gouv",
+        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/D4TG2M",
+        "landing_host": "entrepot.recherche.data.gouv.fr",
+        "year": 2020,
+        "publications": [
+          {
+            "halId_s": "hal-01633879",
+            "title_s": "Two genomes of highly polyphagous lepidopteran pests (Spodoptera frugiperda, Noctuidae) with different host-plant ranges",
+            "uri_s": "https://inria.hal.science/hal-01633879v1",
+            "producedDateY_i": 2017,
+            "producedDateM_i": 12
+          },
+          {
+            "halId_s": "hal-03065279",
+            "title_s": "Adaptation by copy number variation increases insecticide resistance in the fall armyworm",
+            "uri_s": "https://inria.hal.science/hal-03065279v1",
+            "producedDateY_i": 2020,
+            "producedDateM_i": 11
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.57745/XDVEQW",
+        "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda rice strain",
+        "repository": "Recherche Data Gouv",
+        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
+        "landing_host": "entrepot.recherche.data.gouv.fr",
+        "year": 2020,
+        "publications": [
+          {
+            "halId_s": "hal-01633879",
+            "title_s": "Two genomes of highly polyphagous lepidopteran pests (Spodoptera frugiperda, Noctuidae) with different host-plant ranges",
+            "uri_s": "https://inria.hal.science/hal-01633879v1",
+            "producedDateY_i": 2017,
+            "producedDateM_i": 12
+          },
+          {
+            "halId_s": "hal-03065279",
+            "title_s": "Adaptation by copy number variation increases insecticide resistance in the fall armyworm",
+            "uri_s": "https://inria.hal.science/hal-03065279v1",
+            "producedDateY_i": 2020,
+            "producedDateM_i": 11
+          }
+        ]
+      }
+    ],
     "2026|Figshare": [
       {
         "dataset_doi": "10.6084/m9.figshare.30665321",
@@ -2610,23 +2508,6 @@
         ]
       },
       {
-        "dataset_doi": "10.15454/AIF6TX",
-        "dataset_title": "PO2 Biorefinery Ontology",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/AIF6TX",
-        "landing_host": "entrepot.recherche.data.gouv.fr",
-        "year": 2021,
-        "publications": [
-          {
-            "halId_s": "hal-03474067",
-            "title_s": "A process reverse engineering approach using Process and Observation Ontology and Probabilistic Relational Models: application to processing of bio-composites for food packaging",
-            "uri_s": "https://hal.science/hal-03474067v1",
-            "producedDateY_i": 2021,
-            "producedDateM_i": 11
-          }
-        ]
-      },
-      {
         "dataset_doi": "10.15454/FEQ1Z6",
         "dataset_title": "The discernible and hidden effects of clonality on the genotypic and genetic states of populations: improving our estimation of clonal rates",
         "repository": "Recherche Data Gouv",
@@ -2683,190 +2564,6 @@
             "uri_s": "https://hal.science/hal-01774729v1",
             "producedDateY_i": 2018,
             "producedDateM_i": 10
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.15454/HKIQFJ",
-        "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries - Consumers’ answers to poll for Plastic rigid lid",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/HKIQFJ",
-        "landing_host": "data.inrae.fr",
-        "year": 2018,
-        "publications": [
-          {
-            "halId_s": "hal-01889268",
-            "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
-            "uri_s": "https://hal.science/hal-01889268v2",
-            "producedDateY_i": 2018,
-            "producedDateM_i": 10
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.15454/UBPOQG",
-        "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries - Consumers’ answers to poll for Plastic with plastic film",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/UBPOQG",
-        "landing_host": "data.inrae.fr",
-        "year": 2018,
-        "publications": [
-          {
-            "halId_s": "hal-01889268",
-            "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
-            "uri_s": "https://hal.science/hal-01889268v2",
-            "producedDateY_i": 2018,
-            "producedDateM_i": 10
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.15454/GNBUFH",
-        "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries - Consumers’ answers to poll for Wood packaging",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/GNBUFH",
-        "landing_host": "data.inrae.fr",
-        "year": 2018,
-        "publications": [
-          {
-            "halId_s": "hal-01889268",
-            "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
-            "uri_s": "https://hal.science/hal-01889268v2",
-            "producedDateY_i": 2018,
-            "producedDateM_i": 10
-          },
-          {
-            "halId_s": "lirmm-01892712",
-            "title_s": "Choice of environment-friendly food packagings through argumentation systems and preferences",
-            "uri_s": "https://hal-lirmm.ccsd.cnrs.fr/lirmm-01892712v1",
-            "producedDateY_i": 2018,
-            "producedDateM_i": 11
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.15454/NM3WET",
-        "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries - Plastic not closed consumers’ arguments",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/NM3WET",
-        "landing_host": "data.inrae.fr",
-        "year": 2018,
-        "publications": [
-          {
-            "halId_s": "hal-01889268",
-            "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
-            "uri_s": "https://hal.science/hal-01889268v2",
-            "producedDateY_i": 2018,
-            "producedDateM_i": 10
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.15454/DC9PYL",
-        "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries - Plastic rigid lid consumers’ arguments",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/DC9PYL",
-        "landing_host": "data.inrae.fr",
-        "year": 2018,
-        "publications": [
-          {
-            "halId_s": "hal-01889268",
-            "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
-            "uri_s": "https://hal.science/hal-01889268v2",
-            "producedDateY_i": 2018,
-            "producedDateM_i": 10
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.15454/GMWB8Q",
-        "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries - Plastic with plastic film consumers’ arguments",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/GMWB8Q",
-        "landing_host": "data.inrae.fr",
-        "year": 2018,
-        "publications": [
-          {
-            "halId_s": "hal-01889268",
-            "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
-            "uri_s": "https://hal.science/hal-01889268v2",
-            "producedDateY_i": 2018,
-            "producedDateM_i": 10
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.15454/F4C8I0",
-        "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries - Wood packaging consumers’ arguments",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/F4C8I0",
-        "landing_host": "data.inrae.fr",
-        "year": 2018,
-        "publications": [
-          {
-            "halId_s": "hal-01889268",
-            "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
-            "uri_s": "https://hal.science/hal-01889268v2",
-            "producedDateY_i": 2018,
-            "producedDateM_i": 10
-          },
-          {
-            "halId_s": "lirmm-01892712",
-            "title_s": "Choice of environment-friendly food packagings through argumentation systems and preferences",
-            "uri_s": "https://hal-lirmm.ccsd.cnrs.fr/lirmm-01892712v1",
-            "producedDateY_i": 2018,
-            "producedDateM_i": 11
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.15454/IHVM9P",
-        "dataset_title": "Consumer perception data about food packaging functionalities for fresh strawberries: consumers' answers to poll for Plastic not closed",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/IHVM9P",
-        "landing_host": "data.inrae.fr",
-        "year": 2018,
-        "publications": [
-          {
-            "halId_s": "hal-01889268",
-            "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
-            "uri_s": "https://hal.science/hal-01889268v2",
-            "producedDateY_i": 2018,
-            "producedDateM_i": 10
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.15454/VDNRH6",
-        "dataset_title": "Scientific arguments about food packaging functionalities for fresh strawberries - Food packaging expert’s arguments for all packagings",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/VDNRH6",
-        "landing_host": "data.inrae.fr",
-        "year": 2018,
-        "publications": [
-          {
-            "halId_s": "hal-01889268",
-            "title_s": "Consumer perception data and scientific arguments about food packaging functionalities for fresh strawberries",
-            "uri_s": "https://hal.science/hal-01889268v2",
-            "producedDateY_i": 2018,
-            "producedDateM_i": 10
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.15454/IZJIT7",
-        "dataset_title": "Stakeholders' preferences survey about new technology acceptance and potential development for waste management in wine production in Languedoc Roussillon, France",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/IZJIT7",
-        "landing_host": "entrepot.recherche.data.gouv.fr",
-        "year": 2018,
-        "publications": [
-          {
-            "halId_s": "lirmm-01893516",
-            "title_s": "A Decision Support Tool for Agricultural Applications Based on Computational Social Choice and Argumentation",
-            "uri_s": "https://hal-lirmm.ccsd.cnrs.fr/lirmm-01893516v1",
-            "producedDateY_i": 2018,
-            "producedDateM_i": 7
           }
         ]
       },
@@ -4260,23 +3957,6 @@
     ],
     "2024|Figshare": [
       {
-        "dataset_doi": "10.6084/m9.figshare.22803431",
-        "dataset_title": "Mapping global orchid assemblages with deep learning provides novel conservation insights",
-        "repository": "Figshare",
-        "landing_url": "https://figshare.com/articles/journal_contribution/Mapping_global_orchid_assemblages_with_deep_learning_provides_novel_conservation_insights/22803431",
-        "landing_host": "figshare.com",
-        "year": 2024,
-        "publications": [
-          {
-            "halId_s": "hal-04581266",
-            "title_s": "Mapping global orchid assemblages with deep learning provides novel conservation insights",
-            "uri_s": "https://hal.inrae.fr/hal-04581266v1",
-            "producedDateY_i": 2024,
-            "producedDateM_i": 7
-          }
-        ]
-      },
-      {
         "dataset_doi": "10.6084/m9.figshare.25027946.v1",
         "dataset_title": "Reconstitution of ORP-mediated lipid exchange coupled to PI4P metabolism.\"",
         "repository": "Figshare",
@@ -4290,93 +3970,6 @@
             "uri_s": "https://hal.science/hal-04766885v1",
             "producedDateY_i": 2024,
             "producedDateM_i": 2
-          }
-        ]
-      }
-    ],
-    "2022|Zenodo": [
-      {
-        "dataset_doi": "10.5281/zenodo.7228037",
-        "dataset_title": "A positive feedback between crustal thickness and melt extraction for the origin of the Martian dichotomy - Figure software &amp; Data",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/record/7228037",
-        "landing_host": "zenodo.org",
-        "year": 2022,
-        "publications": [
-          {
-            "halId_s": "hal-03936013",
-            "title_s": "A Positive Feedback Between Crustal Thickness and Melt Extraction for the Origin of the Martian Dichotomy",
-            "uri_s": "https://hal.science/hal-03936013v1",
-            "producedDateY_i": 2022,
-            "producedDateM_i": 4
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.5777028",
-        "dataset_title": "Can Artificial Intelligence help in the study of vegetative growth dynamics from herbarium collections? An evaluation of the tropical flora of the French Guiana forest",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/record/5777028",
-        "landing_host": "zenodo.org",
-        "year": 2022,
-        "publications": [
-          {
-            "halId_s": "hal-03601464",
-            "title_s": "Can Artificial Intelligence Help in the Study of Vegetative Growth Patterns from Herbarium Collections? An Evaluation of the Tropical Flora of the French Guiana Forest",
-            "uri_s": "https://hal.inrae.fr/hal-03601464v1",
-            "producedDateY_i": 2022,
-            "producedDateM_i": 2
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.6644634",
-        "dataset_title": "Customizable Visualization of Quality Metrics for Object-Oriented Variability Implementations - Artifact",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/record/6644634",
-        "landing_host": "zenodo.org",
-        "year": 2022,
-        "publications": [
-          {
-            "halId_s": "hal-03717858",
-            "title_s": "Customizable Visualization of Quality Metrics for Object-Oriented Variability Implementations",
-            "uri_s": "https://hal.science/hal-03717858v1",
-            "producedDateY_i": 2022,
-            "producedDateM_i": 9
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.3935958",
-        "dataset_title": "questionnaire SOSP-FR - fr",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/record/3935958",
-        "landing_host": "zenodo.org",
-        "year": 2022,
-        "publications": [
-          {
-            "halId_s": "hal-03545512",
-            "title_s": "Pratiques et usages des outils numériques dans les communautés scientifiques en France",
-            "uri_s": "https://hal-lara.archives-ouvertes.fr/hal-03545512v1",
-            "producedDateY_i": 2022,
-            "producedDateM_i": 1
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.5827206",
-        "dataset_title": "State of open science practices in France _ Dataset",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/record/5827206",
-        "landing_host": "zenodo.org",
-        "year": 2022,
-        "publications": [
-          {
-            "halId_s": "hal-03545512",
-            "title_s": "Pratiques et usages des outils numériques dans les communautés scientifiques en France",
-            "uri_s": "https://hal-lara.archives-ouvertes.fr/hal-03545512v1",
-            "producedDateY_i": 2022,
-            "producedDateM_i": 1
           }
         ]
       }
@@ -4884,23 +4477,6 @@
     ],
     "2017|Recherche Data Gouv": [
       {
-        "dataset_doi": "10.15454/DPBMBW",
-        "dataset_title": "Agri-Food Experiment Ontology",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/DPBMBW",
-        "landing_host": "data.inrae.fr",
-        "year": 2017,
-        "publications": [
-          {
-            "halId_s": "hal-01552148",
-            "title_s": "A generic ontological network for Agri-food experiment integration – Application to viticulture and winemaking",
-            "uri_s": "https://hal.science/hal-01552148v1",
-            "producedDateY_i": 2017,
-            "producedDateM_i": 10
-          }
-        ]
-      },
-      {
         "dataset_doi": "10.57745/J2A44Q",
         "dataset_title": "Numerical simulation of rainfall and runoff driven erosion at the hillslope scale: four rainfall events on the Pradel plot",
         "repository": "Recherche Data Gouv",
@@ -4912,23 +4488,6 @@
             "halId_s": "hal-01897114",
             "title_s": "A high space–time resolution dataset linking meteorological forcing and hydro-sedimentary response in a mesoscale Mediterranean catchment (Auzon) of the Ardèche region, France",
             "uri_s": "https://hal.science/hal-01897114v1",
-            "producedDateY_i": 2017,
-            "producedDateM_i": 10
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.15454/RJKJBN",
-        "dataset_title": "Ontology for Food Processing Experiment",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/RJKJBN",
-        "landing_host": "data.inrae.fr",
-        "year": 2017,
-        "publications": [
-          {
-            "halId_s": "hal-01552148",
-            "title_s": "A generic ontological network for Agri-food experiment integration – Application to viticulture and winemaking",
-            "uri_s": "https://hal.science/hal-01552148v1",
             "producedDateY_i": 2017,
             "producedDateM_i": 10
           }
@@ -4967,6 +4526,76 @@
             "uri_s": "https://inria.hal.science/hal-02190845v1",
             "producedDateY_i": 2017,
             "producedDateM_i": 12
+          }
+        ]
+      }
+    ],
+    "2022|Zenodo": [
+      {
+        "dataset_doi": "10.5281/zenodo.7228037",
+        "dataset_title": "A positive feedback between crustal thickness and melt extraction for the origin of the Martian dichotomy - Figure software &amp; Data",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/record/7228037",
+        "landing_host": "zenodo.org",
+        "year": 2022,
+        "publications": [
+          {
+            "halId_s": "hal-03936013",
+            "title_s": "A Positive Feedback Between Crustal Thickness and Melt Extraction for the Origin of the Martian Dichotomy",
+            "uri_s": "https://hal.science/hal-03936013v1",
+            "producedDateY_i": 2022,
+            "producedDateM_i": 4
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.6644634",
+        "dataset_title": "Customizable Visualization of Quality Metrics for Object-Oriented Variability Implementations - Artifact",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/record/6644634",
+        "landing_host": "zenodo.org",
+        "year": 2022,
+        "publications": [
+          {
+            "halId_s": "hal-03717858",
+            "title_s": "Customizable Visualization of Quality Metrics for Object-Oriented Variability Implementations",
+            "uri_s": "https://hal.science/hal-03717858v1",
+            "producedDateY_i": 2022,
+            "producedDateM_i": 9
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.3935958",
+        "dataset_title": "questionnaire SOSP-FR - fr",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/record/3935958",
+        "landing_host": "zenodo.org",
+        "year": 2022,
+        "publications": [
+          {
+            "halId_s": "hal-03545512",
+            "title_s": "Pratiques et usages des outils numériques dans les communautés scientifiques en France",
+            "uri_s": "https://hal-lara.archives-ouvertes.fr/hal-03545512v1",
+            "producedDateY_i": 2022,
+            "producedDateM_i": 1
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.5827206",
+        "dataset_title": "State of open science practices in France _ Dataset",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/record/5827206",
+        "landing_host": "zenodo.org",
+        "year": 2022,
+        "publications": [
+          {
+            "halId_s": "hal-03545512",
+            "title_s": "Pratiques et usages des outils numériques dans les communautés scientifiques en France",
+            "uri_s": "https://hal-lara.archives-ouvertes.fr/hal-03545512v1",
+            "producedDateY_i": 2022,
+            "producedDateM_i": 1
           }
         ]
       }
@@ -5016,62 +4645,7 @@
         ]
       }
     ],
-    "2013|Recherche Data Gouv": [
-      {
-        "dataset_doi": "10.15454/NK24ID",
-        "dataset_title": "Matter Transfer Ontology",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/NK24ID",
-        "landing_host": "entrepot.recherche.data.gouv.fr",
-        "year": 2013,
-        "publications": [
-          {
-            "halId_s": "lirmm-00642899",
-            "title_s": "Fuzzy Web Data Tables Integration Guided by an Ontological and Terminological Resource",
-            "uri_s": "https://hal-lirmm.ccsd.cnrs.fr/lirmm-00642899v1",
-            "producedDateY_i": 2013,
-            "producedDateM_i": 10
-          }
-        ]
-      }
-    ],
-    "2016|Recherche Data Gouv": [
-      {
-        "dataset_doi": "10.15454/X2MOWO",
-        "dataset_title": "Biorefinery ontology",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/X2MOWO",
-        "landing_host": "entrepot.recherche.data.gouv.fr",
-        "year": 2016,
-        "publications": [
-          {
-            "halId_s": "lirmm-01346685",
-            "title_s": "A decision support system for eco-efficient biorefinery process comparison using a semantic approach",
-            "uri_s": "https://hal-lirmm.ccsd.cnrs.fr/lirmm-01346685v1",
-            "producedDateY_i": 2016,
-            "producedDateM_i": 9
-          }
-        ]
-      }
-    ],
     "2019|Zenodo": [
-      {
-        "dataset_doi": "10.5281/zenodo.37660964",
-        "dataset_title": null,
-        "repository": "Zenodo",
-        "landing_url": null,
-        "landing_host": null,
-        "year": 2019,
-        "publications": [
-          {
-            "halId_s": "hal-03909555",
-            "title_s": "La catena di influenze nella ricezione moderna di Plutarco e il riuso delle Vite di Cesare e Bruto: teoria e prassi dei Classical Reception Studies",
-            "uri_s": "https://hal.science/hal-03909555v1",
-            "producedDateY_i": 2019,
-            "producedDateM_i": 6
-          }
-        ]
-      },
       {
         "dataset_doi": "10.5281/zenodo.3339369",
         "dataset_title": "marazzaf/MEMM: Zenodo",
@@ -5303,37 +4877,37 @@
         ]
       },
       {
-        "repository": "Figshare",
+        "repository": "FDSN / seismic network",
         "color": "#f9c74f",
         "counts": [
           0,
           0,
           0,
           0,
-          0,
-          0,
-          0,
-          0,
-          0,
           1,
+          0,
+          0,
+          0,
+          0,
+          0,
           0,
           0
         ]
       },
       {
-        "repository": "FDSN / seismic network",
+        "repository": "Figshare",
         "color": "#577590",
         "counts": [
           0,
           0,
           0,
           0,
+          0,
+          0,
+          0,
+          0,
+          0,
           1,
-          0,
-          0,
-          0,
-          0,
-          0,
           0,
           0
         ]
@@ -5437,7 +5011,7 @@
     "2026-10|Recherche Data Gouv": [
       {
         "dataset_doi": "10.57745/OLJYUQ",
-        "dataset_title": "Données d'automatisation de l’évaluation de la complétude des notifications d’alerte à la population : enjeux et applications",
+        "dataset_title": "Contenu des alertes diffusées en France via le dispositif FR-Alert (2022-2025) et évaluation de leur complétude",
         "repository": "Recherche Data Gouv",
         "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/OLJYUQ",
         "landing_host": "entrepot.recherche.data.gouv.fr",
