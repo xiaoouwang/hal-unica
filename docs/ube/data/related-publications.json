@@ -6,6 +6,41 @@
   },
   "publications": [
     {
+      "halId_s": "hal-03711804",
+      "uri_s": "https://hal.inrae.fr/hal-03711804v1",
+      "title_s": "Prevalence of Undernutrition and Risk of Undernutrition in Overweight and Obese Older People",
+      "docType_s": "ART",
+      "doiId_s": "10.3389/fnut.2022.892675",
+      "laboratories": [
+        "CSGA",
+        "UB",
+        "CNRS",
+        "INRAE",
+        "Institut Agro",
+        "UBFC",
+        "CHU Dijon",
+        "ESA"
+      ],
+      "modifiedDate_tdate": "2026-10-26T12:46:02Z",
+      "producedDateY_i": 2022,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.15454/MJTRXM",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Portail Data INRAE",
+          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/MJTRXM",
+          "landing_host": "data.inrae.fr",
+          "dataset_title": "Nutritional status according to weight status in French older adults",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
       "halId_s": "hal-04612748",
       "uri_s": "https://hal.inrae.fr/hal-04612748v1",
       "title_s": "Wheat dwarfing reshapes plant and fungal development in arbuscular mycorrhizal symbiosis",
@@ -3039,41 +3074,6 @@
           "landing_url": "https://nakala.fr/10.34847/nkl.b397xqmx",
           "landing_host": "nakala.fr",
           "dataset_title": "Reconstruction micro-tomographique de l'épée du Bronze final d'Asper (Gavere, Belgique)",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-03711804",
-      "uri_s": "https://hal.inrae.fr/hal-03711804v1",
-      "title_s": "Prevalence of Undernutrition and Risk of Undernutrition in Overweight and Obese Older People",
-      "docType_s": "ART",
-      "doiId_s": "10.3389/fnut.2022.892675",
-      "laboratories": [
-        "CSGA",
-        "UB",
-        "CNRS",
-        "INRAE",
-        "Institut Agro",
-        "UBFC",
-        "CHU Dijon",
-        "ESA"
-      ],
-      "modifiedDate_tdate": "2026-05-05T15:52:24Z",
-      "producedDateY_i": 2022,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.15454/MJTRXM",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Portail Data INRAE",
-          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/MJTRXM",
-          "landing_host": "data.inrae.fr",
-          "dataset_title": "Nutritional status according to weight status in French older adults",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
