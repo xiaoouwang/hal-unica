@@ -1,8 +1,8 @@
 {
-  "unique_datasets": 235,
-  "publications_with_dataset": 160,
+  "unique_datasets": 236,
+  "publications_with_dataset": 161,
   "by_repository": {
-    "Zenodo": 101,
+    "Zenodo": 102,
     "Recherche Data Gouv": 49,
     "SEANOE": 15,
     "Sismer": 10,
@@ -160,7 +160,7 @@
       35,
       34,
       72,
-      28
+      29
     ],
     "series": [
       {
@@ -189,7 +189,7 @@
           10,
           10,
           25,
-          17
+          18
         ]
       },
       {
@@ -544,76 +544,6 @@
     "period_kind": "year"
   },
   "cell_details": {
-    "2026|Recherche Data Gouv": [
-      {
-        "dataset_doi": "10.57745/OLJYUQ",
-        "dataset_title": "Contenu des alertes diffusées en France via le dispositif FR-Alert (2022-2025) et évaluation de leur complétude",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/OLJYUQ",
-        "landing_host": "entrepot.recherche.data.gouv.fr",
-        "year": 2026,
-        "publications": [
-          {
-            "halId_s": "hal-05739203",
-            "title_s": "Automatiser l’évaluation de la complétude des notifications d’alerte à la population : enjeux et applications",
-            "uri_s": "https://hal.science/hal-05739203v3",
-            "producedDateY_i": 2026,
-            "producedDateM_i": 10
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.57745/QHUQOP",
-        "dataset_title": "Data package for the manuscript \"The Asian ladybird Harmonia axyridis at the interface between biological control and invasion: insights from population and quantitative genetics\"",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/QHUQOP",
-        "landing_host": "entrepot.recherche.data.gouv.fr",
-        "year": 2026,
-        "publications": [
-          {
-            "halId_s": "hal-05721890",
-            "title_s": "The Asian ladybird Harmonia axyridis at the interface between biological control and invasion: insights from population and quantitative genetics",
-            "uri_s": "https://hal.science/hal-05721890v1",
-            "producedDateY_i": 2026,
-            "producedDateM_i": 8
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.57745/ENBAIS",
-        "dataset_title": "Replication Data for: Towards tsunami early-warning with Distributed Acoustic Sensing: expected seafloor strains induced by tsunamis",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/ENBAIS",
-        "landing_host": "entrepot.recherche.data.gouv.fr",
-        "year": 2026,
-        "publications": [
-          {
-            "halId_s": "hal-05630218",
-            "title_s": "Towards Tsunami Early-Warning with Distributed Acoustic Sensing: Expected Seafloor Strains Induced by Tsunamis",
-            "uri_s": "https://hal.science/hal-05630218v1",
-            "producedDateY_i": 2026,
-            "producedDateM_i": 10
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.57745/QM0BOR",
-        "dataset_title": "Untargeted metabolomic dataset of leaves from twenty four accessions of wild and cultivated tomato plants",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/QM0BOR",
-        "landing_host": "entrepot.recherche.data.gouv.fr",
-        "year": 2026,
-        "publications": [
-          {
-            "halId_s": "hal-05633888",
-            "title_s": "Untargeted metabolomic dataset of leaves from twenty-four accessions of wild and cultivated tomato plants",
-            "uri_s": "https://hal.science/hal-05633888v1",
-            "producedDateY_i": 2026,
-            "producedDateM_i": 5
-          }
-        ]
-      }
-    ],
     "2026|Zenodo": [
       {
         "dataset_doi": "10.5281/zenodo.17449096",
@@ -697,6 +627,23 @@
             "uri_s": "https://minesparis-psl.hal.science/hal-05689658v1",
             "producedDateY_i": 2026,
             "producedDateM_i": 7
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.17613276",
+        "dataset_title": "Distance to the Globular Cluster M 3 from the Infrared Surface Brightness Technique applied to RR Lyrae stars",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17613276",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05791671",
+            "title_s": "Distance to the globular cluster M 3 from the infrared surface brightness technique applied to RR Lyrae stars",
+            "uri_s": "https://hal.science/hal-05791671v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 2
           }
         ]
       },
@@ -908,6 +855,76 @@
             "uri_s": "https://hal.science/hal-05791665v1",
             "producedDateY_i": 2026,
             "producedDateM_i": 9
+          }
+        ]
+      }
+    ],
+    "2026|Recherche Data Gouv": [
+      {
+        "dataset_doi": "10.57745/OLJYUQ",
+        "dataset_title": "Contenu des alertes diffusées en France via le dispositif FR-Alert (2022-2025) et évaluation de leur complétude",
+        "repository": "Recherche Data Gouv",
+        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/OLJYUQ",
+        "landing_host": "entrepot.recherche.data.gouv.fr",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05739203",
+            "title_s": "Automatiser l’évaluation de la complétude des notifications d’alerte à la population : enjeux et applications",
+            "uri_s": "https://hal.science/hal-05739203v3",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 10
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.57745/QHUQOP",
+        "dataset_title": "Data package for the manuscript \"The Asian ladybird Harmonia axyridis at the interface between biological control and invasion: insights from population and quantitative genetics\"",
+        "repository": "Recherche Data Gouv",
+        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/QHUQOP",
+        "landing_host": "entrepot.recherche.data.gouv.fr",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05721890",
+            "title_s": "The Asian ladybird Harmonia axyridis at the interface between biological control and invasion: insights from population and quantitative genetics",
+            "uri_s": "https://hal.science/hal-05721890v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 8
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.57745/ENBAIS",
+        "dataset_title": "Replication Data for: Towards tsunami early-warning with Distributed Acoustic Sensing: expected seafloor strains induced by tsunamis",
+        "repository": "Recherche Data Gouv",
+        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/ENBAIS",
+        "landing_host": "entrepot.recherche.data.gouv.fr",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05630218",
+            "title_s": "Towards Tsunami Early-Warning with Distributed Acoustic Sensing: Expected Seafloor Strains Induced by Tsunamis",
+            "uri_s": "https://hal.science/hal-05630218v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 10
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.57745/QM0BOR",
+        "dataset_title": "Untargeted metabolomic dataset of leaves from twenty four accessions of wild and cultivated tomato plants",
+        "repository": "Recherche Data Gouv",
+        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/QM0BOR",
+        "landing_host": "entrepot.recherche.data.gouv.fr",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05633888",
+            "title_s": "Untargeted metabolomic dataset of leaves from twenty-four accessions of wild and cultivated tomato plants",
+            "uri_s": "https://hal.science/hal-05633888v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 5
           }
         ]
       }
@@ -4789,7 +4806,7 @@
     ],
     "totals": [
       2,
-      0,
+      1,
       2,
       1,
       2,
@@ -4807,7 +4824,7 @@
         "color": "#e85d75",
         "counts": [
           2,
-          0,
+          1,
           2,
           1,
           0,
@@ -5038,10 +5055,30 @@
       }
     ],
     "period_kind": "month",
-    "datasets_in_year": 28,
+    "datasets_in_year": 29,
     "unknown_month": 0
   },
   "cell_details_months": {
+    "2026-02|Zenodo": [
+      {
+        "dataset_doi": "10.5281/zenodo.17613276",
+        "dataset_title": "Distance to the Globular Cluster M 3 from the Infrared Surface Brightness Technique applied to RR Lyrae stars",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17613276",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05791671",
+            "title_s": "Distance to the globular cluster M 3 from the infrared surface brightness technique applied to RR Lyrae stars",
+            "uri_s": "https://hal.science/hal-05791671v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 2
+          }
+        ],
+        "month": 2
+      }
+    ],
     "2026-10|Recherche Data Gouv": [
       {
         "dataset_doi": "10.57745/OLJYUQ",
@@ -5588,7 +5625,7 @@
       }
     ]
   },
-  "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 28 datasets in 2026. Click a segment to list datasets.",
+  "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 29 datasets in 2026. Click a segment to list datasets.",
   "segment_hint": "newest linking publication year",
   "months_segment_hint": "newest linking publication month"
 }

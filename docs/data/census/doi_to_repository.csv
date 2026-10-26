@@ -253,6 +253,7 @@ doi,repository,object_kind,publisher,landing_url,landing_host,prefix,client_id,t
 10.5281/zenodo.17406961,Zenodo,dataset_repo,Zenodo,https://zenodo.org/doi/10.5281/zenodo.17406961,zenodo.org,10.5281,cern.zenodo,PyBott,
 10.5281/zenodo.17449096,Zenodo,dataset_repo,Zenodo,https://zenodo.org/doi/10.5281/zenodo.17449096,zenodo.org,10.5281,cern.zenodo,50-km fiber interferometer for testing gravitational signatures in quantum interference,
 10.5281/zenodo.17508479,Zenodo,dataset_repo,Zenodo,https://zenodo.org/doi/10.5281/zenodo.17508479,zenodo.org,10.5281,cern.zenodo,ExoGRAVITY Spectral Library Supplementary Material,
+10.5281/zenodo.17613276,Zenodo,dataset_repo,Zenodo,https://zenodo.org/doi/10.5281/zenodo.17613276,zenodo.org,10.5281,cern.zenodo,Distance to the Globular Cluster M 3 from the Infrared Surface Brightness Technique applied to RR Lyrae stars,
 10.5281/zenodo.17662413,Zenodo,dataset_repo,Zenodo,https://zenodo.org/doi/10.5281/zenodo.17662413,zenodo.org,10.5281,cern.zenodo,TOI-7510: A solar-analog system of three transiting giant planets near a Laplace resonance chain,
 10.5281/zenodo.17672514,Zenodo,dataset_repo,Zenodo,https://zenodo.org/doi/10.5281/zenodo.17672514,zenodo.org,10.5281,cern.zenodo,Mercury's magnetosphere with laminar solar wind conditions using the Menura solver,
 10.5281/zenodo.17672619,Zenodo,dataset_repo,Zenodo,https://zenodo.org/doi/10.5281/zenodo.17672619,zenodo.org,10.5281,cern.zenodo,Mercury's magnetosphere with turbulent solar wind conditions using the Menura solver,
