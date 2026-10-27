@@ -1,16 +1,16 @@
 {
   "collection": "UNIV-COTEDAZUR",
   "university": "unica",
-  "started_at": "2026-10-26T15:11:32Z",
-  "finished_at": "2026-10-26T15:12:13Z",
-  "since": "2026-10-24T15:11:32Z",
+  "started_at": "2026-10-27T09:52:01Z",
+  "finished_at": "2026-10-27T09:52:21Z",
+  "since": "2026-10-25T09:52:01Z",
   "full": false,
   "census_publications": 325,
-  "pubs_fetched": 3,
+  "pubs_fetched": 7,
   "dois_resolved_live": 0,
   "dois_from_cache": 393,
   "software_deposits": 75,
-  "data_papers": 63,
+  "data_papers": 47,
   "focus_hits": 48,
   "site_dir": "docs"
 }

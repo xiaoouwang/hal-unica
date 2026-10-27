@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T15:12:33Z",
+  "generated_at": "2026-10-27T09:52:43Z",
   "collection": "UNIV-BOURGOGNE",
   "collection_url": "https://hal.science/UNIV-BOURGOGNE",
   "harvest": {
@@ -342,6 +342,43 @@
     },
     "publications": [
       {
+        "halId_s": "hal-05143887",
+        "uri_s": "https://hal.inrae.fr/hal-05143887v1",
+        "title_s": "Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
+        "docType_s": "REPORT",
+        "doiId_s": "10.17180/ayg4-0b92",
+        "laboratories": [
+          "IFREMER",
+          "PSH",
+          "INRAE",
+          "BFP",
+          "UB",
+          "CESBIO",
+          "IRD",
+          "INSU - CNRS",
+          "CNES",
+          "CNRS"
+        ],
+        "modifiedDate_tdate": "2026-10-27T03:27:38Z",
+        "producedDateY_i": 2025,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/3NAHSN",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/3NAHSN",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Annexe pour : Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
         "halId_s": "hal-03711804",
         "uri_s": "https://hal.inrae.fr/hal-03711804v1",
         "title_s": "Prevalence of Undernutrition and Risk of Undernutrition in Overweight and Obese Older People",
@@ -526,43 +563,6 @@
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/AXY7FV",
             "landing_host": "entrepot.recherche.data.gouv.fr",
             "dataset_title": "Replication Data for: Nguyen et al. Reduction in PLANT DEFENSIN 1 results in increased resistance to pathogens and zinc toxicity",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-05143887",
-        "uri_s": "https://hal.inrae.fr/hal-05143887v1",
-        "title_s": "Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
-        "docType_s": "REPORT",
-        "doiId_s": "10.17180/ayg4-0b92",
-        "laboratories": [
-          "IFREMER",
-          "PSH",
-          "INRAE",
-          "BFP",
-          "UB",
-          "CESBIO",
-          "IRD",
-          "INSU - CNRS",
-          "CNES",
-          "CNRS"
-        ],
-        "modifiedDate_tdate": "2026-10-23T03:34:31Z",
-        "producedDateY_i": 2025,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.57745/3NAHSN",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/3NAHSN",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "Annexe pour : Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude",
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
