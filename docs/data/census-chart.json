@@ -1,8 +1,8 @@
 {
-  "unique_datasets": 236,
-  "publications_with_dataset": 161,
+  "unique_datasets": 237,
+  "publications_with_dataset": 162,
   "by_repository": {
-    "Zenodo": 102,
+    "Zenodo": 103,
     "Recherche Data Gouv": 49,
     "SEANOE": 15,
     "Sismer": 10,
@@ -157,7 +157,7 @@
       28,
       12,
       10,
-      35,
+      36,
       34,
       72,
       29
@@ -186,7 +186,7 @@
           23,
           7,
           4,
-          10,
+          11,
           10,
           25,
           18
@@ -544,6 +544,195 @@
     "period_kind": "year"
   },
   "cell_details": {
+    "2023|Zenodo": [
+      {
+        "dataset_doi": "10.5281/zenodo.8119856",
+        "dataset_title": "1D-1V Vlasov-Poisson Simulations of Mutual Impedance Experiments in the presence of small-scale and large-scale plasma inhomogeneities - PART 3",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/record/8119856",
+        "landing_host": "zenodo.org",
+        "year": 2023,
+        "publications": [
+          {
+            "halId_s": "insu-04197021",
+            "title_s": "Space Plasma Diagnostics and Spacecraft Charging. The Impact of Plasma Inhomogeneities on Mutual Impedance Experiments",
+            "uri_s": "https://insu.hal.science/insu-04197021v1",
+            "producedDateY_i": 2023,
+            "producedDateM_i": 9
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.7628903",
+        "dataset_title": "AJAR: An Argumentation-based Judging Agents Framework for Ethical Reinforcement Learning",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/record/7628903",
+        "landing_host": "zenodo.org",
+        "year": 2023,
+        "publications": [
+          {
+            "halId_s": "hal-04127943",
+            "title_s": "AJAR: An Argumentation-based Judging Agents Framework for Ethical Reinforcement Learning",
+            "uri_s": "https://hal.science/hal-04127943v1",
+            "producedDateY_i": 2023,
+            "producedDateM_i": 5
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.6651957",
+        "dataset_title": "Corpus and list of keywords from Improving sustainable crop protection using population genetics concepts",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/record/6651957",
+        "landing_host": "zenodo.org",
+        "year": 2023,
+        "publications": [
+          {
+            "halId_s": "hal-03394837",
+            "title_s": "Improving sustainable crop protection using population genetics concepts",
+            "uri_s": "https://hal.science/hal-03394837v2",
+            "producedDateY_i": 2023,
+            "producedDateM_i": 5
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.10083020",
+        "dataset_title": "Data for \"Spacecraft charging simulations of probe B1 of Comet Interceptor during the cometary flyby\"",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.10083020",
+        "landing_host": "zenodo.org",
+        "year": 2023,
+        "publications": [
+          {
+            "halId_s": "insu-04379375",
+            "title_s": "Spacecraft Charging Simulations of Probe B1 of Comet Interceptor during the Cometary Flyby",
+            "uri_s": "https://insu.hal.science/insu-04379375v1",
+            "producedDateY_i": 2023,
+            "producedDateM_i": 5
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.7927373",
+        "dataset_title": "Maps of solar wind plasma precipitation onto Mercury's surface: a geographical perspective",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/record/7927373",
+        "landing_host": "zenodo.org",
+        "year": 2023,
+        "publications": [
+          {
+            "halId_s": "insu-04227973",
+            "title_s": "Maps of Solar Wind Plasma Precipitation onto Mercury's Surface: A Geographical Perspective",
+            "uri_s": "https://insu.hal.science/insu-04227973v1",
+            "producedDateY_i": 2023,
+            "producedDateM_i": 5
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.4570235",
+        "dataset_title": "mdahirel/pushed-pulled-2020-phenotype: data and code for \"Landscape connectivity alters the evolution of density-dependent dispersal during pushed range expansions\"",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.4570235",
+        "landing_host": "zenodo.org",
+        "year": 2023,
+        "publications": [
+          {
+            "halId_s": "hal-03528633",
+            "title_s": "Landscape connectivity alters the evolution of density-dependent dispersal during pushed range expansions",
+            "uri_s": "https://hal.inrae.fr/hal-03528633v1",
+            "producedDateY_i": 2023,
+            "producedDateM_i": 11
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.7969979",
+        "dataset_title": "Mellak/Toolbox-for-the-analysis-of-3D-OCT-images-of-murine-retina: v0.0.1",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/record/7969979",
+        "landing_host": "zenodo.org",
+        "year": 2023,
+        "publications": [
+          {
+            "halId_s": "hal-04180802",
+            "title_s": "A machine learning framework for the quantification of experimental uveitis in murine OCT",
+            "uri_s": "https://hal.science/hal-04180802v1",
+            "producedDateY_i": 2023,
+            "producedDateM_i": 9
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.7278491",
+        "dataset_title": "New high time resolution mutual impedance measurements",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/record/7278491",
+        "landing_host": "zenodo.org",
+        "year": 2023,
+        "publications": [
+          {
+            "halId_s": "insu-03996509",
+            "title_s": "Instrumentation for Ionized Space Environments: New High Time Resolution Instrumental Modes of Mutual Impedance Experiments",
+            "uri_s": "https://insu.hal.science/insu-03996509v1",
+            "producedDateY_i": 2023,
+            "producedDateM_i": 2
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.7620940",
+        "dataset_title": "New Itineraries for Agroecology Using Cooperative Robots",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/record/7620940",
+        "landing_host": "zenodo.org",
+        "year": 2023,
+        "publications": [
+          {
+            "halId_s": "hal-04205666",
+            "title_s": "NINSAR: New itineraries for agroecology using cooperative robots",
+            "uri_s": "https://hal.science/hal-04205666v1",
+            "producedDateY_i": 2023,
+            "producedDateM_i": 2
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.7185300",
+        "dataset_title": "Products and Models for \"Early Release Science of the Exoplanet WASP-39b with JWST NIRSpec G395H\"",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/record/7185300",
+        "landing_host": "zenodo.org",
+        "year": 2023,
+        "publications": [
+          {
+            "halId_s": "hal-04122511",
+            "title_s": "Early Release Science of the exoplanet WASP-39b with JWST NIRSpec G395H",
+            "uri_s": "https://hal.science/hal-04122511v1",
+            "producedDateY_i": 2023,
+            "producedDateM_i": 7
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.8283641",
+        "dataset_title": "TURRIS: an open source database and Python tools to compute the fundamental frequency of historic masonry towers",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/record/8283641",
+        "landing_host": "zenodo.org",
+        "year": 2023,
+        "publications": [
+          {
+            "halId_s": "hal-04189178",
+            "title_s": "An Open Database to Evaluate the Fundamental Frequency of Historical Masonry Towers through Empirical and Physics-Based Formulations",
+            "uri_s": "https://hal.science/hal-04189178v1",
+            "producedDateY_i": 2023,
+            "producedDateM_i": 9
+          }
+        ]
+      }
+    ],
     "2026|Zenodo": [
       {
         "dataset_doi": "10.5281/zenodo.17449096",
@@ -1436,178 +1625,6 @@
             "uri_s": "https://hal.science/hal-05760346v1",
             "producedDateY_i": 2025,
             "producedDateM_i": 12
-          }
-        ]
-      }
-    ],
-    "2023|Zenodo": [
-      {
-        "dataset_doi": "10.5281/zenodo.8119856",
-        "dataset_title": "1D-1V Vlasov-Poisson Simulations of Mutual Impedance Experiments in the presence of small-scale and large-scale plasma inhomogeneities - PART 3",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/record/8119856",
-        "landing_host": "zenodo.org",
-        "year": 2023,
-        "publications": [
-          {
-            "halId_s": "insu-04197021",
-            "title_s": "Space Plasma Diagnostics and Spacecraft Charging. The Impact of Plasma Inhomogeneities on Mutual Impedance Experiments",
-            "uri_s": "https://insu.hal.science/insu-04197021v1",
-            "producedDateY_i": 2023,
-            "producedDateM_i": 9
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.7628903",
-        "dataset_title": "AJAR: An Argumentation-based Judging Agents Framework for Ethical Reinforcement Learning",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/record/7628903",
-        "landing_host": "zenodo.org",
-        "year": 2023,
-        "publications": [
-          {
-            "halId_s": "hal-04127943",
-            "title_s": "AJAR: An Argumentation-based Judging Agents Framework for Ethical Reinforcement Learning",
-            "uri_s": "https://hal.science/hal-04127943v1",
-            "producedDateY_i": 2023,
-            "producedDateM_i": 5
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.10083020",
-        "dataset_title": "Data for \"Spacecraft charging simulations of probe B1 of Comet Interceptor during the cometary flyby\"",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.10083020",
-        "landing_host": "zenodo.org",
-        "year": 2023,
-        "publications": [
-          {
-            "halId_s": "insu-04379375",
-            "title_s": "Spacecraft Charging Simulations of Probe B1 of Comet Interceptor during the Cometary Flyby",
-            "uri_s": "https://insu.hal.science/insu-04379375v1",
-            "producedDateY_i": 2023,
-            "producedDateM_i": 5
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.7927373",
-        "dataset_title": "Maps of solar wind plasma precipitation onto Mercury's surface: a geographical perspective",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/record/7927373",
-        "landing_host": "zenodo.org",
-        "year": 2023,
-        "publications": [
-          {
-            "halId_s": "insu-04227973",
-            "title_s": "Maps of Solar Wind Plasma Precipitation onto Mercury's Surface: A Geographical Perspective",
-            "uri_s": "https://insu.hal.science/insu-04227973v1",
-            "producedDateY_i": 2023,
-            "producedDateM_i": 5
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.4570235",
-        "dataset_title": "mdahirel/pushed-pulled-2020-phenotype: data and code for \"Landscape connectivity alters the evolution of density-dependent dispersal during pushed range expansions\"",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.4570235",
-        "landing_host": "zenodo.org",
-        "year": 2023,
-        "publications": [
-          {
-            "halId_s": "hal-03528633",
-            "title_s": "Landscape connectivity alters the evolution of density-dependent dispersal during pushed range expansions",
-            "uri_s": "https://hal.inrae.fr/hal-03528633v1",
-            "producedDateY_i": 2023,
-            "producedDateM_i": 11
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.7969979",
-        "dataset_title": "Mellak/Toolbox-for-the-analysis-of-3D-OCT-images-of-murine-retina: v0.0.1",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/record/7969979",
-        "landing_host": "zenodo.org",
-        "year": 2023,
-        "publications": [
-          {
-            "halId_s": "hal-04180802",
-            "title_s": "A machine learning framework for the quantification of experimental uveitis in murine OCT",
-            "uri_s": "https://hal.science/hal-04180802v1",
-            "producedDateY_i": 2023,
-            "producedDateM_i": 9
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.7278491",
-        "dataset_title": "New high time resolution mutual impedance measurements",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/record/7278491",
-        "landing_host": "zenodo.org",
-        "year": 2023,
-        "publications": [
-          {
-            "halId_s": "insu-03996509",
-            "title_s": "Instrumentation for Ionized Space Environments: New High Time Resolution Instrumental Modes of Mutual Impedance Experiments",
-            "uri_s": "https://insu.hal.science/insu-03996509v1",
-            "producedDateY_i": 2023,
-            "producedDateM_i": 2
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.7620940",
-        "dataset_title": "New Itineraries for Agroecology Using Cooperative Robots",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/record/7620940",
-        "landing_host": "zenodo.org",
-        "year": 2023,
-        "publications": [
-          {
-            "halId_s": "hal-04205666",
-            "title_s": "NINSAR: New itineraries for agroecology using cooperative robots",
-            "uri_s": "https://hal.science/hal-04205666v1",
-            "producedDateY_i": 2023,
-            "producedDateM_i": 2
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.7185300",
-        "dataset_title": "Products and Models for \"Early Release Science of the Exoplanet WASP-39b with JWST NIRSpec G395H\"",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/record/7185300",
-        "landing_host": "zenodo.org",
-        "year": 2023,
-        "publications": [
-          {
-            "halId_s": "hal-04122511",
-            "title_s": "Early Release Science of the exoplanet WASP-39b with JWST NIRSpec G395H",
-            "uri_s": "https://hal.science/hal-04122511v1",
-            "producedDateY_i": 2023,
-            "producedDateM_i": 7
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.8283641",
-        "dataset_title": "TURRIS: an open source database and Python tools to compute the fundamental frequency of historic masonry towers",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/record/8283641",
-        "landing_host": "zenodo.org",
-        "year": 2023,
-        "publications": [
-          {
-            "halId_s": "hal-04189178",
-            "title_s": "An Open Database to Evaluate the Fundamental Frequency of Historical Masonry Towers through Empirical and Physics-Based Formulations",
-            "uri_s": "https://hal.science/hal-04189178v1",
-            "producedDateY_i": 2023,
-            "producedDateM_i": 9
           }
         ]
       }

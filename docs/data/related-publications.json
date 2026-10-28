@@ -23,7 +23,7 @@
         "UJM",
         "UJM EPE"
       ],
-      "modifiedDate_tdate": "2026-10-28T03:25:41Z",
+      "modifiedDate_tdate": "2026-10-28T14:33:16Z",
       "producedDateY_i": 2025,
       "repositories": [
         "NAKALA"
@@ -36,6 +36,102 @@
           "landing_url": "https://nakala.fr/10.34847/nkl.e63a22n9",
           "landing_host": "nakala.fr",
           "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-01633879",
+      "uri_s": "https://inria.hal.science/hal-01633879v1",
+      "title_s": "Two genomes of highly polyphagous lepidopteran pests (Spodoptera frugiperda, Noctuidae) with different host-plant ranges",
+      "docType_s": "ART",
+      "doiId_s": "10.1038/s41598-017-10461-4",
+      "laboratories": [
+        "GenScale",
+        "Inria",
+        "IRISA-D7",
+        "IRISA",
+        "UR",
+        "INSA Rennes",
+        "UBS",
+        "ENS Rennes",
+        "CNRS",
+        "IMT Atlantique"
+      ],
+      "modifiedDate_tdate": "2026-10-28T11:40:03Z",
+      "producedDateY_i": 2017,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/D4TG2M",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/D4TG2M",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda corn strain",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.57745/XDVEQW",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda rice strain",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-03065279",
+      "uri_s": "https://inria.hal.science/hal-03065279v1",
+      "title_s": "Adaptation by copy number variation increases insecticide resistance in the fall armyworm",
+      "docType_s": "ART",
+      "doiId_s": "10.1038/s42003-020-01382-6",
+      "laboratories": [
+        "DGIMI",
+        "UM",
+        "INRAE",
+        "ISA",
+        "UNS",
+        "CNRS",
+        "UniCA",
+        "USDA",
+        "IGEPP",
+        "UR"
+      ],
+      "modifiedDate_tdate": "2026-10-28T11:40:03Z",
+      "producedDateY_i": 2020,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/D4TG2M",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/D4TG2M",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda corn strain",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.57745/XDVEQW",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda rice strain",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
@@ -474,102 +570,6 @@
           "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/FEQ1Z6",
           "landing_host": "data.inrae.fr",
           "dataset_title": "The discernible and hidden effects of clonality on the genotypic and genetic states of populations: improving our estimation of clonal rates",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-03065279",
-      "uri_s": "https://inria.hal.science/hal-03065279v1",
-      "title_s": "Adaptation by copy number variation increases insecticide resistance in the fall armyworm",
-      "docType_s": "ART",
-      "doiId_s": "10.1038/s42003-020-01382-6",
-      "laboratories": [
-        "DGIMI",
-        "UM",
-        "INRAE",
-        "ISA",
-        "UNS",
-        "CNRS",
-        "UniCA",
-        "USDA",
-        "IGEPP",
-        "UR"
-      ],
-      "modifiedDate_tdate": "2026-10-23T03:33:02Z",
-      "producedDateY_i": 2020,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/D4TG2M",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/D4TG2M",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda corn strain",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.57745/XDVEQW",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda rice strain",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-01633879",
-      "uri_s": "https://inria.hal.science/hal-01633879v1",
-      "title_s": "Two genomes of highly polyphagous lepidopteran pests (Spodoptera frugiperda, Noctuidae) with different host-plant ranges",
-      "docType_s": "ART",
-      "doiId_s": "10.1038/s41598-017-10461-4",
-      "laboratories": [
-        "GenScale",
-        "Inria",
-        "IRISA-D7",
-        "IRISA",
-        "UR",
-        "INSA Rennes",
-        "UBS",
-        "ENS Rennes",
-        "CNRS",
-        "IMT Atlantique"
-      ],
-      "modifiedDate_tdate": "2026-10-23T03:32:55Z",
-      "producedDateY_i": 2017,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/D4TG2M",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/D4TG2M",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda corn strain",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.57745/XDVEQW",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda rice strain",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false

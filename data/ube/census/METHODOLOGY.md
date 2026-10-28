@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-10-28T10:39:12Z`  
+Generated: `2026-10-28T15:06:44Z`  
 Collection: `UNIV-BOURGOGNE`  
-Run window: `2026-10-28T10:39:10Z` → `2026-10-28T10:39:12Z`
+Run window: `2026-10-28T15:06:43Z` → `2026-10-28T15:06:44Z`
 
 ## Goal
 
@@ -75,8 +75,8 @@ repository root `README.md`.
 - **dataUBFC - Atelier de la donnée de Bourgogne-Franche-Comté**: 16
 - **Portail Data Inra**: 13
 - **Dryad**: 10
+- **Journal DOI (10.3917)**: 10
 - **Journal DOI (10.1007)**: 9
-- **Journal DOI (10.3917)**: 9
 - **Progedo-Adisp**: 9
 - **Journal DOI (10.1002)**: 7
 - **Figshare**: 6
@@ -131,7 +131,6 @@ repository root `README.md`.
 - **Portail Data INRAE**: 1
 - **Recherche Data Gouv → HAL notice**: 1
 - **Science Data Bank**: 1
-- **Unknown (DOI not in DataCite)**: 1
 - **data.InDoRES**: 1
 
 ### By landing host
