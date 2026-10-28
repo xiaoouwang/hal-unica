@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T14:32:11Z",
+  "generated_at": "2026-10-28T10:39:33Z",
   "collection": "UNIV-BOURGOGNE",
   "collection_url": "https://hal.science/UNIV-BOURGOGNE",
   "harvest": {
@@ -341,6 +341,43 @@
       "NAKALA": 9
     },
     "publications": [
+      {
+        "halId_s": "hal-03329588",
+        "uri_s": "https://hal.science/hal-03329588v1",
+        "title_s": "Quantifying and simulating carbon and nitrogen mineralization from diverse exogenous organic matters",
+        "docType_s": "ART",
+        "doiId_s": "10.1111/sum.12745",
+        "laboratories": [
+          "ECOSYS",
+          "INRAE",
+          "FARE",
+          "URCA",
+          "UA",
+          "ULiège",
+          "UPJV",
+          "ULCO",
+          "JUNIA",
+          "UCL"
+        ],
+        "modifiedDate_tdate": "2026-10-28T03:27:19Z",
+        "producedDateY_i": 2022,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/JGHVYV",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/JGHVYV",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Carbon and nitrogen mineralization data of various exogenous organic matter (EOM) under controlled conditions",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
       {
         "halId_s": "hal-05143887",
         "uri_s": "https://hal.inrae.fr/hal-05143887v1",
@@ -1465,43 +1502,6 @@
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/D6XAKL",
             "landing_host": "entrepot.recherche.data.gouv.fr",
             "dataset_title": "CBGP - Continental Arthropod Collection",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-03329588",
-        "uri_s": "https://hal.science/hal-03329588v1",
-        "title_s": "Quantifying and simulating carbon and nitrogen mineralization from diverse exogenous organic matters",
-        "docType_s": "ART",
-        "doiId_s": "10.1111/sum.12745",
-        "laboratories": [
-          "ECOSYS",
-          "INRAE",
-          "FARE",
-          "URCA",
-          "UA",
-          "ULiège",
-          "UPJV",
-          "ULCO",
-          "JUNIA",
-          "UCL"
-        ],
-        "modifiedDate_tdate": "2026-09-29T11:08:05Z",
-        "producedDateY_i": 2022,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.57745/JGHVYV",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/JGHVYV",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "Carbon and nitrogen mineralization data of various exogenous organic matter (EOM) under controlled conditions",
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -7163,7 +7163,7 @@
               "title_s": "Quantifying and simulating carbon and nitrogen mineralization from diverse exogenous organic matters",
               "uri_s": "https://hal.science/hal-03329588v1",
               "producedDateY_i": 2022,
-              "producedDateM_i": 9
+              "producedDateM_i": 10
             }
           ]
         },
