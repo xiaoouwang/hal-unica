@@ -1,12 +1,12 @@
 {
   "watermark_modified": "2026-10-28T11:40:03Z",
-  "since": "2026-10-26T15:06:42Z",
-  "started_at": "2026-10-28T15:06:43Z",
-  "finished_at": "2026-10-28T15:06:44Z",
+  "since": "2026-10-27T10:56:42Z",
+  "started_at": "2026-10-29T10:56:42Z",
+  "finished_at": "2026-10-29T10:56:43Z",
   "collection": "UNIV-BOURGOGNE",
   "num_hal_with_related": 306,
   "num_unique_dois": 308,
-  "pubs_fetched": 5,
+  "pubs_fetched": 3,
   "dois_resolved_live": 0,
   "dois_from_cache": 308
 }
