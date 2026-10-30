@@ -1,24 +1,3 @@
 university=unica collection=UNIV-COTEDAZUR site=docs
-incremental census since=2026-10-28T10:54:25Z (existing pubs=326, doi cache=394)
-[2026-10-30T10:54:25Z] census start collection=UNIV-COTEDAZUR since=2026-10-28T10:54:25Z
-HAL publications with linked identifiers (merged): 327
-  query: (relatedData_s:*) OR (relatedSoftware_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)
-  fetched this run: 9 (updated=8, inserted=1)
-link tokens: 522
-unique DOI candidates: 395
-DataCite cache hits: 394; to resolve: 1
-DataCite resolved 1/1
-[2026-10-30T10:54:27Z] census done
-harvesting SOFTWARE deposits (full)
-listing publications with dataset + software (open science triptych)
-open science triptych publications=4
-harvesting data papers (docSubType_s:DATAPAPER)
-updated dataset→publications index
-synced focus links → data/unica_data_repo_links.jsonl (48 hits)
-harvesting institutional DataCite datasets (affiliation / ROR)
-[2026-10-30T10:54:34Z] datacite census start university=unica
-  query: (creators.affiliation.affiliationIdentifier:"https://ror.org/019tgvf94" OR contributors.affiliation.affiliationIdentifier:"https://ror.org/019tgvf94" OR creators.affiliation.name:"Université Côte d'Azur" OR contributors.affiliation.name:"Université Côte d'Azur" OR creators.affiliation.name:"Universite Cote d'Azur" OR contributors.affiliation.name:"Universite Cote d'Azur" OR creators.affiliation.name:"Univ. Côte d'Azur" OR contributors.affiliation.name:"Univ. Côte d'Azur" OR creators.affiliation.name:"Univ Côte d'Azur" OR contributors.affiliation.name:"Univ Côte d'Azur" OR creators.affiliation.name:"University Côte d'Azur" OR contributors.affiliation.name:"University Côte d'Azur" OR creators.affiliation.name:"University Cote d'Azur" OR contributors.affiliation.name:"University Cote d'Azur") AND types.resourceTypeGeneral:Dataset
-  DataCite numFound≈1414
-  harvested unique DOIs=1414
-DataCite datasets=1414 also_on_hal=32 datacite_only=1382
-wrote site → docs/
+incremental census since=2026-10-28T15:12:34Z (existing pubs=327, doi cache=395)
+[2026-10-30T15:12:34Z] census start collection=UNIV-COTEDAZUR since=2026-10-28T15:12:34Z
