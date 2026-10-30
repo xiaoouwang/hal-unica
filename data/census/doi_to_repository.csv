@@ -38,6 +38,7 @@ doi,repository,object_kind,publisher,landing_url,landing_host,prefix,client_id,t
 10.1007/s42452-020-3122-4,Journal DOI (10.1007),publication_landing,,,,,,,not_found
 10.1016/j.aim.2017.01.016,Journal DOI (10.1016),publication_landing,,,,,,,not_found
 10.1016/j.dam.2024.08.001,Journal DOI (10.1016),publication_landing,,,,,,,not_found
+10.1016/j.endm.2009.07.108,Unknown (DOI not in DataCite),unresolved,,,,,,,not_found
 10.1016/j.jlamp.2020.100606,Journal DOI (10.1016),publication_landing,,,,,,,not_found
 10.1016/j.respol.2018.07.021,Journal DOI (10.1016),publication_landing,,,,,,,not_found
 10.1016/j.respol.2020.104077,Journal DOI (10.1016),publication_landing,,,,,,,not_found

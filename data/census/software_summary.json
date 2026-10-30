@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-29T15:13:34Z",
-  "software_deposits": 75,
-  "with_swhid": 61,
-  "with_code_repository": 55,
+  "generated_at": "2026-10-30T10:54:28Z",
+  "software_deposits": 76,
+  "with_swhid": 62,
+  "with_code_repository": 56,
   "with_related_publication": 30,
   "with_hal_file": 21,
   "programming_languages": {
-    "Python": 12,
+    "Python": 13,
     "C++": 11,
     "Java": 9,
     "R": 6,

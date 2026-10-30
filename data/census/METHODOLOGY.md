@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-10-29T15:13:34Z`  
+Generated: `2026-10-30T10:54:27Z`  
 Collection: `UNIV-COTEDAZUR`  
-Run window: `2026-10-29T15:13:33Z` → `2026-10-29T15:13:34Z`
+Run window: `2026-10-30T10:54:25Z` → `2026-10-30T10:54:27Z`
 
 ## Goal
 
@@ -53,9 +53,9 @@ repository root `README.md`.
 
 ## Counts (this run)
 
-- HAL notices with linked identifiers: **326**
-- Related tokens: **521**
-- Unique DOIs resolved: **394**
+- HAL notices with linked identifiers: **327**
+- Related tokens: **522**
+- Unique DOIs resolved: **395**
 - Publications with at least one dataset-repo landing: **162**
 - Misfiled dataset links (wrong HAL field): **71**
 - Publications with ≥1 misfiled dataset link: **52**
@@ -158,6 +158,7 @@ repository root `README.md`.
 - **Progedo-Adisp**: 1
 - **STScI/MAST**: 1
 - **University of Bristol data.bris**: 1
+- **Unknown (DOI not in DataCite)**: 1
 
 ### By landing host
 
