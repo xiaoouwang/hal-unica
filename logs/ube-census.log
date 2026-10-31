@@ -1,3 +1,23 @@
 university=ube collection=UNIV-BOURGOGNE site=docs/ube
-incremental census since=2026-10-28T15:17:13Z (existing pubs=309, doi cache=308)
-[2026-10-30T15:17:13Z] census start collection=UNIV-BOURGOGNE since=2026-10-28T15:17:13Z
+incremental census since=2026-10-29T10:26:25Z (existing pubs=309, doi cache=308)
+[2026-10-31T10:26:25Z] census start collection=UNIV-BOURGOGNE since=2026-10-29T10:26:25Z
+HAL publications with linked identifiers (merged): 309
+  query: (relatedData_s:*) OR (relatedSoftware_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)
+  fetched this run: 0 (updated=0, inserted=0)
+link tokens: 435
+unique DOI candidates: 308
+DataCite cache hits: 308; to resolve: 0
+[2026-10-31T10:26:26Z] census done
+harvesting SOFTWARE deposits (full)
+listing publications with dataset + software (open science triptych)
+open science triptych publications=4
+harvesting data papers (docSubType_s:DATAPAPER)
+updated dataset→publications index
+synced focus links → data/ube/links.jsonl (96 hits)
+harvesting institutional DataCite datasets (affiliation / ROR)
+[2026-10-31T10:26:31Z] datacite census start university=ube
+  query: (creators.affiliation.affiliationIdentifier:"https://ror.org/00g700j37" OR contributors.affiliation.affiliationIdentifier:"https://ror.org/00g700j37" OR creators.affiliation.name:"Université Bourgogne Europe" OR contributors.affiliation.name:"Université Bourgogne Europe" OR creators.affiliation.name:"Universite Bourgogne Europe" OR contributors.affiliation.name:"Universite Bourgogne Europe" OR creators.affiliation.name:"Université de Bourgogne" OR contributors.affiliation.name:"Université de Bourgogne" OR creators.affiliation.name:"Universite de Bourgogne" OR contributors.affiliation.name:"Universite de Bourgogne" OR creators.affiliation.name:"University of Burgundy" OR contributors.affiliation.name:"University of Burgundy") AND types.resourceTypeGeneral:Dataset
+  DataCite numFound≈828
+  harvested unique DOIs=828
+DataCite datasets=828 also_on_hal=7 datacite_only=821
+wrote site → docs/ube/

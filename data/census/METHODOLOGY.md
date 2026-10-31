@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-10-30T10:54:27Z`  
+Generated: `2026-10-31T10:26:05Z`  
 Collection: `UNIV-COTEDAZUR`  
-Run window: `2026-10-30T10:54:25Z` → `2026-10-30T10:54:27Z`
+Run window: `2026-10-31T10:26:04Z` → `2026-10-31T10:26:05Z`
 
 ## Goal
 
@@ -77,7 +77,7 @@ repository root `README.md`.
 - **NAKALA**: 10
 - **Journal DOI (10.4000)**: 9
 - **SEDOO / Theia**: 9
-- **Journal DOI (10.1016)**: 7
+- **Journal DOI (10.1016)**: 8
 - **Journal DOI (10.1002)**: 6
 - **Journal DOI (10.3917)**: 6
 - **arXiv**: 6
@@ -158,7 +158,6 @@ repository root `README.md`.
 - **Progedo-Adisp**: 1
 - **STScI/MAST**: 1
 - **University of Bristol data.bris**: 1
-- **Unknown (DOI not in DataCite)**: 1
 
 ### By landing host
 

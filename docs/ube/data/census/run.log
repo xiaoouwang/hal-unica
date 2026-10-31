@@ -1,10 +1,10 @@
 university=ube collection=UNIV-BOURGOGNE site=docs/ube
-incremental census since=2026-10-28T10:40:03Z (existing pubs=306, doi cache=308)
-[2026-10-30T10:54:52Z] census start collection=UNIV-BOURGOGNE since=2026-10-28T10:40:03Z
+incremental census since=2026-10-29T10:26:25Z (existing pubs=309, doi cache=308)
+[2026-10-31T10:26:25Z] census start collection=UNIV-BOURGOGNE since=2026-10-29T10:26:25Z
 HAL publications with linked identifiers (merged): 309
   query: (relatedData_s:*) OR (relatedSoftware_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)
-  fetched this run: 4 (updated=1, inserted=3)
+  fetched this run: 0 (updated=0, inserted=0)
 link tokens: 435
 unique DOI candidates: 308
 DataCite cache hits: 308; to resolve: 0
-[2026-10-30T10:54:54Z] census done
+[2026-10-31T10:26:26Z] census done
