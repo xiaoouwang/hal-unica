@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-10-31T10:26:05Z`  
+Generated: `2026-11-01T11:18:29Z`  
 Collection: `UNIV-COTEDAZUR`  
-Run window: `2026-10-31T10:26:04Z` → `2026-10-31T10:26:05Z`
+Run window: `2026-11-01T11:17:21Z` → `2026-11-01T11:18:29Z`
 
 ## Goal
 
@@ -53,58 +53,39 @@ repository root `README.md`.
 
 ## Counts (this run)
 
-- HAL notices with linked identifiers: **327**
-- Related tokens: **522**
-- Unique DOIs resolved: **395**
-- Publications with at least one dataset-repo landing: **162**
-- Misfiled dataset links (wrong HAL field): **71**
-- Publications with ≥1 misfiled dataset link: **52**
+- HAL notices with linked identifiers: **326**
+- Related tokens: **521**
+- Unique DOIs resolved: **394**
+- Publications with at least one dataset-repo landing: **160**
+- Misfiled dataset links (wrong HAL field): **69**
+- Publications with ≥1 misfiled dataset link: **50**
 
 ### Dataset DOIs by HAL source field
 
 - **`relatedData_s`**: 181
-- **`relatedPublication_s`**: 69
+- **`relatedPublication_s`**: 67
 - **`seeAlso_s`**: 3
 
 ### By repository (DOI evidence)
 
-- **Zenodo**: 104
-- **Recherche Data Gouv**: 60
-- **Journal DOI (10.1007)**: 31
-- **Journal DOI (10.1109)**: 20
+- **Unknown (DOI not in DataCite)**: 147
+- **Zenodo**: 103
+- **Recherche Data Gouv**: 59
 - **SEANOE**: 15
 - **Sismer**: 11
 - **NAKALA**: 10
-- **Journal DOI (10.4000)**: 9
 - **SEDOO / Theia**: 9
-- **Journal DOI (10.1016)**: 8
-- **Journal DOI (10.1002)**: 6
-- **Journal DOI (10.3917)**: 6
-- **arXiv**: 6
 - **FDSN / seismic network**: 5
-- **Journal DOI (10.1093)**: 5
+- **arXiv**: 5
 - **Figshare**: 4
-- **DOI prefix 10.1101**: 3
-- **DOI prefix 10.22489**: 3
-- **Journal DOI (10.1038)**: 3
-- **Journal DOI (10.1137)**: 3
-- **Journal DOI (10.1145)**: 3
 - **ResearchGate**: 3
 - **Archimer (Ifremer publications)**: 2
 - **BIRA-IASB data**: 2
 - **CDS**: 2
-- **DOI prefix 10.1287**: 2
-- **DOI prefix 10.23919**: 2
-- **DOI prefix 10.31223**: 2
-- **DOI prefix 10.32614**: 2
-- **DOI prefix 10.3390**: 2
-- **DOI prefix 10.5194**: 2
 - **DataSuds**: 2
 - **Epos-France Seismological Data Center**: 2
 - **Harvard Dataverse**: 2
 - **JAMSTEC**: 2
-- **Journal DOI (10.1017)**: 2
-- **Journal DOI (10.1371)**: 2
 - **Mendeley Data**: 2
 - **Mercator Ocean / Copernicus Marine**: 2
 - **OSF**: 2
@@ -113,35 +94,6 @@ repository root `README.md`.
 - **data.InDoRES**: 2
 - **Canal-U**: 1
 - **DACE**: 1
-- **DOI prefix 10.1044**: 1
-- **DOI prefix 10.1051**: 1
-- **DOI prefix 10.1075**: 1
-- **DOI prefix 10.1111**: 1
-- **DOI prefix 10.1117**: 1
-- **DOI prefix 10.11606**: 1
-- **DOI prefix 10.1163**: 1
-- **DOI prefix 10.1177**: 1
-- **DOI prefix 10.1504**: 1
-- **DOI prefix 10.1561**: 1
-- **DOI prefix 10.16995**: 1
-- **DOI prefix 10.17632**: 1
-- **DOI prefix 10.19272**: 1
-- **DOI prefix 10.2139**: 1
-- **DOI prefix 10.21494**: 1
-- **DOI prefix 10.22152**: 1
-- **DOI prefix 10.22541**: 1
-- **DOI prefix 10.24072**: 1
-- **DOI prefix 10.2478**: 1
-- **DOI prefix 10.26508**: 1
-- **DOI prefix 10.32908**: 1
-- **DOI prefix 10.33166**: 1
-- **DOI prefix 10.36863**: 1
-- **DOI prefix 10.4135**: 1
-- **DOI prefix 10.4171**: 1
-- **DOI prefix 10.5465**: 1
-- **DOI prefix 10.59641**: 1
-- **DOI prefix 10.70675**: 1
-- **DOI prefix 10.7819**: 1
 - **Dagstuhl**: 1
 - **ETH Zurich seismic networks**: 1
 - **GEOSCOPE**: 1
