@@ -1,6 +1,6 @@
 {
-  "unique_datasets": 237,
-  "publications_with_dataset": 162,
+  "unique_datasets": 240,
+  "publications_with_dataset": 163,
   "by_repository": {
     "Zenodo": 103,
     "Recherche Data Gouv": 49,
@@ -9,10 +9,11 @@
     "SEDOO / Theia": 9,
     "NAKALA": 8,
     "FDSN / seismic network": 5,
+    "Epos-France Seismological Data Center": 4,
     "Figshare": 4,
     "BIRA-IASB data": 2,
     "CDS": 2,
-    "Epos-France Seismological Data Center": 2,
+    "ETH Zurich seismic networks": 2,
     "Harvard Dataverse": 2,
     "JAMSTEC": 2,
     "Mendeley Data": 2,
@@ -22,7 +23,6 @@
     "RADAR KIT": 2,
     "data.InDoRES": 2,
     "DataSuds": 1,
-    "ETH Zurich seismic networks": 1,
     "GEOSCOPE": 1,
     "Geoscience Australia": 1,
     "IEDA": 1,
@@ -160,7 +160,7 @@
       36,
       34,
       72,
-      29
+      32
     ],
     "series": [
       {
@@ -367,8 +367,37 @@
         ]
       },
       {
-        "repository": "Figshare",
+        "repository": "Epos-France Seismological Data Center",
         "color": "#577590",
+        "counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "repository": "Figshare",
+        "color": "#f28482",
         "counts": [
           0,
           0,
@@ -396,8 +425,37 @@
         ]
       },
       {
+        "repository": "ETH Zurich seismic networks",
+        "color": "#43aa8b",
+        "counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ]
+      },
+      {
         "repository": "Mercator Ocean / Copernicus Marine",
-        "color": "#f28482",
+        "color": "#9b5de5",
         "counts": [
           0,
           0,
@@ -426,64 +484,6 @@
       },
       {
         "repository": "data.InDoRES",
-        "color": "#43aa8b",
-        "counts": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          1,
-          0
-        ]
-      },
-      {
-        "repository": "CDS",
-        "color": "#9b5de5",
-        "counts": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          2,
-          0,
-          0
-        ]
-      },
-      {
-        "repository": "Epos-France Seismological Data Center",
         "color": "#00bbf9",
         "counts": [
           0,
@@ -501,12 +501,12 @@
           0,
           0,
           0,
+          0,
+          0,
+          0,
+          0,
+          0,
           1,
-          0,
-          0,
-          0,
-          0,
-          0,
           1,
           0
         ]
@@ -535,8 +535,8 @@
           1,
           0,
           3,
-          8,
-          12,
+          10,
+          11,
           0
         ]
       }
@@ -544,6 +544,61 @@
     "period_kind": "year"
   },
   "cell_details": {
+    "2026|Epos-France Seismological Data Center": [
+      {
+        "dataset_doi": "10.15778/RESIF.XT2018",
+        "dataset_title": "Seismic network XT: CIFALPS-2 temporary experiment (China-Italy-France Alps seismic transect #2)",
+        "repository": "Epos-France Seismological Data Center",
+        "landing_url": "https://seismology.epos-france.fr/networks/#/XT__2018",
+        "landing_host": "seismology.epos-france.fr",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05658814",
+            "title_s": "A new-generation multiparameter elastic model of the crust and upper mantle of the Greater Alpine area and the Apennines using teleseismic Full Waveform Inversion: data, method and models",
+            "uri_s": "https://hal.science/hal-05658814v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 5
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.15778/RESIF.YP2012",
+        "dataset_title": "Seismic network YP: CIFALPS temporary experiment (China-Italy-France Alps seismic transect)",
+        "repository": "Epos-France Seismological Data Center",
+        "landing_url": "https://seismology.epos-france.fr/networks/#/YP__2012",
+        "landing_host": "seismology.epos-france.fr",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05658814",
+            "title_s": "A new-generation multiparameter elastic model of the crust and upper mantle of the Greater Alpine area and the Apennines using teleseismic Full Waveform Inversion: data, method and models",
+            "uri_s": "https://hal.science/hal-05658814v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 5
+          }
+        ]
+      }
+    ],
+    "2026|ETH Zurich seismic networks": [
+      {
+        "dataset_doi": "10.12686/alparray/z3_2015",
+        "dataset_title": "AlpArray Seismic Network (AASN) temporary component",
+        "repository": "ETH Zurich seismic networks",
+        "landing_url": "http://networks.seismo.ethz.ch/networks/z3/",
+        "landing_host": "networks.seismo.ethz.ch",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05658814",
+            "title_s": "A new-generation multiparameter elastic model of the crust and upper mantle of the Greater Alpine area and the Apennines using teleseismic Full Waveform Inversion: data, method and models",
+            "uri_s": "https://hal.science/hal-05658814v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 5
+          }
+        ]
+      }
+    ],
     "2023|Zenodo": [
       {
         "dataset_doi": "10.5281/zenodo.8119856",
@@ -711,7 +766,7 @@
             "title_s": "Early Release Science of the exoplanet WASP-39b with JWST NIRSpec G395H",
             "uri_s": "https://hal.science/hal-04122511v1",
             "producedDateY_i": 2023,
-            "producedDateM_i": 7
+            "producedDateM_i": 11
           }
         ]
       },
@@ -2190,7 +2245,116 @@
         ]
       }
     ],
-    "2024|CDS": [
+    "2024|Autre": [
+      {
+        "dataset_doi": "10.7910/DVN/TICFQW",
+        "dataset_title": "CLEC12B glycan array",
+        "repository": "Harvard Dataverse",
+        "landing_url": "https://dataverse.harvard.edu/citation?persistentId=doi:10.7910/DVN/TICFQW",
+        "landing_host": "dataverse.harvard.edu",
+        "year": 2024,
+        "publications": [
+          {
+            "halId_s": "hal-04908237",
+            "title_s": "CLEC12B Regulates Melanocyte Immunity and Homeostasis in the Skin through the Signal Transducer and Activator of Transcription 1/IRF1 Axis",
+            "uri_s": "https://hal.science/hal-04908237v1",
+            "producedDateY_i": 2024,
+            "producedDateM_i": 12
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.15148/7d5e2f17-bad6-4ac3-87e2-84888d0d6699",
+        "dataset_title": "DAS and pressure sensor datasets for the reconstruction of nearshore surface gravity wave spectrum from Distributed Acoustic Sensing time series",
+        "repository": "OSU OREME",
+        "landing_url": "https://data.oreme.org/doi/view/7d5e2f17-bad6-4ac3-87e2-84888d0d6699",
+        "landing_host": "data.oreme.org",
+        "year": 2024,
+        "publications": [
+          {
+            "halId_s": "hal-04829691",
+            "title_s": "Reconstruction of nearshore surface gravity wave heights from distributed acoustic sensing data",
+            "uri_s": "https://hal.science/hal-04829691v1",
+            "producedDateY_i": 2024,
+            "producedDateM_i": 10
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.18112/openneuro.ds004786.v1.0.1",
+        "dataset_title": "MorphoSem",
+        "repository": "OpenNeuro",
+        "landing_url": "https://openneuro.org/datasets/ds004786/versions/1.0.1",
+        "landing_host": "openneuro.org",
+        "year": 2024,
+        "publications": [
+          {
+            "halId_s": "hal-04391146",
+            "title_s": "Atypical Hemispheric Re-Organization of the Reading Network in High-Functioning Adults with Dyslexia: Evidence from Representational Similarity Analysis",
+            "uri_s": "https://hal.science/hal-04391146v1",
+            "producedDateY_i": 2024,
+            "producedDateM_i": 1
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.7910/DVN/KHO1ZY",
+        "dataset_title": "Replication Data for: Dating Solar System's giant planet orbital instability using enstatite meteorites",
+        "repository": "Harvard Dataverse",
+        "landing_url": "https://dataverse.harvard.edu/citation?persistentId=doi:10.7910/DVN/KHO1ZY",
+        "landing_host": "dataverse.harvard.edu",
+        "year": 2024,
+        "publications": [
+          {
+            "halId_s": "hal-04798037",
+            "title_s": "Dating the Solar System’s giant planet orbital instability using enstatite meteorites",
+            "uri_s": "https://hal.science/hal-04798037v1",
+            "producedDateY_i": 2024,
+            "producedDateM_i": 4
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.35097/1921",
+        "dataset_title": "Seismological evidence for a multifault network at the subduction interface",
+        "repository": "RADAR KIT",
+        "landing_url": "https://radar.kit.edu/radar/en/dataset/KzhOAFsNNOzovfFM",
+        "landing_host": "radar.kit.edu",
+        "year": 2024,
+        "publications": [
+          {
+            "halId_s": "hal-04717945",
+            "title_s": "Seismological evidence for a multifault network at the subduction interface",
+            "uri_s": "https://hal.science/hal-04717945v1",
+            "producedDateY_i": 2024,
+            "producedDateM_i": 4
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.23708/02POK6",
+        "dataset_title": "Simbi database: historical hydro-meteorological time series and catchment attributes in Haiti, 1905-2005",
+        "repository": "DataSuds",
+        "landing_url": "https://dataverse.ird.fr/citation?persistentId=doi:10.23708/02POK6",
+        "landing_host": "dataverse.ird.fr",
+        "year": 2024,
+        "publications": [
+          {
+            "halId_s": "hal-04361293",
+            "title_s": "Simbi : base de données hydro-climatiques historiques et signatures de 24 bassins versants haïtiens",
+            "uri_s": "https://hal.science/hal-04361293v1",
+            "producedDateY_i": 2023,
+            "producedDateM_i": 10
+          },
+          {
+            "halId_s": "hal-04564899",
+            "title_s": "Simbi: historical hydro-meteorological time series and signatures for 24 catchments in Haiti",
+            "uri_s": "https://hal.science/hal-04564899v1",
+            "producedDateY_i": 2024,
+            "producedDateM_i": 4
+          }
+        ]
+      },
       {
         "dataset_doi": "10.26093/cds/vizier.36900054",
         "dataset_title": "SpectroTranslator GALAH and APOGEE examples",
@@ -2205,6 +2369,40 @@
             "uri_s": "https://insu.hal.science/insu-05410854v1",
             "producedDateY_i": 2024,
             "producedDateM_i": 9
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.17605/OSF.IO/F2T65",
+        "dataset_title": "STIVi: Turning Perspective Sketching Videos into Interactive Tutorials",
+        "repository": "OSF",
+        "landing_url": "https://osf.io/f2t65/",
+        "landing_host": "osf.io",
+        "year": 2024,
+        "publications": [
+          {
+            "halId_s": "hal-04594231",
+            "title_s": "STIVi: Turning Perspective Sketching Videos into Interactive Tutorials",
+            "uri_s": "https://hal.science/hal-04594231v1",
+            "producedDateY_i": 2024,
+            "producedDateM_i": 6
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.18758/71021087",
+        "dataset_title": "Supplementary material for: In situ plasma and neutral gas observation time windows during a comet flyby. Application to the Comet Interceptor mission - Software",
+        "repository": "BIRA-IASB data",
+        "landing_url": "https://data.aeronomie.be/dataset/7e429cb4-3d6d-488e-8365-2f12bf097e6e",
+        "landing_host": "data.aeronomie.be",
+        "year": 2024,
+        "publications": [
+          {
+            "halId_s": "insu-04551236",
+            "title_s": "In situ plasma and neutral gas observation time windows during a comet flyby: Application to the Comet Interceptor mission",
+            "uri_s": "https://insu.hal.science/insu-04551236v1",
+            "producedDateY_i": 2024,
+            "producedDateM_i": 12
           }
         ]
       },
@@ -2413,23 +2611,6 @@
             "uri_s": "https://hal.science/hal-05194659v1",
             "producedDateY_i": 2025,
             "producedDateM_i": 7
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.12686/SED/NETWORKS/XP",
-        "dataset_title": "Temporary deployments in Switzerland associated with landslides",
-        "repository": "ETH Zurich seismic networks",
-        "landing_url": "http://networks.seismo.ethz.ch/networks/9s/",
-        "landing_host": "networks.seismo.ethz.ch",
-        "year": 2025,
-        "publications": [
-          {
-            "halId_s": "insu-05082245",
-            "title_s": "Enhancing Debris Flow Warning via Machine Learning Feature Reduction and Model Selection",
-            "uri_s": "https://insu.hal.science/insu-05082245v1",
-            "producedDateY_i": 2025,
-            "producedDateM_i": 5
           }
         ]
       },
@@ -3644,151 +3825,6 @@
         ]
       }
     ],
-    "2024|Autre": [
-      {
-        "dataset_doi": "10.7910/DVN/TICFQW",
-        "dataset_title": "CLEC12B glycan array",
-        "repository": "Harvard Dataverse",
-        "landing_url": "https://dataverse.harvard.edu/citation?persistentId=doi:10.7910/DVN/TICFQW",
-        "landing_host": "dataverse.harvard.edu",
-        "year": 2024,
-        "publications": [
-          {
-            "halId_s": "hal-04908237",
-            "title_s": "CLEC12B Regulates Melanocyte Immunity and Homeostasis in the Skin through the Signal Transducer and Activator of Transcription 1/IRF1 Axis",
-            "uri_s": "https://hal.science/hal-04908237v1",
-            "producedDateY_i": 2024,
-            "producedDateM_i": 12
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.15148/7d5e2f17-bad6-4ac3-87e2-84888d0d6699",
-        "dataset_title": "DAS and pressure sensor datasets for the reconstruction of nearshore surface gravity wave spectrum from Distributed Acoustic Sensing time series",
-        "repository": "OSU OREME",
-        "landing_url": "https://data.oreme.org/doi/view/7d5e2f17-bad6-4ac3-87e2-84888d0d6699",
-        "landing_host": "data.oreme.org",
-        "year": 2024,
-        "publications": [
-          {
-            "halId_s": "hal-04829691",
-            "title_s": "Reconstruction of nearshore surface gravity wave heights from distributed acoustic sensing data",
-            "uri_s": "https://hal.science/hal-04829691v1",
-            "producedDateY_i": 2024,
-            "producedDateM_i": 10
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.18112/openneuro.ds004786.v1.0.1",
-        "dataset_title": "MorphoSem",
-        "repository": "OpenNeuro",
-        "landing_url": "https://openneuro.org/datasets/ds004786/versions/1.0.1",
-        "landing_host": "openneuro.org",
-        "year": 2024,
-        "publications": [
-          {
-            "halId_s": "hal-04391146",
-            "title_s": "Atypical Hemispheric Re-Organization of the Reading Network in High-Functioning Adults with Dyslexia: Evidence from Representational Similarity Analysis",
-            "uri_s": "https://hal.science/hal-04391146v1",
-            "producedDateY_i": 2024,
-            "producedDateM_i": 1
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.7910/DVN/KHO1ZY",
-        "dataset_title": "Replication Data for: Dating Solar System's giant planet orbital instability using enstatite meteorites",
-        "repository": "Harvard Dataverse",
-        "landing_url": "https://dataverse.harvard.edu/citation?persistentId=doi:10.7910/DVN/KHO1ZY",
-        "landing_host": "dataverse.harvard.edu",
-        "year": 2024,
-        "publications": [
-          {
-            "halId_s": "hal-04798037",
-            "title_s": "Dating the Solar System’s giant planet orbital instability using enstatite meteorites",
-            "uri_s": "https://hal.science/hal-04798037v1",
-            "producedDateY_i": 2024,
-            "producedDateM_i": 4
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.35097/1921",
-        "dataset_title": "Seismological evidence for a multifault network at the subduction interface",
-        "repository": "RADAR KIT",
-        "landing_url": "https://radar.kit.edu/radar/en/dataset/KzhOAFsNNOzovfFM",
-        "landing_host": "radar.kit.edu",
-        "year": 2024,
-        "publications": [
-          {
-            "halId_s": "hal-04717945",
-            "title_s": "Seismological evidence for a multifault network at the subduction interface",
-            "uri_s": "https://hal.science/hal-04717945v1",
-            "producedDateY_i": 2024,
-            "producedDateM_i": 4
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.23708/02POK6",
-        "dataset_title": "Simbi database: historical hydro-meteorological time series and catchment attributes in Haiti, 1905-2005",
-        "repository": "DataSuds",
-        "landing_url": "https://dataverse.ird.fr/citation?persistentId=doi:10.23708/02POK6",
-        "landing_host": "dataverse.ird.fr",
-        "year": 2024,
-        "publications": [
-          {
-            "halId_s": "hal-04361293",
-            "title_s": "Simbi : base de données hydro-climatiques historiques et signatures de 24 bassins versants haïtiens",
-            "uri_s": "https://hal.science/hal-04361293v1",
-            "producedDateY_i": 2023,
-            "producedDateM_i": 10
-          },
-          {
-            "halId_s": "hal-04564899",
-            "title_s": "Simbi: historical hydro-meteorological time series and signatures for 24 catchments in Haiti",
-            "uri_s": "https://hal.science/hal-04564899v1",
-            "producedDateY_i": 2024,
-            "producedDateM_i": 4
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.17605/OSF.IO/F2T65",
-        "dataset_title": "STIVi: Turning Perspective Sketching Videos into Interactive Tutorials",
-        "repository": "OSF",
-        "landing_url": "https://osf.io/f2t65/",
-        "landing_host": "osf.io",
-        "year": 2024,
-        "publications": [
-          {
-            "halId_s": "hal-04594231",
-            "title_s": "STIVi: Turning Perspective Sketching Videos into Interactive Tutorials",
-            "uri_s": "https://hal.science/hal-04594231v1",
-            "producedDateY_i": 2024,
-            "producedDateM_i": 6
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.18758/71021087",
-        "dataset_title": "Supplementary material for: In situ plasma and neutral gas observation time windows during a comet flyby. Application to the Comet Interceptor mission - Software",
-        "repository": "BIRA-IASB data",
-        "landing_url": "https://data.aeronomie.be/dataset/7e429cb4-3d6d-488e-8365-2f12bf097e6e",
-        "landing_host": "data.aeronomie.be",
-        "year": 2024,
-        "publications": [
-          {
-            "halId_s": "insu-04551236",
-            "title_s": "In situ plasma and neutral gas observation time windows during a comet flyby: Application to the Comet Interceptor mission",
-            "uri_s": "https://insu.hal.science/insu-04551236v1",
-            "producedDateY_i": 2024,
-            "producedDateM_i": 12
-          }
-        ]
-      }
-    ],
     "2021|NAKALA": [
       {
         "dataset_doi": "10.34847/nkl.aaea911g",
@@ -4651,6 +4687,25 @@
         ]
       }
     ],
+    "2025|ETH Zurich seismic networks": [
+      {
+        "dataset_doi": "10.12686/SED/NETWORKS/XP",
+        "dataset_title": "Temporary deployments in Switzerland associated with landslides",
+        "repository": "ETH Zurich seismic networks",
+        "landing_url": "http://networks.seismo.ethz.ch/networks/9s/",
+        "landing_host": "networks.seismo.ethz.ch",
+        "year": 2025,
+        "publications": [
+          {
+            "halId_s": "insu-05082245",
+            "title_s": "Enhancing Debris Flow Warning via Machine Learning Feature Reduction and Model Selection",
+            "uri_s": "https://insu.hal.science/insu-05082245v1",
+            "producedDateY_i": 2025,
+            "producedDateM_i": 5
+          }
+        ]
+      }
+    ],
     "2004|Autre": [
       {
         "dataset_doi": "10.13144/lil-0167",
@@ -4826,7 +4881,7 @@
       1,
       2,
       1,
-      4,
+      7,
       2,
       2,
       3,
@@ -4963,8 +5018,26 @@
         ]
       },
       {
-        "repository": "Figshare",
+        "repository": "Epos-France Seismological Data Center",
         "color": "#577590",
+        "counts": [
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "repository": "Figshare",
+        "color": "#f28482",
         "counts": [
           0,
           0,
@@ -4981,8 +5054,26 @@
         ]
       },
       {
+        "repository": "ETH Zurich seismic networks",
+        "color": "#43aa8b",
+        "counts": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
         "repository": "Mercator Ocean / Copernicus Marine",
-        "color": "#f28482",
+        "color": "#9b5de5",
         "counts": [
           0,
           0,
@@ -5000,42 +5091,6 @@
       },
       {
         "repository": "data.InDoRES",
-        "color": "#43aa8b",
-        "counts": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ]
-      },
-      {
-        "repository": "CDS",
-        "color": "#9b5de5",
-        "counts": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ]
-      },
-      {
-        "repository": "Epos-France Seismological Data Center",
         "color": "#00bbf9",
         "counts": [
           0,
@@ -5072,10 +5127,68 @@
       }
     ],
     "period_kind": "month",
-    "datasets_in_year": 29,
+    "datasets_in_year": 32,
     "unknown_month": 0
   },
   "cell_details_months": {
+    "2026-05|Epos-France Seismological Data Center": [
+      {
+        "dataset_doi": "10.15778/RESIF.XT2018",
+        "dataset_title": "Seismic network XT: CIFALPS-2 temporary experiment (China-Italy-France Alps seismic transect #2)",
+        "repository": "Epos-France Seismological Data Center",
+        "landing_url": "https://seismology.epos-france.fr/networks/#/XT__2018",
+        "landing_host": "seismology.epos-france.fr",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05658814",
+            "title_s": "A new-generation multiparameter elastic model of the crust and upper mantle of the Greater Alpine area and the Apennines using teleseismic Full Waveform Inversion: data, method and models",
+            "uri_s": "https://hal.science/hal-05658814v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 5
+          }
+        ],
+        "month": 5
+      },
+      {
+        "dataset_doi": "10.15778/RESIF.YP2012",
+        "dataset_title": "Seismic network YP: CIFALPS temporary experiment (China-Italy-France Alps seismic transect)",
+        "repository": "Epos-France Seismological Data Center",
+        "landing_url": "https://seismology.epos-france.fr/networks/#/YP__2012",
+        "landing_host": "seismology.epos-france.fr",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05658814",
+            "title_s": "A new-generation multiparameter elastic model of the crust and upper mantle of the Greater Alpine area and the Apennines using teleseismic Full Waveform Inversion: data, method and models",
+            "uri_s": "https://hal.science/hal-05658814v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 5
+          }
+        ],
+        "month": 5
+      }
+    ],
+    "2026-05|ETH Zurich seismic networks": [
+      {
+        "dataset_doi": "10.12686/alparray/z3_2015",
+        "dataset_title": "AlpArray Seismic Network (AASN) temporary component",
+        "repository": "ETH Zurich seismic networks",
+        "landing_url": "http://networks.seismo.ethz.ch/networks/z3/",
+        "landing_host": "networks.seismo.ethz.ch",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05658814",
+            "title_s": "A new-generation multiparameter elastic model of the crust and upper mantle of the Greater Alpine area and the Apennines using teleseismic Full Waveform Inversion: data, method and models",
+            "uri_s": "https://hal.science/hal-05658814v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 5
+          }
+        ],
+        "month": 5
+      }
+    ],
     "2026-02|Zenodo": [
       {
         "dataset_doi": "10.5281/zenodo.17613276",
@@ -5644,7 +5757,7 @@
       }
     ]
   },
-  "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 29 datasets in 2026. Click a segment to list datasets.",
+  "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 32 datasets in 2026. Click a segment to list datasets.",
   "segment_hint": "newest linking publication year",
   "months_segment_hint": "newest linking publication month"
 }

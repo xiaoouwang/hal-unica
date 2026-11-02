@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-11-02T12:33:43Z`  
+Generated: `2026-11-02T18:21:41Z`  
 Collection: `UNIV-COTEDAZUR`  
-Run window: `2026-11-02T12:33:42Z` → `2026-11-02T12:33:43Z`
+Run window: `2026-11-02T18:21:40Z` → `2026-11-02T18:21:41Z`
 
 ## Goal
 
@@ -53,17 +53,17 @@ repository root `README.md`.
 
 ## Counts (this run)
 
-- HAL notices with linked identifiers: **326**
-- Related tokens: **521**
-- Unique DOIs resolved: **394**
-- Publications with at least one dataset-repo landing: **162**
-- Misfiled dataset links (wrong HAL field): **71**
-- Publications with ≥1 misfiled dataset link: **52**
+- HAL notices with linked identifiers: **327**
+- Related tokens: **524**
+- Unique DOIs resolved: **397**
+- Publications with at least one dataset-repo landing: **163**
+- Misfiled dataset links (wrong HAL field): **72**
+- Publications with ≥1 misfiled dataset link: **53**
 
 ### Dataset DOIs by HAL source field
 
-- **`relatedData_s`**: 181
-- **`relatedPublication_s`**: 69
+- **`relatedData_s`**: 183
+- **`relatedPublication_s`**: 70
 - **`seeAlso_s`**: 3
 
 ### By repository (DOI evidence)
@@ -83,6 +83,7 @@ repository root `README.md`.
 - **arXiv**: 6
 - **FDSN / seismic network**: 5
 - **Journal DOI (10.1093)**: 5
+- **Epos-France Seismological Data Center**: 4
 - **Figshare**: 4
 - **DOI prefix 10.1101**: 3
 - **DOI prefix 10.22489**: 3
@@ -100,7 +101,7 @@ repository root `README.md`.
 - **DOI prefix 10.3390**: 2
 - **DOI prefix 10.5194**: 2
 - **DataSuds**: 2
-- **Epos-France Seismological Data Center**: 2
+- **ETH Zurich seismic networks**: 2
 - **Harvard Dataverse**: 2
 - **JAMSTEC**: 2
 - **Journal DOI (10.1017)**: 2
@@ -143,7 +144,6 @@ repository root `README.md`.
 - **DOI prefix 10.70675**: 1
 - **DOI prefix 10.7819**: 1
 - **Dagstuhl**: 1
-- **ETH Zurich seismic networks**: 1
 - **GEOSCOPE**: 1
 - **Geoscience Australia**: 1
 - **IEDA**: 1
@@ -170,6 +170,7 @@ repository root `README.md`.
 - `camcatt.sedoo.fr`: 8
 - `arxiv.org`: 5
 - `fdsn.org`: 5
+- `seismology.epos-france.fr`: 4
 - `figshare.com`: 3
 - `researchgate.net`: 3
 - `archimer.ifremer.fr`: 2
@@ -180,10 +181,10 @@ repository root `README.md`.
 - `dataverse.ird.fr`: 2
 - `geosur.osureunion.fr`: 2
 - `jamstec.go.jp`: 2
+- `networks.seismo.ethz.ch`: 2
 - `osf.io`: 2
 - `radar.kit.edu`: 2
 - `resources.marine.copernicus.eu`: 2
-- `seismology.epos-france.fr`: 2
 - `archive.stsci.edu`: 1
 - `canal-u.tv`: 1
 - `carrtel-collection.hub.inrae.fr`: 1
@@ -199,5 +200,4 @@ repository root `README.md`.
 - `geoscope.ipgp.fr`: 1
 - `mistrals.sedoo.fr`: 1
 - `ncei.noaa.gov`: 1
-- `networks.seismo.ethz.ch`: 1
 - `openneuro.org`: 1

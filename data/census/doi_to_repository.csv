@@ -89,6 +89,7 @@ doi,repository,object_kind,publisher,landing_url,landing_host,prefix,client_id,t
 10.1163/15685322-10703012,DOI prefix 10.1163,unresolved,,,,,,,not_found
 10.1177/19462174251330980,DOI prefix 10.1177,unresolved,,,,,,,not_found
 10.12686/SED/NETWORKS/XP,ETH Zurich seismic networks,dataset_repo,ETH Zurich,http://networks.seismo.ethz.ch/networks/9s/,networks.seismo.ethz.ch,10.12686,ethz.sed,Temporary deployments in Switzerland associated with landslides,
+10.12686/alparray/z3_2015,ETH Zurich seismic networks,dataset_repo,AlpArray Working Group,http://networks.seismo.ethz.ch/networks/z3/,networks.seismo.ethz.ch,10.12686,ethz.sed,AlpArray Seismic Network (AASN) temporary component,
 10.1287/orsc.2021.1535,DOI prefix 10.1287,unresolved,,,,,,,not_found
 10.13140/2.1.3009.6009,ResearchGate,publication_landing,Unpublished,https://www.researchgate.net/doi/10.13140/2.1.3009.6009,researchgate.net,10.13140,rg.rg,"Bioreactor shape optimization Modeling, simulation, and shape optimization of a simple bioreactor for water treatment",
 10.13140/RG.2.2.10953.16489,ResearchGate,publication_landing,Unpublished,https://www.researchgate.net/doi/10.13140/RG.2.2.10953.16489,researchgate.net,10.13140,rg.rg,Analyse d'activités d'apprentissage médiatisées en robotique pédagogique,
@@ -112,6 +113,8 @@ doi,repository,object_kind,publisher,landing_url,landing_host,prefix,client_id,t
 10.15454/UQEMVW,Recherche Data Gouv,dataset_repo,Portail Data Inra,https://carrtel-collection.hub.inrae.fr/,carrtel-collection.hub.inrae.fr,10.15454,rdg.prod,Thonon Culture Collection -TCC- a freshwater microalgae collection,
 10.1561/109.00000019,DOI prefix 10.1561,unresolved,,,,,,,not_found
 10.15778/RESIF.FR,Epos-France Seismological Data Center,dataset_repo,Epos-France Seismological Data Center,https://seismology.epos-france.fr/networks/#/FR,seismology.epos-france.fr,10.15778,inist.resif,Epos-France Broad-band network (RLBP),
+10.15778/RESIF.XT2018,Epos-France Seismological Data Center,dataset_repo,RESIF - Réseau Sismologique et géodésique Français,https://seismology.epos-france.fr/networks/#/XT__2018,seismology.epos-france.fr,10.15778,inist.resif,Seismic network XT: CIFALPS-2 temporary experiment (China-Italy-France Alps seismic transect #2),
+10.15778/RESIF.YP2012,Epos-France Seismological Data Center,dataset_repo,RESIF - Réseau Sismologique et géodésique Français,https://seismology.epos-france.fr/networks/#/YP__2012,seismology.epos-france.fr,10.15778,inist.resif,Seismic network YP: CIFALPS temporary experiment (China-Italy-France Alps seismic transect),
 10.15778/resif.f1,Epos-France Seismological Data Center,dataset_repo,Epos-France Seismological Data Center,https://seismology.epos-france.fr/networks/#/F1,seismology.epos-france.fr,10.15778,inist.resif,Three underwater fiber-optic cables offshore of central Chile,
 10.1594/PANGAEA.879469,PANGAEA,dataset_repo,PANGAEA,https://doi.pangaea.de/10.1594/PANGAEA.879469,doi.pangaea.de,10.1594,pangaea.repository,"Coseismic surface geological effects following the 30 October 2016 Mw 6.5 earthquake, central Italy",
 10.16995/glossa.9842.s1,DOI prefix 10.16995,unresolved,,,,,,,not_found
