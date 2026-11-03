@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-11-02T18:22:03Z`  
+Generated: `2026-11-03T12:22:09Z`  
 Collection: `UNIV-BOURGOGNE`  
-Run window: `2026-11-02T18:22:02Z` → `2026-11-02T18:22:03Z`
+Run window: `2026-11-03T12:22:09Z` → `2026-11-03T12:22:09Z`
 
 ## Goal
 
@@ -99,6 +99,7 @@ repository root `README.md`.
 - **GitHub**: 2
 - **INRAE (prefix 10.15454)**: 2
 - **Journal DOI (10.1109)**: 2
+- **Journal DOI (10.1371)**: 2
 - **Laboratoire Chrono-environnement (UMR 6249)**: 2
 - **arXiv**: 2
 - **AU/AADC > Australian Antarctic Data Centre, Australia**: 1
@@ -124,14 +125,12 @@ repository root `README.md`.
 - **DOI prefix 10.7220**: 1
 - **Journal DOI (10.1017)**: 1
 - **Journal DOI (10.1038)**: 1
-- **Journal DOI (10.1371)**: 1
 - **KIT publications**: 1
 - **Laboratoire Chrono-environnement**: 1
 - **OSF**: 1
 - **Portail Data INRAE**: 1
 - **Recherche Data Gouv → HAL notice**: 1
 - **Science Data Bank**: 1
-- **Unknown (DOI not in DataCite)**: 1
 - **data.InDoRES**: 1
 
 ### By landing host

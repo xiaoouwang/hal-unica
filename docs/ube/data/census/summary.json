@@ -1,8 +1,8 @@
 {
   "collection": "UNIV-BOURGOGNE",
-  "started_at": "2026-11-02T18:22:02Z",
-  "finished_at": "2026-11-02T18:22:03Z",
-  "since": "2026-10-31T18:22:02Z",
+  "started_at": "2026-11-03T12:22:09Z",
+  "finished_at": "2026-11-03T12:22:09Z",
+  "since": "2026-11-01T12:22:09Z",
   "hal_publications_with_relatedData": 270,
   "related_tokens": 395,
   "unique_dois_resolved": 309,
@@ -12,11 +12,11 @@
   "expected_dataset_field": "relatedData_s",
   "incremental": {
     "pubs_fetched": 3,
-    "pubs_updated": 2,
-    "pubs_inserted": 1,
-    "dois_resolved_live": 1,
-    "dois_from_cache": 308,
-    "watermark_modified": "2026-11-02T16:11:30Z"
+    "pubs_updated": 3,
+    "pubs_inserted": 0,
+    "dois_resolved_live": 0,
+    "dois_from_cache": 309,
+    "watermark_modified": "2026-11-03T03:00:29Z"
   },
   "by_repository": {
     "Recherche Data Gouv": 104,
@@ -50,6 +50,7 @@
     "GitHub": 2,
     "INRAE (prefix 10.15454)": 2,
     "Journal DOI (10.1109)": 2,
+    "Journal DOI (10.1371)": 2,
     "Laboratoire Chrono-environnement (UMR 6249)": 2,
     "arXiv": 2,
     "AU/AADC > Australian Antarctic Data Centre, Australia": 1,
@@ -75,21 +76,19 @@
     "DOI prefix 10.7220": 1,
     "Journal DOI (10.1017)": 1,
     "Journal DOI (10.1038)": 1,
-    "Journal DOI (10.1371)": 1,
     "KIT publications": 1,
     "Laboratoire Chrono-environnement": 1,
     "OSF": 1,
     "Portail Data INRAE": 1,
     "Recherche Data Gouv → HAL notice": 1,
     "Science Data Bank": 1,
-    "Unknown (DOI not in DataCite)": 1,
     "data.InDoRES": 1
   },
   "by_object_kind": {
     "dataset_repo": 205,
     "other": 42,
-    "publication_landing": 67,
-    "unresolved": 32
+    "publication_landing": 68,
+    "unresolved": 31
   },
   "by_doi_prefix": {
     "10.57745": 65,
