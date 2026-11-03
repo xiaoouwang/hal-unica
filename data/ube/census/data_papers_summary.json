@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-03T12:22:15Z",
-  "data_papers": 54,
-  "with_doi": 52,
+  "generated_at": "2026-11-03T16:15:17Z",
+  "data_papers": 55,
+  "with_doi": 53,
   "with_linked_dataset": 19,
-  "with_journal": 54,
+  "with_journal": 55,
   "with_hal_file": 43,
   "by_year": {
     "1995": 1,
@@ -18,11 +18,12 @@
     "2023": 8,
     "2024": 7,
     "2025": 12,
-    "2026": 7
+    "2026": 8
   },
   "by_journal": {
     "Data in Brief": 24,
     "Scientific Data": 5,
+    "Biodiversity Data Journal": 2,
     "Recherche Data Gouv": 2,
     "Cancer Cell": 1,
     "Scientific Reports": 1,
@@ -37,7 +38,6 @@
     "International Journal of Nanomedicine": 1,
     "Chemosphere": 1,
     "Frontiers in Molecular Neuroscience": 1,
-    "Biodiversity Data Journal": 1,
     "PhytoFrontiers™": 1,
     "Transactions on Large-Scale Data- and Knowledge-Centered Systems": 1,
     "Human Reproduction": 1,

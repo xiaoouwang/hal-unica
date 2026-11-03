@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T12:22:25Z",
+  "generated_at": "2026-11-03T16:15:55Z",
   "collection": "UNIV-BOURGOGNE",
   "collection_url": "https://hal.science/UNIV-BOURGOGNE",
   "harvest": {
@@ -304,7 +304,8 @@
       }
     ],
     "year_min": 1966,
-    "year_max": 2026
+    "year_max": 2026,
+    "stale": true
   },
   "data_links": {
     "total_hits": 179,
