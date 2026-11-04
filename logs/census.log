@@ -1,13 +1,13 @@
 university=unica collection=UNIV-COTEDAZUR site=docs
-incremental census since=2026-11-01T16:14:32Z (existing pubs=328, doi cache=398)
-[2026-11-03T16:14:32Z] census start collection=UNIV-COTEDAZUR since=2026-11-01T16:14:32Z
+incremental census since=2026-11-02T12:14:56Z (existing pubs=328, doi cache=398)
+[2026-11-04T12:14:56Z] census start collection=UNIV-COTEDAZUR since=2026-11-02T12:14:56Z
 HAL publications with linked identifiers (merged): 328
   query: (relatedData_s:*) OR (relatedSoftware_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)
-  fetched this run: 5 (updated=5, inserted=0)
+  fetched this run: 7 (updated=7, inserted=0)
 link tokens: 525
 unique DOI candidates: 398
 DataCite cache hits: 398; to resolve: 0
-[2026-11-03T16:14:33Z] census done
+[2026-11-04T12:14:57Z] census done
 harvesting SOFTWARE deposits (full)
 listing publications with dataset + software (open science triptych)
 open science triptych publications=4
@@ -15,7 +15,9 @@ harvesting data papers (docSubType_s:DATAPAPER)
 updated dataset→publications index
 synced focus links → data/unica_data_repo_links.jsonl (48 hits)
 harvesting institutional DataCite datasets (affiliation / ROR)
-[2026-11-03T16:14:40Z] datacite census start university=unica
+[2026-11-04T12:15:03Z] datacite census start university=unica
   query: (creators.affiliation.affiliationIdentifier:"https://ror.org/019tgvf94" OR contributors.affiliation.affiliationIdentifier:"https://ror.org/019tgvf94" OR creators.affiliation.name:"Université Côte d'Azur" OR contributors.affiliation.name:"Université Côte d'Azur" OR creators.affiliation.name:"Universite Cote d'Azur" OR contributors.affiliation.name:"Universite Cote d'Azur" OR creators.affiliation.name:"Univ. Côte d'Azur" OR contributors.affiliation.name:"Univ. Côte d'Azur" OR creators.affiliation.name:"Univ Côte d'Azur" OR contributors.affiliation.name:"Univ Côte d'Azur" OR creators.affiliation.name:"University Côte d'Azur" OR contributors.affiliation.name:"University Côte d'Azur" OR creators.affiliation.name:"University Cote d'Azur" OR contributors.affiliation.name:"University Cote d'Azur") AND types.resourceTypeGeneral:Dataset
-WARNING: DataCite institutional census failed: The read operation timed out
+  DataCite numFound≈1439
+  harvested unique DOIs=1439
+DataCite datasets=1439 also_on_hal=32 datacite_only=1407
 wrote site → docs/

@@ -1,12 +1,12 @@
 {
-  "watermark_modified": "2026-11-03T10:31:33Z",
-  "since": "2026-11-01T16:14:32Z",
-  "started_at": "2026-11-03T16:14:32Z",
-  "finished_at": "2026-11-03T16:14:33Z",
+  "watermark_modified": "2026-11-04T13:04:54Z",
+  "since": "2026-11-02T12:14:56Z",
+  "started_at": "2026-11-04T12:14:56Z",
+  "finished_at": "2026-11-04T12:14:57Z",
   "collection": "UNIV-COTEDAZUR",
   "num_hal_with_related": 328,
   "num_unique_dois": 398,
-  "pubs_fetched": 5,
+  "pubs_fetched": 7,
   "dois_resolved_live": 0,
   "dois_from_cache": 398
 }
