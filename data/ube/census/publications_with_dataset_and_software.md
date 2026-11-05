@@ -1,6 +1,6 @@
 # Open science triptych — UNIV-BOURGOGNE
 
-**4** candidate(s) — 2026-11-05T12:28:44Z.
+**4** candidate(s) — 2026-11-05T16:28:31Z.
 
 ## Detection hubs
 
