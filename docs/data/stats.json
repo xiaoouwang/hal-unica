@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T16:19:16Z",
+  "generated_at": "2026-11-05T12:28:36Z",
   "collection": "UNIV-COTEDAZUR",
   "collection_url": "https://hal.science/UNIV-COTEDAZUR",
   "harvest": {
@@ -364,7 +364,7 @@
           "UJM",
           "UJM EPE"
         ],
-        "modifiedDate_tdate": "2026-11-04T13:04:54Z",
+        "modifiedDate_tdate": "2026-11-05T03:26:41Z",
         "producedDateY_i": 2025,
         "repositories": [
           "NAKALA"
@@ -3672,7 +3672,7 @@
               "title_s": "Prospects for dark matter observations in dwarf spheroidal galaxies with the Cherenkov Telescope Array Observatory",
               "uri_s": "https://hal.science/hal-05250749v1",
               "producedDateY_i": 2025,
-              "producedDateM_i": 10
+              "producedDateM_i": 11
             }
           ]
         },
