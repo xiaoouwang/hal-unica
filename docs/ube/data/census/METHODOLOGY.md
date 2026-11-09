@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-11-09T12:59:00Z`  
+Generated: `2026-11-09T18:48:57Z`  
 Collection: `UNIV-BOURGOGNE`  
-Run window: `2026-11-09T12:58:58Z` → `2026-11-09T12:59:00Z`
+Run window: `2026-11-09T18:48:56Z` → `2026-11-09T18:48:57Z`
 
 ## Goal
 
@@ -88,6 +88,7 @@ repository root `README.md`.
 - **DOI prefix 10.3390**: 3
 - **Imagerie et Vision Artificielle**: 3
 - **Journal DOI (10.1093)**: 3
+- **Journal DOI (10.1371)**: 3
 - **Agroscope**: 2
 - **Autorité de sûreté nucléaire et de radioprotection**: 2
 - **Centre interlangues : texte, image, langage**: 2
@@ -99,7 +100,6 @@ repository root `README.md`.
 - **GitHub**: 2
 - **INRAE (prefix 10.15454)**: 2
 - **Journal DOI (10.1109)**: 2
-- **Journal DOI (10.1371)**: 2
 - **Laboratoire Chrono-environnement (UMR 6249)**: 2
 - **arXiv**: 2
 - **AU/AADC > Australian Antarctic Data Centre, Australia**: 1
@@ -131,7 +131,6 @@ repository root `README.md`.
 - **Portail Data INRAE**: 1
 - **Recherche Data Gouv → HAL notice**: 1
 - **Science Data Bank**: 1
-- **Unknown (DOI not in DataCite)**: 1
 - **data.InDoRES**: 1
 
 ### By landing host
