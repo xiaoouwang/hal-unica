@@ -23,7 +23,7 @@
         "UJM",
         "UJM EPE"
       ],
-      "modifiedDate_tdate": "2026-11-05T03:26:41Z",
+      "modifiedDate_tdate": "2026-11-09T03:21:42Z",
       "producedDateY_i": 2025,
       "repositories": [
         "NAKALA"
@@ -38,6 +38,36 @@
           "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
           "field": "relatedData_s",
           "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-04962117",
+      "uri_s": "https://hal.science/hal-04962117v1",
+      "title_s": "Les sens du mouvement",
+      "docType_s": "OUV",
+      "doiId_s": null,
+      "laboratories": [
+        "LAPCOS",
+        "UNS",
+        "UniCA"
+      ],
+      "modifiedDate_tdate": "2026-11-07T18:52:02Z",
+      "producedDateY_i": 2019,
+      "repositories": [
+        "NAKALA"
+      ],
+      "datasets": [
+        {
+          "doi": "10.34847/nkl.ed24g6g6",
+          "repository": "NAKALA",
+          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+          "landing_url": "https://nakala.fr/10.34847/nkl.ed24g6g6",
+          "landing_host": "nakala.fr",
+          "dataset_title": "Glossaire multilingue du taijiquan et des arts internes — français, anglais, néerlandais, espagnol, allemand, chinois (caractères et pinyin)",
+          "field": "relatedPublication_s",
+          "misfiled": true,
           "also_in_relatedData_s": false
         }
       ]
@@ -1500,36 +1530,6 @@
           "dataset_title": "Data associated with \"Food and habitat supplementation promotes predatory mites and enhances pest control\" by Etienne L., Bresch C., van Oudenhove L. and Mailleret L. To appear in \"Biological Control\"",
           "field": "relatedData_s",
           "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-04962117",
-      "uri_s": "https://hal.science/hal-04962117v1",
-      "title_s": "Les sens du mouvement",
-      "docType_s": "OUV",
-      "doiId_s": null,
-      "laboratories": [
-        "LAPCOS",
-        "UNS",
-        "UniCA"
-      ],
-      "modifiedDate_tdate": "2026-08-07T14:00:00Z",
-      "producedDateY_i": 2019,
-      "repositories": [
-        "NAKALA"
-      ],
-      "datasets": [
-        {
-          "doi": "10.34847/nkl.ed24g6g6",
-          "repository": "NAKALA",
-          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-          "landing_url": "https://nakala.fr/10.34847/nkl.ed24g6g6",
-          "landing_host": "nakala.fr",
-          "dataset_title": "Glossaire multilingue du taijiquan et des arts internes — français, anglais, néerlandais, espagnol, allemand, chinois (caractères et pinyin)",
-          "field": "relatedPublication_s",
-          "misfiled": true,
           "also_in_relatedData_s": false
         }
       ]

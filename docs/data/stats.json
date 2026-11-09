@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T16:28:26Z",
+  "generated_at": "2026-11-09T12:58:58Z",
   "collection": "UNIV-COTEDAZUR",
   "collection_url": "https://hal.science/UNIV-COTEDAZUR",
   "harvest": {
@@ -296,13 +296,13 @@
     "stale": true
   },
   "data_links": {
-    "total_hits": 241,
+    "total_hits": 242,
     "by_platform": {
       "nakala": 9,
       "rdg": 39
     },
     "by_repository": {
-      "Zenodo": 104,
+      "Zenodo": 105,
       "Recherche Data Gouv": 49,
       "SEANOE": 15,
       "Sismer": 10,
@@ -364,7 +364,7 @@
           "UJM",
           "UJM EPE"
         ],
-        "modifiedDate_tdate": "2026-11-05T03:26:41Z",
+        "modifiedDate_tdate": "2026-11-09T03:21:42Z",
         "producedDateY_i": 2025,
         "repositories": [
           "NAKALA"
@@ -379,6 +379,36 @@
             "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
             "field": "relatedData_s",
             "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-04962117",
+        "uri_s": "https://hal.science/hal-04962117v1",
+        "title_s": "Les sens du mouvement",
+        "docType_s": "OUV",
+        "doiId_s": null,
+        "laboratories": [
+          "LAPCOS",
+          "UNS",
+          "UniCA"
+        ],
+        "modifiedDate_tdate": "2026-11-07T18:52:02Z",
+        "producedDateY_i": 2019,
+        "repositories": [
+          "NAKALA"
+        ],
+        "datasets": [
+          {
+            "doi": "10.34847/nkl.ed24g6g6",
+            "repository": "NAKALA",
+            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+            "landing_url": "https://nakala.fr/10.34847/nkl.ed24g6g6",
+            "landing_host": "nakala.fr",
+            "dataset_title": "Glossaire multilingue du taijiquan et des arts internes — français, anglais, néerlandais, espagnol, allemand, chinois (caractères et pinyin)",
+            "field": "relatedPublication_s",
+            "misfiled": true,
             "also_in_relatedData_s": false
           }
         ]
@@ -1846,36 +1876,6 @@
         ]
       },
       {
-        "halId_s": "hal-04962117",
-        "uri_s": "https://hal.science/hal-04962117v1",
-        "title_s": "Les sens du mouvement",
-        "docType_s": "OUV",
-        "doiId_s": null,
-        "laboratories": [
-          "LAPCOS",
-          "UNS",
-          "UniCA"
-        ],
-        "modifiedDate_tdate": "2026-08-07T14:00:00Z",
-        "producedDateY_i": 2019,
-        "repositories": [
-          "NAKALA"
-        ],
-        "datasets": [
-          {
-            "doi": "10.34847/nkl.ed24g6g6",
-            "repository": "NAKALA",
-            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-            "landing_url": "https://nakala.fr/10.34847/nkl.ed24g6g6",
-            "landing_host": "nakala.fr",
-            "dataset_title": "Glossaire multilingue du taijiquan et des arts internes — français, anglais, néerlandais, espagnol, allemand, chinois (caractères et pinyin)",
-            "field": "relatedPublication_s",
-            "misfiled": true,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
         "halId_s": "halshs-03370962",
         "uri_s": "https://shs.hal.science/halshs-03370962v1",
         "title_s": "Unequal housing affordability across European cities. The ESPON Housing Database, Insights on Affordability in Selected Cities in Europe",
@@ -2332,10 +2332,10 @@
     "scope": "nakala_rdg_focus"
   },
   "census_chart": {
-    "unique_datasets": 241,
-    "publications_with_dataset": 164,
+    "unique_datasets": 242,
+    "publications_with_dataset": 165,
     "by_repository": {
-      "Zenodo": 104,
+      "Zenodo": 105,
       "Recherche Data Gouv": 49,
       "SEANOE": 15,
       "Sismer": 10,
@@ -2493,7 +2493,7 @@
         36,
         34,
         72,
-        33
+        34
       ],
       "series": [
         {
@@ -2522,7 +2522,7 @@
             11,
             10,
             25,
-            19
+            20
           ]
         },
         {
@@ -2892,6 +2892,23 @@
               "uri_s": "https://hal.science/hal-05781759v1",
               "producedDateY_i": 2026,
               "producedDateM_i": 3
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.5281/zenodo.20312978",
+          "dataset_title": "Appendices to the A&A article The SPHERE infrared survey for exoplanets (SHINE) V. Full sample characterization",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.20312978",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05855266",
+              "title_s": "The SPHERE infrared survey for exoplanets (SHINE)",
+              "uri_s": "https://hal.science/hal-05855266v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 7
             }
           ]
         },
@@ -7233,7 +7250,7 @@
         1,
         7,
         2,
-        2,
+        3,
         3,
         5,
         7,
@@ -7251,7 +7268,7 @@
             1,
             2,
             1,
-            2,
+            3,
             2,
             4,
             1,
@@ -7477,10 +7494,66 @@
         }
       ],
       "period_kind": "month",
-      "datasets_in_year": 33,
+      "datasets_in_year": 34,
       "unknown_month": 0
     },
     "cell_details_months": {
+      "2026-07|Zenodo": [
+        {
+          "dataset_doi": "10.5281/zenodo.20312978",
+          "dataset_title": "Appendices to the A&A article The SPHERE infrared survey for exoplanets (SHINE) V. Full sample characterization",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.20312978",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05855266",
+              "title_s": "The SPHERE infrared survey for exoplanets (SHINE)",
+              "uri_s": "https://hal.science/hal-05855266v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 7
+            }
+          ],
+          "month": 7
+        },
+        {
+          "dataset_doi": "10.5281/zenodo.19255031",
+          "dataset_title": "Dataset for: Propagation of fluid-driven aseismic slip fronts under upper crustal conditions",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.19255031",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05689658",
+              "title_s": "Propagation of fluid-driven aseismic slip fronts under upper crustal conditions",
+              "uri_s": "https://minesparis-psl.hal.science/hal-05689658v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 7
+            }
+          ],
+          "month": 7
+        },
+        {
+          "dataset_doi": "10.5281/zenodo.18675577",
+          "dataset_title": "Gaia FPR binary asteroids search dataset",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.18675577",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05764001",
+              "title_s": "Follow the wobble: Statistical methods to detect astrometric binary asteroids in Gaia FPR",
+              "uri_s": "https://hal.science/hal-05764001v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 7
+            }
+          ],
+          "month": 7
+        }
+      ],
       "2026-11|Zenodo": [
         {
           "dataset_doi": "10.5281/zenodo.21997204",
@@ -7794,44 +7867,6 @@
           "month": 10
         }
       ],
-      "2026-07|Zenodo": [
-        {
-          "dataset_doi": "10.5281/zenodo.19255031",
-          "dataset_title": "Dataset for: Propagation of fluid-driven aseismic slip fronts under upper crustal conditions",
-          "repository": "Zenodo",
-          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.19255031",
-          "landing_host": "zenodo.org",
-          "year": 2026,
-          "publications": [
-            {
-              "halId_s": "hal-05689658",
-              "title_s": "Propagation of fluid-driven aseismic slip fronts under upper crustal conditions",
-              "uri_s": "https://minesparis-psl.hal.science/hal-05689658v1",
-              "producedDateY_i": 2026,
-              "producedDateM_i": 7
-            }
-          ],
-          "month": 7
-        },
-        {
-          "dataset_doi": "10.5281/zenodo.18675577",
-          "dataset_title": "Gaia FPR binary asteroids search dataset",
-          "repository": "Zenodo",
-          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.18675577",
-          "landing_host": "zenodo.org",
-          "year": 2026,
-          "publications": [
-            {
-              "halId_s": "hal-05764001",
-              "title_s": "Follow the wobble: Statistical methods to detect astrometric binary asteroids in Gaia FPR",
-              "uri_s": "https://hal.science/hal-05764001v1",
-              "producedDateY_i": 2026,
-              "producedDateM_i": 7
-            }
-          ],
-          "month": 7
-        }
-      ],
       "2026-10|Mercator Ocean / Copernicus Marine": [
         {
           "dataset_doi": "10.48670/moi-00242",
@@ -8127,7 +8162,7 @@
         }
       ]
     },
-    "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 33 datasets in 2026. Click a segment to list datasets.",
+    "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 34 datasets in 2026. Click a segment to list datasets.",
     "segment_hint": "newest linking publication year",
     "months_segment_hint": "newest linking publication month"
   }
