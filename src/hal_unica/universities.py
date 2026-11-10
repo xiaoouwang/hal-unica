@@ -1,13 +1,24 @@
-"""Multi-university open-science snapshots (GitHub Pages tenants)."""
+"""Multi-university open-science snapshots (GitHub / GitLab Pages tenants)."""
 
 from __future__ import annotations
 
+import os
 from contextvars import ContextVar
 from dataclasses import dataclass
 from pathlib import Path
 
 
-ROOT_SITE_BASE_URL = "https://xiaoouwang.github.io/hal-unica"
+# Override when publishing elsewhere (e.g. Huma-Num GitLab Pages):
+#   HAL_UNICA_SITE_BASE_URL=https://mshs-sud-est.gitpages.huma-num.fr/hal-unica
+ROOT_SITE_BASE_URL = os.environ.get(
+    "HAL_UNICA_SITE_BASE_URL",
+    "https://xiaoouwang.github.io/hal-unica",
+).rstrip("/")
+
+SOURCE_REPO_URL = os.environ.get(
+    "HAL_UNICA_SOURCE_REPO_URL",
+    "https://github.com/xiaoouwang/hal-unica",
+).rstrip("/")
 
 
 @dataclass(frozen=True)

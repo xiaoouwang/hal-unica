@@ -7,13 +7,15 @@ The project:
 1. Harvests institutional **HAL** notices and related identifiers (especially dataset DOIs)
 2. Resolves landings via **DataCite** and classifies real **data repositories** vs publications/preprints
 3. Runs a complementary **DataCite affiliation census** (ROR / affiliation names) for datasets that never appear on HAL
-4. Publishes static GitHub Pages sites with charts, lists, correction queues, and downloadable CSVs
+4. Publishes static Pages sites (GitHub and/or Huma-Num GitLab) with charts, lists, correction queues, and downloadable CSVs
 
 | | UniCA | UBE |
 |---|---|---|
-| Live site | https://xiaoouwang.github.io/hal-unica/ | https://xiaoouwang.github.io/hal-unica/ube/ |
+| Live site (GitHub) | https://xiaoouwang.github.io/hal-unica/ | https://xiaoouwang.github.io/hal-unica/ube/ |
+| Live site (Huma-Num) | https://mshs-sud-est.gitpages.huma-num.fr/hal-unica/ | https://mshs-sud-est.gitpages.huma-num.fr/hal-unica/ube/ |
 | HAL collection | `UNIV-COTEDAZUR` | `UNIV-BOURGOGNE` |
 | ROR | [019tgvf94](https://ror.org/019tgvf94) | [00g700j37](https://ror.org/00g700j37) |
+| Source | [GitHub](https://github.com/xiaoouwang/hal-unica) · [GitLab Huma-Num](https://gitlab.huma-num.fr/mshs-sud-est/hal-unica) |
 
 | Page | UniCA | UBE |
 |---|---|---|
@@ -403,6 +405,29 @@ CI behaviour:
 
 Manual run: Actions → **Daily incremental refresh** → `incremental` or `full`.  
 Deploy-on-push for human commits: [`.github/workflows/pages.yml`](.github/workflows/pages.yml).
+
+### Huma-Num GitLab mirror
+
+Remote: [`git@gitlab.huma-num.fr:mshs-sud-est/hal-unica.git`](https://gitlab.huma-num.fr/mshs-sud-est/hal-unica)  
+CI: [`.gitlab-ci.yml`](.gitlab-ci.yml)
+
+| Piece | Role |
+|---|---|
+| `pages` job | Copies `docs/` → GitLab Pages artifact; rewrites absolute GitHub URLs to `*.gitpages.huma-num.fr` in the artifact only |
+| `refresh:scheduled` / `refresh:manual` | Optional HAL refresh on Huma-Num runners (needs outbound HTTPS + job-token push rights) |
+
+```bash
+# Add / update the mirror remote
+git remote add gitlab git@gitlab.huma-num.fr:mshs-sud-est/hal-unica.git   # once
+git push gitlab main
+
+# Local build aimed at Huma-Num Pages URLs
+export HAL_UNICA_SITE_BASE_URL=https://mshs-sud-est.gitpages.huma-num.fr/hal-unica
+export HAL_UNICA_SOURCE_REPO_URL=https://gitlab.huma-num.fr/mshs-sud-est/hal-unica
+hal-unica build-site && hal-unica build-site --university ube
+```
+
+After the first successful `pages` pipeline, enable **Settings → Pages** if the site URL is not yet public. Day-to-day census refresh can stay on GitHub Actions; push `main` to both remotes (or enable the GitLab schedule) to keep the mirror current.
 
 ---
 

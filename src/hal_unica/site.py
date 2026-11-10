@@ -16,6 +16,7 @@ from .data_repos import hits_from_jsonl, summarize
 from .universities import (
     DEFAULT_UNIVERSITY,
     ROOT_SITE_BASE_URL,
+    SOURCE_REPO_URL,
     University,
     get_university,
     other_universities,
@@ -3457,7 +3458,7 @@ def render_documentation(
 
     {_footer(
       generated_at or manifest.get("generated_at") or manifest.get("finished_at"),
-      'Source repository: <a href="https://github.com/xiaoouwang/hal-unica">github.com/xiaoouwang/hal-unica</a>',
+      f'Source repository: <a href="{SOURCE_REPO_URL}">{SOURCE_REPO_URL.removeprefix("https://")}</a>',
     )}
   </main>
 </body>
