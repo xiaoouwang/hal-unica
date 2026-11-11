@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-10T16:25:18Z",
-  "unique_datasets": 179,
-  "dataset_publication_links": 205,
+  "generated_at": "2026-11-11T11:56:36Z",
+  "unique_datasets": 180,
+  "dataset_publication_links": 206,
   "datasets_with_multiple_publications": 20,
   "by_repository": {
     "Recherche Data Gouv": 83,
     "NAKALA": 27,
-    "Zenodo": 23,
+    "Zenodo": 24,
     "Portail Data Inra": 13,
     "Dryad": 9,
     "Figshare": 6,

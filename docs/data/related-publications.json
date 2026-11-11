@@ -6,6 +6,43 @@
   },
   "publications": [
     {
+      "halId_s": "hal-05114056",
+      "uri_s": "https://hal.science/hal-05114056v2",
+      "title_s": "Le Rhône aménagé vu du ciel. Constitution d'une base de données photographiques obliques pour documenter la trajectoire socio-environnementale du fleuve contemporain (1910-1960)",
+      "docType_s": "ART",
+      "doiId_s": "10.46298/dc.15880",
+      "laboratories": [
+        "EVS",
+        "ENS de Lyon",
+        "Mines Saint-Étienne MSE",
+        "IMT",
+        "UL2",
+        "UJML",
+        "INSA Lyon",
+        "INSA",
+        "UJM",
+        "UJM EPE"
+      ],
+      "modifiedDate_tdate": "2026-11-11T03:27:51Z",
+      "producedDateY_i": 2025,
+      "repositories": [
+        "NAKALA"
+      ],
+      "datasets": [
+        {
+          "doi": "10.34847/nkl.e63a22n9",
+          "repository": "NAKALA",
+          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+          "landing_url": "https://nakala.fr/10.34847/nkl.e63a22n9",
+          "landing_host": "nakala.fr",
+          "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
       "halId_s": "hal-05633888",
       "uri_s": "https://hal.science/hal-05633888v1",
       "title_s": "Untargeted metabolomic dataset of leaves from twenty-four accessions of wild and cultivated tomato plants",
@@ -43,36 +80,69 @@
       ]
     },
     {
-      "halId_s": "hal-05114056",
-      "uri_s": "https://hal.science/hal-05114056v2",
-      "title_s": "Le Rhône aménagé vu du ciel. Constitution d'une base de données photographiques obliques pour documenter la trajectoire socio-environnementale du fleuve contemporain (1910-1960)",
+      "halId_s": "hal-01774729",
+      "uri_s": "https://hal.science/hal-01774729v1",
+      "title_s": "BRC4Env, a network of Biological Resource Centres for research in environmental and agricultural sciences",
       "docType_s": "ART",
-      "doiId_s": "10.46298/dc.15880",
+      "doiId_s": "10.1007/s11356-018-1973-7",
       "laboratories": [
-        "EVS",
-        "ENS de Lyon",
-        "Mines Saint-Étienne MSE",
-        "IMT",
-        "UL2",
-        "UJML",
-        "INSA Lyon",
-        "INSA",
-        "UJM",
-        "UJM EPE"
+        "ECOSYS",
+        "INRA",
+        "UMR CBGP",
+        "Cirad",
+        "Montpellier SupAgro",
+        "UM",
+        "IRD [Occitanie]",
+        "IRD",
+        "UEEA",
+        "UB"
       ],
-      "modifiedDate_tdate": "2026-11-10T03:26:56Z",
-      "producedDateY_i": 2025,
+      "modifiedDate_tdate": "2026-11-10T15:44:03Z",
+      "producedDateY_i": 2018,
       "repositories": [
-        "NAKALA"
+        "Recherche Data Gouv"
       ],
       "datasets": [
         {
-          "doi": "10.34847/nkl.e63a22n9",
-          "repository": "NAKALA",
-          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-          "landing_url": "https://nakala.fr/10.34847/nkl.e63a22n9",
-          "landing_host": "nakala.fr",
-          "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
+          "doi": "10.15454/D3ODJM",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Portail Data INRAE",
+          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/D3ODJM",
+          "landing_host": "data.inrae.fr",
+          "dataset_title": "Colisa, the collection of ichthyological samples.",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.15454/AY4LMT",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Portail Data INRAE",
+          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/AY4LMT",
+          "landing_host": "data.inrae.fr",
+          "dataset_title": "BRC “Egg Parasitoids Collection” (EP-Coll)",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.15454/UQEMVW",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Portail Data Inra",
+          "landing_url": "https://carrtel-collection.hub.inrae.fr/",
+          "landing_host": "carrtel-collection.hub.inrae.fr",
+          "dataset_title": "Thonon Culture Collection -TCC- a freshwater microalgae collection",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.15454/TRBJTB",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Portail Data INRAE",
+          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/TRBJTB",
+          "landing_host": "data.inrae.fr",
+          "dataset_title": "BRC4Env, the Biological Resource Centre for the Environment",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
@@ -637,76 +707,6 @@
           "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/FEQ1Z6",
           "landing_host": "data.inrae.fr",
           "dataset_title": "The discernible and hidden effects of clonality on the genotypic and genetic states of populations: improving our estimation of clonal rates",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-01774729",
-      "uri_s": "https://hal.science/hal-01774729v1",
-      "title_s": "BRC4Env, a network of Biological Resource Centres for research in environmental and agricultural sciences",
-      "docType_s": "ART",
-      "doiId_s": "10.1007/s11356-018-1973-7",
-      "laboratories": [
-        "ECOSYS",
-        "INRA",
-        "UMR CBGP",
-        "Cirad",
-        "Montpellier SupAgro",
-        "UM",
-        "IRD [Occitanie]",
-        "IRD",
-        "UEEA",
-        "UB"
-      ],
-      "modifiedDate_tdate": "2026-10-23T03:32:08Z",
-      "producedDateY_i": 2018,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.15454/D3ODJM",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Portail Data INRAE",
-          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/D3ODJM",
-          "landing_host": "data.inrae.fr",
-          "dataset_title": "Colisa, the collection of ichthyological samples.",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.15454/AY4LMT",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Portail Data INRAE",
-          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/AY4LMT",
-          "landing_host": "data.inrae.fr",
-          "dataset_title": "BRC “Egg Parasitoids Collection” (EP-Coll)",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.15454/UQEMVW",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Portail Data Inra",
-          "landing_url": "https://carrtel-collection.hub.inrae.fr/",
-          "landing_host": "carrtel-collection.hub.inrae.fr",
-          "dataset_title": "Thonon Culture Collection -TCC- a freshwater microalgae collection",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.15454/TRBJTB",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Portail Data INRAE",
-          "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/TRBJTB",
-          "landing_host": "data.inrae.fr",
-          "dataset_title": "BRC4Env, the Biological Resource Centre for the Environment",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false

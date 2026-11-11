@@ -1,10 +1,10 @@
 {
-  "unique_datasets": 179,
-  "publications_with_dataset": 150,
+  "unique_datasets": 180,
+  "publications_with_dataset": 151,
   "by_repository": {
     "Recherche Data Gouv": 83,
     "NAKALA": 27,
-    "Zenodo": 23,
+    "Zenodo": 24,
     "Portail Data Inra": 13,
     "Dryad": 9,
     "Figshare": 6,
@@ -142,7 +142,7 @@
       27,
       18,
       14,
-      38,
+      39,
       23
     ],
     "series": [
@@ -229,7 +229,7 @@
           1,
           2,
           1,
-          12,
+          13,
           7
         ]
       },
@@ -527,6 +527,236 @@
     "period_kind": "year"
   },
   "cell_details": {
+    "2025|Zenodo": [
+      {
+        "dataset_doi": "10.5281/zenodo.16895987",
+        "dataset_title": "A composite gradient index lens for wideband elastic waves focusing: Design approach and experimental validation at constant thickness",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.16895987",
+        "landing_host": "zenodo.org",
+        "year": 2025,
+        "publications": [
+          {
+            "halId_s": "hal-05212119",
+            "title_s": "A composite gradient index lens for wideband elastic waves focusing: Design approach and experimental validation at constant thickness",
+            "uri_s": "https://hal.science/hal-05212119v1",
+            "producedDateY_i": 2025,
+            "producedDateM_i": 11
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.17091408",
+        "dataset_title": "Actes QPES 2025 - Écosystèmes de formation - Pour quelle(s) transformation(s)",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17091408",
+        "landing_host": "zenodo.org",
+        "year": 2025,
+        "publications": [
+          {
+            "halId_s": "hal-05856909",
+            "title_s": "Le cheminement de l'étudiant en mode 100% auteur-projet : récit d'une expérimentation d'interactions de 8 années",
+            "uri_s": "https://hal.science/hal-05856909v1",
+            "producedDateY_i": 2025,
+            "producedDateM_i": 5
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.15369637",
+        "dataset_title": "Data for Less predictable global rhythms in human than wildlife contributions to soundscapes",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.15369637",
+        "landing_host": "zenodo.org",
+        "year": 2025,
+        "publications": [
+          {
+            "halId_s": "hal-05168055",
+            "title_s": "Human contributions to global soundscapes are less predictable than the acoustic rhythms of wildlife",
+            "uri_s": "https://univ-rennes.hal.science/hal-05168055v1",
+            "producedDateY_i": 2025,
+            "producedDateM_i": 7
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.15309541",
+        "dataset_title": "Dataset of 111 metagenome-assembled genomes from cattle manure, soil and manured soil samples",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.15309541",
+        "landing_host": "zenodo.org",
+        "year": 2025,
+        "publications": [
+          {
+            "halId_s": "hal-05248793",
+            "title_s": "Dataset of 111 metagenome-assembled genomes from cattle manure, soil and manured soil samples",
+            "uri_s": "https://hal.inrae.fr/hal-05248793v1",
+            "producedDateY_i": 2025,
+            "producedDateM_i": 8
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.7225585",
+        "dataset_title": "How to build (m,n)-graphs",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/record/7225585",
+        "landing_host": "zenodo.org",
+        "year": 2025,
+        "publications": [
+          {
+            "halId_s": "hal-03829832",
+            "title_s": "On the space of subgroups of Baumslag-Solitar groups I: perfect kernel and phenotype",
+            "uri_s": "https://hal.science/hal-03829832v4",
+            "producedDateY_i": 2025,
+            "producedDateM_i": 5
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.14747448",
+        "dataset_title": "JoseBSL/EuPPollNet: EuPPollNet: A European database of plant-pollinator networks",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.14747448",
+        "landing_host": "zenodo.org",
+        "year": 2025,
+        "publications": [
+          {
+            "halId_s": "hal-04948867",
+            "title_s": "EuPPollNet : a European database of Plant‐Pollinator Networks",
+            "uri_s": "https://ube.hal.science/hal-04948867v1",
+            "producedDateY_i": 2025,
+            "producedDateM_i": 2
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.15497132",
+        "dataset_title": "Location data from: \"Critical habitat thresholds for effective pollinator conservation in agricultural landscapes\"",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.15497132",
+        "landing_host": "zenodo.org",
+        "year": 2025,
+        "publications": [
+          {
+            "halId_s": "hal-05329408",
+            "title_s": "Critical habitat thresholds for effective pollinator conservation in agricultural landscapes",
+            "uri_s": "https://hal.inrae.fr/hal-05329408v1",
+            "producedDateY_i": 2025,
+            "producedDateM_i": 9
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.15428747",
+        "dataset_title": "Model data for the figures of Obase et al. entitled \"Multi-model assessment of the deglacial climatic evolution at high southern latitudes\"",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.15428747",
+        "landing_host": "zenodo.org",
+        "year": 2025,
+        "publications": [
+          {
+            "halId_s": "hal-05222699",
+            "title_s": "Multi-model assessment of the deglacial climatic evolution at high southern latitudes.",
+            "uri_s": "https://ube.hal.science/hal-05222699v1",
+            "producedDateY_i": 2025,
+            "producedDateM_i": 8
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.14884485",
+        "dataset_title": "Relationship between seed predation and activity-density of carabid beetles in farmland; a meta-regression (dataset and code)",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.14884485",
+        "landing_host": "zenodo.org",
+        "year": 2025,
+        "publications": [
+          {
+            "halId_s": "hal-04959610",
+            "title_s": "Relationship between seed predation and activity-density of carabid beetles in farmland: A meta-regression",
+            "uri_s": "https://hal.science/hal-04959610v1",
+            "producedDateY_i": 2025,
+            "producedDateM_i": 6
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/ZENODO.3763342",
+        "dataset_title": "Soil-meteorological dataset collected at Frasne peatland (192ha, Jura Mountains, France)",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/record/3763342",
+        "landing_host": "zenodo.org",
+        "year": 2025,
+        "publications": [
+          {
+            "halId_s": "insu-05295444",
+            "title_s": "Hydrological and temperature controls on CO2 and CH4 exchange between a mid-altitude mountain peatland and the atmosphere",
+            "uri_s": "https://insu.hal.science/insu-05295444v1",
+            "producedDateY_i": 2025,
+            "producedDateM_i": 10
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.15372067",
+        "dataset_title": "Soundscape analysis scripts",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.15372067",
+        "landing_host": "zenodo.org",
+        "year": 2025,
+        "publications": [
+          {
+            "halId_s": "hal-05168055",
+            "title_s": "Human contributions to global soundscapes are less predictable than the acoustic rhythms of wildlife",
+            "uri_s": "https://univ-rennes.hal.science/hal-05168055v1",
+            "producedDateY_i": 2025,
+            "producedDateM_i": 7
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.14009106",
+        "dataset_title": "Subjective Quality Assessment of Foveated Omnidirectional Images in Virtual Reality (FOIQA)",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.14009106",
+        "landing_host": "zenodo.org",
+        "year": 2025,
+        "publications": [
+          {
+            "halId_s": "hal-05120194",
+            "title_s": "Subjective Quality Assessment of Foveated Omnidirectional Images in Virtual Reality",
+            "uri_s": "https://hal.science/hal-05120194v1",
+            "producedDateY_i": 2025,
+            "producedDateM_i": 5
+          },
+          {
+            "halId_s": "hal-05120194",
+            "title_s": "Subjective Quality Assessment of Foveated Omnidirectional Images in Virtual Reality",
+            "uri_s": "https://hal.science/hal-05120194v1",
+            "producedDateY_i": 2025,
+            "producedDateM_i": 5
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/ZENODO.3763766",
+        "dataset_title": "Water table depth dataset collected at Frasne peatland (192ha, Jura Mountains, France)",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/record/3763766",
+        "landing_host": "zenodo.org",
+        "year": 2025,
+        "publications": [
+          {
+            "halId_s": "insu-05295444",
+            "title_s": "Hydrological and temperature controls on CO2 and CH4 exchange between a mid-altitude mountain peatland and the atmosphere",
+            "uri_s": "https://insu.hal.science/insu-05295444v1",
+            "producedDateY_i": 2025,
+            "producedDateM_i": 10
+          }
+        ]
+      }
+    ],
     "2024|Recherche Data Gouv": [
       {
         "dataset_doi": "10.57745/R1QHIL",
@@ -2044,219 +2274,6 @@
         ]
       }
     ],
-    "2025|Zenodo": [
-      {
-        "dataset_doi": "10.5281/zenodo.16895987",
-        "dataset_title": "A composite gradient index lens for wideband elastic waves focusing: Design approach and experimental validation at constant thickness",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.16895987",
-        "landing_host": "zenodo.org",
-        "year": 2025,
-        "publications": [
-          {
-            "halId_s": "hal-05212119",
-            "title_s": "A composite gradient index lens for wideband elastic waves focusing: Design approach and experimental validation at constant thickness",
-            "uri_s": "https://hal.science/hal-05212119v1",
-            "producedDateY_i": 2025,
-            "producedDateM_i": 11
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.15369637",
-        "dataset_title": "Data for Less predictable global rhythms in human than wildlife contributions to soundscapes",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.15369637",
-        "landing_host": "zenodo.org",
-        "year": 2025,
-        "publications": [
-          {
-            "halId_s": "hal-05168055",
-            "title_s": "Human contributions to global soundscapes are less predictable than the acoustic rhythms of wildlife",
-            "uri_s": "https://univ-rennes.hal.science/hal-05168055v1",
-            "producedDateY_i": 2025,
-            "producedDateM_i": 7
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.15309541",
-        "dataset_title": "Dataset of 111 metagenome-assembled genomes from cattle manure, soil and manured soil samples",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.15309541",
-        "landing_host": "zenodo.org",
-        "year": 2025,
-        "publications": [
-          {
-            "halId_s": "hal-05248793",
-            "title_s": "Dataset of 111 metagenome-assembled genomes from cattle manure, soil and manured soil samples",
-            "uri_s": "https://hal.inrae.fr/hal-05248793v1",
-            "producedDateY_i": 2025,
-            "producedDateM_i": 8
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.7225585",
-        "dataset_title": "How to build (m,n)-graphs",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/record/7225585",
-        "landing_host": "zenodo.org",
-        "year": 2025,
-        "publications": [
-          {
-            "halId_s": "hal-03829832",
-            "title_s": "On the space of subgroups of Baumslag-Solitar groups I: perfect kernel and phenotype",
-            "uri_s": "https://hal.science/hal-03829832v4",
-            "producedDateY_i": 2025,
-            "producedDateM_i": 5
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.14747448",
-        "dataset_title": "JoseBSL/EuPPollNet: EuPPollNet: A European database of plant-pollinator networks",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.14747448",
-        "landing_host": "zenodo.org",
-        "year": 2025,
-        "publications": [
-          {
-            "halId_s": "hal-04948867",
-            "title_s": "EuPPollNet : a European database of Plant‐Pollinator Networks",
-            "uri_s": "https://ube.hal.science/hal-04948867v1",
-            "producedDateY_i": 2025,
-            "producedDateM_i": 2
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.15497132",
-        "dataset_title": "Location data from: \"Critical habitat thresholds for effective pollinator conservation in agricultural landscapes\"",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.15497132",
-        "landing_host": "zenodo.org",
-        "year": 2025,
-        "publications": [
-          {
-            "halId_s": "hal-05329408",
-            "title_s": "Critical habitat thresholds for effective pollinator conservation in agricultural landscapes",
-            "uri_s": "https://hal.inrae.fr/hal-05329408v1",
-            "producedDateY_i": 2025,
-            "producedDateM_i": 9
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.15428747",
-        "dataset_title": "Model data for the figures of Obase et al. entitled \"Multi-model assessment of the deglacial climatic evolution at high southern latitudes\"",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.15428747",
-        "landing_host": "zenodo.org",
-        "year": 2025,
-        "publications": [
-          {
-            "halId_s": "hal-05222699",
-            "title_s": "Multi-model assessment of the deglacial climatic evolution at high southern latitudes.",
-            "uri_s": "https://ube.hal.science/hal-05222699v1",
-            "producedDateY_i": 2025,
-            "producedDateM_i": 8
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.14884485",
-        "dataset_title": "Relationship between seed predation and activity-density of carabid beetles in farmland; a meta-regression (dataset and code)",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.14884485",
-        "landing_host": "zenodo.org",
-        "year": 2025,
-        "publications": [
-          {
-            "halId_s": "hal-04959610",
-            "title_s": "Relationship between seed predation and activity-density of carabid beetles in farmland: A meta-regression",
-            "uri_s": "https://hal.science/hal-04959610v1",
-            "producedDateY_i": 2025,
-            "producedDateM_i": 6
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/ZENODO.3763342",
-        "dataset_title": "Soil-meteorological dataset collected at Frasne peatland (192ha, Jura Mountains, France)",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/record/3763342",
-        "landing_host": "zenodo.org",
-        "year": 2025,
-        "publications": [
-          {
-            "halId_s": "insu-05295444",
-            "title_s": "Hydrological and temperature controls on CO2 and CH4 exchange between a mid-altitude mountain peatland and the atmosphere",
-            "uri_s": "https://insu.hal.science/insu-05295444v1",
-            "producedDateY_i": 2025,
-            "producedDateM_i": 10
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.15372067",
-        "dataset_title": "Soundscape analysis scripts",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.15372067",
-        "landing_host": "zenodo.org",
-        "year": 2025,
-        "publications": [
-          {
-            "halId_s": "hal-05168055",
-            "title_s": "Human contributions to global soundscapes are less predictable than the acoustic rhythms of wildlife",
-            "uri_s": "https://univ-rennes.hal.science/hal-05168055v1",
-            "producedDateY_i": 2025,
-            "producedDateM_i": 7
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/zenodo.14009106",
-        "dataset_title": "Subjective Quality Assessment of Foveated Omnidirectional Images in Virtual Reality (FOIQA)",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.14009106",
-        "landing_host": "zenodo.org",
-        "year": 2025,
-        "publications": [
-          {
-            "halId_s": "hal-05120194",
-            "title_s": "Subjective Quality Assessment of Foveated Omnidirectional Images in Virtual Reality",
-            "uri_s": "https://hal.science/hal-05120194v1",
-            "producedDateY_i": 2025,
-            "producedDateM_i": 5
-          },
-          {
-            "halId_s": "hal-05120194",
-            "title_s": "Subjective Quality Assessment of Foveated Omnidirectional Images in Virtual Reality",
-            "uri_s": "https://hal.science/hal-05120194v1",
-            "producedDateY_i": 2025,
-            "producedDateM_i": 5
-          }
-        ]
-      },
-      {
-        "dataset_doi": "10.5281/ZENODO.3763766",
-        "dataset_title": "Water table depth dataset collected at Frasne peatland (192ha, Jura Mountains, France)",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/record/3763766",
-        "landing_host": "zenodo.org",
-        "year": 2025,
-        "publications": [
-          {
-            "halId_s": "insu-05295444",
-            "title_s": "Hydrological and temperature controls on CO2 and CH4 exchange between a mid-altitude mountain peatland and the atmosphere",
-            "uri_s": "https://insu.hal.science/insu-05295444v1",
-            "producedDateY_i": 2025,
-            "producedDateM_i": 10
-          }
-        ]
-      }
-    ],
     "2025|NAKALA": [
       {
         "dataset_doi": "10.34847/nkl.b95e19i1",
@@ -2413,7 +2430,7 @@
             "title_s": "BRC4Env, a network of Biological Resource Centres for research in environmental and agricultural sciences",
             "uri_s": "https://hal.science/hal-01774729v1",
             "producedDateY_i": 2018,
-            "producedDateM_i": 10
+            "producedDateM_i": 11
           },
           {
             "halId_s": "hal-05231498",
@@ -2742,7 +2759,7 @@
             "title_s": "Human emotional odours influence horses’ behaviour and physiology",
             "uri_s": "https://hal.science/hal-05279443v2",
             "producedDateY_i": 2026,
-            "producedDateM_i": 8
+            "producedDateM_i": 11
           }
         ]
       },
@@ -2920,7 +2937,7 @@
             "title_s": "BRC4Env, a network of Biological Resource Centres for research in environmental and agricultural sciences",
             "uri_s": "https://hal.science/hal-01774729v1",
             "producedDateY_i": 2018,
-            "producedDateM_i": 10
+            "producedDateM_i": 11
           }
         ]
       },
@@ -2937,7 +2954,7 @@
             "title_s": "BRC4Env, a network of Biological Resource Centres for research in environmental and agricultural sciences",
             "uri_s": "https://hal.science/hal-01774729v1",
             "producedDateY_i": 2018,
-            "producedDateM_i": 10
+            "producedDateM_i": 11
           }
         ]
       },
@@ -3036,7 +3053,7 @@
             "title_s": "BRC4Env, a network of Biological Resource Centres for research in environmental and agricultural sciences",
             "uri_s": "https://hal.science/hal-01774729v1",
             "producedDateY_i": 2018,
-            "producedDateM_i": 10
+            "producedDateM_i": 11
           }
         ]
       }
@@ -3886,10 +3903,10 @@
       1,
       0,
       1,
-      2,
+      1,
       2,
       7,
-      1,
+      2,
       0
     ],
     "series": [
@@ -3904,10 +3921,10 @@
           1,
           0,
           1,
-          2,
+          1,
           1,
           0,
-          0,
+          1,
           0
         ]
       },
@@ -4287,24 +4304,6 @@
           }
         ],
         "month": 8
-      },
-      {
-        "dataset_doi": "10.57745/T2RTDR",
-        "dataset_title": "Human emotional odours influence horses’ behaviour and physiology",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/T2RTDR",
-        "landing_host": "entrepot.recherche.data.gouv.fr",
-        "year": 2026,
-        "publications": [
-          {
-            "halId_s": "hal-05279443",
-            "title_s": "Human emotional odours influence horses’ behaviour and physiology",
-            "uri_s": "https://hal.science/hal-05279443v2",
-            "producedDateY_i": 2026,
-            "producedDateM_i": 8
-          }
-        ],
-        "month": 8
       }
     ],
     "2026-09|Recherche Data Gouv": [
@@ -4441,6 +4440,26 @@
           }
         ],
         "month": 2
+      }
+    ],
+    "2026-11|Recherche Data Gouv": [
+      {
+        "dataset_doi": "10.57745/T2RTDR",
+        "dataset_title": "Human emotional odours influence horses’ behaviour and physiology",
+        "repository": "Recherche Data Gouv",
+        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/T2RTDR",
+        "landing_host": "entrepot.recherche.data.gouv.fr",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05279443",
+            "title_s": "Human emotional odours influence horses’ behaviour and physiology",
+            "uri_s": "https://hal.science/hal-05279443v2",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 11
+          }
+        ],
+        "month": 11
       }
     ],
     "2026-04|Recherche Data Gouv": [
