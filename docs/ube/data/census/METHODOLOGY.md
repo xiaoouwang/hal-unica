@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-11-12T12:51:41Z`  
+Generated: `2026-11-12T16:48:30Z`  
 Collection: `UNIV-BOURGOGNE`  
-Run window: `2026-11-12T12:51:40Z` → `2026-11-12T12:51:41Z`
+Run window: `2026-11-12T16:48:29Z` → `2026-11-12T16:48:30Z`
 
 ## Goal
 
