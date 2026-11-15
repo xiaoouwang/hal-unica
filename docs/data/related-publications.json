@@ -1,10 +1,40 @@
 {
-  "publication_count": 48,
+  "publication_count": 47,
   "by_repository": {
-    "Recherche Data Gouv": 39,
+    "Recherche Data Gouv": 38,
     "NAKALA": 9
   },
   "publications": [
+    {
+      "halId_s": "hal-04962117",
+      "uri_s": "https://hal.science/hal-04962117v1",
+      "title_s": "Les sens du mouvement",
+      "docType_s": "OUV",
+      "doiId_s": null,
+      "laboratories": [
+        "LAPCOS",
+        "UNS",
+        "UniCA"
+      ],
+      "modifiedDate_tdate": "2026-11-15T09:01:56Z",
+      "producedDateY_i": 2019,
+      "repositories": [
+        "NAKALA"
+      ],
+      "datasets": [
+        {
+          "doi": "10.34847/nkl.ed24g6g6",
+          "repository": "NAKALA",
+          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+          "landing_url": "https://nakala.fr/10.34847/nkl.ed24g6g6",
+          "landing_host": "nakala.fr",
+          "dataset_title": "Glossaire multilingue du taijiquan et des arts internes — français, anglais, néerlandais, espagnol, allemand, chinois (caractères et pinyin)",
+          "field": "relatedPublication_s",
+          "misfiled": true,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
     {
       "halId_s": "hal-05114056",
       "uri_s": "https://hal.science/hal-05114056v2",
@@ -23,7 +53,7 @@
         "UJM",
         "UJM EPE"
       ],
-      "modifiedDate_tdate": "2026-11-13T03:27:16Z",
+      "modifiedDate_tdate": "2026-11-15T03:33:51Z",
       "producedDateY_i": 2025,
       "repositories": [
         "NAKALA"
@@ -36,6 +66,41 @@
           "landing_url": "https://nakala.fr/10.34847/nkl.e63a22n9",
           "landing_host": "nakala.fr",
           "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-05251997",
+      "uri_s": "https://hal.science/hal-05251997v3",
+      "title_s": "Hommages dans les universités. Constitution d’une base de données sur les doctorats honoris causa en France",
+      "docType_s": "ART",
+      "doiId_s": "10.46298/dc.16514",
+      "laboratories": [
+        "URFIST Méditerranée",
+        "UniCA",
+        "SU",
+        "UA",
+        "URFIST de Lyon",
+        "URFIST Paris",
+        "ENC",
+        "PSL"
+      ],
+      "modifiedDate_tdate": "2026-11-15T03:25:12Z",
+      "producedDateY_i": 2026,
+      "repositories": [
+        "NAKALA"
+      ],
+      "datasets": [
+        {
+          "doi": "10.34847/nkl.6cae1i7s",
+          "repository": "NAKALA",
+          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+          "landing_url": "https://nakala.fr/10.34847/nkl.6cae1i7s",
+          "landing_host": "nakala.fr",
+          "dataset_title": "Inventaire des doctorats honoris causa en France",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
@@ -182,36 +247,6 @@
           "dataset_title": "BRC4Env, the Biological Resource Centre for the Environment",
           "field": "relatedData_s",
           "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-04962117",
-      "uri_s": "https://hal.science/hal-04962117v1",
-      "title_s": "Les sens du mouvement",
-      "docType_s": "OUV",
-      "doiId_s": null,
-      "laboratories": [
-        "LAPCOS",
-        "UNS",
-        "UniCA"
-      ],
-      "modifiedDate_tdate": "2026-11-07T18:52:02Z",
-      "producedDateY_i": 2019,
-      "repositories": [
-        "NAKALA"
-      ],
-      "datasets": [
-        {
-          "doi": "10.34847/nkl.ed24g6g6",
-          "repository": "NAKALA",
-          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-          "landing_url": "https://nakala.fr/10.34847/nkl.ed24g6g6",
-          "landing_host": "nakala.fr",
-          "dataset_title": "Glossaire multilingue du taijiquan et des arts internes — français, anglais, néerlandais, espagnol, allemand, chinois (caractères et pinyin)",
-          "field": "relatedPublication_s",
-          "misfiled": true,
           "also_in_relatedData_s": false
         }
       ]
@@ -1115,41 +1150,6 @@
       ]
     },
     {
-      "halId_s": "hal-02928114",
-      "uri_s": "https://hal.inrae.fr/hal-02928114v1",
-      "title_s": "Aphid infestation differently affects the defences of nitrate-fed and nitrogen-fixing Medicago truncatula and alters symbiotic nitrogen fixation",
-      "docType_s": "ART",
-      "doiId_s": "10.1098/rspb.2020.1493",
-      "laboratories": [
-        "ISA",
-        "UNS",
-        "CNRS",
-        "INRAE",
-        "UniCA",
-        "IGEPP",
-        "UR",
-        "Institut Agro"
-      ],
-      "modifiedDate_tdate": "2026-09-29T11:12:38Z",
-      "producedDateY_i": 2020,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/WGBWYO",
-          "repository": "Recherche Data Gouv",
-          "publisher": null,
-          "landing_url": null,
-          "landing_host": null,
-          "dataset_title": null,
-          "field": "relatedPublication_s",
-          "misfiled": true,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
       "halId_s": "hal-04169728",
       "uri_s": "https://hal.inrae.fr/hal-04169728v1",
       "title_s": "A nationwide pest risk analysis in the context of the ongoing Japanese beetle invasion in Continental Europe: The case of metropolitan France",
@@ -1389,41 +1389,6 @@
       ]
     },
     {
-      "halId_s": "hal-05251997",
-      "uri_s": "https://hal.science/hal-05251997v3",
-      "title_s": "Hommages dans les universités. Constitution d’une base de données sur les doctorats honoris causa en France",
-      "docType_s": "ART",
-      "doiId_s": "10.46298/dc.16514",
-      "laboratories": [
-        "URFIST Méditerranée",
-        "UniCA",
-        "SU",
-        "UA",
-        "URFIST de Lyon",
-        "URFIST Paris",
-        "ENC",
-        "PSL"
-      ],
-      "modifiedDate_tdate": "2026-09-10T16:50:38Z",
-      "producedDateY_i": 2026,
-      "repositories": [
-        "NAKALA"
-      ],
-      "datasets": [
-        {
-          "doi": "10.34847/nkl.6cae1i7s",
-          "repository": "NAKALA",
-          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-          "landing_url": "https://nakala.fr/10.34847/nkl.6cae1i7s",
-          "landing_host": "nakala.fr",
-          "dataset_title": "Inventaire des doctorats honoris causa en France",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
       "halId_s": "hal-05721890",
       "uri_s": "https://hal.science/hal-05721890v1",
       "title_s": "The Asian ladybird Harmonia axyridis at the interface between biological control and invasion: insights from population and quantitative genetics",
@@ -1632,7 +1597,7 @@
           "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
           "landing_url": "https://nakala.fr/10.34847/nkl.0dee15ow",
           "landing_host": "nakala.fr",
-          "dataset_title": "The ExEco Dataset: A Textual Dataset of French Economic and Social Thought (1918–1960)",
+          "dataset_title": "The ExEco Corpus: A Textual Dataset of French Economic and Social Thought (1918–1960)",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false

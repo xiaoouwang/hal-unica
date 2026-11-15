@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T16:22:55Z",
+  "generated_at": "2026-11-15T11:59:35Z",
   "collection": "UNIV-COTEDAZUR",
   "collection_url": "https://hal.science/UNIV-COTEDAZUR",
   "harvest": {
@@ -296,14 +296,14 @@
     "stale": true
   },
   "data_links": {
-    "total_hits": 242,
+    "total_hits": 240,
     "by_platform": {
       "nakala": 9,
-      "rdg": 39
+      "rdg": 38
     },
     "by_repository": {
-      "Zenodo": 105,
-      "Recherche Data Gouv": 49,
+      "Zenodo": 104,
+      "Recherche Data Gouv": 48,
       "SEANOE": 15,
       "Sismer": 10,
       "SEDOO / Theia": 9,
@@ -335,17 +335,47 @@
       "University of Bristol data.bris": 1
     },
     "by_object_kind": {
-      "dataset_repo": 48
+      "dataset_repo": 47
     },
     "scope": "all_repositories"
   },
   "related_datasets": {
-    "publication_count": 48,
+    "publication_count": 47,
     "by_repository": {
-      "Recherche Data Gouv": 39,
+      "Recherche Data Gouv": 38,
       "NAKALA": 9
     },
     "publications": [
+      {
+        "halId_s": "hal-04962117",
+        "uri_s": "https://hal.science/hal-04962117v1",
+        "title_s": "Les sens du mouvement",
+        "docType_s": "OUV",
+        "doiId_s": null,
+        "laboratories": [
+          "LAPCOS",
+          "UNS",
+          "UniCA"
+        ],
+        "modifiedDate_tdate": "2026-11-15T09:01:56Z",
+        "producedDateY_i": 2019,
+        "repositories": [
+          "NAKALA"
+        ],
+        "datasets": [
+          {
+            "doi": "10.34847/nkl.ed24g6g6",
+            "repository": "NAKALA",
+            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+            "landing_url": "https://nakala.fr/10.34847/nkl.ed24g6g6",
+            "landing_host": "nakala.fr",
+            "dataset_title": "Glossaire multilingue du taijiquan et des arts internes — français, anglais, néerlandais, espagnol, allemand, chinois (caractères et pinyin)",
+            "field": "relatedPublication_s",
+            "misfiled": true,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
       {
         "halId_s": "hal-05114056",
         "uri_s": "https://hal.science/hal-05114056v2",
@@ -364,7 +394,7 @@
           "UJM",
           "UJM EPE"
         ],
-        "modifiedDate_tdate": "2026-11-13T03:27:16Z",
+        "modifiedDate_tdate": "2026-11-15T03:33:51Z",
         "producedDateY_i": 2025,
         "repositories": [
           "NAKALA"
@@ -377,6 +407,41 @@
             "landing_url": "https://nakala.fr/10.34847/nkl.e63a22n9",
             "landing_host": "nakala.fr",
             "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-05251997",
+        "uri_s": "https://hal.science/hal-05251997v3",
+        "title_s": "Hommages dans les universités. Constitution d’une base de données sur les doctorats honoris causa en France",
+        "docType_s": "ART",
+        "doiId_s": "10.46298/dc.16514",
+        "laboratories": [
+          "URFIST Méditerranée",
+          "UniCA",
+          "SU",
+          "UA",
+          "URFIST de Lyon",
+          "URFIST Paris",
+          "ENC",
+          "PSL"
+        ],
+        "modifiedDate_tdate": "2026-11-15T03:25:12Z",
+        "producedDateY_i": 2026,
+        "repositories": [
+          "NAKALA"
+        ],
+        "datasets": [
+          {
+            "doi": "10.34847/nkl.6cae1i7s",
+            "repository": "NAKALA",
+            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+            "landing_url": "https://nakala.fr/10.34847/nkl.6cae1i7s",
+            "landing_host": "nakala.fr",
+            "dataset_title": "Inventaire des doctorats honoris causa en France",
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -523,36 +588,6 @@
             "dataset_title": "BRC4Env, the Biological Resource Centre for the Environment",
             "field": "relatedData_s",
             "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-04962117",
-        "uri_s": "https://hal.science/hal-04962117v1",
-        "title_s": "Les sens du mouvement",
-        "docType_s": "OUV",
-        "doiId_s": null,
-        "laboratories": [
-          "LAPCOS",
-          "UNS",
-          "UniCA"
-        ],
-        "modifiedDate_tdate": "2026-11-07T18:52:02Z",
-        "producedDateY_i": 2019,
-        "repositories": [
-          "NAKALA"
-        ],
-        "datasets": [
-          {
-            "doi": "10.34847/nkl.ed24g6g6",
-            "repository": "NAKALA",
-            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-            "landing_url": "https://nakala.fr/10.34847/nkl.ed24g6g6",
-            "landing_host": "nakala.fr",
-            "dataset_title": "Glossaire multilingue du taijiquan et des arts internes — français, anglais, néerlandais, espagnol, allemand, chinois (caractères et pinyin)",
-            "field": "relatedPublication_s",
-            "misfiled": true,
             "also_in_relatedData_s": false
           }
         ]
@@ -1456,41 +1491,6 @@
         ]
       },
       {
-        "halId_s": "hal-02928114",
-        "uri_s": "https://hal.inrae.fr/hal-02928114v1",
-        "title_s": "Aphid infestation differently affects the defences of nitrate-fed and nitrogen-fixing Medicago truncatula and alters symbiotic nitrogen fixation",
-        "docType_s": "ART",
-        "doiId_s": "10.1098/rspb.2020.1493",
-        "laboratories": [
-          "ISA",
-          "UNS",
-          "CNRS",
-          "INRAE",
-          "UniCA",
-          "IGEPP",
-          "UR",
-          "Institut Agro"
-        ],
-        "modifiedDate_tdate": "2026-09-29T11:12:38Z",
-        "producedDateY_i": 2020,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.57745/WGBWYO",
-            "repository": "Recherche Data Gouv",
-            "publisher": null,
-            "landing_url": null,
-            "landing_host": null,
-            "dataset_title": null,
-            "field": "relatedPublication_s",
-            "misfiled": true,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
         "halId_s": "hal-04169728",
         "uri_s": "https://hal.inrae.fr/hal-04169728v1",
         "title_s": "A nationwide pest risk analysis in the context of the ongoing Japanese beetle invasion in Continental Europe: The case of metropolitan France",
@@ -1730,41 +1730,6 @@
         ]
       },
       {
-        "halId_s": "hal-05251997",
-        "uri_s": "https://hal.science/hal-05251997v3",
-        "title_s": "Hommages dans les universités. Constitution d’une base de données sur les doctorats honoris causa en France",
-        "docType_s": "ART",
-        "doiId_s": "10.46298/dc.16514",
-        "laboratories": [
-          "URFIST Méditerranée",
-          "UniCA",
-          "SU",
-          "UA",
-          "URFIST de Lyon",
-          "URFIST Paris",
-          "ENC",
-          "PSL"
-        ],
-        "modifiedDate_tdate": "2026-09-10T16:50:38Z",
-        "producedDateY_i": 2026,
-        "repositories": [
-          "NAKALA"
-        ],
-        "datasets": [
-          {
-            "doi": "10.34847/nkl.6cae1i7s",
-            "repository": "NAKALA",
-            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-            "landing_url": "https://nakala.fr/10.34847/nkl.6cae1i7s",
-            "landing_host": "nakala.fr",
-            "dataset_title": "Inventaire des doctorats honoris causa en France",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
         "halId_s": "hal-05721890",
         "uri_s": "https://hal.science/hal-05721890v1",
         "title_s": "The Asian ladybird Harmonia axyridis at the interface between biological control and invasion: insights from population and quantitative genetics",
@@ -1973,7 +1938,7 @@
             "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
             "landing_url": "https://nakala.fr/10.34847/nkl.0dee15ow",
             "landing_host": "nakala.fr",
-            "dataset_title": "The ExEco Dataset: A Textual Dataset of French Economic and Social Thought (1918–1960)",
+            "dataset_title": "The ExEco Corpus: A Textual Dataset of French Economic and Social Thought (1918–1960)",
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -2332,11 +2297,11 @@
     "scope": "nakala_rdg_focus"
   },
   "census_chart": {
-    "unique_datasets": 242,
-    "publications_with_dataset": 165,
+    "unique_datasets": 240,
+    "publications_with_dataset": 163,
     "by_repository": {
-      "Zenodo": 105,
-      "Recherche Data Gouv": 49,
+      "Zenodo": 104,
+      "Recherche Data Gouv": 48,
       "SEANOE": 15,
       "Sismer": 10,
       "SEDOO / Theia": 9,
@@ -2486,8 +2451,8 @@
         0,
         3,
         6,
-        5,
-        28,
+        4,
+        27,
         12,
         10,
         36,
@@ -2515,7 +2480,7 @@
             0,
             1,
             1,
-            2,
+            1,
             23,
             7,
             4,
@@ -2545,7 +2510,7 @@
             2,
             3,
             1,
-            4,
+            3,
             2,
             4,
             13,
@@ -3536,90 +3501,6 @@
               "uri_s": "https://hal.science/hal-05633888v1",
               "producedDateY_i": 2026,
               "producedDateM_i": 5
-            }
-          ]
-        }
-      ],
-      "2020|Recherche Data Gouv": [
-        {
-          "dataset_doi": "10.57745/WGBWYO",
-          "dataset_title": null,
-          "repository": "Recherche Data Gouv",
-          "landing_url": null,
-          "landing_host": null,
-          "year": 2020,
-          "publications": [
-            {
-              "halId_s": "hal-02928114",
-              "title_s": "Aphid infestation differently affects the defences of nitrate-fed and nitrogen-fixing Medicago truncatula and alters symbiotic nitrogen fixation",
-              "uri_s": "https://hal.inrae.fr/hal-02928114v1",
-              "producedDateY_i": 2020,
-              "producedDateM_i": 9
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.15454/D6XAKL",
-          "dataset_title": "CBGP - Continental Arthropod Collection",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/D6XAKL",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2020,
-          "publications": [
-            {
-              "halId_s": "hal-03144754",
-              "title_s": "BRC4Env, a network of Biological Resource Centres for environmental resources",
-              "uri_s": "https://hal.science/hal-03144754v1",
-              "producedDateY_i": 2020,
-              "producedDateM_i": 10
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.57745/D4TG2M",
-          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda corn strain",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/D4TG2M",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2020,
-          "publications": [
-            {
-              "halId_s": "hal-01633879",
-              "title_s": "Two genomes of highly polyphagous lepidopteran pests (Spodoptera frugiperda, Noctuidae) with different host-plant ranges",
-              "uri_s": "https://inria.hal.science/hal-01633879v1",
-              "producedDateY_i": 2017,
-              "producedDateM_i": 12
-            },
-            {
-              "halId_s": "hal-03065279",
-              "title_s": "Adaptation by copy number variation increases insecticide resistance in the fall armyworm",
-              "uri_s": "https://inria.hal.science/hal-03065279v1",
-              "producedDateY_i": 2020,
-              "producedDateM_i": 11
-            }
-          ]
-        },
-        {
-          "dataset_doi": "10.57745/XDVEQW",
-          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda rice strain",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2020,
-          "publications": [
-            {
-              "halId_s": "hal-01633879",
-              "title_s": "Two genomes of highly polyphagous lepidopteran pests (Spodoptera frugiperda, Noctuidae) with different host-plant ranges",
-              "uri_s": "https://inria.hal.science/hal-01633879v1",
-              "producedDateY_i": 2017,
-              "producedDateM_i": 12
-            },
-            {
-              "halId_s": "hal-03065279",
-              "title_s": "Adaptation by copy number variation increases insecticide resistance in the fall armyworm",
-              "uri_s": "https://inria.hal.science/hal-03065279v1",
-              "producedDateY_i": 2020,
-              "producedDateM_i": 11
             }
           ]
         }
@@ -4999,6 +4880,73 @@
           ]
         }
       ],
+      "2020|Recherche Data Gouv": [
+        {
+          "dataset_doi": "10.15454/D6XAKL",
+          "dataset_title": "CBGP - Continental Arthropod Collection",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/D6XAKL",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2020,
+          "publications": [
+            {
+              "halId_s": "hal-03144754",
+              "title_s": "BRC4Env, a network of Biological Resource Centres for environmental resources",
+              "uri_s": "https://hal.science/hal-03144754v1",
+              "producedDateY_i": 2020,
+              "producedDateM_i": 10
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/D4TG2M",
+          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda corn strain",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/D4TG2M",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2020,
+          "publications": [
+            {
+              "halId_s": "hal-01633879",
+              "title_s": "Two genomes of highly polyphagous lepidopteran pests (Spodoptera frugiperda, Noctuidae) with different host-plant ranges",
+              "uri_s": "https://inria.hal.science/hal-01633879v1",
+              "producedDateY_i": 2017,
+              "producedDateM_i": 12
+            },
+            {
+              "halId_s": "hal-03065279",
+              "title_s": "Adaptation by copy number variation increases insecticide resistance in the fall armyworm",
+              "uri_s": "https://inria.hal.science/hal-03065279v1",
+              "producedDateY_i": 2020,
+              "producedDateM_i": 11
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/XDVEQW",
+          "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda rice strain",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2020,
+          "publications": [
+            {
+              "halId_s": "hal-01633879",
+              "title_s": "Two genomes of highly polyphagous lepidopteran pests (Spodoptera frugiperda, Noctuidae) with different host-plant ranges",
+              "uri_s": "https://inria.hal.science/hal-01633879v1",
+              "producedDateY_i": 2017,
+              "producedDateM_i": 12
+            },
+            {
+              "halId_s": "hal-03065279",
+              "title_s": "Adaptation by copy number variation increases insecticide resistance in the fall armyworm",
+              "uri_s": "https://inria.hal.science/hal-03065279v1",
+              "producedDateY_i": 2020,
+              "producedDateM_i": 11
+            }
+          ]
+        }
+      ],
       "2026|Figshare": [
         {
           "dataset_doi": "10.6084/m9.figshare.30665321",
@@ -5482,7 +5430,7 @@
         },
         {
           "dataset_doi": "10.34847/nkl.0dee15ow",
-          "dataset_title": "The ExEco Dataset: A Textual Dataset of French Economic and Social Thought (1918–1960)",
+          "dataset_title": "The ExEco Corpus: A Textual Dataset of French Economic and Social Thought (1918–1960)",
           "repository": "NAKALA",
           "landing_url": "https://nakala.fr/10.34847/nkl.0dee15ow",
           "landing_host": "nakala.fr",
@@ -7120,23 +7068,6 @@
       ],
       "2019|Zenodo": [
         {
-          "dataset_doi": "10.5281/zenodo.37660964",
-          "dataset_title": null,
-          "repository": "Zenodo",
-          "landing_url": null,
-          "landing_host": null,
-          "year": 2019,
-          "publications": [
-            {
-              "halId_s": "hal-03909555",
-              "title_s": "La catena di influenze nella ricezione moderna di Plutarco e il riuso delle Vite di Cesare e Bruto: teoria e prassi dei Classical Reception Studies",
-              "uri_s": "https://hal.science/hal-03909555v1",
-              "producedDateY_i": 2019,
-              "producedDateM_i": 6
-            }
-          ]
-        },
-        {
           "dataset_doi": "10.5281/zenodo.3339369",
           "dataset_title": "marazzaf/MEMM: Zenodo",
           "repository": "Zenodo",
@@ -8104,7 +8035,7 @@
       "2026-06|NAKALA": [
         {
           "dataset_doi": "10.34847/nkl.0dee15ow",
-          "dataset_title": "The ExEco Dataset: A Textual Dataset of French Economic and Social Thought (1918–1960)",
+          "dataset_title": "The ExEco Corpus: A Textual Dataset of French Economic and Social Thought (1918–1960)",
           "repository": "NAKALA",
           "landing_url": "https://nakala.fr/10.34847/nkl.0dee15ow",
           "landing_host": "nakala.fr",
