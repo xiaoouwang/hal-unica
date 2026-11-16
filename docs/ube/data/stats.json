@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T15:40:12Z",
+  "generated_at": "2026-11-16T12:52:47Z",
   "collection": "UNIV-BOURGOGNE",
   "collection_url": "https://hal.science/UNIV-BOURGOGNE",
   "harvest": {
@@ -341,6 +341,43 @@
       "NAKALA": 9
     },
     "publications": [
+      {
+        "halId_s": "hal-05374840",
+        "uri_s": "https://hal.science/hal-05374840v2",
+        "title_s": "Heading Toward Apertures Using Panoramic Optic Flow for Aerial Exploration",
+        "docType_s": "ART",
+        "doiId_s": "10.1080/01691864.2026.2667369",
+        "laboratories": [
+          "ISM",
+          "AMU",
+          "CNRS",
+          "LIB",
+          "UBE",
+          "UB",
+          "LCFC",
+          "UL",
+          "Lab-STICC_ROBEX",
+          "Lab-STICC"
+        ],
+        "modifiedDate_tdate": "2026-11-16T12:37:28Z",
+        "producedDateY_i": 2026,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/MEV4FF",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/MEV4FF",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Simulated exploration of unknown environment by OF-shape based regulation on fully actuated hexarotor",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
       {
         "halId_s": "hal-05279443",
         "uri_s": "https://hal.science/hal-05279443v2",
@@ -2420,43 +2457,6 @@
         ]
       },
       {
-        "halId_s": "hal-05374840",
-        "uri_s": "https://hal.science/hal-05374840v2",
-        "title_s": "Heading Toward Apertures Using Panoramic Optic Flow for Aerial Exploration",
-        "docType_s": "ART",
-        "doiId_s": "10.1080/01691864.2026.2667369",
-        "laboratories": [
-          "ISM",
-          "AMU",
-          "CNRS",
-          "LIB",
-          "UBE",
-          "UB",
-          "LCFC",
-          "UL",
-          "Lab-STICC_ROBEX",
-          "Lab-STICC"
-        ],
-        "modifiedDate_tdate": "2026-07-10T11:46:36Z",
-        "producedDateY_i": 2025,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.57745/MEV4FF",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/MEV4FF",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "Simulated exploration of unknown environment by OF-shape based regulation on fully actuated hexarotor",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
         "halId_s": "hal-05120953",
         "uri_s": "https://hal.science/hal-05120953v1",
         "title_s": "Underwater Netting Detection and Distance Estimation using Optic Flow",
@@ -4159,8 +4159,8 @@
         27,
         18,
         14,
-        39,
-        23
+        38,
+        24
       ],
       "series": [
         {
@@ -4188,8 +4188,8 @@
             5,
             12,
             7,
-            16,
-            9
+            15,
+            10
           ]
         },
         {
@@ -6609,23 +6609,6 @@
           ]
         },
         {
-          "dataset_doi": "10.57745/MEV4FF",
-          "dataset_title": "Simulated exploration of unknown environment by OF-shape based regulation on fully actuated hexarotor",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/MEV4FF",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2025,
-          "publications": [
-            {
-              "halId_s": "hal-05374840",
-              "title_s": "Heading Toward Apertures Using Panoramic Optic Flow for Aerial Exploration",
-              "uri_s": "https://hal.science/hal-05374840v2",
-              "producedDateY_i": 2025,
-              "producedDateM_i": 11
-            }
-          ]
-        },
-        {
           "dataset_doi": "10.57745/BRGZNJ",
           "dataset_title": "Spatiotemporal quantification of sodium concentration in carrot",
           "repository": "Recherche Data Gouv",
@@ -6809,6 +6792,23 @@
               "halId_s": "hal-05504216",
               "title_s": "How does low-input crop management perform? Economic, environmental and social assessment data on different arable crop management strategies in France",
               "uri_s": "https://hal.inrae.fr/hal-05504216v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 5
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.57745/MEV4FF",
+          "dataset_title": "Simulated exploration of unknown environment by OF-shape based regulation on fully actuated hexarotor",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/MEV4FF",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05374840",
+              "title_s": "Heading Toward Apertures Using Panoramic Optic Flow for Aerial Exploration",
+              "uri_s": "https://hal.science/hal-05374840v2",
               "producedDateY_i": 2026,
               "producedDateM_i": 5
             }
@@ -7917,7 +7917,7 @@
         2,
         2,
         3,
-        1,
+        2,
         0,
         1,
         1,
@@ -7935,7 +7935,7 @@
             1,
             1,
             2,
-            1,
+            2,
             0,
             1,
             1,
@@ -8163,7 +8163,7 @@
         }
       ],
       "period_kind": "month",
-      "datasets_in_year": 23,
+      "datasets_in_year": 24,
       "unknown_month": 0
     },
     "cell_details_months": {
@@ -8537,6 +8537,44 @@
           "month": 7
         }
       ],
+      "2026-05|Recherche Data Gouv": [
+        {
+          "dataset_doi": "10.57745/LCA116",
+          "dataset_title": "Référentiel de performances économiques, environnementales et sociales de pratiques culturales économes en intrants",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/LCA116",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05504216",
+              "title_s": "How does low-input crop management perform? Economic, environmental and social assessment data on different arable crop management strategies in France",
+              "uri_s": "https://hal.inrae.fr/hal-05504216v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 5
+            }
+          ],
+          "month": 5
+        },
+        {
+          "dataset_doi": "10.57745/MEV4FF",
+          "dataset_title": "Simulated exploration of unknown environment by OF-shape based regulation on fully actuated hexarotor",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/MEV4FF",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05374840",
+              "title_s": "Heading Toward Apertures Using Panoramic Optic Flow for Aerial Exploration",
+              "uri_s": "https://hal.science/hal-05374840v2",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 5
+            }
+          ],
+          "month": 5
+        }
+      ],
       "2026-01|Zenodo": [
         {
           "dataset_doi": "10.5281/zenodo.16994482",
@@ -8594,29 +8632,9 @@
           ],
           "month": 4
         }
-      ],
-      "2026-05|Recherche Data Gouv": [
-        {
-          "dataset_doi": "10.57745/LCA116",
-          "dataset_title": "Référentiel de performances économiques, environnementales et sociales de pratiques culturales économes en intrants",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/LCA116",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2026,
-          "publications": [
-            {
-              "halId_s": "hal-05504216",
-              "title_s": "How does low-input crop management perform? Economic, environmental and social assessment data on different arable crop management strategies in France",
-              "uri_s": "https://hal.inrae.fr/hal-05504216v1",
-              "producedDateY_i": 2026,
-              "producedDateM_i": 5
-            }
-          ],
-          "month": 5
-        }
       ]
     },
-    "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 23 datasets in 2026. Click a segment to list datasets.",
+    "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 24 datasets in 2026. Click a segment to list datasets.",
     "segment_hint": "newest linking publication year",
     "months_segment_hint": "newest linking publication month"
   }

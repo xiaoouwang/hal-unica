@@ -6,6 +6,43 @@
   },
   "publications": [
     {
+      "halId_s": "hal-05374840",
+      "uri_s": "https://hal.science/hal-05374840v2",
+      "title_s": "Heading Toward Apertures Using Panoramic Optic Flow for Aerial Exploration",
+      "docType_s": "ART",
+      "doiId_s": "10.1080/01691864.2026.2667369",
+      "laboratories": [
+        "ISM",
+        "AMU",
+        "CNRS",
+        "LIB",
+        "UBE",
+        "UB",
+        "LCFC",
+        "UL",
+        "Lab-STICC_ROBEX",
+        "Lab-STICC"
+      ],
+      "modifiedDate_tdate": "2026-11-16T12:37:28Z",
+      "producedDateY_i": 2026,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/MEV4FF",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/MEV4FF",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Simulated exploration of unknown environment by OF-shape based regulation on fully actuated hexarotor",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
       "halId_s": "hal-05279443",
       "uri_s": "https://hal.science/hal-05279443v2",
       "title_s": "Human emotional odours influence horses’ behaviour and physiology",
@@ -2077,43 +2114,6 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/VWYUEB",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "Dataset from a long-term experiment on the effect of cropping systems and tillage on soil organic carbon, total nitrogen, microbial biomass carbon and nitrogen mineralization rate",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-05374840",
-      "uri_s": "https://hal.science/hal-05374840v2",
-      "title_s": "Heading Toward Apertures Using Panoramic Optic Flow for Aerial Exploration",
-      "docType_s": "ART",
-      "doiId_s": "10.1080/01691864.2026.2667369",
-      "laboratories": [
-        "ISM",
-        "AMU",
-        "CNRS",
-        "LIB",
-        "UBE",
-        "UB",
-        "LCFC",
-        "UL",
-        "Lab-STICC_ROBEX",
-        "Lab-STICC"
-      ],
-      "modifiedDate_tdate": "2026-07-10T11:46:36Z",
-      "producedDateY_i": 2025,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/MEV4FF",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/MEV4FF",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Simulated exploration of unknown environment by OF-shape based regulation on fully actuated hexarotor",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
