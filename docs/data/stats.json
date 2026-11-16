@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T12:52:26Z",
+  "generated_at": "2026-11-16T18:32:08Z",
   "collection": "UNIV-COTEDAZUR",
   "collection_url": "https://hal.science/UNIV-COTEDAZUR",
   "harvest": {
@@ -4380,7 +4380,7 @@
               "title_s": "Towards 0.1mm/yr stability over decades for measuring sea level using tide gauges together with GNSS-based instruments?",
               "uri_s": "https://hal-obspm.ccsd.cnrs.fr/obspm-05218404v1",
               "producedDateY_i": 2026,
-              "producedDateM_i": 10
+              "producedDateM_i": 11
             }
           ]
         },
@@ -4397,7 +4397,7 @@
               "title_s": "Towards 0.1mm/yr stability over decades for measuring sea level using tide gauges together with GNSS-based instruments?",
               "uri_s": "https://hal-obspm.ccsd.cnrs.fr/obspm-05218404v1",
               "producedDateY_i": 2026,
-              "producedDateM_i": 10
+              "producedDateM_i": 11
             }
           ]
         }
@@ -7253,8 +7253,8 @@
         3,
         3,
         5,
-        7,
-        1,
+        5,
+        3,
         0
       ],
       "series": [
@@ -7451,8 +7451,8 @@
             0,
             0,
             0,
-            2,
             0,
+            2,
             0
           ]
         },
@@ -7867,7 +7867,7 @@
           "month": 10
         }
       ],
-      "2026-10|Mercator Ocean / Copernicus Marine": [
+      "2026-11|Mercator Ocean / Copernicus Marine": [
         {
           "dataset_doi": "10.48670/moi-00242",
           "dataset_title": "Global Ocean Sea Surface Temperature time series and trend from Observations Reprocessing",
@@ -7881,10 +7881,10 @@
               "title_s": "Towards 0.1mm/yr stability over decades for measuring sea level using tide gauges together with GNSS-based instruments?",
               "uri_s": "https://hal-obspm.ccsd.cnrs.fr/obspm-05218404v1",
               "producedDateY_i": 2026,
-              "producedDateM_i": 10
+              "producedDateM_i": 11
             }
           ],
-          "month": 10
+          "month": 11
         },
         {
           "dataset_doi": "10.48670/moi-00268",
@@ -7899,10 +7899,10 @@
               "title_s": "Towards 0.1mm/yr stability over decades for measuring sea level using tide gauges together with GNSS-based instruments?",
               "uri_s": "https://hal-obspm.ccsd.cnrs.fr/obspm-05218404v1",
               "producedDateY_i": 2026,
-              "producedDateM_i": 10
+              "producedDateM_i": 11
             }
           ],
-          "month": 10
+          "month": 11
         }
       ],
       "2026-05|Recherche Data Gouv": [

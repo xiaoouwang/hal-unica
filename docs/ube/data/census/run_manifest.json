@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T12:52:27Z",
+  "generated_at": "2026-11-16T18:32:09Z",
   "collection": "UNIV-BOURGOGNE",
   "hal_api": "https://api.archives-ouvertes.fr/search/UNIV-BOURGOGNE/",
   "hal_query": "(relatedData_s:*) OR (relatedSoftware_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)",
@@ -9,11 +9,11 @@
     "seeAlso_s"
   ],
   "expected_dataset_field": "relatedData_s",
-  "since": "2026-11-14T12:52:26Z",
+  "since": "2026-11-14T18:32:08Z",
   "watermark_modified": "2026-11-16T13:42:02Z",
   "datacite_api": "https://api.datacite.org/dois/{doi}",
-  "started_at": "2026-11-16T12:52:26Z",
-  "finished_at": "2026-11-16T12:52:27Z",
+  "started_at": "2026-11-16T18:32:08Z",
+  "finished_at": "2026-11-16T18:32:09Z",
   "artifacts": {
     "publications_jsonl": "data/ube/census/publications_related_data.jsonl",
     "doi_resolutions_jsonl": "data/ube/census/doi_resolutions.jsonl",
