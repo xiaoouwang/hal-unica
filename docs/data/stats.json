@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T18:32:08Z",
+  "generated_at": "2026-11-17T13:34:42Z",
   "collection": "UNIV-COTEDAZUR",
   "collection_url": "https://hal.science/UNIV-COTEDAZUR",
   "harvest": {
@@ -296,13 +296,13 @@
     "stale": true
   },
   "data_links": {
-    "total_hits": 242,
+    "total_hits": 243,
     "by_platform": {
       "nakala": 9,
       "rdg": 39
     },
     "by_repository": {
-      "Zenodo": 105,
+      "Zenodo": 106,
       "Recherche Data Gouv": 49,
       "SEANOE": 15,
       "Sismer": 10,
@@ -364,7 +364,7 @@
           "UJM",
           "UJM EPE"
         ],
-        "modifiedDate_tdate": "2026-11-16T03:22:11Z",
+        "modifiedDate_tdate": "2026-11-17T03:26:59Z",
         "producedDateY_i": 2025,
         "repositories": [
           "NAKALA"
@@ -2332,10 +2332,10 @@
     "scope": "nakala_rdg_focus"
   },
   "census_chart": {
-    "unique_datasets": 242,
-    "publications_with_dataset": 165,
+    "unique_datasets": 243,
+    "publications_with_dataset": 166,
     "by_repository": {
-      "Zenodo": 105,
+      "Zenodo": 106,
       "Recherche Data Gouv": 49,
       "SEANOE": 15,
       "Sismer": 10,
@@ -2493,7 +2493,7 @@
         36,
         34,
         72,
-        34
+        35
       ],
       "series": [
         {
@@ -2522,7 +2522,7 @@
             11,
             10,
             25,
-            20
+            21
           ]
         },
         {
@@ -3079,6 +3079,23 @@
               "uri_s": "https://hal.science/hal-05764001v1",
               "producedDateY_i": 2026,
               "producedDateM_i": 7
+            }
+          ]
+        },
+        {
+          "dataset_doi": "10.5281/zenodo.18163632",
+          "dataset_title": "GWTC-4.0: Searches for Gravitational-Wave Lensing Signatures",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.18163632",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05503589",
+              "title_s": "GWTC-4.0: Searches for Gravitational-Wave Lensing Signatures",
+              "uri_s": "https://hal.science/hal-05503589v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 11
             }
           ]
         },
@@ -4590,7 +4607,7 @@
               "title_s": "Insights into early animal evolution from the genome of the xenacoelomorph worm Xenoturbella bocki",
               "uri_s": "https://hal.science/hal-04791315v1",
               "producedDateY_i": 2024,
-              "producedDateM_i": 9
+              "producedDateM_i": 11
             }
           ]
         },
@@ -7254,7 +7271,7 @@
         3,
         5,
         5,
-        3,
+        4,
         0
       ],
       "series": [
@@ -7272,7 +7289,7 @@
             2,
             4,
             1,
-            1,
+            2,
             0
           ]
         },
@@ -7494,10 +7511,48 @@
         }
       ],
       "period_kind": "month",
-      "datasets_in_year": 34,
+      "datasets_in_year": 35,
       "unknown_month": 0
     },
     "cell_details_months": {
+      "2026-11|Zenodo": [
+        {
+          "dataset_doi": "10.5281/zenodo.21997204",
+          "dataset_title": "Data release for paper \"Sub-Torque-Balance Upper Limits on Continuous Gravitational Waves from Scorpius X-1\"",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.21997204",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05743968",
+              "title_s": "Sub-Torque-Balance Upper Limits on Continuous Gravitational Waves from Scorpius X-1",
+              "uri_s": "https://hal.science/hal-05743968v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 11
+            }
+          ],
+          "month": 11
+        },
+        {
+          "dataset_doi": "10.5281/zenodo.18163632",
+          "dataset_title": "GWTC-4.0: Searches for Gravitational-Wave Lensing Signatures",
+          "repository": "Zenodo",
+          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.18163632",
+          "landing_host": "zenodo.org",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05503589",
+              "title_s": "GWTC-4.0: Searches for Gravitational-Wave Lensing Signatures",
+              "uri_s": "https://hal.science/hal-05503589v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 11
+            }
+          ],
+          "month": 11
+        }
+      ],
       "2026-07|Zenodo": [
         {
           "dataset_doi": "10.5281/zenodo.20312978",
@@ -7552,26 +7607,6 @@
             }
           ],
           "month": 7
-        }
-      ],
-      "2026-11|Zenodo": [
-        {
-          "dataset_doi": "10.5281/zenodo.21997204",
-          "dataset_title": "Data release for paper \"Sub-Torque-Balance Upper Limits on Continuous Gravitational Waves from Scorpius X-1\"",
-          "repository": "Zenodo",
-          "landing_url": "https://zenodo.org/doi/10.5281/zenodo.21997204",
-          "landing_host": "zenodo.org",
-          "year": 2026,
-          "publications": [
-            {
-              "halId_s": "hal-05743968",
-              "title_s": "Sub-Torque-Balance Upper Limits on Continuous Gravitational Waves from Scorpius X-1",
-              "uri_s": "https://hal.science/hal-05743968v1",
-              "producedDateY_i": 2026,
-              "producedDateM_i": 11
-            }
-          ],
-          "month": 11
         }
       ],
       "2026-05|Epos-France Seismological Data Center": [
@@ -8162,7 +8197,7 @@
         }
       ]
     },
-    "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 34 datasets in 2026. Click a segment to list datasets.",
+    "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 35 datasets in 2026. Click a segment to list datasets.",
     "segment_hint": "newest linking publication year",
     "months_segment_hint": "newest linking publication month"
   }

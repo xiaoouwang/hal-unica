@@ -1,25 +1,25 @@
 {
   "collection": "UNIV-COTEDAZUR",
-  "started_at": "2026-11-16T18:31:45Z",
-  "finished_at": "2026-11-16T18:31:46Z",
-  "since": "2026-11-14T18:31:45Z",
-  "hal_publications_with_relatedData": 329,
-  "related_tokens": 526,
-  "unique_dois_resolved": 399,
-  "publications_with_dataset_repo_landing": 165,
+  "started_at": "2026-11-17T13:34:16Z",
+  "finished_at": "2026-11-17T13:34:18Z",
+  "since": "2026-11-15T13:34:16Z",
+  "hal_publications_with_relatedData": 330,
+  "related_tokens": 527,
+  "unique_dois_resolved": 400,
+  "publications_with_dataset_repo_landing": 166,
   "misfiled_dataset_links": 73,
   "publications_with_misfiled_dataset_link": 54,
   "expected_dataset_field": "relatedData_s",
   "incremental": {
-    "pubs_fetched": 14,
-    "pubs_updated": 14,
-    "pubs_inserted": 0,
-    "dois_resolved_live": 0,
+    "pubs_fetched": 7,
+    "pubs_updated": 6,
+    "pubs_inserted": 1,
+    "dois_resolved_live": 1,
     "dois_from_cache": 399,
-    "watermark_modified": "2026-11-16T16:53:32Z"
+    "watermark_modified": "2026-11-17T14:29:17Z"
   },
   "by_repository": {
-    "Zenodo": 106,
+    "Zenodo": 107,
     "Recherche Data Gouv": 60,
     "Journal DOI (10.1007)": 31,
     "Journal DOI (10.1109)": 20,
@@ -111,13 +111,13 @@
     "University of Bristol data.bris": 1
   },
   "by_object_kind": {
-    "dataset_repo": 258,
+    "dataset_repo": 259,
     "other": 4,
     "publication_landing": 111,
     "unresolved": 47
   },
   "by_doi_prefix": {
-    "10.5281": 105,
+    "10.5281": 106,
     "10.57745": 47,
     "10.17882": 15,
     "10.15454": 13,
@@ -160,7 +160,7 @@
     "10.82180": 1
   },
   "by_landing_host": {
-    "zenodo.org": 105,
+    "zenodo.org": 106,
     "entrepot.recherche.data.gouv.fr": 48,
     "seanoe.org": 15,
     "campagnes.flotteoceanographique.fr": 11,
@@ -208,18 +208,18 @@
     "www2.dijon.inrae.fr": 1
   },
   "by_token_kind": {
-    "doi": 420,
+    "doi": 421,
     "hal_id": 56,
     "other": 4,
     "url": 46
   },
   "by_source_field": {
     "relatedPublication_s": 274,
-    "relatedData_s": 197,
+    "relatedData_s": 198,
     "seeAlso_s": 55
   },
   "by_dataset_source_field": {
-    "relatedData_s": 184,
+    "relatedData_s": 185,
     "relatedPublication_s": 71,
     "seeAlso_s": 3
   }
