@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-11-17T17:37:18Z`  
+Generated: `2026-11-18T13:09:48Z`  
 Collection: `UNIV-COTEDAZUR`  
-Run window: `2026-11-17T17:37:17Z` → `2026-11-17T17:37:18Z`
+Run window: `2026-11-18T13:09:44Z` → `2026-11-18T13:09:48Z`
 
 ## Goal
 
@@ -53,22 +53,22 @@ repository root `README.md`.
 
 ## Counts (this run)
 
-- HAL notices with linked identifiers: **330**
-- Related tokens: **527**
-- Unique DOIs resolved: **400**
-- Publications with at least one dataset-repo landing: **166**
-- Misfiled dataset links (wrong HAL field): **73**
-- Publications with ≥1 misfiled dataset link: **54**
+- HAL notices with linked identifiers: **331**
+- Related tokens: **528**
+- Unique DOIs resolved: **401**
+- Publications with at least one dataset-repo landing: **167**
+- Misfiled dataset links (wrong HAL field): **74**
+- Publications with ≥1 misfiled dataset link: **55**
 
 ### Dataset DOIs by HAL source field
 
 - **`relatedData_s`**: 185
-- **`relatedPublication_s`**: 71
+- **`relatedPublication_s`**: 72
 - **`seeAlso_s`**: 3
 
 ### By repository (DOI evidence)
 
-- **Zenodo**: 107
+- **Zenodo**: 108
 - **Recherche Data Gouv**: 60
 - **Journal DOI (10.1007)**: 31
 - **Journal DOI (10.1109)**: 20
@@ -161,7 +161,7 @@ repository root `README.md`.
 
 ### By landing host
 
-- `zenodo.org`: 106
+- `zenodo.org`: 107
 - `entrepot.recherche.data.gouv.fr`: 48
 - `seanoe.org`: 15
 - `campagnes.flotteoceanographique.fr`: 11

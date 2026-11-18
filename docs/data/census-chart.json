@@ -1,8 +1,8 @@
 {
-  "unique_datasets": 243,
-  "publications_with_dataset": 166,
+  "unique_datasets": 244,
+  "publications_with_dataset": 167,
   "by_repository": {
-    "Zenodo": 106,
+    "Zenodo": 107,
     "Recherche Data Gouv": 49,
     "SEANOE": 15,
     "Sismer": 10,
@@ -160,7 +160,7 @@
       36,
       34,
       72,
-      35
+      36
     ],
     "series": [
       {
@@ -189,7 +189,7 @@
           11,
           10,
           25,
-          21
+          22
         ]
       },
       {
@@ -593,6 +593,23 @@
             "uri_s": "https://hal.science/hal-05753637v1",
             "producedDateY_i": 2026,
             "producedDateM_i": 9
+          }
+        ]
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.21806418",
+        "dataset_title": "Data and code for \"SPIRou near-infrared spectropolarimetry of the ultra-hot Jupiter KELT-9b: tentative detection of the planet magnetic field?\"",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.21806418",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05868179",
+            "title_s": "SPIRou near-infrared spectropolarimetry of the ultra-hot Jupiter KELT-9b: Tentative detection of the planet’s magnetic field",
+            "uri_s": "https://hal.science/hal-05868179v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 10
           }
         ]
       },
@@ -4937,7 +4954,7 @@
       3,
       3,
       5,
-      5,
+      6,
       4,
       0
     ],
@@ -4955,7 +4972,7 @@
           3,
           2,
           4,
-          1,
+          2,
           2,
           0
         ]
@@ -5178,10 +5195,48 @@
       }
     ],
     "period_kind": "month",
-    "datasets_in_year": 35,
+    "datasets_in_year": 36,
     "unknown_month": 0
   },
   "cell_details_months": {
+    "2026-10|Zenodo": [
+      {
+        "dataset_doi": "10.5281/zenodo.21806418",
+        "dataset_title": "Data and code for \"SPIRou near-infrared spectropolarimetry of the ultra-hot Jupiter KELT-9b: tentative detection of the planet magnetic field?\"",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.21806418",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05868179",
+            "title_s": "SPIRou near-infrared spectropolarimetry of the ultra-hot Jupiter KELT-9b: Tentative detection of the planet’s magnetic field",
+            "uri_s": "https://hal.science/hal-05868179v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 10
+          }
+        ],
+        "month": 10
+      },
+      {
+        "dataset_doi": "10.5281/zenodo.17913085",
+        "dataset_title": "Data for Extreme statistics as a probe of the superfluid to Bose-glass Berezinskii-Kosterlitz-Thouless transition",
+        "repository": "Zenodo",
+        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17913085",
+        "landing_host": "zenodo.org",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05412001",
+            "title_s": "Extreme statistics as a probe of the superfluid to Bose-glass Berezinskii-Kosterlitz-Thouless transition",
+            "uri_s": "https://hal.science/hal-05412001v1",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 10
+          }
+        ],
+        "month": 10
+      }
+    ],
     "2026-11|Zenodo": [
       {
         "dataset_doi": "10.5281/zenodo.21997204",
@@ -5549,26 +5604,6 @@
         "month": 3
       }
     ],
-    "2026-10|Zenodo": [
-      {
-        "dataset_doi": "10.5281/zenodo.17913085",
-        "dataset_title": "Data for Extreme statistics as a probe of the superfluid to Bose-glass Berezinskii-Kosterlitz-Thouless transition",
-        "repository": "Zenodo",
-        "landing_url": "https://zenodo.org/doi/10.5281/zenodo.17913085",
-        "landing_host": "zenodo.org",
-        "year": 2026,
-        "publications": [
-          {
-            "halId_s": "hal-05412001",
-            "title_s": "Extreme statistics as a probe of the superfluid to Bose-glass Berezinskii-Kosterlitz-Thouless transition",
-            "uri_s": "https://hal.science/hal-05412001v1",
-            "producedDateY_i": 2026,
-            "producedDateM_i": 10
-          }
-        ],
-        "month": 10
-      }
-    ],
     "2026-11|Mercator Ocean / Copernicus Marine": [
       {
         "dataset_doi": "10.48670/moi-00242",
@@ -5864,7 +5899,7 @@
       }
     ]
   },
-  "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 35 datasets in 2026. Click a segment to list datasets.",
+  "months_note": "Same dataset DOIs whose newest linking publication year is 2026, broken down by production month (producedDate_s / producedDateM_i; falls back to modifiedDate month when the notice only stores a year). 36 datasets in 2026. Click a segment to list datasets.",
   "segment_hint": "newest linking publication year",
   "months_segment_hint": "newest linking publication month"
 }
