@@ -1,8 +1,8 @@
 # Related-data repository census — methodology
 
-Generated: `2026-11-18T17:15:17Z`  
+Generated: `2026-11-19T13:23:38Z`  
 Collection: `UNIV-COTEDAZUR`  
-Run window: `2026-11-18T17:15:16Z` → `2026-11-18T17:15:17Z`
+Run window: `2026-11-19T13:23:37Z` → `2026-11-19T13:23:38Z`
 
 ## Goal
 

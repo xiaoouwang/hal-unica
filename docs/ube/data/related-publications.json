@@ -6,6 +6,42 @@
   },
   "publications": [
     {
+      "halId_s": "hal-05444500",
+      "uri_s": "https://inria.hal.science/hal-05444500v1",
+      "title_s": "Gaussian Splatting Map Registration with Orthographic Bird's-Eye-View Renderings",
+      "docType_s": "COMM",
+      "doiId_s": null,
+      "laboratories": [
+        "TANGRAM",
+        "Inria",
+        "LORIA - ALGO",
+        "LORIA",
+        "UL",
+        "CNRS",
+        "ICB",
+        "UTBM",
+        "UBE"
+      ],
+      "modifiedDate_tdate": "2026-11-18T19:21:17Z",
+      "producedDateY_i": 2026,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/ESBF7R",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/ESBF7R",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Gaussian Splatting Map Registration with Orthographic Bird’s-Eye-View Renderings",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
       "halId_s": "hal-05374840",
       "uri_s": "https://hal.science/hal-05374840v2",
       "title_s": "Heading Toward Apertures Using Panoramic Optic Flow for Aerial Exploration",
@@ -1475,42 +1511,6 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/DYIVVU",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "PFSeq: Photorealistic Fisheye Sequence",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-05444500",
-      "uri_s": "https://inria.hal.science/hal-05444500v1",
-      "title_s": "Gaussian Splatting Map Registration with Orthographic Bird's-Eye-View Renderings",
-      "docType_s": "COMM",
-      "doiId_s": null,
-      "laboratories": [
-        "TANGRAM",
-        "Inria",
-        "LORIA - ALGO",
-        "LORIA",
-        "UL",
-        "CNRS",
-        "ICB",
-        "UTBM",
-        "UBE"
-      ],
-      "modifiedDate_tdate": "2026-09-22T03:34:05Z",
-      "producedDateY_i": 2026,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/ESBF7R",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/ESBF7R",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Gaussian Splatting Map Registration with Orthographic Bird’s-Eye-View Renderings",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false

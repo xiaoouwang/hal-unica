@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T17:15:41Z",
+  "generated_at": "2026-11-19T13:24:09Z",
   "collection": "UNIV-COTEDAZUR",
   "collection_url": "https://hal.science/UNIV-COTEDAZUR",
   "harvest": {
@@ -364,7 +364,7 @@
           "UJM",
           "UJM EPE"
         ],
-        "modifiedDate_tdate": "2026-11-18T03:26:52Z",
+        "modifiedDate_tdate": "2026-11-19T03:35:12Z",
         "producedDateY_i": 2025,
         "repositories": [
           "NAKALA"
@@ -4677,7 +4677,7 @@
               "title_s": "Reconstruction of nearshore surface gravity wave heights from distributed acoustic sensing data",
               "uri_s": "https://hal.science/hal-04829691v1",
               "producedDateY_i": 2024,
-              "producedDateM_i": 10
+              "producedDateM_i": 11
             }
           ]
         },
