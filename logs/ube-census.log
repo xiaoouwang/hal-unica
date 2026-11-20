@@ -1,13 +1,13 @@
 university=ube collection=UNIV-BOURGOGNE site=docs/ube
-incremental census since=2026-11-17T17:23:10Z (existing pubs=271, doi cache=310)
-[2026-11-19T17:23:10Z] census start collection=UNIV-BOURGOGNE since=2026-11-17T17:23:10Z
+incremental census since=2026-11-18T13:04:11Z (existing pubs=271, doi cache=310)
+[2026-11-20T13:04:11Z] census start collection=UNIV-BOURGOGNE since=2026-11-18T13:04:11Z
 HAL publications with linked identifiers (merged): 271
   query: (relatedData_s:*) OR (relatedSoftware_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)
-  fetched this run: 12 (updated=12, inserted=0)
+  fetched this run: 13 (updated=13, inserted=0)
 link tokens: 396
 unique DOI candidates: 310
 DataCite cache hits: 310; to resolve: 0
-[2026-11-19T17:23:11Z] census done
+[2026-11-20T13:04:12Z] census done
 harvesting SOFTWARE deposits (full)
 listing publications with dataset + software (open science triptych)
 open science triptych publications=4
@@ -15,9 +15,9 @@ harvesting data papers (docSubType_s:DATAPAPER)
 updated dataset→publications index
 synced focus links → data/ube/links.jsonl (96 hits)
 harvesting institutional DataCite datasets (affiliation / ROR)
-[2026-11-19T17:23:15Z] datacite census start university=ube
+[2026-11-20T13:04:16Z] datacite census start university=ube
   query: (creators.affiliation.affiliationIdentifier:"https://ror.org/00g700j37" OR contributors.affiliation.affiliationIdentifier:"https://ror.org/00g700j37" OR creators.affiliation.name:"Université Bourgogne Europe" OR contributors.affiliation.name:"Université Bourgogne Europe" OR creators.affiliation.name:"Universite Bourgogne Europe" OR contributors.affiliation.name:"Universite Bourgogne Europe" OR creators.affiliation.name:"Université de Bourgogne" OR contributors.affiliation.name:"Université de Bourgogne" OR creators.affiliation.name:"Universite de Bourgogne" OR contributors.affiliation.name:"Universite de Bourgogne" OR creators.affiliation.name:"University of Burgundy" OR contributors.affiliation.name:"University of Burgundy") AND types.resourceTypeGeneral:Dataset
-  DataCite numFound≈861
-  harvested unique DOIs=861
-DataCite datasets=861 also_on_hal=7 datacite_only=854
+  DataCite numFound≈862
+  harvested unique DOIs=862
+DataCite datasets=862 also_on_hal=7 datacite_only=855
 wrote site → docs/ube/

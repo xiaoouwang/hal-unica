@@ -2810,7 +2810,7 @@
             "title_s": "Colonization and spatiotemporal distribution of bruchid pests in lentil and faba bean fields",
             "uri_s": "https://hal.inrae.fr/hal-05526495v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 9
+            "producedDateM_i": 11
           }
         ]
       }
@@ -3904,9 +3904,9 @@
       0,
       1,
       1,
-      2,
+      1,
       7,
-      2,
+      3,
       0
     ],
     "series": [
@@ -3922,9 +3922,9 @@
           0,
           1,
           1,
-          1,
           0,
-          1,
+          0,
+          2,
           0
         ]
       },
@@ -4306,7 +4306,25 @@
         "month": 8
       }
     ],
-    "2026-09|Recherche Data Gouv": [
+    "2026-11|Recherche Data Gouv": [
+      {
+        "dataset_doi": "10.57745/T2RTDR",
+        "dataset_title": "Human emotional odours influence horses’ behaviour and physiology",
+        "repository": "Recherche Data Gouv",
+        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/T2RTDR",
+        "landing_host": "entrepot.recherche.data.gouv.fr",
+        "year": 2026,
+        "publications": [
+          {
+            "halId_s": "hal-05279443",
+            "title_s": "Human emotional odours influence horses’ behaviour and physiology",
+            "uri_s": "https://hal.science/hal-05279443v2",
+            "producedDateY_i": 2026,
+            "producedDateM_i": 11
+          }
+        ],
+        "month": 11
+      },
       {
         "dataset_doi": "10.57745/HPEMYW",
         "dataset_title": "Spatio-temporal field, landscape and meteorological datasets describing bruchid beetle populations, grain damage and parasitism in faba bean and lentil fields in France",
@@ -4320,10 +4338,10 @@
             "title_s": "Colonization and spatiotemporal distribution of bruchid pests in lentil and faba bean fields",
             "uri_s": "https://hal.inrae.fr/hal-05526495v1",
             "producedDateY_i": 2026,
-            "producedDateM_i": 9
+            "producedDateM_i": 11
           }
         ],
-        "month": 9
+        "month": 11
       }
     ],
     "2026-03|data.InDoRES": [
@@ -4440,26 +4458,6 @@
           }
         ],
         "month": 2
-      }
-    ],
-    "2026-11|Recherche Data Gouv": [
-      {
-        "dataset_doi": "10.57745/T2RTDR",
-        "dataset_title": "Human emotional odours influence horses’ behaviour and physiology",
-        "repository": "Recherche Data Gouv",
-        "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/T2RTDR",
-        "landing_host": "entrepot.recherche.data.gouv.fr",
-        "year": 2026,
-        "publications": [
-          {
-            "halId_s": "hal-05279443",
-            "title_s": "Human emotional odours influence horses’ behaviour and physiology",
-            "uri_s": "https://hal.science/hal-05279443v2",
-            "producedDateY_i": 2026,
-            "producedDateM_i": 11
-          }
-        ],
-        "month": 11
       }
     ],
     "2026-04|Recherche Data Gouv": [

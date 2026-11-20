@@ -6,6 +6,43 @@
   },
   "publications": [
     {
+      "halId_s": "hal-05526495",
+      "uri_s": "https://hal.inrae.fr/hal-05526495v1",
+      "title_s": "Colonization and spatiotemporal distribution of bruchid pests in lentil and faba bean fields",
+      "docType_s": "ART",
+      "doiId_s": "10.1002/ps.70679",
+      "laboratories": [
+        "ENSFEA",
+        "AGIR",
+        "Toulouse INP",
+        "Comue de Toulouse",
+        "INRAE",
+        "EI Purpan",
+        "Agronomie",
+        "IGEPP",
+        "UR",
+        "Institut Agro"
+      ],
+      "modifiedDate_tdate": "2026-11-20T10:50:05Z",
+      "producedDateY_i": 2026,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/HPEMYW",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/HPEMYW",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Spatio-temporal field, landscape and meteorological datasets describing bruchid beetle populations, grain damage and parasitism in faba bean and lentil fields in France",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
       "halId_s": "hal-05444500",
       "uri_s": "https://inria.hal.science/hal-05444500v1",
       "title_s": "Gaussian Splatting Map Registration with Orthographic Bird's-Eye-View Renderings",
@@ -1128,43 +1165,6 @@
           "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/QSXKGA",
           "landing_host": "data.inrae.fr",
           "dataset_title": "Analyses physico-chimiques des sites du Réseau de Mesures de la Qualité des Sols (RMQS) du territoire métropolitain pour la 1ère campagne (2000-2009), avec coordonnées théoriques",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-05526495",
-      "uri_s": "https://hal.inrae.fr/hal-05526495v1",
-      "title_s": "Colonization and spatiotemporal distribution of bruchid pests in lentil and faba bean fields",
-      "docType_s": "ART",
-      "doiId_s": "10.1002/ps.70679",
-      "laboratories": [
-        "ENSFEA",
-        "AGIR",
-        "Toulouse INP",
-        "Comue de Toulouse",
-        "INRAE",
-        "EI Purpan",
-        "Agronomie",
-        "IGEPP",
-        "UR",
-        "Institut Agro"
-      ],
-      "modifiedDate_tdate": "2026-09-29T11:14:09Z",
-      "producedDateY_i": 2026,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/HPEMYW",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/HPEMYW",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Spatio-temporal field, landscape and meteorological datasets describing bruchid beetle populations, grain damage and parasitism in faba bean and lentil fields in France",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
