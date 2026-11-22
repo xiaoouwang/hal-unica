@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-22T12:37:52Z",
-  "unique_datasets": 241,
-  "dataset_publication_links": 257,
+  "generated_at": "2026-11-22T16:17:01Z",
+  "unique_datasets": 243,
+  "dataset_publication_links": 259,
   "datasets_with_multiple_publications": 12,
   "by_repository": {
-    "Zenodo": 105,
-    "Recherche Data Gouv": 48,
+    "Zenodo": 106,
+    "Recherche Data Gouv": 49,
     "SEANOE": 15,
     "Sismer": 10,
     "SEDOO / Theia": 9,
