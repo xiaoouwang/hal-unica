@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T14:50:14Z",
+  "generated_at": "2026-11-23T20:13:56Z",
   "collection": "UNIV-COTEDAZUR",
   "collection_url": "https://hal.science/UNIV-COTEDAZUR",
   "harvest": {
@@ -347,6 +347,41 @@
     },
     "publications": [
       {
+        "halId_s": "hal-04130380",
+        "uri_s": "https://hal.science/hal-04130380v1",
+        "title_s": "Temporal Brain Networks Dataset",
+        "docType_s": "POSTER",
+        "doiId_s": null,
+        "laboratories": [
+          "COATI",
+          "Inria",
+          "Laboratoire I3S - COMRED",
+          "I3S",
+          "UNS",
+          "CNRS",
+          "UniCA",
+          "CRONOS"
+        ],
+        "modifiedDate_tdate": "2026-11-23T16:50:02Z",
+        "producedDateY_i": 2023,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/PR8VUV",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/PR8VUV",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Temporal Brain Networks",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
         "halId_s": "hal-05114056",
         "uri_s": "https://hal.science/hal-05114056v2",
         "title_s": "Le Rhône aménagé vu du ciel. Constitution d'une base de données photographiques obliques pour documenter la trajectoire socio-environnementale du fleuve contemporain (1910-1960)",
@@ -682,41 +717,6 @@
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/XDVEQW",
             "landing_host": "entrepot.recherche.data.gouv.fr",
             "dataset_title": "Curated sequences of cytochrome P450 from Spodoptera frugiperda rice strain",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-04130380",
-        "uri_s": "https://hal.science/hal-04130380v1",
-        "title_s": "Temporal Brain Networks Dataset",
-        "docType_s": "POSTER",
-        "doiId_s": null,
-        "laboratories": [
-          "COATI",
-          "Inria",
-          "Laboratoire I3S - COMRED",
-          "I3S",
-          "UNS",
-          "CNRS",
-          "UniCA",
-          "CRONOS"
-        ],
-        "modifiedDate_tdate": "2026-10-27T09:36:01Z",
-        "producedDateY_i": 2023,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.57745/PR8VUV",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/PR8VUV",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "Temporal Brain Networks",
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
