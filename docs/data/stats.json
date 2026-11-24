@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T20:13:56Z",
+  "generated_at": "2026-11-24T14:57:08Z",
   "collection": "UNIV-COTEDAZUR",
   "collection_url": "https://hal.science/UNIV-COTEDAZUR",
   "harvest": {
@@ -347,6 +347,117 @@
     },
     "publications": [
       {
+        "halId_s": "hal-05221870",
+        "uri_s": "https://hal.science/hal-05221870v2",
+        "title_s": "Enquête sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
+        "docType_s": "REPORT",
+        "doiId_s": null,
+        "laboratories": [
+          "Comue de Toulouse",
+          "ADBU",
+          "UBE",
+          "dat@UBFC",
+          "UTBM",
+          "SUPMICROTECH - ENSMM",
+          "BSB",
+          "Institut Agro",
+          "UMLP",
+          "UPPA"
+        ],
+        "modifiedDate_tdate": "2026-11-24T12:03:04Z",
+        "producedDateY_i": 2025,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/JYWUIY",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/JYWUIY",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Données de l'enquête ADBU sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-05114056",
+        "uri_s": "https://hal.science/hal-05114056v2",
+        "title_s": "Le Rhône aménagé vu du ciel. Constitution d'une base de données photographiques obliques pour documenter la trajectoire socio-environnementale du fleuve contemporain (1910-1960)",
+        "docType_s": "ART",
+        "doiId_s": "10.46298/dc.15880",
+        "laboratories": [
+          "EVS",
+          "ENS de Lyon",
+          "Mines Saint-Étienne MSE",
+          "IMT",
+          "UL2",
+          "UJML",
+          "INSA Lyon",
+          "INSA",
+          "UJM",
+          "UJM EPE"
+        ],
+        "modifiedDate_tdate": "2026-11-24T03:28:19Z",
+        "producedDateY_i": 2025,
+        "repositories": [
+          "NAKALA"
+        ],
+        "datasets": [
+          {
+            "doi": "10.34847/nkl.e63a22n9",
+            "repository": "NAKALA",
+            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+            "landing_url": "https://nakala.fr/10.34847/nkl.e63a22n9",
+            "landing_host": "nakala.fr",
+            "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
+        "halId_s": "hal-05630218",
+        "uri_s": "https://hal.science/hal-05630218v1",
+        "title_s": "Towards Tsunami Early-Warning with Distributed Acoustic Sensing: Expected Seafloor Strains Induced by Tsunamis",
+        "docType_s": "ART",
+        "doiId_s": "10.1007/s00024-026-03940-1",
+        "laboratories": [
+          "GEOAZUR 7329",
+          "INSU - CNRS",
+          "UniCA",
+          "CNRS",
+          "IRD [Occitanie]",
+          "IRD",
+          "UAH",
+          "SIO - UC San Diego",
+          "UC San Diego",
+          "UC"
+        ],
+        "modifiedDate_tdate": "2026-11-23T21:27:16Z",
+        "producedDateY_i": 2026,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.57745/ENBAIS",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/ENBAIS",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Replication Data for: Towards tsunami early-warning with Distributed Acoustic Sensing: expected seafloor strains induced by tsunamis",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
         "halId_s": "hal-04130380",
         "uri_s": "https://hal.science/hal-04130380v1",
         "title_s": "Temporal Brain Networks Dataset",
@@ -375,43 +486,6 @@
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/PR8VUV",
             "landing_host": "entrepot.recherche.data.gouv.fr",
             "dataset_title": "Temporal Brain Networks",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-05114056",
-        "uri_s": "https://hal.science/hal-05114056v2",
-        "title_s": "Le Rhône aménagé vu du ciel. Constitution d'une base de données photographiques obliques pour documenter la trajectoire socio-environnementale du fleuve contemporain (1910-1960)",
-        "docType_s": "ART",
-        "doiId_s": "10.46298/dc.15880",
-        "laboratories": [
-          "EVS",
-          "ENS de Lyon",
-          "Mines Saint-Étienne MSE",
-          "IMT",
-          "UL2",
-          "UJML",
-          "INSA Lyon",
-          "INSA",
-          "UJM",
-          "UJM EPE"
-        ],
-        "modifiedDate_tdate": "2026-11-23T03:22:49Z",
-        "producedDateY_i": 2025,
-        "repositories": [
-          "NAKALA"
-        ],
-        "datasets": [
-          {
-            "doi": "10.34847/nkl.e63a22n9",
-            "repository": "NAKALA",
-            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-            "landing_url": "https://nakala.fr/10.34847/nkl.e63a22n9",
-            "landing_host": "nakala.fr",
-            "dataset_title": "Fichier de métadonnées enrichies d'une base de données photographiques obliques sur le fleuve Rhône et ses affluents (1919-1961)",
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -905,43 +979,6 @@
         ]
       },
       {
-        "halId_s": "hal-05630218",
-        "uri_s": "https://hal.science/hal-05630218v1",
-        "title_s": "Towards Tsunami Early-Warning with Distributed Acoustic Sensing: Expected Seafloor Strains Induced by Tsunamis",
-        "docType_s": "ART",
-        "doiId_s": "10.1007/s00024-026-03940-1",
-        "laboratories": [
-          "GEOAZUR 7329",
-          "INSU - CNRS",
-          "UniCA",
-          "CNRS",
-          "IRD [Occitanie]",
-          "IRD",
-          "UAH",
-          "SIO - UC San Diego",
-          "UC San Diego",
-          "UC"
-        ],
-        "modifiedDate_tdate": "2026-10-23T12:27:10Z",
-        "producedDateY_i": 2026,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.57745/ENBAIS",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/ENBAIS",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "Replication Data for: Towards tsunami early-warning with Distributed Acoustic Sensing: expected seafloor strains induced by tsunamis",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
         "halId_s": "hal-04251300",
         "uri_s": "https://hal.science/hal-04251300v1",
         "title_s": "Electrostatic modulation of excitonic fluid in GaN/AlGaN quantum wells by deposition of few-layer graphene and nickel/gold films",
@@ -1339,43 +1376,6 @@
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/FHNYJU",
             "landing_host": "entrepot.recherche.data.gouv.fr",
             "dataset_title": "Periconia digitata proteins identified by mass spectrometry",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-05221870",
-        "uri_s": "https://hal.science/hal-05221870v2",
-        "title_s": "Enquête sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
-        "docType_s": "REPORT",
-        "doiId_s": null,
-        "laboratories": [
-          "Comue de Toulouse",
-          "ADBU",
-          "UBE",
-          "dat@UBFC",
-          "UTBM",
-          "SUPMICROTECH - ENSMM",
-          "BSB",
-          "Institut Agro",
-          "UMLP",
-          "UPPA"
-        ],
-        "modifiedDate_tdate": "2026-10-14T16:06:03Z",
-        "producedDateY_i": 2025,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.57745/JYWUIY",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/JYWUIY",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "Données de l'enquête ADBU sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
@@ -3552,7 +3552,7 @@
               "title_s": "Towards Tsunami Early-Warning with Distributed Acoustic Sensing: Expected Seafloor Strains Induced by Tsunamis",
               "uri_s": "https://hal.science/hal-05630218v1",
               "producedDateY_i": 2026,
-              "producedDateM_i": 10
+              "producedDateM_i": 3
             }
           ]
         },
@@ -7261,14 +7261,14 @@
       "totals": [
         2,
         1,
-        2,
+        3,
         1,
         7,
         2,
         3,
         3,
         5,
-        6,
+        5,
         4,
         0
       ],
@@ -7297,14 +7297,14 @@
           "counts": [
             0,
             0,
-            0,
+            1,
             0,
             1,
             0,
             0,
             1,
             0,
-            2,
+            1,
             0,
             0
           ]
@@ -7741,24 +7741,6 @@
             }
           ],
           "month": 10
-        },
-        {
-          "dataset_doi": "10.57745/ENBAIS",
-          "dataset_title": "Replication Data for: Towards tsunami early-warning with Distributed Acoustic Sensing: expected seafloor strains induced by tsunamis",
-          "repository": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/ENBAIS",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "year": 2026,
-          "publications": [
-            {
-              "halId_s": "hal-05630218",
-              "title_s": "Towards Tsunami Early-Warning with Distributed Acoustic Sensing: Expected Seafloor Strains Induced by Tsunamis",
-              "uri_s": "https://hal.science/hal-05630218v1",
-              "producedDateY_i": 2026,
-              "producedDateM_i": 10
-            }
-          ],
-          "month": 10
         }
       ],
       "2026-09|Zenodo": [
@@ -8190,6 +8172,26 @@
             }
           ],
           "month": 6
+        }
+      ],
+      "2026-03|Recherche Data Gouv": [
+        {
+          "dataset_doi": "10.57745/ENBAIS",
+          "dataset_title": "Replication Data for: Towards tsunami early-warning with Distributed Acoustic Sensing: expected seafloor strains induced by tsunamis",
+          "repository": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/ENBAIS",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "year": 2026,
+          "publications": [
+            {
+              "halId_s": "hal-05630218",
+              "title_s": "Towards Tsunami Early-Warning with Distributed Acoustic Sensing: Expected Seafloor Strains Induced by Tsunamis",
+              "uri_s": "https://hal.science/hal-05630218v1",
+              "producedDateY_i": 2026,
+              "producedDateM_i": 3
+            }
+          ],
+          "month": 3
         }
       ],
       "2026-05|FDSN / seismic network": [

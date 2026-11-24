@@ -6,6 +6,206 @@
   },
   "publications": [
     {
+      "halId_s": "hal-03599614",
+      "uri_s": "https://hal.science/hal-03599614v1",
+      "title_s": "Campagne de fouille 2021 sur le système de fortification de Blis à Eymet (Dordogne)",
+      "docType_s": "REPORT",
+      "doiId_s": "10.34847/nkl.d59a61c2",
+      "laboratories": [
+        "IRAMAT-CRP2A",
+        "IRAMAT",
+        "UTBM",
+        "UO",
+        "UBM",
+        "CNRS",
+        "UB",
+        "ARTeHiS",
+        "MCC"
+      ],
+      "modifiedDate_tdate": "2026-11-24T12:06:47Z",
+      "producedDateY_i": 2022,
+      "repositories": [
+        "NAKALA"
+      ],
+      "datasets": [
+        {
+          "doi": "10.34847/nkl.1b988e6g",
+          "repository": "NAKALA",
+          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+          "landing_url": "https://nakala.fr/10.34847/nkl.1b988e6g",
+          "landing_host": "nakala.fr",
+          "dataset_title": "Fouille du plateau de Blis 2021, jeu de données",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.34847/nkl.d59a61c2",
+          "repository": "NAKALA",
+          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+          "landing_url": "https://nakala.fr/10.34847/nkl.d59a61c2",
+          "landing_host": "nakala.fr",
+          "dataset_title": "Fouille du plateau de Blis 2021, rapport final d'opération",
+          "field": "seeAlso_s",
+          "misfiled": true,
+          "also_in_relatedData_s": false
+        },
+        {
+          "doi": "10.34847/nkl.1b988e6g",
+          "repository": "NAKALA",
+          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+          "landing_url": "https://nakala.fr/10.34847/nkl.1b988e6g",
+          "landing_host": "nakala.fr",
+          "dataset_title": "Fouille du plateau de Blis 2021, jeu de données",
+          "field": "seeAlso_s",
+          "misfiled": false,
+          "also_in_relatedData_s": true
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-05444500",
+      "uri_s": "https://inria.hal.science/hal-05444500v1",
+      "title_s": "Gaussian Splatting Map Registration with Orthographic Bird's-Eye-View Renderings",
+      "docType_s": "COMM",
+      "doiId_s": null,
+      "laboratories": [
+        "TANGRAM",
+        "Inria",
+        "LORIA - ALGO",
+        "LORIA",
+        "UL",
+        "CNRS",
+        "ICB",
+        "UTBM",
+        "UBE"
+      ],
+      "modifiedDate_tdate": "2026-11-24T12:06:00Z",
+      "producedDateY_i": 2026,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/ESBF7R",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/ESBF7R",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Gaussian Splatting Map Registration with Orthographic Bird’s-Eye-View Renderings",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-05492047",
+      "uri_s": "https://hal.science/hal-05492047v1",
+      "title_s": "Feature points evaluation on omnidirectional vision with a photorealistic fisheye sequence -- A report on experiments done in 2014",
+      "docType_s": "REPORT",
+      "doiId_s": null,
+      "laboratories": [
+        "Heudiasyc",
+        "UTC",
+        "CNRS",
+        "COSYS-LEOST",
+        "CIAD",
+        "UTBM",
+        "UBE"
+      ],
+      "modifiedDate_tdate": "2026-11-24T12:03:45Z",
+      "producedDateY_i": 2026,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/DYIVVU",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/DYIVVU",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "PFSeq: Photorealistic Fisheye Sequence",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-05170289",
+      "uri_s": "https://hal.science/hal-05170289v1",
+      "title_s": "Être archiviste et militante ? La construction d'une mémoire lesbienne à partir d'archives du web",
+      "docType_s": "COMM",
+      "doiId_s": null,
+      "laboratories": [
+        "UB",
+        "dat@UBFC",
+        "UTBM",
+        "SUPMICROTECH - ENSMM",
+        "BSB",
+        "UBFC",
+        "Institut Agro",
+        "UMLP"
+      ],
+      "modifiedDate_tdate": "2026-11-24T12:03:15Z",
+      "producedDateY_i": 2022,
+      "repositories": [
+        "NAKALA"
+      ],
+      "datasets": [
+        {
+          "doi": "10.34847/nkl.9effky97",
+          "repository": "NAKALA",
+          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+          "landing_url": "https://nakala.fr/10.34847/nkl.9effky97",
+          "landing_host": "nakala.fr",
+          "dataset_title": "Sites web militants lesbiens francophones et analyse de la qualité de leur archivage",
+          "field": "relatedPublication_s",
+          "misfiled": true,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-05221870",
+      "uri_s": "https://hal.science/hal-05221870v2",
+      "title_s": "Enquête sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
+      "docType_s": "REPORT",
+      "doiId_s": null,
+      "laboratories": [
+        "Comue de Toulouse",
+        "ADBU",
+        "UBE",
+        "dat@UBFC",
+        "UTBM",
+        "SUPMICROTECH - ENSMM",
+        "BSB",
+        "Institut Agro",
+        "UMLP",
+        "UPPA"
+      ],
+      "modifiedDate_tdate": "2026-11-24T12:03:04Z",
+      "producedDateY_i": 2025,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/JYWUIY",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/JYWUIY",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Données de l'enquête ADBU sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
       "halId_s": "hal-05526495",
       "uri_s": "https://hal.inrae.fr/hal-05526495v1",
       "title_s": "Colonization and spatiotemporal distribution of bruchid pests in lentil and faba bean fields",
@@ -36,42 +236,6 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/HPEMYW",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "Spatio-temporal field, landscape and meteorological datasets describing bruchid beetle populations, grain damage and parasitism in faba bean and lentil fields in France",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-05444500",
-      "uri_s": "https://inria.hal.science/hal-05444500v1",
-      "title_s": "Gaussian Splatting Map Registration with Orthographic Bird's-Eye-View Renderings",
-      "docType_s": "COMM",
-      "doiId_s": null,
-      "laboratories": [
-        "TANGRAM",
-        "Inria",
-        "LORIA - ALGO",
-        "LORIA",
-        "UL",
-        "CNRS",
-        "ICB",
-        "UTBM",
-        "UBE"
-      ],
-      "modifiedDate_tdate": "2026-11-18T19:21:17Z",
-      "producedDateY_i": 2026,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/ESBF7R",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/ESBF7R",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Gaussian Splatting Map Registration with Orthographic Bird’s-Eye-View Renderings",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
@@ -859,43 +1023,6 @@
       ]
     },
     {
-      "halId_s": "hal-05221870",
-      "uri_s": "https://hal.science/hal-05221870v2",
-      "title_s": "Enquête sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
-      "docType_s": "REPORT",
-      "doiId_s": null,
-      "laboratories": [
-        "Comue de Toulouse",
-        "ADBU",
-        "UBE",
-        "dat@UBFC",
-        "UTBM",
-        "SUPMICROTECH - ENSMM",
-        "BSB",
-        "Institut Agro",
-        "UMLP",
-        "UPPA"
-      ],
-      "modifiedDate_tdate": "2026-10-14T16:06:03Z",
-      "producedDateY_i": 2025,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/JYWUIY",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/JYWUIY",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Données de l'enquête ADBU sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
       "halId_s": "hal-04267953",
       "uri_s": "https://hal.inrae.fr/hal-04267953v1",
       "title_s": "SNP discovery by exome capture and resequencing in a pea genetic resource collection",
@@ -1095,41 +1222,6 @@
           "dataset_title": "Dataset from \"A new genome assembly of the pea cultivar Cameor provides resources for functional genomics and genetics\"",
           "field": "relatedData_s",
           "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-05170289",
-      "uri_s": "https://hal.science/hal-05170289v1",
-      "title_s": "Être archiviste et militante ? La construction d'une mémoire lesbienne à partir d'archives du web",
-      "docType_s": "COMM",
-      "doiId_s": null,
-      "laboratories": [
-        "UB",
-        "dat@UBFC",
-        "UTBM",
-        "SUPMICROTECH - ENSMM",
-        "BSB",
-        "UBFC",
-        "Institut Agro",
-        "UMLP"
-      ],
-      "modifiedDate_tdate": "2026-10-07T15:42:07Z",
-      "producedDateY_i": 2022,
-      "repositories": [
-        "NAKALA"
-      ],
-      "datasets": [
-        {
-          "doi": "10.34847/nkl.9effky97",
-          "repository": "NAKALA",
-          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-          "landing_url": "https://nakala.fr/10.34847/nkl.9effky97",
-          "landing_host": "nakala.fr",
-          "dataset_title": "Sites web militants lesbiens francophones et analyse de la qualité de leur archivage",
-          "field": "relatedPublication_s",
-          "misfiled": true,
           "also_in_relatedData_s": false
         }
       ]
@@ -1419,98 +1511,6 @@
           "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/XETXQU",
           "landing_host": "data.inrae.fr",
           "dataset_title": "Hypothalamic and caecal microbiota and metabolomic data",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-03599614",
-      "uri_s": "https://hal.science/hal-03599614v1",
-      "title_s": "Campagne de fouille 2021 sur le système de fortification de Blis à Eymet (Dordogne)",
-      "docType_s": "REPORT",
-      "doiId_s": "10.34847/nkl.d59a61c2",
-      "laboratories": [
-        "IRAMAT-CRP2A",
-        "IRAMAT",
-        "UTBM",
-        "UO",
-        "UBM",
-        "CNRS",
-        "UB",
-        "ARTeHiS",
-        "MCC"
-      ],
-      "modifiedDate_tdate": "2026-09-22T03:43:54Z",
-      "producedDateY_i": 2022,
-      "repositories": [
-        "NAKALA"
-      ],
-      "datasets": [
-        {
-          "doi": "10.34847/nkl.1b988e6g",
-          "repository": "NAKALA",
-          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-          "landing_url": "https://nakala.fr/10.34847/nkl.1b988e6g",
-          "landing_host": "nakala.fr",
-          "dataset_title": "Fouille du plateau de Blis 2021, jeu de données",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.34847/nkl.d59a61c2",
-          "repository": "NAKALA",
-          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-          "landing_url": "https://nakala.fr/10.34847/nkl.d59a61c2",
-          "landing_host": "nakala.fr",
-          "dataset_title": "Fouille du plateau de Blis 2021, rapport final d'opération",
-          "field": "seeAlso_s",
-          "misfiled": true,
-          "also_in_relatedData_s": false
-        },
-        {
-          "doi": "10.34847/nkl.1b988e6g",
-          "repository": "NAKALA",
-          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-          "landing_url": "https://nakala.fr/10.34847/nkl.1b988e6g",
-          "landing_host": "nakala.fr",
-          "dataset_title": "Fouille du plateau de Blis 2021, jeu de données",
-          "field": "seeAlso_s",
-          "misfiled": false,
-          "also_in_relatedData_s": true
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-05492047",
-      "uri_s": "https://hal.science/hal-05492047v1",
-      "title_s": "Feature points evaluation on omnidirectional vision with a photorealistic fisheye sequence -- A report on experiments done in 2014",
-      "docType_s": "REPORT",
-      "doiId_s": null,
-      "laboratories": [
-        "Heudiasyc",
-        "UTC",
-        "CNRS",
-        "COSYS-LEOST",
-        "CIAD",
-        "UTBM",
-        "UBE"
-      ],
-      "modifiedDate_tdate": "2026-09-22T03:40:06Z",
-      "producedDateY_i": 2026,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/DYIVVU",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/DYIVVU",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "PFSeq: Photorealistic Fisheye Sequence",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
