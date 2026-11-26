@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T18:39:55Z",
+  "generated_at": "2026-11-26T14:01:00Z",
   "collection": "UNIV-BOURGOGNE",
   "collection_url": "https://hal.science/UNIV-BOURGOGNE",
   "harvest": {
@@ -341,6 +341,43 @@
       "NAKALA": 9
     },
     "publications": [
+      {
+        "halId_s": "hal-03534007",
+        "uri_s": "https://hal.inrae.fr/hal-03534007v1",
+        "title_s": "Key questions for next-generation of biomonitoring",
+        "docType_s": "COUV",
+        "doiId_s": "10.3389/978-2-88966-027-8",
+        "laboratories": [
+          "UB",
+          "UBFC",
+          "INRAE",
+          "ECCC",
+          "TTU",
+          "CARRTEL",
+          "USMB [Université de Savoie] [Université de Chambéry]",
+          "Fédération OSUG",
+          "IGEPP",
+          "UR"
+        ],
+        "modifiedDate_tdate": "2026-11-26T03:38:20Z",
+        "producedDateY_i": 2020,
+        "repositories": [
+          "Recherche Data Gouv"
+        ],
+        "datasets": [
+          {
+            "doi": "10.15454/HYRVUH",
+            "repository": "Recherche Data Gouv",
+            "publisher": "Recherche Data Gouv",
+            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/HYRVUH",
+            "landing_host": "entrepot.recherche.data.gouv.fr",
+            "dataset_title": "Rsyst::diatom_rbcl_align_312bp database: a database adapted to DNA metabarcoding (version v7: 23-02-2018)",
+            "field": "relatedData_s",
+            "misfiled": false,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
       {
         "halId_s": "hal-03599614",
         "uri_s": "https://hal.science/hal-03599614v1",
@@ -753,43 +790,6 @@
             "landing_url": "https://data.inrae.fr/citation?persistentId=doi:10.15454/TRBJTB",
             "landing_host": "data.inrae.fr",
             "dataset_title": "BRC4Env, the Biological Resource Centre for the Environment",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-03534007",
-        "uri_s": "https://hal.inrae.fr/hal-03534007v1",
-        "title_s": "Key questions for next-generation of biomonitoring",
-        "docType_s": "COUV",
-        "doiId_s": "10.3389/978-2-88966-027-8",
-        "laboratories": [
-          "UB",
-          "UBFC",
-          "INRAE",
-          "ECCC",
-          "TTU",
-          "CARRTEL",
-          "USMB [Université de Savoie] [Université de Chambéry]",
-          "Fédération OSUG",
-          "IGEPP",
-          "UR"
-        ],
-        "modifiedDate_tdate": "2026-11-09T16:45:52Z",
-        "producedDateY_i": 2020,
-        "repositories": [
-          "Recherche Data Gouv"
-        ],
-        "datasets": [
-          {
-            "doi": "10.15454/HYRVUH",
-            "repository": "Recherche Data Gouv",
-            "publisher": "Recherche Data Gouv",
-            "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/HYRVUH",
-            "landing_host": "entrepot.recherche.data.gouv.fr",
-            "dataset_title": "Rsyst::diatom_rbcl_align_312bp database: a database adapted to DNA metabarcoding (version v7: 23-02-2018)",
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false
