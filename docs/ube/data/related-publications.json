@@ -6,6 +6,78 @@
   },
   "publications": [
     {
+      "halId_s": "hal-05221870",
+      "uri_s": "https://hal.science/hal-05221870v2",
+      "title_s": "Enquête sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
+      "docType_s": "REPORT",
+      "doiId_s": null,
+      "laboratories": [
+        "Comue de Toulouse",
+        "ADBU",
+        "UBE",
+        "dat@UBFC",
+        "UTBM",
+        "SUPMICROTECH - ENSMM",
+        "BSB",
+        "Institut Agro",
+        "UMLP",
+        "UPPA"
+      ],
+      "modifiedDate_tdate": "2026-11-26T15:11:00Z",
+      "producedDateY_i": 2025,
+      "repositories": [
+        "Recherche Data Gouv"
+      ],
+      "datasets": [
+        {
+          "doi": "10.57745/JYWUIY",
+          "repository": "Recherche Data Gouv",
+          "publisher": "Recherche Data Gouv",
+          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/JYWUIY",
+          "landing_host": "entrepot.recherche.data.gouv.fr",
+          "dataset_title": "Données de l'enquête ADBU sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
+          "field": "relatedData_s",
+          "misfiled": false,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
+      "halId_s": "hal-05170289",
+      "uri_s": "https://hal.science/hal-05170289v1",
+      "title_s": "Être archiviste et militante ? La construction d'une mémoire lesbienne à partir d'archives du web",
+      "docType_s": "COMM",
+      "doiId_s": null,
+      "laboratories": [
+        "UB",
+        "dat@UBFC",
+        "UTBM",
+        "SUPMICROTECH - ENSMM",
+        "BSB",
+        "UBFC",
+        "Institut Agro",
+        "UMLP"
+      ],
+      "modifiedDate_tdate": "2026-11-26T15:10:48Z",
+      "producedDateY_i": 2022,
+      "repositories": [
+        "NAKALA"
+      ],
+      "datasets": [
+        {
+          "doi": "10.34847/nkl.9effky97",
+          "repository": "NAKALA",
+          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+          "landing_url": "https://nakala.fr/10.34847/nkl.9effky97",
+          "landing_host": "nakala.fr",
+          "dataset_title": "Sites web militants lesbiens francophones et analyse de la qualité de leur archivage",
+          "field": "relatedPublication_s",
+          "misfiled": true,
+          "also_in_relatedData_s": false
+        }
+      ]
+    },
+    {
       "halId_s": "hal-03534007",
       "uri_s": "https://hal.inrae.fr/hal-03534007v1",
       "title_s": "Key questions for next-generation of biomonitoring",
@@ -164,78 +236,6 @@
           "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/DYIVVU",
           "landing_host": "entrepot.recherche.data.gouv.fr",
           "dataset_title": "PFSeq: Photorealistic Fisheye Sequence",
-          "field": "relatedData_s",
-          "misfiled": false,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-05170289",
-      "uri_s": "https://hal.science/hal-05170289v1",
-      "title_s": "Être archiviste et militante ? La construction d'une mémoire lesbienne à partir d'archives du web",
-      "docType_s": "COMM",
-      "doiId_s": null,
-      "laboratories": [
-        "UB",
-        "dat@UBFC",
-        "UTBM",
-        "SUPMICROTECH - ENSMM",
-        "BSB",
-        "UBFC",
-        "Institut Agro",
-        "UMLP"
-      ],
-      "modifiedDate_tdate": "2026-11-24T12:03:15Z",
-      "producedDateY_i": 2022,
-      "repositories": [
-        "NAKALA"
-      ],
-      "datasets": [
-        {
-          "doi": "10.34847/nkl.9effky97",
-          "repository": "NAKALA",
-          "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-          "landing_url": "https://nakala.fr/10.34847/nkl.9effky97",
-          "landing_host": "nakala.fr",
-          "dataset_title": "Sites web militants lesbiens francophones et analyse de la qualité de leur archivage",
-          "field": "relatedPublication_s",
-          "misfiled": true,
-          "also_in_relatedData_s": false
-        }
-      ]
-    },
-    {
-      "halId_s": "hal-05221870",
-      "uri_s": "https://hal.science/hal-05221870v2",
-      "title_s": "Enquête sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
-      "docType_s": "REPORT",
-      "doiId_s": null,
-      "laboratories": [
-        "Comue de Toulouse",
-        "ADBU",
-        "UBE",
-        "dat@UBFC",
-        "UTBM",
-        "SUPMICROTECH - ENSMM",
-        "BSB",
-        "Institut Agro",
-        "UMLP",
-        "UPPA"
-      ],
-      "modifiedDate_tdate": "2026-11-24T12:03:04Z",
-      "producedDateY_i": 2025,
-      "repositories": [
-        "Recherche Data Gouv"
-      ],
-      "datasets": [
-        {
-          "doi": "10.57745/JYWUIY",
-          "repository": "Recherche Data Gouv",
-          "publisher": "Recherche Data Gouv",
-          "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.57745/JYWUIY",
-          "landing_host": "entrepot.recherche.data.gouv.fr",
-          "dataset_title": "Données de l'enquête ADBU sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
           "field": "relatedData_s",
           "misfiled": false,
           "also_in_relatedData_s": false
