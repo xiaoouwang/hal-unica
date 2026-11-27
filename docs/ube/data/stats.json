@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T18:25:56Z",
+  "generated_at": "2026-11-27T18:11:52Z",
   "collection": "UNIV-BOURGOGNE",
   "collection_url": "https://hal.science/UNIV-BOURGOGNE",
   "harvest": {
@@ -342,6 +342,41 @@
     },
     "publications": [
       {
+        "halId_s": "hal-05170289",
+        "uri_s": "https://hal.science/hal-05170289v1",
+        "title_s": "Être archiviste et militante ? La construction d'une mémoire lesbienne à partir d'archives du web",
+        "docType_s": "COMM",
+        "doiId_s": null,
+        "laboratories": [
+          "UB",
+          "dat@UBFC",
+          "UTBM",
+          "SUPMICROTECH - ENSMM",
+          "BSB",
+          "UBFC",
+          "Institut Agro",
+          "UMLP"
+        ],
+        "modifiedDate_tdate": "2026-11-27T14:04:34Z",
+        "producedDateY_i": 2022,
+        "repositories": [
+          "NAKALA"
+        ],
+        "datasets": [
+          {
+            "doi": "10.34847/nkl.9effky97",
+            "repository": "NAKALA",
+            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
+            "landing_url": "https://nakala.fr/10.34847/nkl.9effky97",
+            "landing_host": "nakala.fr",
+            "dataset_title": "Sites web militants lesbiens francophones et analyse de la qualité de leur archivage",
+            "field": "relatedPublication_s",
+            "misfiled": true,
+            "also_in_relatedData_s": false
+          }
+        ]
+      },
+      {
         "halId_s": "hal-05221870",
         "uri_s": "https://hal.science/hal-05221870v2",
         "title_s": "Enquête sur l'implication des structures documentaires dans l'accompagnement sur les données de recherche",
@@ -359,7 +394,7 @@
           "UMLP",
           "UPPA"
         ],
-        "modifiedDate_tdate": "2026-11-26T15:11:00Z",
+        "modifiedDate_tdate": "2026-11-27T14:04:26Z",
         "producedDateY_i": 2025,
         "repositories": [
           "Recherche Data Gouv"
@@ -379,36 +414,38 @@
         ]
       },
       {
-        "halId_s": "hal-05170289",
-        "uri_s": "https://hal.science/hal-05170289v1",
-        "title_s": "Être archiviste et militante ? La construction d'une mémoire lesbienne à partir d'archives du web",
-        "docType_s": "COMM",
+        "halId_s": "hal-04529211",
+        "uri_s": "https://hal.science/hal-04529211v1",
+        "title_s": "L’habitat groupé laténien de Verdun-sur-le-Doubs : rapport de fouille programmée 2023 dans le cadre du PCR «La confluence Saône/Doubs à l’âge du fer»",
+        "docType_s": "REPORT",
         "doiId_s": null,
         "laboratories": [
-          "UB",
-          "dat@UBFC",
-          "UTBM",
-          "SUPMICROTECH - ENSMM",
-          "BSB",
-          "UBFC",
-          "Institut Agro",
-          "UMLP"
+          "LCE",
+          "CNRS",
+          "UMLP",
+          "UFC - UFR SLHS",
+          "Inrap",
+          "EVEHA",
+          "ArScAn",
+          "UP1",
+          "UP8",
+          "UPN"
         ],
-        "modifiedDate_tdate": "2026-11-26T15:10:48Z",
-        "producedDateY_i": 2022,
+        "modifiedDate_tdate": "2026-11-27T13:58:01Z",
+        "producedDateY_i": 2024,
         "repositories": [
           "NAKALA"
         ],
         "datasets": [
           {
-            "doi": "10.34847/nkl.9effky97",
+            "doi": "10.34847/nkl.929ax2kn",
             "repository": "NAKALA",
-            "publisher": "NAKALA - https://nakala.fr (Huma-Num - CNRS)",
-            "landing_url": "https://nakala.fr/10.34847/nkl.9effky97",
-            "landing_host": "nakala.fr",
-            "dataset_title": "Sites web militants lesbiens francophones et analyse de la qualité de leur archivage",
-            "field": "relatedPublication_s",
-            "misfiled": true,
+            "publisher": null,
+            "landing_url": null,
+            "landing_host": null,
+            "dataset_title": null,
+            "field": "relatedData_s",
+            "misfiled": false,
             "also_in_relatedData_s": false
           }
         ]
@@ -1055,43 +1092,6 @@
             "landing_url": "https://entrepot.recherche.data.gouv.fr/citation?persistentId=doi:10.15454/AXY7FV",
             "landing_host": "entrepot.recherche.data.gouv.fr",
             "dataset_title": "Replication Data for: Nguyen et al. Reduction in PLANT DEFENSIN 1 results in increased resistance to pathogens and zinc toxicity",
-            "field": "relatedData_s",
-            "misfiled": false,
-            "also_in_relatedData_s": false
-          }
-        ]
-      },
-      {
-        "halId_s": "hal-04529211",
-        "uri_s": "https://hal.science/hal-04529211v1",
-        "title_s": "L’habitat groupé laténien de Verdun-sur-le-Doubs : rapport de fouille programmée 2023 dans le cadre du PCR «La confluence Saône/Doubs à l’âge du fer»",
-        "docType_s": "REPORT",
-        "doiId_s": null,
-        "laboratories": [
-          "LCE",
-          "CNRS",
-          "UMLP",
-          "UFC UFR SLHS",
-          "Inrap",
-          "EVEHA",
-          "ArScAn",
-          "UP1",
-          "UP8",
-          "UPN"
-        ],
-        "modifiedDate_tdate": "2026-10-20T17:16:02Z",
-        "producedDateY_i": 2024,
-        "repositories": [
-          "NAKALA"
-        ],
-        "datasets": [
-          {
-            "doi": "10.34847/nkl.929ax2kn",
-            "repository": "NAKALA",
-            "publisher": null,
-            "landing_url": null,
-            "landing_host": null,
-            "dataset_title": null,
             "field": "relatedData_s",
             "misfiled": false,
             "also_in_relatedData_s": false

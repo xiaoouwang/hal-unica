@@ -1,3 +1,23 @@
 university=unica collection=UNIV-COTEDAZUR site=docs
-incremental census since=2026-11-25T14:07:32Z (existing pubs=330, doi cache=400)
-[2026-11-27T14:07:32Z] census start collection=UNIV-COTEDAZUR since=2026-11-25T14:07:32Z
+incremental census since=2026-11-25T18:11:19Z (existing pubs=330, doi cache=400)
+[2026-11-27T18:11:19Z] census start collection=UNIV-COTEDAZUR since=2026-11-25T18:11:19Z
+HAL publications with linked identifiers (merged): 330
+  query: (relatedData_s:*) OR (relatedSoftware_s:*) OR (relatedPublication_s:10.*) OR (seeAlso_s:*)
+  fetched this run: 13 (updated=13, inserted=0)
+link tokens: 527
+unique DOI candidates: 400
+DataCite cache hits: 400; to resolve: 0
+[2026-11-27T18:11:20Z] census done
+harvesting SOFTWARE deposits (full)
+listing publications with dataset + software (open science triptych)
+open science triptych publications=4
+harvesting data papers (docSubType_s:DATAPAPER)
+updated dataset→publications index
+synced focus links → data/unica_data_repo_links.jsonl (48 hits)
+harvesting institutional DataCite datasets (affiliation / ROR)
+[2026-11-27T18:11:26Z] datacite census start university=unica
+  query: (creators.affiliation.affiliationIdentifier:"https://ror.org/019tgvf94" OR contributors.affiliation.affiliationIdentifier:"https://ror.org/019tgvf94" OR creators.affiliation.name:"Université Côte d'Azur" OR contributors.affiliation.name:"Université Côte d'Azur" OR creators.affiliation.name:"Universite Cote d'Azur" OR contributors.affiliation.name:"Universite Cote d'Azur" OR creators.affiliation.name:"Univ. Côte d'Azur" OR contributors.affiliation.name:"Univ. Côte d'Azur" OR creators.affiliation.name:"Univ Côte d'Azur" OR contributors.affiliation.name:"Univ Côte d'Azur" OR creators.affiliation.name:"University Côte d'Azur" OR contributors.affiliation.name:"University Côte d'Azur" OR creators.affiliation.name:"University Cote d'Azur" OR contributors.affiliation.name:"University Cote d'Azur") AND types.resourceTypeGeneral:Dataset
+  DataCite numFound≈1519
+  harvested unique DOIs=1519
+DataCite datasets=1519 also_on_hal=32 datacite_only=1487
+wrote site → docs/
